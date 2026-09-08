@@ -1,0 +1,6228 @@
+{
+  "rows": [
+    {
+      "source": {
+        "row_id": "row_025ae6063a",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-6271",
+        "raw_title": "CIRRUS SMART SCALE",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "357,99 EUR",
+        "stock": 156
+      },
+      "titleKey": "cirrus smart scale",
+      "price": {
+        "raw": "357,99 EUR",
+        "amount": "357.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_5aed2d26272a4faecafb2080d9c53de7b3760af1e854dbb1fc2410ca9fc0b28a",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_02ad74e735",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-9000",
+        "raw_title": "Vertex Pro microSD card 256GB",
+        "raw_specs": "UHS-I; A2; up to 170MB/s",
+        "price": "$253.99",
+        "stock": 381
+      },
+      "titleKey": "vertex pro microsd card 256gb",
+      "price": {
+        "raw": "$253.99",
+        "amount": "253.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_e06ca3b439a4e0715d4dc928be03d6d13e44d5d769a84b2121a0516aea167eb2",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_04ecd45818",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-8488",
+        "raw_title": "Pivot wired earbuds",
+        "raw_specs": "3.5mm; in-line mic",
+        "price": "$190.99",
+        "stock": 482
+      },
+      "titleKey": "pivot wired earbuds",
+      "price": {
+        "raw": "$190.99",
+        "amount": "190.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_00fd673b40c9a8748f126778dfa6f208b26a70ef32f114975a54c81cb7a2fdd3",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_0529181075",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-3132",
+        "raw_title": "Cirrus 3 wired earbuds",
+        "raw_specs": "3.5mm; in-line mic",
+        "price": "$169.99",
+        "stock": 150
+      },
+      "titleKey": "cirrus 3 wired earbuds",
+      "price": {
+        "raw": "$169.99",
+        "amount": "169.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_5c2e76ec5664bc04fe9efe0c2d6bf646d733e6f239c4c925a4bff3521cbe8eef",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_05e5d126cb",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-8812",
+        "raw_title": "sony wh880n headphones OPEN BOX",
+        "raw_specs": "AMAZING SOUND!!! BEST HEADPHONES 2026!!! GRAB IT FAST!!!",
+        "price": "$179",
+        "stock": 67
+      },
+      "titleKey": "sony wh880n headphones open box",
+      "price": {
+        "raw": "$179",
+        "amount": "179.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_aa6aa2b42559ffc9c9e21d941955699ffb38e7ace857d12d567f9a3ec3bf448e",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_06dc75e525",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-9311",
+        "raw_title": "Quill 2 action camera",
+        "raw_specs": "4K60; waterproof to 10m",
+        "price": "£432.99",
+        "stock": 182
+      },
+      "titleKey": "quill 2 action camera",
+      "price": {
+        "raw": "£432.99",
+        "amount": "432.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_c16f9e204ee2133297a8c538830df691354f22e8946aef9631cba421b8187fd1",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_0749740cfc",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-2149",
+        "raw_title": "Larkspur tablet case",
+        "raw_specs": "folio; auto sleep/wake",
+        "price": "145,99 EUR",
+        "stock": 472
+      },
+      "titleKey": "larkspur tablet case",
+      "price": {
+        "raw": "145,99 EUR",
+        "amount": "145.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_f5598664d14950eb08189cfe69d132bc70b5741338855bf0388ac3b4212f8940",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_07d0ec92f5",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-7654",
+        "raw_title": "BASALT LITE TABLET CASE",
+        "raw_specs": "folio; auto sleep/wake",
+        "price": "USD 454",
+        "stock": 487
+      },
+      "titleKey": "basalt lite tablet case",
+      "price": {
+        "raw": "USD 454",
+        "amount": "454.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_39e2aa0fb4fe6564af5fff730553f24169951ebb361d22b8338784c2b251f407",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_0952d61e2d",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-2905",
+        "raw_title": "MESA PRO USB-C HUB",
+        "raw_specs": "",
+        "price": "783,99 EUR",
+        "stock": 409
+      },
+      "titleKey": "mesa pro usb-c hub",
+      "price": {
+        "raw": "783,99 EUR",
+        "amount": "783.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_40a40b446a3c4710f5dad443958fe3eee883e8935111f6aa5613c21d7eee94c4",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_0a5452008a",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-7557",
+        "raw_title": "TUNDRA X SMART SCALE",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "$136.99",
+        "stock": 101
+      },
+      "titleKey": "tundra x smart scale",
+      "price": {
+        "raw": "$136.99",
+        "amount": "136.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_dbef5b87ded1bd9f8b9505dc3ca6a275f8f5077fe35c57687e936f76ecfe321e",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_0ba9edac39",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-5311",
+        "raw_title": "Larkspur Lite laptop sleeve",
+        "raw_specs": "14in; neoprene",
+        "price": "196,99 EUR",
+        "stock": 396
+      },
+      "titleKey": "larkspur lite laptop sleeve",
+      "price": {
+        "raw": "196,99 EUR",
+        "amount": "196.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_9e6d1a95bfb07c7c2490abffaf3b15948d95813457fe657128b9f04e14e98b3d",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_0eb52882db",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-3920",
+        "raw_title": "Sable Lite laptop sleeve",
+        "raw_specs": "14in; neoprene",
+        "price": "USD 577",
+        "stock": 80
+      },
+      "titleKey": "sable lite laptop sleeve",
+      "price": {
+        "raw": "USD 577",
+        "amount": "577.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_aadf20101ba13259c61520827ad317d57be2429834ba2afc71044963dda30f6e",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_0fd5e416e8",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-9671",
+        "raw_title": "Larkspur USB-C hub",
+        "raw_specs": "",
+        "price": "£15.99",
+        "stock": 206
+      },
+      "titleKey": "larkspur usb-c hub",
+      "price": {
+        "raw": "£15.99",
+        "amount": "15.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_a86f558315b351e41347b5908b597fd5dd7920920b7336b74b85c690be43dc3f",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_10b9579a30",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-5216",
+        "raw_title": "Cirrus 2 tablet case",
+        "raw_specs": "folio; auto sleep/wake",
+        "price": "$395.99",
+        "stock": 102
+      },
+      "titleKey": "cirrus 2 tablet case",
+      "price": {
+        "raw": "$395.99",
+        "amount": "395.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_2279a89a8af5dcdaf7ec43b4b782652a20639cfb8ec48c7b18b8b01855532093",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_1134eb89e7",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-9002",
+        "raw_title": "Volt 65W GaN charger 3-port",
+        "raw_specs": "new in box",
+        "price": "$34",
+        "stock": 272
+      },
+      "titleKey": "volt 65w gan charger 3-port",
+      "price": {
+        "raw": "$34",
+        "amount": "34.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_13f90e6faf7b028dedcbf4a9666b157b09278c161316790de8416799d9dee2df",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_11462769c5",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-8274",
+        "raw_title": "Quill desk lamp",
+        "raw_specs": "LED; 5 colour temps; USB-C",
+        "price": "$223.99",
+        "stock": 409
+      },
+      "titleKey": "quill desk lamp",
+      "price": {
+        "raw": "$223.99",
+        "amount": "223.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_1c232e46b60cb27350cf18240cc7b90f64ca3ecc03b70ceb22549cc44de49aaa",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_11bb99b2fa",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PR-AB-PRO-BK",
+        "raw_title": "Aerobuds PRO earbud, black, ANC",
+        "raw_specs": "Active noise cancelling, BT 5.3, 20 hours playback (incl. charging case), water resistant IPX4",
+        "price": "USD 149",
+        "stock": 101
+      },
+      "titleKey": "aerobuds pro earbud, black, anc",
+      "price": {
+        "raw": "USD 149",
+        "amount": "149.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_999c4127f156dccf41da7db185c66d101a8df521f5ed7b4d26665219ec45abb1",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_127d44f74c",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-2672",
+        "raw_title": "CIRRUS LITE ACTION CAMERA",
+        "raw_specs": "4K60; waterproof to 10m",
+        "price": "£553.99",
+        "stock": 435
+      },
+      "titleKey": "cirrus lite action camera",
+      "price": {
+        "raw": "£553.99",
+        "amount": "553.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_201fb18bb50c6cac572bd9288d3ee18813728630f8ce9450c21aea98d08661af",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_17bac50146",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-6243",
+        "raw_title": "Ember Plus tablet case",
+        "raw_specs": "folio; auto sleep/wake",
+        "price": "$408.99",
+        "stock": 159
+      },
+      "titleKey": "ember plus tablet case",
+      "price": {
+        "raw": "$408.99",
+        "amount": "408.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_217b1889d670a41bc735add67c1add4c1e38ecfc2381d98282b8bb62a4da426f",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_17bb73bd1c",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-5490",
+        "raw_title": "Pivot Plus wired earbuds",
+        "raw_specs": "3.5mm; in-line mic",
+        "price": "£42.99",
+        "stock": 42
+      },
+      "titleKey": "pivot plus wired earbuds",
+      "price": {
+        "raw": "£42.99",
+        "amount": "42.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_7a4a5c73496d346903e560913f76ab442a7b109ae9a8a5aef47bba636017ed05",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_17e27bf495",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-9803",
+        "raw_title": "Marlow 2 laptop sleeve",
+        "raw_specs": "14in; neoprene",
+        "price": "USD 41",
+        "stock": 13
+      },
+      "titleKey": "marlow 2 laptop sleeve",
+      "price": {
+        "raw": "USD 41",
+        "amount": "41.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_3df797c386997a75ae8755c837e57572e7f52b92dabaffee684545e3494e7bdc",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_17f5e3070f",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-3301",
+        "raw_title": "Onyx 2 bookshelf speaker pair",
+        "raw_specs": "",
+        "price": "$674.99",
+        "stock": 405
+      },
+      "titleKey": "onyx 2 bookshelf speaker pair",
+      "price": {
+        "raw": "$674.99",
+        "amount": "674.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_3c0cb67b0a3bcdcbb420d32f7b04efe5d3d0c3c54153c6d46053ac803270f47a",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_185aeac60e",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-2600",
+        "raw_title": "Basalt 2 laptop sleeve",
+        "raw_specs": "14in; neoprene",
+        "price": "USD 758",
+        "stock": 145
+      },
+      "titleKey": "basalt 2 laptop sleeve",
+      "price": {
+        "raw": "USD 758",
+        "amount": "758.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_f1b6d6fbad7aa585f71040eb500ce5cf6a19fd9b0cbc653f31dea060b8036d98",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_190a9264bb",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-8865",
+        "raw_title": "CIRRUS 3 SMART SCALE",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "$843.99",
+        "stock": 478
+      },
+      "titleKey": "cirrus 3 smart scale",
+      "price": {
+        "raw": "$843.99",
+        "amount": "843.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_569cf9190ede44a144afe0586343d9646ed82d85fc42ee1e04ecb8b646f21e07",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_19950873e2",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-4790",
+        "raw_title": "LARKSPUR X BOOKSHELF SPEAKER PAIR",
+        "raw_specs": "40W; passive; 4 ohm",
+        "price": "USD 458",
+        "stock": 178
+      },
+      "titleKey": "larkspur x bookshelf speaker pair",
+      "price": {
+        "raw": "USD 458",
+        "amount": "458.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_8f2611a131be2c1966329f57f84fbefe43282ea0b927d51b9f1f33b6309d094d",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_1b08ede010",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-2333",
+        "raw_title": "KESTREL 2 BOOKSHELF SPEAKER PAIR",
+        "raw_specs": "",
+        "price": "60,99 EUR",
+        "stock": 292
+      },
+      "titleKey": "kestrel 2 bookshelf speaker pair",
+      "price": {
+        "raw": "60,99 EUR",
+        "amount": "60.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_50032c90da018d397704acedca3b4a9006d0ace86d2b04c742c9c9ee6e91417f",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_1d1bdffe92",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "D2R-LX20",
+        "raw_title": "Lumen X20 Compact Digital Camera",
+        "raw_specs": "20MP sensor, 5x optical zoom, 4K video at 30fps",
+        "price": "$429.00",
+        "stock": 345
+      },
+      "titleKey": "lumen x20 compact digital camera",
+      "price": {
+        "raw": "$429.00",
+        "amount": "429.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_a47b3f66a43e49f99bbf11aaf4fa1b3e366c941906ccd7bab4c3187c58aead5d",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_1e60b0a9dc",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PR-SNY-880",
+        "raw_title": "SONY WH-880N Wireless Over-Ear",
+        "raw_specs": "ANC, 30h battery, multipoint, foldable",
+        "price": "USD 249",
+        "stock": 399
+      },
+      "titleKey": "sony wh-880n wireless over-ear",
+      "price": {
+        "raw": "USD 249",
+        "amount": "249.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_908850ba47036c080075ecfc703cffcc39d5a5482d755ab8b4140090fea217e4",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_22e59912ad",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-5540B",
+        "raw_title": "VAULT 2TB SSD portable drive",
+        "raw_specs": "2 terabyte, USB-C, fast",
+        "price": "$129",
+        "stock": 136
+      },
+      "titleKey": "vault 2tb ssd portable drive",
+      "price": {
+        "raw": "$129",
+        "amount": "129.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_0f8617f1fa02f544db5344b641869a06a9180fcc63ca280c0bc4d8a6da732edb",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_24e49bc1eb",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-7266",
+        "raw_title": "HARBOR SMART SCALE",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "$148.99",
+        "stock": 122
+      },
+      "titleKey": "harbor smart scale",
+      "price": {
+        "raw": "$148.99",
+        "amount": "148.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_c5724fbc10ea081e4a0248c0a3c047af21e04a03f6cf0ab906dd408fc9f6fbb4",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_24f8ce8414",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-8587",
+        "raw_title": "Basalt 2 wireless mouse",
+        "raw_specs": "2.4GHz + BT; 6 buttons; 70g",
+        "price": "USD 345",
+        "stock": 13
+      },
+      "titleKey": "basalt 2 wireless mouse",
+      "price": {
+        "raw": "USD 345",
+        "amount": "345.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_b5fc3d45ba7b67a9da073b71672c29a7bde6782ad6425b25963b6576cde36577",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_259242eb11",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-1453",
+        "raw_title": "Juniper X bookshelf speaker pair",
+        "raw_specs": "40W; passive; 4 ohm",
+        "price": "$85.99",
+        "stock": 265
+      },
+      "titleKey": "juniper x bookshelf speaker pair",
+      "price": {
+        "raw": "$85.99",
+        "amount": "85.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_b4f3bd4278d5f94a4d5dba65b90f2cf68aadf707732cf3135c8cf5ee6d1ac884",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_268d404278",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-1396",
+        "raw_title": "Alto Plus wired earbuds",
+        "raw_specs": "3.5mm; in-line mic",
+        "price": "628,99 EUR",
+        "stock": 477
+      },
+      "titleKey": "alto plus wired earbuds",
+      "price": {
+        "raw": "628,99 EUR",
+        "amount": "628.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_31ed782b5b1e1190dfdf5cb74dd6c597a26e524872f327035ffca6cc30f127aa",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_2862086d0f",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-3850",
+        "raw_title": "Cirrus 3 smart scale",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "$498.99",
+        "stock": 103
+      },
+      "titleKey": "cirrus 3 smart scale",
+      "price": {
+        "raw": "$498.99",
+        "amount": "498.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_569cf9190ede44a144afe0586343d9646ed82d85fc42ee1e04ecb8b646f21e07",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_28b9db3a0d",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-6815",
+        "raw_title": "Pivot 2 desk lamp",
+        "raw_specs": "LED; 5 colour temps; USB-C",
+        "price": "£684.99",
+        "stock": 469
+      },
+      "titleKey": "pivot 2 desk lamp",
+      "price": {
+        "raw": "£684.99",
+        "amount": "684.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_0ba9b6c6f657ce954e7581574b7b321e558610df70052e79d245f39a8e990f11",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_28c6da70ee",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-0000",
+        "raw_title": "MIXED PALLET - ASSORTED ELECTRONICS",
+        "raw_specs": "untested returns, sold as seen",
+        "price": "$450",
+        "stock": 0
+      },
+      "titleKey": "mixed pallet - assorted electronics",
+      "price": {
+        "raw": "$450",
+        "amount": "450.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "non_product",
+      "groupId": null,
+      "reasons": [
+        "mixed_pallet"
+      ]
+    },
+    {
+      "source": {
+        "row_id": "row_293cd70b33",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-5939",
+        "raw_title": "Harbor smart scale",
+        "raw_specs": "",
+        "price": "136,99 EUR",
+        "stock": 140
+      },
+      "titleKey": "harbor smart scale",
+      "price": {
+        "raw": "136,99 EUR",
+        "amount": "136.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_c5724fbc10ea081e4a0248c0a3c047af21e04a03f6cf0ab906dd408fc9f6fbb4",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_2b25cbbe3f",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-2469",
+        "raw_title": "Marlow Pro USB-C hub",
+        "raw_specs": "7-in-1; HDMI 4K30; 100W PD passthrough",
+        "price": "$541.99",
+        "stock": 142
+      },
+      "titleKey": "marlow pro usb-c hub",
+      "price": {
+        "raw": "$541.99",
+        "amount": "541.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_badac93976b835e7c3be706e1b39544f470a3f4a03b314c753184bcd480caea7",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_2bbf2cbc15",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-7285",
+        "raw_title": "JUNIPER 2 MICROSD CARD 256GB",
+        "raw_specs": "UHS-I; A2; up to 170MB/s",
+        "price": "$672.99",
+        "stock": 26
+      },
+      "titleKey": "juniper 2 microsd card 256gb",
+      "price": {
+        "raw": "$672.99",
+        "amount": "672.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_33001caa0847cd99300d49354b4ee70e677d9d95ae0fa4c44f95b6730eaa8282",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_2cfdf4fa44",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-4155",
+        "raw_title": "SABLE LITE SMART SCALE",
+        "raw_specs": "",
+        "price": "£868.99",
+        "stock": 412
+      },
+      "titleKey": "sable lite smart scale",
+      "price": {
+        "raw": "£868.99",
+        "amount": "868.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_24cd78b509711c8e55be0beceea7d4432c3719e685600a87ad0e62f4adb71abf",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_302c214bfa",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-7391",
+        "raw_title": "Cirrus Pro bookshelf speaker pair",
+        "raw_specs": "40W; passive; 4 ohm",
+        "price": "$839.99",
+        "stock": 467
+      },
+      "titleKey": "cirrus pro bookshelf speaker pair",
+      "price": {
+        "raw": "$839.99",
+        "amount": "839.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_54de16fbb423a1c49da5dc1340dda917260ce2d8910a2e84d6a2fa2685eb2594",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_3196ddf429",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-3103",
+        "raw_title": "MESA X TABLET CASE",
+        "raw_specs": "folio; auto sleep/wake",
+        "price": "62,99 EUR",
+        "stock": 125
+      },
+      "titleKey": "mesa x tablet case",
+      "price": {
+        "raw": "62,99 EUR",
+        "amount": "62.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_7a00291706f5ef7cbd2c2339cf5ab32aa5ace39186cc995ad25af821ad61bdf0",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_35c28ff0d0",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-7380",
+        "raw_title": "BASALT 2 MICROSD CARD 256GB",
+        "raw_specs": "UHS-I; A2; up to 170MB/s",
+        "price": "USD 268",
+        "stock": 9
+      },
+      "titleKey": "basalt 2 microsd card 256gb",
+      "price": {
+        "raw": "USD 268",
+        "amount": "268.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_693c03106fa72bd0e6aa3f088f0842ed9656f72fa63c2350a0fda5a9ac432a48",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_38ed2ce97a",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-8249",
+        "raw_title": "Cirrus USB-C hub",
+        "raw_specs": "7-in-1; HDMI 4K30; 100W PD passthrough",
+        "price": "USD 357",
+        "stock": 333
+      },
+      "titleKey": "cirrus usb-c hub",
+      "price": {
+        "raw": "USD 357",
+        "amount": "357.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_2318212773cedc28b4fbe5d9b2d12b4db0f59419d351d140a5a8bbe99c599c71",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_3a68411ed8",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-1917",
+        "raw_title": "Basalt 2 action camera",
+        "raw_specs": "4K60; waterproof to 10m",
+        "price": "£581.99",
+        "stock": 497
+      },
+      "titleKey": "basalt 2 action camera",
+      "price": {
+        "raw": "£581.99",
+        "amount": "581.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_ca6d2bb90f17e59f14485f05f0e408949c196ffc585fddab095ba1fa406e5953",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_3c159f1aea",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-2724",
+        "raw_title": "TORRENT X BOOKSHELF SPEAKER PAIR",
+        "raw_specs": "40W; passive; 4 ohm",
+        "price": "284,99 EUR",
+        "stock": 277
+      },
+      "titleKey": "torrent x bookshelf speaker pair",
+      "price": {
+        "raw": "284,99 EUR",
+        "amount": "284.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_9ee7ea1c2528126b368f5d326fa514b1feb10c805d315a2bfa9dd1f68abe7485",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_3e2dd6416e",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PR-PF-B3",
+        "raw_title": "Pulsefit band 3 activity tracker",
+        "raw_specs": "Heart rate, blood oxygen, 10-day battery, 5 ATM water rating, 1.1 inch display",
+        "price": "USD 69",
+        "stock": 394
+      },
+      "titleKey": "pulsefit band 3 activity tracker",
+      "price": {
+        "raw": "USD 69",
+        "amount": "69.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_d821846eb71e521c64d58b8d87b81e0de5b08af7875b6718d48e58912b4f9593",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_3f77cefacd",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-4399",
+        "raw_title": "Quill 2 action camera",
+        "raw_specs": "4K60; waterproof to 10m",
+        "price": "23,99 EUR",
+        "stock": 348
+      },
+      "titleKey": "quill 2 action camera",
+      "price": {
+        "raw": "23,99 EUR",
+        "amount": "23.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_c16f9e204ee2133297a8c538830df691354f22e8946aef9631cba421b8187fd1",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_3fdcec64b2",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-5533",
+        "raw_title": "Cobalt Lite USB-C hub",
+        "raw_specs": "7-in-1; HDMI 4K30; 100W PD passthrough",
+        "price": "$484.99",
+        "stock": 183
+      },
+      "titleKey": "cobalt lite usb-c hub",
+      "price": {
+        "raw": "$484.99",
+        "amount": "484.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_f4b0d32bf91a59ec3a03e73f4fe2fce247d0083a5589ebd2e071332537c25d5f",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_40ba9c93dc",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-4763",
+        "raw_title": "Larkspur Plus smart scale",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "$44.99",
+        "stock": 106
+      },
+      "titleKey": "larkspur plus smart scale",
+      "price": {
+        "raw": "$44.99",
+        "amount": "44.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_bae6afe93f9dcd2def33334ad9d6dd9e49cff5af8b788a8557c8122298ee68b7",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_4582fae21d",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-9054",
+        "raw_title": "KESTREL X WIRELESS MOUSE",
+        "raw_specs": "2.4GHz + BT; 6 buttons; 70g",
+        "price": "$319.99",
+        "stock": 409
+      },
+      "titleKey": "kestrel x wireless mouse",
+      "price": {
+        "raw": "$319.99",
+        "amount": "319.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_cdbce31b7fe86a6c9da8f1b74599fc0bda222ee8652774aca7b146dd995e6d53",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_4730fd8686",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-6016",
+        "raw_title": "Onyx Lite microSD card 256GB",
+        "raw_specs": "UHS-I; A2; up to 170MB/s",
+        "price": "$587.99",
+        "stock": 113
+      },
+      "titleKey": "onyx lite microsd card 256gb",
+      "price": {
+        "raw": "$587.99",
+        "amount": "587.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_46973d673a5601fdd85c69783c9d69c991bdd5afd782d837a5d21c0d3f20d681",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_48143816e9",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-2589",
+        "raw_title": "Basalt Lite tablet case",
+        "raw_specs": "folio; auto sleep/wake",
+        "price": "$141.99",
+        "stock": 164
+      },
+      "titleKey": "basalt lite tablet case",
+      "price": {
+        "raw": "$141.99",
+        "amount": "141.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_39e2aa0fb4fe6564af5fff730553f24169951ebb361d22b8338784c2b251f407",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_4a8b5dc2b1",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-4003",
+        "raw_title": "Torrent desk lamp",
+        "raw_specs": "LED; 5 colour temps; USB-C",
+        "price": "$140.99",
+        "stock": 133
+      },
+      "titleKey": "torrent desk lamp",
+      "price": {
+        "raw": "$140.99",
+        "amount": "140.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_d3f959e3b0f7c7dd84b3c05e64281eeef9a09d3ab0069fa390aaeca1a98c3771",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_4c297d9293",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-9846",
+        "raw_title": "ALTO 2 ACTION CAMERA",
+        "raw_specs": "4K60; waterproof to 10m",
+        "price": "$41.99",
+        "stock": 279
+      },
+      "titleKey": "alto 2 action camera",
+      "price": {
+        "raw": "$41.99",
+        "amount": "41.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_6d8678975c57856df97739e214f9e9a6f11b7cfbc8ecea688fcb9c7495a913d0",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_4c2be4913a",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-1367",
+        "raw_title": "Alto smart scale",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "£227.99",
+        "stock": 40
+      },
+      "titleKey": "alto smart scale",
+      "price": {
+        "raw": "£227.99",
+        "amount": "227.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_ec140205886886e5b3b2adad000fb033e7d68aa9bc8ddb36cd3b064bc584cf5c",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_4d609c9ff9",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-4888",
+        "raw_title": "Quill 3 desk lamp",
+        "raw_specs": "",
+        "price": "668,99 EUR",
+        "stock": 81
+      },
+      "titleKey": "quill 3 desk lamp",
+      "price": {
+        "raw": "668,99 EUR",
+        "amount": "668.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_e83a72dc635c2b3118fdc0f86b07a13e56278dad8a13ccadb16adbd8b9804fb1",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_4f178f2cd1",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-8330",
+        "raw_title": "Harbor desk lamp",
+        "raw_specs": "LED; 5 colour temps; USB-C",
+        "price": "$768.99",
+        "stock": 456
+      },
+      "titleKey": "harbor desk lamp",
+      "price": {
+        "raw": "$768.99",
+        "amount": "768.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_56106845e44e7b53e74768e4f67ee3c4efce2fa1116915aef2407ac2f1fa7bc3",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_4f475e32c2",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-9369",
+        "raw_title": "Tundra laptop sleeve",
+        "raw_specs": "14in; neoprene",
+        "price": "129,99 EUR",
+        "stock": 126
+      },
+      "titleKey": "tundra laptop sleeve",
+      "price": {
+        "raw": "129,99 EUR",
+        "amount": "129.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_713cc8589c201ab5d44cee5d1eed6d6ebc795822f86df4b5cecb9a7a1485d001",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_5029b0e40e",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-5159",
+        "raw_title": "Kestrel wireless mouse",
+        "raw_specs": "2.4GHz + BT; 6 buttons; 70g",
+        "price": "$36.99",
+        "stock": 391
+      },
+      "titleKey": "kestrel wireless mouse",
+      "price": {
+        "raw": "$36.99",
+        "amount": "36.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_113a6ff5159124ef75f409837e3947606c203f7bad350f61eb92866ec9bd3436",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_51ad7a4367",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-1262",
+        "raw_title": "Marlow tablet case",
+        "raw_specs": "",
+        "price": "$607.99",
+        "stock": 80
+      },
+      "titleKey": "marlow tablet case",
+      "price": {
+        "raw": "$607.99",
+        "amount": "607.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_fe4deff89d2b815dfa0b6d35d2307c4e719f12022d577c34725f173ac203e6c3",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_522195dac7",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-9337",
+        "raw_title": "Kestrel desk lamp",
+        "raw_specs": "LED; 5 colour temps; USB-C",
+        "price": "229,99 EUR",
+        "stock": 92
+      },
+      "titleKey": "kestrel desk lamp",
+      "price": {
+        "raw": "229,99 EUR",
+        "amount": "229.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_ae01ea2bec15157d758491accc138221be2f86a523af310632c2eaf3cba45e7b",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_52a24f8b1b",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-5085",
+        "raw_title": "Harbor X USB-C hub",
+        "raw_specs": "7-in-1; HDMI 4K30; 100W PD passthrough",
+        "price": "USD 35",
+        "stock": 184
+      },
+      "titleKey": "harbor x usb-c hub",
+      "price": {
+        "raw": "USD 35",
+        "amount": "35.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_c0a3ac8a3129deebe77e13beff0ca6fe12e0043df1807b0bbaa885c47e509b7a",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_53533ce63e",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-5138",
+        "raw_title": "Larkspur Plus laptop sleeve",
+        "raw_specs": "14in; neoprene",
+        "price": "$265.99",
+        "stock": 175
+      },
+      "titleKey": "larkspur plus laptop sleeve",
+      "price": {
+        "raw": "$265.99",
+        "amount": "265.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_348bfdb5ba41135b6a7b81d8c83efb4b2bbbded9bb97bb4e9e60ba5c22dd1180",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_55a8c9b86d",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-9845",
+        "raw_title": "Onyx Lite wireless mouse",
+        "raw_specs": "2.4GHz + BT; 6 buttons; 70g",
+        "price": "$397.99",
+        "stock": 45
+      },
+      "titleKey": "onyx lite wireless mouse",
+      "price": {
+        "raw": "$397.99",
+        "amount": "397.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_a060e924b3a3ba56f84dff1b012d2daa12eecde4f9426a8f4d249f4969944e11",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_5609f5b65d",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-5519",
+        "raw_title": "Torrent tablet case",
+        "raw_specs": "folio; auto sleep/wake",
+        "price": "$536.99",
+        "stock": 348
+      },
+      "titleKey": "torrent tablet case",
+      "price": {
+        "raw": "$536.99",
+        "amount": "536.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_ff5e1d8314386ada57444c3159dbf36fea6c7bb6e91d9f105772a1182b071cb8",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_5678fc80e6",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-6871",
+        "raw_title": "Vertex Lite bookshelf speaker pair",
+        "raw_specs": "40W; passive; 4 ohm",
+        "price": "£186.99",
+        "stock": 170
+      },
+      "titleKey": "vertex lite bookshelf speaker pair",
+      "price": {
+        "raw": "£186.99",
+        "amount": "186.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_3eed6bd6438eb6704a43b97ed8f355da0041bd222b1dba60282b8dfba46cf4a1",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_56f937bd9e",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-2036",
+        "raw_title": "ONYX PRO TABLET CASE",
+        "raw_specs": "folio; auto sleep/wake",
+        "price": "USD 15",
+        "stock": 307
+      },
+      "titleKey": "onyx pro tablet case",
+      "price": {
+        "raw": "USD 15",
+        "amount": "15.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_78bce03424dfde8091eeacbaf6ef9e4a9cd2be50608abff576252f70b09d61c2",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_57b5aaacc5",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-2269",
+        "raw_title": "Alto Lite laptop sleeve",
+        "raw_specs": "14in; neoprene",
+        "price": "88,99 EUR",
+        "stock": 499
+      },
+      "titleKey": "alto lite laptop sleeve",
+      "price": {
+        "raw": "88,99 EUR",
+        "amount": "88.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_e7ca77d81b9a7c3d14175a5a26e0f0e819e0d37120350b6317ffec307748dad8",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_5824054a52",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-8631",
+        "raw_title": "ONYX 3 LAPTOP SLEEVE",
+        "raw_specs": "14in; neoprene",
+        "price": "$214.99",
+        "stock": 62
+      },
+      "titleKey": "onyx 3 laptop sleeve",
+      "price": {
+        "raw": "$214.99",
+        "amount": "214.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_872cb86804c10da3388b19cd9624af5d90e503cee7e1a72d0b4f2a988979b677",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_59fb8196e6",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-9674",
+        "raw_title": "CIRRUS PRO SMART SCALE",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "£532.99",
+        "stock": 487
+      },
+      "titleKey": "cirrus pro smart scale",
+      "price": {
+        "raw": "£532.99",
+        "amount": "532.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_b0c62d7d97e23b95a05d9a3768aaa6a2fbe796597906f563fc250b2429da047f",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_5a0b7faba6",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-7325",
+        "raw_title": "Basalt Pro action camera",
+        "raw_specs": "4K60; waterproof to 10m",
+        "price": "£625.99",
+        "stock": 318
+      },
+      "titleKey": "basalt pro action camera",
+      "price": {
+        "raw": "£625.99",
+        "amount": "625.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_6b11d0c567fbbdba3cdf7b010cee05c653bd23cf252a2f703e13ce7fbd9693b4",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_5bc3e64dcb",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-3698",
+        "raw_title": "Larkspur desk lamp",
+        "raw_specs": "LED; 5 colour temps; USB-C",
+        "price": "£107.99",
+        "stock": 190
+      },
+      "titleKey": "larkspur desk lamp",
+      "price": {
+        "raw": "£107.99",
+        "amount": "107.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_cb77c0e8f85827eba490800fa06f20e5aeb9786a6ec1ba0d140fef5cc34c6c97",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_5cc18c2896",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-5036",
+        "raw_title": "Vertex Plus action camera",
+        "raw_specs": "4K60; waterproof to 10m",
+        "price": "769,99 EUR",
+        "stock": 192
+      },
+      "titleKey": "vertex plus action camera",
+      "price": {
+        "raw": "769,99 EUR",
+        "amount": "769.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_5af5683e5cea17dcd81bb3e73522265c10cd29fb494d230d0fa8befcbb364e9a",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_5f0a46c6ee",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-4194",
+        "raw_title": "Cirrus USB-C hub",
+        "raw_specs": "7-in-1; HDMI 4K30; 100W PD passthrough",
+        "price": "$381.99",
+        "stock": 457
+      },
+      "titleKey": "cirrus usb-c hub",
+      "price": {
+        "raw": "$381.99",
+        "amount": "381.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_2318212773cedc28b4fbe5d9b2d12b4db0f59419d351d140a5a8bbe99c599c71",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_60fe207b81",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-4547",
+        "raw_title": "Kestrel Lite tablet case",
+        "raw_specs": "folio; auto sleep/wake",
+        "price": "191,99 EUR",
+        "stock": 182
+      },
+      "titleKey": "kestrel lite tablet case",
+      "price": {
+        "raw": "191,99 EUR",
+        "amount": "191.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_affca037fcb571d0f7a6728e956731056fd3448e2891f91a8fc754c4941f68d7",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_6389333c51",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-2012",
+        "raw_title": "Larkspur Pro bookshelf speaker pair",
+        "raw_specs": "40W; passive; 4 ohm",
+        "price": "$793.99",
+        "stock": 387
+      },
+      "titleKey": "larkspur pro bookshelf speaker pair",
+      "price": {
+        "raw": "$793.99",
+        "amount": "793.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_d67f261737bfeb5852bac67e4974aa314d0d0dc3bbcb561347a3633657453668",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_641c690d68",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-2784",
+        "raw_title": "Quill 3 USB-C hub",
+        "raw_specs": "7-in-1; HDMI 4K30; 100W PD passthrough",
+        "price": "USD 727",
+        "stock": 80
+      },
+      "titleKey": "quill 3 usb-c hub",
+      "price": {
+        "raw": "USD 727",
+        "amount": "727.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_973254aec33b7639121ee0072aae4a9fccff862ba20ac2df091b35d80952885c",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_64543589fc",
+        "supplier": "NordicDist",
+        "supplier_sku": "ND-7701",
+        "raw_title": "TaskFlow K2 Mechanical Keyboard (brown switch)",
+        "raw_specs": "TKL; hot-swap; USB-C; RGB; brown tactile switches",
+        "price": "£89.00",
+        "stock": 380
+      },
+      "titleKey": "taskflow k2 mechanical keyboard (brown switch)",
+      "price": {
+        "raw": "£89.00",
+        "amount": "89.00",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_308d72b202df5aac1129d570762423f4b2f68bb7c349cd5359a568a8071acc9b",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_648ed14543",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-9339",
+        "raw_title": "KESTREL WIRED EARBUDS",
+        "raw_specs": "3.5mm; in-line mic",
+        "price": "$456.99",
+        "stock": 305
+      },
+      "titleKey": "kestrel wired earbuds",
+      "price": {
+        "raw": "$456.99",
+        "amount": "456.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_1fb5b71028208ffba37afb98ee8cbd268b913b22a83c8799cc2cde62cc372cc2",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_6504d4facd",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-6203",
+        "raw_title": "Larkspur Lite laptop sleeve",
+        "raw_specs": "14in; neoprene",
+        "price": "£100.99",
+        "stock": 199
+      },
+      "titleKey": "larkspur lite laptop sleeve",
+      "price": {
+        "raw": "£100.99",
+        "amount": "100.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_9e6d1a95bfb07c7c2490abffaf3b15948d95813457fe657128b9f04e14e98b3d",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_654f1fb60f",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-7575",
+        "raw_title": "Onyx 2 action camera",
+        "raw_specs": "4K60; waterproof to 10m",
+        "price": "$99.99",
+        "stock": 359
+      },
+      "titleKey": "onyx 2 action camera",
+      "price": {
+        "raw": "$99.99",
+        "amount": "99.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_408f0f01d1a87d83982d7cf170ff9c5dc1190065688df3ccb0f56a1438da199b",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_662a7334a3",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-1201",
+        "raw_title": "LARKSPUR 2 TABLET CASE",
+        "raw_specs": "folio; auto sleep/wake",
+        "price": "456,99 EUR",
+        "stock": 464
+      },
+      "titleKey": "larkspur 2 tablet case",
+      "price": {
+        "raw": "456,99 EUR",
+        "amount": "456.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_25161ba3e221790e83700565cb282f350516ad2e8f262c192d26a3be318220f6",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_6668f30f9e",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-4595",
+        "raw_title": "QUILL 3 DESK LAMP",
+        "raw_specs": "",
+        "price": "$658.99",
+        "stock": 134
+      },
+      "titleKey": "quill 3 desk lamp",
+      "price": {
+        "raw": "$658.99",
+        "amount": "658.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_e83a72dc635c2b3118fdc0f86b07a13e56278dad8a13ccadb16adbd8b9804fb1",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_67a1a789da",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-1840",
+        "raw_title": "Juniper Plus microSD card 256GB",
+        "raw_specs": "",
+        "price": "£326.99",
+        "stock": 310
+      },
+      "titleKey": "juniper plus microsd card 256gb",
+      "price": {
+        "raw": "£326.99",
+        "amount": "326.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_41bc26c6207ffece6c9a2c190272a8671ea10030bf9bd2360dfaa536f55f5738",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_68d860d397",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-9105",
+        "raw_title": "Cobalt smart scale",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "USD 472",
+        "stock": 442
+      },
+      "titleKey": "cobalt smart scale",
+      "price": {
+        "raw": "USD 472",
+        "amount": "472.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_beb21df3d3688638af25926ec2121a565983d53127ef82331320ad3b42cfd85f",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_6a281bc385",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-4508",
+        "raw_title": "BASALT PRO ACTION CAMERA",
+        "raw_specs": "4K60; waterproof to 10m",
+        "price": "228,99 EUR",
+        "stock": 355
+      },
+      "titleKey": "basalt pro action camera",
+      "price": {
+        "raw": "228,99 EUR",
+        "amount": "228.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_6b11d0c567fbbdba3cdf7b010cee05c653bd23cf252a2f703e13ce7fbd9693b4",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_6b647120b8",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-9667",
+        "raw_title": "Pivot Pro laptop sleeve",
+        "raw_specs": "14in; neoprene",
+        "price": "USD 96",
+        "stock": 72
+      },
+      "titleKey": "pivot pro laptop sleeve",
+      "price": {
+        "raw": "USD 96",
+        "amount": "96.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_fa1228e3c1b9e2b3eca4d7eebab510e090316848304a6c0c7ba6bfc1e0c991a5",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_6cf12224f7",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-4346",
+        "raw_title": "Cirrus Plus wired earbuds",
+        "raw_specs": "3.5mm; in-line mic",
+        "price": "USD 850",
+        "stock": 6
+      },
+      "titleKey": "cirrus plus wired earbuds",
+      "price": {
+        "raw": "USD 850",
+        "amount": "850.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_24a2e79a41bae47cc7ae8536da05abd3c8e938d25c39abfe2d10a88f88ba5b47",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_6d2f0a90b9",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-8929",
+        "raw_title": "LARKSPUR PLUS SMART SCALE",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "666,99 EUR",
+        "stock": 368
+      },
+      "titleKey": "larkspur plus smart scale",
+      "price": {
+        "raw": "666,99 EUR",
+        "amount": "666.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_bae6afe93f9dcd2def33334ad9d6dd9e49cff5af8b788a8557c8122298ee68b7",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_6d481c7e2b",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-3656",
+        "raw_title": "Alto 3 microSD card 256GB",
+        "raw_specs": "",
+        "price": "$60.99",
+        "stock": 298
+      },
+      "titleKey": "alto 3 microsd card 256gb",
+      "price": {
+        "raw": "$60.99",
+        "amount": "60.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_72c698455497965936849230530b53cd2cb65e41990727593b823147e076b13c",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_6dc62d382b",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-7697",
+        "raw_title": "Sable Pro wired earbuds",
+        "raw_specs": "3.5mm; in-line mic",
+        "price": "$13.99",
+        "stock": 224
+      },
+      "titleKey": "sable pro wired earbuds",
+      "price": {
+        "raw": "$13.99",
+        "amount": "13.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_34eb62eaffc9054dbc7cdba673ac249c5c5df0ff826dce5fdb2daa660fb40d06",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_6eddbd5517",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-5116",
+        "raw_title": "Cobalt Pro USB-C hub",
+        "raw_specs": "7-in-1; HDMI 4K30; 100W PD passthrough",
+        "price": "$23.99",
+        "stock": 93
+      },
+      "titleKey": "cobalt pro usb-c hub",
+      "price": {
+        "raw": "$23.99",
+        "amount": "23.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_97c45999f5d54a7d76bfca8e6f5bf874a4f666051b361c1c889a4c462bc7d7a2",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_6eea41ae9b",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-4964",
+        "raw_title": "Mesa X wireless mouse",
+        "raw_specs": "2.4GHz + BT; 6 buttons; 70g",
+        "price": "£849.99",
+        "stock": 124
+      },
+      "titleKey": "mesa x wireless mouse",
+      "price": {
+        "raw": "£849.99",
+        "amount": "849.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_545c35ca721dd1bd9261c1b7d8fde75287b86613820c77649c366b69c9b2171e",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_6f0c3aa377",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-7390",
+        "raw_title": "Kestrel wireless mouse",
+        "raw_specs": "2.4GHz + BT; 6 buttons; 70g",
+        "price": "$847.99",
+        "stock": 490
+      },
+      "titleKey": "kestrel wireless mouse",
+      "price": {
+        "raw": "$847.99",
+        "amount": "847.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_113a6ff5159124ef75f409837e3947606c203f7bad350f61eb92866ec9bd3436",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_6f66c4cb9e",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-9136",
+        "raw_title": "Onyx Lite action camera",
+        "raw_specs": "4K60; waterproof to 10m",
+        "price": "$851.99",
+        "stock": 370
+      },
+      "titleKey": "onyx lite action camera",
+      "price": {
+        "raw": "$851.99",
+        "amount": "851.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_822dabc399558eaa2acd65eecdc2592e75b4f8f8772eec7eff9f46a437cd0ff6",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_6fff6aa632",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-2266",
+        "raw_title": "BASALT USB-C HUB",
+        "raw_specs": "7-in-1; HDMI 4K30; 100W PD passthrough",
+        "price": "USD 734",
+        "stock": 138
+      },
+      "titleKey": "basalt usb-c hub",
+      "price": {
+        "raw": "USD 734",
+        "amount": "734.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_ed320cfdc3737bfa86646f78983c057e90b04c70cf61624b60c12f3a318fbd5c",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_7074cbc3ad",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-3422",
+        "raw_title": "JUNIPER PRO MICROSD CARD 256GB",
+        "raw_specs": "UHS-I; A2; up to 170MB/s",
+        "price": "508,99 EUR",
+        "stock": 262
+      },
+      "titleKey": "juniper pro microsd card 256gb",
+      "price": {
+        "raw": "508,99 EUR",
+        "amount": "508.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_83b28243a90d9e88e2453d80e2f5961cb09d0806cb1c660299a39159b985c458",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_70bdd4eb63",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-8516",
+        "raw_title": "SABLE DESK LAMP",
+        "raw_specs": "LED; 5 colour temps; USB-C",
+        "price": "USD 187",
+        "stock": 31
+      },
+      "titleKey": "sable desk lamp",
+      "price": {
+        "raw": "USD 187",
+        "amount": "187.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_d7b4aaa0a39e902641a317ba76880c04395975c8f9a303ecf4b1fb8b5739c430",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_71847a9c05",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-5063",
+        "raw_title": "COBALT 3 SMART SCALE",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "$836.99",
+        "stock": 435
+      },
+      "titleKey": "cobalt 3 smart scale",
+      "price": {
+        "raw": "$836.99",
+        "amount": "836.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_0b218ba3bce177cf3237fd9ca8f09bedffc596afc87177663ce95ae38416913b",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_71fb9c3128",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-4527",
+        "raw_title": "Harbor smart scale",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "674,99 EUR",
+        "stock": 114
+      },
+      "titleKey": "harbor smart scale",
+      "price": {
+        "raw": "674,99 EUR",
+        "amount": "674.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_c5724fbc10ea081e4a0248c0a3c047af21e04a03f6cf0ab906dd408fc9f6fbb4",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_728bc009b0",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-8961",
+        "raw_title": "SABLE 2 TABLET CASE",
+        "raw_specs": "folio; auto sleep/wake",
+        "price": "57,99 EUR",
+        "stock": 377
+      },
+      "titleKey": "sable 2 tablet case",
+      "price": {
+        "raw": "57,99 EUR",
+        "amount": "57.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_f204dfc501593974e8a849929103179f1d45d1a8c82f3ae62ae59c4908260359",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_73d3ec91bb",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-8902",
+        "raw_title": "Quill 3 USB-C hub",
+        "raw_specs": "7-in-1; HDMI 4K30; 100W PD passthrough",
+        "price": "$473.99",
+        "stock": 214
+      },
+      "titleKey": "quill 3 usb-c hub",
+      "price": {
+        "raw": "$473.99",
+        "amount": "473.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_973254aec33b7639121ee0072aae4a9fccff862ba20ac2df091b35d80952885c",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_74b8f7797a",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-4955",
+        "raw_title": "Onyx Lite wireless mouse",
+        "raw_specs": "2.4GHz + BT; 6 buttons; 70g",
+        "price": "$658.99",
+        "stock": 340
+      },
+      "titleKey": "onyx lite wireless mouse",
+      "price": {
+        "raw": "$658.99",
+        "amount": "658.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_a060e924b3a3ba56f84dff1b012d2daa12eecde4f9426a8f4d249f4969944e11",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_76b28cdc31",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-9001",
+        "raw_title": "Slate 11 tablet",
+        "raw_specs": "",
+        "price": "$189",
+        "stock": 114
+      },
+      "titleKey": "slate 11 tablet",
+      "price": {
+        "raw": "$189",
+        "amount": "189.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_a1cb7545d898206a7af546b9023a4c5f4a1dd4e27fb564ca4f509d3073ea3f27",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_77ce3dea5e",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-7089",
+        "raw_title": "Juniper X bookshelf speaker pair",
+        "raw_specs": "40W; passive; 4 ohm",
+        "price": "$218.99",
+        "stock": 475
+      },
+      "titleKey": "juniper x bookshelf speaker pair",
+      "price": {
+        "raw": "$218.99",
+        "amount": "218.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_b4f3bd4278d5f94a4d5dba65b90f2cf68aadf707732cf3135c8cf5ee6d1ac884",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_78b4c42770",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-8217",
+        "raw_title": "Cobalt smart scale",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "103,99 EUR",
+        "stock": 152
+      },
+      "titleKey": "cobalt smart scale",
+      "price": {
+        "raw": "103,99 EUR",
+        "amount": "103.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_beb21df3d3688638af25926ec2121a565983d53127ef82331320ad3b42cfd85f",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_79480ac1f8",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-5046",
+        "raw_title": "Alto 2 action camera",
+        "raw_specs": "4K60; waterproof to 10m",
+        "price": "USD 804",
+        "stock": 438
+      },
+      "titleKey": "alto 2 action camera",
+      "price": {
+        "raw": "USD 804",
+        "amount": "804.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_6d8678975c57856df97739e214f9e9a6f11b7cfbc8ecea688fcb9c7495a913d0",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_7b5442e7cc",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-3133",
+        "raw_title": "Basalt Pro bookshelf speaker pair",
+        "raw_specs": "40W; passive; 4 ohm",
+        "price": "$423.99",
+        "stock": 495
+      },
+      "titleKey": "basalt pro bookshelf speaker pair",
+      "price": {
+        "raw": "$423.99",
+        "amount": "423.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_d8122ba37493602e38953cc52d64924ae432fed77fd4cb89be877d3d110cd716",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_7c929ee113",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-8127",
+        "raw_title": "Marlow bookshelf speaker pair",
+        "raw_specs": "40W; passive; 4 ohm",
+        "price": "$155.99",
+        "stock": 27
+      },
+      "titleKey": "marlow bookshelf speaker pair",
+      "price": {
+        "raw": "$155.99",
+        "amount": "155.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_51f3ab6c8e431176b9306e236f73143b79a066dd28031cd8c154e243ec7e1b1f",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_7eabdad0f0",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-5888",
+        "raw_title": "PIVOT PLUS WIRED EARBUDS",
+        "raw_specs": "3.5mm; in-line mic",
+        "price": "$476.99",
+        "stock": 131
+      },
+      "titleKey": "pivot plus wired earbuds",
+      "price": {
+        "raw": "$476.99",
+        "amount": "476.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_7a4a5c73496d346903e560913f76ab442a7b109ae9a8a5aef47bba636017ed05",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_7f3f1b14c3",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "ES-77310",
+        "raw_title": "Sony Corp. WH880N Kopfhoerer",
+        "raw_specs": "Noise Cancelling, 30 Stunden, Multipoint, faltbar",
+        "price": "229,00 EUR",
+        "stock": 250
+      },
+      "titleKey": "sony corp. wh880n kopfhoerer",
+      "price": {
+        "raw": "229,00 EUR",
+        "amount": "229.00",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_d81889620711f147e15384f99d62be6de47b07f871c8b8ea1f0f598bb9e51610",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_7f570b374f",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PR-XXXX",
+        "raw_title": "TEST ROW DO NOT IMPORT",
+        "raw_specs": "test",
+        "price": "0",
+        "stock": 0
+      },
+      "titleKey": "test row do not import",
+      "price": {
+        "raw": "0",
+        "amount": "0.00",
+        "currency": null,
+        "assumption": null,
+        "status": "unknown_currency"
+      },
+      "outcome": "non_product",
+      "groupId": null,
+      "reasons": [
+        "test_record",
+        "price_unknown_currency"
+      ]
+    },
+    {
+      "source": {
+        "row_id": "row_7f9b60153c",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-7054",
+        "raw_title": "Mesa laptop sleeve",
+        "raw_specs": "",
+        "price": "$487.99",
+        "stock": 386
+      },
+      "titleKey": "mesa laptop sleeve",
+      "price": {
+        "raw": "$487.99",
+        "amount": "487.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_ae3329d41a5ec8c2b7be8d3dd4b650db17ed589904178fe0183451d1a98f4bde",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_80738b0804",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "D2R-NULL",
+        "raw_title": "",
+        "raw_specs": "",
+        "price": "",
+        "stock": 0
+      },
+      "titleKey": "",
+      "price": {
+        "raw": "",
+        "amount": null,
+        "currency": null,
+        "assumption": null,
+        "status": "missing"
+      },
+      "outcome": "non_product",
+      "groupId": null,
+      "reasons": [
+        "empty_product",
+        "price_missing"
+      ]
+    },
+    {
+      "source": {
+        "row_id": "row_81030c14d9",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-2468",
+        "raw_title": "EMBER 2 WIRELESS MOUSE",
+        "raw_specs": "2.4GHz + BT; 6 buttons; 70g",
+        "price": "282,99 EUR",
+        "stock": 287
+      },
+      "titleKey": "ember 2 wireless mouse",
+      "price": {
+        "raw": "282,99 EUR",
+        "amount": "282.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_3224d4d244ff69014fa9132eb64b85b9063c68073ea93e2cf3d5bf15c9221698",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_81cd8108b0",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-5063",
+        "raw_title": "SABLE PLUS WIRED EARBUDS",
+        "raw_specs": "",
+        "price": "£155.99",
+        "stock": 499
+      },
+      "titleKey": "sable plus wired earbuds",
+      "price": {
+        "raw": "£155.99",
+        "amount": "155.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_bf4f329ffabb6655173ad9e5fcbf709d226a6cae8b733649bbce7b7780f37fe4",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_833c7feebb",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-1586",
+        "raw_title": "COBALT PRO WIRED EARBUDS",
+        "raw_specs": "",
+        "price": "£386.99",
+        "stock": 58
+      },
+      "titleKey": "cobalt pro wired earbuds",
+      "price": {
+        "raw": "£386.99",
+        "amount": "386.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_252c1a614d97a3282ebaceebd8075d02f15462a2fb0e667e4500ea9b10125aeb",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_83da10f114",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "ES-31002",
+        "raw_title": "Lumen X20 Kompaktkamera",
+        "raw_specs": "20 MP, 5x optischer Zoom, 4K/30, SD-Karte",
+        "price": "399,00 EUR",
+        "stock": 138
+      },
+      "titleKey": "lumen x20 kompaktkamera",
+      "price": {
+        "raw": "399,00 EUR",
+        "amount": "399.00",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_ab92a789675d350405f485c75743a6eadef0ac6b46f40c369d03304590075de7",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_841c563697",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-8498",
+        "raw_title": "Alto X USB-C hub",
+        "raw_specs": "7-in-1; HDMI 4K30; 100W PD passthrough",
+        "price": "$702.99",
+        "stock": 451
+      },
+      "titleKey": "alto x usb-c hub",
+      "price": {
+        "raw": "$702.99",
+        "amount": "702.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_b5114e62f9fec851df2df2c7c41d763b8321ff66d47ae56a64d620e5f4dd9162",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_8774b9baca",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-3303",
+        "raw_title": "Mesa Pro bookshelf speaker pair",
+        "raw_specs": "40W; passive; 4 ohm",
+        "price": "$120.99",
+        "stock": 49
+      },
+      "titleKey": "mesa pro bookshelf speaker pair",
+      "price": {
+        "raw": "$120.99",
+        "amount": "120.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_d62c0c79bb4158234fcbdd93cc17bfb529990df322ea827425595b549e24de36",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_87ace126d4",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "D2R-LLB14",
+        "raw_title": "LedgerLite Book 14 Laptop",
+        "raw_specs": "14\" display, 16 GB memory, 512 GB storage, 2.9 lbs",
+        "price": "$949.00",
+        "stock": 29
+      },
+      "titleKey": "ledgerlite book 14 laptop",
+      "price": {
+        "raw": "$949.00",
+        "amount": "949.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_2d7712235498098919d3008b4cfb85defaa8cb7041e1d810cb9d4e69266db3ae",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_87e1e24c27",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-8024",
+        "raw_title": "Mesa wired earbuds",
+        "raw_specs": "3.5mm; in-line mic",
+        "price": "USD 789",
+        "stock": 104
+      },
+      "titleKey": "mesa wired earbuds",
+      "price": {
+        "raw": "USD 789",
+        "amount": "789.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_928ee39179fc6edd49270299179225155b6bfef372305e270ed0df66ed94bf40",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_88659ce11a",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-2938",
+        "raw_title": "Juniper 2 microSD card 256GB",
+        "raw_specs": "UHS-I; A2; up to 170MB/s",
+        "price": "USD 445",
+        "stock": 425
+      },
+      "titleKey": "juniper 2 microsd card 256gb",
+      "price": {
+        "raw": "USD 445",
+        "amount": "445.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_33001caa0847cd99300d49354b4ee70e677d9d95ae0fa4c44f95b6730eaa8282",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_894eb0e4a9",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-8813",
+        "raw_title": "Basalt 2 laptop sleeve",
+        "raw_specs": "14in; neoprene",
+        "price": "$640.99",
+        "stock": 182
+      },
+      "titleKey": "basalt 2 laptop sleeve",
+      "price": {
+        "raw": "$640.99",
+        "amount": "640.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_f1b6d6fbad7aa585f71040eb500ce5cf6a19fd9b0cbc653f31dea060b8036d98",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_89c864b342",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-8920",
+        "raw_title": "Tundra 3 smart scale",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "USD 524",
+        "stock": 10
+      },
+      "titleKey": "tundra 3 smart scale",
+      "price": {
+        "raw": "USD 524",
+        "amount": "524.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_2f73341690513d3f559711cdb8aebe9b06fa5ceca816c385cff388cdd5bcdd9c",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_8cdaf40615",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-1700",
+        "raw_title": "Tundra bookshelf speaker pair",
+        "raw_specs": "40W; passive; 4 ohm",
+        "price": "150,99 EUR",
+        "stock": 209
+      },
+      "titleKey": "tundra bookshelf speaker pair",
+      "price": {
+        "raw": "150,99 EUR",
+        "amount": "150.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_fa06abbee870a0c4f7904205178aa86d20694ecb5b936cfd0da1dc621021bf2b",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_8d784b2c07",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-1752",
+        "raw_title": "Harbor Plus smart scale",
+        "raw_specs": "",
+        "price": "£682.99",
+        "stock": 69
+      },
+      "titleKey": "harbor plus smart scale",
+      "price": {
+        "raw": "£682.99",
+        "amount": "682.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_35099c9d78e51a020af8cff46c6f2b6fbec25eb76332147df137746e05218367",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_8dfa59e7c2",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-1514",
+        "raw_title": "Torrent Lite laptop sleeve",
+        "raw_specs": "14in; neoprene",
+        "price": "$681.99",
+        "stock": 487
+      },
+      "titleKey": "torrent lite laptop sleeve",
+      "price": {
+        "raw": "$681.99",
+        "amount": "681.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_c22f374b33eb9de59608d85cac54ce751ab9d873e98c1479caa33fcddbdddb05",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_904fefcad0",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-7661",
+        "raw_title": "Juniper Pro desk lamp",
+        "raw_specs": "LED; 5 colour temps; USB-C",
+        "price": "57,99 EUR",
+        "stock": 459
+      },
+      "titleKey": "juniper pro desk lamp",
+      "price": {
+        "raw": "57,99 EUR",
+        "amount": "57.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_1e73524152faf5854cf6431eec495c0cc5940ac75be72693a0aaf3b6771fc62d",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_908ca0635e",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-4313",
+        "raw_title": "Marlow smart scale",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "867,99 EUR",
+        "stock": 360
+      },
+      "titleKey": "marlow smart scale",
+      "price": {
+        "raw": "867,99 EUR",
+        "amount": "867.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_8a0e8ab3713befb5d6adc29a2398d284a1d937ee7fc4a78d9c74ed3fba1b5f87",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_92da044aa3",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "ES-11450",
+        "raw_title": "LedgerLite Book 14 Notebook",
+        "raw_specs": "14 Zoll, 16GB RAM, 512GB SSD, 1.3 kg",
+        "price": "899,00 EUR",
+        "stock": 140
+      },
+      "titleKey": "ledgerlite book 14 notebook",
+      "price": {
+        "raw": "899,00 EUR",
+        "amount": "899.00",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_0d3e7e14ef36430dcf196fcd575862e08493fd1c79504f27396efd9bb80242fc",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_934d37c5c3",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-9574",
+        "raw_title": "ALTO X USB-C HUB",
+        "raw_specs": "7-in-1; HDMI 4K30; 100W PD passthrough",
+        "price": "305,99 EUR",
+        "stock": 295
+      },
+      "titleKey": "alto x usb-c hub",
+      "price": {
+        "raw": "305,99 EUR",
+        "amount": "305.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_b5114e62f9fec851df2df2c7c41d763b8321ff66d47ae56a64d620e5f4dd9162",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_93a80ae523",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-9147",
+        "raw_title": "Juniper 2 smart scale",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "USD 124",
+        "stock": 50
+      },
+      "titleKey": "juniper 2 smart scale",
+      "price": {
+        "raw": "USD 124",
+        "amount": "124.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_fd91e663cc9e197d36114a1e54f3f373a46c878408447bc2df660672763f08c0",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_94d9860adf",
+        "supplier": "NordicDist",
+        "supplier_sku": "ND-6650",
+        "raw_title": "PulseFit Band 3 Fitness Tracker",
+        "raw_specs": "HR + SpO2; 10 day battery; 5ATM; 1.1in AMOLED",
+        "price": "£59.99",
+        "stock": 4
+      },
+      "titleKey": "pulsefit band 3 fitness tracker",
+      "price": {
+        "raw": "£59.99",
+        "amount": "59.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_d5261017d7fa12914739394377bd55e044c6d2d7221960d39f145824c8fcef35",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_9604d0373a",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-6420",
+        "raw_title": "Alto Lite bookshelf speaker pair",
+        "raw_specs": "40W; passive; 4 ohm",
+        "price": "$326.99",
+        "stock": 431
+      },
+      "titleKey": "alto lite bookshelf speaker pair",
+      "price": {
+        "raw": "$326.99",
+        "amount": "326.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_6d45592e2ddc43b326177b2d9bee953faeedc3ecbb4780078fcd49bf608aa313",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_98dbb1901d",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-6106",
+        "raw_title": "Tundra X smart scale",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "49,99 EUR",
+        "stock": 400
+      },
+      "titleKey": "tundra x smart scale",
+      "price": {
+        "raw": "49,99 EUR",
+        "amount": "49.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_dbef5b87ded1bd9f8b9505dc3ca6a275f8f5077fe35c57687e936f76ecfe321e",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_9970a553e5",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-1707",
+        "raw_title": "VERTEX PLUS ACTION CAMERA",
+        "raw_specs": "",
+        "price": "$52.99",
+        "stock": 149
+      },
+      "titleKey": "vertex plus action camera",
+      "price": {
+        "raw": "$52.99",
+        "amount": "52.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_5af5683e5cea17dcd81bb3e73522265c10cd29fb494d230d0fa8befcbb364e9a",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_9a32000da2",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-4730",
+        "raw_title": "SABLE LITE USB-C HUB",
+        "raw_specs": "7-in-1; HDMI 4K30; 100W PD passthrough",
+        "price": "$199.99",
+        "stock": 234
+      },
+      "titleKey": "sable lite usb-c hub",
+      "price": {
+        "raw": "$199.99",
+        "amount": "199.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_fa53e7b2c94cc2b54d4f769be11500b0bbd6f26724eefaa1ebedf0f1b5486d89",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_9b67e4c70b",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-7923",
+        "raw_title": "Juniper tablet case",
+        "raw_specs": "folio; auto sleep/wake",
+        "price": "£264.99",
+        "stock": 467
+      },
+      "titleKey": "juniper tablet case",
+      "price": {
+        "raw": "£264.99",
+        "amount": "264.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_9ae6ca9d2183d66d82b0bb918ec1416411f6597e6bb8d336dc7ff5ad7c1ac3a1",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_9bf0c018ab",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-9461",
+        "raw_title": "TUNDRA LITE SMART SCALE",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "168,99 EUR",
+        "stock": 128
+      },
+      "titleKey": "tundra lite smart scale",
+      "price": {
+        "raw": "168,99 EUR",
+        "amount": "168.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_34802b01a9da8590f5f0a062704109f78f6f8df63cfe7eae075b5403a1627e92",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_9d0de73f86",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-3465",
+        "raw_title": "Ember Plus tablet case",
+        "raw_specs": "folio; auto sleep/wake",
+        "price": "196,99 EUR",
+        "stock": 234
+      },
+      "titleKey": "ember plus tablet case",
+      "price": {
+        "raw": "196,99 EUR",
+        "amount": "196.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_217b1889d670a41bc735add67c1add4c1e38ecfc2381d98282b8bb62a4da426f",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_a1bb1ad2e9",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-5307",
+        "raw_title": "Onyx 3 desk lamp",
+        "raw_specs": "LED; 5 colour temps; USB-C",
+        "price": "£34.99",
+        "stock": 19
+      },
+      "titleKey": "onyx 3 desk lamp",
+      "price": {
+        "raw": "£34.99",
+        "amount": "34.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_c4ce60c73af5dc3df7aa9b72735f613219097ac07c7a9818c04a4378367aa4d4",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_a386736693",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PR-TF-K2-BR",
+        "raw_title": "Taskflow K2 mech keyboard tenkeyless brown",
+        "raw_specs": "Hot swappable, tenkeyless, RGB backlight, USB C, tactile brown",
+        "price": "USD 99",
+        "stock": 243
+      },
+      "titleKey": "taskflow k2 mech keyboard tenkeyless brown",
+      "price": {
+        "raw": "USD 99",
+        "amount": "99.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_b4bf2d3e0eee2813f4e5ead1f96062ea6f4f541d808499deaafa6f32c81a586d",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_a453c69dab",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-2499",
+        "raw_title": "Basalt USB-C hub",
+        "raw_specs": "7-in-1; HDMI 4K30; 100W PD passthrough",
+        "price": "756,99 EUR",
+        "stock": 15
+      },
+      "titleKey": "basalt usb-c hub",
+      "price": {
+        "raw": "756,99 EUR",
+        "amount": "756.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_ed320cfdc3737bfa86646f78983c057e90b04c70cf61624b60c12f3a318fbd5c",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_a4c85dc257",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-4714",
+        "raw_title": "Torrent desk lamp",
+        "raw_specs": "LED; 5 colour temps; USB-C",
+        "price": "USD 153",
+        "stock": 282
+      },
+      "titleKey": "torrent desk lamp",
+      "price": {
+        "raw": "USD 153",
+        "amount": "153.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_d3f959e3b0f7c7dd84b3c05e64281eeef9a09d3ab0069fa390aaeca1a98c3771",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_a60219abb1",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-7608",
+        "raw_title": "QUILL PLUS TABLET CASE",
+        "raw_specs": "folio; auto sleep/wake",
+        "price": "80,99 EUR",
+        "stock": 279
+      },
+      "titleKey": "quill plus tablet case",
+      "price": {
+        "raw": "80,99 EUR",
+        "amount": "80.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_9b41f3a7698cb87fb55f57fc7dfbef2d1fb0f225ad3ce7d256418fe2327ca5ae",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_a661bdf24e",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-2855",
+        "raw_title": "Basalt 2 tablet case",
+        "raw_specs": "folio; auto sleep/wake",
+        "price": "517,99 EUR",
+        "stock": 210
+      },
+      "titleKey": "basalt 2 tablet case",
+      "price": {
+        "raw": "517,99 EUR",
+        "amount": "517.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_e5dc5e6275fbefcc2ac5851028c79ea05def2a5dcd09f3e348014d6d23ef8981",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_a702f5474f",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-5764",
+        "raw_title": "Mesa X wireless mouse",
+        "raw_specs": "2.4GHz + BT; 6 buttons; 70g",
+        "price": "612,99 EUR",
+        "stock": 468
+      },
+      "titleKey": "mesa x wireless mouse",
+      "price": {
+        "raw": "612,99 EUR",
+        "amount": "612.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_545c35ca721dd1bd9261c1b7d8fde75287b86613820c77649c366b69c9b2171e",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_a8a0a10cf2",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-8888",
+        "raw_title": "Kestrel Lite smart scale",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "$290.99",
+        "stock": 175
+      },
+      "titleKey": "kestrel lite smart scale",
+      "price": {
+        "raw": "$290.99",
+        "amount": "290.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_1bfe112f45b13969683c8db116f697bda1d5de73f56779a9eeb62bfb34eff06d",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_a8a4a1acea",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-7217",
+        "raw_title": "JUNIPER X DESK LAMP",
+        "raw_specs": "LED; 5 colour temps; USB-C",
+        "price": "£21.99",
+        "stock": 75
+      },
+      "titleKey": "juniper x desk lamp",
+      "price": {
+        "raw": "£21.99",
+        "amount": "21.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_b6f2ace31a77e2d882a0e3b71e6f450d73d43a8d30b02d38b7d653e2af63e761",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_a8a875a60c",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-2718",
+        "raw_title": "Cobalt X wired earbuds",
+        "raw_specs": "3.5mm; in-line mic",
+        "price": "435,99 EUR",
+        "stock": 18
+      },
+      "titleKey": "cobalt x wired earbuds",
+      "price": {
+        "raw": "435,99 EUR",
+        "amount": "435.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_4355321a7fc7c79c6d36dcc3e5b7c6a1e8071ea725e3513014cfc582762c33ba",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_aa35314055",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-5205",
+        "raw_title": "SABLE DESK LAMP",
+        "raw_specs": "",
+        "price": "$521.99",
+        "stock": 251
+      },
+      "titleKey": "sable desk lamp",
+      "price": {
+        "raw": "$521.99",
+        "amount": "521.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_d7b4aaa0a39e902641a317ba76880c04395975c8f9a303ecf4b1fb8b5739c430",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_aa3fa28de4",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-4052",
+        "raw_title": "TORRENT LITE WIRED EARBUDS",
+        "raw_specs": "3.5mm; in-line mic",
+        "price": "167,99 EUR",
+        "stock": 440
+      },
+      "titleKey": "torrent lite wired earbuds",
+      "price": {
+        "raw": "167,99 EUR",
+        "amount": "167.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_82feb346d062ad42775d2bb080a6a0ca742b4cd343d138f80521d20d4c9eb531",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_ac52a0bb36",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-8206",
+        "raw_title": "EMBER 2 WIRELESS MOUSE",
+        "raw_specs": "2.4GHz + BT; 6 buttons; 70g",
+        "price": "$831.99",
+        "stock": 25
+      },
+      "titleKey": "ember 2 wireless mouse",
+      "price": {
+        "raw": "$831.99",
+        "amount": "831.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_3224d4d244ff69014fa9132eb64b85b9063c68073ea93e2cf3d5bf15c9221698",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_ad9b8ea940",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-7199",
+        "raw_title": "ALTO X LAPTOP SLEEVE",
+        "raw_specs": "14in; neoprene",
+        "price": "£426.99",
+        "stock": 8
+      },
+      "titleKey": "alto x laptop sleeve",
+      "price": {
+        "raw": "£426.99",
+        "amount": "426.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_11a70c9c59c98f515af2515f7f73e2aac4bdcaa5e506b30de7924a25852ac4a8",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_aef34b7f58",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-3827",
+        "raw_title": "TORRENT LITE LAPTOP SLEEVE",
+        "raw_specs": "14in; neoprene",
+        "price": "USD 879",
+        "stock": 226
+      },
+      "titleKey": "torrent lite laptop sleeve",
+      "price": {
+        "raw": "USD 879",
+        "amount": "879.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_c22f374b33eb9de59608d85cac54ce751ab9d873e98c1479caa33fcddbdddb05",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_b2475a3df6",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-4701",
+        "raw_title": "Cobalt X action camera",
+        "raw_specs": "4K60; waterproof to 10m",
+        "price": "$238.99",
+        "stock": 352
+      },
+      "titleKey": "cobalt x action camera",
+      "price": {
+        "raw": "$238.99",
+        "amount": "238.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_71ac1428088a14d4f20302d60b96f146f02a033cec210430c40ed761484cf388",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_b2a6bc7889",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-9619",
+        "raw_title": "Tundra 2 wireless mouse",
+        "raw_specs": "2.4GHz + BT; 6 buttons; 70g",
+        "price": "USD 196",
+        "stock": 215
+      },
+      "titleKey": "tundra 2 wireless mouse",
+      "price": {
+        "raw": "USD 196",
+        "amount": "196.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_61a39740cd81714e60277a0f9abef3d2003481b5a4de8298c4565fb8b41ede82",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_b40060c12f",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-6670",
+        "raw_title": "Cobalt Pro action camera",
+        "raw_specs": "4K60; waterproof to 10m",
+        "price": "$114.99",
+        "stock": 456
+      },
+      "titleKey": "cobalt pro action camera",
+      "price": {
+        "raw": "$114.99",
+        "amount": "114.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_86dc978ab09e20de9215a879faba843953af38941c7e7184cce3c06f85eb4931",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_b797ec3e0c",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-6335",
+        "raw_title": "Juniper X desk lamp",
+        "raw_specs": "LED; 5 colour temps; USB-C",
+        "price": "USD 740",
+        "stock": 444
+      },
+      "titleKey": "juniper x desk lamp",
+      "price": {
+        "raw": "USD 740",
+        "amount": "740.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_b6f2ace31a77e2d882a0e3b71e6f450d73d43a8d30b02d38b7d653e2af63e761",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_b82f7fcc2a",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-3452",
+        "raw_title": "Cobalt X desk lamp",
+        "raw_specs": "LED; 5 colour temps; USB-C",
+        "price": "$29.99",
+        "stock": 130
+      },
+      "titleKey": "cobalt x desk lamp",
+      "price": {
+        "raw": "$29.99",
+        "amount": "29.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_611b26b106f1ad7d8f0807887a56027de9aaead61ae2bec632431cb37120ebb9",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_b97f53ab30",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-4989",
+        "raw_title": "Marlow 3 desk lamp",
+        "raw_specs": "LED; 5 colour temps; USB-C",
+        "price": "$716.99",
+        "stock": 263
+      },
+      "titleKey": "marlow 3 desk lamp",
+      "price": {
+        "raw": "$716.99",
+        "amount": "716.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_01d67db8c357dd1c51c4e76446792b57b45a7e5e23bdd719abf5f74d6c20526a",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_ba57c0fc87",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-6014",
+        "raw_title": "CIRRUS SMART SCALE",
+        "raw_specs": "",
+        "price": "$99.99",
+        "stock": 395
+      },
+      "titleKey": "cirrus smart scale",
+      "price": {
+        "raw": "$99.99",
+        "amount": "99.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_5aed2d26272a4faecafb2080d9c53de7b3760af1e854dbb1fc2410ca9fc0b28a",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_bb41623d6c",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-5988",
+        "raw_title": "Cobalt Pro bookshelf speaker pair",
+        "raw_specs": "40W; passive; 4 ohm",
+        "price": "$180.99",
+        "stock": 220
+      },
+      "titleKey": "cobalt pro bookshelf speaker pair",
+      "price": {
+        "raw": "$180.99",
+        "amount": "180.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_d61728331d68824684040c734fafb6aede33a7157f1a5e9a3a1d090f1afa490d",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_bb6d2613d4",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-5258",
+        "raw_title": "Cobalt X wireless mouse",
+        "raw_specs": "2.4GHz + BT; 6 buttons; 70g",
+        "price": "$615.99",
+        "stock": 62
+      },
+      "titleKey": "cobalt x wireless mouse",
+      "price": {
+        "raw": "$615.99",
+        "amount": "615.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_6b15d37d2e2526d8485f5266a6687fa580daa106273e16c19a49c6648e30f8d9",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_bbaad66b9f",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-8919",
+        "raw_title": "KESTREL TABLET CASE",
+        "raw_specs": "",
+        "price": "£405.99",
+        "stock": 310
+      },
+      "titleKey": "kestrel tablet case",
+      "price": {
+        "raw": "£405.99",
+        "amount": "405.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_51bcbb4ba9e9f27e0f33b1bb24fde33ad19be2320c51d7ce07e3143a0c4d5f17",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_bcbe8b38fe",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-2489",
+        "raw_title": "SABLE 2 TABLET CASE",
+        "raw_specs": "folio; auto sleep/wake",
+        "price": "£533.99",
+        "stock": 81
+      },
+      "titleKey": "sable 2 tablet case",
+      "price": {
+        "raw": "£533.99",
+        "amount": "533.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_f204dfc501593974e8a849929103179f1d45d1a8c82f3ae62ae59c4908260359",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_bdbc045131",
+        "supplier": "NordicDist",
+        "supplier_sku": "ND-4417",
+        "raw_title": "AeroBuds Pro True Wireless Earbuds - Black",
+        "raw_specs": "ANC; Bluetooth 5.3; 20h total playback with case; IPX4; USB-C",
+        "price": "£129.99",
+        "stock": 61
+      },
+      "titleKey": "aerobuds pro true wireless earbuds - black",
+      "price": {
+        "raw": "£129.99",
+        "amount": "129.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_094ad0485a738e91dbd1eaa2e40254ba2d857ec17a79ef0160ef75ba73b00bdc",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_bddc33a831",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-2644",
+        "raw_title": "QUILL PLUS TABLET CASE",
+        "raw_specs": "folio; auto sleep/wake",
+        "price": "USD 847",
+        "stock": 234
+      },
+      "titleKey": "quill plus tablet case",
+      "price": {
+        "raw": "USD 847",
+        "amount": "847.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_9b41f3a7698cb87fb55f57fc7dfbef2d1fb0f225ad3ce7d256418fe2327ca5ae",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_be3b86088a",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-2194",
+        "raw_title": "LARKSPUR LITE ACTION CAMERA",
+        "raw_specs": "4K60; waterproof to 10m",
+        "price": "USD 134",
+        "stock": 232
+      },
+      "titleKey": "larkspur lite action camera",
+      "price": {
+        "raw": "USD 134",
+        "amount": "134.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_08f03317622f2daaf1dcb022f558218de6a0b86411b90c43eef0075f6fcf747a",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_c0c4b370e4",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-9441",
+        "raw_title": "Pivot Lite wireless mouse",
+        "raw_specs": "2.4GHz + BT; 6 buttons; 70g",
+        "price": "£301.99",
+        "stock": 345
+      },
+      "titleKey": "pivot lite wireless mouse",
+      "price": {
+        "raw": "£301.99",
+        "amount": "301.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_5e16d880b3e540caa566091b66da76a015a95ed088a1207ea460669bc5a4bbb7",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_c2467f5304",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "D2R-NIM2",
+        "raw_title": "NIMBUS 2 speaker - waterproof",
+        "raw_specs": "12 W, 14 hour battery, IP67 rated, 42 oz",
+        "price": "$89.99",
+        "stock": 127
+      },
+      "titleKey": "nimbus 2 speaker - waterproof",
+      "price": {
+        "raw": "$89.99",
+        "amount": "89.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_2a8b6fe99286c74d9c5c8303df41acb6a3fd4cbd600248298002bd7166bf72bf",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_c3501c6da1",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-4706",
+        "raw_title": "CIRRUS PRO BOOKSHELF SPEAKER PAIR",
+        "raw_specs": "40W; passive; 4 ohm",
+        "price": "£797.99",
+        "stock": 138
+      },
+      "titleKey": "cirrus pro bookshelf speaker pair",
+      "price": {
+        "raw": "£797.99",
+        "amount": "797.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_54de16fbb423a1c49da5dc1340dda917260ce2d8910a2e84d6a2fa2685eb2594",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_c372f682ee",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-8151",
+        "raw_title": "Alto 3 microSD card 256GB",
+        "raw_specs": "UHS-I; A2; up to 170MB/s",
+        "price": "USD 272",
+        "stock": 215
+      },
+      "titleKey": "alto 3 microsd card 256gb",
+      "price": {
+        "raw": "USD 272",
+        "amount": "272.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_72c698455497965936849230530b53cd2cb65e41990727593b823147e076b13c",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_c503f0112e",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-1316",
+        "raw_title": "Larkspur Lite tablet case",
+        "raw_specs": "folio; auto sleep/wake",
+        "price": "$522.99",
+        "stock": 179
+      },
+      "titleKey": "larkspur lite tablet case",
+      "price": {
+        "raw": "$522.99",
+        "amount": "522.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_f62e01d162c8085889e669a7f746b519d0b07501bf311ab2b02a42f3a4a18a4a",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_c53344afdc",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-4739",
+        "raw_title": "Pivot Lite smart scale",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "$151.99",
+        "stock": 442
+      },
+      "titleKey": "pivot lite smart scale",
+      "price": {
+        "raw": "$151.99",
+        "amount": "151.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_9a297ad1f7fc6b3ae88a9946bffdcdea550be7329fdfcb0e36a2d23c0d0489a0",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_c5d74e7abd",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-7395",
+        "raw_title": "Marlow 2 action camera",
+        "raw_specs": "4K60; waterproof to 10m",
+        "price": "£121.99",
+        "stock": 87
+      },
+      "titleKey": "marlow 2 action camera",
+      "price": {
+        "raw": "£121.99",
+        "amount": "121.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_c87cae42b79aa7a25aaa454c917b8e3657eadbb840ea1d79bd309b035c587ab9",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_c7628d7c8b",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-1219",
+        "raw_title": "SABLE X WIRELESS MOUSE",
+        "raw_specs": "2.4GHz + BT; 6 buttons; 70g",
+        "price": "206,99 EUR",
+        "stock": 75
+      },
+      "titleKey": "sable x wireless mouse",
+      "price": {
+        "raw": "206,99 EUR",
+        "amount": "206.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_8ad3a11933914da9d342f0c07f2d6563deb407b2adea7b645fb6b1b464ce0d5f",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_c82cd2b2bf",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-3720",
+        "raw_title": "Larkspur Lite tablet case",
+        "raw_specs": "folio; auto sleep/wake",
+        "price": "$530.99",
+        "stock": 357
+      },
+      "titleKey": "larkspur lite tablet case",
+      "price": {
+        "raw": "$530.99",
+        "amount": "530.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_f62e01d162c8085889e669a7f746b519d0b07501bf311ab2b02a42f3a4a18a4a",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_c8617509f8",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-1807",
+        "raw_title": "Larkspur Plus microSD card 256GB",
+        "raw_specs": "UHS-I; A2; up to 170MB/s",
+        "price": "$768.99",
+        "stock": 148
+      },
+      "titleKey": "larkspur plus microsd card 256gb",
+      "price": {
+        "raw": "$768.99",
+        "amount": "768.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_717227c1758bc0368040bcd25f41cf652976ebfadda60b24868691c7a85a9329",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_ca51ad691e",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-2336",
+        "raw_title": "Torrent X bookshelf speaker pair",
+        "raw_specs": "40W; passive; 4 ohm",
+        "price": "618,99 EUR",
+        "stock": 295
+      },
+      "titleKey": "torrent x bookshelf speaker pair",
+      "price": {
+        "raw": "618,99 EUR",
+        "amount": "618.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_9ee7ea1c2528126b368f5d326fa514b1feb10c805d315a2bfa9dd1f68abe7485",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_cdf75e46ea",
+        "supplier": "NordicDist",
+        "supplier_sku": "ND-2202",
+        "raw_title": "Nimbus 2 Pro Portable Bluetooth Speaker",
+        "raw_specs": "24W output; 18h battery; IP67; weight 1.6kg; stereo pairing",
+        "price": "£119.00",
+        "stock": 126
+      },
+      "titleKey": "nimbus 2 pro portable bluetooth speaker",
+      "price": {
+        "raw": "£119.00",
+        "amount": "119.00",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_3aa2f8bca3c9e23b683af314ab6af5143a2091f008b93b78c509f1b89404d709",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_ceb27e8382",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-9573",
+        "raw_title": "Basalt 2 microSD card 256GB",
+        "raw_specs": "UHS-I; A2; up to 170MB/s",
+        "price": "£860.99",
+        "stock": 441
+      },
+      "titleKey": "basalt 2 microsd card 256gb",
+      "price": {
+        "raw": "£860.99",
+        "amount": "860.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_693c03106fa72bd0e6aa3f088f0842ed9656f72fa63c2350a0fda5a9ac432a48",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_cfc9d66ae8",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "D2R-FC-B1",
+        "raw_title": "FreshCrate Blend One Countertop Blender",
+        "raw_specs": "800W; 1.5L glass jug; 6 speeds; dishwasher safe",
+        "price": "$119.00",
+        "stock": 186
+      },
+      "titleKey": "freshcrate blend one countertop blender",
+      "price": {
+        "raw": "$119.00",
+        "amount": "119.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_c836990420d3387d9b52f8955b93506779b9463f4f2859748c0254b911c70f0a",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_d01593ee00",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-9754",
+        "raw_title": "Basalt Pro bookshelf speaker pair",
+        "raw_specs": "40W; passive; 4 ohm",
+        "price": "106,99 EUR",
+        "stock": 260
+      },
+      "titleKey": "basalt pro bookshelf speaker pair",
+      "price": {
+        "raw": "106,99 EUR",
+        "amount": "106.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_d8122ba37493602e38953cc52d64924ae432fed77fd4cb89be877d3d110cd716",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_d097195181",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-2330",
+        "raw_title": "Vertex Plus USB-C hub",
+        "raw_specs": "7-in-1; HDMI 4K30; 100W PD passthrough",
+        "price": "USD 281",
+        "stock": 303
+      },
+      "titleKey": "vertex plus usb-c hub",
+      "price": {
+        "raw": "USD 281",
+        "amount": "281.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_d8b42fa67efce6f5c843701c90433b1ed2847042f860c4176d800687646926d8",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_d2fac2ddba",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-5114",
+        "raw_title": "Kestrel X wireless mouse",
+        "raw_specs": "2.4GHz + BT; 6 buttons; 70g",
+        "price": "720,99 EUR",
+        "stock": 264
+      },
+      "titleKey": "kestrel x wireless mouse",
+      "price": {
+        "raw": "720,99 EUR",
+        "amount": "720.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_cdbce31b7fe86a6c9da8f1b74599fc0bda222ee8652774aca7b146dd995e6d53",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_d40a07ffb8",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-7557",
+        "raw_title": "LARKSPUR PRO BOOKSHELF SPEAKER PAIR",
+        "raw_specs": "",
+        "price": "£365.99",
+        "stock": 375
+      },
+      "titleKey": "larkspur pro bookshelf speaker pair",
+      "price": {
+        "raw": "£365.99",
+        "amount": "365.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_d67f261737bfeb5852bac67e4974aa314d0d0dc3bbcb561347a3633657453668",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_d40a3f9143",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-4457",
+        "raw_title": "Larkspur Lite action camera",
+        "raw_specs": "4K60; waterproof to 10m",
+        "price": "$38.99",
+        "stock": 452
+      },
+      "titleKey": "larkspur lite action camera",
+      "price": {
+        "raw": "$38.99",
+        "amount": "38.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_08f03317622f2daaf1dcb022f558218de6a0b86411b90c43eef0075f6fcf747a",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_d440c7c5af",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-7611",
+        "raw_title": "BASALT PRO WIRELESS MOUSE",
+        "raw_specs": "2.4GHz + BT; 6 buttons; 70g",
+        "price": "$445.99",
+        "stock": 148
+      },
+      "titleKey": "basalt pro wireless mouse",
+      "price": {
+        "raw": "$445.99",
+        "amount": "445.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_896a101e29258bc2677f8aafb718a749d6ecfa37f66159763736ccfd9314a724",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_d5d5379960",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-7726",
+        "raw_title": "Sable X microSD card 256GB",
+        "raw_specs": "UHS-I; A2; up to 170MB/s",
+        "price": "385,99 EUR",
+        "stock": 179
+      },
+      "titleKey": "sable x microsd card 256gb",
+      "price": {
+        "raw": "385,99 EUR",
+        "amount": "385.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_54534df9e649119b340515a66887885c4ea06227ffa1e6281d44d3079f71b6ab",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_d878933395",
+        "supplier": "NordicDist",
+        "supplier_sku": "NO-9298",
+        "raw_title": "CIRRUS PRO WIRED EARBUDS",
+        "raw_specs": "3.5mm; in-line mic",
+        "price": "£313.99",
+        "stock": 166
+      },
+      "titleKey": "cirrus pro wired earbuds",
+      "price": {
+        "raw": "£313.99",
+        "amount": "313.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_ed24b266dba1cc8461456ebd745aab04bcb1609d4852c2dec2d1194b21103611",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_d8919b722b",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PR-ORB7",
+        "raw_title": "Orbit 7 Smartphone 128GB",
+        "raw_specs": "6.4in OLED, 128GB, 50MP main, 4700mAh",
+        "price": "USD 549",
+        "stock": 348
+      },
+      "titleKey": "orbit 7 smartphone 128gb",
+      "price": {
+        "raw": "USD 549",
+        "amount": "549.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_9c31a037bc87bdc5eb52bb495b50b3bd6405d84e1329059d78908afbe1cbc6df",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_d98f99472c",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-6605",
+        "raw_title": "Sable Pro action camera",
+        "raw_specs": "4K60; waterproof to 10m",
+        "price": "517,99 EUR",
+        "stock": 368
+      },
+      "titleKey": "sable pro action camera",
+      "price": {
+        "raw": "517,99 EUR",
+        "amount": "517.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_f4132bcde6d2bcfb6beac13f50ad5adb183f3caa3fada819676b781289b696a2",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_da6585ad9f",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-5959",
+        "raw_title": "Vertex Lite desk lamp",
+        "raw_specs": "LED; 5 colour temps; USB-C",
+        "price": "USD 720",
+        "stock": 393
+      },
+      "titleKey": "vertex lite desk lamp",
+      "price": {
+        "raw": "USD 720",
+        "amount": "720.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_738ebb2f2cbc9e311195ff0eddc60f5587fbc1aa647caf02962685cb804b58b1",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_db932df2b7",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-9551",
+        "raw_title": "Sable 3 microSD card 256GB",
+        "raw_specs": "UHS-I; A2; up to 170MB/s",
+        "price": "$657.99",
+        "stock": 472
+      },
+      "titleKey": "sable 3 microsd card 256gb",
+      "price": {
+        "raw": "$657.99",
+        "amount": "657.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_5e6d164fe2f82dcde9f6d0661d91a331402bbcf9c5a827aa50e129d0b70f0fe1",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_de5e00a8f3",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-3016",
+        "raw_title": "Mesa 2 action camera",
+        "raw_specs": "4K60; waterproof to 10m",
+        "price": "184,99 EUR",
+        "stock": 145
+      },
+      "titleKey": "mesa 2 action camera",
+      "price": {
+        "raw": "184,99 EUR",
+        "amount": "184.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_ee5eccdeb02b5169061667265adde5ea0ffa4fce9acf3cd6f885f1fae9df22e9",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_decc7f2137",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-8495",
+        "raw_title": "Torrent X bookshelf speaker pair",
+        "raw_specs": "40W; passive; 4 ohm",
+        "price": "$658.99",
+        "stock": 226
+      },
+      "titleKey": "torrent x bookshelf speaker pair",
+      "price": {
+        "raw": "$658.99",
+        "amount": "658.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_9ee7ea1c2528126b368f5d326fa514b1feb10c805d315a2bfa9dd1f68abe7485",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_e0a6cb6b3f",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-4366",
+        "raw_title": "Kestrel wired earbuds",
+        "raw_specs": "3.5mm; in-line mic",
+        "price": "897,99 EUR",
+        "stock": 366
+      },
+      "titleKey": "kestrel wired earbuds",
+      "price": {
+        "raw": "897,99 EUR",
+        "amount": "897.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_1fb5b71028208ffba37afb98ee8cbd268b913b22a83c8799cc2cde62cc372cc2",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_e0afb74574",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "ES-99120",
+        "raw_title": "AEROBUDS PRO / schwarz / ANC",
+        "raw_specs": "Bluetooth 5.3, Akku 18h, IPX4, USB-C Ladecase",
+        "price": "139,00 EUR",
+        "stock": 203
+      },
+      "titleKey": "aerobuds pro / schwarz / anc",
+      "price": {
+        "raw": "139,00 EUR",
+        "amount": "139.00",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_153ba7a017bc0fa6729c96317531615dc929946fbd44000cd743dae69ed81e4c",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_e1124c3b3f",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-6853",
+        "raw_title": "Basalt smart scale",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "USD 559",
+        "stock": 439
+      },
+      "titleKey": "basalt smart scale",
+      "price": {
+        "raw": "USD 559",
+        "amount": "559.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_bf2c815f65e870d4c3f87eb42151de1eaad42b2f537ada3914d30749f5a7dfe0",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_e51140ad9b",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-7040",
+        "raw_title": "LARKSPUR DESK LAMP",
+        "raw_specs": "LED; 5 colour temps; USB-C",
+        "price": "$291.99",
+        "stock": 426
+      },
+      "titleKey": "larkspur desk lamp",
+      "price": {
+        "raw": "$291.99",
+        "amount": "291.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_cb77c0e8f85827eba490800fa06f20e5aeb9786a6ec1ba0d140fef5cc34c6c97",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_e571323780",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-1309",
+        "raw_title": "Onyx tablet case",
+        "raw_specs": "folio; auto sleep/wake",
+        "price": "853,99 EUR",
+        "stock": 225
+      },
+      "titleKey": "onyx tablet case",
+      "price": {
+        "raw": "853,99 EUR",
+        "amount": "853.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_ad720648626b6df4ec3f0d9db1dc939a0e0f83a61080d8cde8378a0243ca25af",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_e619a63286",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-7765",
+        "raw_title": "Marlow bookshelf speaker pair",
+        "raw_specs": "40W; passive; 4 ohm",
+        "price": "USD 128",
+        "stock": 61
+      },
+      "titleKey": "marlow bookshelf speaker pair",
+      "price": {
+        "raw": "USD 128",
+        "amount": "128.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_51f3ab6c8e431176b9306e236f73143b79a066dd28031cd8c154e243ec7e1b1f",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_e67082ee31",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-9327",
+        "raw_title": "Cobalt 2 smart scale",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "$862.99",
+        "stock": 4
+      },
+      "titleKey": "cobalt 2 smart scale",
+      "price": {
+        "raw": "$862.99",
+        "amount": "862.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_c2bcd2e89ea2474173008eff733a2b53b4b3fc7af9800d7e0dc093f2e6e4631a",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_e6bcf83e77",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-1826",
+        "raw_title": "Mesa laptop sleeve",
+        "raw_specs": "14in; neoprene",
+        "price": "USD 818",
+        "stock": 162
+      },
+      "titleKey": "mesa laptop sleeve",
+      "price": {
+        "raw": "USD 818",
+        "amount": "818.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_ae3329d41a5ec8c2b7be8d3dd4b650db17ed589904178fe0183451d1a98f4bde",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_ed73b4dab2",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-8388",
+        "raw_title": "Vertex Plus wired earbuds",
+        "raw_specs": "3.5mm; in-line mic",
+        "price": "527,99 EUR",
+        "stock": 250
+      },
+      "titleKey": "vertex plus wired earbuds",
+      "price": {
+        "raw": "527,99 EUR",
+        "amount": "527.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_f744be9edf5f6d481ed2e6be10e92a01bdcba13cab70a211a6b379c0934a44f6",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_ef93481968",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-1876",
+        "raw_title": "MESA 3 USB-C HUB",
+        "raw_specs": "7-in-1; HDMI 4K30; 100W PD passthrough",
+        "price": "$710.99",
+        "stock": 419
+      },
+      "titleKey": "mesa 3 usb-c hub",
+      "price": {
+        "raw": "$710.99",
+        "amount": "710.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_39b8af421d665ae3f085f3a364f5c4e3e0cc55486337542691d9d46b79cfc5cf",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_f0ad473862",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-4597",
+        "raw_title": "Cobalt Pro USB-C hub",
+        "raw_specs": "7-in-1; HDMI 4K30; 100W PD passthrough",
+        "price": "$867.99",
+        "stock": 317
+      },
+      "titleKey": "cobalt pro usb-c hub",
+      "price": {
+        "raw": "$867.99",
+        "amount": "867.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_97c45999f5d54a7d76bfca8e6f5bf874a4f666051b361c1c889a4c462bc7d7a2",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_f29e09c258",
+        "supplier": "Direct2Retail",
+        "supplier_sku": "DI-9898",
+        "raw_title": "JUNIPER 3 SMART SCALE",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "$290.99",
+        "stock": 329
+      },
+      "titleKey": "juniper 3 smart scale",
+      "price": {
+        "raw": "$290.99",
+        "amount": "290.99",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": "$ interpreted as USD (MVP policy)"
+      },
+      "outcome": "grouped",
+      "groupId": "b0_2f1820f6a5e2498924a7d83c17b6ba5f5a4563a38f20d4852c3ccb681c5d09d4",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_f35a2ab58f",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-2369",
+        "raw_title": "Torrent X bookshelf speaker pair",
+        "raw_specs": "40W; passive; 4 ohm",
+        "price": "USD 458",
+        "stock": 84
+      },
+      "titleKey": "torrent x bookshelf speaker pair",
+      "price": {
+        "raw": "USD 458",
+        "amount": "458.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_9ee7ea1c2528126b368f5d326fa514b1feb10c805d315a2bfa9dd1f68abe7485",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_f3873a8816",
+        "supplier": "NordicDist",
+        "supplier_sku": "ND-2201",
+        "raw_title": "Nimbus 2 Portable Bluetooth Speaker",
+        "raw_specs": "12W output; 14h battery; IP67; weight 1.2kg",
+        "price": "£79.00",
+        "stock": 257
+      },
+      "titleKey": "nimbus 2 portable bluetooth speaker",
+      "price": {
+        "raw": "£79.00",
+        "amount": "79.00",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_9055d0a8e66f268fd0cbf192b659c2de865849ab24f16c4dd6e802767a20debc",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_f4de4c72c5",
+        "supplier": "clearance-lots",
+        "supplier_sku": "CL-0001",
+        "raw_title": "*** PRICE DROP *** see attached sheet",
+        "raw_specs": "",
+        "price": "",
+        "stock": 0
+      },
+      "titleKey": "*** price drop *** see attached sheet",
+      "price": {
+        "raw": "",
+        "amount": null,
+        "currency": null,
+        "assumption": null,
+        "status": "missing"
+      },
+      "outcome": "non_product",
+      "groupId": null,
+      "reasons": [
+        "price_notice",
+        "price_missing"
+      ]
+    },
+    {
+      "source": {
+        "row_id": "row_f73f37291f",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-2508",
+        "raw_title": "Kestrel 2 bookshelf speaker pair",
+        "raw_specs": "40W; passive; 4 ohm",
+        "price": "521,99 EUR",
+        "stock": 210
+      },
+      "titleKey": "kestrel 2 bookshelf speaker pair",
+      "price": {
+        "raw": "521,99 EUR",
+        "amount": "521.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_50032c90da018d397704acedca3b4a9006d0ace86d2b04c742c9c9ee6e91417f",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_fb6dff1674",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-4081",
+        "raw_title": "Cirrus Lite smart scale",
+        "raw_specs": "BIA; app sync; 180kg max",
+        "price": "22,99 EUR",
+        "stock": 274
+      },
+      "titleKey": "cirrus lite smart scale",
+      "price": {
+        "raw": "22,99 EUR",
+        "amount": "22.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_888689678ddab495e146dd99184d886d96dbc2d1b54e4f1a17168523b8cfa707",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_fbe753d7cc",
+        "supplier": "NordicDist",
+        "supplier_sku": "ND-5540",
+        "raw_title": "Vault Portable SSD 2TB",
+        "raw_specs": "USB 3.2 Gen2; up to 1050MB/s read; USB-C; 3yr warranty",
+        "price": "£139.00",
+        "stock": 264
+      },
+      "titleKey": "vault portable ssd 2tb",
+      "price": {
+        "raw": "£139.00",
+        "amount": "139.00",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_3847e428671c18e60d9b08b627a5028b7b2fe70ee1afd33cc241b020fa90ae05",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_fcc5f20edc",
+        "supplier": "EuroStock GmbH",
+        "supplier_sku": "EU-3109",
+        "raw_title": "HARBOR DESK LAMP",
+        "raw_specs": "LED; 5 colour temps; USB-C",
+        "price": "897,99 EUR",
+        "stock": 191
+      },
+      "titleKey": "harbor desk lamp",
+      "price": {
+        "raw": "897,99 EUR",
+        "amount": "897.99",
+        "currency": "EUR",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_56106845e44e7b53e74768e4f67ee3c4efce2fa1116915aef2407ac2f1fa7bc3",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_fd1f97e32c",
+        "supplier": "PacRim Trading",
+        "supplier_sku": "PA-2171",
+        "raw_title": "TORRENT 2 MICROSD CARD 256GB",
+        "raw_specs": "UHS-I; A2; up to 170MB/s",
+        "price": "USD 308",
+        "stock": 316
+      },
+      "titleKey": "torrent 2 microsd card 256gb",
+      "price": {
+        "raw": "USD 308",
+        "amount": "308.00",
+        "currency": "USD",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_5cbfa007437ddfc1bb0e87ccab7dc78ea9c6398e073d54cf483989e81d1f1efe",
+      "reasons": []
+    },
+    {
+      "source": {
+        "row_id": "row_fe3ff4b356",
+        "supplier": "NordicDist",
+        "supplier_sku": "ND-4418",
+        "raw_title": "AeroBuds Pro replacement ear tips (S/M/L)",
+        "raw_specs": "Silicone, 3 sizes, compatible with AeroBuds Pro",
+        "price": "£8.99",
+        "stock": 143
+      },
+      "titleKey": "aerobuds pro replacement ear tips (s/m/l)",
+      "price": {
+        "raw": "£8.99",
+        "amount": "8.99",
+        "currency": "GBP",
+        "status": "parsed",
+        "assumption": null
+      },
+      "outcome": "grouped",
+      "groupId": "b0_29a6cd73bfa67681da62b49990cbb211b18e01ba88ec2a4326372242cf6327d0",
+      "reasons": []
+    }
+  ],
+  "groups": [
+    {
+      "id": "b0_00fd673b40c9a8748f126778dfa6f208b26a70ef32f114975a54c81cb7a2fdd3",
+      "rowIds": [
+        "row_04ecd45818"
+      ],
+      "titleKey": "pivot wired earbuds",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_01d67db8c357dd1c51c4e76446792b57b45a7e5e23bdd719abf5f74d6c20526a",
+      "rowIds": [
+        "row_b97f53ab30"
+      ],
+      "titleKey": "marlow 3 desk lamp",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_08f03317622f2daaf1dcb022f558218de6a0b86411b90c43eef0075f6fcf747a",
+      "rowIds": [
+        "row_be3b86088a",
+        "row_d40a3f9143"
+      ],
+      "titleKey": "larkspur lite action camera",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_094ad0485a738e91dbd1eaa2e40254ba2d857ec17a79ef0160ef75ba73b00bdc",
+      "rowIds": [
+        "row_bdbc045131"
+      ],
+      "titleKey": "aerobuds pro true wireless earbuds - black",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_0b218ba3bce177cf3237fd9ca8f09bedffc596afc87177663ce95ae38416913b",
+      "rowIds": [
+        "row_71847a9c05"
+      ],
+      "titleKey": "cobalt 3 smart scale",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_0ba9b6c6f657ce954e7581574b7b321e558610df70052e79d245f39a8e990f11",
+      "rowIds": [
+        "row_28b9db3a0d"
+      ],
+      "titleKey": "pivot 2 desk lamp",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_0d3e7e14ef36430dcf196fcd575862e08493fd1c79504f27396efd9bb80242fc",
+      "rowIds": [
+        "row_92da044aa3"
+      ],
+      "titleKey": "ledgerlite book 14 notebook",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_0f8617f1fa02f544db5344b641869a06a9180fcc63ca280c0bc4d8a6da732edb",
+      "rowIds": [
+        "row_22e59912ad"
+      ],
+      "titleKey": "vault 2tb ssd portable drive",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_113a6ff5159124ef75f409837e3947606c203f7bad350f61eb92866ec9bd3436",
+      "rowIds": [
+        "row_5029b0e40e",
+        "row_6f0c3aa377"
+      ],
+      "titleKey": "kestrel wireless mouse",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_11a70c9c59c98f515af2515f7f73e2aac4bdcaa5e506b30de7924a25852ac4a8",
+      "rowIds": [
+        "row_ad9b8ea940"
+      ],
+      "titleKey": "alto x laptop sleeve",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_13f90e6faf7b028dedcbf4a9666b157b09278c161316790de8416799d9dee2df",
+      "rowIds": [
+        "row_1134eb89e7"
+      ],
+      "titleKey": "volt 65w gan charger 3-port",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_153ba7a017bc0fa6729c96317531615dc929946fbd44000cd743dae69ed81e4c",
+      "rowIds": [
+        "row_e0afb74574"
+      ],
+      "titleKey": "aerobuds pro / schwarz / anc",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_1bfe112f45b13969683c8db116f697bda1d5de73f56779a9eeb62bfb34eff06d",
+      "rowIds": [
+        "row_a8a0a10cf2"
+      ],
+      "titleKey": "kestrel lite smart scale",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_1c232e46b60cb27350cf18240cc7b90f64ca3ecc03b70ceb22549cc44de49aaa",
+      "rowIds": [
+        "row_11462769c5"
+      ],
+      "titleKey": "quill desk lamp",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_1e73524152faf5854cf6431eec495c0cc5940ac75be72693a0aaf3b6771fc62d",
+      "rowIds": [
+        "row_904fefcad0"
+      ],
+      "titleKey": "juniper pro desk lamp",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_1fb5b71028208ffba37afb98ee8cbd268b913b22a83c8799cc2cde62cc372cc2",
+      "rowIds": [
+        "row_648ed14543",
+        "row_e0a6cb6b3f"
+      ],
+      "titleKey": "kestrel wired earbuds",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_201fb18bb50c6cac572bd9288d3ee18813728630f8ce9450c21aea98d08661af",
+      "rowIds": [
+        "row_127d44f74c"
+      ],
+      "titleKey": "cirrus lite action camera",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_217b1889d670a41bc735add67c1add4c1e38ecfc2381d98282b8bb62a4da426f",
+      "rowIds": [
+        "row_17bac50146",
+        "row_9d0de73f86"
+      ],
+      "titleKey": "ember plus tablet case",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_2279a89a8af5dcdaf7ec43b4b782652a20639cfb8ec48c7b18b8b01855532093",
+      "rowIds": [
+        "row_10b9579a30"
+      ],
+      "titleKey": "cirrus 2 tablet case",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_2318212773cedc28b4fbe5d9b2d12b4db0f59419d351d140a5a8bbe99c599c71",
+      "rowIds": [
+        "row_38ed2ce97a",
+        "row_5f0a46c6ee"
+      ],
+      "titleKey": "cirrus usb-c hub",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_24a2e79a41bae47cc7ae8536da05abd3c8e938d25c39abfe2d10a88f88ba5b47",
+      "rowIds": [
+        "row_6cf12224f7"
+      ],
+      "titleKey": "cirrus plus wired earbuds",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_24cd78b509711c8e55be0beceea7d4432c3719e685600a87ad0e62f4adb71abf",
+      "rowIds": [
+        "row_2cfdf4fa44"
+      ],
+      "titleKey": "sable lite smart scale",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_25161ba3e221790e83700565cb282f350516ad2e8f262c192d26a3be318220f6",
+      "rowIds": [
+        "row_662a7334a3"
+      ],
+      "titleKey": "larkspur 2 tablet case",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_252c1a614d97a3282ebaceebd8075d02f15462a2fb0e667e4500ea9b10125aeb",
+      "rowIds": [
+        "row_833c7feebb"
+      ],
+      "titleKey": "cobalt pro wired earbuds",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_29a6cd73bfa67681da62b49990cbb211b18e01ba88ec2a4326372242cf6327d0",
+      "rowIds": [
+        "row_fe3ff4b356"
+      ],
+      "titleKey": "aerobuds pro replacement ear tips (s/m/l)",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_2a8b6fe99286c74d9c5c8303df41acb6a3fd4cbd600248298002bd7166bf72bf",
+      "rowIds": [
+        "row_c2467f5304"
+      ],
+      "titleKey": "nimbus 2 speaker - waterproof",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_2d7712235498098919d3008b4cfb85defaa8cb7041e1d810cb9d4e69266db3ae",
+      "rowIds": [
+        "row_87ace126d4"
+      ],
+      "titleKey": "ledgerlite book 14 laptop",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_2f1820f6a5e2498924a7d83c17b6ba5f5a4563a38f20d4852c3ccb681c5d09d4",
+      "rowIds": [
+        "row_f29e09c258"
+      ],
+      "titleKey": "juniper 3 smart scale",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_2f73341690513d3f559711cdb8aebe9b06fa5ceca816c385cff388cdd5bcdd9c",
+      "rowIds": [
+        "row_89c864b342"
+      ],
+      "titleKey": "tundra 3 smart scale",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_308d72b202df5aac1129d570762423f4b2f68bb7c349cd5359a568a8071acc9b",
+      "rowIds": [
+        "row_64543589fc"
+      ],
+      "titleKey": "taskflow k2 mechanical keyboard (brown switch)",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_31ed782b5b1e1190dfdf5cb74dd6c597a26e524872f327035ffca6cc30f127aa",
+      "rowIds": [
+        "row_268d404278"
+      ],
+      "titleKey": "alto plus wired earbuds",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_3224d4d244ff69014fa9132eb64b85b9063c68073ea93e2cf3d5bf15c9221698",
+      "rowIds": [
+        "row_81030c14d9",
+        "row_ac52a0bb36"
+      ],
+      "titleKey": "ember 2 wireless mouse",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_33001caa0847cd99300d49354b4ee70e677d9d95ae0fa4c44f95b6730eaa8282",
+      "rowIds": [
+        "row_2bbf2cbc15",
+        "row_88659ce11a"
+      ],
+      "titleKey": "juniper 2 microsd card 256gb",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_34802b01a9da8590f5f0a062704109f78f6f8df63cfe7eae075b5403a1627e92",
+      "rowIds": [
+        "row_9bf0c018ab"
+      ],
+      "titleKey": "tundra lite smart scale",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_348bfdb5ba41135b6a7b81d8c83efb4b2bbbded9bb97bb4e9e60ba5c22dd1180",
+      "rowIds": [
+        "row_53533ce63e"
+      ],
+      "titleKey": "larkspur plus laptop sleeve",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_34eb62eaffc9054dbc7cdba673ac249c5c5df0ff826dce5fdb2daa660fb40d06",
+      "rowIds": [
+        "row_6dc62d382b"
+      ],
+      "titleKey": "sable pro wired earbuds",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_35099c9d78e51a020af8cff46c6f2b6fbec25eb76332147df137746e05218367",
+      "rowIds": [
+        "row_8d784b2c07"
+      ],
+      "titleKey": "harbor plus smart scale",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_3847e428671c18e60d9b08b627a5028b7b2fe70ee1afd33cc241b020fa90ae05",
+      "rowIds": [
+        "row_fbe753d7cc"
+      ],
+      "titleKey": "vault portable ssd 2tb",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_39b8af421d665ae3f085f3a364f5c4e3e0cc55486337542691d9d46b79cfc5cf",
+      "rowIds": [
+        "row_ef93481968"
+      ],
+      "titleKey": "mesa 3 usb-c hub",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_39e2aa0fb4fe6564af5fff730553f24169951ebb361d22b8338784c2b251f407",
+      "rowIds": [
+        "row_07d0ec92f5",
+        "row_48143816e9"
+      ],
+      "titleKey": "basalt lite tablet case",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_3aa2f8bca3c9e23b683af314ab6af5143a2091f008b93b78c509f1b89404d709",
+      "rowIds": [
+        "row_cdf75e46ea"
+      ],
+      "titleKey": "nimbus 2 pro portable bluetooth speaker",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_3c0cb67b0a3bcdcbb420d32f7b04efe5d3d0c3c54153c6d46053ac803270f47a",
+      "rowIds": [
+        "row_17f5e3070f"
+      ],
+      "titleKey": "onyx 2 bookshelf speaker pair",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_3df797c386997a75ae8755c837e57572e7f52b92dabaffee684545e3494e7bdc",
+      "rowIds": [
+        "row_17e27bf495"
+      ],
+      "titleKey": "marlow 2 laptop sleeve",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_3eed6bd6438eb6704a43b97ed8f355da0041bd222b1dba60282b8dfba46cf4a1",
+      "rowIds": [
+        "row_5678fc80e6"
+      ],
+      "titleKey": "vertex lite bookshelf speaker pair",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_408f0f01d1a87d83982d7cf170ff9c5dc1190065688df3ccb0f56a1438da199b",
+      "rowIds": [
+        "row_654f1fb60f"
+      ],
+      "titleKey": "onyx 2 action camera",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_40a40b446a3c4710f5dad443958fe3eee883e8935111f6aa5613c21d7eee94c4",
+      "rowIds": [
+        "row_0952d61e2d"
+      ],
+      "titleKey": "mesa pro usb-c hub",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_41bc26c6207ffece6c9a2c190272a8671ea10030bf9bd2360dfaa536f55f5738",
+      "rowIds": [
+        "row_67a1a789da"
+      ],
+      "titleKey": "juniper plus microsd card 256gb",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_4355321a7fc7c79c6d36dcc3e5b7c6a1e8071ea725e3513014cfc582762c33ba",
+      "rowIds": [
+        "row_a8a875a60c"
+      ],
+      "titleKey": "cobalt x wired earbuds",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_46973d673a5601fdd85c69783c9d69c991bdd5afd782d837a5d21c0d3f20d681",
+      "rowIds": [
+        "row_4730fd8686"
+      ],
+      "titleKey": "onyx lite microsd card 256gb",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_50032c90da018d397704acedca3b4a9006d0ace86d2b04c742c9c9ee6e91417f",
+      "rowIds": [
+        "row_1b08ede010",
+        "row_f73f37291f"
+      ],
+      "titleKey": "kestrel 2 bookshelf speaker pair",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_51bcbb4ba9e9f27e0f33b1bb24fde33ad19be2320c51d7ce07e3143a0c4d5f17",
+      "rowIds": [
+        "row_bbaad66b9f"
+      ],
+      "titleKey": "kestrel tablet case",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_51f3ab6c8e431176b9306e236f73143b79a066dd28031cd8c154e243ec7e1b1f",
+      "rowIds": [
+        "row_7c929ee113",
+        "row_e619a63286"
+      ],
+      "titleKey": "marlow bookshelf speaker pair",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_54534df9e649119b340515a66887885c4ea06227ffa1e6281d44d3079f71b6ab",
+      "rowIds": [
+        "row_d5d5379960"
+      ],
+      "titleKey": "sable x microsd card 256gb",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_545c35ca721dd1bd9261c1b7d8fde75287b86613820c77649c366b69c9b2171e",
+      "rowIds": [
+        "row_6eea41ae9b",
+        "row_a702f5474f"
+      ],
+      "titleKey": "mesa x wireless mouse",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_54de16fbb423a1c49da5dc1340dda917260ce2d8910a2e84d6a2fa2685eb2594",
+      "rowIds": [
+        "row_302c214bfa",
+        "row_c3501c6da1"
+      ],
+      "titleKey": "cirrus pro bookshelf speaker pair",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_56106845e44e7b53e74768e4f67ee3c4efce2fa1116915aef2407ac2f1fa7bc3",
+      "rowIds": [
+        "row_4f178f2cd1",
+        "row_fcc5f20edc"
+      ],
+      "titleKey": "harbor desk lamp",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_569cf9190ede44a144afe0586343d9646ed82d85fc42ee1e04ecb8b646f21e07",
+      "rowIds": [
+        "row_190a9264bb",
+        "row_2862086d0f"
+      ],
+      "titleKey": "cirrus 3 smart scale",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_5aed2d26272a4faecafb2080d9c53de7b3760af1e854dbb1fc2410ca9fc0b28a",
+      "rowIds": [
+        "row_025ae6063a",
+        "row_ba57c0fc87"
+      ],
+      "titleKey": "cirrus smart scale",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_5af5683e5cea17dcd81bb3e73522265c10cd29fb494d230d0fa8befcbb364e9a",
+      "rowIds": [
+        "row_5cc18c2896",
+        "row_9970a553e5"
+      ],
+      "titleKey": "vertex plus action camera",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_5c2e76ec5664bc04fe9efe0c2d6bf646d733e6f239c4c925a4bff3521cbe8eef",
+      "rowIds": [
+        "row_0529181075"
+      ],
+      "titleKey": "cirrus 3 wired earbuds",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_5cbfa007437ddfc1bb0e87ccab7dc78ea9c6398e073d54cf483989e81d1f1efe",
+      "rowIds": [
+        "row_fd1f97e32c"
+      ],
+      "titleKey": "torrent 2 microsd card 256gb",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_5e16d880b3e540caa566091b66da76a015a95ed088a1207ea460669bc5a4bbb7",
+      "rowIds": [
+        "row_c0c4b370e4"
+      ],
+      "titleKey": "pivot lite wireless mouse",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_5e6d164fe2f82dcde9f6d0661d91a331402bbcf9c5a827aa50e129d0b70f0fe1",
+      "rowIds": [
+        "row_db932df2b7"
+      ],
+      "titleKey": "sable 3 microsd card 256gb",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_611b26b106f1ad7d8f0807887a56027de9aaead61ae2bec632431cb37120ebb9",
+      "rowIds": [
+        "row_b82f7fcc2a"
+      ],
+      "titleKey": "cobalt x desk lamp",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_61a39740cd81714e60277a0f9abef3d2003481b5a4de8298c4565fb8b41ede82",
+      "rowIds": [
+        "row_b2a6bc7889"
+      ],
+      "titleKey": "tundra 2 wireless mouse",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_693c03106fa72bd0e6aa3f088f0842ed9656f72fa63c2350a0fda5a9ac432a48",
+      "rowIds": [
+        "row_35c28ff0d0",
+        "row_ceb27e8382"
+      ],
+      "titleKey": "basalt 2 microsd card 256gb",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_6b11d0c567fbbdba3cdf7b010cee05c653bd23cf252a2f703e13ce7fbd9693b4",
+      "rowIds": [
+        "row_5a0b7faba6",
+        "row_6a281bc385"
+      ],
+      "titleKey": "basalt pro action camera",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_6b15d37d2e2526d8485f5266a6687fa580daa106273e16c19a49c6648e30f8d9",
+      "rowIds": [
+        "row_bb6d2613d4"
+      ],
+      "titleKey": "cobalt x wireless mouse",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_6d45592e2ddc43b326177b2d9bee953faeedc3ecbb4780078fcd49bf608aa313",
+      "rowIds": [
+        "row_9604d0373a"
+      ],
+      "titleKey": "alto lite bookshelf speaker pair",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_6d8678975c57856df97739e214f9e9a6f11b7cfbc8ecea688fcb9c7495a913d0",
+      "rowIds": [
+        "row_4c297d9293",
+        "row_79480ac1f8"
+      ],
+      "titleKey": "alto 2 action camera",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_713cc8589c201ab5d44cee5d1eed6d6ebc795822f86df4b5cecb9a7a1485d001",
+      "rowIds": [
+        "row_4f475e32c2"
+      ],
+      "titleKey": "tundra laptop sleeve",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_717227c1758bc0368040bcd25f41cf652976ebfadda60b24868691c7a85a9329",
+      "rowIds": [
+        "row_c8617509f8"
+      ],
+      "titleKey": "larkspur plus microsd card 256gb",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_71ac1428088a14d4f20302d60b96f146f02a033cec210430c40ed761484cf388",
+      "rowIds": [
+        "row_b2475a3df6"
+      ],
+      "titleKey": "cobalt x action camera",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_72c698455497965936849230530b53cd2cb65e41990727593b823147e076b13c",
+      "rowIds": [
+        "row_6d481c7e2b",
+        "row_c372f682ee"
+      ],
+      "titleKey": "alto 3 microsd card 256gb",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_738ebb2f2cbc9e311195ff0eddc60f5587fbc1aa647caf02962685cb804b58b1",
+      "rowIds": [
+        "row_da6585ad9f"
+      ],
+      "titleKey": "vertex lite desk lamp",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_78bce03424dfde8091eeacbaf6ef9e4a9cd2be50608abff576252f70b09d61c2",
+      "rowIds": [
+        "row_56f937bd9e"
+      ],
+      "titleKey": "onyx pro tablet case",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_7a00291706f5ef7cbd2c2339cf5ab32aa5ace39186cc995ad25af821ad61bdf0",
+      "rowIds": [
+        "row_3196ddf429"
+      ],
+      "titleKey": "mesa x tablet case",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_7a4a5c73496d346903e560913f76ab442a7b109ae9a8a5aef47bba636017ed05",
+      "rowIds": [
+        "row_17bb73bd1c",
+        "row_7eabdad0f0"
+      ],
+      "titleKey": "pivot plus wired earbuds",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_822dabc399558eaa2acd65eecdc2592e75b4f8f8772eec7eff9f46a437cd0ff6",
+      "rowIds": [
+        "row_6f66c4cb9e"
+      ],
+      "titleKey": "onyx lite action camera",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_82feb346d062ad42775d2bb080a6a0ca742b4cd343d138f80521d20d4c9eb531",
+      "rowIds": [
+        "row_aa3fa28de4"
+      ],
+      "titleKey": "torrent lite wired earbuds",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_83b28243a90d9e88e2453d80e2f5961cb09d0806cb1c660299a39159b985c458",
+      "rowIds": [
+        "row_7074cbc3ad"
+      ],
+      "titleKey": "juniper pro microsd card 256gb",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_86dc978ab09e20de9215a879faba843953af38941c7e7184cce3c06f85eb4931",
+      "rowIds": [
+        "row_b40060c12f"
+      ],
+      "titleKey": "cobalt pro action camera",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_872cb86804c10da3388b19cd9624af5d90e503cee7e1a72d0b4f2a988979b677",
+      "rowIds": [
+        "row_5824054a52"
+      ],
+      "titleKey": "onyx 3 laptop sleeve",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_888689678ddab495e146dd99184d886d96dbc2d1b54e4f1a17168523b8cfa707",
+      "rowIds": [
+        "row_fb6dff1674"
+      ],
+      "titleKey": "cirrus lite smart scale",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_896a101e29258bc2677f8aafb718a749d6ecfa37f66159763736ccfd9314a724",
+      "rowIds": [
+        "row_d440c7c5af"
+      ],
+      "titleKey": "basalt pro wireless mouse",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_8a0e8ab3713befb5d6adc29a2398d284a1d937ee7fc4a78d9c74ed3fba1b5f87",
+      "rowIds": [
+        "row_908ca0635e"
+      ],
+      "titleKey": "marlow smart scale",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_8ad3a11933914da9d342f0c07f2d6563deb407b2adea7b645fb6b1b464ce0d5f",
+      "rowIds": [
+        "row_c7628d7c8b"
+      ],
+      "titleKey": "sable x wireless mouse",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_8f2611a131be2c1966329f57f84fbefe43282ea0b927d51b9f1f33b6309d094d",
+      "rowIds": [
+        "row_19950873e2"
+      ],
+      "titleKey": "larkspur x bookshelf speaker pair",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_9055d0a8e66f268fd0cbf192b659c2de865849ab24f16c4dd6e802767a20debc",
+      "rowIds": [
+        "row_f3873a8816"
+      ],
+      "titleKey": "nimbus 2 portable bluetooth speaker",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_908850ba47036c080075ecfc703cffcc39d5a5482d755ab8b4140090fea217e4",
+      "rowIds": [
+        "row_1e60b0a9dc"
+      ],
+      "titleKey": "sony wh-880n wireless over-ear",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_928ee39179fc6edd49270299179225155b6bfef372305e270ed0df66ed94bf40",
+      "rowIds": [
+        "row_87e1e24c27"
+      ],
+      "titleKey": "mesa wired earbuds",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_973254aec33b7639121ee0072aae4a9fccff862ba20ac2df091b35d80952885c",
+      "rowIds": [
+        "row_641c690d68",
+        "row_73d3ec91bb"
+      ],
+      "titleKey": "quill 3 usb-c hub",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_97c45999f5d54a7d76bfca8e6f5bf874a4f666051b361c1c889a4c462bc7d7a2",
+      "rowIds": [
+        "row_6eddbd5517",
+        "row_f0ad473862"
+      ],
+      "titleKey": "cobalt pro usb-c hub",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_999c4127f156dccf41da7db185c66d101a8df521f5ed7b4d26665219ec45abb1",
+      "rowIds": [
+        "row_11bb99b2fa"
+      ],
+      "titleKey": "aerobuds pro earbud, black, anc",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_9a297ad1f7fc6b3ae88a9946bffdcdea550be7329fdfcb0e36a2d23c0d0489a0",
+      "rowIds": [
+        "row_c53344afdc"
+      ],
+      "titleKey": "pivot lite smart scale",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_9ae6ca9d2183d66d82b0bb918ec1416411f6597e6bb8d336dc7ff5ad7c1ac3a1",
+      "rowIds": [
+        "row_9b67e4c70b"
+      ],
+      "titleKey": "juniper tablet case",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_9b41f3a7698cb87fb55f57fc7dfbef2d1fb0f225ad3ce7d256418fe2327ca5ae",
+      "rowIds": [
+        "row_a60219abb1",
+        "row_bddc33a831"
+      ],
+      "titleKey": "quill plus tablet case",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_9c31a037bc87bdc5eb52bb495b50b3bd6405d84e1329059d78908afbe1cbc6df",
+      "rowIds": [
+        "row_d8919b722b"
+      ],
+      "titleKey": "orbit 7 smartphone 128gb",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_9e6d1a95bfb07c7c2490abffaf3b15948d95813457fe657128b9f04e14e98b3d",
+      "rowIds": [
+        "row_0ba9edac39",
+        "row_6504d4facd"
+      ],
+      "titleKey": "larkspur lite laptop sleeve",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_9ee7ea1c2528126b368f5d326fa514b1feb10c805d315a2bfa9dd1f68abe7485",
+      "rowIds": [
+        "row_3c159f1aea",
+        "row_ca51ad691e",
+        "row_decc7f2137",
+        "row_f35a2ab58f"
+      ],
+      "titleKey": "torrent x bookshelf speaker pair",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_a060e924b3a3ba56f84dff1b012d2daa12eecde4f9426a8f4d249f4969944e11",
+      "rowIds": [
+        "row_55a8c9b86d",
+        "row_74b8f7797a"
+      ],
+      "titleKey": "onyx lite wireless mouse",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_a1cb7545d898206a7af546b9023a4c5f4a1dd4e27fb564ca4f509d3073ea3f27",
+      "rowIds": [
+        "row_76b28cdc31"
+      ],
+      "titleKey": "slate 11 tablet",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_a47b3f66a43e49f99bbf11aaf4fa1b3e366c941906ccd7bab4c3187c58aead5d",
+      "rowIds": [
+        "row_1d1bdffe92"
+      ],
+      "titleKey": "lumen x20 compact digital camera",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_a86f558315b351e41347b5908b597fd5dd7920920b7336b74b85c690be43dc3f",
+      "rowIds": [
+        "row_0fd5e416e8"
+      ],
+      "titleKey": "larkspur usb-c hub",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_aa6aa2b42559ffc9c9e21d941955699ffb38e7ace857d12d567f9a3ec3bf448e",
+      "rowIds": [
+        "row_05e5d126cb"
+      ],
+      "titleKey": "sony wh880n headphones open box",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_aadf20101ba13259c61520827ad317d57be2429834ba2afc71044963dda30f6e",
+      "rowIds": [
+        "row_0eb52882db"
+      ],
+      "titleKey": "sable lite laptop sleeve",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_ab92a789675d350405f485c75743a6eadef0ac6b46f40c369d03304590075de7",
+      "rowIds": [
+        "row_83da10f114"
+      ],
+      "titleKey": "lumen x20 kompaktkamera",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_ad720648626b6df4ec3f0d9db1dc939a0e0f83a61080d8cde8378a0243ca25af",
+      "rowIds": [
+        "row_e571323780"
+      ],
+      "titleKey": "onyx tablet case",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_ae01ea2bec15157d758491accc138221be2f86a523af310632c2eaf3cba45e7b",
+      "rowIds": [
+        "row_522195dac7"
+      ],
+      "titleKey": "kestrel desk lamp",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_ae3329d41a5ec8c2b7be8d3dd4b650db17ed589904178fe0183451d1a98f4bde",
+      "rowIds": [
+        "row_7f9b60153c",
+        "row_e6bcf83e77"
+      ],
+      "titleKey": "mesa laptop sleeve",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_affca037fcb571d0f7a6728e956731056fd3448e2891f91a8fc754c4941f68d7",
+      "rowIds": [
+        "row_60fe207b81"
+      ],
+      "titleKey": "kestrel lite tablet case",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_b0c62d7d97e23b95a05d9a3768aaa6a2fbe796597906f563fc250b2429da047f",
+      "rowIds": [
+        "row_59fb8196e6"
+      ],
+      "titleKey": "cirrus pro smart scale",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_b4bf2d3e0eee2813f4e5ead1f96062ea6f4f541d808499deaafa6f32c81a586d",
+      "rowIds": [
+        "row_a386736693"
+      ],
+      "titleKey": "taskflow k2 mech keyboard tenkeyless brown",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_b4f3bd4278d5f94a4d5dba65b90f2cf68aadf707732cf3135c8cf5ee6d1ac884",
+      "rowIds": [
+        "row_259242eb11",
+        "row_77ce3dea5e"
+      ],
+      "titleKey": "juniper x bookshelf speaker pair",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_b5114e62f9fec851df2df2c7c41d763b8321ff66d47ae56a64d620e5f4dd9162",
+      "rowIds": [
+        "row_841c563697",
+        "row_934d37c5c3"
+      ],
+      "titleKey": "alto x usb-c hub",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_b5fc3d45ba7b67a9da073b71672c29a7bde6782ad6425b25963b6576cde36577",
+      "rowIds": [
+        "row_24f8ce8414"
+      ],
+      "titleKey": "basalt 2 wireless mouse",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_b6f2ace31a77e2d882a0e3b71e6f450d73d43a8d30b02d38b7d653e2af63e761",
+      "rowIds": [
+        "row_a8a4a1acea",
+        "row_b797ec3e0c"
+      ],
+      "titleKey": "juniper x desk lamp",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_badac93976b835e7c3be706e1b39544f470a3f4a03b314c753184bcd480caea7",
+      "rowIds": [
+        "row_2b25cbbe3f"
+      ],
+      "titleKey": "marlow pro usb-c hub",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_bae6afe93f9dcd2def33334ad9d6dd9e49cff5af8b788a8557c8122298ee68b7",
+      "rowIds": [
+        "row_40ba9c93dc",
+        "row_6d2f0a90b9"
+      ],
+      "titleKey": "larkspur plus smart scale",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_beb21df3d3688638af25926ec2121a565983d53127ef82331320ad3b42cfd85f",
+      "rowIds": [
+        "row_68d860d397",
+        "row_78b4c42770"
+      ],
+      "titleKey": "cobalt smart scale",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_bf2c815f65e870d4c3f87eb42151de1eaad42b2f537ada3914d30749f5a7dfe0",
+      "rowIds": [
+        "row_e1124c3b3f"
+      ],
+      "titleKey": "basalt smart scale",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_bf4f329ffabb6655173ad9e5fcbf709d226a6cae8b733649bbce7b7780f37fe4",
+      "rowIds": [
+        "row_81cd8108b0"
+      ],
+      "titleKey": "sable plus wired earbuds",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_c0a3ac8a3129deebe77e13beff0ca6fe12e0043df1807b0bbaa885c47e509b7a",
+      "rowIds": [
+        "row_52a24f8b1b"
+      ],
+      "titleKey": "harbor x usb-c hub",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_c16f9e204ee2133297a8c538830df691354f22e8946aef9631cba421b8187fd1",
+      "rowIds": [
+        "row_06dc75e525",
+        "row_3f77cefacd"
+      ],
+      "titleKey": "quill 2 action camera",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_c22f374b33eb9de59608d85cac54ce751ab9d873e98c1479caa33fcddbdddb05",
+      "rowIds": [
+        "row_8dfa59e7c2",
+        "row_aef34b7f58"
+      ],
+      "titleKey": "torrent lite laptop sleeve",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_c2bcd2e89ea2474173008eff733a2b53b4b3fc7af9800d7e0dc093f2e6e4631a",
+      "rowIds": [
+        "row_e67082ee31"
+      ],
+      "titleKey": "cobalt 2 smart scale",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_c4ce60c73af5dc3df7aa9b72735f613219097ac07c7a9818c04a4378367aa4d4",
+      "rowIds": [
+        "row_a1bb1ad2e9"
+      ],
+      "titleKey": "onyx 3 desk lamp",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_c5724fbc10ea081e4a0248c0a3c047af21e04a03f6cf0ab906dd408fc9f6fbb4",
+      "rowIds": [
+        "row_24e49bc1eb",
+        "row_293cd70b33",
+        "row_71fb9c3128"
+      ],
+      "titleKey": "harbor smart scale",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_c836990420d3387d9b52f8955b93506779b9463f4f2859748c0254b911c70f0a",
+      "rowIds": [
+        "row_cfc9d66ae8"
+      ],
+      "titleKey": "freshcrate blend one countertop blender",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_c87cae42b79aa7a25aaa454c917b8e3657eadbb840ea1d79bd309b035c587ab9",
+      "rowIds": [
+        "row_c5d74e7abd"
+      ],
+      "titleKey": "marlow 2 action camera",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_ca6d2bb90f17e59f14485f05f0e408949c196ffc585fddab095ba1fa406e5953",
+      "rowIds": [
+        "row_3a68411ed8"
+      ],
+      "titleKey": "basalt 2 action camera",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_cb77c0e8f85827eba490800fa06f20e5aeb9786a6ec1ba0d140fef5cc34c6c97",
+      "rowIds": [
+        "row_5bc3e64dcb",
+        "row_e51140ad9b"
+      ],
+      "titleKey": "larkspur desk lamp",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_cdbce31b7fe86a6c9da8f1b74599fc0bda222ee8652774aca7b146dd995e6d53",
+      "rowIds": [
+        "row_4582fae21d",
+        "row_d2fac2ddba"
+      ],
+      "titleKey": "kestrel x wireless mouse",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_d3f959e3b0f7c7dd84b3c05e64281eeef9a09d3ab0069fa390aaeca1a98c3771",
+      "rowIds": [
+        "row_4a8b5dc2b1",
+        "row_a4c85dc257"
+      ],
+      "titleKey": "torrent desk lamp",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_d5261017d7fa12914739394377bd55e044c6d2d7221960d39f145824c8fcef35",
+      "rowIds": [
+        "row_94d9860adf"
+      ],
+      "titleKey": "pulsefit band 3 fitness tracker",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_d61728331d68824684040c734fafb6aede33a7157f1a5e9a3a1d090f1afa490d",
+      "rowIds": [
+        "row_bb41623d6c"
+      ],
+      "titleKey": "cobalt pro bookshelf speaker pair",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_d62c0c79bb4158234fcbdd93cc17bfb529990df322ea827425595b549e24de36",
+      "rowIds": [
+        "row_8774b9baca"
+      ],
+      "titleKey": "mesa pro bookshelf speaker pair",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_d67f261737bfeb5852bac67e4974aa314d0d0dc3bbcb561347a3633657453668",
+      "rowIds": [
+        "row_6389333c51",
+        "row_d40a07ffb8"
+      ],
+      "titleKey": "larkspur pro bookshelf speaker pair",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_d7b4aaa0a39e902641a317ba76880c04395975c8f9a303ecf4b1fb8b5739c430",
+      "rowIds": [
+        "row_70bdd4eb63",
+        "row_aa35314055"
+      ],
+      "titleKey": "sable desk lamp",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_d8122ba37493602e38953cc52d64924ae432fed77fd4cb89be877d3d110cd716",
+      "rowIds": [
+        "row_7b5442e7cc",
+        "row_d01593ee00"
+      ],
+      "titleKey": "basalt pro bookshelf speaker pair",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_d81889620711f147e15384f99d62be6de47b07f871c8b8ea1f0f598bb9e51610",
+      "rowIds": [
+        "row_7f3f1b14c3"
+      ],
+      "titleKey": "sony corp. wh880n kopfhoerer",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_d821846eb71e521c64d58b8d87b81e0de5b08af7875b6718d48e58912b4f9593",
+      "rowIds": [
+        "row_3e2dd6416e"
+      ],
+      "titleKey": "pulsefit band 3 activity tracker",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_d8b42fa67efce6f5c843701c90433b1ed2847042f860c4176d800687646926d8",
+      "rowIds": [
+        "row_d097195181"
+      ],
+      "titleKey": "vertex plus usb-c hub",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_dbef5b87ded1bd9f8b9505dc3ca6a275f8f5077fe35c57687e936f76ecfe321e",
+      "rowIds": [
+        "row_0a5452008a",
+        "row_98dbb1901d"
+      ],
+      "titleKey": "tundra x smart scale",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_e06ca3b439a4e0715d4dc928be03d6d13e44d5d769a84b2121a0516aea167eb2",
+      "rowIds": [
+        "row_02ad74e735"
+      ],
+      "titleKey": "vertex pro microsd card 256gb",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_e5dc5e6275fbefcc2ac5851028c79ea05def2a5dcd09f3e348014d6d23ef8981",
+      "rowIds": [
+        "row_a661bdf24e"
+      ],
+      "titleKey": "basalt 2 tablet case",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_e7ca77d81b9a7c3d14175a5a26e0f0e819e0d37120350b6317ffec307748dad8",
+      "rowIds": [
+        "row_57b5aaacc5"
+      ],
+      "titleKey": "alto lite laptop sleeve",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_e83a72dc635c2b3118fdc0f86b07a13e56278dad8a13ccadb16adbd8b9804fb1",
+      "rowIds": [
+        "row_4d609c9ff9",
+        "row_6668f30f9e"
+      ],
+      "titleKey": "quill 3 desk lamp",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_ec140205886886e5b3b2adad000fb033e7d68aa9bc8ddb36cd3b064bc584cf5c",
+      "rowIds": [
+        "row_4c2be4913a"
+      ],
+      "titleKey": "alto smart scale",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_ed24b266dba1cc8461456ebd745aab04bcb1609d4852c2dec2d1194b21103611",
+      "rowIds": [
+        "row_d878933395"
+      ],
+      "titleKey": "cirrus pro wired earbuds",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_ed320cfdc3737bfa86646f78983c057e90b04c70cf61624b60c12f3a318fbd5c",
+      "rowIds": [
+        "row_6fff6aa632",
+        "row_a453c69dab"
+      ],
+      "titleKey": "basalt usb-c hub",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_ee5eccdeb02b5169061667265adde5ea0ffa4fce9acf3cd6f885f1fae9df22e9",
+      "rowIds": [
+        "row_de5e00a8f3"
+      ],
+      "titleKey": "mesa 2 action camera",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_f1b6d6fbad7aa585f71040eb500ce5cf6a19fd9b0cbc653f31dea060b8036d98",
+      "rowIds": [
+        "row_185aeac60e",
+        "row_894eb0e4a9"
+      ],
+      "titleKey": "basalt 2 laptop sleeve",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_f204dfc501593974e8a849929103179f1d45d1a8c82f3ae62ae59c4908260359",
+      "rowIds": [
+        "row_728bc009b0",
+        "row_bcbe8b38fe"
+      ],
+      "titleKey": "sable 2 tablet case",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_f4132bcde6d2bcfb6beac13f50ad5adb183f3caa3fada819676b781289b696a2",
+      "rowIds": [
+        "row_d98f99472c"
+      ],
+      "titleKey": "sable pro action camera",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_f4b0d32bf91a59ec3a03e73f4fe2fce247d0083a5589ebd2e071332537c25d5f",
+      "rowIds": [
+        "row_3fdcec64b2"
+      ],
+      "titleKey": "cobalt lite usb-c hub",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_f5598664d14950eb08189cfe69d132bc70b5741338855bf0388ac3b4212f8940",
+      "rowIds": [
+        "row_0749740cfc"
+      ],
+      "titleKey": "larkspur tablet case",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_f62e01d162c8085889e669a7f746b519d0b07501bf311ab2b02a42f3a4a18a4a",
+      "rowIds": [
+        "row_c503f0112e",
+        "row_c82cd2b2bf"
+      ],
+      "titleKey": "larkspur lite tablet case",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_f744be9edf5f6d481ed2e6be10e92a01bdcba13cab70a211a6b379c0934a44f6",
+      "rowIds": [
+        "row_ed73b4dab2"
+      ],
+      "titleKey": "vertex plus wired earbuds",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_fa06abbee870a0c4f7904205178aa86d20694ecb5b936cfd0da1dc621021bf2b",
+      "rowIds": [
+        "row_8cdaf40615"
+      ],
+      "titleKey": "tundra bookshelf speaker pair",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_fa1228e3c1b9e2b3eca4d7eebab510e090316848304a6c0c7ba6bfc1e0c991a5",
+      "rowIds": [
+        "row_6b647120b8"
+      ],
+      "titleKey": "pivot pro laptop sleeve",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_fa53e7b2c94cc2b54d4f769be11500b0bbd6f26724eefaa1ebedf0f1b5486d89",
+      "rowIds": [
+        "row_9a32000da2"
+      ],
+      "titleKey": "sable lite usb-c hub",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_fd91e663cc9e197d36114a1e54f3f373a46c878408447bc2df660672763f08c0",
+      "rowIds": [
+        "row_93a80ae523"
+      ],
+      "titleKey": "juniper 2 smart scale",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_fe4deff89d2b815dfa0b6d35d2307c4e719f12022d577c34725f173ac203e6c3",
+      "rowIds": [
+        "row_51ad7a4367"
+      ],
+      "titleKey": "marlow tablet case",
+      "method": "exact_normalized_title"
+    },
+    {
+      "id": "b0_ff5e1d8314386ada57444c3159dbf36fea6c7bb6e91d9f105772a1182b071cb8",
+      "rowIds": [
+        "row_5609f5b65d"
+      ],
+      "titleKey": "torrent tablet case",
+      "method": "exact_normalized_title"
+    }
+  ]
+}

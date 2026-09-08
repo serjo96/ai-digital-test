@@ -1,0 +1,58 @@
+{
+  "before": "B0",
+  "after": "B0-repeat",
+  "comparable": true,
+  "incompatible": [],
+  "interpretation": "Saved run comparison",
+  "qualityStatus": "provisional",
+  "beforeMetrics": {
+    "inputRows": 220,
+    "accountedRows": 220,
+    "lostRows": 0,
+    "duplicateAssignments": 0,
+    "groups": 165,
+    "nonProducts": 4,
+    "reviewRows": 0,
+    "tp": 7,
+    "fp": 0,
+    "fn": 10,
+    "precision": 1,
+    "recall": 0.4117647058823529
+  },
+  "afterMetrics": {
+    "inputRows": 220,
+    "accountedRows": 220,
+    "lostRows": 0,
+    "duplicateAssignments": 0,
+    "groups": 165,
+    "nonProducts": 4,
+    "reviewRows": 0,
+    "tp": 7,
+    "fp": 0,
+    "fn": 10,
+    "precision": 1,
+    "recall": 0.4117647058823529
+  },
+  "deltas": {
+    "inputRows": 0,
+    "accountedRows": 0,
+    "lostRows": 0,
+    "duplicateAssignments": 0,
+    "groups": 0,
+    "nonProducts": 0,
+    "reviewRows": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 0,
+    "precision": 0,
+    "recall": 0
+  },
+  "decisionsEqual": true,
+  "changedRowIds": [],
+  "configChanged": false,
+  "wallTimeMs": {
+    "before": 43.05804200000003,
+    "after": 40.68033399999999
+  },
+  "violations": []
+}

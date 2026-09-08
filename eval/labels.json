@@ -1,0 +1,670 @@
+{
+  "version": "stage1-provisional-v1",
+  "cases": [
+    {
+      "id": "nimbus",
+      "family": "nimbus",
+      "split": "development",
+      "status": "provisional",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "rowIds": [
+        "row_c2467f5304",
+        "row_cdf75e46ea",
+        "row_f3873a8816"
+      ],
+      "expectedGroups": [
+        [
+          "row_c2467f5304",
+          "row_f3873a8816"
+        ],
+        [
+          "row_cdf75e46ea"
+        ]
+      ],
+      "nonProductRowIds": [],
+      "unknownPairs": [],
+      "explanation": "Nimbus 2 и Nimbus 2 Pro различны. Две строки базовой модели предварительно относятся к одному товару; 1.2kg/42oz не решаем на этапе 1."
+    },
+    {
+      "id": "aerobuds",
+      "family": "aerobuds",
+      "split": "development",
+      "status": "provisional",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "rowIds": [
+        "row_11bb99b2fa",
+        "row_bdbc045131",
+        "row_e0afb74574",
+        "row_fe3ff4b356"
+      ],
+      "expectedGroups": [
+        [
+          "row_11bb99b2fa",
+          "row_bdbc045131"
+        ],
+        [
+          "row_e0afb74574"
+        ],
+        [
+          "row_fe3ff4b356"
+        ]
+      ],
+      "nonProductRowIds": [],
+      "unknownPairs": [
+        [
+          "row_11bb99b2fa",
+          "row_e0afb74574"
+        ],
+        [
+          "row_bdbc045131",
+          "row_e0afb74574"
+        ]
+      ],
+      "explanation": "Два явно чёрных AeroBuds Pro предварительно совпадают; ear tips — самостоятельный аксессуар. У немецкой строки цвет отсутствует: отношения с обеими чёрными строками unknown. 18h и 20h with case требуют отдельного согласования позже."
+    },
+    {
+      "id": "sony",
+      "family": "sony",
+      "split": "development",
+      "status": "provisional",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "rowIds": [
+        "row_05e5d126cb",
+        "row_1e60b0a9dc",
+        "row_7f3f1b14c3"
+      ],
+      "expectedGroups": [
+        [
+          "row_05e5d126cb",
+          "row_1e60b0a9dc",
+          "row_7f3f1b14c3"
+        ]
+      ],
+      "nonProductRowIds": [],
+      "unknownPairs": [],
+      "explanation": "WH-880N/WH880N предварительно одна модель, включая OPEN BOX. Состояние относится к предложению; рекламные превосходные степени не характеристики."
+    },
+    {
+      "id": "slate",
+      "family": "slate",
+      "split": "development",
+      "status": "provisional",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "rowIds": [
+        "row_76b28cdc31"
+      ],
+      "expectedGroups": [
+        [
+          "row_76b28cdc31"
+        ]
+      ],
+      "nonProductRowIds": [],
+      "unknownPairs": [],
+      "explanation": "Один товар с пустыми specs; неполнота не означает не-товар."
+    },
+    {
+      "id": "volt",
+      "family": "volt",
+      "split": "development",
+      "status": "provisional",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "rowIds": [
+        "row_1134eb89e7"
+      ],
+      "expectedGroups": [
+        [
+          "row_1134eb89e7"
+        ]
+      ],
+      "nonProductRowIds": [],
+      "unknownPairs": [],
+      "explanation": "65W, GaN и 3-port указаны в названии. New in box — состояние предложения, не техническая характеристика."
+    },
+    {
+      "id": "quill",
+      "family": "quill",
+      "split": "development",
+      "status": "provisional",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "rowIds": [
+        "row_06dc75e525",
+        "row_11462769c5",
+        "row_3f77cefacd",
+        "row_4d609c9ff9",
+        "row_641c690d68",
+        "row_6668f30f9e",
+        "row_73d3ec91bb",
+        "row_a60219abb1",
+        "row_bddc33a831"
+      ],
+      "expectedGroups": [
+        [
+          "row_06dc75e525",
+          "row_3f77cefacd"
+        ],
+        [
+          "row_11462769c5"
+        ],
+        [
+          "row_4d609c9ff9",
+          "row_6668f30f9e"
+        ],
+        [
+          "row_641c690d68",
+          "row_73d3ec91bb"
+        ],
+        [
+          "row_a60219abb1",
+          "row_bddc33a831"
+        ]
+      ],
+      "nonProductRowIds": [],
+      "unknownPairs": [],
+      "explanation": "Включены все Quill: lamp и lamp 3 различны; lamp, hub, camera и case различны. Две Quill 3 desk lamp предварительно совпадают даже при пустых specs у обеих."
+    },
+    {
+      "id": "ledgerlite",
+      "family": "ledgerlite",
+      "split": "development",
+      "status": "provisional",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "rowIds": [
+        "row_87ace126d4",
+        "row_92da044aa3"
+      ],
+      "expectedGroups": [
+        [
+          "row_87ace126d4",
+          "row_92da044aa3"
+        ]
+      ],
+      "nonProductRowIds": [],
+      "unknownPairs": [],
+      "explanation": "Book 14 Laptop/Notebook предварительно одна модель. 16GB/512GB совпадают; округление веса отложено этапу 2."
+    },
+    {
+      "id": "vault",
+      "family": "vault",
+      "split": "development",
+      "status": "provisional",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "rowIds": [
+        "row_22e59912ad",
+        "row_fbe753d7cc"
+      ],
+      "expectedGroups": [
+        [
+          "row_22e59912ad",
+          "row_fbe753d7cc"
+        ]
+      ],
+      "nonProductRowIds": [],
+      "unknownPairs": [],
+      "explanation": "Две формулировки Vault 2TB portable SSD предварительно один товар; гарантия одного поставщика не переносится на все предложения."
+    },
+    {
+      "id": "taskflow",
+      "family": "taskflow",
+      "split": "development",
+      "status": "provisional",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "rowIds": [
+        "row_64543589fc",
+        "row_a386736693"
+      ],
+      "expectedGroups": [
+        [
+          "row_64543589fc",
+          "row_a386736693"
+        ]
+      ],
+      "nonProductRowIds": [],
+      "unknownPairs": [],
+      "explanation": "K2 brown TKL/mech и mechanical keyboard brown switch предварительно одна модель; brown не удаляется из идентичности."
+    },
+    {
+      "id": "pulsefit",
+      "family": "pulsefit",
+      "split": "development",
+      "status": "provisional",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "rowIds": [
+        "row_3e2dd6416e",
+        "row_94d9860adf"
+      ],
+      "expectedGroups": [
+        [
+          "row_3e2dd6416e",
+          "row_94d9860adf"
+        ]
+      ],
+      "nonProductRowIds": [],
+      "unknownPairs": [],
+      "explanation": "Band 3 activity/fitness tracker предварительно одна модель. HR/SpO2 не дополняем внешними знаниями."
+    },
+    {
+      "id": "lumen",
+      "family": "lumen",
+      "split": "development",
+      "status": "provisional",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "rowIds": [
+        "row_1d1bdffe92",
+        "row_83da10f114"
+      ],
+      "expectedGroups": [
+        [
+          "row_1d1bdffe92",
+          "row_83da10f114"
+        ]
+      ],
+      "nonProductRowIds": [],
+      "unknownPairs": [],
+      "explanation": "X20 Compact Digital Camera/Kompaktkamera предварительно одна модель: поддерживается моделью и совместимыми specs."
+    },
+    {
+      "id": "cobalt",
+      "family": "cobalt",
+      "split": "development",
+      "status": "provisional",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "rowIds": [
+        "row_3fdcec64b2",
+        "row_68d860d397",
+        "row_6eddbd5517",
+        "row_71847a9c05",
+        "row_78b4c42770",
+        "row_833c7feebb",
+        "row_a8a875a60c",
+        "row_b2475a3df6",
+        "row_b40060c12f",
+        "row_b82f7fcc2a",
+        "row_bb41623d6c",
+        "row_bb6d2613d4",
+        "row_e67082ee31",
+        "row_f0ad473862"
+      ],
+      "expectedGroups": [
+        [
+          "row_3fdcec64b2"
+        ],
+        [
+          "row_68d860d397",
+          "row_78b4c42770"
+        ],
+        [
+          "row_6eddbd5517",
+          "row_f0ad473862"
+        ],
+        [
+          "row_71847a9c05"
+        ],
+        [
+          "row_833c7feebb"
+        ],
+        [
+          "row_a8a875a60c"
+        ],
+        [
+          "row_b2475a3df6"
+        ],
+        [
+          "row_b40060c12f"
+        ],
+        [
+          "row_b82f7fcc2a"
+        ],
+        [
+          "row_bb41623d6c"
+        ],
+        [
+          "row_bb6d2613d4"
+        ],
+        [
+          "row_e67082ee31"
+        ]
+      ],
+      "nonProductRowIds": [],
+      "unknownPairs": [],
+      "explanation": "Все Cobalt включены вместе: Pro/X/Lite/2/3 и разные типы — разные товары даже при шаблонных specs. Два Pro USB-C hub предварительно совпадают; $23.99/$867.99 не исправляем."
+    },
+    {
+      "id": "onyx",
+      "family": "onyx",
+      "split": "development",
+      "status": "provisional",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "rowIds": [
+        "row_17f5e3070f",
+        "row_4730fd8686",
+        "row_55a8c9b86d",
+        "row_56f937bd9e",
+        "row_5824054a52",
+        "row_654f1fb60f",
+        "row_6f66c4cb9e",
+        "row_74b8f7797a",
+        "row_a1bb1ad2e9",
+        "row_e571323780"
+      ],
+      "expectedGroups": [
+        [
+          "row_17f5e3070f"
+        ],
+        [
+          "row_4730fd8686"
+        ],
+        [
+          "row_55a8c9b86d",
+          "row_74b8f7797a"
+        ],
+        [
+          "row_56f937bd9e"
+        ],
+        [
+          "row_5824054a52"
+        ],
+        [
+          "row_654f1fb60f"
+        ],
+        [
+          "row_6f66c4cb9e"
+        ],
+        [
+          "row_a1bb1ad2e9"
+        ],
+        [
+          "row_e571323780"
+        ]
+      ],
+      "nonProductRowIds": [],
+      "unknownPairs": [],
+      "explanation": "Все Onyx включены вместе. Lite и 2 action camera различны несмотря на одинаковые 4K60/10m; типы и варианты сохраняются."
+    },
+    {
+      "id": "non-products",
+      "family": "non-products",
+      "split": "development",
+      "status": "provisional",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "rowIds": [
+        "row_28c6da70ee",
+        "row_7f570b374f",
+        "row_80738b0804",
+        "row_f4de4c72c5"
+      ],
+      "expectedGroups": [],
+      "nonProductRowIds": [
+        "row_28c6da70ee",
+        "row_7f570b374f",
+        "row_80738b0804",
+        "row_f4de4c72c5"
+      ],
+      "unknownPairs": [],
+      "explanation": "Четыре не-товара определены по содержимому: уведомление, тест, пустая запись, смешанный паллет. Stock=0 не является критерием."
+    },
+    {
+      "id": "freshcrate",
+      "family": "freshcrate",
+      "split": "holdout",
+      "status": "provisional",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "rowIds": [
+        "row_cfc9d66ae8"
+      ],
+      "expectedGroups": [
+        [
+          "row_cfc9d66ae8"
+        ]
+      ],
+      "nonProductRowIds": [],
+      "unknownPairs": [],
+      "explanation": "Отложенный случай: Blend One. Только наблюдаемые признаки, без внешних фактов."
+    },
+    {
+      "id": "orbit",
+      "family": "orbit",
+      "split": "holdout",
+      "status": "provisional",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "rowIds": [
+        "row_d8919b722b"
+      ],
+      "expectedGroups": [
+        [
+          "row_d8919b722b"
+        ]
+      ],
+      "nonProductRowIds": [],
+      "unknownPairs": [],
+      "explanation": "Отложенный случай: Orbit 7 128GB. Ёмкость сохраняется в идентичности."
+    },
+    {
+      "id": "harbor",
+      "family": "harbor",
+      "split": "holdout",
+      "status": "provisional",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "rowIds": [
+        "row_24e49bc1eb",
+        "row_293cd70b33",
+        "row_4f178f2cd1",
+        "row_52a24f8b1b",
+        "row_71fb9c3128",
+        "row_8d784b2c07",
+        "row_fcc5f20edc"
+      ],
+      "expectedGroups": [
+        [
+          "row_24e49bc1eb",
+          "row_293cd70b33",
+          "row_71fb9c3128"
+        ],
+        [
+          "row_4f178f2cd1",
+          "row_fcc5f20edc"
+        ],
+        [
+          "row_52a24f8b1b"
+        ],
+        [
+          "row_8d784b2c07"
+        ]
+      ],
+      "nonProductRowIds": [],
+      "unknownPairs": [],
+      "explanation": "Отложенное семейство целиком: разные типы/Plus/X отделены; одинаковые smart scale предварительно совпадают, включая два SKU EuroStock."
+    },
+    {
+      "id": "kestrel",
+      "family": "kestrel",
+      "split": "holdout",
+      "status": "provisional",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "rowIds": [
+        "row_1b08ede010",
+        "row_4582fae21d",
+        "row_5029b0e40e",
+        "row_522195dac7",
+        "row_60fe207b81",
+        "row_648ed14543",
+        "row_6f0c3aa377",
+        "row_a8a0a10cf2",
+        "row_bbaad66b9f",
+        "row_d2fac2ddba",
+        "row_e0a6cb6b3f",
+        "row_f73f37291f"
+      ],
+      "expectedGroups": [
+        [
+          "row_1b08ede010",
+          "row_f73f37291f"
+        ],
+        [
+          "row_4582fae21d",
+          "row_d2fac2ddba"
+        ],
+        [
+          "row_5029b0e40e",
+          "row_6f0c3aa377"
+        ],
+        [
+          "row_522195dac7"
+        ],
+        [
+          "row_60fe207b81"
+        ],
+        [
+          "row_648ed14543",
+          "row_e0a6cb6b3f"
+        ],
+        [
+          "row_a8a0a10cf2"
+        ],
+        [
+          "row_bbaad66b9f"
+        ]
+      ],
+      "nonProductRowIds": [],
+      "unknownPairs": [],
+      "explanation": "Отложенное семейство целиком: типы и варианты раздельны; bookshelf speaker pair 2 включает разные SKU одного поставщика, даже при пустых specs."
+    },
+    {
+      "id": "torrent",
+      "family": "torrent",
+      "split": "holdout",
+      "status": "provisional",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "rowIds": [
+        "row_3c159f1aea",
+        "row_4a8b5dc2b1",
+        "row_5609f5b65d",
+        "row_8dfa59e7c2",
+        "row_a4c85dc257",
+        "row_aa3fa28de4",
+        "row_aef34b7f58",
+        "row_ca51ad691e",
+        "row_decc7f2137",
+        "row_f35a2ab58f",
+        "row_fd1f97e32c"
+      ],
+      "expectedGroups": [
+        [
+          "row_3c159f1aea",
+          "row_ca51ad691e",
+          "row_decc7f2137",
+          "row_f35a2ab58f"
+        ],
+        [
+          "row_4a8b5dc2b1",
+          "row_a4c85dc257"
+        ],
+        [
+          "row_5609f5b65d"
+        ],
+        [
+          "row_8dfa59e7c2",
+          "row_aef34b7f58"
+        ],
+        [
+          "row_aa3fa28de4"
+        ],
+        [
+          "row_fd1f97e32c"
+        ]
+      ],
+      "nonProductRowIds": [],
+      "unknownPairs": [],
+      "explanation": "Отложенное семейство целиком: типы/варианты раздельны; несколько X bookshelf speaker pair предварительно один товар; stock не суммировать."
+    },
+    {
+      "id": "basalt",
+      "family": "basalt",
+      "split": "holdout",
+      "status": "provisional",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "rowIds": [
+        "row_07d0ec92f5",
+        "row_185aeac60e",
+        "row_24f8ce8414",
+        "row_35c28ff0d0",
+        "row_3a68411ed8",
+        "row_48143816e9",
+        "row_5a0b7faba6",
+        "row_6a281bc385",
+        "row_6fff6aa632",
+        "row_7b5442e7cc",
+        "row_894eb0e4a9",
+        "row_a453c69dab",
+        "row_a661bdf24e",
+        "row_ceb27e8382",
+        "row_d01593ee00",
+        "row_d440c7c5af",
+        "row_e1124c3b3f"
+      ],
+      "expectedGroups": [
+        [
+          "row_07d0ec92f5",
+          "row_48143816e9"
+        ],
+        [
+          "row_185aeac60e",
+          "row_894eb0e4a9"
+        ],
+        [
+          "row_24f8ce8414"
+        ],
+        [
+          "row_35c28ff0d0",
+          "row_ceb27e8382"
+        ],
+        [
+          "row_3a68411ed8"
+        ],
+        [
+          "row_5a0b7faba6",
+          "row_6a281bc385"
+        ],
+        [
+          "row_6fff6aa632",
+          "row_a453c69dab"
+        ],
+        [
+          "row_7b5442e7cc",
+          "row_d01593ee00"
+        ],
+        [
+          "row_a661bdf24e"
+        ],
+        [
+          "row_d440c7c5af"
+        ],
+        [
+          "row_e1124c3b3f"
+        ]
+      ],
+      "nonProductRowIds": [],
+      "unknownPairs": [],
+      "explanation": "Отложенное семейство целиком: типы, Lite/Pro/2 отделены даже при одинаковых шаблонных specs."
+    }
+  ]
+}
