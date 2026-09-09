@@ -1,8 +1,8 @@
-# Shelf Ready — этап 2
+# Shelf Ready — этап 3: офлайн-интеграция
 
-Локальный pipeline: JSON → валидация → предложения → явные факты и evidence → кандидаты и совместимые товары → категории, согласование и review → development eval и сохранённые метрики. Текущие правила **B1-v2**. B0 сохранён как отдельный режим. Генерация, verifier, API и UI относятся к следующим этапам.
+Локальный pipeline: JSON → валидация → предложения → явные факты и evidence → кандидаты и совместимые товары → категории, согласование и review → development eval и сохранённые метрики. Текущие правила **B1-v2**. B0 сохранён как отдельный режим. Подготовлена модульная API-интеграция B2, но реальных модельных прогонов пока нет. Генерация и verifier остаются этапу 4. Минимальный экран просмотра результатов добавлен в `web/` (по умолчанию demo-фикстуры).
 
-Стек: TypeScript 5.9, NestJS 12 standalone context, Node 24.14.1, npm. Версии зависимостей зафиксированы; дополнительных runtime-зависимостей этап 2 не добавил. React остаётся этапу 5; HTTP, БД и deployment не нужны.
+Стек: TypeScript 5.9, NestJS 12 standalone context, Node 24.14.1, npm; UI — Vite + React в `web/`. HTTP API, БД и deployment не нужны.
 
 ## Установка и запуск
 
@@ -16,6 +16,17 @@ npm run pipeline
 npm run eval
 ```
 
+### Экран результатов
+
+Отдельное Vite-приложение в [`web/`](web/). По умолчанию показывает три помеченные **Demo data** карточки (ready / conflict / insufficient data). Это не результат pipeline и не AI-проверка. Matching и verifier в браузере не выполняются; API-ключ не нужен.
+
+```sh
+npm --prefix web ci
+npm run web
+```
+
+Сборка UI: `npm run web:build`. Подробности и замена фикстур на `result.json` — в [`web/README.md`](web/README.md). Кратко: скопировать снимок в `web/public/data/result.json`, задать `VITE_CATALOG_URL=/data/result.json` в `web/.env.local`, перезапустить `npm run web`. Пока нет generation/listing, проекция pipeline ставит `generation_not_run` и пустые draft/published тексты.
+
 `pipeline` и `eval` выполняют одинаковый полный pipeline с development-оценкой. По умолчанию выбран B1; каждый запуск создаёт новый каталог в игнорируемом `reports/local/`. Чтобы результаты оставались частью репозитория для будущих графиков, использовать `--out reports`:
 
 ```sh
@@ -28,7 +39,7 @@ npm run benchmark -- --runs reports/B0,reports/my-b1,reports/my-b1-repeat --out 
 
 Существующие run ID и каталоги сравнения/экспорта не перезаписываются. Коммиты и push команды не выполняют.
 
-Пути задаются `--feed`, `--taxonomy`, `--labels`, `--checks`, `--out`. CLI имеет приоритет над `FEED_PATH`, `TAXONOMY_PATH`, `LABELS_PATH`, `REPORTS_DIR`, затем стандартными файлами. Для `--checks` переменной окружения нет; по умолчанию `eval/stage2-checks.json`. `.env.example` документирует переменные; `.env` автоматически не загружается. API-ключ не нужен.
+Пути задаются `--feed`, `--taxonomy`, `--labels`, `--checks`, `--out`. CLI имеет приоритет над `FEED_PATH`, `TAXONOMY_PATH`, `LABELS_PATH`, `REPORTS_DIR`, затем стандартными файлами. Для `--checks` переменной окружения нет; по умолчанию `eval/stage2-checks.json`. `.env.example` документирует переменные; `.env` автоматически не загружается. Для B0/B1 API-ключ не нужен.
 
 Development-проверки привязаны к хэшу конкретного feed и строкам development labels. Для другого feed передавать соответствующие labels/checks, а не применять готовые метки к новым данным. B0 не использует stage2-checks. Holdout не оценивается; команды оценки holdout пока нет.
 
@@ -70,7 +81,7 @@ ID строятся детерминированно; перестановка �
 
 Matching labels: 20 provisional случаев, 14 development на 59 строках / 6 holdout на 49. Unknown-пары исключаются; присоединение неразмеченных строк отмечается unevaluated; межслучайные ложные объединения учитываются. `eval/stage2-checks.json` отдельно фиксирует 18 проверок категорий, 30 фактов/отсутствия фактов и 4 согласования. Это целевые проверки, не исчерпывающая оценка всех 545 фактов. Человеческая проверка обоих наборов открыта. Исходный `eval/REVIEW.md` сохранён как исторический пакет; поправка про schwarz описана в отчёте этапа 2.
 
-`compare` читает schema 1 и 2, проверяет целостность решений и совпадение feed/taxonomy/labels/split. Неизвестная схема отклоняется. Разные входы/метки → несопоставимость, дельты N/A и exit code 1. Рост известных FP, нарушение учёта или провал quality checks также дают ненулевой код; сравнение сохраняется. Полная смена структуры строки и изменение состава matching-группы показываются отдельно. Для исторического B0 полноценный review — N/A, а не прежний ноль другого показателя. Новые категории/факты сравниваются только с тем же хэшем checks.
+`compare` читает schema 1, 2 и 3, проверяет целостность решений и совпадение feed/taxonomy/labels/split. Неизвестная схема отклоняется. Разные входы/метки → несопоставимость, дельты N/A и exit code 1. Рост известных FP, нарушение учёта или провал quality checks также дают ненулевой код; сравнение сохраняется. Полная смена структуры строки и изменение состава matching-группы показываются отдельно. Для исторического B0 полноценный review — N/A, а не прежний ноль другого показателя. Новые категории/факты сравниваются только с тем же хэшем checks.
 
 Текущие артефакты:
 
@@ -78,4 +89,48 @@ Matching labels: 20 provisional случаев, 14 development на 59 стро�
 - [Данные для графиков: 8 запусков](reports/benchmarks/stage2-v2/observations.jsonl), [перечень запусков](reports/benchmarks/stage2-v2/summary.json).
 - [Итог и передача этапа 2](docs/STAGE2_REPORT.md); [roadmap](docs/ROADMAP.md).
 
-Сохранённые B0, B0-repeat, промежуточный B1 и первый benchmark не переписывались. Файлы результатов сохраняются локально и предназначены для Git; автоматической отправки куда-либо нет. Этап 3 не начат.
+Сохранённые B0, B0-repeat, промежуточный B1 и первый benchmark не переписывались. Файлы результатов сохраняются локально и предназначены для Git; автоматической отправки куда-либо нет. Кодовая интеграция этапа 3 подготовлена; реальный AI-прогон ожидает сообщения пользователя о добавлении ключа. См. [отчёт этапа 3](docs/STAGE3_REPORT.md) и [роли моделей](LLM_ROLES.md).
+
+
+## B2: провайдеры и отложенный реальный запуск
+
+**По инструкции пользователя никакие модельные запросы пока не выполняются.** Даже появление ключа в окружении не является сигналом для агента начать: сначала нужно явное сообщение пользователя, что ключ добавлен. Ни тесты, ни обычный B1, ни bootstrap не проверяют доступ к API. Приведённые ниже live-команды — инструкция для будущего продолжения, они пока не выполнялись.
+
+Основной профиль: [`config/ai.json`](config/ai.json), extraction/category через `gpt-5.6-sol`, reasoning low. Рабочий адаптер только OpenAI. Общий `AiProvider` и DI-реестр позволяют позже добавить Ollama/другой провайдер; переключение одного base URL не считается готовым адаптером. SDK OpenAI не используется в предметных шагах.
+
+Отбор extraction: непонятые specs, неопределённый тип/категория и строки review-пар B1 — сейчас 41 строка, из них 12 development. Обрабатывается полный feed и сохраняется учёт 220 строк; `--ai-cohort development` ограничивает именно запросы, а не обрезает вход. Модель не получает labels. B2 добавляет пять ограниченных семантических атрибутов и не переписывает существующие наблюдения B1. Пустые specs сами по себе не вызывают модель. Unknown и неподдержанные форматы остаются review.
+
+Офлайн-команда для нового контрольного B1 и новых semantic-checks:
+
+```sh
+npm run pipeline -- --baseline b1 --semantic-checks eval/stage3-checks.json --out reports/local --run-id my-stage3-control
+```
+
+После сообщения о ключе пользователь задаёт `OPENAI_API_KEY` в окружении терминала. Не добавлять ключ в конфиг, аргументы CLI, frontend или Git. Автоматической загрузки `.env` нет; при использовании такого файла Node поддерживает `--env-file=.env` перед `dist/src/cli.js` после сборки.
+
+Будущий первый development-прогон, затем полный прогон и replay:
+
+```sh
+npm run pipeline -- --baseline b2 --ai-mode live --ai-cohort development --ai-config config/ai.json --ai-cache reports/B2-sol-development-cache --out reports --run-id B2-sol-development
+npm run pipeline -- --baseline b2 --ai-mode live --ai-config config/ai.json --ai-cache reports/B2-sol-live-cache --out reports --run-id B2-sol-live
+npm run eval -- --baseline b2 --ai-mode replay --ai-config config/ai.json --ai-cache reports/B2-sol-live-cache --out reports --run-id B2-sol-replay
+npm run compare -- --before reports/B1-stage3-control-v2 --after reports/B2-sol-live --out reports/comparisons --run-id B1-to-B2-sol
+npm run compare -- --before reports/B2-sol-live --after reports/B2-sol-replay --out reports/comparisons --run-id B2-sol-replay
+```
+
+Проверить development-результат до перехода к полному live; эти команды не составляют автоматическую последовательность. Запросы full_input могут обрабатывать holdout-строки, но holdout-оценка/настройка по ним отложена до этапа 5. Labels сохраняются provisional.
+
+Для отдельного будущего matching-эксперимента:
+
+```sh
+npm run pipeline -- --baseline b2 --ai-task matching --ai-cohort development --ai-mode live --ai-config config/ai.matching-sol.json --ai-cache reports/B2-matching-sol-cache --out reports --run-id B2-matching-sol
+npm run pipeline -- --baseline b2 --ai-task matching --ai-cohort development --ai-mode live --ai-config config/ai.matching-astra.json --ai-cache reports/B2-matching-astra-cache --out reports --run-id B2-matching-astra
+```
+
+Matching работает отдельно от extraction на одних и тех же review-парах B1: смена модели не перемешивается с новым extraction-прогоном. Сейчас это две unknown-пары AeroBuds; рекомендации не имеют подтверждённого эталона. Код не разрешает merge при неизвестной совместимости. Matching-прогон не является полным B2 extraction и не доказывает качество будущего verifier. Профили отличаются моделью matching; эксперимент по умолчанию выключен.
+
+`--baseline b2` требует явных `--ai-mode live|replay` и `--ai-cache DIR`. Для каждого live использовать новый cache DIR и run ID: существующие ответы не перезаписываются. Replay не требует ключа, не обращается к сети и не подставляет live при отсутствии ответа. При ошибках сохраняются базовые наблюдения, review, `report.json` со статусом partial, `ai.json` и `failure.json`; CLI возвращает 1. Ошибка конкретной строки не скрывает остальные исходы. Ошибка авторизации останавливает дальнейшие запросы.
+
+`--semantic-checks` по умолчанию для B2 указывает на `eval/stage3-checks.json`; прежний `--checks` продолжает использовать stage2-checks. Сравнение semantic.* допустимо только при одинаковом хэше новой выборки. Искусственный тестовый прогон маркируется test и не допускается в реальную benchmark-историю. Цены/usage, режим, конфигурация и происхождение записываются явно; N/A не превращается в нулевую стоимость.
+
+Кодовый контроль этапа 3 и история: [отчёт](reports/B1-stage3-control-v2/report.md), [сравнение с B1-v2](reports/comparisons/B1-v2-to-stage3-offline/comparison.md), [12 запусков / 803 наблюдения](reports/benchmarks/stage3-offline/summary.json). Реальные B2-прогоны пока не выполнялись.
