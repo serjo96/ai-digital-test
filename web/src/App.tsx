@@ -8,6 +8,7 @@ import {
 import { loadCatalog } from './data/loadCatalog.ts';
 import { ProductDetail } from './components/ProductDetail.tsx';
 import { ProductList } from './components/ProductList.tsx';
+import { RunOverview } from './components/RunOverview.tsx';
 import './App.css';
 
 type LoadState =
@@ -113,6 +114,7 @@ export default function App() {
         ) : null}
       </header>
 
+      <RunOverview catalog={catalog} />
       <div className="layout">
         <aside className="sidebar">
           <div className="filters">
@@ -151,11 +153,12 @@ export default function App() {
         <main className="detail">
           {selected ? (
             <ProductDetail
+              key={selected.id}
               product={selected}
               listing={selectedListing}
               offers={catalog.offers.filter(o => selected.offerIds.includes(o.id))}
               facts={catalog.facts}
-              rows={catalog.rows.filter(r => selected.rowIds.includes(r.source.row_id))}
+              rows={catalog.rows.filter(r => selected.rowIds.includes(r.source.row_id) || selectedListing?.reviewFlags.some(flag => flag.rowIds.includes(r.source.row_id) || flag.evidence.some(e => e.rowId === r.source.row_id)))}
               status={productStatus(selected, selectedListing)}
               statusText={statusLabel(productStatus(selected, selectedListing))}
             />

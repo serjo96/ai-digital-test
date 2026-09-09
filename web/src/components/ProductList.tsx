@@ -37,6 +37,7 @@ export function ProductList({
             <button
               type="button"
               className={product.id === selectedId ? 'product-item selected' : 'product-item'}
+              aria-pressed={product.id === selectedId}
               onClick={() => onSelect(product.id)}
             >
               <span className="product-name">{productDisplayName(product, rows)}</span>

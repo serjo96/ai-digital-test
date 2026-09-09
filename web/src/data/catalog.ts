@@ -4,6 +4,7 @@ import type {
   Offer,
   ReviewItem,
 } from '../../../src/domain.ts';
+import type { CatalogProvenance } from '../../../src/catalog-snapshot.ts';
 import type { NormalizedRow } from '../../../src/types.ts';
 
 export type CatalogSource = 'demo' | 'pipeline';
@@ -20,6 +21,7 @@ export interface ListingView {
 export interface CatalogSnapshot {
   source: CatalogSource;
   demoNotice?: string;
+  provenance?: CatalogProvenance | null;
   products: CanonicalProduct[];
   offers: Offer[];
   facts: Fact[];

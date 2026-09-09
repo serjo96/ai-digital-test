@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import type { CanonicalProduct, Fact, Offer, ReconciledFact } from '../../../src/domain.ts';
 import type { NormalizedRow } from '../../../src/types.ts';
 import type { ListingView, ProductStatus } from '../data/catalog.ts';
@@ -29,6 +29,7 @@ function FactRow({
   rowsById: Map<string, NormalizedRow>;
 }) {
   const [open, setOpen] = useState(false);
+  const detailId = useId();
   const observations = reconciled.observations
     .map(id => factsById.get(id))
     .filter((f): f is Fact => Boolean(f));
@@ -41,14 +42,14 @@ function FactRow({
 
   return (
     <div className={`fact-row status-${reconciled.status}`}>
-      <button type="button" className="fact-toggle" onClick={() => setOpen(value => !value)}>
+      <button type="button" className="fact-toggle" aria-expanded={open} aria-controls={detailId} onClick={() => setOpen(value => !value)}>
         <span className="fact-attr">{reconciled.attribute}</span>
         <span className="fact-summary">{summary}</span>
         <span className={`badge badge-fact-${reconciled.status}`}>{reconciled.status}</span>
         <span className="chevron">{open ? '▾' : '▸'}</span>
       </button>
       {open ? (
-        <div className="fact-details">
+        <div className="fact-details" id={detailId}>
           <p className="muted">
             Confidence: {reconciled.confidence.level}
             {reconciled.confidence.reasons.length
@@ -60,13 +61,13 @@ function FactRow({
             return (
               <div key={fact.id} className="evidence-card">
                 <p>
-                  <strong>Observation:</strong> {formatValue(fact)}
+                  <strong>Observation:</strong> {formatValue(fact)} · scope: {fact.scope} · rule: {fact.rule}
                 </p>
                 <p>
                   <strong>Source row:</strong>{' '}
-                  {row
+                  <a href={`#source-${fact.evidence.rowId}`}>{row
                     ? `${row.source.supplier} / ${row.source.supplier_sku} (${row.source.row_id})`
-                    : fact.evidence.rowId}
+                    : fact.evidence.rowId}</a>
                 </p>
                 {row ? (
                   <>
@@ -144,7 +145,7 @@ export function ProductDetail({
         {offers.length === 0 ? (
           <p className="muted">No offers attached.</p>
         ) : (
-          <table className="offers">
+          <div className="table-scroll" role="region" aria-label="Supplier offers table" tabIndex={0}><table className="offers">
             <thead>
               <tr>
                 <th>Supplier</th>
@@ -152,37 +153,43 @@ export function ProductDetail({
                 <th>Price</th>
                 <th>Currency</th>
                 <th>Stock</th>
-                <th>Condition</th>
+                <th>Condition / offer facts</th>
               </tr>
             </thead>
             <tbody>
               {offers.map(offer => (
                 <tr key={offer.id}>
                   <td>{offer.supplier}</td>
-                  <td>{offer.sku}</td>
+                  <td><a href={`#source-${offer.rowId}`}>{offer.sku}</a></td>
                   <td>{(offer.price.amount ?? offer.price.raw) || '—'}</td>
                   <td>{offer.price.currency ?? '—'}</td>
                   <td>{offer.stock}</td>
-                  <td>{offer.condition ?? 'unknown'}</td>
+                  <td>{offer.condition ?? 'unknown'}
+                    {offer.factIds.map(id => factsById.get(id)).filter((fact): fact is Fact => !!fact && fact.scope === 'offer').map(fact => <p key={fact.id}>
+                      {fact.attribute}: {formatValue(fact)}<br />
+                      <a href={`#source-${fact.evidence.rowId}`}>{fact.evidence.rowId}</a>: <q>{fact.evidence.quote}</q> · {fact.rule}
+                    </p>)}
+                  </td>
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table></div>
         )}
       </section>
 
       <section>
-        <h3>Source rows (unchanged)</h3>
+        <h3>Source and review rows (unchanged)</h3>
         {rows.length === 0 ? (
           <p className="muted">No source rows.</p>
         ) : (
           <ul className="source-rows">
             {rows.map(row => (
-              <li key={row.source.row_id} className="source-card">
+              <li key={row.source.row_id} id={`source-${row.source.row_id}`} tabIndex={-1} className="source-card">
                 <p>
                   <strong>{row.source.supplier}</strong> · {row.source.supplier_sku} ·{' '}
                   {row.source.row_id}
                 </p>
+                <p><strong>Original price:</strong> {row.source.price || '(empty)'} · <strong>Stock:</strong> {row.source.stock}</p>
                 <p>
                   <strong>Title:</strong> {row.source.raw_title || '(empty)'}
                 </p>
@@ -218,7 +225,7 @@ export function ProductDetail({
         {listing?.draftText ? (
           <p className="description">{listing.draftText}</p>
         ) : (
-          <p className="muted">No draft text.</p>
+          <p className="muted">Generation has not run. No draft text.</p>
         )}
       </section>
 
@@ -236,7 +243,7 @@ export function ProductDetail({
         {listing?.withholdReasons.length ? (
           <ul className="reasons">
             {listing.withholdReasons.map(reason => (
-              <li key={reason}>{reason}</li>
+              <li key={reason}>{reason === 'generation_not_run' ? 'Generation and claim verification have not run.' : reason}</li>
             ))}
           </ul>
         ) : (
@@ -252,9 +259,9 @@ export function ProductDetail({
               <li key={flag.id}>
                 <strong>{flag.reason}</strong>
                 <span className="muted">
-                  {' '}
-                  · rows: {flag.rowIds.join(', ') || '—'}
+                  {' '}· rows: {flag.rowIds.map(id => <a key={id} href={`#source-${id}`}>{id} </a>)}
                 </span>
+                {flag.evidence.map((evidence, index) => <p key={index}><a href={`#source-${evidence.rowId}`}>{evidence.field}</a>: <q>{evidence.quote}</q></p>)}
               </li>
             ))}
           </ul>
