@@ -1,0 +1,680 @@
+{
+  "before": "B0",
+  "after": "B1",
+  "comparable": true,
+  "incompatible": [],
+  "interpretation": "Saved run comparison",
+  "qualityStatus": "provisional",
+  "beforeMetrics": {
+    "inputRows": 220,
+    "accountedRows": 220,
+    "lostRows": 0,
+    "duplicateAssignments": 0,
+    "groups": 165,
+    "nonProducts": 4,
+    "reviewRows": null,
+    "tp": 7,
+    "fp": 0,
+    "fn": 10,
+    "precision": 1,
+    "recall": 0.4117647058823529
+  },
+  "afterMetrics": {
+    "inputRows": 220,
+    "accountedRows": 220,
+    "lostRows": 0,
+    "duplicateAssignments": 0,
+    "groups": 156,
+    "nonProducts": 4,
+    "reviewRows": 64,
+    "tp": 17,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1,
+    "recall": 1
+  },
+  "deltas": {
+    "inputRows": 0,
+    "accountedRows": 0,
+    "lostRows": 0,
+    "duplicateAssignments": 0,
+    "groups": -9,
+    "nonProducts": 0,
+    "reviewRows": null,
+    "tp": 10,
+    "fp": 0,
+    "fn": -10,
+    "precision": 0,
+    "recall": 0.5882352941176471
+  },
+  "decisionsEqual": false,
+  "changedRowIds": [
+    "row_025ae6063a",
+    "row_02ad74e735",
+    "row_04ecd45818",
+    "row_0529181075",
+    "row_05e5d126cb",
+    "row_06dc75e525",
+    "row_0749740cfc",
+    "row_07d0ec92f5",
+    "row_0952d61e2d",
+    "row_0a5452008a",
+    "row_0ba9edac39",
+    "row_0eb52882db",
+    "row_0fd5e416e8",
+    "row_10b9579a30",
+    "row_1134eb89e7",
+    "row_11462769c5",
+    "row_11bb99b2fa",
+    "row_127d44f74c",
+    "row_17bac50146",
+    "row_17bb73bd1c",
+    "row_17e27bf495",
+    "row_17f5e3070f",
+    "row_185aeac60e",
+    "row_190a9264bb",
+    "row_19950873e2",
+    "row_1b08ede010",
+    "row_1d1bdffe92",
+    "row_1e60b0a9dc",
+    "row_22e59912ad",
+    "row_24e49bc1eb",
+    "row_24f8ce8414",
+    "row_259242eb11",
+    "row_268d404278",
+    "row_2862086d0f",
+    "row_28b9db3a0d",
+    "row_293cd70b33",
+    "row_2b25cbbe3f",
+    "row_2bbf2cbc15",
+    "row_2cfdf4fa44",
+    "row_302c214bfa",
+    "row_3196ddf429",
+    "row_35c28ff0d0",
+    "row_38ed2ce97a",
+    "row_3a68411ed8",
+    "row_3c159f1aea",
+    "row_3e2dd6416e",
+    "row_3f77cefacd",
+    "row_3fdcec64b2",
+    "row_40ba9c93dc",
+    "row_4582fae21d",
+    "row_4730fd8686",
+    "row_48143816e9",
+    "row_4a8b5dc2b1",
+    "row_4c297d9293",
+    "row_4c2be4913a",
+    "row_4d609c9ff9",
+    "row_4f178f2cd1",
+    "row_4f475e32c2",
+    "row_5029b0e40e",
+    "row_51ad7a4367",
+    "row_522195dac7",
+    "row_52a24f8b1b",
+    "row_53533ce63e",
+    "row_55a8c9b86d",
+    "row_5609f5b65d",
+    "row_5678fc80e6",
+    "row_56f937bd9e",
+    "row_57b5aaacc5",
+    "row_5824054a52",
+    "row_59fb8196e6",
+    "row_5a0b7faba6",
+    "row_5bc3e64dcb",
+    "row_5cc18c2896",
+    "row_5f0a46c6ee",
+    "row_60fe207b81",
+    "row_6389333c51",
+    "row_641c690d68",
+    "row_64543589fc",
+    "row_648ed14543",
+    "row_6504d4facd",
+    "row_654f1fb60f",
+    "row_662a7334a3",
+    "row_6668f30f9e",
+    "row_67a1a789da",
+    "row_68d860d397",
+    "row_6a281bc385",
+    "row_6b647120b8",
+    "row_6cf12224f7",
+    "row_6d2f0a90b9",
+    "row_6d481c7e2b",
+    "row_6dc62d382b",
+    "row_6eddbd5517",
+    "row_6eea41ae9b",
+    "row_6f0c3aa377",
+    "row_6f66c4cb9e",
+    "row_6fff6aa632",
+    "row_7074cbc3ad",
+    "row_70bdd4eb63",
+    "row_71847a9c05",
+    "row_71fb9c3128",
+    "row_728bc009b0",
+    "row_73d3ec91bb",
+    "row_74b8f7797a",
+    "row_76b28cdc31",
+    "row_77ce3dea5e",
+    "row_78b4c42770",
+    "row_79480ac1f8",
+    "row_7b5442e7cc",
+    "row_7c929ee113",
+    "row_7eabdad0f0",
+    "row_7f3f1b14c3",
+    "row_7f9b60153c",
+    "row_81030c14d9",
+    "row_81cd8108b0",
+    "row_833c7feebb",
+    "row_83da10f114",
+    "row_841c563697",
+    "row_8774b9baca",
+    "row_87ace126d4",
+    "row_87e1e24c27",
+    "row_88659ce11a",
+    "row_894eb0e4a9",
+    "row_89c864b342",
+    "row_8cdaf40615",
+    "row_8d784b2c07",
+    "row_8dfa59e7c2",
+    "row_904fefcad0",
+    "row_908ca0635e",
+    "row_92da044aa3",
+    "row_934d37c5c3",
+    "row_93a80ae523",
+    "row_94d9860adf",
+    "row_9604d0373a",
+    "row_98dbb1901d",
+    "row_9970a553e5",
+    "row_9a32000da2",
+    "row_9b67e4c70b",
+    "row_9bf0c018ab",
+    "row_9d0de73f86",
+    "row_a1bb1ad2e9",
+    "row_a386736693",
+    "row_a453c69dab",
+    "row_a4c85dc257",
+    "row_a60219abb1",
+    "row_a661bdf24e",
+    "row_a702f5474f",
+    "row_a8a0a10cf2",
+    "row_a8a4a1acea",
+    "row_a8a875a60c",
+    "row_aa35314055",
+    "row_aa3fa28de4",
+    "row_ac52a0bb36",
+    "row_ad9b8ea940",
+    "row_aef34b7f58",
+    "row_b2475a3df6",
+    "row_b2a6bc7889",
+    "row_b40060c12f",
+    "row_b797ec3e0c",
+    "row_b82f7fcc2a",
+    "row_b97f53ab30",
+    "row_ba57c0fc87",
+    "row_bb41623d6c",
+    "row_bb6d2613d4",
+    "row_bbaad66b9f",
+    "row_bcbe8b38fe",
+    "row_bdbc045131",
+    "row_bddc33a831",
+    "row_be3b86088a",
+    "row_c0c4b370e4",
+    "row_c2467f5304",
+    "row_c3501c6da1",
+    "row_c372f682ee",
+    "row_c503f0112e",
+    "row_c53344afdc",
+    "row_c5d74e7abd",
+    "row_c7628d7c8b",
+    "row_c82cd2b2bf",
+    "row_c8617509f8",
+    "row_ca51ad691e",
+    "row_cdf75e46ea",
+    "row_ceb27e8382",
+    "row_cfc9d66ae8",
+    "row_d01593ee00",
+    "row_d097195181",
+    "row_d2fac2ddba",
+    "row_d40a07ffb8",
+    "row_d40a3f9143",
+    "row_d440c7c5af",
+    "row_d5d5379960",
+    "row_d878933395",
+    "row_d8919b722b",
+    "row_d98f99472c",
+    "row_da6585ad9f",
+    "row_db932df2b7",
+    "row_de5e00a8f3",
+    "row_decc7f2137",
+    "row_e0a6cb6b3f",
+    "row_e0afb74574",
+    "row_e1124c3b3f",
+    "row_e51140ad9b",
+    "row_e571323780",
+    "row_e619a63286",
+    "row_e67082ee31",
+    "row_e6bcf83e77",
+    "row_ed73b4dab2",
+    "row_ef93481968",
+    "row_f0ad473862",
+    "row_f29e09c258",
+    "row_f35a2ab58f",
+    "row_f3873a8816",
+    "row_f73f37291f",
+    "row_fb6dff1674",
+    "row_fbe753d7cc",
+    "row_fcc5f20edc",
+    "row_fd1f97e32c",
+    "row_fe3ff4b356"
+  ],
+  "changedMatchingRowIds": [
+    "row_05e5d126cb",
+    "row_11bb99b2fa",
+    "row_1d1bdffe92",
+    "row_1e60b0a9dc",
+    "row_22e59912ad",
+    "row_3e2dd6416e",
+    "row_64543589fc",
+    "row_7f3f1b14c3",
+    "row_83da10f114",
+    "row_87ace126d4",
+    "row_92da044aa3",
+    "row_94d9860adf",
+    "row_a386736693",
+    "row_bdbc045131",
+    "row_c2467f5304",
+    "row_f3873a8816",
+    "row_fbe753d7cc"
+  ],
+  "metricDeltas": [
+    {
+      "name": "accounting.coverage",
+      "before": null,
+      "after": 1,
+      "delta": null
+    },
+    {
+      "name": "accounting.duplicate_assignments",
+      "before": null,
+      "after": 0,
+      "delta": null
+    },
+    {
+      "name": "accounting.lost_rows",
+      "before": null,
+      "after": 0,
+      "delta": null
+    },
+    {
+      "name": "api.calls",
+      "before": null,
+      "after": 0,
+      "delta": null
+    },
+    {
+      "name": "categories.check_accuracy",
+      "before": null,
+      "after": 1,
+      "delta": null
+    },
+    {
+      "name": "errors.execution",
+      "before": null,
+      "after": 0,
+      "delta": null
+    },
+    {
+      "name": "errors.matching",
+      "before": null,
+      "after": 0,
+      "delta": null
+    },
+    {
+      "name": "errors.non_product",
+      "before": null,
+      "after": 0,
+      "delta": null
+    },
+    {
+      "name": "errors.quality_checks",
+      "before": null,
+      "after": 0,
+      "delta": null
+    },
+    {
+      "name": "facts.accepted_attributes",
+      "before": null,
+      "after": 392,
+      "delta": null
+    },
+    {
+      "name": "facts.check_accuracy",
+      "before": null,
+      "after": 1,
+      "delta": null
+    },
+    {
+      "name": "facts.conflicts",
+      "before": null,
+      "after": 0,
+      "delta": null
+    },
+    {
+      "name": "facts.extracted",
+      "before": null,
+      "after": 545,
+      "delta": null
+    },
+    {
+      "name": "facts.incomparable",
+      "before": null,
+      "after": 1,
+      "delta": null
+    },
+    {
+      "name": "facts.unparsed_fragments",
+      "before": null,
+      "after": 44,
+      "delta": null
+    },
+    {
+      "name": "generation.quality",
+      "before": null,
+      "after": null,
+      "delta": null
+    },
+    {
+      "name": "input.rows",
+      "before": null,
+      "after": 220,
+      "delta": null
+    },
+    {
+      "name": "matching.candidate_recall",
+      "before": null,
+      "after": 1,
+      "delta": null
+    },
+    {
+      "name": "matching.false_merge",
+      "before": null,
+      "after": 0,
+      "delta": null
+    },
+    {
+      "name": "matching.hard_negative_false_merges",
+      "before": null,
+      "after": 0,
+      "delta": null
+    },
+    {
+      "name": "matching.hard_negative_specificity",
+      "before": null,
+      "after": 1,
+      "delta": null
+    },
+    {
+      "name": "matching.missed_pair",
+      "before": null,
+      "after": 0,
+      "delta": null
+    },
+    {
+      "name": "matching.negative_specificity",
+      "before": null,
+      "after": 1,
+      "delta": null
+    },
+    {
+      "name": "matching.precision",
+      "before": null,
+      "after": 1,
+      "delta": null
+    },
+    {
+      "name": "matching.recall",
+      "before": null,
+      "after": 1,
+      "delta": null
+    },
+    {
+      "name": "matching.true_negative",
+      "before": null,
+      "after": 1692,
+      "delta": null
+    },
+    {
+      "name": "matching.true_positive",
+      "before": null,
+      "after": 17,
+      "delta": null
+    },
+    {
+      "name": "matching.unevaluated_attached_pairs",
+      "before": null,
+      "after": 0,
+      "delta": null
+    },
+    {
+      "name": "matching.unknown_pairs",
+      "before": null,
+      "after": 2,
+      "delta": null
+    },
+    {
+      "name": "non_product.accuracy",
+      "before": null,
+      "after": 1,
+      "delta": null
+    },
+    {
+      "name": "non_product.false_rejection",
+      "before": null,
+      "after": 0,
+      "delta": null
+    },
+    {
+      "name": "non_product.missed_trash",
+      "before": null,
+      "after": 0,
+      "delta": null
+    },
+    {
+      "name": "non_product.precision",
+      "before": null,
+      "after": 1,
+      "delta": null
+    },
+    {
+      "name": "non_product.recall",
+      "before": null,
+      "after": 1,
+      "delta": null
+    },
+    {
+      "name": "non_product.rejected_rows",
+      "before": null,
+      "after": 4,
+      "delta": null
+    },
+    {
+      "name": "non_product.true_negative",
+      "before": null,
+      "after": 55,
+      "delta": null
+    },
+    {
+      "name": "non_product.true_positive",
+      "before": null,
+      "after": 4,
+      "delta": null
+    },
+    {
+      "name": "non_product.valid_product_retention",
+      "before": null,
+      "after": 1,
+      "delta": null
+    },
+    {
+      "name": "products.count",
+      "before": null,
+      "after": 156,
+      "delta": null
+    },
+    {
+      "name": "reconciliation.check_accuracy",
+      "before": null,
+      "after": 1,
+      "delta": null
+    },
+    {
+      "name": "review.category_items",
+      "before": null,
+      "after": 2,
+      "delta": null
+    },
+    {
+      "name": "review.conflict_items",
+      "before": null,
+      "after": 0,
+      "delta": null
+    },
+    {
+      "name": "review.extraction_items",
+      "before": null,
+      "after": 39,
+      "delta": null
+    },
+    {
+      "name": "review.identity_items",
+      "before": null,
+      "after": 2,
+      "delta": null
+    },
+    {
+      "name": "review.incomparable_items",
+      "before": null,
+      "after": 1,
+      "delta": null
+    },
+    {
+      "name": "review.items",
+      "before": null,
+      "after": 65,
+      "delta": null
+    },
+    {
+      "name": "review.missing_specs_items",
+      "before": null,
+      "after": 21,
+      "delta": null
+    },
+    {
+      "name": "review.product_rate",
+      "before": null,
+      "after": 0.3269230769230769,
+      "delta": null
+    },
+    {
+      "name": "review.products",
+      "before": null,
+      "after": 51,
+      "delta": null
+    },
+    {
+      "name": "review.reason.fact_incomparable:power.items",
+      "before": null,
+      "after": 1,
+      "delta": null
+    },
+    {
+      "name": "review.reason.fact_incomparable:power.rows",
+      "before": null,
+      "after": 2,
+      "delta": null
+    },
+    {
+      "name": "review.reason.identity:incomplete_type_or_variant.items",
+      "before": null,
+      "after": 2,
+      "delta": null
+    },
+    {
+      "name": "review.reason.identity:incomplete_type_or_variant.rows",
+      "before": null,
+      "after": 3,
+      "delta": null
+    },
+    {
+      "name": "review.reason.missing_specs.items",
+      "before": null,
+      "after": 21,
+      "delta": null
+    },
+    {
+      "name": "review.reason.missing_specs.rows",
+      "before": null,
+      "after": 21,
+      "delta": null
+    },
+    {
+      "name": "review.reason.uncertain_category.items",
+      "before": null,
+      "after": 2,
+      "delta": null
+    },
+    {
+      "name": "review.reason.uncertain_category.rows",
+      "before": null,
+      "after": 2,
+      "delta": null
+    },
+    {
+      "name": "review.reason.unparsed_specs.items",
+      "before": null,
+      "after": 39,
+      "delta": null
+    },
+    {
+      "name": "review.reason.unparsed_specs.rows",
+      "before": null,
+      "after": 39,
+      "delta": null
+    },
+    {
+      "name": "review.row_rate",
+      "before": null,
+      "after": 0.2909090909090909,
+      "delta": null
+    },
+    {
+      "name": "review.rows",
+      "before": null,
+      "after": 64,
+      "delta": null
+    },
+    {
+      "name": "timing.pipeline",
+      "before": null,
+      "after": 36.839833,
+      "delta": null
+    },
+    {
+      "name": "timing.wall",
+      "before": null,
+      "after": 72.201709,
+      "delta": null
+    },
+    {
+      "name": "verifier.quality",
+      "before": null,
+      "after": null,
+      "delta": null
+    }
+  ],
+  "configChanged": true,
+  "wallTimeMs": {
+    "before": 43.05804200000003,
+    "after": 72.201709
+  },
+  "violations": []
+}

@@ -2,6 +2,7 @@ import { readFile, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { hash } from './baseline.js';
+import { metricTable } from './metrics.js';
 import type { BaselineResult, Ratio, RunReport } from './types.js';
 
 export async function codeVersion(): Promise<RunReport['code']> {
@@ -24,6 +25,14 @@ export function formatRatio(value: Ratio): string {
 
 export function reportMarkdown(report: RunReport): string {
   const e = report.evaluation; const a = report.audit;
+  if (report.schemaVersion === '2') return `# ${report.runId} — ${report.rulesVersion}\n\n` +
+    `Status: ${report.status}; matching labels: **${e.status}**; development only. Holdout not evaluated.\n\n` +
+    metricTable(report.metrics ?? []) +
+    `\nMatching errors: ${e.errors.length ? JSON.stringify(e.errors) : 'none'}.\n\n` +
+    `Quality check errors: ${report.checks ? JSON.stringify(report.checks.errors) : 'N/A'}.\n\n` +
+    `Sources/config: ${JSON.stringify(report.hashes)}\n\nCode: ${JSON.stringify(report.code)}\n\n` +
+    `Timing: ${JSON.stringify(report.timing)}. Wall measurement ends after result/diagnostics, before metric/report serialization.\n\n` +
+    `No generation, verifier, or publication readiness. Counts over all inputs are diagnostics; quality is measured only on the provisional development labels/checks. Unknown relations are excluded.\n`;
   return `# ${report.runId} — B0\n\n` +
     `Status: ${report.status}; mode: ${report.mode}; matching labels: **${e.status}**; split: development. Holdout not evaluated.\n\n` +
     `| Metric | Value |\n|---|---|\n` +
@@ -50,13 +59,13 @@ export function compareReports(before: RunReport | null, after: RunReport, befor
   if (before) {
     for (const key of ['feed', 'taxonomy', 'labels'] as const) if (before.hashes[key] !== after.hashes[key]) incompatible.push(`${key} hash changed`);
     if (before.evaluation.split !== after.evaluation.split) incompatible.push('split changed');
-    if (before.schemaVersion !== after.schemaVersion) incompatible.push('report schema changed');
+    if (![before.schemaVersion, after.schemaVersion].every(v => v === '1' || v === '2')) incompatible.push('unsupported report schema');
   }
   const comparable = incompatible.length === 0;
   const flatten = (r: RunReport) => ({
     inputRows: r.audit.inputRows, accountedRows: r.audit.accountedRows, lostRows: r.audit.lostRows,
     duplicateAssignments: r.audit.duplicateAssignments, groups: r.audit.groups, nonProducts: r.audit.nonProducts,
-    reviewRows: r.audit.reviewRows, tp: r.evaluation.tp, fp: r.evaluation.fp, fn: r.evaluation.fn,
+    reviewRows: r.schemaVersion === '2' && r.rulesVersion.startsWith('B1-') ? r.audit.reviewRows : null, tp: r.evaluation.tp, fp: r.evaluation.fp, fn: r.evaluation.fn,
     precision: r.evaluation.precision.value, recall: r.evaluation.recall.value,
   });
   const oldMetrics = before ? flatten(before) : null; const newMetrics = flatten(after);
@@ -64,19 +73,31 @@ export function compareReports(before: RunReport | null, after: RunReport, befor
     const old = oldMetrics?.[k as keyof typeof newMetrics];
     return [k, comparable && typeof old === 'number' && typeof v === 'number' ? v - old : null];
   }));
+  const membership = (result: BaselineResult | null) => new Map(result?.groups.flatMap(g => g.rowIds.map(id => [id, [...g.rowIds].sort()] as const)) ?? []);
+  const oldMembers = membership(beforeResult); const newMembers = membership(afterResult);
   const oldRows = new Map(beforeResult?.rows.map(r => [r.source.row_id, r]) ?? []);
   const newRows = new Map(afterResult.rows.map(r => [r.source.row_id, r]));
   const changedRows = [...new Set([...oldRows.keys(), ...newRows.keys()])].sort().filter(id =>
     JSON.stringify(oldRows.get(id)) !== JSON.stringify(newRows.get(id)));
+  const changedMatchingRowIds = [...new Set([...oldRows.keys(), ...newRows.keys()])].sort().filter(id =>
+    JSON.stringify([oldRows.get(id)?.outcome, oldMembers.get(id)]) !== JSON.stringify([newRows.get(id)?.outcome, newMembers.get(id)]));
+  const metricNames = [...new Set([...(before?.metrics ?? []).map(m => m.name), ...(after.metrics ?? []).map(m => m.name)])].sort();
+  const metricDeltas = metricNames.map(name => {
+    const old = before?.metrics?.find(m => m.name === name); const next = after.metrics?.find(m => m.name === name);
+    const sameProtocol = comparable && (!/^(categories|facts|reconciliation)\.check_accuracy$/.test(name) || before?.hashes.checks === after.hashes.checks);
+    return { name, before: old?.value ?? null, after: next?.value ?? null,
+      delta: sameProtocol && old?.value != null && next?.value != null ? next.value - old.value : null };
+  });
   const violations: string[] = [];
   if (after.audit.lostRows || after.audit.duplicateAssignments || after.audit.accountedRows !== after.audit.inputRows) violations.push('row accounting failed');
   if (before && comparable && after.evaluation.fp > before.evaluation.fp) violations.push('new false merges on labelled relations');
+  if (after.checks?.errors.length) violations.push('development quality checks failed');
   return {
     before: before?.runId ?? 'before-implementation', after: after.runId,
     comparable, incompatible, interpretation: before ? 'Saved run comparison' : 'No prior pipeline; previous quality and deltas are N/A',
     qualityStatus: after.evaluation.status, beforeMetrics: oldMetrics, afterMetrics: newMetrics, deltas,
     decisionsEqual: before ? before.decisionsHash === after.decisionsHash : null,
-    changedRowIds: changedRows, configChanged: before ? before.hashes.config !== after.hashes.config : null,
+    changedRowIds: changedRows, changedMatchingRowIds, metricDeltas, configChanged: before ? before.hashes.config !== after.hashes.config : null,
     wallTimeMs: { before: before?.wallTimeMs ?? null, after: after.wallTimeMs }, violations,
   };
 }
@@ -87,6 +108,7 @@ export function comparisonMarkdown(c: ReturnType<typeof compareReports>): string
     `Comparable: ${c.comparable}. ${c.incompatible.join('; ')}\n\n| Metric | Before | After | Delta |\n|---|---|---|---|\n` +
     Object.entries(c.afterMetrics).map(([k, v]) => `| ${k} | ${display(c.beforeMetrics?.[k as keyof typeof c.afterMetrics])} | ${display(v)} | ${display(c.deltas[k])} |`).join('\n') +
     `\n\nDecisions equal: ${display(c.decisionsEqual)}. Changed/new/removed rows: ${c.changedRowIds.length}.\n` +
+    `Changed matching membership/outcome rows: ${c.changedMatchingRowIds.length}.\n\n` +
     `Wall time: ${display(c.wallTimeMs.before)} → ${c.wallTimeMs.after} ms (not a deterministic metric).\n\n` +
-    `Mandatory violations: ${c.violations.join('; ') || 'none'}. Full row IDs are in comparison.json.\n`;
+    `Mandatory violations: ${c.violations.join('; ') || 'none'}. Full row IDs and extended metric deltas are in comparison.json. Historical B0 review is N/A because its definition differed.\n`;
 }

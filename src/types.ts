@@ -29,7 +29,7 @@ export interface BaselineGroup {
   id: string;
   rowIds: string[];
   titleKey: string;
-  method: 'exact_normalized_title';
+  method: 'exact_normalized_title' | 'compatible_identity';
 }
 
 export interface BaselineResult {
@@ -80,15 +80,15 @@ export interface Evaluation {
 }
 
 export interface RunReport {
-  schemaVersion: '1';
-  rulesVersion: 'B0-v1';
+  schemaVersion: '1' | '2';
+  rulesVersion: 'B0-v1' | 'B1-v1' | 'B1-v2';
   runId: string;
   createdAt: string;
   status: 'success';
   mode: 'code-only';
   code: { commit: string | null; dirty: boolean | null; implementationHash: string };
-  hashes: { feed: string; taxonomy: string; labels: string; config: string };
-  config: { titleNormalization: string; dollarCurrency: string; split: 'development' };
+  hashes: { feed: string; taxonomy: string; labels: string; config: string; checks?: string };
+  config: { titleNormalization: string; dollarCurrency: string; split: 'development'; baseline?: 'b0' | 'b1' };
   audit: {
     inputRows: number;
     accountedRows: number;
@@ -113,4 +113,7 @@ export interface RunReport {
   api: { calls: 0; errors: 0; tokens: 0; cost: 0 };
   wallTimeMs: number;
   decisionsHash: string;
+  metrics?: import('./metrics.js').Metric[];
+  checks?: import('./quality.js').QualityEvaluation;
+  timing?: { protocol: 'cli-through-result-v1'; node: string; platform: string; arch: string; pipelineMs: number };
 }

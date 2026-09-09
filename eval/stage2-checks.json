@@ -1,0 +1,472 @@
+{
+  "version": "stage2-dev-v1",
+  "status": "provisional",
+  "feedHash": "6b6ebc7a54ab90abae315abf5b145b22d9ef11d2c673f8feeeb245ee2808d6b6",
+  "checks": [
+    {
+      "id": "category-01",
+      "rowId": "row_f3873a8816",
+      "kind": "category",
+      "expected": "audio_speakers"
+    },
+    {
+      "id": "category-02",
+      "rowId": "row_cdf75e46ea",
+      "kind": "category",
+      "expected": "audio_speakers"
+    },
+    {
+      "id": "category-03",
+      "rowId": "row_bdbc045131",
+      "kind": "category",
+      "expected": "audio_headphones"
+    },
+    {
+      "id": "category-04",
+      "rowId": "row_fe3ff4b356",
+      "kind": "category",
+      "expected": "other"
+    },
+    {
+      "id": "category-05",
+      "rowId": "row_1e60b0a9dc",
+      "kind": "category",
+      "expected": "audio_headphones"
+    },
+    {
+      "id": "category-06",
+      "rowId": "row_7f3f1b14c3",
+      "kind": "category",
+      "expected": "audio_headphones"
+    },
+    {
+      "id": "category-07",
+      "rowId": "row_76b28cdc31",
+      "kind": "category",
+      "expected": "tablets"
+    },
+    {
+      "id": "category-08",
+      "rowId": "row_1134eb89e7",
+      "kind": "category",
+      "expected": "chargers_cables"
+    },
+    {
+      "id": "category-09",
+      "rowId": "row_6668f30f9e",
+      "kind": "category",
+      "expected": "home_kitchen"
+    },
+    {
+      "id": "category-10",
+      "rowId": "row_87ace126d4",
+      "kind": "category",
+      "expected": "laptops"
+    },
+    {
+      "id": "category-11",
+      "rowId": "row_fbe753d7cc",
+      "kind": "category",
+      "expected": "storage"
+    },
+    {
+      "id": "category-12",
+      "rowId": "row_64543589fc",
+      "kind": "category",
+      "expected": "gaming_accessories"
+    },
+    {
+      "id": "category-13",
+      "rowId": "row_94d9860adf",
+      "kind": "category",
+      "expected": "wearables"
+    },
+    {
+      "id": "category-14",
+      "rowId": "row_83da10f114",
+      "kind": "category",
+      "expected": "cameras"
+    },
+    {
+      "id": "category-15",
+      "rowId": "row_bb6d2613d4",
+      "kind": "category",
+      "expected": "other"
+    },
+    {
+      "id": "category-16",
+      "rowId": "row_6eddbd5517",
+      "kind": "category",
+      "expected": "chargers_cables"
+    },
+    {
+      "id": "category-17",
+      "rowId": "row_bddc33a831",
+      "kind": "category",
+      "expected": "other"
+    },
+    {
+      "id": "category-18",
+      "rowId": "row_5824054a52",
+      "kind": "category",
+      "expected": "other"
+    },
+    {
+      "id": "fact-19",
+      "rowId": "row_f3873a8816",
+      "kind": "fact",
+      "attribute": "mass",
+      "value": 1200,
+      "unit": "g",
+      "conditions": [],
+      "scope": "product",
+      "field": "raw_specs"
+    },
+    {
+      "id": "fact-20",
+      "rowId": "row_c2467f5304",
+      "kind": "fact",
+      "attribute": "mass",
+      "value": 1190.67997125,
+      "unit": "g",
+      "conditions": [],
+      "scope": "product",
+      "field": "raw_specs"
+    },
+    {
+      "id": "fact-21",
+      "rowId": "row_92da044aa3",
+      "kind": "fact",
+      "attribute": "mass",
+      "value": 1300,
+      "unit": "g",
+      "conditions": [],
+      "scope": "product",
+      "field": "raw_specs"
+    },
+    {
+      "id": "fact-22",
+      "rowId": "row_87ace126d4",
+      "kind": "fact",
+      "attribute": "mass",
+      "value": 1315.417873,
+      "unit": "g",
+      "conditions": [],
+      "scope": "product",
+      "field": "raw_specs"
+    },
+    {
+      "id": "fact-23",
+      "rowId": "row_bdbc045131",
+      "kind": "fact",
+      "attribute": "battery_runtime",
+      "value": 20,
+      "unit": "h",
+      "conditions": [
+        "with_case"
+      ],
+      "scope": "product",
+      "field": "raw_specs"
+    },
+    {
+      "id": "fact-24",
+      "rowId": "row_11bb99b2fa",
+      "kind": "fact",
+      "attribute": "battery_runtime",
+      "value": 20,
+      "unit": "h",
+      "conditions": [
+        "with_case"
+      ],
+      "scope": "product",
+      "field": "raw_specs"
+    },
+    {
+      "id": "fact-25",
+      "rowId": "row_e0afb74574",
+      "kind": "fact",
+      "attribute": "battery_runtime",
+      "value": 18,
+      "unit": "h",
+      "conditions": [
+        "usage_unspecified"
+      ],
+      "scope": "product",
+      "field": "raw_specs"
+    },
+    {
+      "id": "fact-26",
+      "rowId": "row_e0afb74574",
+      "kind": "fact",
+      "attribute": "color",
+      "value": "black",
+      "unit": null,
+      "conditions": [],
+      "scope": "product",
+      "field": "raw_title"
+    },
+    {
+      "id": "fact-27",
+      "rowId": "row_fbe753d7cc",
+      "kind": "fact",
+      "attribute": "transfer_speed",
+      "value": 1050,
+      "unit": "MB/s",
+      "conditions": [
+        "up_to",
+        "read"
+      ],
+      "scope": "product",
+      "field": "raw_specs"
+    },
+    {
+      "id": "fact-28",
+      "rowId": "row_fbe753d7cc",
+      "kind": "fact",
+      "attribute": "warranty_duration",
+      "value": 3,
+      "unit": "year",
+      "conditions": [],
+      "scope": "offer",
+      "field": "raw_specs"
+    },
+    {
+      "id": "fact-29",
+      "rowId": "row_05e5d126cb",
+      "kind": "fact",
+      "attribute": "condition",
+      "value": "open_box",
+      "unit": null,
+      "conditions": [],
+      "scope": "offer",
+      "field": "raw_title"
+    },
+    {
+      "id": "fact-30",
+      "rowId": "row_1134eb89e7",
+      "kind": "fact",
+      "attribute": "condition",
+      "value": "new_in_box",
+      "unit": null,
+      "conditions": [],
+      "scope": "offer",
+      "field": "raw_specs"
+    },
+    {
+      "id": "fact-31",
+      "rowId": "row_1134eb89e7",
+      "kind": "fact",
+      "attribute": "power",
+      "value": 65,
+      "unit": "W",
+      "conditions": [
+        "purpose_unspecified"
+      ],
+      "scope": "product",
+      "field": "raw_title"
+    },
+    {
+      "id": "fact-32",
+      "rowId": "row_1134eb89e7",
+      "kind": "fact",
+      "attribute": "ports",
+      "value": 3,
+      "unit": null,
+      "conditions": [],
+      "scope": "product",
+      "field": "raw_title"
+    },
+    {
+      "id": "fact-33",
+      "rowId": "row_1134eb89e7",
+      "kind": "fact",
+      "attribute": "charger_technology",
+      "value": "GaN",
+      "unit": null,
+      "conditions": [],
+      "scope": "product",
+      "field": "raw_title"
+    },
+    {
+      "id": "fact-34",
+      "rowId": "row_87ace126d4",
+      "kind": "fact",
+      "attribute": "ram",
+      "value": 16,
+      "unit": "GB",
+      "conditions": [],
+      "scope": "product",
+      "field": "raw_specs"
+    },
+    {
+      "id": "fact-35",
+      "rowId": "row_92da044aa3",
+      "kind": "fact",
+      "attribute": "storage",
+      "value": 512,
+      "unit": "GB",
+      "conditions": [],
+      "scope": "product",
+      "field": "raw_specs"
+    },
+    {
+      "id": "fact-36",
+      "rowId": "row_22e59912ad",
+      "kind": "fact",
+      "attribute": "storage",
+      "value": 2,
+      "unit": "TB",
+      "conditions": [],
+      "scope": "product",
+      "field": "raw_specs"
+    },
+    {
+      "id": "fact-37",
+      "rowId": "row_94d9860adf",
+      "kind": "fact",
+      "attribute": "battery_runtime",
+      "value": 240,
+      "unit": "h",
+      "conditions": [
+        "usage_unspecified"
+      ],
+      "scope": "product",
+      "field": "raw_specs"
+    },
+    {
+      "id": "fact-38",
+      "rowId": "row_94d9860adf",
+      "kind": "fact",
+      "attribute": "water_pressure_rating",
+      "value": 5,
+      "unit": "ATM",
+      "conditions": [],
+      "scope": "product",
+      "field": "raw_specs"
+    },
+    {
+      "id": "fact-39",
+      "rowId": "row_83da10f114",
+      "kind": "fact",
+      "attribute": "sensor_resolution",
+      "value": 20,
+      "unit": "MP",
+      "conditions": [],
+      "scope": "product",
+      "field": "raw_specs"
+    },
+    {
+      "id": "fact-40",
+      "rowId": "row_83da10f114",
+      "kind": "fact",
+      "attribute": "optical_zoom",
+      "value": 5,
+      "unit": "x",
+      "conditions": [],
+      "scope": "product",
+      "field": "raw_specs"
+    },
+    {
+      "id": "fact-41",
+      "rowId": "row_1d1bdffe92",
+      "kind": "fact",
+      "attribute": "video_recording",
+      "value": "4K@30fps",
+      "unit": null,
+      "conditions": [],
+      "scope": "product",
+      "field": "raw_specs"
+    },
+    {
+      "id": "fact-42",
+      "rowId": "row_6eddbd5517",
+      "kind": "fact",
+      "attribute": "power",
+      "value": 100,
+      "unit": "W",
+      "conditions": [
+        "pd_passthrough"
+      ],
+      "scope": "product",
+      "field": "raw_specs"
+    },
+    {
+      "id": "fact-43",
+      "rowId": "row_64543589fc",
+      "kind": "fact",
+      "attribute": "switch",
+      "value": "brown",
+      "unit": null,
+      "conditions": [],
+      "scope": "product",
+      "field": "raw_specs"
+    },
+    {
+      "id": "fact-44",
+      "rowId": "row_64543589fc",
+      "kind": "fact",
+      "attribute": "keyboard_layout",
+      "value": "TKL",
+      "unit": null,
+      "conditions": [],
+      "scope": "product",
+      "field": "raw_specs"
+    },
+    {
+      "id": "absent_fact-45",
+      "rowId": "row_76b28cdc31",
+      "kind": "absent_fact",
+      "attribute": "ram"
+    },
+    {
+      "id": "absent_fact-46",
+      "rowId": "row_76b28cdc31",
+      "kind": "absent_fact",
+      "attribute": "display_size"
+    },
+    {
+      "id": "absent_fact-47",
+      "rowId": "row_05e5d126cb",
+      "kind": "absent_fact",
+      "attribute": "sound_quality"
+    },
+    {
+      "id": "absent_fact-48",
+      "rowId": "row_1134eb89e7",
+      "kind": "absent_fact",
+      "attribute": "usb_version"
+    },
+    {
+      "id": "reconciliation-49",
+      "rowId": "row_f3873a8816",
+      "kind": "reconciliation",
+      "attribute": "mass",
+      "expected": "agreed",
+      "acceptedValue": 1200
+    },
+    {
+      "id": "reconciliation-50",
+      "rowId": "row_92da044aa3",
+      "kind": "reconciliation",
+      "attribute": "mass",
+      "expected": "agreed",
+      "acceptedValue": 1300
+    },
+    {
+      "id": "reconciliation-51",
+      "rowId": "row_bdbc045131",
+      "kind": "reconciliation",
+      "attribute": "battery_runtime",
+      "expected": "agreed",
+      "acceptedValue": 20
+    },
+    {
+      "id": "reconciliation-52",
+      "rowId": "row_fbe753d7cc",
+      "kind": "reconciliation",
+      "attribute": "transfer_speed",
+      "expected": "agreed",
+      "acceptedValue": 1050
+    }
+  ]
+}
