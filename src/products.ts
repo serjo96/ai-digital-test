@@ -1,7 +1,7 @@
 import { assertAccounting, baseline, hash, TAXONOMY, titleKey } from './baseline.js';
 import { extract, reconcile } from './facts.js';
 import { sourceEvidence } from './domain.js';
-import type { CandidateDecision, Category, Confidence, Fact, Identity, ProductResult, ReviewItem } from './domain.js';
+import type { CandidateDecision, Category, Confidence, Extraction, Fact, Identity, ProductResult, ReviewItem, Evidence } from './domain.js';
 import type { SourceRow } from './types.js';
 
 const types: [string, Category, RegExp][] = [
@@ -73,12 +73,20 @@ export function compareIdentity(a: Identity, b: Identity): Omit<CandidateDecisio
   return unknown ? { status: 'review', reasons: ['incomplete_type_or_variant'] } : { status: 'merge', reasons: ['same_model_type_and_variants'] };
 }
 
-export function productBaseline(source: SourceRow[]): ProductResult {
+export interface ProductEnrichment {
+  extractions: Map<string, Extraction>;
+  identities: Map<string, Identity>;
+  categories: Map<string, { category: Category; confidence: Confidence }>;
+  reviews: { rowIds: string[]; reason: string; evidence: Evidence[] }[];
+  pairHints: Map<string, 'merge' | 'reject' | 'unknown'>;
+}
+
+export function productBaseline(source: SourceRow[], enrichment?: ProductEnrichment): ProductResult {
   const initial = baseline(source);
   const rows = initial.rows;
   const active = rows.filter(r => r.outcome === 'grouped');
-  const extracted = new Map(active.map(r => [r.source.row_id, extract(r.source)]));
-  const identities = new Map(active.map(r => [r.source.row_id, identify(r.source, extracted.get(r.source.row_id)!.facts)]));
+  const extracted = new Map(active.map(r => [r.source.row_id, enrichment?.extractions.get(r.source.row_id) ?? extract(r.source)]));
+  const identities = new Map(active.map(r => [r.source.row_id, enrichment?.identities.get(r.source.row_id) ?? identify(r.source, extracted.get(r.source.row_id)!.facts)]));
   const facts = [...extracted.values()].flatMap(x => x.facts).sort((a, b) => a.id.localeCompare(b.id));
   const unparsed = [...extracted.values()].flatMap(x => x.unparsed);
   const candidates: CandidateDecision[] = [];
@@ -89,6 +97,11 @@ export function productBaseline(source: SourceRow[]): ProductResult {
     const ai = identities.get(a.source.row_id)!; const bi = identities.get(b.source.row_id)!;
     if (!(candidateKey(ai) && candidateKey(ai) === candidateKey(bi)) && a.titleKey !== b.titleKey) continue;
     const decision: CandidateDecision = { rowIds: [a.source.row_id, b.source.row_id], ...compareIdentity(ai, bi) };
+    const hint = enrichment?.pairHints.get(key(...decision.rowIds));
+    // A model may veto a merge, never authorize one the compatibility rules disallow.
+    if (hint && hint !== 'merge' && decision.status !== 'reject') {
+      decision.status = 'review'; decision.reasons = [`ai_matching_${hint}`];
+    }
     candidates.push(decision); decisions.set(key(...decision.rowIds), decision);
   }
   const buckets: string[][] = active.map(r => [r.source.row_id]);
@@ -113,6 +126,7 @@ export function productBaseline(source: SourceRow[]): ProductResult {
     if (!review.some(r => r.id === item.id)) review.push(item);
   };
   for (const candidate of candidates.filter(c => c.status === 'review')) addReview(candidate.rowIds, `identity:${candidate.reasons.join(',')}`, [], candidate.rowIds.flatMap(id => identities.get(id)!.evidence));
+  for (const item of enrichment?.reviews ?? []) addReview(item.rowIds, item.reason, [], item.evidence);
   for (const row of rows) {
     for (const reason of row.reasons) if (row.outcome !== 'non_product' && (reason.startsWith('price_') || row.outcome === 'review')) addReview([row.source.row_id], reason);
     if (row.outcome !== 'grouped') continue;
@@ -132,7 +146,7 @@ export function productBaseline(source: SourceRow[]): ProductResult {
   });
   const products = groups.map(group => {
     const members = active.filter(r => group.rowIds.includes(r.source.row_id));
-    const categories = members.map(r => category(identities.get(r.source.row_id)!, r.source));
+    const categories = members.map(r => enrichment?.categories.get(r.source.row_id) ?? category(identities.get(r.source.row_id)!, r.source));
     const categoryValues = new Set(categories.map(c => c.category));
     const categoryValue = categoryValues.size === 1 ? categories[0]!.category : 'other';
     const uncertainCategory = categoryValues.size > 1 || categories.some(c => c.confidence.level !== 'high');
@@ -160,6 +174,9 @@ export function assertProductIntegrity(result: ProductResult): void {
   for (const evidence of [...result.facts.map(f => f.evidence), ...result.unparsed, ...result.review.flatMap(r => r.evidence)]) {
     const source = sources.get(evidence.rowId)?.[evidence.field];
     if (!evidence.quote || source?.slice(evidence.start, evidence.end) !== evidence.quote) throw new Error('invalid fact evidence');
+  }
+  for (const identity of result.products.flatMap(p => p.identities)) for (const evidence of identity.evidence) {
+    if (!evidence.quote || sources.get(evidence.rowId)?.[evidence.field]?.slice(evidence.start, evidence.end) !== evidence.quote) throw new Error('invalid identity evidence');
   }
   for (const product of result.products) {
     if (!TAXONOMY.includes(product.category)) throw new Error('invalid product category');

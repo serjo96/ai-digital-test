@@ -4,9 +4,9 @@ import type { BaselineResult, Labels, Ratio, RunReport } from './types.js';
 
 export interface Metric {
   name: string; value: number | null; numerator: number | null; denominator: number | null;
-  unit: 'count' | 'ratio' | 'ms'; scope: 'development' | 'full_input' | 'run';
+  unit: 'count' | 'ratio' | 'ms' | 'USD'; scope: 'development' | 'full_input' | 'run';
   qualityStatus: 'provisional' | 'human_verified' | 'not_evaluated' | 'not_applicable';
-  availability: 'measured' | 'not_implemented' | 'no_denominator';
+  availability: 'measured' | 'not_implemented' | 'no_denominator' | 'unavailable';
 }
 export const countMetric = (name: string, value: number | null, scope: Metric['scope'] = 'full_input', qualityStatus: Metric['qualityStatus'] = 'not_applicable'): Metric => ({
   name, value, numerator: null, denominator: null, unit: 'count', scope, qualityStatus, availability: value === null ? 'not_implemented' : 'measured',
@@ -90,8 +90,20 @@ export function metricsFor(report: RunReport, result: BaselineResult, labels: La
   count('errors.matching', e.errors.length, 'development', quality);
   count('errors.non_product', e.nonProducts.errors.length, 'development', quality);
   count('errors.quality_checks', report.checks?.errors.length ?? null, 'development', 'provisional');
-  count('errors.execution', 0, 'run');
+  count('errors.execution', report.status === 'partial' ? 1 : 0, 'run');
   count('api.calls', report.api.calls, 'run');
+  if (report.schemaVersion === '3') {
+    count('api.errors', report.api.errors, 'run'); count('api.retries', report.api.retries ?? 0, 'run');
+    count('api.cache_hits', report.api.cacheHits ?? 0, 'run'); count('api.tokens', report.api.tokens, 'run');
+    count('api.input_tokens', report.api.inputTokens ?? (report.mode === 'code-only' ? 0 : null), 'run');
+    count('api.output_tokens', report.api.outputTokens ?? (report.mode === 'code-only' ? 0 : null), 'run');
+    metrics.push({ ...countMetric('api.cost', report.api.cost, 'run'), unit: 'USD' });
+    count('ai.target_rows', report.ai?.targetRows ?? null, 'run'); count('ai.failed_jobs', report.ai?.failedJobs ?? null, 'run');
+    const s = report.semanticChecks;
+    for (const [name, value] of Object.entries({ correct_additions: s?.correct ?? null, unexpected_additions: s?.unexpected ?? null, missed_additions: s?.missing ?? null })) count(`semantic.${name}`, value, 'development', 'provisional');
+    for (const name of ['precision', 'recall', 'types', 'categories'] as const) ratio(`semantic.${name}`, s?.[name].numerator ?? null, s?.[name].denominator ?? null, 'development', 'provisional');
+    for (const metric of metrics) if (/^api\./.test(metric.name) && metric.value === null) metric.availability = 'unavailable';
+  }
   ratio('generation.quality', null, null); ratio('verifier.quality', null, null);
   metrics.push({ ...countMetric('timing.wall', report.wallTimeMs, 'run'), unit: 'ms' });
   metrics.push({ ...countMetric('timing.pipeline', report.timing?.pipelineMs ?? null, 'run'), unit: 'ms' });

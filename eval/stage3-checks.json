@@ -1,0 +1,171 @@
+{
+  "version": "semantic-checks-v1",
+  "status": "provisional",
+  "feedHash": "6b6ebc7a54ab90abae315abf5b145b22d9ef11d2c673f8feeeb245ee2808d6b6",
+  "cases": [
+    {
+      "rowId": "row_05e5d126cb",
+      "expectedAdditions": [],
+      "expectedType": "headphones",
+      "expectedCategory": "audio_headphones"
+    },
+    {
+      "rowId": "row_11462769c5",
+      "expectedAdditions": [
+        {
+          "attribute": "colour_temperature_count",
+          "value": 5,
+          "unit": null,
+          "scope": "product",
+          "conditions": []
+        }
+      ],
+      "expectedType": "lamp",
+      "expectedCategory": "home_kitchen"
+    },
+    {
+      "rowId": "row_22e59912ad",
+      "expectedAdditions": [],
+      "expectedType": "ssd",
+      "expectedCategory": "storage"
+    },
+    {
+      "rowId": "row_55a8c9b86d",
+      "expectedAdditions": [
+        {
+          "attribute": "bluetooth_supported",
+          "value": true,
+          "unit": null,
+          "scope": "product",
+          "conditions": []
+        },
+        {
+          "attribute": "wireless_frequency",
+          "value": 2.4,
+          "unit": "GHz",
+          "scope": "product",
+          "conditions": [
+            "radio_link"
+          ]
+        }
+      ],
+      "expectedType": "mouse",
+      "expectedCategory": "other"
+    },
+    {
+      "rowId": "row_74b8f7797a",
+      "expectedAdditions": [
+        {
+          "attribute": "bluetooth_supported",
+          "value": true,
+          "unit": null,
+          "scope": "product",
+          "conditions": []
+        },
+        {
+          "attribute": "wireless_frequency",
+          "value": 2.4,
+          "unit": "GHz",
+          "scope": "product",
+          "conditions": [
+            "radio_link"
+          ]
+        }
+      ],
+      "expectedType": "mouse",
+      "expectedCategory": "other"
+    },
+    {
+      "rowId": "row_a1bb1ad2e9",
+      "expectedAdditions": [
+        {
+          "attribute": "colour_temperature_count",
+          "value": 5,
+          "unit": null,
+          "scope": "product",
+          "conditions": []
+        }
+      ],
+      "expectedType": "lamp",
+      "expectedCategory": "home_kitchen"
+    },
+    {
+      "rowId": "row_b82f7fcc2a",
+      "expectedAdditions": [
+        {
+          "attribute": "colour_temperature_count",
+          "value": 5,
+          "unit": null,
+          "scope": "product",
+          "conditions": []
+        }
+      ],
+      "expectedType": "lamp",
+      "expectedCategory": "home_kitchen"
+    },
+    {
+      "rowId": "row_bb6d2613d4",
+      "expectedAdditions": [
+        {
+          "attribute": "bluetooth_supported",
+          "value": true,
+          "unit": null,
+          "scope": "product",
+          "conditions": []
+        },
+        {
+          "attribute": "wireless_frequency",
+          "value": 2.4,
+          "unit": "GHz",
+          "scope": "product",
+          "conditions": [
+            "radio_link"
+          ]
+        }
+      ],
+      "expectedType": "mouse",
+      "expectedCategory": "other"
+    },
+    {
+      "rowId": "row_fe3ff4b356",
+      "expectedAdditions": [
+        {
+          "attribute": "size_count",
+          "value": 3,
+          "unit": null,
+          "scope": "product",
+          "conditions": []
+        },
+        {
+          "attribute": "compatible_model",
+          "value": "AeroBuds Pro",
+          "unit": null,
+          "scope": "product",
+          "conditions": [
+            "compatible_device"
+          ]
+        }
+      ],
+      "expectedType": "ear_tips",
+      "expectedCategory": "other"
+    },
+    {
+      "rowId": "row_11bb99b2fa",
+      "expectedAdditions": [],
+      "expectedType": "earbuds",
+      "expectedCategory": "audio_headphones"
+    },
+    {
+      "rowId": "row_e0afb74574",
+      "expectedAdditions": [],
+      "expectedType": null,
+      "expectedCategory": "other"
+    },
+    {
+      "rowId": "row_bdbc045131",
+      "expectedAdditions": [],
+      "expectedType": "earbuds",
+      "expectedCategory": "audio_headphones"
+    }
+  ]
+}

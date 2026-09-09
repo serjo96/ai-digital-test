@@ -80,15 +80,15 @@ export interface Evaluation {
 }
 
 export interface RunReport {
-  schemaVersion: '1' | '2';
-  rulesVersion: 'B0-v1' | 'B1-v1' | 'B1-v2';
+  schemaVersion: '1' | '2' | '3';
+  rulesVersion: 'B0-v1' | 'B1-v1' | 'B1-v2' | 'B2-v1';
   runId: string;
   createdAt: string;
-  status: 'success';
-  mode: 'code-only';
+  status: 'success' | 'partial';
+  mode: 'code-only' | 'live' | 'replay' | 'test';
   code: { commit: string | null; dirty: boolean | null; implementationHash: string };
-  hashes: { feed: string; taxonomy: string; labels: string; config: string; checks?: string };
-  config: { titleNormalization: string; dollarCurrency: string; split: 'development'; baseline?: 'b0' | 'b1' };
+  hashes: { feed: string; taxonomy: string; labels: string; config: string; checks?: string; semanticChecks?: string };
+  config: { titleNormalization: string; dollarCurrency: string; split: 'development'; baseline?: 'b0' | 'b1' | 'b2'; ai?: import('./ai/config.js').AiConfig; aiTask?: 'extraction' | 'matching'; aiCohort?: 'development' | 'full_input' };
   audit: {
     inputRows: number;
     accountedRows: number;
@@ -110,7 +110,9 @@ export interface RunReport {
   evaluation: Evaluation;
   generation: null;
   verifier: null;
-  api: { calls: 0; errors: 0; tokens: 0; cost: 0 };
+  api: { calls: number; errors: number; tokens: number | null; cost: number | null; retries?: number; cacheHits?: number; inputTokens?: number | null; outputTokens?: number | null };
+  ai?: { targetRows: number; jobs: number; failedJobs: number; origin: 'real' | 'test'; requestHashes: string[] };
+  semanticChecks?: import('./semantic-quality.js').SemanticEvaluation;
   wallTimeMs: number;
   decisionsHash: string;
   metrics?: import('./metrics.js').Metric[];

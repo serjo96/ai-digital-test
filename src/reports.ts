@@ -12,8 +12,8 @@ export async function codeVersion(): Promise<RunReport['code']> {
     dirty = execFileSync('git', ['status', '--porcelain'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim().length > 0;
   } catch { /* ZIP distribution has no Git metadata. */ }
   const files = ['package.json', 'package-lock.json', 'tsconfig.json'];
-  for (const dir of ['src', 'test']) {
-    for (const file of await readdir(dir, { recursive: true })) if (file.endsWith('.ts')) files.push(join(dir, file));
+  for (const dir of ['src', 'test', 'config']) {
+    for (const file of await readdir(dir, { recursive: true })) if (file.endsWith('.ts') || file.endsWith('.json')) files.push(join(dir, file));
   }
   const contents = await Promise.all(files.sort().map(async path => [path, hash(await readFile(path, 'utf8'))]));
   return { commit, dirty, implementationHash: hash(JSON.stringify(contents)) };
@@ -25,11 +25,12 @@ export function formatRatio(value: Ratio): string {
 
 export function reportMarkdown(report: RunReport): string {
   const e = report.evaluation; const a = report.audit;
-  if (report.schemaVersion === '2') return `# ${report.runId} — ${report.rulesVersion}\n\n` +
-    `Status: ${report.status}; matching labels: **${e.status}**; development only. Holdout not evaluated.\n\n` +
+  if (report.schemaVersion !== '1') return `# ${report.runId} — ${report.rulesVersion}\n\n` +
+    `Status: ${report.status}; mode: ${report.mode}; matching labels: **${e.status}**; development only. Holdout not evaluated.\n\n` +
     metricTable(report.metrics ?? []) +
     `\nMatching errors: ${e.errors.length ? JSON.stringify(e.errors) : 'none'}.\n\n` +
     `Quality check errors: ${report.checks ? JSON.stringify(report.checks.errors) : 'N/A'}.\n\n` +
+    (report.schemaVersion === '3' ? `Semantic check errors: ${report.semanticChecks ? JSON.stringify(report.semanticChecks.errors) : 'N/A'}.\n\nAI: ${JSON.stringify(report.ai ?? null)}; usage: ${JSON.stringify(report.api)}. Test fixtures are not real AI quality. Missing pricing/usage is N/A.\n\n` : '') +
     `Sources/config: ${JSON.stringify(report.hashes)}\n\nCode: ${JSON.stringify(report.code)}\n\n` +
     `Timing: ${JSON.stringify(report.timing)}. Wall measurement ends after result/diagnostics, before metric/report serialization.\n\n` +
     `No generation, verifier, or publication readiness. Counts over all inputs are diagnostics; quality is measured only on the provisional development labels/checks. Unknown relations are excluded.\n`;
@@ -59,13 +60,15 @@ export function compareReports(before: RunReport | null, after: RunReport, befor
   if (before) {
     for (const key of ['feed', 'taxonomy', 'labels'] as const) if (before.hashes[key] !== after.hashes[key]) incompatible.push(`${key} hash changed`);
     if (before.evaluation.split !== after.evaluation.split) incompatible.push('split changed');
-    if (![before.schemaVersion, after.schemaVersion].every(v => v === '1' || v === '2')) incompatible.push('unsupported report schema');
+    if (![before.schemaVersion, after.schemaVersion].every(v => ['1', '2', '3'].includes(v))) incompatible.push('unsupported report schema');
+    if ((before.mode === 'test') !== (after.mode === 'test')) incompatible.push('test fixtures cannot be compared as real quality');
+    if (before.evaluation.status !== after.evaluation.status) incompatible.push('label quality status changed');
   }
   const comparable = incompatible.length === 0;
   const flatten = (r: RunReport) => ({
     inputRows: r.audit.inputRows, accountedRows: r.audit.accountedRows, lostRows: r.audit.lostRows,
     duplicateAssignments: r.audit.duplicateAssignments, groups: r.audit.groups, nonProducts: r.audit.nonProducts,
-    reviewRows: r.schemaVersion === '2' && r.rulesVersion.startsWith('B1-') ? r.audit.reviewRows : null, tp: r.evaluation.tp, fp: r.evaluation.fp, fn: r.evaluation.fn,
+    reviewRows: r.schemaVersion !== '1' && r.rulesVersion !== 'B0-v1' ? r.audit.reviewRows : null, tp: r.evaluation.tp, fp: r.evaluation.fp, fn: r.evaluation.fn,
     precision: r.evaluation.precision.value, recall: r.evaluation.recall.value,
   });
   const oldMetrics = before ? flatten(before) : null; const newMetrics = flatten(after);
@@ -84,14 +87,18 @@ export function compareReports(before: RunReport | null, after: RunReport, befor
   const metricNames = [...new Set([...(before?.metrics ?? []).map(m => m.name), ...(after.metrics ?? []).map(m => m.name)])].sort();
   const metricDeltas = metricNames.map(name => {
     const old = before?.metrics?.find(m => m.name === name); const next = after.metrics?.find(m => m.name === name);
-    const sameProtocol = comparable && (!/^(categories|facts|reconciliation)\.check_accuracy$/.test(name) || before?.hashes.checks === after.hashes.checks);
+    const sameProtocol = comparable && (!/^(categories|facts|reconciliation)\.check_accuracy$/.test(name) || before?.hashes.checks === after.hashes.checks)
+      && (!name.startsWith('semantic.') || before?.hashes.semanticChecks === after.hashes.semanticChecks);
     return { name, before: old?.value ?? null, after: next?.value ?? null,
       delta: sameProtocol && old?.value != null && next?.value != null ? next.value - old.value : null };
   });
   const violations: string[] = [];
+  if (after.status !== 'success') violations.push('incomplete run');
   if (after.audit.lostRows || after.audit.duplicateAssignments || after.audit.accountedRows !== after.audit.inputRows) violations.push('row accounting failed');
   if (before && comparable && after.evaluation.fp > before.evaluation.fp) violations.push('new false merges on labelled relations');
   if (after.checks?.errors.length) violations.push('development quality checks failed');
+  if (after.rulesVersion === 'B2-v1' && after.semanticChecks?.unexpected) violations.push('unexpected semantic additions');
+  if (after.rulesVersion === 'B2-v1' && after.semanticChecks?.errors.some(e => e.kind === 'type' || e.kind === 'category')) violations.push('semantic identity/category checks failed');
   return {
     before: before?.runId ?? 'before-implementation', after: after.runId,
     comparable, incompatible, interpretation: before ? 'Saved run comparison' : 'No prior pipeline; previous quality and deltas are N/A',
