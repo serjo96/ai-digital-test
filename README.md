@@ -1,6 +1,6 @@
-# Shelf Ready — этап 3: офлайн-интеграция
+# Shelf Ready — этап 5: экран B1 и промежуточная передача
 
-Локальный pipeline: JSON → валидация → предложения → явные факты и evidence → кандидаты и совместимые товары → категории, согласование и review → development eval и сохранённые метрики. Текущие правила **B1-v2**. B0 сохранён как отдельный режим. Подготовлена модульная API-интеграция B2, но реальных модельных прогонов пока нет. Генерация и verifier остаются этапу 4. Минимальный экран просмотра результатов добавлен в `web/` (по умолчанию demo-фикстуры).
+Локальный pipeline: JSON → валидация → предложения → явные факты и evidence → кандидаты и совместимые товары → категории, согласование и review → development eval и сохранённые метрики. Текущие правила **B1-v2**. B0 сохранён как отдельный режим. Подготовлена модульная API-интеграция B2, но реальных модельных прогонов пока нет. Генерация и verifier остаются этапу 4. Минимальный экран просмотра результатов добавлен в `web/` (сохранённый снимок B1 по умолчанию).
 
 Стек: TypeScript 5.9, NestJS 12 standalone context, Node 24.14.1, npm; UI — Vite + React в `web/`. HTTP API, БД и deployment не нужны.
 
@@ -18,14 +18,15 @@ npm run eval
 
 ### Экран результатов
 
-Отдельное Vite-приложение в [`web/`](web/). По умолчанию показывает три помеченные **Demo data** карточки (ready / conflict / insufficient data). Это не результат pipeline и не AI-проверка. Matching и verifier в браузере не выполняются; API-ключ не нужен.
+Отдельное Vite-приложение в [`web/`](web/) читает подготовленный результат pipeline и показывает источник запуска. Демоданные не подставляются. API-ключ не нужен.
 
 ```sh
 npm --prefix web ci
+npm run web:prepare -- --run-dir reports/B1-stage5-control
 npm run web
 ```
 
-Сборка UI: `npm run web:build`. Подробности и замена фикстур на `result.json` — в [`web/README.md`](web/README.md). Кратко: скопировать снимок в `web/public/data/result.json`, задать `VITE_CATALOG_URL=/data/result.json` в `web/.env.local`, перезапустить `npm run web`. Пока нет generation/listing, проекция pipeline ставит `generation_not_run` и пустые draft/published тексты.
+Сборка: `npm run web:build`. [Полная инструкция и URL override](web/README.md). Пока нет generation/listing, текст недоступен с причиной `generation_not_run`. Согласованные факты не являются разрешением публикации.
 
 `pipeline` и `eval` выполняют одинаковый полный pipeline с development-оценкой. По умолчанию выбран B1; каждый запуск создаёт новый каталог в игнорируемом `reports/local/`. Чтобы результаты оставались частью репозитория для будущих графиков, использовать `--out reports`:
 
@@ -42,6 +43,7 @@ npm run benchmark -- --runs reports/B0,reports/my-b1,reports/my-b1-repeat --out 
 Пути задаются `--feed`, `--taxonomy`, `--labels`, `--checks`, `--out`. CLI имеет приоритет над `FEED_PATH`, `TAXONOMY_PATH`, `LABELS_PATH`, `REPORTS_DIR`, затем стандартными файлами. Для `--checks` переменной окружения нет; по умолчанию `eval/stage2-checks.json`. `.env.example` документирует переменные; `.env` автоматически не загружается. Для B0/B1 API-ключ не нужен.
 
 Development-проверки привязаны к хэшу конкретного feed и строкам development labels. Для другого feed передавать соответствующие labels/checks, а не применять готовые метки к новым данным. B0 не использует stage2-checks. Holdout не оценивается; команды оценки holdout пока нет.
+
 
 ## Решения и контракты
 
@@ -134,3 +136,29 @@ Matching работает отдельно от extraction на одних и т
 `--semantic-checks` по умолчанию для B2 указывает на `eval/stage3-checks.json`; прежний `--checks` продолжает использовать stage2-checks. Сравнение semantic.* допустимо только при одинаковом хэше новой выборки. Искусственный тестовый прогон маркируется test и не допускается в реальную benchmark-историю. Цены/usage, режим, конфигурация и происхождение записываются явно; N/A не превращается в нулевую стоимость.
 
 Кодовый контроль этапа 3 и история: [отчёт](reports/B1-stage3-control-v2/report.md), [сравнение с B1-v2](reports/comparisons/B1-v2-to-stage3-offline/comparison.md), [12 запусков / 803 наблюдения](reports/benchmarks/stage3-offline/summary.json). Реальные B2-прогоны пока не выполнялись.
+
+
+## Этап 5: локальный экран сохранённого B1
+
+Доступная часть этапа 5 выполнена; полный MVP ожидает live B2 и этапа 4. **Holdout не оценивался; human review разметки открыт.** [Отчёт и соответствие PDF](docs/STAGE5_REPORT.md), [краткий WRITEUP](WRITEUP.md).
+
+Из чистого каталога, Node 24.14.1 (см. `.nvmrc`), без `.env` и ключа:
+
+```sh
+npm ci
+npm --prefix web ci
+npm run typecheck
+npm test
+npm run web:test
+npm run pipeline -- --baseline b1 --semantic-checks eval/stage3-checks.json --out reports/local --run-id my-stage5-control
+npm run eval -- --baseline b1 --semantic-checks eval/stage3-checks.json --out reports/local --run-id my-stage5-repeat
+npm run web:prepare -- --run-dir reports/local/my-stage5-control
+npm run web:build
+npm run web
+```
+
+Run ID должен быть новым: отчёты не перезаписываются. Для просмотра уже сохранённого результата достаточно `npm run web:prepare -- --run-dir reports/B1-stage5-control`. Подготовку выполнить до сборки; после нового снимка обновить страницу, для production — пересобрать UI. [Настройки URL и preview](web/README.md).
+
+Просмотр JSON не является replay модели. B1 работает кодом без сети; B2 replay повторяет сохранённые реальные ответы через кэш без новых API-вызовов, B2 live выполняет новые запросы. Реального B2-кэша пока нет. UI не запускает ни один из этих процессов и не содержит отдельных правил matching/verifier. В B1 текст отсутствует с причиной `generation_not_run`, согласованный факт не означает проверенное утверждение.
+
+Контроль и повтор: `reports/B1-stage5-control`, `reports/B1-stage5-repeat`; сравнения: `reports/comparisons/B1-v2-to-stage5`, `stage3-to-stage5`, `stage5-repeat`; история: `reports/benchmarks/stage5-offline`. Все quality-значения provisional.
