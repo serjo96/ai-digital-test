@@ -1,0 +1,151 @@
+{
+  "method": "clean source copy of tracked and non-ignored files; no .git, .env, node_modules or build artifacts copied; npm ci in root and web",
+  "node": "24.14.1",
+  "installation": "npm ci --no-audit --no-fund (root and web), registry access after offline cache miss",
+  "checks": {
+    "typecheck": "passed",
+    "backendTests": 45,
+    "webTests": 3,
+    "build": "passed"
+  },
+  "runs": [
+    {
+      "runId": "my-stage5-control",
+      "mode": "code-only",
+      "status": "success",
+      "decisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+      "audit": {
+        "inputRows": 220,
+        "accountedRows": 220,
+        "lostRows": 0,
+        "duplicateAssignments": 0,
+        "suppliers": 5,
+        "taxonomySize": 12,
+        "emptySpecs": 23,
+        "emptyTitles": 1,
+        "emptyPrices": 2,
+        "normalizedTitles": 169,
+        "nonProducts": 4,
+        "reviewRows": 64,
+        "groups": 156,
+        "groupedRows": 216,
+        "repeatedGroups": 56,
+        "priceStatuses": {
+          "parsed": 217,
+          "unknown_currency": 1,
+          "missing": 2
+        }
+      },
+      "evaluation": {
+        "split": "development",
+        "status": "provisional",
+        "caseCount": 14,
+        "evaluatedRows": 59,
+        "tp": 17,
+        "fp": 0,
+        "fn": 0,
+        "precision": {
+          "numerator": 17,
+          "denominator": 17,
+          "value": 1
+        },
+        "recall": {
+          "numerator": 17,
+          "denominator": 17,
+          "value": 1
+        },
+        "unknownPairs": 2,
+        "unevaluatedPairs": [],
+        "errors": [],
+        "nonProducts": {
+          "correct": 59,
+          "checked": 59,
+          "errors": []
+        }
+      },
+      "api": {
+        "calls": 0,
+        "errors": 0,
+        "tokens": 0,
+        "cost": 0
+      },
+      "timing": {
+        "protocol": "cli-through-result-v1",
+        "node": "v24.14.1",
+        "platform": "darwin",
+        "arch": "arm64",
+        "pipelineMs": 37.70025000000001
+      },
+      "wallTimeMs": 66.621666
+    },
+    {
+      "runId": "my-stage5-repeat",
+      "mode": "code-only",
+      "status": "success",
+      "decisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+      "audit": {
+        "inputRows": 220,
+        "accountedRows": 220,
+        "lostRows": 0,
+        "duplicateAssignments": 0,
+        "suppliers": 5,
+        "taxonomySize": 12,
+        "emptySpecs": 23,
+        "emptyTitles": 1,
+        "emptyPrices": 2,
+        "normalizedTitles": 169,
+        "nonProducts": 4,
+        "reviewRows": 64,
+        "groups": 156,
+        "groupedRows": 216,
+        "repeatedGroups": 56,
+        "priceStatuses": {
+          "parsed": 217,
+          "unknown_currency": 1,
+          "missing": 2
+        }
+      },
+      "evaluation": {
+        "split": "development",
+        "status": "provisional",
+        "caseCount": 14,
+        "evaluatedRows": 59,
+        "tp": 17,
+        "fp": 0,
+        "fn": 0,
+        "precision": {
+          "numerator": 17,
+          "denominator": 17,
+          "value": 1
+        },
+        "recall": {
+          "numerator": 17,
+          "denominator": 17,
+          "value": 1
+        },
+        "unknownPairs": 2,
+        "unevaluatedPairs": [],
+        "errors": [],
+        "nonProducts": {
+          "correct": 59,
+          "checked": 59,
+          "errors": []
+        }
+      },
+      "api": {
+        "calls": 0,
+        "errors": 0,
+        "tokens": 0,
+        "cost": 0
+      },
+      "timing": {
+        "protocol": "cli-through-result-v1",
+        "node": "v24.14.1",
+        "platform": "darwin",
+        "arch": "arm64",
+        "pipelineMs": 37.881332999999984
+      },
+      "wallTimeMs": 67.282667
+    }
+  ]
+}

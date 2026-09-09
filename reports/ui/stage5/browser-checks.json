@@ -1,0 +1,41 @@
+{
+  "runId": "B1-stage5-control",
+  "method": "CUA browser inspection; observations, not a standalone automated browser suite",
+  "viewports": [
+    {
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "width": 375,
+      "scrollWidth": 375
+    }
+  ],
+  "scenarios": [
+    "Sony search; USD/EUR offers and OPEN BOX scope",
+    "battery runtime evidence with two exact quotes",
+    "source link target row_1e60b0a9dc",
+    "51 products after review filter",
+    "empty search result",
+    "Slate empty specs and missing_specs review",
+    "four non-product source records and reasons",
+    "Enter expands fact and exposes aria-expanded",
+    "clean production build: 156 products, 51 review products, 220 rows; Nimbus and Pro separate"
+  ],
+  "consoleErrors": 0,
+  "screenshots": [
+    "desktop-1440.png",
+    "tablet-768.png",
+    "mobile-375.png",
+    "mobile-offers-375.png"
+  ],
+  "limitations": [
+    "Synthetic conflict tested in isolated fixture; no real B1 conflict",
+    "Generation and claim verification unavailable; not assessed",
+    "Viewport screenshots used because full-page stitching was unreliable"
+  ]
+}
