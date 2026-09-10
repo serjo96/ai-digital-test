@@ -1,6 +1,6 @@
 # Этап 4 — генерация, claims и B3
 
-Обновлено: 2026-09-10. Статус: контракт и development-прогон B3 реализованы; программный controlled gate пройден, live/replay совпадают. Результаты остаются **provisional**, пока человек не проверит controlled suite и 158 claims реально опубликованных development-текстов. Full-input B3 не запускался, этап 5 не изменялся.
+Обновлено: 2026-09-11. Статус: контракт и development-прогон B3 реализованы; программный controlled gate пройден, live/replay совпадают. Результаты остаются **provisional**, пока человек не проверит controlled suite и 158 claims реально опубликованных development-текстов. Для этой проверки отдельным узким заданием добавлен UI; full-input B3 не запускался.
 
 ## Фактическая исходная точка
 
@@ -52,4 +52,4 @@ Live выполнил 86 API calls: 12 controlled verification, 37 generation, 3
 
 До этого full-input B3 заблокирован. После человеческой проверки gate требует: ни одного пропущенного unsupported/disputed claim, хотя бы один допущенный supported claim, нулевые ошибки среди проверенных published claims и совпадение feed/taxonomy/labels/config/checks/publication hashes. Только отдельное последующее задание может выполнить full-input live и replay.
 
-Этап 5 не реализовывался: `web:prepare` по-прежнему обязан отклонять B3. UI, holdout, финальная оценка, deployment, commit и push не выполнялись.
+После основного этапа 4 отдельным разрешённым заданием добавлен только human-review UI. `web:prepare` принимает сохранённый schema 4/B3, проверяет `decisionsHash`, `publicationHash`, generated review, controlled suite и сохранённые verifier records. Вкладки Generated/Controlled показывают точные ranges, verdict, причины и evidence; generated-разметка сохраняется локально и экспортируется без автоматической записи в репозиторий. Это не закрывает этап 5: holdout, full-input B3, финальная оценка, deployment, commit и push не выполнялись.

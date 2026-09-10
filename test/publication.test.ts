@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, rm, writeFile } from 'node:fs/promises';
+import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import type { AiProvider, AiRequest, AiResponse } from '../src/ai/contracts.js';
@@ -101,7 +101,7 @@ test('claim suites reject holdout and fake verification metadata, and generated 
   assert.throws(() => evaluateGenerated({ ...template, publicationHash: 'c'.repeat(64) }, publication, 'b'.repeat(64)), /hash/);
 });
 
-test('B3 service writes schema-v4 artifacts, preserves B1 decisions and remains rejected by stage-5 preparation', async () => temporary(async dir => {
+test('B3 service writes schema-v4 artifacts, preserves B1 decisions and keeps test-origin out of review', async () => temporary(async dir => {
   const provider = new PublicationProvider();
   const localConfig = { ...config, generation: { ...config.generation, provider: 'fixture' }, verifier: { ...config.verifier, provider: 'fixture' } };
   const configPath = join(dir, 'stage4.json'); await writeFile(configPath, JSON.stringify(localConfig));
@@ -113,5 +113,11 @@ test('B3 service writes schema-v4 artifacts, preserves B1 decisions and remains 
   const [before, beforeResult] = await readRun('reports/B1-v2'); const comparison = compareReports(before, report, beforeResult, result);
   assert.equal(comparison.comparable, false); // Test-origin B3 cannot be represented as real quality.
   assert.equal(comparison.decisionsEqual, true); assert.deepEqual(comparison.changedMatchingRowIds, []);
-  await assert.rejects(prepareWeb(runDir, join(dir, 'web')), /pre-generation results only/);
+  await assert.rejects(prepareWeb(runDir, join(dir, 'fixture-web')));
+  const prepared = await prepareWeb('reports/B3-openai-development-live-v4', join(dir, 'web'));
+  const [realReport] = await readRun('reports/B3-openai-development-live-v4');
+  const payload = JSON.parse(await readFile(prepared, 'utf8'));
+  assert.equal(payload.result.listings.length, 156);
+  assert.equal(payload.review.generated.publicationHash, realReport.publicationHash);
+  assert.equal(payload.review.controlled.length, 12);
 }));

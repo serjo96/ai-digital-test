@@ -1,8 +1,8 @@
 import type { CatalogSnapshot } from '../data/catalog.ts';
+import { productStatus } from '../data/catalog.ts';
 
 export function RunOverview({ catalog }: { catalog: CatalogSnapshot }) {
-  const reviewProducts = catalog.products.filter(product =>
-    product.reviewIds.length > 0 || (catalog.listings[product.id]?.reviewFlags.length ?? 0) > 0).length;
+  const reviewProducts = catalog.products.filter(product => productStatus(product, catalog.listings[product.id]) === 'needs_review').length;
   const outcomes = ['grouped', 'non_product', 'review'] as const;
   const rules = catalog.provenance?.rulesVersion ?? 'unknown rules';
   const summary = `${catalog.products.length} products · ${reviewProducts} review · ${catalog.rows.length} rows · ${rules}`;
@@ -17,7 +17,7 @@ export function RunOverview({ catalog }: { catalog: CatalogSnapshot }) {
           : 'Run metadata unavailable — external result only.'}</p>
         <p className="muted">
           Development evaluation: {catalog.provenance?.qualityStatus ?? 'not supplied'}. Holdout not evaluated.
-          Generation and claim verification have not run; no publication-ready listings.
+          {catalog.claimReview ? ` B3 claim review is available; ${catalog.claimReview.generated.claims.length} generated claims remain ${catalog.claimReview.generated.status}.` : ' Generation and claim verification have not run; no publication-ready listings.'}
         </p>
       </details>
       <details>

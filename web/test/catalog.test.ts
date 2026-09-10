@@ -11,6 +11,8 @@ import {
 } from '../src/data/labels.ts';
 
 const result = JSON.parse(readFileSync('reports/B1-stage3-control-v2/result.json', 'utf8'));
+const b3 = JSON.parse(readFileSync('reports/B3-openai-development-live-v4/result.json', 'utf8'));
+const generated = JSON.parse(readFileSync('reports/B3-openai-development-live-v4/generated-review.json', 'utf8'));
 
 test('real projection preserves evidence and never presents B1 facts as verified listings', () => {
   const catalog = projectProductResult(result);
@@ -20,6 +22,15 @@ test('real projection preserves evidence and never presents B1 facts as verified
   assert.equal(catalog.products.filter(p => productStatus(p, catalog.listings[p.id]) === 'needs_review').length, 51);
   assert.equal(catalog.products.filter(p => productStatus(p, catalog.listings[p.id]) === 'ready').length, 0);
   assert.ok(Object.values(catalog.listings).every(listing => listing.draftText === null && listing.publishedText === null));
+});
+
+test('B3 projection exposes publication listings and claim review without changing products', () => {
+  const catalog = projectProductResult(b3, null, { generated, controlled: [] });
+  assert.equal(catalog.products.length, 156);
+  assert.equal(catalog.claimReview?.generated.claims.length, 158);
+  assert.equal(catalog.products.filter(product => productStatus(product, catalog.listings[product.id]) === 'ready').length, 37);
+  assert.equal(catalog.products.filter(product => productStatus(product, catalog.listings[product.id]) === 'needs_review').length, 2);
+  assert.equal(catalog.listings[catalog.claimReview!.generated.claims[0].productId]?.publication?.attempts.length, 1);
 });
 
 test('loader defaults to prepared snapshot and fails visibly instead of substituting demos', async context => {

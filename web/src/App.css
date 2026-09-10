@@ -390,3 +390,127 @@ summary { cursor: pointer; }
 .offers td:nth-child(2), .offers td:nth-child(3), .offers td:nth-child(4), .offers td:nth-child(5) { white-space: nowrap; }
 .offers th:first-child, .offers td:first-child { min-width: 8rem; }
 .offers th:last-child, .offers td:last-child { min-width: 12rem; }
+
+.view-tabs,
+.mode-tabs {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+.view-tabs { margin: 0 0 1rem; }
+
+.view-tabs button,
+.mode-tabs button,
+.review-actions button {
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: .5rem .8rem;
+  color: var(--ink);
+  background: var(--panel);
+  cursor: pointer;
+}
+
+.view-tabs button.active,
+.mode-tabs button.active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.claim-review {
+  display: grid;
+  gap: 1rem;
+}
+
+.review-toolbar,
+.review-actions {
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel);
+  padding: .8rem 1rem;
+}
+
+.review-actions { justify-content: flex-start; }
+.review-actions label { display: flex; align-items: center; gap: .5rem; }
+.review-actions input,
+.human-decision select,
+.human-decision textarea {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--ink);
+  background: var(--bg);
+  padding: .5rem .6rem;
+}
+
+.review-layout {
+  display: grid;
+  grid-template-columns: minmax(230px, 290px) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.review-sidebar,
+.review-detail {
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel);
+  padding: 1rem;
+}
+
+.review-sidebar { display: grid; gap: .75rem; }
+.review-sidebar .product-list { max-height: 70vh; overflow-y: auto; }
+.review-detail { display: grid; gap: 1rem; }
+
+.review-text {
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+
+.claim-mark {
+  display: inline;
+  border: 0;
+  border-bottom: 2px solid currentColor;
+  border-radius: 3px;
+  padding: .05rem .12rem;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.claim-mark.selected { outline: 2px solid var(--accent); outline-offset: 2px; }
+.verdict-supported { color: var(--ok); }
+.verdict-disputed { color: var(--warn); }
+.verdict-unsupported { color: var(--danger); }
+
+.claim-list { display: grid; gap: .8rem; }
+.claim-card {
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--bg);
+  padding: .9rem;
+  cursor: pointer;
+}
+.claim-card.selected { border-color: var(--accent); }
+.claim-card-header { display: flex; justify-content: space-between; gap: .75rem; align-items: flex-start; }
+.claim-evidence { margin-top: .75rem; }
+.human-decision { display: grid; gap: .7rem; margin-top: .9rem; padding-top: .8rem; border-top: 1px solid var(--border); }
+.human-decision label { display: grid; gap: .35rem; font-weight: 600; }
+.human-decision textarea { min-height: 5rem; resize: vertical; font: inherit; }
+
+@media (max-width: 800px) {
+  .review-layout { grid-template-columns: 1fr; }
+  .review-sidebar .product-list { max-height: 15rem; }
+}

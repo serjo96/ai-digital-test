@@ -9,6 +9,7 @@ import { loadCatalog } from './data/loadCatalog.ts';
 import { ProductDetail } from './components/ProductDetail.tsx';
 import { ProductList } from './components/ProductList.tsx';
 import { RunOverview } from './components/RunOverview.tsx';
+import { ClaimReview } from './components/ClaimReview.tsx';
 import './App.css';
 
 type LoadState =
@@ -21,6 +22,7 @@ export default function App() {
   const [query, setQuery] = useState('');
   const [needsReviewOnly, setNeedsReviewOnly] = useState(false);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [view, setView] = useState<'catalog' | 'claims'>('catalog');
 
   useEffect(() => {
     let cancelled = false;
@@ -120,7 +122,11 @@ export default function App() {
       </header>
 
       <RunOverview catalog={catalog} />
-      <div className="layout">
+      {catalog.claimReview ? <nav className="view-tabs" aria-label="Result view">
+        <button type="button" className={view === 'catalog' ? 'active' : ''} onClick={() => setView('catalog')}>Catalog</button>
+        <button type="button" className={view === 'claims' ? 'active' : ''} onClick={() => setView('claims')}>Claim review</button>
+      </nav> : null}
+      {view === 'claims' && catalog.claimReview ? <ClaimReview catalog={catalog} /> : <div className="layout">
         <aside className="sidebar">
           <div className="filters">
             <label className="search">
@@ -187,7 +193,7 @@ export default function App() {
             </div>
           )}
         </main>
-      </div>
+      </div>}
     </div>
   );
 }

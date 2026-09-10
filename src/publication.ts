@@ -6,7 +6,7 @@ import { AiRuntime } from './ai/runtime.js';
 import { CitationSchema, evidenceFor, jsonSchema } from './ai/schemas.js';
 import type { Stage4Config } from './publication-config.js';
 import type { ClaimSuite } from './publication-evaluation.js';
-import type { ClaimVerdict, Evidence, Listing, ListingAttempt, PublicationResult, PublicationSupport, ProductResult, VerifiedClaim, CanonicalProduct } from './domain.js';
+import type { Evidence, Listing, ListingAttempt, PublicationResult, PublicationSupport, ProductResult, VerifiedClaim, CanonicalProduct } from './domain.js';
 import type { SourceRow } from './types.js';
 
 export const GenerationSchema = z.strictObject({ text: z.string().trim().min(1).max(800) });

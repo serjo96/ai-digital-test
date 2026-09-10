@@ -113,3 +113,9 @@ Build проходит с двумя предупреждениями Rollup о�
 Development: 37/39 ready, 2 identity review, 0 withheld; controlled verifier provisional — unsupported 4/4, false block 0/7, disputed leakage 0/1, errors 0. B1 `decisionsHash` неизменен, replay имеет тот же `publicationHash`. OpenAI live: 86 calls, 151618 tokens, $2.6475128, 0 errors/retries; replay: 86 cache hits, 0 calls.
 
 Блокер следующего этапа: человек должен проверить controlled suite и 158 generated claims, заполнить `reviewedBy/reviewedAt` и rationale. До успешного human gate full-input B3, holdout и финальная оценка не разрешены. `web:prepare` намеренно продолжает отклонять schema 4/B3; подключать listings к UI следует только отдельным заданием этапа 5. В этой передаче UI, deployment, commit и push не выполнялись.
+
+## Узкое дополнение: B3 claim review — 2026-09-11
+
+По отдельному заданию подключено только отображение и человеческая разметка сохранённого B3. `web:prepare` теперь собирает проверенный B3 review bundle; существующий экран получил переключатель Catalog / Claim review. Generated view группирует 158 claims по 37 опубликованным товарам, подсвечивает точные диапазоны и показывает verifier reason, supports и исходные evidence. Controlled view показывает 12 фиксированных случаев, expected verdict и фактические атомарные claims.
+
+Черновик human verdict/rationale хранится только в `localStorage` с привязкой к `publicationHash`; экспорт остаётся provisional до заполнения всех rationale и reviewer. Исходный run не изменяется, модели и сеть из UI не вызываются. Проверены реальный development bundle, обе вкладки и восстановление черновика после reload. Full-input B3, holdout, финальная оценка и deployment не выполнялись; человеческий gate остаётся блокером.

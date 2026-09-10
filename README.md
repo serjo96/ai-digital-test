@@ -1,6 +1,6 @@
 # Shelf Ready — B1 product baseline и B3 publication development
 
-Локальный pipeline: JSON → валидация → предложения → явные факты и evidence → кандидаты и совместимые товары → категории, согласование и review → генерация → атомарные claims → независимая проверка → development eval и сохранённые метрики. Принятый product baseline — **B1-v2**; B3 publication реализован поверх него и не использует B2. Реальный OpenAI development B3 и offline replay успешны, но human gate ещё открыт, поэтому full-input B3 не запускался. Минимальный экран по-прежнему показывает сохранённый B1 и сознательно отклоняет B3 до отдельного этапа 5.
+Локальный pipeline: JSON → валидация → предложения → явные факты и evidence → кандидаты и совместимые товары → категории, согласование и review → генерация → атомарные claims → независимая проверка → development eval и сохранённые метрики. Принятый product baseline — **B1-v2**; B3 publication реализован поверх него и не использует B2. Реальный OpenAI development B3 и offline replay успешны, но human gate ещё открыт, поэтому full-input B3 не запускался. Экран результатов поддерживает B1-каталог и отдельный режим человеческой проверки сохранённого development B3.
 
 Стек: TypeScript 5.9, NestJS 12 standalone context, Node 24.14.1, npm; UI — Vite + React в `web/`. HTTP API, БД и deployment не нужны.
 
@@ -22,11 +22,11 @@ npm run eval
 
 ```sh
 npm --prefix web ci
-npm run web:prepare -- --run-dir reports/B1-stage5-control
+npm run web:prepare -- --run-dir reports/B3-openai-development-live-v4
 npm run web
 ```
 
-Сборка: `npm run web:build`. [Полная инструкция и URL override](web/README.md). Пока нет generation/listing, текст недоступен с причиной `generation_not_run`. Согласованные факты не являются разрешением публикации.
+Сборка: `npm run web:build`. [Полная инструкция и URL override](web/README.md). В B3 вкладка **Claim review** показывает generated и controlled claims, точные фрагменты, verdict и evidence; разметка хранится локально в браузере и экспортируется в JSON. Экран не вызывает модели и не меняет исходный run. Для B1 текст по-прежнему недоступен с причиной `generation_not_run`.
 
 `pipeline` и `eval` выполняют одинаковый полный pipeline с development-оценкой. По умолчанию выбран B1; каждый запуск создаёт новый каталог в игнорируемом `reports/local/`. Чтобы результаты оставались частью репозитория для будущих графиков, использовать `--out reports`:
 
@@ -146,9 +146,9 @@ node dist/src/replay-ollama-run.js reports/stage3-ollama-v1/ollama-qwen3-4b-deve
 
 OpenAI-профили `config/ai.json`, `config/ai.matching-sol.json`, `config/ai.matching-astra.json` сохранены. Ключ читается из `.env` / `OPENAI_API_KEY`; не помещать его в JSON-config, CLI-аргументы или frontend. Доступ Sol/Astra и актуальность тарифов требуют проверки после получения ключа.
 
-## Этап 5: локальный экран сохранённого B1
+## Этап 5: локальный экран B1 и B3 claim review
 
-Доступная часть этапа 5 выполнена; полный MVP ожидает live B2 и этапа 4. **Holdout не оценивался; human review разметки открыт.** [Отчёт и соответствие PDF](docs/STAGE5_REPORT.md), [краткий WRITEUP](WRITEUP.md).
+Доступная часть этапа 5 выполнена: B1-каталог и узкий B3 claim-review UI доступны; полный MVP, human gate и финальная оценка остаются открыты. **Holdout не оценивался.** [Отчёт и соответствие PDF](docs/STAGE5_REPORT.md), [краткий WRITEUP](WRITEUP.md).
 
 Из чистого каталога, Node 24.14.1 (см. `.nvmrc`), без `.env` и ключа:
 
@@ -165,8 +165,8 @@ npm run web:build
 npm run web
 ```
 
-Run ID должен быть новым: отчёты не перезаписываются. Для просмотра уже сохранённого результата достаточно `npm run web:prepare -- --run-dir reports/B1-stage5-control`. Подготовку выполнить до сборки; после нового снимка обновить страницу, для production — пересобрать UI. [Настройки URL и preview](web/README.md).
+Run ID должен быть новым: отчёты не перезаписываются. Для просмотра уже сохранённого результата достаточно B1-команды выше либо `npm run web:prepare -- --run-dir reports/B3-openai-development-live-v4` для claim review. Подготовку выполнить до сборки; после нового снимка обновить страницу, для production — пересобрать UI. [Настройки URL и preview](web/README.md).
 
-Просмотр JSON не является replay модели. B1 работает кодом без сети; B2 replay повторяет сохранённые реальные ответы через кэш без новых API-вызовов, B2 live выполняет новые запросы. Реальные локальные B2-кэши находятся в reports/stage3-ollama-v1 и stage3-ollama-v2; его результаты экспериментальные. UI не запускает ни один из этих процессов и не содержит отдельных правил matching/verifier. В B1 текст отсутствует с причиной `generation_not_run`, согласованный факт не означает проверенное утверждение.
+Просмотр JSON не является replay модели. B1 работает кодом без сети; B2 replay повторяет сохранённые реальные ответы через кэш без новых API-вызовов, B2 live выполняет новые запросы. Реальные локальные B2-кэши находятся в reports/stage3-ollama-v1 и stage3-ollama-v2; его результаты экспериментальные. UI не запускает эти процессы и только отображает сохранённые B3 verifier-решения; matching/verifier в браузере не реализованы. В B1 текст отсутствует с причиной `generation_not_run`, согласованный факт не означает проверенное утверждение.
 
 Контроль и повтор: `reports/B1-stage5-control`, `reports/B1-stage5-repeat`; сравнения: `reports/comparisons/B1-v2-to-stage5`, `stage3-to-stage5`, `stage5-repeat`; история: `reports/benchmarks/stage5-offline`. Все quality-значения provisional.
