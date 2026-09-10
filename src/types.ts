@@ -79,16 +79,40 @@ export interface Evaluation {
   nonProducts: { correct: number; checked: number; errors: string[] };
 }
 
+export interface ControlledClaimEvaluation {
+  status: 'provisional' | 'human_verified' | 'not_evaluated';
+  checked: number;
+  supported: { allowed: number; total: number; falseBlocks: number };
+  unsupported: { blocked: number; total: number; leaked: number };
+  disputed: { blocked: number; total: number; leaked: number };
+  errors: { caseId: string; expected: string; actual: string | null }[];
+}
+export interface PublicationSummary {
+  products: number;
+  drafts: number;
+  ready: number;
+  withheld: number;
+  review: number;
+  coveredRows: number;
+  repairAttempted: number;
+  repairSucceeded: number;
+  reasons: Record<string, number>;
+}
+export interface GeneratedClaimEvaluation {
+  status: 'provisional' | 'human_verified' | 'not_evaluated';
+  checkedPublishedClaims: number;
+  publishedClaimErrors: number;
+}
 export interface RunReport {
-  schemaVersion: '1' | '2' | '3';
-  rulesVersion: 'B0-v1' | 'B1-v1' | 'B1-v2' | 'B2-v1';
+  schemaVersion: '1' | '2' | '3' | '4';
+  rulesVersion: 'B0-v1' | 'B1-v1' | 'B1-v2' | 'B2-v1' | 'B3-v1';
   runId: string;
   createdAt: string;
   status: 'success' | 'partial';
   mode: 'code-only' | 'live' | 'replay' | 'test';
   code: { commit: string | null; dirty: boolean | null; implementationHash: string };
-  hashes: { feed: string; taxonomy: string; labels: string; config: string; checks?: string; semanticChecks?: string };
-  config: { titleNormalization: string; dollarCurrency: string; split: 'development'; baseline?: 'b0' | 'b1' | 'b2'; ai?: import('./ai/config.js').AiConfig; aiTask?: 'extraction' | 'matching'; aiCohort?: 'development' | 'full_input' };
+  hashes: { feed: string; taxonomy: string; labels: string; config: string; checks?: string; semanticChecks?: string; claimChecks?: string; generatedChecks?: string; stage4Gate?: string };
+  config: { titleNormalization: string; dollarCurrency: string; split: 'development'; baseline?: 'b0' | 'b1' | 'b2' | 'b3'; ai?: import('./ai/config.js').AiConfig | import('./publication-config.js').Stage4Config; aiTask?: 'extraction' | 'matching'; aiCohort?: 'development' | 'full_input' };
   audit: {
     inputRows: number;
     accountedRows: number;
@@ -108,13 +132,15 @@ export interface RunReport {
     priceStatuses: Record<string, number>;
   };
   evaluation: Evaluation;
-  generation: null;
-  verifier: null;
+  generation: PublicationSummary | null;
+  verifier: { controlled: ControlledClaimEvaluation; generated: GeneratedClaimEvaluation } | null;
   api: { calls: number; errors: number; tokens: number | null; cost: number | null; retries?: number; cacheHits?: number; inputTokens?: number | null; outputTokens?: number | null };
-  ai?: { targetRows: number; jobs: number; failedJobs: number; origin: 'real' | 'test'; requestHashes: string[] };
+  ai?: { targetRows: number; jobs: number; failedJobs: number; origin: 'real' | 'test'; requestHashes: string[];
+    roles?: Record<string, import('./ai/contracts.js').AiSummary & { jobs: number; medianWallMs: number | null; p95WallMs: number | null }> };
   semanticChecks?: import('./semantic-quality.js').SemanticEvaluation;
   wallTimeMs: number;
   decisionsHash: string;
+  publicationHash?: string;
   metrics?: import('./metrics.js').Metric[];
   checks?: import('./quality.js').QualityEvaluation;
   timing?: { protocol: 'cli-through-result-v1'; node: string; platform: string; arch: string; pipelineMs: number };

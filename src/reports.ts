@@ -31,9 +31,10 @@ export function reportMarkdown(report: RunReport): string {
     `\nMatching errors: ${e.errors.length ? JSON.stringify(e.errors) : 'none'}.\n\n` +
     `Quality check errors: ${report.checks ? JSON.stringify(report.checks.errors) : 'N/A'}.\n\n` +
     (report.schemaVersion === '3' ? `Semantic check errors: ${report.semanticChecks ? JSON.stringify(report.semanticChecks.errors) : 'N/A'}.\n\nAI: ${JSON.stringify(report.ai ?? null)}; usage: ${JSON.stringify(report.api)}. Test fixtures are not real AI quality. Missing pricing/usage is N/A.\n\n` : '') +
+    (report.schemaVersion === '4' ? `Publication: ${JSON.stringify(report.generation)}.\n\nVerifier: ${JSON.stringify(report.verifier)}.\n\nAI: ${JSON.stringify(report.ai ?? null)}; usage: ${JSON.stringify(report.api)}. Controlled distortions and generated human review are reported separately.\n\n` : '') +
     `Sources/config: ${JSON.stringify(report.hashes)}\n\nCode: ${JSON.stringify(report.code)}\n\n` +
     `Timing: ${JSON.stringify(report.timing)}. Wall measurement ends after result/diagnostics, before metric/report serialization.\n\n` +
-    `No generation, verifier, or publication readiness. Counts over all inputs are diagnostics; quality is measured only on the provisional development labels/checks. Unknown relations are excluded.\n`;
+    (report.schemaVersion === '4' ? `Publication text is released only after complete claim coverage and supported verdicts. Holdout remains unevaluated.\n` : `No generation, verifier, or publication readiness. Counts over all inputs are diagnostics; quality is measured only on the provisional development labels/checks. Unknown relations are excluded.\n`);
   return `# ${report.runId} — B0\n\n` +
     `Status: ${report.status}; mode: ${report.mode}; matching labels: **${e.status}**; split: development. Holdout not evaluated.\n\n` +
     `| Metric | Value |\n|---|---|\n` +
@@ -60,7 +61,7 @@ export function compareReports(before: RunReport | null, after: RunReport, befor
   if (before) {
     for (const key of ['feed', 'taxonomy', 'labels'] as const) if (before.hashes[key] !== after.hashes[key]) incompatible.push(`${key} hash changed`);
     if (before.evaluation.split !== after.evaluation.split) incompatible.push('split changed');
-    if (![before.schemaVersion, after.schemaVersion].every(v => ['1', '2', '3'].includes(v))) incompatible.push('unsupported report schema');
+    if (![before.schemaVersion, after.schemaVersion].every(v => ['1', '2', '3', '4'].includes(v))) incompatible.push('unsupported report schema');
     if ((before.mode === 'test') !== (after.mode === 'test')) incompatible.push('test fixtures cannot be compared as real quality');
     if (before.evaluation.status !== after.evaluation.status) incompatible.push('label quality status changed');
   }
@@ -88,7 +89,9 @@ export function compareReports(before: RunReport | null, after: RunReport, befor
   const metricDeltas = metricNames.map(name => {
     const old = before?.metrics?.find(m => m.name === name); const next = after.metrics?.find(m => m.name === name);
     const sameProtocol = comparable && (!/^(categories|facts|reconciliation)\.check_accuracy$/.test(name) || before?.hashes.checks === after.hashes.checks)
-      && (!name.startsWith('semantic.') || before?.hashes.semanticChecks === after.hashes.semanticChecks);
+      && (!name.startsWith('semantic.') || before?.hashes.semanticChecks === after.hashes.semanticChecks)
+      && (!name.startsWith('verifier.controlled.') || before?.hashes.claimChecks === after.hashes.claimChecks)
+      && (!name.startsWith('verifier.generated.') || before?.hashes.generatedChecks === after.hashes.generatedChecks);
     return { name, before: old?.value ?? null, after: next?.value ?? null,
       delta: sameProtocol && old?.value != null && next?.value != null ? next.value - old.value : null };
   });
@@ -99,11 +102,13 @@ export function compareReports(before: RunReport | null, after: RunReport, befor
   if (after.checks?.errors.length) violations.push('development quality checks failed');
   if (after.rulesVersion === 'B2-v1' && after.semanticChecks?.unexpected) violations.push('unexpected semantic additions');
   if (after.rulesVersion === 'B2-v1' && after.semanticChecks?.errors.some(e => e.kind === 'type' || e.kind === 'category')) violations.push('semantic identity/category checks failed');
+  if (after.rulesVersion === 'B3-v1' && after.verifier?.controlled.status === 'human_verified' && (after.verifier.controlled.unsupported.leaked || after.verifier.controlled.disputed.leaked || after.verifier.controlled.supported.allowed === 0)) violations.push('publication safety gate failed');
   return {
     before: before?.runId ?? 'before-implementation', after: after.runId,
     comparable, incompatible, interpretation: before ? 'Saved run comparison' : 'No prior pipeline; previous quality and deltas are N/A',
     qualityStatus: after.evaluation.status, beforeMetrics: oldMetrics, afterMetrics: newMetrics, deltas,
     decisionsEqual: before ? before.decisionsHash === after.decisionsHash : null,
+    publicationEqual: before?.publicationHash && after.publicationHash ? before.publicationHash === after.publicationHash : null,
     changedRowIds: changedRows, changedMatchingRowIds, metricDeltas, configChanged: before ? before.hashes.config !== after.hashes.config : null,
     wallTimeMs: { before: before?.wallTimeMs ?? null, after: after.wallTimeMs }, violations,
   };

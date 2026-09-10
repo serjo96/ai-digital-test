@@ -1,7 +1,7 @@
 import { readFile, mkdir, writeFile, access } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { assertAccounting, hash } from './baseline.js';
-import { isProductResult } from './domain.js';
+import { isProductResult, isPublicationResult } from './domain.js';
 import { assertProductIntegrity } from './products.js';
 import { validateLabels, evaluate } from './evaluation.js';
 import { countMetric, metricsFor, type Metric } from './metrics.js';
@@ -10,7 +10,9 @@ import type { BaselineResult, RunReport } from './types.js';
 export async function readRun(dir: string): Promise<[RunReport, BaselineResult]> {
   const report = JSON.parse(await readFile(join(dir, 'report.json'), 'utf8')) as RunReport;
   const result = JSON.parse(await readFile(join(dir, 'result.json'), 'utf8')) as BaselineResult;
-  if (!['success', 'partial'].includes(report.status) || !['1', '2', '3'].includes(report.schemaVersion) || (report.status === 'partial' && report.schemaVersion !== '3') || hash(JSON.stringify(result)) !== report.decisionsHash) throw new Error(`invalid or modified run: ${dir}`);
+  const decisionInput = isPublicationResult(result) ? (({ listings: _listings, ...catalog }) => catalog)(result) : result;
+  const publicationValid = !isPublicationResult(result) || (report.schemaVersion === '4' && report.publicationHash === hash(JSON.stringify(result.listings)));
+  if (!['success', 'partial'].includes(report.status) || !['1', '2', '3', '4'].includes(report.schemaVersion) || (report.status === 'partial' && !['3', '4'].includes(report.schemaVersion)) || hash(JSON.stringify(decisionInput)) !== report.decisionsHash || !publicationValid) throw new Error(`invalid or modified run: ${dir}`);
   assertAccounting(result.rows.map(r => r.source), result);
   if (/^B[12]-/.test(report.rulesVersion) && !isProductResult(result)) throw new Error('product result missing');
   if (isProductResult(result)) assertProductIntegrity(result);
@@ -44,7 +46,7 @@ export async function exportBenchmark(dirs: string[], labelsPath: string, out: s
       const cohort = hash(JSON.stringify([report.hashes.feed, report.hashes.taxonomy, report.hashes.labels, report.evaluation.split, 'metrics-v1']));
       metadata = { runId: report.runId, createdAt: report.createdAt, status: report.status, rules: report.rulesVersion, schema: report.schemaVersion,
         mode: report.mode, ai: report.ai ?? null, config: report.config,
-        cohort, hashes: report.hashes, code: report.code, timingProtocol: report.timing?.protocol ?? 'cli-through-result-v1', environment: report.timing ?? null };
+        cohort, hashes: report.hashes, code: report.code, publicationHash: report.publicationHash ?? null, timingProtocol: report.timing?.protocol ?? 'cli-through-result-v1', environment: report.timing ?? null };
       runs.push({ runId: report.runId, directory: resolve(directory), status: report.status, cohort, rules: report.rulesVersion, wallTimeMs: report.wallTimeMs,
         decisionsHash: report.decisionsHash, implementationHash: report.code.implementationHash });
     } else {
@@ -58,7 +60,10 @@ export async function exportBenchmark(dirs: string[], labelsPath: string, out: s
     if (seen.has(id)) throw new Error(`duplicate benchmark run ID: ${id}`);
     seen.add(id);
     for (const metric of metrics) points.push({ benchmarkSchema: 'metrics-v1', ...metadata, ...metric,
-      metricCohort: metric.name.startsWith('semantic.') ? hash(JSON.stringify([metadata.cohort, (metadata.hashes as RunReport['hashes'])?.semanticChecks ?? null])) : /^(categories|facts|reconciliation)\.check_accuracy$/.test(metric.name) ? hash(JSON.stringify([metadata.cohort, (metadata.hashes as RunReport['hashes'])?.checks ?? null])) : metadata.cohort });
+      metricCohort: metric.name.startsWith('semantic.') ? hash(JSON.stringify([metadata.cohort, (metadata.hashes as RunReport['hashes'])?.semanticChecks ?? null]))
+        : metric.name.startsWith('verifier.controlled.') ? hash(JSON.stringify([metadata.cohort, (metadata.hashes as RunReport['hashes'])?.claimChecks ?? null]))
+        : metric.name.startsWith('verifier.generated.') ? hash(JSON.stringify([metadata.cohort, (metadata.hashes as RunReport['hashes'])?.generatedChecks ?? null, (metadata as { publicationHash?: string }).publicationHash ?? null]))
+        : /^(categories|facts|reconciliation)\.check_accuracy$/.test(metric.name) ? hash(JSON.stringify([metadata.cohort, (metadata.hashes as RunReport['hashes'])?.checks ?? null])) : metadata.cohort });
   }
   const directory = join(out, runId);
   await mkdir(out, { recursive: true }); await mkdir(directory);

@@ -50,7 +50,7 @@ export class ProviderRegistry {
 
 export interface AiCallRecord {
   key: string;
-  role: 'extraction' | 'matching';
+  role: 'extraction' | 'matching' | 'generation' | 'verification' | 'repair' | 'controlled_verification';
   rowIds: string[];
   provider: string;
   endpoint: string;

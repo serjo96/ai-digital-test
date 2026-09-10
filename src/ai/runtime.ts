@@ -4,7 +4,7 @@ import { performance } from 'node:perf_hooks';
 import { z } from 'zod';
 import { hash } from '../baseline.js';
 import { AiError, ProviderRegistry, type AiCallRecord, type AiRequest, type AiResponse, type AiSummary } from './contracts.js';
-import type { AiConfig } from './config.js';
+import type { RuntimeConfig } from './config.js';
 
 const responseSchema = z.strictObject({
   status: z.enum(['completed', 'refused', 'incomplete', 'invalid']), data: z.unknown(), model: z.string().min(1), requestId: z.string().nullable(),
@@ -21,9 +21,9 @@ export const canonicalJson = (value: unknown): string => {
   return JSON.stringify(value);
 };
 
-export class AiRuntime {
+export class AiRuntime<TConfig extends RuntimeConfig = RuntimeConfig> {
   readonly records: AiCallRecord[] = [];
-  constructor(private readonly registry: ProviderRegistry, readonly config: AiConfig,
+  constructor(private readonly registry: ProviderRegistry, readonly config: TConfig,
     readonly mode: 'live' | 'replay', private readonly cache: string,
     private readonly pause: (ms: number) => Promise<void> = ms => new Promise(resolve => setTimeout(resolve, ms)),
   ) {}
@@ -124,8 +124,8 @@ export class AiRuntime {
     }
   }
 
-  summary(): AiSummary {
-    const real = this.records.filter(r => r.origin === 'real');
+  summary(role?: AiCallRecord['role']): AiSummary {
+    const real = this.records.filter(r => r.origin === 'real' && (!role || r.role === role));
     const live = real.filter(r => r.mode === 'live');
     const usage = live.flatMap(r => r.attemptUsage);
     const known = usage.every(u => u !== null);

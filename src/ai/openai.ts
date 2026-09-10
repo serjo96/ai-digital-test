@@ -3,13 +3,20 @@ import { AiError, type AiProvider, type AiRequest, type AiResponse } from './con
 
 export class OpenAiAdapter implements AiProvider {
   readonly id = 'openai';
-  readonly endpoint = 'https://api.openai.com/v1';
   readonly kind = 'real' as const;
   private client: OpenAI | undefined;
-  constructor(private readonly transport?: typeof fetch, private readonly key?: string) {}
+  constructor(
+    private readonly transport: typeof fetch | undefined = undefined,
+    private readonly key: string | undefined = undefined,
+    readonly endpoint = 'https://api.openai.com/v1',
+  ) {}
 
   validateConfiguration(_request: AiRequest): void {
-    if (!(this.key ?? process.env.OPENAI_API_KEY)) throw new AiError('auth');
+    if (!this.apiKey()) throw new AiError('auth');
+  }
+
+  private apiKey(): string | undefined {
+    return this.key ?? process.env.OPENAI_API_KEY;
   }
 
   replayResponse(response: AiResponse): AiResponse {
@@ -20,7 +27,7 @@ export class OpenAiAdapter implements AiProvider {
 
   async generate(request: AiRequest, signal: AbortSignal): Promise<AiResponse> {
     this.validateConfiguration(request);
-    const apiKey = this.key ?? process.env.OPENAI_API_KEY;
+    const apiKey = this.apiKey();
     if (!apiKey) throw new AiError('auth');
     this.client ??= new OpenAI({ apiKey, baseURL: this.endpoint, maxRetries: 0,
       ...(this.transport ? { fetch: this.transport } : {}) });

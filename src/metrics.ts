@@ -92,19 +92,42 @@ export function metricsFor(report: RunReport, result: BaselineResult, labels: La
   count('errors.quality_checks', report.checks?.errors.length ?? null, 'development', 'provisional');
   count('errors.execution', report.status === 'partial' ? 1 : 0, 'run');
   count('api.calls', report.api.calls, 'run');
-  if (report.schemaVersion === '3') {
+  if (report.schemaVersion === '3' || report.schemaVersion === '4') {
     count('api.errors', report.api.errors, 'run'); count('api.retries', report.api.retries ?? 0, 'run');
     count('api.cache_hits', report.api.cacheHits ?? 0, 'run'); count('api.tokens', report.api.tokens, 'run');
     count('api.input_tokens', report.api.inputTokens ?? (report.mode === 'code-only' ? 0 : null), 'run');
     count('api.output_tokens', report.api.outputTokens ?? (report.mode === 'code-only' ? 0 : null), 'run');
     metrics.push({ ...countMetric('api.cost', report.api.cost, 'run'), unit: 'USD' });
     count('ai.target_rows', report.ai?.targetRows ?? null, 'run'); count('ai.failed_jobs', report.ai?.failedJobs ?? null, 'run');
-    const s = report.semanticChecks;
-    for (const [name, value] of Object.entries({ correct_additions: s?.correct ?? null, unexpected_additions: s?.unexpected ?? null, missed_additions: s?.missing ?? null })) count(`semantic.${name}`, value, 'development', 'provisional');
-    for (const name of ['precision', 'recall', 'types', 'categories'] as const) ratio(`semantic.${name}`, s?.[name].numerator ?? null, s?.[name].denominator ?? null, 'development', 'provisional');
+    if (report.schemaVersion === '3') {
+      const s = report.semanticChecks;
+      for (const [name, value] of Object.entries({ correct_additions: s?.correct ?? null, unexpected_additions: s?.unexpected ?? null, missed_additions: s?.missing ?? null })) count(`semantic.${name}`, value, 'development', 'provisional');
+      for (const name of ['precision', 'recall', 'types', 'categories'] as const) ratio(`semantic.${name}`, s?.[name].numerator ?? null, s?.[name].denominator ?? null, 'development', 'provisional');
+    }
+    for (const [role, summary] of Object.entries(report.ai?.roles ?? {})) {
+      count(`ai.role.${role}.jobs`, summary.jobs, 'run'); count(`ai.role.${role}.calls`, summary.calls, 'run'); count(`ai.role.${role}.errors`, summary.errors, 'run');
+      count(`ai.role.${role}.tokens`, summary.tokens, 'run');
+      metrics.push({ ...countMetric(`ai.role.${role}.cost`, summary.cost, 'run'), unit: 'USD', availability: summary.cost === null ? 'unavailable' : 'measured' });
+      metrics.push({ ...countMetric(`ai.role.${role}.median_wall`, summary.medianWallMs, 'run'), unit: 'ms' });
+      metrics.push({ ...countMetric(`ai.role.${role}.p95_wall`, summary.p95WallMs, 'run'), unit: 'ms' });
+    }
     for (const metric of metrics) if (/^api\./.test(metric.name) && metric.value === null) metric.availability = 'unavailable';
   }
-  ratio('generation.quality', null, null); ratio('verifier.quality', null, null);
+  if (report.schemaVersion === '4' && report.generation && report.verifier) {
+    const g = report.generation; const v = report.verifier.controlled; const generated = report.verifier.generated;
+    const publicationScope: Metric['scope'] = report.config.aiCohort === 'development' ? 'development' : 'full_input';
+    for (const [name, value] of Object.entries({ products: g.products, drafts: g.drafts, ready: g.ready, withheld: g.withheld, review: g.review, covered_rows: g.coveredRows, repair_attempted: g.repairAttempted, repair_succeeded: g.repairSucceeded })) count(`publication.${name}`, value, publicationScope);
+    ratio('publication.ready_rate', g.ready, g.products, publicationScope, 'not_applicable');
+    ratio('verifier.controlled.unsupported_detection_recall', v.unsupported.blocked, v.unsupported.total, 'development', v.status);
+    ratio('verifier.controlled.false_block_rate', v.supported.falseBlocks, v.supported.total, 'development', v.status);
+    ratio('verifier.controlled.disputed_leakage', v.disputed.leaked, v.disputed.total, 'development', v.status);
+    count('verifier.controlled.errors', v.errors.length, 'development', v.status);
+    ratio('verifier.generated.published_claim_error_rate', generated.publishedClaimErrors, generated.checkedPublishedClaims, 'development', generated.status);
+    count('verifier.generated.checked_published_claims', generated.checkedPublishedClaims, 'development', generated.status);
+    for (const [reason, value] of Object.entries(g.reasons).sort(([a], [b]) => a.localeCompare(b))) count(`publication.reason.${reason}`, value, publicationScope);
+  } else {
+    ratio('generation.quality', null, null); ratio('verifier.quality', null, null);
+  }
   metrics.push({ ...countMetric('timing.wall', report.wallTimeMs, 'run'), unit: 'ms' });
   metrics.push({ ...countMetric('timing.pipeline', report.timing?.pipelineMs ?? null, 'run'), unit: 'ms' });
   return metrics.sort((a, b) => a.name.localeCompare(b.name));

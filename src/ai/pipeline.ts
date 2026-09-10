@@ -6,7 +6,7 @@ import type { SourceRow } from '../types.js';
 import { AiRuntime } from './runtime.js';
 import { additionFact, evidenceFor, ExtractionSchema, MatchingSchema, extractionPrompt, matchingPrompt, jsonSchema } from './schemas.js';
 import type { AiRequest } from './contracts.js';
-import type { RoleConfig } from './config.js';
+import type { AiConfig, RoleConfig } from './config.js';
 
 export function selectAiRows(b1: ProductResult): string[] {
   const active = new Set(b1.rows.filter(r => r.outcome === 'grouped').map(r => r.source.row_id));
@@ -39,7 +39,7 @@ export function selectedTaskRows(b1: ProductResult, task: 'extraction' | 'matchi
   return targets.filter(id => !eligible || eligible.has(id));
 }
 
-export async function aiBaseline(source: SourceRow[], runtime: AiRuntime, task: 'extraction' | 'matching' = 'extraction', eligible?: Set<string>, fixedPairs?: [string, string][]): Promise<ProductResult> {
+export async function aiBaseline(source: SourceRow[], runtime: AiRuntime<AiConfig>, task: 'extraction' | 'matching' = 'extraction', eligible?: Set<string>, fixedPairs?: [string, string][]): Promise<ProductResult> {
   const b1 = productBaseline(source);
   if (task === 'matching' && !runtime.config.matching.enabled) throw new Error('matching experiment is disabled in config');
   const targets = task === 'extraction' ? (eligible ? [...eligible].filter(id => selectAiRows(b1).includes(id)) : selectedTaskRows(b1, task)) : [];

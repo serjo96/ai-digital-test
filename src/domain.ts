@@ -60,6 +60,50 @@ export interface ProductResult extends BaselineResult {
   review: ReviewItem[];
 }
 export const isProductResult = (result: BaselineResult): result is ProductResult => 'products' in result;
+
+export type ClaimVerdict = 'supported' | 'disputed' | 'unsupported' | 'unknown' | 'error';
+export interface PublicationSupport {
+  id: string;
+  kind: 'identity' | 'fact';
+  label: string;
+  value: string | number | boolean;
+  unit: string | null;
+  conditions: string[];
+  evidence: Evidence[];
+}
+export interface VerifiedClaim {
+  id: string;
+  text: string;
+  start: number;
+  end: number;
+  verdict: ClaimVerdict;
+  supportIds: string[];
+  decisionIds: string[];
+  evidence: Evidence[];
+  reason: string;
+}
+export interface ListingAttempt {
+  attempt: 1 | 2;
+  role: 'generation' | 'repair';
+  text: string;
+  generationRecordKey: string;
+  verifierRecordKey: string | null;
+  claims: VerifiedClaim[];
+  verificationStatus: 'supported' | 'blocked' | 'error';
+  reasons: string[];
+}
+export interface Listing {
+  productId: string;
+  status: 'ready' | 'withheld' | 'review';
+  supports: PublicationSupport[];
+  attempts: ListingAttempt[];
+  draftText: string | null;
+  publishedText: string | null;
+  selectedAttempt: 1 | 2 | null;
+  withholdReasons: string[];
+}
+export interface PublicationResult extends ProductResult { listings: Listing[] }
+export const isPublicationResult = (result: BaselineResult): result is PublicationResult => isProductResult(result) && 'listings' in result;
 export const sourceEvidence = (row: SourceRow, field: Evidence['field']): Evidence => ({
   rowId: row.row_id, field, quote: row[field], start: 0, end: row[field].length,
 });
