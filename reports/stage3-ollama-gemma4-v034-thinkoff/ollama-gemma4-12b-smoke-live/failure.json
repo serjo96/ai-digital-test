@@ -1,0 +1,21 @@
+{
+  "status": "failed",
+  "baseline": "b2",
+  "runId": "ollama-gemma4-12b-smoke-live",
+  "createdAt": "2026-09-10T13:24:53.434Z",
+  "wallTimeMs": 17177.521375,
+  "api": {
+    "calls": 1,
+    "errors": 1,
+    "retries": 0,
+    "cacheHits": 0,
+    "inputTokens": 785,
+    "outputTokens": 173,
+    "tokens": 958,
+    "cost": null
+  },
+  "mode": "live",
+  "errors": [
+    "Incomplete AI run; inspect report.json and ai.json"
+  ]
+}

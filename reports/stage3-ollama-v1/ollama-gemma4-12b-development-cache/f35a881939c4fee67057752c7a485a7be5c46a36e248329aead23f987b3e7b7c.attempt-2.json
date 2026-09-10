@@ -1,0 +1,6 @@
+{
+  "elapsedMs": 377.7366670000192,
+  "error": "server",
+  "response": null,
+  "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+}

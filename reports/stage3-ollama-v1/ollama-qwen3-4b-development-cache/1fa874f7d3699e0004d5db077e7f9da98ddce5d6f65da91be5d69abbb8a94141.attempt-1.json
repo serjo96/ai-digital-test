@@ -1,0 +1,101 @@
+{
+  "elapsedMs": 15586.841082999992,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:08:18.600638Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowId\\\": \\\"row_bb6d2613d4\\\",\\n  \\\"facts\\\": [\\n    {\\n      \\\"attribute\\\": \\\"bluetooth_supported\\\",\\n      \\\"value\\\": true,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_bb6d2613d4\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"2.4GHz + BT\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"wireless_frequency\\\",\\n      \\\"value\\\": 2.4,\\n      \\\"unit\\\": \\\"GHz\\\",\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\n        \\\"radio_link\\\"\\n      ],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_bb6d2613d4\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"2.4GHz\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"colour_temperature_count\\\",\\n      \\\"value\\\": 0,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_bb6d2613d4\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"2.4GHz + BT\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"size_count\\\",\\n      \\\"value\\\": 0,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_bb6d2613d4\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"2.4GHz + BT\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"compatible_model\\\",\\n      \\\"value\\\": \\\"cobalt x\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\n        \\\"compatible_device\\\"\\n      ],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_bb6d2613d4\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"Cobalt X wireless mouse\\\"\\n      }\\n    }\\n  ],\\n  \\\"type\\\": null,\\n  \\\"category\\\": null\\n  ,\\n  \\\"unknowns\\\": [\\n    \\\"bluetooth_supported\\\",\\n    \\\"wireless_frequency\\\",\\n    \\\"colour_temperature_count\\\",\\n    \\\"size_count\\\",\\n    \\\"compatible_model\\\"\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":15571703166,\"load_duration\":31008708,\"prompt_eval_count\":792,\"prompt_eval_duration\":1536351458,\"eval_count\":509,\"eval_duration\":13990529209}",
+    "data": {
+      "rowId": "row_bb6d2613d4",
+      "facts": [
+        {
+          "attribute": "bluetooth_supported",
+          "value": true,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_bb6d2613d4",
+            "field": "raw_specs",
+            "quote": "2.4GHz + BT"
+          }
+        },
+        {
+          "attribute": "wireless_frequency",
+          "value": 2.4,
+          "unit": "GHz",
+          "scope": "product",
+          "conditions": [
+            "radio_link"
+          ],
+          "evidence": {
+            "rowId": "row_bb6d2613d4",
+            "field": "raw_specs",
+            "quote": "2.4GHz"
+          }
+        },
+        {
+          "attribute": "colour_temperature_count",
+          "value": 0,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_bb6d2613d4",
+            "field": "raw_specs",
+            "quote": "2.4GHz + BT"
+          }
+        },
+        {
+          "attribute": "size_count",
+          "value": 0,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_bb6d2613d4",
+            "field": "raw_specs",
+            "quote": "2.4GHz + BT"
+          }
+        },
+        {
+          "attribute": "compatible_model",
+          "value": "cobalt x",
+          "unit": null,
+          "scope": "product",
+          "conditions": [
+            "compatible_device"
+          ],
+          "evidence": {
+            "rowId": "row_bb6d2613d4",
+            "field": "raw_title",
+            "quote": "Cobalt X wireless mouse"
+          }
+        }
+      ],
+      "type": null,
+      "category": null,
+      "unknowns": [
+        "bluetooth_supported",
+        "wireless_frequency",
+        "colour_temperature_count",
+        "size_count",
+        "compatible_model"
+      ]
+    },
+    "jsonParsed": true,
+    "model": "qwen3:4b",
+    "requestId": null,
+    "usage": {
+      "inputTokens": 792,
+      "outputTokens": 509,
+      "cachedInputTokens": null,
+      "cacheWriteTokens": null
+    },
+    "timings": {
+      "totalMs": 15571.703166,
+      "loadMs": 31.008708,
+      "promptMs": 1536.351458,
+      "generationMs": 13990.529209
+    }
+  }
+}

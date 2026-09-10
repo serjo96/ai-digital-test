@@ -1,0 +1,135 @@
+{
+  "quality": {
+    "jobs": 1,
+    "successful": 0,
+    "unsuccessful": 1,
+    "stages": {
+      "transport": {
+        "checked": 1,
+        "passed": 0,
+        "failed": 1,
+        "unchecked": 0
+      },
+      "completion": {
+        "checked": 0,
+        "passed": 0,
+        "failed": 0,
+        "unchecked": 1
+      },
+      "json": {
+        "checked": 0,
+        "passed": 0,
+        "failed": 0,
+        "unchecked": 1
+      },
+      "schema": {
+        "checked": 0,
+        "passed": 0,
+        "failed": 0,
+        "unchecked": 1
+      },
+      "citations": {
+        "checked": 0,
+        "passed": 0,
+        "failed": 0,
+        "unchecked": 1
+      },
+      "semantic": {
+        "checked": 0,
+        "passed": 0,
+        "failed": 0,
+        "unchecked": 1
+      }
+    },
+    "proposed": {
+      "correct": 0,
+      "unexpected": 0,
+      "missing": 1,
+      "malformed": 0,
+      "duplicate": 0
+    },
+    "accepted": {
+      "status": "provisional",
+      "version": "semantic-checks-v1",
+      "correct": 0,
+      "unexpected": 0,
+      "missing": 1,
+      "precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "recall": {
+        "numerator": 0,
+        "denominator": 1,
+        "value": 0
+      },
+      "types": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1
+      },
+      "categories": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1
+      },
+      "errors": [
+        {
+          "rowId": "row_11462769c5",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "colour_temperature_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 5
+          },
+          "actual": null
+        }
+      ]
+    },
+    "rejectedAdditions": 0,
+    "falseCitations": 0,
+    "reasons": [],
+    "unknowns": 0,
+    "review": {
+      "messages": 65,
+      "rows": 64,
+      "aiAffectedRows": 1,
+      "aiMessages": 1,
+      "shadowReview": 0
+    },
+    "recommendations": [],
+    "dangerousMerges": 0,
+    "unconfirmedMerges": 0,
+    "unknownMatching": 0
+  },
+  "performance": {
+    "calls": 1,
+    "retries": 0,
+    "medianMs": 120149.917709,
+    "p95Ms": 120149.917709,
+    "requests": [
+      {
+        "rowIds": [
+          "row_11462769c5"
+        ],
+        "latencyMs": 120149.917709,
+        "wallTimeMs": 120149.917709,
+        "attempts": [
+          {
+            "elapsedMs": 120114.757875,
+            "error": "timeout",
+            "response": null
+          }
+        ]
+      }
+    ],
+    "loadMs": null,
+    "generationMs": null,
+    "cachedTokens": null,
+    "localComputeCost": null,
+    "latencySource": "live"
+  }
+}

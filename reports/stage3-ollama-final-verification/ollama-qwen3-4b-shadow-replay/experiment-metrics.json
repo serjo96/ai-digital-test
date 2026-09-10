@@ -1,0 +1,970 @@
+{
+  "quality": {
+    "jobs": 8,
+    "successful": 1,
+    "unsuccessful": 7,
+    "stages": {
+      "transport": {
+        "checked": 8,
+        "passed": 8,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "completion": {
+        "checked": 8,
+        "passed": 8,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "json": {
+        "checked": 8,
+        "passed": 8,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "schema": {
+        "checked": 8,
+        "passed": 8,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "citations": {
+        "checked": 8,
+        "passed": 1,
+        "failed": 7,
+        "unchecked": 0
+      },
+      "semantic": {
+        "checked": 1,
+        "passed": 1,
+        "failed": 0,
+        "unchecked": 7
+      }
+    },
+    "proposed": {
+      "correct": 0,
+      "unexpected": 0,
+      "missing": 0,
+      "malformed": 0,
+      "duplicate": 0
+    },
+    "accepted": {
+      "status": "provisional",
+      "version": "semantic-checks-v1",
+      "correct": 0,
+      "unexpected": 0,
+      "missing": 11,
+      "precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "recall": {
+        "numerator": 0,
+        "denominator": 11,
+        "value": 0
+      },
+      "types": {
+        "numerator": 12,
+        "denominator": 12,
+        "value": 1
+      },
+      "categories": {
+        "numerator": 12,
+        "denominator": 12,
+        "value": 1
+      },
+      "errors": [
+        {
+          "rowId": "row_11462769c5",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "colour_temperature_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 5
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_55a8c9b86d",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "bluetooth_supported",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": true
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_55a8c9b86d",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "wireless_frequency",
+            "conditions": [
+              "radio_link"
+            ],
+            "scope": "product",
+            "unit": "GHz",
+            "value": 2.4
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_74b8f7797a",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "bluetooth_supported",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": true
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_74b8f7797a",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "wireless_frequency",
+            "conditions": [
+              "radio_link"
+            ],
+            "scope": "product",
+            "unit": "GHz",
+            "value": 2.4
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_a1bb1ad2e9",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "colour_temperature_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 5
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_b82f7fcc2a",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "colour_temperature_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 5
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_bb6d2613d4",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "bluetooth_supported",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": true
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_bb6d2613d4",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "wireless_frequency",
+            "conditions": [
+              "radio_link"
+            ],
+            "scope": "product",
+            "unit": "GHz",
+            "value": 2.4
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_fe3ff4b356",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "size_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 3
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_fe3ff4b356",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "compatible_model",
+            "conditions": [
+              "compatible_device"
+            ],
+            "scope": "product",
+            "unit": null,
+            "value": "AeroBuds Pro"
+          },
+          "actual": null
+        }
+      ]
+    },
+    "rejectedAdditions": 0,
+    "falseCitations": 3,
+    "reasons": [],
+    "unknowns": 0,
+    "review": {
+      "messages": 64,
+      "rows": 64,
+      "aiAffectedRows": 8,
+      "aiMessages": 0,
+      "shadowReview": 0
+    },
+    "recommendations": [
+      {
+        "rowIds": [
+          "row_11bb9:9b2fa",
+          "row_e0afb74574"
+        ],
+        "decision": "merge",
+        "confidence": "high",
+        "reason": "Both rows describe the same product: Aerobuds PRO earbuds with active noise cancelling, Bluetooth 5.3, 20 hours playback (incl. charging case), water resistant IPX4. The German title 'AEROBUDS PRO / schwarz / ANC' translates to 'Aerobuds PRO / black / ANC', matching the English title. The specs are consistent with minor translation differences: 'Akku 18h' is 18 hours playback, 'USB-C Ladecase' is charging case with USB-C. The product name, features, and specifications align across both rows.",
+        "evidence": [
+          {
+            "rowId": "row_11bb99b2fa",
+            "field": "raw_title",
+            "quote": "Aerobuds PRO earbud, black, ANC"
+          },
+          {
+            "rowId": "row_11bb99b2fa",
+            "field": "raw_specs",
+            "quote": "Active noise cancelling, BT 5.3, 20 hours playback (incl. charging case), water resistant IPX4"
+          },
+          {
+            "rowId": "row_e0afb74574",
+            "field": "raw_title",
+            "quote": "AEROBUDS PRO / schwarz / ANC"
+          },
+          {
+            "rowId": "row_e0afb74574",
+            "field": "raw_specs",
+            "quote": "Bluetooth 5.3, Akku 18h, IPX4, USB-C Ladecase"
+          }
+        ],
+        "valid": false,
+        "label": "unknown",
+        "hardConflict": false,
+        "dangerous": false,
+        "unconfirmed": true
+      },
+      {
+        "rowIds": [
+          "row_bdbc045:31",
+          "row_e0afb74574"
+        ],
+        "decision": "merge",
+        "confidence": "high",
+        "reason": "Both rows describe the same product: AeroBuds Pro True Wireless Earbuds with Black color, Bluetooth 5.3, ANC, 20h total playback with case, IPX4, USB-C. The specifications match exactly when accounting for language differences and minor formatting variations (e.g., 'schwarz' for 'Black', 'Ladecase' for 'case').",
+        "evidence": [
+          {
+            "rowId": "row_bdbc045131",
+            "field": "raw_title",
+            "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+          },
+          {
+            "rowId": "row_e0afb74574",
+            "field": "raw_title",
+            "quote": "AEROBUDS PRO / schwarz / ANC"
+          },
+          {
+            "rowId": "row_bdbc045131",
+            "field": "raw_specs",
+            "quote": "ANC; Bluetooth 5.3; 20h total playback with case; IPX4; USB-C"
+          },
+          {
+            "rowId": "row_e0afb74574",
+            "field": "raw_specs",
+            "quote": "Bluetooth 5.3, Akku 18h, IPX4, USB-C Ladecase"
+          }
+        ],
+        "valid": false,
+        "label": "unknown",
+        "hardConflict": false,
+        "dangerous": false,
+        "unconfirmed": true
+      },
+      {
+        "rowIds": [
+          "row_11bb99b2fa",
+          "row_bdbc045131"
+        ],
+        "decision": "merge",
+        "confidence": "high",
+        "reason": "Both rows describe the same product: Aerobuds PRO earbuds with black color, active noise cancelling, Bluetooth 5.3, 20 hours playback (including charging case), and water resistance IPX4. The titles and specifications match exactly in terms of product features and specifications, with only minor differences in capitalization and formatting of the brand name (Aerobuds vs. Aerobuds PRO). The key product attributes are consistent across both rows.",
+        "evidence": [
+          {
+            "rowId": "row_11bb99b2fa",
+            "field": "raw_title",
+            "quote": "Aerobuds PRO earbud, black, ANC"
+          },
+          {
+            "rowId": "row_11bb99b2fa",
+            "field": "raw_specs",
+            "quote": "Active noise cancelling, BT 5.3, 20 hours playback (incl. charging case), water resistant IPX4"
+          },
+          {
+            "rowId": "row_bdbc045131",
+            "field": "raw_title",
+            "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+          },
+          {
+            "rowId": "row_bdbc045131",
+            "field": "raw_specs",
+            "quote": "ANC; Bluetooth 5.3; 20h total playback with case; IPX4; USB-C"
+          }
+        ],
+        "valid": true,
+        "label": "positive",
+        "hardConflict": false,
+        "dangerous": false,
+        "unconfirmed": false
+      },
+      {
+        "rowIds": [
+          "row_55a8c9b86d",
+          "row_74b8f17797a"
+        ],
+        "decision": "merge",
+        "confidence": "high",
+        "reason": "Both rows have identical raw_title and raw_specs: 'Onyx Lite wireless mouse' with specs '2.4GHz + BT; 6 buttons; 70g'. No differences in product name, specifications, or other attributes. This is a clear match.",
+        "evidence": [
+          {
+            "rowId": "row_55a8c9b86d",
+            "field": "raw_title",
+            "quote": "Onyx Lite wireless mouse"
+          },
+          {
+            "rowId": "row_55a8c9b86d",
+            "field": "raw_specs",
+            "quote": "2.4GHz + BT; 6 buttons; 70g"
+          },
+          {
+            "rowId": "row_74b8f7797a",
+            "field": "raw_title",
+            "quote": "Onyx Lite wireless mouse"
+          },
+          {
+            "rowId": "row_74b8f7797a",
+            "field": "raw_specs",
+            "quote": "2.4GHz + BT; 6 buttons; 70g"
+          }
+        ],
+        "valid": false,
+        "label": "positive",
+        "hardConflict": false,
+        "dangerous": false,
+        "unconfirmed": false
+      },
+      {
+        "rowIds": [
+          "row_fe3ff4b356",
+          "row_11bb99b2fa"
+        ],
+        "decision": "merge",
+        "confidence": "high",
+        "reason": "Both rows describe earbud accessories for the AeroBuds Pro model. The first row specifies replacement ear tips (S/M/L) made of silicone, while the second row describes the Aerobuds PRO earbud itself with active noise cancelling, Bluetooth 5.3, 20 hours playback, and water resistance. Despite different product types (accessories vs. main product), they are both directly related to the AeroBuds Pro model and share the same brand name and model identifier. The shadow recommendation indicates they should be merged as they are part of the same product ecosystem.",
+        "evidence": [
+          {
+            "rowId": "row_fe3ff:ff4b356",
+            "field": "raw_title",
+            "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+          },
+          {
+            "rowId": "row_11bb99b2fa",
+            "field": "raw_title",
+            "quote": "Aerobuds PRO earbud, black, ANC"
+          }
+        ],
+        "valid": false,
+        "label": "negative",
+        "hardConflict": true,
+        "dangerous": true,
+        "unconfirmed": false
+      },
+      {
+        "rowIds": [
+          "row_fe3ff4b356",
+          "row_bdbc045131"
+        ],
+        "decision": "merge",
+        "confidence": "high",
+        "reason": "Both rows describe AeroBuds Pro products with the same core product name and model. The first row specifies replacement ear tips (S/M/L) as a product variant, while the second row describes the True Wireless Earbuds themselves. The key identifier 'AeroBuds Pro' matches across both rows, and the product type (earbuds) is consistent. The difference in specifications (replacement ear tips vs. full earbuds) does not constitute a different product identity but rather a complementary accessory and main product relationship. The shadow recommendation confirms the merge.",
+        "evidence": [
+          {
+            "rowId": "row_fe3ff:ff4b356",
+            "field": "raw_title",
+            "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+          },
+          {
+            "rowId": "row_bdbc045131",
+            "field": "raw_title",
+            "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+          }
+        ],
+        "valid": false,
+        "label": "negative",
+        "hardConflict": true,
+        "dangerous": true,
+        "unconfirmed": false
+      },
+      {
+        "rowIds": [
+          "row_fe3ff:4b356",
+          "row_e0afb74574"
+        ],
+        "decision": "merge",
+        "confidence": "high",
+        "reason": "Both rows describe the AeroBuds Pro product line with specific variants: row_fe3ff4b356 specifies replacement ear tips (S/M/L) as a silicone accessory, while row_e0afb74574 describes the base product with Bluetooth 5.3, 18h battery, IPX4, and USB-C charging. The core product identity (AeroBuds Pro) is consistent, and the differences are accessory vs. base product with distinct specifications. Compatibility is not identity, so the shadow recommendation merges them as the same product line.",
+        "evidence": [
+          {
+            "rowId": "row_fe3ff4b356",
+            "field": "raw_title",
+            "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+          },
+          {
+            "rowId": "row_e0afb74574",
+            "field": "raw_title",
+            "quote": "AEROBUDS PRO / schwarz / ANC"
+          }
+        ],
+        "valid": false,
+        "label": "negative",
+        "hardConflict": true,
+        "dangerous": true,
+        "unconfirmed": false
+      },
+      {
+        "rowIds": [
+          "row_b82f7fcc2a",
+          "row_bb6d2613d4"
+        ],
+        "decision": "merge",
+        "confidence": "high",
+        "reason": "Both rows have the same title prefix 'Cobalt X' and the product names are distinct (desk lamp vs wireless mouse), so they are different products. The specs are different (LED vs 2.4GHz + BT) and the product types are different (desk lamp vs mouse), so they should not be merged.",
+        "evidence": [
+          {
+            "rowId": "row_b82f7fcc2a",
+            "field": "raw_title",
+            "quote": "Cobalt X desk lamp"
+          },
+          {
+            "rowId": "row_bb6:2613d4",
+            "field": "raw_title",
+            "quote": "Cobalt X wireless mouse"
+          }
+        ],
+        "valid": false,
+        "label": "negative",
+        "hardConflict": true,
+        "dangerous": true,
+        "unconfirmed": false
+      }
+    ],
+    "dangerousMerges": 4,
+    "unconfirmedMerges": 2,
+    "unknownMatching": 0
+  },
+  "performance": {
+    "calls": 0,
+    "retries": 0,
+    "medianMs": 7714.650624999995,
+    "p95Ms": 11760.254666,
+    "requests": [
+      {
+        "rowIds": [
+          "row_11bb99b2fa",
+          "row_e0afb74574"
+        ],
+        "latencyMs": 11760.254666,
+        "wallTimeMs": 0.9028749999999945,
+        "attempts": [
+          {
+            "elapsedMs": 11760.254666,
+            "error": null,
+            "response": {
+              "status": "completed",
+              "data": {
+                "rowIds": [
+                  "row_11bb9:9b2fa",
+                  "row_e0afb74574"
+                ],
+                "decision": "merge",
+                "confidence": "high",
+                "reason": "Both rows describe the same product: Aerobuds PRO earbuds with active noise cancelling, Bluetooth 5.3, 20 hours playback (incl. charging case), water resistant IPX4. The German title 'AEROBUDS PRO / schwarz / ANC' translates to 'Aerobuds PRO / black / ANC', matching the English title. The specs are consistent with minor translation differences: 'Akku 18h' is 18 hours playback, 'USB-C Ladecase' is charging case with USB-C. The product name, features, and specifications align across both rows.",
+                "evidence": [
+                  {
+                    "rowId": "row_11bb99b2fa",
+                    "field": "raw_title",
+                    "quote": "Aerobuds PRO earbud, black, ANC"
+                  },
+                  {
+                    "rowId": "row_11bb99b2fa",
+                    "field": "raw_specs",
+                    "quote": "Active noise cancelling, BT 5.3, 20 hours playback (incl. charging case), water resistant IPX4"
+                  },
+                  {
+                    "rowId": "row_e0afb74574",
+                    "field": "raw_title",
+                    "quote": "AEROBUDS PRO / schwarz / ANC"
+                  },
+                  {
+                    "rowId": "row_e0afb74574",
+                    "field": "raw_specs",
+                    "quote": "Bluetooth 5.3, Akku 18h, IPX4, USB-C Ladecase"
+                  }
+                ]
+              },
+              "model": "qwen3:4b",
+              "requestId": null,
+              "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:13:27.370204Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_11bb9:9b2fa\\\",\\n    \\\"row_e0afb74574\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows describe the same product: Aerobuds PRO earbuds with active noise cancelling, Bluetooth 5.3, 20 hours playback (incl. charging case), water resistant IPX4. The German title 'AEROBUDS PRO / schwarz / ANC' translates to 'Aerobuds PRO / black / ANC', matching the English title. The specs are consistent with minor translation differences: 'Akku 18h' is 18 hours playback, 'USB-C Ladecase' is charging case with USB-C. The product name, features, and specifications align across both rows.\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"Aerobuds PRO earbud, black, ANC\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"Active noise cancelling, BT 5.3, 20 hours playback (incl. charging case), water resistant IPX4\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_e0afb74574\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AEROBUDS PRO / schwarz / ANC\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_e0afb74574\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"Bluetooth 5.3, Akku 18h, IPX4, USB-C Ladecase\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":11749686459,\"load_duration\":66040875,\"prompt_eval_count\":291,\"prompt_eval_duration\":1107564791,\"eval_count\":402,\"eval_duration\":10558850875}",
+              "jsonParsed": true,
+              "timings": {
+                "totalMs": 11749.686459,
+                "loadMs": 66.040875,
+                "promptMs": 1107.564791,
+                "generationMs": 10558.850875
+              },
+              "usage": {
+                "inputTokens": 291,
+                "outputTokens": 402,
+                "cachedInputTokens": null,
+                "cacheWriteTokens": null
+              }
+            }
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_bdbc045131",
+          "row_e0afb74574"
+        ],
+        "latencyMs": 9824.510209,
+        "wallTimeMs": 0.4163330000000087,
+        "attempts": [
+          {
+            "elapsedMs": 9824.510209,
+            "error": null,
+            "response": {
+              "status": "completed",
+              "data": {
+                "rowIds": [
+                  "row_bdbc045:31",
+                  "row_e0afb74574"
+                ],
+                "decision": "merge",
+                "confidence": "high",
+                "reason": "Both rows describe the same product: AeroBuds Pro True Wireless Earbuds with Black color, Bluetooth 5.3, ANC, 20h total playback with case, IPX4, USB-C. The specifications match exactly when accounting for language differences and minor formatting variations (e.g., 'schwarz' for 'Black', 'Ladecase' for 'case').",
+                "evidence": [
+                  {
+                    "rowId": "row_bdbc045131",
+                    "field": "raw_title",
+                    "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+                  },
+                  {
+                    "rowId": "row_e0afb74574",
+                    "field": "raw_title",
+                    "quote": "AEROBUDS PRO / schwarz / ANC"
+                  },
+                  {
+                    "rowId": "row_bdbc045131",
+                    "field": "raw_specs",
+                    "quote": "ANC; Bluetooth 5.3; 20h total playback with case; IPX4; USB-C"
+                  },
+                  {
+                    "rowId": "row_e0afb74574",
+                    "field": "raw_specs",
+                    "quote": "Bluetooth 5.3, Akku 18h, IPX4, USB-C Ladecase"
+                  }
+                ]
+              },
+              "model": "qwen3:4b",
+              "requestId": null,
+              "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:13:37.211213Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_bdbc045:31\\\",\\n    \\\"row_e0afb74574\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows describe the same product: AeroBuds Pro True Wireless Earbuds with Black color, Bluetooth 5.3, ANC, 20h total playback with case, IPX4, USB-C. The specifications match exactly when accounting for language differences and minor formatting variations (e.g., 'schwarz' for 'Black', 'Ladecase' for 'case').\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro True Wireless Earbuds - Black\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_e0afb74574\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AEROBUDS PRO / schwarz / ANC\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"ANC; Bluetooth 5.3; 20h total playback with case; IPX4; USB-C\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_e0afb74574\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"Bluetooth 5.3, Akku 18h, IPX4, USB-C Ladecase\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":9819521083,\"load_duration\":39148792,\"prompt_eval_count\":287,\"prompt_eval_duration\":440127583,\"eval_count\":350,\"eval_duration\":9321645000}",
+              "jsonParsed": true,
+              "timings": {
+                "totalMs": 9819.521083,
+                "loadMs": 39.148792,
+                "promptMs": 440.127583,
+                "generationMs": 9321.645
+              },
+              "usage": {
+                "inputTokens": 287,
+                "outputTokens": 350,
+                "cachedInputTokens": null,
+                "cacheWriteTokens": null
+              }
+            }
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_11bb99b2fa",
+          "row_bdbc045131"
+        ],
+        "latencyMs": 10381.84175,
+        "wallTimeMs": 0.35020799999995234,
+        "attempts": [
+          {
+            "elapsedMs": 10381.84175,
+            "error": null,
+            "response": {
+              "status": "completed",
+              "data": {
+                "rowIds": [
+                  "row_11bb99b2fa",
+                  "row_bdbc045131"
+                ],
+                "decision": "merge",
+                "confidence": "high",
+                "reason": "Both rows describe the same product: Aerobuds PRO earbuds with black color, active noise cancelling, Bluetooth 5.3, 20 hours playback (including charging case), and water resistance IPX4. The titles and specifications match exactly in terms of product features and specifications, with only minor differences in capitalization and formatting of the brand name (Aerobuds vs. Aerobuds PRO). The key product attributes are consistent across both rows.",
+                "evidence": [
+                  {
+                    "rowId": "row_11bb99b2fa",
+                    "field": "raw_title",
+                    "quote": "Aerobuds PRO earbud, black, ANC"
+                  },
+                  {
+                    "rowId": "row_11bb99b2fa",
+                    "field": "raw_specs",
+                    "quote": "Active noise cancelling, BT 5.3, 20 hours playback (incl. charging case), water resistant IPX4"
+                  },
+                  {
+                    "rowId": "row_bdbc045131",
+                    "field": "raw_title",
+                    "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+                  },
+                  {
+                    "rowId": "row_bdbc045131",
+                    "field": "raw_specs",
+                    "quote": "ANC; Bluetooth 5.3; 20h total playback with case; IPX4; USB-C"
+                  }
+                ]
+              },
+              "model": "qwen3:4b",
+              "requestId": null,
+              "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:13:47.602882Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_11bb99b2fa\\\",\\n    \\\"row_bdbc045131\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows describe the same product: Aerobuds PRO earbuds with black color, active noise cancelling, Bluetooth 5.3, 20 hours playback (including charging case), and water resistance IPX4. The titles and specifications match exactly in terms of product features and specifications, with only minor differences in capitalization and formatting of the brand name (Aerobuds vs. Aerobuds PRO). The key product attributes are consistent across both rows.\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"Aerobuds PRO earbud, black, ANC\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"Active noise cancelling, BT 5.3, 20 hours playback (incl. charging case), water resistant IPX4\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro True Wireless Earbuds - Black\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"ANC; Bluetooth 5.3; 20h total playback with case; IPX4; USB-C\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":10369626250,\"load_duration\":94726833,\"prompt_eval_count\":293,\"prompt_eval_duration\":456665583,\"eval_count\":370,\"eval_duration\":9796558042}",
+              "jsonParsed": true,
+              "timings": {
+                "totalMs": 10369.62625,
+                "loadMs": 94.726833,
+                "promptMs": 456.665583,
+                "generationMs": 9796.558042
+              },
+              "usage": {
+                "inputTokens": 293,
+                "outputTokens": 370,
+                "cachedInputTokens": null,
+                "cacheWriteTokens": null
+              }
+            }
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_55a8c9b86d",
+          "row_74b8f7797a"
+        ],
+        "latencyMs": 8914.634333999998,
+        "wallTimeMs": 0.3089589999999589,
+        "attempts": [
+          {
+            "elapsedMs": 8914.634333999998,
+            "error": null,
+            "response": {
+              "status": "completed",
+              "data": {
+                "rowIds": [
+                  "row_55a8c9b86d",
+                  "row_74b8f17797a"
+                ],
+                "decision": "merge",
+                "confidence": "high",
+                "reason": "Both rows have identical raw_title and raw_specs: 'Onyx Lite wireless mouse' with specs '2.4GHz + BT; 6 buttons; 70g'. No differences in product name, specifications, or other attributes. This is a clear match.",
+                "evidence": [
+                  {
+                    "rowId": "row_55a8c9b86d",
+                    "field": "raw_title",
+                    "quote": "Onyx Lite wireless mouse"
+                  },
+                  {
+                    "rowId": "row_55a8c9b86d",
+                    "field": "raw_specs",
+                    "quote": "2.4GHz + BT; 6 buttons; 70g"
+                  },
+                  {
+                    "rowId": "row_74b8f7797a",
+                    "field": "raw_title",
+                    "quote": "Onyx Lite wireless mouse"
+                  },
+                  {
+                    "rowId": "row_74b8f7797a",
+                    "field": "raw_specs",
+                    "quote": "2.4GHz + BT; 6 buttons; 70g"
+                  }
+                ]
+              },
+              "model": "qwen3:4b",
+              "requestId": null,
+              "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:13:56.527747Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_55a8c9b86d\\\",\\n    \\\"row_74b8f17797a\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows have identical raw_title and raw_specs: 'Onyx Lite wireless mouse' with specs '2.4GHz + BT; 6 buttons; 70g'. No differences in product name, specifications, or other attributes. This is a clear match.\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_55a8c9b86d\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"Onyx Lite wireless mouse\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_55a8c9b86d\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"2.4GHz + BT; 6 buttons; 70g\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_74b8f7797a\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"Onyx Lite wireless mouse\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_74b8f7797a\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"2.4GHz + BT; 6 buttons; 70g\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":8908811250,\"load_duration\":66481875,\"prompt_eval_count\":271,\"prompt_eval_duration\":387949875,\"eval_count\":315,\"eval_duration\":8419698792}",
+              "jsonParsed": true,
+              "timings": {
+                "totalMs": 8908.81125,
+                "loadMs": 66.481875,
+                "promptMs": 387.949875,
+                "generationMs": 8419.698792
+              },
+              "usage": {
+                "inputTokens": 271,
+                "outputTokens": 315,
+                "cachedInputTokens": null,
+                "cacheWriteTokens": null
+              }
+            }
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_fe3ff4b356",
+          "row_11bb99b2fa"
+        ],
+        "latencyMs": 7714.650624999995,
+        "wallTimeMs": 0.25166699999999764,
+        "attempts": [
+          {
+            "elapsedMs": 7714.650624999995,
+            "error": null,
+            "response": {
+              "status": "completed",
+              "data": {
+                "rowIds": [
+                  "row_fe3ff4b356",
+                  "row_11bb99b2fa"
+                ],
+                "decision": "merge",
+                "confidence": "high",
+                "reason": "Both rows describe earbud accessories for the AeroBuds Pro model. The first row specifies replacement ear tips (S/M/L) made of silicone, while the second row describes the Aerobuds PRO earbud itself with active noise cancelling, Bluetooth 5.3, 20 hours playback, and water resistance. Despite different product types (accessories vs. main product), they are both directly related to the AeroBuds Pro model and share the same brand name and model identifier. The shadow recommendation indicates they should be merged as they are part of the same product ecosystem.",
+                "evidence": [
+                  {
+                    "rowId": "row_fe3ff:ff4b356",
+                    "field": "raw_title",
+                    "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+                  },
+                  {
+                    "rowId": "row_11bb99b2fa",
+                    "field": "raw_title",
+                    "quote": "Aerobuds PRO earbud, black, ANC"
+                  }
+                ]
+              },
+              "model": "qwen3:4b",
+              "requestId": null,
+              "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:14:04.243533Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_fe3ff4b356\\\",\\n    \\\"row_11bb99b2fa\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows describe earbud accessories for the AeroBuds Pro model. The first row specifies replacement ear tips (S/M/L) made of silicone, while the second row describes the Aerobuds PRO earbud itself with active noise cancelling, Bluetooth 5.3, 20 hours playback, and water resistance. Despite different product types (accessories vs. main product), they are both directly related to the AeroBuds Pro model and share the same brand name and model identifier. The shadow recommendation indicates they should be merged as they are part of the same product ecosystem.\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_fe3ff:ff4b356\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro replacement ear tips (S/M/L)\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"Aerobuds PRO earbud, black, ANC\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":7701828125,\"load_duration\":32487000,\"prompt_eval_count\":283,\"prompt_eval_duration\":430621625,\"eval_count\":276,\"eval_duration\":7225011750}",
+              "jsonParsed": true,
+              "timings": {
+                "totalMs": 7701.828125,
+                "loadMs": 32.487,
+                "promptMs": 430.621625,
+                "generationMs": 7225.01175
+              },
+              "usage": {
+                "inputTokens": 283,
+                "outputTokens": 276,
+                "cachedInputTokens": null,
+                "cacheWriteTokens": null
+              }
+            }
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_fe3ff4b356",
+          "row_bdbc045131"
+        ],
+        "latencyMs": 7546.425166000001,
+        "wallTimeMs": 0.2867919999999913,
+        "attempts": [
+          {
+            "elapsedMs": 7546.425166000001,
+            "error": null,
+            "response": {
+              "status": "completed",
+              "data": {
+                "rowIds": [
+                  "row_fe3ff4b356",
+                  "row_bdbc045131"
+                ],
+                "decision": "merge",
+                "confidence": "high",
+                "reason": "Both rows describe AeroBuds Pro products with the same core product name and model. The first row specifies replacement ear tips (S/M/L) as a product variant, while the second row describes the True Wireless Earbuds themselves. The key identifier 'AeroBuds Pro' matches across both rows, and the product type (earbuds) is consistent. The difference in specifications (replacement ear tips vs. full earbuds) does not constitute a different product identity but rather a complementary accessory and main product relationship. The shadow recommendation confirms the merge.",
+                "evidence": [
+                  {
+                    "rowId": "row_fe3ff:ff4b356",
+                    "field": "raw_title",
+                    "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+                  },
+                  {
+                    "rowId": "row_bdbc045131",
+                    "field": "raw_title",
+                    "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+                  }
+                ]
+              },
+              "model": "qwen3:4b",
+              "requestId": null,
+              "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:14:11.796287Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_fe3ff4b356\\\",\\n    \\\"row_bdbc045131\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows describe AeroBuds Pro products with the same core product name and model. The first row specifies replacement ear tips (S/M/L) as a product variant, while the second row describes the True Wireless Earbuds themselves. The key identifier 'AeroBuds Pro' matches across both rows, and the product type (earbuds) is consistent. The difference in specifications (replacement ear tips vs. full earbuds) does not constitute a different product identity but rather a complementary accessory and main product relationship. The shadow recommendation confirms the merge.\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_fe3ff:ff4b356\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro replacement ear tips (S/M/L)\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro True Wireless Earbuds - Black\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":7533590417,\"load_duration\":35725250,\"prompt_eval_count\":279,\"prompt_eval_duration\":292575417,\"eval_count\":272,\"eval_duration\":7190453000}",
+              "jsonParsed": true,
+              "timings": {
+                "totalMs": 7533.590417,
+                "loadMs": 35.72525,
+                "promptMs": 292.575417,
+                "generationMs": 7190.453
+              },
+              "usage": {
+                "inputTokens": 279,
+                "outputTokens": 272,
+                "cachedInputTokens": null,
+                "cacheWriteTokens": null
+              }
+            }
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_fe3ff4b356",
+          "row_e0afb74574"
+        ],
+        "latencyMs": 7614.5637910000005,
+        "wallTimeMs": 0.2537919999999758,
+        "attempts": [
+          {
+            "elapsedMs": 7614.5637910000005,
+            "error": null,
+            "response": {
+              "status": "completed",
+              "data": {
+                "rowIds": [
+                  "row_fe3ff:4b356",
+                  "row_e0afb74574"
+                ],
+                "decision": "merge",
+                "confidence": "high",
+                "reason": "Both rows describe the AeroBuds Pro product line with specific variants: row_fe3ff4b356 specifies replacement ear tips (S/M/L) as a silicone accessory, while row_e0afb74574 describes the base product with Bluetooth 5.3, 18h battery, IPX4, and USB-C charging. The core product identity (AeroBuds Pro) is consistent, and the differences are accessory vs. base product with distinct specifications. Compatibility is not identity, so the shadow recommendation merges them as the same product line.",
+                "evidence": [
+                  {
+                    "rowId": "row_fe3ff4b356",
+                    "field": "raw_title",
+                    "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+                  },
+                  {
+                    "rowId": "row_e0afb74574",
+                    "field": "raw_title",
+                    "quote": "AEROBUDS PRO / schwarz / ANC"
+                  }
+                ]
+              },
+              "model": "qwen3:4b",
+              "requestId": null,
+              "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:14:19.42181Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_fe3ff:4b356\\\",\\n    \\\"row_e0afb74574\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows describe the AeroBuds Pro product line with specific variants: row_fe3ff4b356 specifies replacement ear tips (S/M/L) as a silicone accessory, while row_e0afb74574 describes the base product with Bluetooth 5.3, 18h battery, IPX4, and USB-C charging. The core product identity (AeroBuds Pro) is consistent, and the differences are accessory vs. base product with distinct specifications. Compatibility is not identity, so the shadow recommendation merges them as the same product line.\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_fe3ff4b356\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro replacement ear tips (S/M/L)\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_e0afb74574\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AEROBUDS PRO / schwarz / ANC\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":7607161334,\"load_duration\":29257625,\"prompt_eval_count\":277,\"prompt_eval_duration\":285724791,\"eval_count\":275,\"eval_duration\":7272868417}",
+              "jsonParsed": true,
+              "timings": {
+                "totalMs": 7607.161334,
+                "loadMs": 29.257625,
+                "promptMs": 285.724791,
+                "generationMs": 7272.868417
+              },
+              "usage": {
+                "inputTokens": 277,
+                "outputTokens": 275,
+                "cachedInputTokens": null,
+                "cacheWriteTokens": null
+              }
+            }
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_b82f7fcc2a",
+          "row_bb6d2613d4"
+        ],
+        "latencyMs": 6212.815667000003,
+        "wallTimeMs": 0.24870799999996507,
+        "attempts": [
+          {
+            "elapsedMs": 6212.815667000003,
+            "error": null,
+            "response": {
+              "status": "completed",
+              "data": {
+                "rowIds": [
+                  "row_b82f7fcc2a",
+                  "row_bb6d2613d4"
+                ],
+                "decision": "merge",
+                "confidence": "high",
+                "reason": "Both rows have the same title prefix 'Cobalt X' and the product names are distinct (desk lamp vs wireless mouse), so they are different products. The specs are different (LED vs 2.4GHz + BT) and the product types are different (desk lamp vs mouse), so they should not be merged.",
+                "evidence": [
+                  {
+                    "rowId": "row_b82f7fcc2a",
+                    "field": "raw_title",
+                    "quote": "Cobalt X desk lamp"
+                  },
+                  {
+                    "rowId": "row_bb6:2613d4",
+                    "field": "raw_title",
+                    "quote": "Cobalt X wireless mouse"
+                  }
+                ]
+              },
+              "model": "qwen3:4b",
+              "requestId": null,
+              "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:14:25.642138Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_b82f7fcc2a\\\",\\n    \\\"row_bb6d2613d4\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows have the same title prefix 'Cobalt X' and the product names are distinct (desk lamp vs wireless mouse), so they are different products. The specs are different (LED vs 2.4GHz + BT) and the product types are different (desk lamp vs mouse), so they should not be merged.\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_b82f7fcc2a\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"Cobalt X desk lamp\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_bb6:2613d4\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"Cobalt X wireless mouse\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":6204143500,\"load_duration\":29712375,\"prompt_eval_count\":257,\"prompt_eval_duration\":355719917,\"eval_count\":213,\"eval_duration\":5806441833}",
+              "jsonParsed": true,
+              "timings": {
+                "totalMs": 6204.1435,
+                "loadMs": 29.712375,
+                "promptMs": 355.719917,
+                "generationMs": 5806.441833
+              },
+              "usage": {
+                "inputTokens": 257,
+                "outputTokens": 213,
+                "cachedInputTokens": null,
+                "cacheWriteTokens": null
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "loadMs": 393.58062500000005,
+    "generationMs": 65591.527709,
+    "cachedTokens": null,
+    "localComputeCost": null,
+    "latencySource": "original-live-attempts"
+  }
+}

@@ -1,0 +1,3085 @@
+{
+  "annotation": "provisional",
+  "acceptedProductBaseline": "B1-v2",
+  "architectureComplete": true,
+  "developmentQualityConfirmed": false,
+  "fullExecuted": false,
+  "sourceExtractionExperiment": "reports/stage3-ollama-v1",
+  "sourceMatchingExperiment": "reports/stage3-ollama-v2",
+  "qwen": {
+    "extraction": {
+      "quality": {
+        "jobs": 12,
+        "successful": 2,
+        "unsuccessful": 10,
+        "stages": {
+          "transport": {
+            "checked": 12,
+            "passed": 12,
+            "failed": 0,
+            "unchecked": 0
+          },
+          "completion": {
+            "checked": 12,
+            "passed": 12,
+            "failed": 0,
+            "unchecked": 0
+          },
+          "json": {
+            "checked": 12,
+            "passed": 12,
+            "failed": 0,
+            "unchecked": 0
+          },
+          "schema": {
+            "checked": 12,
+            "passed": 12,
+            "failed": 0,
+            "unchecked": 0
+          },
+          "citations": {
+            "checked": 12,
+            "passed": 12,
+            "failed": 0,
+            "unchecked": 0
+          },
+          "semantic": {
+            "checked": 12,
+            "passed": 2,
+            "failed": 10,
+            "unchecked": 0
+          }
+        },
+        "proposed": {
+          "correct": 11,
+          "unexpected": 38,
+          "missing": 0,
+          "malformed": 0,
+          "duplicate": 0
+        },
+        "accepted": {
+          "status": "provisional",
+          "version": "semantic-checks-v1",
+          "correct": 3,
+          "unexpected": 0,
+          "missing": 8,
+          "precision": {
+            "numerator": 3,
+            "denominator": 3,
+            "value": 1
+          },
+          "recall": {
+            "numerator": 3,
+            "denominator": 11,
+            "value": 0.2727272727272727
+          },
+          "types": {
+            "numerator": 12,
+            "denominator": 12,
+            "value": 1
+          },
+          "categories": {
+            "numerator": 12,
+            "denominator": 12,
+            "value": 1
+          },
+          "errors": [
+            {
+              "rowId": "row_11462769c5",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "colour_temperature_count",
+                "conditions": [],
+                "scope": "product",
+                "unit": null,
+                "value": 5
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_55a8c9b86d",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "bluetooth_supported",
+                "conditions": [],
+                "scope": "product",
+                "unit": null,
+                "value": true
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_55a8c9b86d",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "wireless_frequency",
+                "conditions": [
+                  "radio_link"
+                ],
+                "scope": "product",
+                "unit": "GHz",
+                "value": 2.4
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_a1bb1ad2e9",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "colour_temperature_count",
+                "conditions": [],
+                "scope": "product",
+                "unit": null,
+                "value": 5
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_bb6d2613d4",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "bluetooth_supported",
+                "conditions": [],
+                "scope": "product",
+                "unit": null,
+                "value": true
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_bb6d2613d4",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "wireless_frequency",
+                "conditions": [
+                  "radio_link"
+                ],
+                "scope": "product",
+                "unit": "GHz",
+                "value": 2.4
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_fe3ff4b356",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "size_count",
+                "conditions": [],
+                "scope": "product",
+                "unit": null,
+                "value": 3
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_fe3ff4b356",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "compatible_model",
+                "conditions": [
+                  "compatible_device"
+                ],
+                "scope": "product",
+                "unit": null,
+                "value": "AeroBuds Pro"
+              },
+              "actual": null
+            }
+          ]
+        },
+        "rejectedAdditions": 46,
+        "falseCitations": 0,
+        "reasons": [
+          {
+            "rowId": "row_05e5d126cb",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_11462769c5",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_11462769c5",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_11462769c5",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_11462769c5",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_22e59912ad",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_22e59912ad",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_22e59912ad",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_22e59912ad",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_22e59912ad",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_55a8c9b86d",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_55a8c9b86d",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_55a8c9b86d",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_a1bb1ad2e9",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_a1bb1ad2e9",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_a1bb1ad2e9",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_a1bb1ad2e9",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_bb6d2613d4",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_bb6d2613d4",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_bb6d2613d4",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_fe3ff4b356",
+            "kind": "addition",
+            "reason": "foreign subject"
+          },
+          {
+            "rowId": "row_fe3ff4b356",
+            "kind": "addition",
+            "reason": "foreign subject"
+          },
+          {
+            "rowId": "row_fe3ff4b356",
+            "kind": "addition",
+            "reason": "foreign subject"
+          },
+          {
+            "rowId": "row_11bb99b2fa",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_11bb99b2fa",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_11bb99b2fa",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_11bb99b2fa",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_e0afb74574",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_e0afb74574",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_e0afb74574",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_e0afb74574",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_bdbc045131",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_bdbc045131",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_bdbc045131",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          },
+          {
+            "rowId": "row_bdbc045131",
+            "kind": "addition",
+            "reason": "unsupported semantic addition"
+          }
+        ],
+        "unknowns": 50,
+        "review": {
+          "messages": 73,
+          "rows": 63,
+          "aiAffectedRows": 12,
+          "aiMessages": 11,
+          "shadowReview": 0
+        },
+        "recommendations": [],
+        "dangerousMerges": 0,
+        "unconfirmedMerges": 0,
+        "unknownMatching": 0
+      },
+      "performance": {
+        "calls": 12,
+        "retries": 0,
+        "medianMs": 15591.585707999999,
+        "p95Ms": 18492.363792000004,
+        "requests": [
+          {
+            "rowIds": [
+              "row_05e5d126cb"
+            ],
+            "latencyMs": 11793.588667,
+            "wallTimeMs": 11793.588667,
+            "attempts": [
+              {
+                "elapsedMs": 11786.159125,
+                "error": null,
+                "response": {
+                  "status": "completed",
+                  "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:06:44.409409Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowId\\\": \\\"row_05e5d126cb\\\",\\n  \\\"facts\\\": [\\n    {\\n      \\\"attribute\\\": \\\"bluetooth_supported\\\",\\n      \\\"value\\\": \\\"true\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_05e5d126cb\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"AMAZING SOUND!!! BEST HEADPHONES 2026!!! GRAB IT FAST!!!\\\"\\n      }\\n    }\\n  ],\\n  \\\"type\\\": {\\n    \\\"value\\\": \\\"headphones\\\",\\n    \\\"evidence\\\": {\\n      \\\"rowId\\\": \\\"row_05e5d126cb\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"sony wh880n headphones OPEN BOX\\\"\\n    }\\n  },\\n  \\\"category\\\": {\\n    \\\"value\\\": \\\"audio_headphones\\\",\\n    \\\"evidence\\\": {\\n      \\\"rowId\\\": \\\"row_05e5d126cb\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"sony wh880n headphones OPEN BOX\\\"\\n    }\\n  }\\n  ,\\n  \\\"unknowns\\\": [\\n    \\\"wireless_frequency\\\",\\n    \\\"colour_temperature_count\\\",\\n    \\\"size_count\\\",\\n    \\\"compatible_model\\\"\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":11775348500,\"load_duration\":59081625,\"prompt_eval_count\":683,\"prompt_eval_duration\":3804284875,\"eval_count\":291,\"eval_duration\":7892623583}",
+                  "data": {
+                    "rowId": "row_05e5d126cb",
+                    "facts": [
+                      {
+                        "attribute": "bluetooth_supported",
+                        "value": "true",
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_05e5d126cb",
+                          "field": "raw_specs",
+                          "quote": "AMAZING SOUND!!! BEST HEADPHONES 2026!!! GRAB IT FAST!!!"
+                        }
+                      }
+                    ],
+                    "type": {
+                      "value": "headphones",
+                      "evidence": {
+                        "rowId": "row_05e5d126cb",
+                        "field": "raw_title",
+                        "quote": "sony wh880n headphones OPEN BOX"
+                      }
+                    },
+                    "category": {
+                      "value": "audio_headphones",
+                      "evidence": {
+                        "rowId": "row_05e5d126cb",
+                        "field": "raw_title",
+                        "quote": "sony wh880n headphones OPEN BOX"
+                      }
+                    },
+                    "unknowns": [
+                      "wireless_frequency",
+                      "colour_temperature_count",
+                      "size_count",
+                      "compatible_model"
+                    ]
+                  },
+                  "jsonParsed": true,
+                  "model": "qwen3:4b",
+                  "requestId": null,
+                  "usage": {
+                    "inputTokens": 683,
+                    "outputTokens": 291,
+                    "cachedInputTokens": null,
+                    "cacheWriteTokens": null
+                  },
+                  "timings": {
+                    "totalMs": 11775.3485,
+                    "loadMs": 59.081625,
+                    "promptMs": 3804.284875,
+                    "generationMs": 7892.623583
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_11462769c5"
+            ],
+            "latencyMs": 15233.287874999998,
+            "wallTimeMs": 15233.287874999998,
+            "attempts": [
+              {
+                "elapsedMs": 15228.673584,
+                "error": null,
+                "response": {
+                  "status": "completed",
+                  "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:06:59.643377Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowId\\\": \\\"row_11462769c5\\\",\\n  \\\"facts\\\": [\\n    {\\n      \\\"attribute\\\": \\\"bluetooth_supported\\\",\\n      \\\"value\\\": \\\"true\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_11462769c5\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"5 colour temps; USB-C\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"wireless_frequency\\\",\\n      \\\"value\\\": 2.4,\\n      \\\"unit\\\": \\\"GHz\\\",\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\\"radio_link\\\"],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_11462769c5\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"5 colour temps; USB-C\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"colour_temperature_count\\\",\\n      \\\"value\\\": 5,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_11462769c5\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"5 colour temps\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"size_count\\\",\\n      \\\"value\\\": 1,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_11462769c5\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"5 colour temps\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"compatible_model\\\",\\n      \\\"value\\\": \\\"Quill\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\\"compatible_device\\\"],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_11462769c5\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"Quill desk lamp\\\"\\n      }\\n    }\\n  ],\\n  \\\"type\\\": null,\\n  \\\"category\\\": null\\n  ,\\n  \\\"unknowns\\\": [\\n    \\\"bluetooth_supported\\\",\\n    \\\"wireless_frequency\\\",\\n    \\\"colour_temperature_count\\\",\\n    \\\"size_count\\\",\\n    \\\"compatible_model\\\"\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":15217247209,\"load_duration\":37491250,\"prompt_eval_count\":763,\"prompt_eval_duration\":1437808125,\"eval_count\":507,\"eval_duration\":13725906292}",
+                  "data": {
+                    "rowId": "row_11462769c5",
+                    "facts": [
+                      {
+                        "attribute": "bluetooth_supported",
+                        "value": "true",
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_11462769c5",
+                          "field": "raw_specs",
+                          "quote": "5 colour temps; USB-C"
+                        }
+                      },
+                      {
+                        "attribute": "wireless_frequency",
+                        "value": 2.4,
+                        "unit": "GHz",
+                        "scope": "product",
+                        "conditions": [
+                          "radio_link"
+                        ],
+                        "evidence": {
+                          "rowId": "row_11462769c5",
+                          "field": "raw_specs",
+                          "quote": "5 colour temps; USB-C"
+                        }
+                      },
+                      {
+                        "attribute": "colour_temperature_count",
+                        "value": 5,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_11462769c5",
+                          "field": "raw_specs",
+                          "quote": "5 colour temps"
+                        }
+                      },
+                      {
+                        "attribute": "size_count",
+                        "value": 1,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_11462769c5",
+                          "field": "raw_specs",
+                          "quote": "5 colour temps"
+                        }
+                      },
+                      {
+                        "attribute": "compatible_model",
+                        "value": "Quill",
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [
+                          "compatible_device"
+                        ],
+                        "evidence": {
+                          "rowId": "row_11462769c5",
+                          "field": "raw_title",
+                          "quote": "Quill desk lamp"
+                        }
+                      }
+                    ],
+                    "type": null,
+                    "category": null,
+                    "unknowns": [
+                      "bluetooth_supported",
+                      "wireless_frequency",
+                      "colour_temperature_count",
+                      "size_count",
+                      "compatible_model"
+                    ]
+                  },
+                  "jsonParsed": true,
+                  "model": "qwen3:4b",
+                  "requestId": null,
+                  "usage": {
+                    "inputTokens": 763,
+                    "outputTokens": 507,
+                    "cachedInputTokens": null,
+                    "cacheWriteTokens": null
+                  },
+                  "timings": {
+                    "totalMs": 15217.247209,
+                    "loadMs": 37.49125,
+                    "promptMs": 1437.808125,
+                    "generationMs": 13725.906292
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_22e59912ad"
+            ],
+            "latencyMs": 15912.740957999998,
+            "wallTimeMs": 15912.740957999998,
+            "attempts": [
+              {
+                "elapsedMs": 15904.219665999997,
+                "error": null,
+                "response": {
+                  "status": "completed",
+                  "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:07:15.564217Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowId\\\": \\\"row_22e59912ad\\\",\\n  \\\"facts\\\": [\\n    {\\n      \\\"attribute\\\": \\\"size_count\\\",\\n      \\\"value\\\": 1,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_22e59912ad\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"2 terabyte\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"colour_temperature_count\\\",\\n      \\\"value\\\": 0,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_22e59912ad\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"fast\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"bluetooth_supported\\\",\\n      \\\"value\\\": false,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_22e59912ad\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"fast\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"wireless_frequency\\\",\\n      \\\"value\\\": 0,\\n      \\\"unit\\\": \\\"GHz\\\",\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\n        \\\"radio_link\\\"\\n      ],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_22e59912ad\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"fast\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"compatible_model\\\",\\n      \\\"value\\\": \\\"VAULT 2TB SSD portable drive\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\n        \\\"compatible_device\\\"\\n      ],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_22e59912ad\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"VAULT 2TB SSD portable drive\\\"\\n      }\\n    }\\n  ]\\n  ,\\n  \\\"type\\\": null,\\n  \\\"category\\\": null\\n  ,\\n  \\\"unknowns\\\": [\\n    \\\"bluetooth_supported\\\",\\n    \\\"wireless_frequency\\\",\\n    \\\"colour_temperature_count\\\",\\n    \\\"size_count\\\"\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":15899302000,\"load_duration\":28862292,\"prompt_eval_count\":981,\"prompt_eval_duration\":2145342459,\"eval_count\":500,\"eval_duration\":13711549583}",
+                  "data": {
+                    "rowId": "row_22e59912ad",
+                    "facts": [
+                      {
+                        "attribute": "size_count",
+                        "value": 1,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_22e59912ad",
+                          "field": "raw_specs",
+                          "quote": "2 terabyte"
+                        }
+                      },
+                      {
+                        "attribute": "colour_temperature_count",
+                        "value": 0,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_22e59912ad",
+                          "field": "raw_specs",
+                          "quote": "fast"
+                        }
+                      },
+                      {
+                        "attribute": "bluetooth_supported",
+                        "value": false,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_22e59912ad",
+                          "field": "raw_specs",
+                          "quote": "fast"
+                        }
+                      },
+                      {
+                        "attribute": "wireless_frequency",
+                        "value": 0,
+                        "unit": "GHz",
+                        "scope": "product",
+                        "conditions": [
+                          "radio_link"
+                        ],
+                        "evidence": {
+                          "rowId": "row_22e59912ad",
+                          "field": "raw_specs",
+                          "quote": "fast"
+                        }
+                      },
+                      {
+                        "attribute": "compatible_model",
+                        "value": "VAULT 2TB SSD portable drive",
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [
+                          "compatible_device"
+                        ],
+                        "evidence": {
+                          "rowId": "row_22e59912ad",
+                          "field": "raw_title",
+                          "quote": "VAULT 2TB SSD portable drive"
+                        }
+                      }
+                    ],
+                    "type": null,
+                    "category": null,
+                    "unknowns": [
+                      "bluetooth_supported",
+                      "wireless_frequency",
+                      "colour_temperature_count",
+                      "size_count"
+                    ]
+                  },
+                  "jsonParsed": true,
+                  "model": "qwen3:4b",
+                  "requestId": null,
+                  "usage": {
+                    "inputTokens": 981,
+                    "outputTokens": 500,
+                    "cachedInputTokens": null,
+                    "cacheWriteTokens": null
+                  },
+                  "timings": {
+                    "totalMs": 15899.302,
+                    "loadMs": 28.862292,
+                    "promptMs": 2145.342459,
+                    "generationMs": 13711.549583
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_55a8c9b86d"
+            ],
+            "latencyMs": 15808.313041000001,
+            "wallTimeMs": 15808.313041000001,
+            "attempts": [
+              {
+                "elapsedMs": 15800.333958000003,
+                "error": null,
+                "response": {
+                  "status": "completed",
+                  "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:07:31.366629Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowId\\\": \\\"row_55a8c9b86d\\\",\\n  \\\"facts\\\": [\\n    {\\n      \\\"attribute\\\": \\\"bluetooth_supported\\\",\\n      \\\"value\\\": true,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_55a8c9b86d\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"2.4GHz + BT\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"wireless_frequency\\\",\\n      \\\"value\\\": 2.4,\\n      \\\"unit\\\": \\\"GHz\\\",\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\n        \\\"radio_link\\\"\\n      ],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_55a8c9b86d\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"2.4GHz\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"colour_temperature_count\\\",\\n      \\\"value\\\": 0,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_55a8c9b86d\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"2.4GHz + BT\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"size_count\\\",\\n      \\\"value\\\": 0,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_55a8c9b86d\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"2.4GHz + BT\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"compatible_model\\\",\\n      \\\"value\\\": \\\"onyx lite\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\n        \\\"compatible_device\\\"\\n      ],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_55a8c9b86d\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"Onyx Lite wireless mouse\\\"\\n      }\\n    }\\n  ],\\n  \\\"type\\\": null,\\n  \\\"category\\\": null\\n  ,\\n  \\\"unknowns\\\": [\\n    \\\"bluetooth_supported\\\",\\n    \\\"wireless_frequency\\\",\\n    \\\"colour_temperature_count\\\",\\n    \\\"size_count\\\",\\n    \\\"compatible_model\\\"\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":15784886417,\"load_duration\":42375083,\"prompt_eval_count\":794,\"prompt_eval_duration\":1559855375,\"eval_count\":520,\"eval_duration\":14171753708}",
+                  "data": {
+                    "rowId": "row_55a8c9b86d",
+                    "facts": [
+                      {
+                        "attribute": "bluetooth_supported",
+                        "value": true,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_55a8c9b86d",
+                          "field": "raw_specs",
+                          "quote": "2.4GHz + BT"
+                        }
+                      },
+                      {
+                        "attribute": "wireless_frequency",
+                        "value": 2.4,
+                        "unit": "GHz",
+                        "scope": "product",
+                        "conditions": [
+                          "radio_link"
+                        ],
+                        "evidence": {
+                          "rowId": "row_55a8c9b86d",
+                          "field": "raw_specs",
+                          "quote": "2.4GHz"
+                        }
+                      },
+                      {
+                        "attribute": "colour_temperature_count",
+                        "value": 0,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_55a8c9b86d",
+                          "field": "raw_specs",
+                          "quote": "2.4GHz + BT"
+                        }
+                      },
+                      {
+                        "attribute": "size_count",
+                        "value": 0,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_55a8c9b86d",
+                          "field": "raw_specs",
+                          "quote": "2.4GHz + BT"
+                        }
+                      },
+                      {
+                        "attribute": "compatible_model",
+                        "value": "onyx lite",
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [
+                          "compatible_device"
+                        ],
+                        "evidence": {
+                          "rowId": "row_55a8c9b86d",
+                          "field": "raw_title",
+                          "quote": "Onyx Lite wireless mouse"
+                        }
+                      }
+                    ],
+                    "type": null,
+                    "category": null,
+                    "unknowns": [
+                      "bluetooth_supported",
+                      "wireless_frequency",
+                      "colour_temperature_count",
+                      "size_count",
+                      "compatible_model"
+                    ]
+                  },
+                  "jsonParsed": true,
+                  "model": "qwen3:4b",
+                  "requestId": null,
+                  "usage": {
+                    "inputTokens": 794,
+                    "outputTokens": 520,
+                    "cachedInputTokens": null,
+                    "cacheWriteTokens": null
+                  },
+                  "timings": {
+                    "totalMs": 15784.886417,
+                    "loadMs": 42.375083,
+                    "promptMs": 1559.855375,
+                    "generationMs": 14171.753708
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_74b8f7797a"
+            ],
+            "latencyMs": 11377.286625,
+            "wallTimeMs": 11377.286625,
+            "attempts": [
+              {
+                "elapsedMs": 11374.873416000002,
+                "error": null,
+                "response": {
+                  "status": "completed",
+                  "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:07:42.7581Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowId\\\": \\\"row_74b8f7797a\\\",\\n  \\\"facts\\\": [\\n    {\\n      \\\"attribute\\\": \\\"wireless_frequency\\\",\\n      \\\"value\\\": 2.4,\\n      \\\"unit\\\": \\\"GHz\\\",\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\n        \\\"radio_link\\\"\\n      ],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_74b8f7797a\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"2.4GHz + BT\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"bluetooth_supported\\\",\\n      \\\"value\\\": true,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_74b8f7797a\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"2.4GHz + BT\\\"\\n      }\\n    }\\n  ],\\n  \\\"type\\\": {\\n    \\\"value\\\": \\\"mouse\\\",\\n    \\\"evidence\\\": {\\n      \\\"rowId\\\": \\\"row_74b8f7797a\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"Onyx Lite wireless mouse\\\"\\n    }\\n  },\\n  \\\"category\\\": {\\n    \\\"value\\\": \\\"gaming_accessories\\\",\\n    \\\"evidence\\\": {\\n      \\\"rowId\\\": \\\"row_74b8f7797a\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"Onyx Lite wireless mouse\\\"\\n    }\\n  }\\n  ,\\n  \\\"unknowns\\\": [\\n    \\\"colour_temperature_count\\\",\\n    \\\"size_count\\\",\\n    \\\"compatible_model\\\"\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":11367905792,\"load_duration\":29144084,\"prompt_eval_count\":797,\"prompt_eval_duration\":1575242917,\"eval_count\":359,\"eval_duration\":9749155875}",
+                  "data": {
+                    "rowId": "row_74b8f7797a",
+                    "facts": [
+                      {
+                        "attribute": "wireless_frequency",
+                        "value": 2.4,
+                        "unit": "GHz",
+                        "scope": "product",
+                        "conditions": [
+                          "radio_link"
+                        ],
+                        "evidence": {
+                          "rowId": "row_74b8f7797a",
+                          "field": "raw_specs",
+                          "quote": "2.4GHz + BT"
+                        }
+                      },
+                      {
+                        "attribute": "bluetooth_supported",
+                        "value": true,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_74b8f7797a",
+                          "field": "raw_specs",
+                          "quote": "2.4GHz + BT"
+                        }
+                      }
+                    ],
+                    "type": {
+                      "value": "mouse",
+                      "evidence": {
+                        "rowId": "row_74b8f7797a",
+                        "field": "raw_title",
+                        "quote": "Onyx Lite wireless mouse"
+                      }
+                    },
+                    "category": {
+                      "value": "gaming_accessories",
+                      "evidence": {
+                        "rowId": "row_74b8f7797a",
+                        "field": "raw_title",
+                        "quote": "Onyx Lite wireless mouse"
+                      }
+                    },
+                    "unknowns": [
+                      "colour_temperature_count",
+                      "size_count",
+                      "compatible_model"
+                    ]
+                  },
+                  "jsonParsed": true,
+                  "model": "qwen3:4b",
+                  "requestId": null,
+                  "usage": {
+                    "inputTokens": 797,
+                    "outputTokens": 359,
+                    "cachedInputTokens": null,
+                    "cacheWriteTokens": null
+                  },
+                  "timings": {
+                    "totalMs": 11367.905792,
+                    "loadMs": 29.144084,
+                    "promptMs": 1575.242917,
+                    "generationMs": 9749.155875
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_a1bb1ad2e9"
+            ],
+            "latencyMs": 14927.211083999995,
+            "wallTimeMs": 14927.211083999995,
+            "attempts": [
+              {
+                "elapsedMs": 14923.732999999993,
+                "error": null,
+                "response": {
+                  "status": "completed",
+                  "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:07:57.687677Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowId\\\": \\\"row_a1bb1ad2e9\\\",\\n  \\\"facts\\\": [\\n    {\\n      \\\"attribute\\\": \\\"bluetooth_supported\\\",\\n      \\\"value\\\": \\\"true\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_a1bb1ad2e9\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"USB-C\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"wireless_frequency\\\",\\n      \\\"value\\\": 2.4,\\n      \\\"unit\\\": \\\"GHz\\\",\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\n        \\\"radio_link\\\"\\n      ],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_a1bb1ad2e9\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"5 colour temps\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"colour_temperature_count\\\",\\n      \\\"value\\\": 5,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_a1bb1ad2e9\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"5 colour temps\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"size_count\\\",\\n      \\\"value\\\": 1,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_a1bb1ad2e9\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"5 colour temps\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"compatible_model\\\",\\n      \\\"value\\\": \\\"onyx 3\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\n        \\\"compatible_device\\\"\\n      ],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_a1bb1ad2e9\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"Onyx 3 desk lamp\\\"\\n      }\\n    }\\n  ]\\n  ,\\n  \\\"type\\\": null,\\n  \\\"category\\\": null\\n  ,\\n  \\\"unknowns\\\": [\\n    \\\"bluetooth_supported\\\",\\n    \\\"wireless_frequency\\\",\\n    \\\"colour_temperature_count\\\",\\n    \\\"size_count\\\",\\n    \\\"compatible_model\\\"\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":14916696083,\"load_duration\":25509708,\"prompt_eval_count\":765,\"prompt_eval_duration\":1432214417,\"eval_count\":494,\"eval_duration\":13454027875}",
+                  "data": {
+                    "rowId": "row_a1bb1ad2e9",
+                    "facts": [
+                      {
+                        "attribute": "bluetooth_supported",
+                        "value": "true",
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_a1bb1ad2e9",
+                          "field": "raw_specs",
+                          "quote": "USB-C"
+                        }
+                      },
+                      {
+                        "attribute": "wireless_frequency",
+                        "value": 2.4,
+                        "unit": "GHz",
+                        "scope": "product",
+                        "conditions": [
+                          "radio_link"
+                        ],
+                        "evidence": {
+                          "rowId": "row_a1bb1ad2e9",
+                          "field": "raw_specs",
+                          "quote": "5 colour temps"
+                        }
+                      },
+                      {
+                        "attribute": "colour_temperature_count",
+                        "value": 5,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_a1bb1ad2e9",
+                          "field": "raw_specs",
+                          "quote": "5 colour temps"
+                        }
+                      },
+                      {
+                        "attribute": "size_count",
+                        "value": 1,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_a1bb1ad2e9",
+                          "field": "raw_specs",
+                          "quote": "5 colour temps"
+                        }
+                      },
+                      {
+                        "attribute": "compatible_model",
+                        "value": "onyx 3",
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [
+                          "compatible_device"
+                        ],
+                        "evidence": {
+                          "rowId": "row_a1bb1ad2e9",
+                          "field": "raw_title",
+                          "quote": "Onyx 3 desk lamp"
+                        }
+                      }
+                    ],
+                    "type": null,
+                    "category": null,
+                    "unknowns": [
+                      "bluetooth_supported",
+                      "wireless_frequency",
+                      "colour_temperature_count",
+                      "size_count",
+                      "compatible_model"
+                    ]
+                  },
+                  "jsonParsed": true,
+                  "model": "qwen3:4b",
+                  "requestId": null,
+                  "usage": {
+                    "inputTokens": 765,
+                    "outputTokens": 494,
+                    "cachedInputTokens": null,
+                    "cacheWriteTokens": null
+                  },
+                  "timings": {
+                    "totalMs": 14916.696083,
+                    "loadMs": 25.509708,
+                    "promptMs": 1432.214417,
+                    "generationMs": 13454.027875
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_b82f7fcc2a"
+            ],
+            "latencyMs": 5329.596833999996,
+            "wallTimeMs": 5329.596833999996,
+            "attempts": [
+              {
+                "elapsedMs": 5325.266291000007,
+                "error": null,
+                "response": {
+                  "status": "completed",
+                  "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:08:03.022058Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowId\\\": \\\"row_b82f7fcc2a\\\",\\n  \\\"facts\\\": [\\n    {\\n      \\\"attribute\\\": \\\"colour_temperature_count\\\",\\n      \\\"value\\\": 5,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_b82f7fcc2a\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"5 colour temps\\\"\\n      }\\n    }\\n  ],\\n  \\\"type\\\": null,\\n  \\\"category\\\": null\\n  ,\\n  \\\"unknowns\\\": [\\n    \\\"colour_temperature_count\\\",\\n    \\\"size_count\\\"\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":5319726708,\"load_duration\":29694875,\"prompt_eval_count\":758,\"prompt_eval_duration\":1435956167,\"eval_count\":141,\"eval_duration\":3844250166}",
+                  "data": {
+                    "rowId": "row_b82f7fcc2a",
+                    "facts": [
+                      {
+                        "attribute": "colour_temperature_count",
+                        "value": 5,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_b82f7fcc2a",
+                          "field": "raw_specs",
+                          "quote": "5 colour temps"
+                        }
+                      }
+                    ],
+                    "type": null,
+                    "category": null,
+                    "unknowns": [
+                      "colour_temperature_count",
+                      "size_count"
+                    ]
+                  },
+                  "jsonParsed": true,
+                  "model": "qwen3:4b",
+                  "requestId": null,
+                  "usage": {
+                    "inputTokens": 758,
+                    "outputTokens": 141,
+                    "cachedInputTokens": null,
+                    "cacheWriteTokens": null
+                  },
+                  "timings": {
+                    "totalMs": 5319.726708,
+                    "loadMs": 29.694875,
+                    "promptMs": 1435.956167,
+                    "generationMs": 3844.250166
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_bb6d2613d4"
+            ],
+            "latencyMs": 15591.585707999999,
+            "wallTimeMs": 15591.585707999999,
+            "attempts": [
+              {
+                "elapsedMs": 15586.841082999992,
+                "error": null,
+                "response": {
+                  "status": "completed",
+                  "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:08:18.600638Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowId\\\": \\\"row_bb6d2613d4\\\",\\n  \\\"facts\\\": [\\n    {\\n      \\\"attribute\\\": \\\"bluetooth_supported\\\",\\n      \\\"value\\\": true,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_bb6d2613d4\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"2.4GHz + BT\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"wireless_frequency\\\",\\n      \\\"value\\\": 2.4,\\n      \\\"unit\\\": \\\"GHz\\\",\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\n        \\\"radio_link\\\"\\n      ],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_bb6d2613d4\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"2.4GHz\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"colour_temperature_count\\\",\\n      \\\"value\\\": 0,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_bb6d2613d4\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"2.4GHz + BT\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"size_count\\\",\\n      \\\"value\\\": 0,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_bb6d2613d4\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"2.4GHz + BT\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"compatible_model\\\",\\n      \\\"value\\\": \\\"cobalt x\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\n        \\\"compatible_device\\\"\\n      ],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_bb6d2613d4\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"Cobalt X wireless mouse\\\"\\n      }\\n    }\\n  ],\\n  \\\"type\\\": null,\\n  \\\"category\\\": null\\n  ,\\n  \\\"unknowns\\\": [\\n    \\\"bluetooth_supported\\\",\\n    \\\"wireless_frequency\\\",\\n    \\\"colour_temperature_count\\\",\\n    \\\"size_count\\\",\\n    \\\"compatible_model\\\"\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":15571703166,\"load_duration\":31008708,\"prompt_eval_count\":792,\"prompt_eval_duration\":1536351458,\"eval_count\":509,\"eval_duration\":13990529209}",
+                  "data": {
+                    "rowId": "row_bb6d2613d4",
+                    "facts": [
+                      {
+                        "attribute": "bluetooth_supported",
+                        "value": true,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_bb6d2613d4",
+                          "field": "raw_specs",
+                          "quote": "2.4GHz + BT"
+                        }
+                      },
+                      {
+                        "attribute": "wireless_frequency",
+                        "value": 2.4,
+                        "unit": "GHz",
+                        "scope": "product",
+                        "conditions": [
+                          "radio_link"
+                        ],
+                        "evidence": {
+                          "rowId": "row_bb6d2613d4",
+                          "field": "raw_specs",
+                          "quote": "2.4GHz"
+                        }
+                      },
+                      {
+                        "attribute": "colour_temperature_count",
+                        "value": 0,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_bb6d2613d4",
+                          "field": "raw_specs",
+                          "quote": "2.4GHz + BT"
+                        }
+                      },
+                      {
+                        "attribute": "size_count",
+                        "value": 0,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_bb6d2613d4",
+                          "field": "raw_specs",
+                          "quote": "2.4GHz + BT"
+                        }
+                      },
+                      {
+                        "attribute": "compatible_model",
+                        "value": "cobalt x",
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [
+                          "compatible_device"
+                        ],
+                        "evidence": {
+                          "rowId": "row_bb6d2613d4",
+                          "field": "raw_title",
+                          "quote": "Cobalt X wireless mouse"
+                        }
+                      }
+                    ],
+                    "type": null,
+                    "category": null,
+                    "unknowns": [
+                      "bluetooth_supported",
+                      "wireless_frequency",
+                      "colour_temperature_count",
+                      "size_count",
+                      "compatible_model"
+                    ]
+                  },
+                  "jsonParsed": true,
+                  "model": "qwen3:4b",
+                  "requestId": null,
+                  "usage": {
+                    "inputTokens": 792,
+                    "outputTokens": 509,
+                    "cachedInputTokens": null,
+                    "cacheWriteTokens": null
+                  },
+                  "timings": {
+                    "totalMs": 15571.703166,
+                    "loadMs": 31.008708,
+                    "promptMs": 1536.351458,
+                    "generationMs": 13990.529209
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_fe3ff4b356"
+            ],
+            "latencyMs": 18492.363792000004,
+            "wallTimeMs": 18492.363792000004,
+            "attempts": [
+              {
+                "elapsedMs": 18480.226665999988,
+                "error": null,
+                "response": {
+                  "status": "completed",
+                  "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:08:37.081851Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowId\\\": \\\"row_fe3ff4b356\\\",\\n  \\\"facts\\\": [\\n    {\\n      \\\"attribute\\\": \\\"bluetooth_supported\\\",\\n      \\\"value\\\": \\\"true\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_fe3ff4b356\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"Silicone, 3 sizes, compatible with AeroBuds Pro\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"wireless_frequency\\\",\\n      \\\"value\\\": 2.4,\\n      \\\"unit\\\": \\\"GHz\\\",\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\\"radio_link\\\"],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_fe3ff4b356\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"Silicone, 3 sizes, compatible with AeroBuds Pro\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"colour_temperature_count\\\",\\n      \\\"value\\\": 0,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_fe3ff4b356\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"Silicone, 3 sizes, compatible with AeroBuds Pro\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"size_count\\\",\\n      \\\"value\\\": 3,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_fe3ff4b356\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"3 sizes\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"compatible_model\\\",\\n      \\\"value\\\": \\\"AeroBuds Pro\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\\"compatible_device\\\"],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_fe3ff4b356\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\" compatible with AeroBuds Pro\\\"\\n      }\\n    }\\n  ],\\n  \\\"type\\\": {\\n    \\\"value\\\": \\\"ear_tips\\\",\\n    \\\"evidence\\\": {\\n      \\\"rowId\\\": \\\"row_fe3ff4b356\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro replacement ear tips (S/M/L)\\\"\\n    }\\n  },\\n  \\\"category\\\": {\\n    \\\"value\\\": \\\"other\\\",\\n    \\\"evidence\\\": {\\n      \\\"rowId\\\": \\\"row_fe3ff4b356\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro replacement ear tips (S/M/L)\\\"\\n    }\\n  }\\n  ,\\n  \\\"unknowns\\\": [\\n    \\\"bluetooth_supported\\\",\\n    \\\"wireless_frequency\\\",\\n    \\\"colour_temperature_count\\\",\\n    \\\"size_count\\\",\\n    \\\"compatible_model\\\"\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":18459118958,\"load_duration\":36598500,\"prompt_eval_count\":692,\"prompt_eval_duration\":1251706625,\"eval_count\":634,\"eval_duration\":17151543125}",
+                  "data": {
+                    "rowId": "row_fe3ff4b356",
+                    "facts": [
+                      {
+                        "attribute": "bluetooth_supported",
+                        "value": "true",
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_fe3ff4b356",
+                          "field": "raw_specs",
+                          "quote": "Silicone, 3 sizes, compatible with AeroBuds Pro"
+                        }
+                      },
+                      {
+                        "attribute": "wireless_frequency",
+                        "value": 2.4,
+                        "unit": "GHz",
+                        "scope": "product",
+                        "conditions": [
+                          "radio_link"
+                        ],
+                        "evidence": {
+                          "rowId": "row_fe3ff4b356",
+                          "field": "raw_specs",
+                          "quote": "Silicone, 3 sizes, compatible with AeroBuds Pro"
+                        }
+                      },
+                      {
+                        "attribute": "colour_temperature_count",
+                        "value": 0,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_fe3ff4b356",
+                          "field": "raw_specs",
+                          "quote": "Silicone, 3 sizes, compatible with AeroBuds Pro"
+                        }
+                      },
+                      {
+                        "attribute": "size_count",
+                        "value": 3,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_fe3ff4b356",
+                          "field": "raw_specs",
+                          "quote": "3 sizes"
+                        }
+                      },
+                      {
+                        "attribute": "compatible_model",
+                        "value": "AeroBuds Pro",
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [
+                          "compatible_device"
+                        ],
+                        "evidence": {
+                          "rowId": "row_fe3ff4b356",
+                          "field": "raw_specs",
+                          "quote": " compatible with AeroBuds Pro"
+                        }
+                      }
+                    ],
+                    "type": {
+                      "value": "ear_tips",
+                      "evidence": {
+                        "rowId": "row_fe3ff4b356",
+                        "field": "raw_title",
+                        "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+                      }
+                    },
+                    "category": {
+                      "value": "other",
+                      "evidence": {
+                        "rowId": "row_fe3ff4b356",
+                        "field": "raw_title",
+                        "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+                      }
+                    },
+                    "unknowns": [
+                      "bluetooth_supported",
+                      "wireless_frequency",
+                      "colour_temperature_count",
+                      "size_count",
+                      "compatible_model"
+                    ]
+                  },
+                  "jsonParsed": true,
+                  "model": "qwen3:4b",
+                  "requestId": null,
+                  "usage": {
+                    "inputTokens": 692,
+                    "outputTokens": 634,
+                    "cachedInputTokens": null,
+                    "cacheWriteTokens": null
+                  },
+                  "timings": {
+                    "totalMs": 18459.118958,
+                    "loadMs": 36.5985,
+                    "promptMs": 1251.706625,
+                    "generationMs": 17151.543125
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_11bb99b2fa"
+            ],
+            "latencyMs": 17095.211874999994,
+            "wallTimeMs": 17095.211874999994,
+            "attempts": [
+              {
+                "elapsedMs": 17089.046834000008,
+                "error": null,
+                "response": {
+                  "status": "completed",
+                  "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:08:54.203383Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n  \\\"facts\\\": [\\n    {\\n      \\\"attribute\\\": \\\"bluetooth_supported\\\",\\n      \\\"value\\\": true,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"BT 5.3\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"wireless_frequency\\\",\\n      \\\"value\\\": 2.4,\\n      \\\"unit\\\": \\\"GHz\\\",\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\\"radio_link\\\"],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"BT 5.3\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"colour_temperature_count\\\",\\n      \\\"value\\\": 1,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"black\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"size_count\\\",\\n      \\\"value\\\": 1,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"black\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"compatible_model\\\",\\n      \\\"value\\\": \\\"aerobuds pro\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\\"compatible_device\\\"],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"Aerobuds PRO earbud\\\"\\n      }\\n    }\\n  ]\\n  ,\\n  \\\"type\\\": null,\\n  \\\"category\\\": null\\n  ,\\n  \\\"unknowns\\\": [\\n    \\\"bluetooth_supported\\\",\\n    \\\"wireless_frequency\\\",\\n    \\\"colour_temperature_count\\\",\\n    \\\"size_count\\\",\\n    \\\"compatible_model\\\"\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":17054790625,\"load_duration\":136202083,\"prompt_eval_count\":1347,\"prompt_eval_duration\":3304647959,\"eval_count\":494,\"eval_duration\":13601813333}",
+                  "data": {
+                    "rowId": "row_11bb99b2fa",
+                    "facts": [
+                      {
+                        "attribute": "bluetooth_supported",
+                        "value": true,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_11bb99b2fa",
+                          "field": "raw_specs",
+                          "quote": "BT 5.3"
+                        }
+                      },
+                      {
+                        "attribute": "wireless_frequency",
+                        "value": 2.4,
+                        "unit": "GHz",
+                        "scope": "product",
+                        "conditions": [
+                          "radio_link"
+                        ],
+                        "evidence": {
+                          "rowId": "row_11bb99b2fa",
+                          "field": "raw_specs",
+                          "quote": "BT 5.3"
+                        }
+                      },
+                      {
+                        "attribute": "colour_temperature_count",
+                        "value": 1,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_11bb99b2fa",
+                          "field": "raw_title",
+                          "quote": "black"
+                        }
+                      },
+                      {
+                        "attribute": "size_count",
+                        "value": 1,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_11bb99b2fa",
+                          "field": "raw_title",
+                          "quote": "black"
+                        }
+                      },
+                      {
+                        "attribute": "compatible_model",
+                        "value": "aerobuds pro",
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [
+                          "compatible_device"
+                        ],
+                        "evidence": {
+                          "rowId": "row_11bb99b2fa",
+                          "field": "raw_title",
+                          "quote": "Aerobuds PRO earbud"
+                        }
+                      }
+                    ],
+                    "type": null,
+                    "category": null,
+                    "unknowns": [
+                      "bluetooth_supported",
+                      "wireless_frequency",
+                      "colour_temperature_count",
+                      "size_count",
+                      "compatible_model"
+                    ]
+                  },
+                  "jsonParsed": true,
+                  "model": "qwen3:4b",
+                  "requestId": null,
+                  "usage": {
+                    "inputTokens": 1347,
+                    "outputTokens": 494,
+                    "cachedInputTokens": null,
+                    "cacheWriteTokens": null
+                  },
+                  "timings": {
+                    "totalMs": 17054.790625,
+                    "loadMs": 136.202083,
+                    "promptMs": 3304.647959,
+                    "generationMs": 13601.813333
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_e0afb74574"
+            ],
+            "latencyMs": 16488.510874999978,
+            "wallTimeMs": 16488.510874999978,
+            "attempts": [
+              {
+                "elapsedMs": 16485.082207999978,
+                "error": null,
+                "response": {
+                  "status": "completed",
+                  "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:09:10.698694Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowId\\\": \\\"row_e0afb74574\\\",\\n  \\\"facts\\\": [\\n    {\\n      \\\"attribute\\\": \\\"bluetooth_supported\\\",\\n      \\\"value\\\": true,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_e0afb74574\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"Bluetooth 5.3\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"wireless_frequency\\\",\\n      \\\"value\\\": 2.4,\\n      \\\"unit\\\": \\\"GHz\\\",\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\\"radio_link\\\"],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_e0afb74574\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"Bluetooth 5.3\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"colour_temperature_count\\\",\\n      \\\"value\\\": 1,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_e0afb74574\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"schwarz\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"size_count\\\",\\n      \\\"value\\\": 1,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_e0afb74574\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"schwarz\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"compatible_model\\\",\\n      \\\"value\\\": \\\"aerobuds pro\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\\"compatible_device\\\"],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_e0afb74574\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"AEROBUDS PRO\\\"\\n      }\\n    }\\n  ]\\n  ,\\n  \\\"type\\\": null,\\n  \\\"category\\\": null\\n  ,\\n  \\\"unknowns\\\": [\\n    \\\"bluetooth_version\\\",\\n    \\\"battery_capacity\\\",\\n    \\\"charging_case\\\"\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":16480567792,\"load_duration\":26402458,\"prompt_eval_count\":1330,\"prompt_eval_duration\":3221732292,\"eval_count\":477,\"eval_duration\":13220351833}",
+                  "data": {
+                    "rowId": "row_e0afb74574",
+                    "facts": [
+                      {
+                        "attribute": "bluetooth_supported",
+                        "value": true,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_e0afb74574",
+                          "field": "raw_specs",
+                          "quote": "Bluetooth 5.3"
+                        }
+                      },
+                      {
+                        "attribute": "wireless_frequency",
+                        "value": 2.4,
+                        "unit": "GHz",
+                        "scope": "product",
+                        "conditions": [
+                          "radio_link"
+                        ],
+                        "evidence": {
+                          "rowId": "row_e0afb74574",
+                          "field": "raw_specs",
+                          "quote": "Bluetooth 5.3"
+                        }
+                      },
+                      {
+                        "attribute": "colour_temperature_count",
+                        "value": 1,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_e0afb74574",
+                          "field": "raw_title",
+                          "quote": "schwarz"
+                        }
+                      },
+                      {
+                        "attribute": "size_count",
+                        "value": 1,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_e0afb74574",
+                          "field": "raw_title",
+                          "quote": "schwarz"
+                        }
+                      },
+                      {
+                        "attribute": "compatible_model",
+                        "value": "aerobuds pro",
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [
+                          "compatible_device"
+                        ],
+                        "evidence": {
+                          "rowId": "row_e0afb74574",
+                          "field": "raw_title",
+                          "quote": "AEROBUDS PRO"
+                        }
+                      }
+                    ],
+                    "type": null,
+                    "category": null,
+                    "unknowns": [
+                      "bluetooth_version",
+                      "battery_capacity",
+                      "charging_case"
+                    ]
+                  },
+                  "jsonParsed": true,
+                  "model": "qwen3:4b",
+                  "requestId": null,
+                  "usage": {
+                    "inputTokens": 1330,
+                    "outputTokens": 477,
+                    "cachedInputTokens": null,
+                    "cacheWriteTokens": null
+                  },
+                  "timings": {
+                    "totalMs": 16480.567792,
+                    "loadMs": 26.402458,
+                    "promptMs": 3221.732292,
+                    "generationMs": 13220.351833
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_bdbc045131"
+            ],
+            "latencyMs": 16423.117709000013,
+            "wallTimeMs": 16423.117709000013,
+            "attempts": [
+              {
+                "elapsedMs": 16415.610291999998,
+                "error": null,
+                "response": {
+                  "status": "completed",
+                  "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:09:27.116289Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n  \\\"facts\\\": [\\n    {\\n      \\\"attribute\\\": \\\"bluetooth_supported\\\",\\n      \\\"value\\\": true,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"Bluetooth 5.3\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"wireless_frequency\\\",\\n      \\\"value\\\": 5.3,\\n      \\\"unit\\\": \\\"GHz\\\",\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\\"radio_link\\\"],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"Bluetooth 5.3\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"colour_temperature_count\\\",\\n      \\\"value\\\": 1,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"Black\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"size_count\\\",\\n      \\\"value\\\": 1,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"Black\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"compatible_model\\\",\\n      \\\"value\\\": \\\"AeroBuds Pro\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\\"compatible_device\\\"],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"AeroBuds Pro\\\"\\n      }\\n    }\\n  ]\\n  ,\\n  \\\"type\\\": null,\\n  \\\"category\\\": null\\n  ,\\n  \\\"unknowns\\\": [\\n    \\\"bluetooth_version\\\",\\n    \\\"battery_capacity\\\",\\n    \\\"charging_case\\\",\\n    \\\"warranty\\\"\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":16407940375,\"load_duration\":29019208,\"prompt_eval_count\":1318,\"prompt_eval_duration\":3203134666,\"eval_count\":479,\"eval_duration\":13165223209}",
+                  "data": {
+                    "rowId": "row_bdbc045131",
+                    "facts": [
+                      {
+                        "attribute": "bluetooth_supported",
+                        "value": true,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_bdbc045131",
+                          "field": "raw_specs",
+                          "quote": "Bluetooth 5.3"
+                        }
+                      },
+                      {
+                        "attribute": "wireless_frequency",
+                        "value": 5.3,
+                        "unit": "GHz",
+                        "scope": "product",
+                        "conditions": [
+                          "radio_link"
+                        ],
+                        "evidence": {
+                          "rowId": "row_bdbc045131",
+                          "field": "raw_specs",
+                          "quote": "Bluetooth 5.3"
+                        }
+                      },
+                      {
+                        "attribute": "colour_temperature_count",
+                        "value": 1,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_bdbc045131",
+                          "field": "raw_title",
+                          "quote": "Black"
+                        }
+                      },
+                      {
+                        "attribute": "size_count",
+                        "value": 1,
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [],
+                        "evidence": {
+                          "rowId": "row_bdbc045131",
+                          "field": "raw_title",
+                          "quote": "Black"
+                        }
+                      },
+                      {
+                        "attribute": "compatible_model",
+                        "value": "AeroBuds Pro",
+                        "unit": null,
+                        "scope": "product",
+                        "conditions": [
+                          "compatible_device"
+                        ],
+                        "evidence": {
+                          "rowId": "row_bdbc045131",
+                          "field": "raw_title",
+                          "quote": "AeroBuds Pro"
+                        }
+                      }
+                    ],
+                    "type": null,
+                    "category": null,
+                    "unknowns": [
+                      "bluetooth_version",
+                      "battery_capacity",
+                      "charging_case",
+                      "warranty"
+                    ]
+                  },
+                  "jsonParsed": true,
+                  "model": "qwen3:4b",
+                  "requestId": null,
+                  "usage": {
+                    "inputTokens": 1318,
+                    "outputTokens": 479,
+                    "cachedInputTokens": null,
+                    "cacheWriteTokens": null
+                  },
+                  "timings": {
+                    "totalMs": 16407.940375,
+                    "loadMs": 29.019208,
+                    "promptMs": 3203.134666,
+                    "generationMs": 13165.223209
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "loadMs": 511.389874,
+        "generationMs": 147678.72779099998,
+        "cachedTokens": null,
+        "localComputeCost": null,
+        "latencySource": "live"
+      }
+    },
+    "matching": {
+      "quality": {
+        "jobs": 8,
+        "successful": 1,
+        "unsuccessful": 7,
+        "stages": {
+          "transport": {
+            "checked": 8,
+            "passed": 8,
+            "failed": 0,
+            "unchecked": 0
+          },
+          "completion": {
+            "checked": 8,
+            "passed": 8,
+            "failed": 0,
+            "unchecked": 0
+          },
+          "json": {
+            "checked": 8,
+            "passed": 8,
+            "failed": 0,
+            "unchecked": 0
+          },
+          "schema": {
+            "checked": 8,
+            "passed": 8,
+            "failed": 0,
+            "unchecked": 0
+          },
+          "citations": {
+            "checked": 8,
+            "passed": 1,
+            "failed": 7,
+            "unchecked": 0
+          },
+          "semantic": {
+            "checked": 1,
+            "passed": 1,
+            "failed": 0,
+            "unchecked": 7
+          }
+        },
+        "proposed": {
+          "correct": 0,
+          "unexpected": 0,
+          "missing": 0,
+          "malformed": 0,
+          "duplicate": 0
+        },
+        "accepted": {
+          "status": "provisional",
+          "version": "semantic-checks-v1",
+          "correct": 0,
+          "unexpected": 0,
+          "missing": 11,
+          "precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "recall": {
+            "numerator": 0,
+            "denominator": 11,
+            "value": 0
+          },
+          "types": {
+            "numerator": 12,
+            "denominator": 12,
+            "value": 1
+          },
+          "categories": {
+            "numerator": 12,
+            "denominator": 12,
+            "value": 1
+          },
+          "errors": [
+            {
+              "rowId": "row_11462769c5",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "colour_temperature_count",
+                "conditions": [],
+                "scope": "product",
+                "unit": null,
+                "value": 5
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_55a8c9b86d",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "bluetooth_supported",
+                "conditions": [],
+                "scope": "product",
+                "unit": null,
+                "value": true
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_55a8c9b86d",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "wireless_frequency",
+                "conditions": [
+                  "radio_link"
+                ],
+                "scope": "product",
+                "unit": "GHz",
+                "value": 2.4
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_74b8f7797a",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "bluetooth_supported",
+                "conditions": [],
+                "scope": "product",
+                "unit": null,
+                "value": true
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_74b8f7797a",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "wireless_frequency",
+                "conditions": [
+                  "radio_link"
+                ],
+                "scope": "product",
+                "unit": "GHz",
+                "value": 2.4
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_a1bb1ad2e9",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "colour_temperature_count",
+                "conditions": [],
+                "scope": "product",
+                "unit": null,
+                "value": 5
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_b82f7fcc2a",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "colour_temperature_count",
+                "conditions": [],
+                "scope": "product",
+                "unit": null,
+                "value": 5
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_bb6d2613d4",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "bluetooth_supported",
+                "conditions": [],
+                "scope": "product",
+                "unit": null,
+                "value": true
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_bb6d2613d4",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "wireless_frequency",
+                "conditions": [
+                  "radio_link"
+                ],
+                "scope": "product",
+                "unit": "GHz",
+                "value": 2.4
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_fe3ff4b356",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "size_count",
+                "conditions": [],
+                "scope": "product",
+                "unit": null,
+                "value": 3
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_fe3ff4b356",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "compatible_model",
+                "conditions": [
+                  "compatible_device"
+                ],
+                "scope": "product",
+                "unit": null,
+                "value": "AeroBuds Pro"
+              },
+              "actual": null
+            }
+          ]
+        },
+        "rejectedAdditions": 0,
+        "falseCitations": 3,
+        "reasons": [],
+        "unknowns": 0,
+        "review": {
+          "messages": 64,
+          "rows": 64,
+          "aiAffectedRows": 8,
+          "aiMessages": 0,
+          "shadowReview": 0
+        },
+        "recommendations": [
+          {
+            "rowIds": [
+              "row_11bb9:9b2fa",
+              "row_e0afb74574"
+            ],
+            "decision": "merge",
+            "confidence": "high",
+            "reason": "Both rows describe the same product: Aerobuds PRO earbuds with active noise cancelling, Bluetooth 5.3, 20 hours playback (incl. charging case), water resistant IPX4. The German title 'AEROBUDS PRO / schwarz / ANC' translates to 'Aerobuds PRO / black / ANC', matching the English title. The specs are consistent with minor translation differences: 'Akku 18h' is 18 hours playback, 'USB-C Ladecase' is charging case with USB-C. The product name, features, and specifications align across both rows.",
+            "evidence": [
+              {
+                "rowId": "row_11bb99b2fa",
+                "field": "raw_title",
+                "quote": "Aerobuds PRO earbud, black, ANC"
+              },
+              {
+                "rowId": "row_11bb99b2fa",
+                "field": "raw_specs",
+                "quote": "Active noise cancelling, BT 5.3, 20 hours playback (incl. charging case), water resistant IPX4"
+              },
+              {
+                "rowId": "row_e0afb74574",
+                "field": "raw_title",
+                "quote": "AEROBUDS PRO / schwarz / ANC"
+              },
+              {
+                "rowId": "row_e0afb74574",
+                "field": "raw_specs",
+                "quote": "Bluetooth 5.3, Akku 18h, IPX4, USB-C Ladecase"
+              }
+            ],
+            "valid": false,
+            "label": "unknown",
+            "hardConflict": false,
+            "dangerous": false,
+            "unconfirmed": true
+          },
+          {
+            "rowIds": [
+              "row_bdbc045:31",
+              "row_e0afb74574"
+            ],
+            "decision": "merge",
+            "confidence": "high",
+            "reason": "Both rows describe the same product: AeroBuds Pro True Wireless Earbuds with Black color, Bluetooth 5.3, ANC, 20h total playback with case, IPX4, USB-C. The specifications match exactly when accounting for language differences and minor formatting variations (e.g., 'schwarz' for 'Black', 'Ladecase' for 'case').",
+            "evidence": [
+              {
+                "rowId": "row_bdbc045131",
+                "field": "raw_title",
+                "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+              },
+              {
+                "rowId": "row_e0afb74574",
+                "field": "raw_title",
+                "quote": "AEROBUDS PRO / schwarz / ANC"
+              },
+              {
+                "rowId": "row_bdbc045131",
+                "field": "raw_specs",
+                "quote": "ANC; Bluetooth 5.3; 20h total playback with case; IPX4; USB-C"
+              },
+              {
+                "rowId": "row_e0afb74574",
+                "field": "raw_specs",
+                "quote": "Bluetooth 5.3, Akku 18h, IPX4, USB-C Ladecase"
+              }
+            ],
+            "valid": false,
+            "label": "unknown",
+            "hardConflict": false,
+            "dangerous": false,
+            "unconfirmed": true
+          },
+          {
+            "rowIds": [
+              "row_11bb99b2fa",
+              "row_bdbc045131"
+            ],
+            "decision": "merge",
+            "confidence": "high",
+            "reason": "Both rows describe the same product: Aerobuds PRO earbuds with black color, active noise cancelling, Bluetooth 5.3, 20 hours playback (including charging case), and water resistance IPX4. The titles and specifications match exactly in terms of product features and specifications, with only minor differences in capitalization and formatting of the brand name (Aerobuds vs. Aerobuds PRO). The key product attributes are consistent across both rows.",
+            "evidence": [
+              {
+                "rowId": "row_11bb99b2fa",
+                "field": "raw_title",
+                "quote": "Aerobuds PRO earbud, black, ANC"
+              },
+              {
+                "rowId": "row_11bb99b2fa",
+                "field": "raw_specs",
+                "quote": "Active noise cancelling, BT 5.3, 20 hours playback (incl. charging case), water resistant IPX4"
+              },
+              {
+                "rowId": "row_bdbc045131",
+                "field": "raw_title",
+                "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+              },
+              {
+                "rowId": "row_bdbc045131",
+                "field": "raw_specs",
+                "quote": "ANC; Bluetooth 5.3; 20h total playback with case; IPX4; USB-C"
+              }
+            ],
+            "valid": true,
+            "label": "positive",
+            "hardConflict": false,
+            "dangerous": false,
+            "unconfirmed": false
+          },
+          {
+            "rowIds": [
+              "row_55a8c9b86d",
+              "row_74b8f17797a"
+            ],
+            "decision": "merge",
+            "confidence": "high",
+            "reason": "Both rows have identical raw_title and raw_specs: 'Onyx Lite wireless mouse' with specs '2.4GHz + BT; 6 buttons; 70g'. No differences in product name, specifications, or other attributes. This is a clear match.",
+            "evidence": [
+              {
+                "rowId": "row_55a8c9b86d",
+                "field": "raw_title",
+                "quote": "Onyx Lite wireless mouse"
+              },
+              {
+                "rowId": "row_55a8c9b86d",
+                "field": "raw_specs",
+                "quote": "2.4GHz + BT; 6 buttons; 70g"
+              },
+              {
+                "rowId": "row_74b8f7797a",
+                "field": "raw_title",
+                "quote": "Onyx Lite wireless mouse"
+              },
+              {
+                "rowId": "row_74b8f7797a",
+                "field": "raw_specs",
+                "quote": "2.4GHz + BT; 6 buttons; 70g"
+              }
+            ],
+            "valid": false,
+            "label": "positive",
+            "hardConflict": false,
+            "dangerous": false,
+            "unconfirmed": false
+          },
+          {
+            "rowIds": [
+              "row_fe3ff4b356",
+              "row_11bb99b2fa"
+            ],
+            "decision": "merge",
+            "confidence": "high",
+            "reason": "Both rows describe earbud accessories for the AeroBuds Pro model. The first row specifies replacement ear tips (S/M/L) made of silicone, while the second row describes the Aerobuds PRO earbud itself with active noise cancelling, Bluetooth 5.3, 20 hours playback, and water resistance. Despite different product types (accessories vs. main product), they are both directly related to the AeroBuds Pro model and share the same brand name and model identifier. The shadow recommendation indicates they should be merged as they are part of the same product ecosystem.",
+            "evidence": [
+              {
+                "rowId": "row_fe3ff:ff4b356",
+                "field": "raw_title",
+                "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+              },
+              {
+                "rowId": "row_11bb99b2fa",
+                "field": "raw_title",
+                "quote": "Aerobuds PRO earbud, black, ANC"
+              }
+            ],
+            "valid": false,
+            "label": "negative",
+            "hardConflict": true,
+            "dangerous": true,
+            "unconfirmed": false
+          },
+          {
+            "rowIds": [
+              "row_fe3ff4b356",
+              "row_bdbc045131"
+            ],
+            "decision": "merge",
+            "confidence": "high",
+            "reason": "Both rows describe AeroBuds Pro products with the same core product name and model. The first row specifies replacement ear tips (S/M/L) as a product variant, while the second row describes the True Wireless Earbuds themselves. The key identifier 'AeroBuds Pro' matches across both rows, and the product type (earbuds) is consistent. The difference in specifications (replacement ear tips vs. full earbuds) does not constitute a different product identity but rather a complementary accessory and main product relationship. The shadow recommendation confirms the merge.",
+            "evidence": [
+              {
+                "rowId": "row_fe3ff:ff4b356",
+                "field": "raw_title",
+                "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+              },
+              {
+                "rowId": "row_bdbc045131",
+                "field": "raw_title",
+                "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+              }
+            ],
+            "valid": false,
+            "label": "negative",
+            "hardConflict": true,
+            "dangerous": true,
+            "unconfirmed": false
+          },
+          {
+            "rowIds": [
+              "row_fe3ff:4b356",
+              "row_e0afb74574"
+            ],
+            "decision": "merge",
+            "confidence": "high",
+            "reason": "Both rows describe the AeroBuds Pro product line with specific variants: row_fe3ff4b356 specifies replacement ear tips (S/M/L) as a silicone accessory, while row_e0afb74574 describes the base product with Bluetooth 5.3, 18h battery, IPX4, and USB-C charging. The core product identity (AeroBuds Pro) is consistent, and the differences are accessory vs. base product with distinct specifications. Compatibility is not identity, so the shadow recommendation merges them as the same product line.",
+            "evidence": [
+              {
+                "rowId": "row_fe3ff4b356",
+                "field": "raw_title",
+                "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+              },
+              {
+                "rowId": "row_e0afb74574",
+                "field": "raw_title",
+                "quote": "AEROBUDS PRO / schwarz / ANC"
+              }
+            ],
+            "valid": false,
+            "label": "negative",
+            "hardConflict": true,
+            "dangerous": true,
+            "unconfirmed": false
+          },
+          {
+            "rowIds": [
+              "row_b82f7fcc2a",
+              "row_bb6d2613d4"
+            ],
+            "decision": "merge",
+            "confidence": "high",
+            "reason": "Both rows have the same title prefix 'Cobalt X' and the product names are distinct (desk lamp vs wireless mouse), so they are different products. The specs are different (LED vs 2.4GHz + BT) and the product types are different (desk lamp vs mouse), so they should not be merged.",
+            "evidence": [
+              {
+                "rowId": "row_b82f7fcc2a",
+                "field": "raw_title",
+                "quote": "Cobalt X desk lamp"
+              },
+              {
+                "rowId": "row_bb6:2613d4",
+                "field": "raw_title",
+                "quote": "Cobalt X wireless mouse"
+              }
+            ],
+            "valid": false,
+            "label": "negative",
+            "hardConflict": true,
+            "dangerous": true,
+            "unconfirmed": false
+          }
+        ],
+        "dangerousMerges": 4,
+        "unconfirmedMerges": 2,
+        "unknownMatching": 0
+      },
+      "performance": {
+        "calls": 8,
+        "retries": 0,
+        "medianMs": 7720.2203329999975,
+        "p95Ms": 11772.866541000001,
+        "requests": [
+          {
+            "rowIds": [
+              "row_11bb99b2fa",
+              "row_e0afb74574"
+            ],
+            "latencyMs": 11772.866541000001,
+            "wallTimeMs": 11772.866541000001,
+            "attempts": [
+              {
+                "elapsedMs": 11760.254666,
+                "error": null,
+                "response": {
+                  "status": "completed",
+                  "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:13:27.370204Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_11bb9:9b2fa\\\",\\n    \\\"row_e0afb74574\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows describe the same product: Aerobuds PRO earbuds with active noise cancelling, Bluetooth 5.3, 20 hours playback (incl. charging case), water resistant IPX4. The German title 'AEROBUDS PRO / schwarz / ANC' translates to 'Aerobuds PRO / black / ANC', matching the English title. The specs are consistent with minor translation differences: 'Akku 18h' is 18 hours playback, 'USB-C Ladecase' is charging case with USB-C. The product name, features, and specifications align across both rows.\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"Aerobuds PRO earbud, black, ANC\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"Active noise cancelling, BT 5.3, 20 hours playback (incl. charging case), water resistant IPX4\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_e0afb74574\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AEROBUDS PRO / schwarz / ANC\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_e0afb74574\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"Bluetooth 5.3, Akku 18h, IPX4, USB-C Ladecase\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":11749686459,\"load_duration\":66040875,\"prompt_eval_count\":291,\"prompt_eval_duration\":1107564791,\"eval_count\":402,\"eval_duration\":10558850875}",
+                  "data": {
+                    "rowIds": [
+                      "row_11bb9:9b2fa",
+                      "row_e0afb74574"
+                    ],
+                    "decision": "merge",
+                    "confidence": "high",
+                    "reason": "Both rows describe the same product: Aerobuds PRO earbuds with active noise cancelling, Bluetooth 5.3, 20 hours playback (incl. charging case), water resistant IPX4. The German title 'AEROBUDS PRO / schwarz / ANC' translates to 'Aerobuds PRO / black / ANC', matching the English title. The specs are consistent with minor translation differences: 'Akku 18h' is 18 hours playback, 'USB-C Ladecase' is charging case with USB-C. The product name, features, and specifications align across both rows.",
+                    "evidence": [
+                      {
+                        "rowId": "row_11bb99b2fa",
+                        "field": "raw_title",
+                        "quote": "Aerobuds PRO earbud, black, ANC"
+                      },
+                      {
+                        "rowId": "row_11bb99b2fa",
+                        "field": "raw_specs",
+                        "quote": "Active noise cancelling, BT 5.3, 20 hours playback (incl. charging case), water resistant IPX4"
+                      },
+                      {
+                        "rowId": "row_e0afb74574",
+                        "field": "raw_title",
+                        "quote": "AEROBUDS PRO / schwarz / ANC"
+                      },
+                      {
+                        "rowId": "row_e0afb74574",
+                        "field": "raw_specs",
+                        "quote": "Bluetooth 5.3, Akku 18h, IPX4, USB-C Ladecase"
+                      }
+                    ]
+                  },
+                  "jsonParsed": true,
+                  "model": "qwen3:4b",
+                  "requestId": null,
+                  "usage": {
+                    "inputTokens": 291,
+                    "outputTokens": 402,
+                    "cachedInputTokens": null,
+                    "cacheWriteTokens": null
+                  },
+                  "timings": {
+                    "totalMs": 11749.686459,
+                    "loadMs": 66.040875,
+                    "promptMs": 1107.564791,
+                    "generationMs": 10558.850875
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_bdbc045131",
+              "row_e0afb74574"
+            ],
+            "latencyMs": 9835.548166999999,
+            "wallTimeMs": 9835.548166999999,
+            "attempts": [
+              {
+                "elapsedMs": 9824.510209,
+                "error": null,
+                "response": {
+                  "status": "completed",
+                  "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:13:37.211213Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_bdbc045:31\\\",\\n    \\\"row_e0afb74574\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows describe the same product: AeroBuds Pro True Wireless Earbuds with Black color, Bluetooth 5.3, ANC, 20h total playback with case, IPX4, USB-C. The specifications match exactly when accounting for language differences and minor formatting variations (e.g., 'schwarz' for 'Black', 'Ladecase' for 'case').\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro True Wireless Earbuds - Black\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_e0afb74574\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AEROBUDS PRO / schwarz / ANC\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"ANC; Bluetooth 5.3; 20h total playback with case; IPX4; USB-C\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_e0afb74574\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"Bluetooth 5.3, Akku 18h, IPX4, USB-C Ladecase\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":9819521083,\"load_duration\":39148792,\"prompt_eval_count\":287,\"prompt_eval_duration\":440127583,\"eval_count\":350,\"eval_duration\":9321645000}",
+                  "data": {
+                    "rowIds": [
+                      "row_bdbc045:31",
+                      "row_e0afb74574"
+                    ],
+                    "decision": "merge",
+                    "confidence": "high",
+                    "reason": "Both rows describe the same product: AeroBuds Pro True Wireless Earbuds with Black color, Bluetooth 5.3, ANC, 20h total playback with case, IPX4, USB-C. The specifications match exactly when accounting for language differences and minor formatting variations (e.g., 'schwarz' for 'Black', 'Ladecase' for 'case').",
+                    "evidence": [
+                      {
+                        "rowId": "row_bdbc045131",
+                        "field": "raw_title",
+                        "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+                      },
+                      {
+                        "rowId": "row_e0afb74574",
+                        "field": "raw_title",
+                        "quote": "AEROBUDS PRO / schwarz / ANC"
+                      },
+                      {
+                        "rowId": "row_bdbc045131",
+                        "field": "raw_specs",
+                        "quote": "ANC; Bluetooth 5.3; 20h total playback with case; IPX4; USB-C"
+                      },
+                      {
+                        "rowId": "row_e0afb74574",
+                        "field": "raw_specs",
+                        "quote": "Bluetooth 5.3, Akku 18h, IPX4, USB-C Ladecase"
+                      }
+                    ]
+                  },
+                  "jsonParsed": true,
+                  "model": "qwen3:4b",
+                  "requestId": null,
+                  "usage": {
+                    "inputTokens": 287,
+                    "outputTokens": 350,
+                    "cachedInputTokens": null,
+                    "cacheWriteTokens": null
+                  },
+                  "timings": {
+                    "totalMs": 9819.521083,
+                    "loadMs": 39.148792,
+                    "promptMs": 440.127583,
+                    "generationMs": 9321.645
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_11bb99b2fa",
+              "row_bdbc045131"
+            ],
+            "latencyMs": 10385.642083000002,
+            "wallTimeMs": 10385.642083000002,
+            "attempts": [
+              {
+                "elapsedMs": 10381.84175,
+                "error": null,
+                "response": {
+                  "status": "completed",
+                  "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:13:47.602882Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_11bb99b2fa\\\",\\n    \\\"row_bdbc045131\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows describe the same product: Aerobuds PRO earbuds with black color, active noise cancelling, Bluetooth 5.3, 20 hours playback (including charging case), and water resistance IPX4. The titles and specifications match exactly in terms of product features and specifications, with only minor differences in capitalization and formatting of the brand name (Aerobuds vs. Aerobuds PRO). The key product attributes are consistent across both rows.\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"Aerobuds PRO earbud, black, ANC\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"Active noise cancelling, BT 5.3, 20 hours playback (incl. charging case), water resistant IPX4\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro True Wireless Earbuds - Black\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"ANC; Bluetooth 5.3; 20h total playback with case; IPX4; USB-C\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":10369626250,\"load_duration\":94726833,\"prompt_eval_count\":293,\"prompt_eval_duration\":456665583,\"eval_count\":370,\"eval_duration\":9796558042}",
+                  "data": {
+                    "rowIds": [
+                      "row_11bb99b2fa",
+                      "row_bdbc045131"
+                    ],
+                    "decision": "merge",
+                    "confidence": "high",
+                    "reason": "Both rows describe the same product: Aerobuds PRO earbuds with black color, active noise cancelling, Bluetooth 5.3, 20 hours playback (including charging case), and water resistance IPX4. The titles and specifications match exactly in terms of product features and specifications, with only minor differences in capitalization and formatting of the brand name (Aerobuds vs. Aerobuds PRO). The key product attributes are consistent across both rows.",
+                    "evidence": [
+                      {
+                        "rowId": "row_11bb99b2fa",
+                        "field": "raw_title",
+                        "quote": "Aerobuds PRO earbud, black, ANC"
+                      },
+                      {
+                        "rowId": "row_11bb99b2fa",
+                        "field": "raw_specs",
+                        "quote": "Active noise cancelling, BT 5.3, 20 hours playback (incl. charging case), water resistant IPX4"
+                      },
+                      {
+                        "rowId": "row_bdbc045131",
+                        "field": "raw_title",
+                        "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+                      },
+                      {
+                        "rowId": "row_bdbc045131",
+                        "field": "raw_specs",
+                        "quote": "ANC; Bluetooth 5.3; 20h total playback with case; IPX4; USB-C"
+                      }
+                    ]
+                  },
+                  "jsonParsed": true,
+                  "model": "qwen3:4b",
+                  "requestId": null,
+                  "usage": {
+                    "inputTokens": 293,
+                    "outputTokens": 370,
+                    "cachedInputTokens": null,
+                    "cacheWriteTokens": null
+                  },
+                  "timings": {
+                    "totalMs": 10369.62625,
+                    "loadMs": 94.726833,
+                    "promptMs": 456.665583,
+                    "generationMs": 9796.558042
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_55a8c9b86d",
+              "row_74b8f7797a"
+            ],
+            "latencyMs": 8923.042667000002,
+            "wallTimeMs": 8923.042667000002,
+            "attempts": [
+              {
+                "elapsedMs": 8914.634333999998,
+                "error": null,
+                "response": {
+                  "status": "completed",
+                  "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:13:56.527747Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_55a8c9b86d\\\",\\n    \\\"row_74b8f17797a\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows have identical raw_title and raw_specs: 'Onyx Lite wireless mouse' with specs '2.4GHz + BT; 6 buttons; 70g'. No differences in product name, specifications, or other attributes. This is a clear match.\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_55a8c9b86d\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"Onyx Lite wireless mouse\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_55a8c9b86d\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"2.4GHz + BT; 6 buttons; 70g\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_74b8f7797a\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"Onyx Lite wireless mouse\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_74b8f7797a\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"2.4GHz + BT; 6 buttons; 70g\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":8908811250,\"load_duration\":66481875,\"prompt_eval_count\":271,\"prompt_eval_duration\":387949875,\"eval_count\":315,\"eval_duration\":8419698792}",
+                  "data": {
+                    "rowIds": [
+                      "row_55a8c9b86d",
+                      "row_74b8f17797a"
+                    ],
+                    "decision": "merge",
+                    "confidence": "high",
+                    "reason": "Both rows have identical raw_title and raw_specs: 'Onyx Lite wireless mouse' with specs '2.4GHz + BT; 6 buttons; 70g'. No differences in product name, specifications, or other attributes. This is a clear match.",
+                    "evidence": [
+                      {
+                        "rowId": "row_55a8c9b86d",
+                        "field": "raw_title",
+                        "quote": "Onyx Lite wireless mouse"
+                      },
+                      {
+                        "rowId": "row_55a8c9b86d",
+                        "field": "raw_specs",
+                        "quote": "2.4GHz + BT; 6 buttons; 70g"
+                      },
+                      {
+                        "rowId": "row_74b8f7797a",
+                        "field": "raw_title",
+                        "quote": "Onyx Lite wireless mouse"
+                      },
+                      {
+                        "rowId": "row_74b8f7797a",
+                        "field": "raw_specs",
+                        "quote": "2.4GHz + BT; 6 buttons; 70g"
+                      }
+                    ]
+                  },
+                  "jsonParsed": true,
+                  "model": "qwen3:4b",
+                  "requestId": null,
+                  "usage": {
+                    "inputTokens": 271,
+                    "outputTokens": 315,
+                    "cachedInputTokens": null,
+                    "cacheWriteTokens": null
+                  },
+                  "timings": {
+                    "totalMs": 8908.81125,
+                    "loadMs": 66.481875,
+                    "promptMs": 387.949875,
+                    "generationMs": 8419.698792
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_fe3ff4b356",
+              "row_11bb99b2fa"
+            ],
+            "latencyMs": 7720.2203329999975,
+            "wallTimeMs": 7720.2203329999975,
+            "attempts": [
+              {
+                "elapsedMs": 7714.650624999995,
+                "error": null,
+                "response": {
+                  "status": "completed",
+                  "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:14:04.243533Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_fe3ff4b356\\\",\\n    \\\"row_11bb99b2fa\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows describe earbud accessories for the AeroBuds Pro model. The first row specifies replacement ear tips (S/M/L) made of silicone, while the second row describes the Aerobuds PRO earbud itself with active noise cancelling, Bluetooth 5.3, 20 hours playback, and water resistance. Despite different product types (accessories vs. main product), they are both directly related to the AeroBuds Pro model and share the same brand name and model identifier. The shadow recommendation indicates they should be merged as they are part of the same product ecosystem.\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_fe3ff:ff4b356\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro replacement ear tips (S/M/L)\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"Aerobuds PRO earbud, black, ANC\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":7701828125,\"load_duration\":32487000,\"prompt_eval_count\":283,\"prompt_eval_duration\":430621625,\"eval_count\":276,\"eval_duration\":7225011750}",
+                  "data": {
+                    "rowIds": [
+                      "row_fe3ff4b356",
+                      "row_11bb99b2fa"
+                    ],
+                    "decision": "merge",
+                    "confidence": "high",
+                    "reason": "Both rows describe earbud accessories for the AeroBuds Pro model. The first row specifies replacement ear tips (S/M/L) made of silicone, while the second row describes the Aerobuds PRO earbud itself with active noise cancelling, Bluetooth 5.3, 20 hours playback, and water resistance. Despite different product types (accessories vs. main product), they are both directly related to the AeroBuds Pro model and share the same brand name and model identifier. The shadow recommendation indicates they should be merged as they are part of the same product ecosystem.",
+                    "evidence": [
+                      {
+                        "rowId": "row_fe3ff:ff4b356",
+                        "field": "raw_title",
+                        "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+                      },
+                      {
+                        "rowId": "row_11bb99b2fa",
+                        "field": "raw_title",
+                        "quote": "Aerobuds PRO earbud, black, ANC"
+                      }
+                    ]
+                  },
+                  "jsonParsed": true,
+                  "model": "qwen3:4b",
+                  "requestId": null,
+                  "usage": {
+                    "inputTokens": 283,
+                    "outputTokens": 276,
+                    "cachedInputTokens": null,
+                    "cacheWriteTokens": null
+                  },
+                  "timings": {
+                    "totalMs": 7701.828125,
+                    "loadMs": 32.487,
+                    "promptMs": 430.621625,
+                    "generationMs": 7225.01175
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_fe3ff4b356",
+              "row_bdbc045131"
+            ],
+            "latencyMs": 7550.434582999995,
+            "wallTimeMs": 7550.434582999995,
+            "attempts": [
+              {
+                "elapsedMs": 7546.425166000001,
+                "error": null,
+                "response": {
+                  "status": "completed",
+                  "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:14:11.796287Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_fe3ff4b356\\\",\\n    \\\"row_bdbc045131\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows describe AeroBuds Pro products with the same core product name and model. The first row specifies replacement ear tips (S/M/L) as a product variant, while the second row describes the True Wireless Earbuds themselves. The key identifier 'AeroBuds Pro' matches across both rows, and the product type (earbuds) is consistent. The difference in specifications (replacement ear tips vs. full earbuds) does not constitute a different product identity but rather a complementary accessory and main product relationship. The shadow recommendation confirms the merge.\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_fe3ff:ff4b356\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro replacement ear tips (S/M/L)\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro True Wireless Earbuds - Black\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":7533590417,\"load_duration\":35725250,\"prompt_eval_count\":279,\"prompt_eval_duration\":292575417,\"eval_count\":272,\"eval_duration\":7190453000}",
+                  "data": {
+                    "rowIds": [
+                      "row_fe3ff4b356",
+                      "row_bdbc045131"
+                    ],
+                    "decision": "merge",
+                    "confidence": "high",
+                    "reason": "Both rows describe AeroBuds Pro products with the same core product name and model. The first row specifies replacement ear tips (S/M/L) as a product variant, while the second row describes the True Wireless Earbuds themselves. The key identifier 'AeroBuds Pro' matches across both rows, and the product type (earbuds) is consistent. The difference in specifications (replacement ear tips vs. full earbuds) does not constitute a different product identity but rather a complementary accessory and main product relationship. The shadow recommendation confirms the merge.",
+                    "evidence": [
+                      {
+                        "rowId": "row_fe3ff:ff4b356",
+                        "field": "raw_title",
+                        "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+                      },
+                      {
+                        "rowId": "row_bdbc045131",
+                        "field": "raw_title",
+                        "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+                      }
+                    ]
+                  },
+                  "jsonParsed": true,
+                  "model": "qwen3:4b",
+                  "requestId": null,
+                  "usage": {
+                    "inputTokens": 279,
+                    "outputTokens": 272,
+                    "cachedInputTokens": null,
+                    "cacheWriteTokens": null
+                  },
+                  "timings": {
+                    "totalMs": 7533.590417,
+                    "loadMs": 35.72525,
+                    "promptMs": 292.575417,
+                    "generationMs": 7190.453
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_fe3ff4b356",
+              "row_e0afb74574"
+            ],
+            "latencyMs": 7621.394084,
+            "wallTimeMs": 7621.394084,
+            "attempts": [
+              {
+                "elapsedMs": 7614.5637910000005,
+                "error": null,
+                "response": {
+                  "status": "completed",
+                  "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:14:19.42181Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_fe3ff:4b356\\\",\\n    \\\"row_e0afb74574\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows describe the AeroBuds Pro product line with specific variants: row_fe3ff4b356 specifies replacement ear tips (S/M/L) as a silicone accessory, while row_e0afb74574 describes the base product with Bluetooth 5.3, 18h battery, IPX4, and USB-C charging. The core product identity (AeroBuds Pro) is consistent, and the differences are accessory vs. base product with distinct specifications. Compatibility is not identity, so the shadow recommendation merges them as the same product line.\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_fe3ff4b356\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro replacement ear tips (S/M/L)\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_e0afb74574\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AEROBUDS PRO / schwarz / ANC\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":7607161334,\"load_duration\":29257625,\"prompt_eval_count\":277,\"prompt_eval_duration\":285724791,\"eval_count\":275,\"eval_duration\":7272868417}",
+                  "data": {
+                    "rowIds": [
+                      "row_fe3ff:4b356",
+                      "row_e0afb74574"
+                    ],
+                    "decision": "merge",
+                    "confidence": "high",
+                    "reason": "Both rows describe the AeroBuds Pro product line with specific variants: row_fe3ff4b356 specifies replacement ear tips (S/M/L) as a silicone accessory, while row_e0afb74574 describes the base product with Bluetooth 5.3, 18h battery, IPX4, and USB-C charging. The core product identity (AeroBuds Pro) is consistent, and the differences are accessory vs. base product with distinct specifications. Compatibility is not identity, so the shadow recommendation merges them as the same product line.",
+                    "evidence": [
+                      {
+                        "rowId": "row_fe3ff4b356",
+                        "field": "raw_title",
+                        "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+                      },
+                      {
+                        "rowId": "row_e0afb74574",
+                        "field": "raw_title",
+                        "quote": "AEROBUDS PRO / schwarz / ANC"
+                      }
+                    ]
+                  },
+                  "jsonParsed": true,
+                  "model": "qwen3:4b",
+                  "requestId": null,
+                  "usage": {
+                    "inputTokens": 277,
+                    "outputTokens": 275,
+                    "cachedInputTokens": null,
+                    "cacheWriteTokens": null
+                  },
+                  "timings": {
+                    "totalMs": 7607.161334,
+                    "loadMs": 29.257625,
+                    "promptMs": 285.724791,
+                    "generationMs": 7272.868417
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_b82f7fcc2a",
+              "row_bb6d2613d4"
+            ],
+            "latencyMs": 6220.038583999994,
+            "wallTimeMs": 6220.038583999994,
+            "attempts": [
+              {
+                "elapsedMs": 6212.815667000003,
+                "error": null,
+                "response": {
+                  "status": "completed",
+                  "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:14:25.642138Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_b82f7fcc2a\\\",\\n    \\\"row_bb6d2613d4\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows have the same title prefix 'Cobalt X' and the product names are distinct (desk lamp vs wireless mouse), so they are different products. The specs are different (LED vs 2.4GHz + BT) and the product types are different (desk lamp vs mouse), so they should not be merged.\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_b82f7fcc2a\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"Cobalt X desk lamp\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_bb6:2613d4\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"Cobalt X wireless mouse\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":6204143500,\"load_duration\":29712375,\"prompt_eval_count\":257,\"prompt_eval_duration\":355719917,\"eval_count\":213,\"eval_duration\":5806441833}",
+                  "data": {
+                    "rowIds": [
+                      "row_b82f7fcc2a",
+                      "row_bb6d2613d4"
+                    ],
+                    "decision": "merge",
+                    "confidence": "high",
+                    "reason": "Both rows have the same title prefix 'Cobalt X' and the product names are distinct (desk lamp vs wireless mouse), so they are different products. The specs are different (LED vs 2.4GHz + BT) and the product types are different (desk lamp vs mouse), so they should not be merged.",
+                    "evidence": [
+                      {
+                        "rowId": "row_b82f7fcc2a",
+                        "field": "raw_title",
+                        "quote": "Cobalt X desk lamp"
+                      },
+                      {
+                        "rowId": "row_bb6:2613d4",
+                        "field": "raw_title",
+                        "quote": "Cobalt X wireless mouse"
+                      }
+                    ]
+                  },
+                  "jsonParsed": true,
+                  "model": "qwen3:4b",
+                  "requestId": null,
+                  "usage": {
+                    "inputTokens": 257,
+                    "outputTokens": 213,
+                    "cachedInputTokens": null,
+                    "cacheWriteTokens": null
+                  },
+                  "timings": {
+                    "totalMs": 6204.1435,
+                    "loadMs": 29.712375,
+                    "promptMs": 355.719917,
+                    "generationMs": 5806.441833
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "loadMs": 393.58062500000005,
+        "generationMs": 65591.527709,
+        "cachedTokens": null,
+        "localComputeCost": null,
+        "latencySource": "live"
+      }
+    },
+    "gate": false
+  },
+  "gemma": {
+    "extraction": {
+      "quality": {
+        "jobs": 12,
+        "successful": 0,
+        "unsuccessful": 12,
+        "stages": {
+          "transport": {
+            "checked": 12,
+            "passed": 0,
+            "failed": 12,
+            "unchecked": 0
+          },
+          "completion": {
+            "checked": 0,
+            "passed": 0,
+            "failed": 0,
+            "unchecked": 12
+          },
+          "json": {
+            "checked": 0,
+            "passed": 0,
+            "failed": 0,
+            "unchecked": 12
+          },
+          "schema": {
+            "checked": 0,
+            "passed": 0,
+            "failed": 0,
+            "unchecked": 12
+          },
+          "citations": {
+            "checked": 0,
+            "passed": 0,
+            "failed": 0,
+            "unchecked": 12
+          },
+          "semantic": {
+            "checked": 0,
+            "passed": 0,
+            "failed": 0,
+            "unchecked": 12
+          }
+        },
+        "proposed": {
+          "correct": 0,
+          "unexpected": 0,
+          "missing": 11,
+          "malformed": 0,
+          "duplicate": 0
+        },
+        "accepted": {
+          "status": "provisional",
+          "version": "semantic-checks-v1",
+          "correct": 0,
+          "unexpected": 0,
+          "missing": 11,
+          "precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "recall": {
+            "numerator": 0,
+            "denominator": 11,
+            "value": 0
+          },
+          "types": {
+            "numerator": 12,
+            "denominator": 12,
+            "value": 1
+          },
+          "categories": {
+            "numerator": 12,
+            "denominator": 12,
+            "value": 1
+          },
+          "errors": [
+            {
+              "rowId": "row_11462769c5",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "colour_temperature_count",
+                "conditions": [],
+                "scope": "product",
+                "unit": null,
+                "value": 5
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_55a8c9b86d",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "bluetooth_supported",
+                "conditions": [],
+                "scope": "product",
+                "unit": null,
+                "value": true
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_55a8c9b86d",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "wireless_frequency",
+                "conditions": [
+                  "radio_link"
+                ],
+                "scope": "product",
+                "unit": "GHz",
+                "value": 2.4
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_74b8f7797a",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "bluetooth_supported",
+                "conditions": [],
+                "scope": "product",
+                "unit": null,
+                "value": true
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_74b8f7797a",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "wireless_frequency",
+                "conditions": [
+                  "radio_link"
+                ],
+                "scope": "product",
+                "unit": "GHz",
+                "value": 2.4
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_a1bb1ad2e9",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "colour_temperature_count",
+                "conditions": [],
+                "scope": "product",
+                "unit": null,
+                "value": 5
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_b82f7fcc2a",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "colour_temperature_count",
+                "conditions": [],
+                "scope": "product",
+                "unit": null,
+                "value": 5
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_bb6d2613d4",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "bluetooth_supported",
+                "conditions": [],
+                "scope": "product",
+                "unit": null,
+                "value": true
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_bb6d2613d4",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "wireless_frequency",
+                "conditions": [
+                  "radio_link"
+                ],
+                "scope": "product",
+                "unit": "GHz",
+                "value": 2.4
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_fe3ff4b356",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "size_count",
+                "conditions": [],
+                "scope": "product",
+                "unit": null,
+                "value": 3
+              },
+              "actual": null
+            },
+            {
+              "rowId": "row_fe3ff4b356",
+              "kind": "missed_addition",
+              "expected": {
+                "attribute": "compatible_model",
+                "conditions": [
+                  "compatible_device"
+                ],
+                "scope": "product",
+                "unit": null,
+                "value": "AeroBuds Pro"
+              },
+              "actual": null
+            }
+          ]
+        },
+        "rejectedAdditions": 0,
+        "falseCitations": 0,
+        "reasons": [],
+        "unknowns": 0,
+        "review": {
+          "messages": 76,
+          "rows": 64,
+          "aiAffectedRows": 12,
+          "aiMessages": 12,
+          "shadowReview": 0
+        },
+        "recommendations": [],
+        "dangerousMerges": 0,
+        "unconfirmedMerges": 0,
+        "unknownMatching": 0
+      },
+      "performance": {
+        "calls": 24,
+        "retries": 12,
+        "medianMs": 1701.0421250000072,
+        "p95Ms": 1968.9145410000056,
+        "requests": [
+          {
+            "rowIds": [
+              "row_05e5d126cb"
+            ],
+            "latencyMs": 1968.9145410000056,
+            "wallTimeMs": 1968.9145410000056,
+            "attempts": [
+              {
+                "elapsedMs": 581.9061250000086,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              },
+              {
+                "elapsedMs": 380.92108400000143,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_11462769c5"
+            ],
+            "latencyMs": 1704.333500000008,
+            "wallTimeMs": 1704.333500000008,
+            "attempts": [
+              {
+                "elapsedMs": 331.42204100001254,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              },
+              {
+                "elapsedMs": 370.19879200001014,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_22e59912ad"
+            ],
+            "latencyMs": 1701.0421250000072,
+            "wallTimeMs": 1701.0421250000072,
+            "attempts": [
+              {
+                "elapsedMs": 325.31400000001304,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              },
+              {
+                "elapsedMs": 372.06741700001294,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_55a8c9b86d"
+            ],
+            "latencyMs": 1701.9695000000065,
+            "wallTimeMs": 1701.9695000000065,
+            "attempts": [
+              {
+                "elapsedMs": 329.00533300000825,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              },
+              {
+                "elapsedMs": 369.1077090000035,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_74b8f7797a"
+            ],
+            "latencyMs": 1688.4097089999996,
+            "wallTimeMs": 1688.4097089999996,
+            "attempts": [
+              {
+                "elapsedMs": 321.32574999998906,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              },
+              {
+                "elapsedMs": 364.58091699998477,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_a1bb1ad2e9"
+            ],
+            "latencyMs": 1718.2794580000045,
+            "wallTimeMs": 1718.2794580000045,
+            "attempts": [
+              {
+                "elapsedMs": 331.2558330000029,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              },
+              {
+                "elapsedMs": 382.18512499998906,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_b82f7fcc2a"
+            ],
+            "latencyMs": 1698.4692500000237,
+            "wallTimeMs": 1698.4692500000237,
+            "attempts": [
+              {
+                "elapsedMs": 321.8056670000078,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              },
+              {
+                "elapsedMs": 371.7777500000084,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_bb6d2613d4"
+            ],
+            "latencyMs": 1707.4691250000033,
+            "wallTimeMs": 1707.4691250000033,
+            "attempts": [
+              {
+                "elapsedMs": 332.33620900000096,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              },
+              {
+                "elapsedMs": 371.0253329999978,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_fe3ff4b356"
+            ],
+            "latencyMs": 1685.005541999999,
+            "wallTimeMs": 1685.005541999999,
+            "attempts": [
+              {
+                "elapsedMs": 326.17250000001513,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              },
+              {
+                "elapsedMs": 356.11504200001946,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_11bb99b2fa"
+            ],
+            "latencyMs": 1709.2268329999933,
+            "wallTimeMs": 1709.2268329999933,
+            "attempts": [
+              {
+                "elapsedMs": 324.8534579999978,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              },
+              {
+                "elapsedMs": 377.7366670000192,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_e0afb74574"
+            ],
+            "latencyMs": 1700.7665839999972,
+            "wallTimeMs": 1700.7665839999972,
+            "attempts": [
+              {
+                "elapsedMs": 323.98958299998776,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              },
+              {
+                "elapsedMs": 373.7886249999865,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              }
+            ]
+          },
+          {
+            "rowIds": [
+              "row_bdbc045131"
+            ],
+            "latencyMs": 1697.0626660000125,
+            "wallTimeMs": 1697.0626660000125,
+            "attempts": [
+              {
+                "elapsedMs": 325.28391600001487,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              },
+              {
+                "elapsedMs": 366.45604200000525,
+                "error": "server",
+                "response": null,
+                "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+              }
+            ]
+          }
+        ],
+        "loadMs": null,
+        "generationMs": null,
+        "cachedTokens": null,
+        "localComputeCost": null,
+        "latencySource": "live"
+      }
+    },
+    "matching": null,
+    "gate": false,
+    "status": "server unable to load model; quality N/A"
+  }
+}

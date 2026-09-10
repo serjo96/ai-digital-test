@@ -12,6 +12,7 @@ import { metricsFor } from './metrics.js';
 import { readRun } from './benchmark.js';
 import type { RunReport } from './types.js';
 import { AI_PROVIDERS, ProviderRegistry } from './ai/contracts.js';
+import { OllamaAdapter } from './ai/ollama.js';
 import { OpenAiAdapter } from './ai/openai.js';
 import { AiRuntime } from './ai/runtime.js';
 import { readAiConfig } from './ai/config.js';
@@ -19,7 +20,7 @@ import { aiBaseline, selectedTaskRows } from './ai/pipeline.js';
 import { evaluateSemantic, validateSemantic } from './semantic-quality.js';
 
 export interface RunOptions { feed: string; taxonomy: string; labels: string; out: string; runId: string; baseline?: 'b0' | 'b1' | 'b2'; checks?: string;
-  aiConfig?: string; aiMode?: 'live' | 'replay'; aiCache?: string; semanticChecks?: string; aiTask?: 'extraction' | 'matching'; aiCohort?: 'development' | 'full_input' }
+  aiRows?: string[]; aiPairs?: [string, string][]; aiConfig?: string; aiMode?: 'live' | 'replay'; aiCache?: string; semanticChecks?: string; aiTask?: 'extraction' | 'matching'; aiCohort?: 'development' | 'full_input' }
 const baseConfig = { titleNormalization: 'trim+collapse-whitespace+lowercase', dollarCurrency: 'USD', split: 'development' as const };
 export const saveJson = (path: string, value: unknown) => writeFile(path, JSON.stringify(value, null, 2) + '\n', { flag: 'wx' });
 
@@ -48,15 +49,20 @@ export class PipelineService {
       if (selected === 'b2' && (!options.aiMode || !options.aiCache)) throw new Error('B2 requires explicit --ai-mode live|replay and --ai-cache DIR');
       if (selected !== 'b2' && (options.aiConfig || options.aiMode || options.aiCache || options.aiTask || options.aiCohort)) throw new Error('AI options require --baseline b2');
       const ai = selected === 'b2' ? await readAiConfig(options.aiConfig ?? 'config/ai.json') : undefined;
-      const config = { ...baseConfig, baseline: selected, ...(ai ? { ai, aiTask: options.aiTask ?? 'extraction', aiCohort: options.aiCohort ?? 'full_input' } : {}) };
-      const eligible = options.aiCohort === 'development' ? new Set(labels.cases.filter(c => c.split === 'development').flatMap(c => c.rowIds)) : undefined;
+      const config = { ...baseConfig, baseline: selected, ...(ai ? { ai, aiTask: options.aiTask ?? 'extraction', aiCohort: options.aiCohort ?? 'full_input', ...(options.aiRows ? { aiRows: options.aiRows } : {}), ...(options.aiPairs ? { aiPairs: options.aiPairs } : {}) } : {}) };
+      let eligible = options.aiCohort === 'development' ? new Set(labels.cases.filter(c => c.split === 'development').flatMap(c => c.rowIds)) : undefined;
       const checksText = selected !== 'b0' ? await readFile(options.checks ?? 'eval/stage2-checks.json', 'utf8') : null;
       const suite = checksText ? validateQuality(JSON.parse(checksText), labels, hash(feedText)) : null;
       const semanticText = options.semanticChecks || selected === 'b2' ? await readFile(options.semanticChecks ?? 'eval/stage3-checks.json', 'utf8') : null;
       const semanticSuite = semanticText ? validateSemantic(JSON.parse(semanticText), labels, hash(feedText)) : null;
+      if (options.aiRows) {
+        if (!semanticSuite || new Set(options.aiRows).size !== options.aiRows.length || options.aiRows.some(id => !semanticSuite.cases.some(c => c.rowId === id))) throw new Error('explicit AI rows must belong to the frozen semantic cohort');
+        eligible = new Set(options.aiRows);
+      }
+      if (options.aiPairs && options.aiPairs.some(pair => pair.length !== 2 || pair.some(id => !eligible?.has(id)))) throw new Error('matching pairs must belong to explicit cohort');
       if (ai) runtime = new AiRuntime(this.providers, ai, options.aiMode!, options.aiCache!);
       const pipelineStart = performance.now();
-      const result = runtime ? await aiBaseline(rows, runtime, options.aiTask ?? 'extraction', eligible) : selected === 'b1' ? productBaseline(rows) : baseline(rows);
+      const result = runtime ? await aiBaseline(rows, runtime, options.aiTask ?? 'extraction', eligible, options.aiPairs) : selected === 'b1' ? productBaseline(rows) : baseline(rows);
       const pipelineMs = performance.now() - pipelineStart;
       assertAccounting(rows, result);
       const evaluation = evaluate(result, labels);
@@ -120,5 +126,5 @@ export class PipelineService {
 }
 
 @Module({ providers: [PipelineService, { provide: AI_PROVIDERS,
-  useFactory: () => new ProviderRegistry(new Map([['openai', () => new OpenAiAdapter()]])) }] })
+  useFactory: () => new ProviderRegistry(new Map<string, () => import('./ai/contracts.js').AiProvider>([['openai', () => new OpenAiAdapter()], ['ollama', () => new OllamaAdapter()]])) }] })
 export class AppModule {}

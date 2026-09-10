@@ -1,0 +1,41 @@
+[
+  {
+    "rowIds": [
+      "row_11462769c5"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": false,
+        "reason": "absent quote"
+      },
+      "semantic": {
+        "checked": false,
+        "passed": false,
+        "reason": null
+      }
+    },
+    "data": null
+  }
+]

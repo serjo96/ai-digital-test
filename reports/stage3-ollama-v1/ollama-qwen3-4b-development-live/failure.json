@@ -1,0 +1,21 @@
+{
+  "status": "failed",
+  "baseline": "b2",
+  "runId": "ollama-qwen3-4b-development-live",
+  "createdAt": "2026-09-10T09:09:27.239Z",
+  "wallTimeMs": 174664.051417,
+  "api": {
+    "calls": 12,
+    "errors": 10,
+    "retries": 0,
+    "cacheHits": 0,
+    "inputTokens": 11020,
+    "outputTokens": 5405,
+    "tokens": 16425,
+    "cost": null
+  },
+  "mode": "live",
+  "errors": [
+    "Incomplete AI run; inspect report.json and ai.json"
+  ]
+}

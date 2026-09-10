@@ -1,0 +1,21 @@
+{
+  "status": "failed",
+  "baseline": "b2",
+  "runId": "ollama-gemma4-12b-development-live",
+  "createdAt": "2026-09-10T09:09:48.310Z",
+  "wallTimeMs": 20819.918874999974,
+  "api": {
+    "calls": 24,
+    "errors": 24,
+    "retries": 12,
+    "cacheHits": 0,
+    "inputTokens": null,
+    "outputTokens": null,
+    "tokens": null,
+    "cost": null
+  },
+  "mode": "live",
+  "errors": [
+    "Incomplete AI run; inspect report.json and ai.json"
+  ]
+}

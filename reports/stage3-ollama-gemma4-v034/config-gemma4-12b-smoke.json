@@ -1,0 +1,39 @@
+{
+  "version": "B2-config-v1",
+  "extraction": {
+    "provider": "ollama",
+    "model": "gemma4:12b",
+    "identity": {
+      "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+      "serverVersion": "0.34.0"
+    },
+    "temperature": 0,
+    "seed": 42,
+    "context": 8192,
+    "topK": 20,
+    "topP": 0.9,
+    "repeatPenalty": 1,
+    "keepAlive": "5m",
+    "maxOutputTokens": 2048
+  },
+  "matching": {
+    "provider": "ollama",
+    "model": "gemma4:12b",
+    "identity": {
+      "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+      "serverVersion": "0.34.0"
+    },
+    "temperature": 0,
+    "seed": 42,
+    "context": 8192,
+    "topK": 20,
+    "topP": 0.9,
+    "repeatPenalty": 1,
+    "keepAlive": "5m",
+    "maxOutputTokens": 2048,
+    "enabled": true
+  },
+  "timeoutMs": 120000,
+  "maxRetries": 0,
+  "prices": []
+}

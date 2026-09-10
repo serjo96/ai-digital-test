@@ -1,0 +1,57 @@
+{
+  "elapsedMs": 20160.372375000006,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:25:45.574677Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_22e59912ad\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"bluetooth_supported\\\",\\\"value\\\":true,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_22e59912ad\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"fast\\\"} }],\\\"type\\\":{\\\"value\\\":\\\"SSD\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_22e59912ad\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"SSD\\\"}},\\\"category\\\":{\\\"value\\\":\\\"storage\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_22e59912ad\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"SSD\\\"}}, \\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":20053300208,\"load_duration\":18773333,\"prompt_eval_count\":1002,\"prompt_eval_cached_count\":272,\"prompt_eval_duration\":6406310000,\"eval_count\":146,\"eval_duration\":11871520000}",
+    "data": {
+      "rowId": "row_22e59912ad",
+      "facts": [
+        {
+          "attribute": "bluetooth_supported",
+          "value": true,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_22e59912ad",
+            "field": "raw_specs",
+            "quote": "fast"
+          }
+        }
+      ],
+      "type": {
+        "value": "SSD",
+        "evidence": {
+          "rowId": "row_22e59912ad",
+          "field": "raw_title",
+          "quote": "SSD"
+        }
+      },
+      "category": {
+        "value": "storage",
+        "evidence": {
+          "rowId": "row_22e59912ad",
+          "field": "raw_title",
+          "quote": "SSD"
+        }
+      },
+      "unknowns": []
+    },
+    "jsonParsed": true,
+    "model": "gemma4:12b",
+    "requestId": null,
+    "usage": {
+      "inputTokens": 1002,
+      "outputTokens": 146,
+      "cachedInputTokens": 272,
+      "cacheWriteTokens": null
+    },
+    "timings": {
+      "totalMs": 20053.300208,
+      "loadMs": 18.773333,
+      "promptMs": 6406.31,
+      "generationMs": 11871.52
+    }
+  }
+}

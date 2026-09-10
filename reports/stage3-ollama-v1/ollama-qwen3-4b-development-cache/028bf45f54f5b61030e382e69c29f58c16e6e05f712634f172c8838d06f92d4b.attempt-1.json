@@ -1,0 +1,100 @@
+{
+  "elapsedMs": 16415.610291999998,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:09:27.116289Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n  \\\"facts\\\": [\\n    {\\n      \\\"attribute\\\": \\\"bluetooth_supported\\\",\\n      \\\"value\\\": true,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"Bluetooth 5.3\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"wireless_frequency\\\",\\n      \\\"value\\\": 5.3,\\n      \\\"unit\\\": \\\"GHz\\\",\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\\"radio_link\\\"],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"Bluetooth 5.3\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"colour_temperature_count\\\",\\n      \\\"value\\\": 1,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"Black\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"size_count\\\",\\n      \\\"value\\\": 1,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"Black\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"compatible_model\\\",\\n      \\\"value\\\": \\\"AeroBuds Pro\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\\"compatible_device\\\"],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"AeroBuds Pro\\\"\\n      }\\n    }\\n  ]\\n  ,\\n  \\\"type\\\": null,\\n  \\\"category\\\": null\\n  ,\\n  \\\"unknowns\\\": [\\n    \\\"bluetooth_version\\\",\\n    \\\"battery_capacity\\\",\\n    \\\"charging_case\\\",\\n    \\\"warranty\\\"\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":16407940375,\"load_duration\":29019208,\"prompt_eval_count\":1318,\"prompt_eval_duration\":3203134666,\"eval_count\":479,\"eval_duration\":13165223209}",
+    "data": {
+      "rowId": "row_bdbc045131",
+      "facts": [
+        {
+          "attribute": "bluetooth_supported",
+          "value": true,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_bdbc045131",
+            "field": "raw_specs",
+            "quote": "Bluetooth 5.3"
+          }
+        },
+        {
+          "attribute": "wireless_frequency",
+          "value": 5.3,
+          "unit": "GHz",
+          "scope": "product",
+          "conditions": [
+            "radio_link"
+          ],
+          "evidence": {
+            "rowId": "row_bdbc045131",
+            "field": "raw_specs",
+            "quote": "Bluetooth 5.3"
+          }
+        },
+        {
+          "attribute": "colour_temperature_count",
+          "value": 1,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_bdbc045131",
+            "field": "raw_title",
+            "quote": "Black"
+          }
+        },
+        {
+          "attribute": "size_count",
+          "value": 1,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_bdbc045131",
+            "field": "raw_title",
+            "quote": "Black"
+          }
+        },
+        {
+          "attribute": "compatible_model",
+          "value": "AeroBuds Pro",
+          "unit": null,
+          "scope": "product",
+          "conditions": [
+            "compatible_device"
+          ],
+          "evidence": {
+            "rowId": "row_bdbc045131",
+            "field": "raw_title",
+            "quote": "AeroBuds Pro"
+          }
+        }
+      ],
+      "type": null,
+      "category": null,
+      "unknowns": [
+        "bluetooth_version",
+        "battery_capacity",
+        "charging_case",
+        "warranty"
+      ]
+    },
+    "jsonParsed": true,
+    "model": "qwen3:4b",
+    "requestId": null,
+    "usage": {
+      "inputTokens": 1318,
+      "outputTokens": 479,
+      "cachedInputTokens": null,
+      "cacheWriteTokens": null
+    },
+    "timings": {
+      "totalMs": 16407.940375,
+      "loadMs": 29.019208,
+      "promptMs": 3203.134666,
+      "generationMs": 13165.223209
+    }
+  }
+}

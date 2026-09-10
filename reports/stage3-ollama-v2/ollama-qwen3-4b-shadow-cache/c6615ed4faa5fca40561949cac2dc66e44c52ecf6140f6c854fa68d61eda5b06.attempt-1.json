@@ -1,0 +1,44 @@
+{
+  "elapsedMs": 7546.425166000001,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:14:11.796287Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_fe3ff4b356\\\",\\n    \\\"row_bdbc045131\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows describe AeroBuds Pro products with the same core product name and model. The first row specifies replacement ear tips (S/M/L) as a product variant, while the second row describes the True Wireless Earbuds themselves. The key identifier 'AeroBuds Pro' matches across both rows, and the product type (earbuds) is consistent. The difference in specifications (replacement ear tips vs. full earbuds) does not constitute a different product identity but rather a complementary accessory and main product relationship. The shadow recommendation confirms the merge.\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_fe3ff:ff4b356\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro replacement ear tips (S/M/L)\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro True Wireless Earbuds - Black\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":7533590417,\"load_duration\":35725250,\"prompt_eval_count\":279,\"prompt_eval_duration\":292575417,\"eval_count\":272,\"eval_duration\":7190453000}",
+    "data": {
+      "rowIds": [
+        "row_fe3ff4b356",
+        "row_bdbc045131"
+      ],
+      "decision": "merge",
+      "confidence": "high",
+      "reason": "Both rows describe AeroBuds Pro products with the same core product name and model. The first row specifies replacement ear tips (S/M/L) as a product variant, while the second row describes the True Wireless Earbuds themselves. The key identifier 'AeroBuds Pro' matches across both rows, and the product type (earbuds) is consistent. The difference in specifications (replacement ear tips vs. full earbuds) does not constitute a different product identity but rather a complementary accessory and main product relationship. The shadow recommendation confirms the merge.",
+      "evidence": [
+        {
+          "rowId": "row_fe3ff:ff4b356",
+          "field": "raw_title",
+          "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+        },
+        {
+          "rowId": "row_bdbc045131",
+          "field": "raw_title",
+          "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+        }
+      ]
+    },
+    "jsonParsed": true,
+    "model": "qwen3:4b",
+    "requestId": null,
+    "usage": {
+      "inputTokens": 279,
+      "outputTokens": 272,
+      "cachedInputTokens": null,
+      "cacheWriteTokens": null
+    },
+    "timings": {
+      "totalMs": 7533.590417,
+      "loadMs": 35.72525,
+      "promptMs": 292.575417,
+      "generationMs": 7190.453
+    }
+  }
+}

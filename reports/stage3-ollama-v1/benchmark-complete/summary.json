@@ -1,0 +1,97 @@
+{
+  "schema": "metrics-v1",
+  "createdAt": "2026-09-10T09:09:59.189Z",
+  "runs": [
+    {
+      "runId": "B1-control-code",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/stage3-ollama-v1/B1-control-code",
+      "status": "success",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B1-v2",
+      "wallTimeMs": 50.11587500000002,
+      "decisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+      "implementationHash": "c2b2354225011738c4f2491bfb4f8618c17131a66b8c4f86c2a3d17e153220ab"
+    },
+    {
+      "runId": "ollama-qwen3-4b-smoke-live",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/stage3-ollama-v1/ollama-qwen3-4b-smoke-live",
+      "status": "partial",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B2-v1",
+      "wallTimeMs": 37979.766417,
+      "decisionsHash": "f11b1ae259e4965c76af32dfca5e159b012054985406e23b9d81886672df96d3",
+      "implementationHash": "c2b2354225011738c4f2491bfb4f8618c17131a66b8c4f86c2a3d17e153220ab"
+    },
+    {
+      "runId": "ollama-qwen3-4b-smoke-replay",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/stage3-ollama-v1/ollama-qwen3-4b-smoke-replay",
+      "status": "partial",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B2-v1",
+      "wallTimeMs": 147.54595800000243,
+      "decisionsHash": "f11b1ae259e4965c76af32dfca5e159b012054985406e23b9d81886672df96d3",
+      "implementationHash": "c2b2354225011738c4f2491bfb4f8618c17131a66b8c4f86c2a3d17e153220ab"
+    },
+    {
+      "runId": "ollama-qwen3-4b-development-live",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/stage3-ollama-v1/ollama-qwen3-4b-development-live",
+      "status": "partial",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B2-v1",
+      "wallTimeMs": 174655.445375,
+      "decisionsHash": "f3c6919c1d106fbbf4479173ddfa180358721327a21eb69f4e3b17c23c22687e",
+      "implementationHash": "82333fb2b9b232d80de3ed85209108761f316e7238f13f5e6e0700343da89fd9"
+    },
+    {
+      "runId": "ollama-qwen3-4b-development-replay",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/stage3-ollama-v1/ollama-qwen3-4b-development-replay",
+      "status": "partial",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B2-v1",
+      "wallTimeMs": 142.49237499997253,
+      "decisionsHash": "f3c6919c1d106fbbf4479173ddfa180358721327a21eb69f4e3b17c23c22687e",
+      "implementationHash": "82333fb2b9b232d80de3ed85209108761f316e7238f13f5e6e0700343da89fd9"
+    },
+    {
+      "runId": "ollama-gemma4-12b-development-live",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/stage3-ollama-v1/ollama-gemma4-12b-development-live",
+      "status": "partial",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B2-v1",
+      "wallTimeMs": 20815.72433299999,
+      "decisionsHash": "86df543682de86d54030f3f19329f64029c300702824905a04333de8f8de5191",
+      "implementationHash": "82333fb2b9b232d80de3ed85209108761f316e7238f13f5e6e0700343da89fd9"
+    },
+    {
+      "runId": "ollama-gemma4-12b-development-replay",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/stage3-ollama-v1/ollama-gemma4-12b-development-replay",
+      "status": "partial",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B2-v1",
+      "wallTimeMs": 107.57808300000033,
+      "decisionsHash": "86df543682de86d54030f3f19329f64029c300702824905a04333de8f8de5191",
+      "implementationHash": "82333fb2b9b232d80de3ed85209108761f316e7238f13f5e6e0700343da89fd9"
+    },
+    {
+      "runId": "ollama-qwen3-4b-shadow-live",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/stage3-ollama-v1/ollama-qwen3-4b-shadow-live",
+      "status": "partial",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B2-v1",
+      "wallTimeMs": 10430.004041999986,
+      "decisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+      "implementationHash": "82333fb2b9b232d80de3ed85209108761f316e7238f13f5e6e0700343da89fd9"
+    },
+    {
+      "runId": "ollama-qwen3-4b-shadow-replay",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/stage3-ollama-v1/ollama-qwen3-4b-shadow-replay",
+      "status": "partial",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B2-v1",
+      "wallTimeMs": 103.35099999999511,
+      "decisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+      "implementationHash": "82333fb2b9b232d80de3ed85209108761f316e7238f13f5e6e0700343da89fd9"
+    }
+  ],
+  "observations": 736
+}

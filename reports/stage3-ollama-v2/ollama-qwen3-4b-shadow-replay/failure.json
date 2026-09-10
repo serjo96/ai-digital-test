@@ -1,0 +1,21 @@
+{
+  "status": "failed",
+  "baseline": "b2",
+  "runId": "ollama-qwen3-4b-shadow-replay",
+  "createdAt": "2026-09-10T09:14:26.037Z",
+  "wallTimeMs": 101.57833400000527,
+  "api": {
+    "calls": 0,
+    "errors": 0,
+    "retries": 0,
+    "cacheHits": 1,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "tokens": 0,
+    "cost": 0
+  },
+  "mode": "replay",
+  "errors": [
+    "Incomplete AI run; inspect report.json and ai.json"
+  ]
+}

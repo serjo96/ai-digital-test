@@ -1,0 +1,470 @@
+[
+  {
+    "rowIds": [
+      "row_05e5d126cb"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "semantic": {
+        "checked": true,
+        "passed": false,
+        "reason": "unsupported semantic addition"
+      }
+    },
+    "data": null
+  },
+  {
+    "rowIds": [
+      "row_11462769c5"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": false,
+        "reason": "absent quote"
+      },
+      "semantic": {
+        "checked": false,
+        "passed": false,
+        "reason": null
+      }
+    },
+    "data": null
+  },
+  {
+    "rowIds": [
+      "row_22e59912ad"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "semantic": {
+        "checked": true,
+        "passed": false,
+        "reason": "unsupported semantic addition"
+      }
+    },
+    "data": null
+  },
+  {
+    "rowIds": [
+      "row_55a8c9b86d"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": false,
+        "reason": "absent quote"
+      },
+      "semantic": {
+        "checked": false,
+        "passed": false,
+        "reason": null
+      }
+    },
+    "data": null
+  },
+  {
+    "rowIds": [
+      "row_74b8f7797a"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": false,
+        "reason": "absent quote"
+      },
+      "semantic": {
+        "checked": false,
+        "passed": false,
+        "reason": null
+      }
+    },
+    "data": null
+  },
+  {
+    "rowIds": [
+      "row_a1bb1ad2e9"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": false,
+        "reason": "absent quote"
+      },
+      "semantic": {
+        "checked": false,
+        "passed": false,
+        "reason": null
+      }
+    },
+    "data": null
+  },
+  {
+    "rowIds": [
+      "row_b82f7fcc2a"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": false,
+        "reason": "absent quote"
+      },
+      "semantic": {
+        "checked": false,
+        "passed": false,
+        "reason": null
+      }
+    },
+    "data": null
+  },
+  {
+    "rowIds": [
+      "row_bb6d2613d4"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": false,
+        "reason": "absent quote"
+      },
+      "semantic": {
+        "checked": false,
+        "passed": false,
+        "reason": null
+      }
+    },
+    "data": null
+  },
+  {
+    "rowIds": [
+      "row_fe3ff4b356"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": false,
+        "reason": "absent quote"
+      },
+      "semantic": {
+        "checked": false,
+        "passed": false,
+        "reason": null
+      }
+    },
+    "data": null
+  },
+  {
+    "rowIds": [
+      "row_11bb99b2fa"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "semantic": {
+        "checked": true,
+        "passed": false,
+        "reason": "unsupported semantic addition"
+      }
+    },
+    "data": null
+  },
+  {
+    "rowIds": [
+      "row_e0afb74574"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": false,
+        "reason": "timeout"
+      },
+      "completion": {
+        "checked": false,
+        "passed": false,
+        "reason": null
+      },
+      "json": {
+        "checked": false,
+        "passed": false,
+        "reason": null
+      },
+      "schema": {
+        "checked": false,
+        "passed": false,
+        "reason": null
+      },
+      "citations": {
+        "checked": false,
+        "passed": false,
+        "reason": null
+      },
+      "semantic": {
+        "checked": false,
+        "passed": false,
+        "reason": null
+      }
+    },
+    "data": null
+  },
+  {
+    "rowIds": [
+      "row_bdbc045131"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "semantic": {
+        "checked": true,
+        "passed": false,
+        "reason": "unsupported semantic addition"
+      }
+    },
+    "data": null
+  }
+]

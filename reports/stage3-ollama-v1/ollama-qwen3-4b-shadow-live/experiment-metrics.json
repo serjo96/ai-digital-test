@@ -1,0 +1,425 @@
+{
+  "quality": {
+    "jobs": 8,
+    "successful": 0,
+    "unsuccessful": 8,
+    "stages": {
+      "transport": {
+        "checked": 8,
+        "passed": 0,
+        "failed": 8,
+        "unchecked": 0
+      },
+      "completion": {
+        "checked": 0,
+        "passed": 0,
+        "failed": 0,
+        "unchecked": 8
+      },
+      "json": {
+        "checked": 0,
+        "passed": 0,
+        "failed": 0,
+        "unchecked": 8
+      },
+      "schema": {
+        "checked": 0,
+        "passed": 0,
+        "failed": 0,
+        "unchecked": 8
+      },
+      "citations": {
+        "checked": 0,
+        "passed": 0,
+        "failed": 0,
+        "unchecked": 8
+      },
+      "semantic": {
+        "checked": 0,
+        "passed": 0,
+        "failed": 0,
+        "unchecked": 8
+      }
+    },
+    "proposed": {
+      "correct": 0,
+      "unexpected": 0,
+      "missing": 0,
+      "malformed": 0,
+      "duplicate": 0
+    },
+    "accepted": {
+      "status": "provisional",
+      "version": "semantic-checks-v1",
+      "correct": 0,
+      "unexpected": 0,
+      "missing": 11,
+      "precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "recall": {
+        "numerator": 0,
+        "denominator": 11,
+        "value": 0
+      },
+      "types": {
+        "numerator": 12,
+        "denominator": 12,
+        "value": 1
+      },
+      "categories": {
+        "numerator": 12,
+        "denominator": 12,
+        "value": 1
+      },
+      "errors": [
+        {
+          "rowId": "row_11462769c5",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "colour_temperature_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 5
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_55a8c9b86d",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "bluetooth_supported",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": true
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_55a8c9b86d",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "wireless_frequency",
+            "conditions": [
+              "radio_link"
+            ],
+            "scope": "product",
+            "unit": "GHz",
+            "value": 2.4
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_74b8f7797a",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "bluetooth_supported",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": true
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_74b8f7797a",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "wireless_frequency",
+            "conditions": [
+              "radio_link"
+            ],
+            "scope": "product",
+            "unit": "GHz",
+            "value": 2.4
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_a1bb1ad2e9",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "colour_temperature_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 5
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_b82f7fcc2a",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "colour_temperature_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 5
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_bb6d2613d4",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "bluetooth_supported",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": true
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_bb6d2613d4",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "wireless_frequency",
+            "conditions": [
+              "radio_link"
+            ],
+            "scope": "product",
+            "unit": "GHz",
+            "value": 2.4
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_fe3ff4b356",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "size_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 3
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_fe3ff4b356",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "compatible_model",
+            "conditions": [
+              "compatible_device"
+            ],
+            "scope": "product",
+            "unit": null,
+            "value": "AeroBuds Pro"
+          },
+          "actual": null
+        }
+      ]
+    },
+    "rejectedAdditions": 0,
+    "falseCitations": 0,
+    "reasons": [],
+    "unknowns": 0,
+    "review": {
+      "messages": 64,
+      "rows": 64,
+      "aiAffectedRows": 8,
+      "aiMessages": 0,
+      "shadowReview": 0
+    },
+    "recommendations": [],
+    "dangerousMerges": 0,
+    "unconfirmedMerges": 0,
+    "unknownMatching": 0
+  },
+  "performance": {
+    "calls": 16,
+    "retries": 8,
+    "medianMs": 1093.5461670000223,
+    "p95Ms": 2666.6547920000157,
+    "requests": [
+      {
+        "rowIds": [
+          "row_11bb99b2fa",
+          "row_e0afb74574"
+        ],
+        "latencyMs": 2666.6547920000157,
+        "wallTimeMs": 2666.6547920000157,
+        "attempts": [
+          {
+            "elapsedMs": 1588.146166999999,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"invalid JSON schema in format\"}"
+          },
+          {
+            "elapsedMs": 73.67475000000559,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"invalid JSON schema in format\"}"
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_bdbc045131",
+          "row_e0afb74574"
+        ],
+        "latencyMs": 1092.2838750000228,
+        "wallTimeMs": 1092.2838750000228,
+        "attempts": [
+          {
+            "elapsedMs": 39.13454199998523,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"invalid JSON schema in format\"}"
+          },
+          {
+            "elapsedMs": 49.085874999989755,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"invalid JSON schema in format\"}"
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_11bb99b2fa",
+          "row_bdbc045131"
+        ],
+        "latencyMs": 1093.5461670000223,
+        "wallTimeMs": 1093.5461670000223,
+        "attempts": [
+          {
+            "elapsedMs": 32.46441600000253,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"invalid JSON schema in format\"}"
+          },
+          {
+            "elapsedMs": 53.114707999979146,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"invalid JSON schema in format\"}"
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_55a8c9b86d",
+          "row_74b8f7797a"
+        ],
+        "latencyMs": 1090.783625000011,
+        "wallTimeMs": 1090.783625000011,
+        "attempts": [
+          {
+            "elapsedMs": 33.512458999990486,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"invalid JSON schema in format\"}"
+          },
+          {
+            "elapsedMs": 53.894582999986596,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"invalid JSON schema in format\"}"
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_fe3ff4b356",
+          "row_11bb99b2fa"
+        ],
+        "latencyMs": 1096.8061250000028,
+        "wallTimeMs": 1096.8061250000028,
+        "attempts": [
+          {
+            "elapsedMs": 33.36891600000672,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"invalid JSON schema in format\"}"
+          },
+          {
+            "elapsedMs": 59.26000000000931,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"invalid JSON schema in format\"}"
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_fe3ff4b356",
+          "row_bdbc045131"
+        ],
+        "latencyMs": 1093.9812500000116,
+        "wallTimeMs": 1093.9812500000116,
+        "attempts": [
+          {
+            "elapsedMs": 32.944874999986496,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"invalid JSON schema in format\"}"
+          },
+          {
+            "elapsedMs": 57.84941599998274,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"invalid JSON schema in format\"}"
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_fe3ff4b356",
+          "row_e0afb74574"
+        ],
+        "latencyMs": 1091.7258750000037,
+        "wallTimeMs": 1091.7258750000037,
+        "attempts": [
+          {
+            "elapsedMs": 31.573000000003958,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"invalid JSON schema in format\"}"
+          },
+          {
+            "elapsedMs": 57.67041699998663,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"invalid JSON schema in format\"}"
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_b82f7fcc2a",
+          "row_bb6d2613d4"
+        ],
+        "latencyMs": 1098.5220839999965,
+        "wallTimeMs": 1098.5220839999965,
+        "attempts": [
+          {
+            "elapsedMs": 33.915792000014335,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"invalid JSON schema in format\"}"
+          },
+          {
+            "elapsedMs": 61.557124999992084,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"invalid JSON schema in format\"}"
+          }
+        ]
+      }
+    ],
+    "loadMs": null,
+    "generationMs": null,
+    "cachedTokens": null,
+    "localComputeCost": null,
+    "latencySource": "live"
+  }
+}

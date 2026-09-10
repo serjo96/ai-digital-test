@@ -1,0 +1,574 @@
+{
+  "version": "ai-trace-v1",
+  "config": {
+    "version": "B2-config-v1",
+    "extraction": {
+      "provider": "ollama",
+      "model": "qwen3:4b",
+      "identity": {
+        "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+        "serverVersion": "0.9.6"
+      },
+      "temperature": 0,
+      "seed": 42,
+      "context": 8192,
+      "topK": 20,
+      "topP": 0.9,
+      "repeatPenalty": 1,
+      "keepAlive": "5m",
+      "thinking": false,
+      "maxOutputTokens": 2048
+    },
+    "matching": {
+      "provider": "ollama",
+      "model": "qwen3:4b",
+      "identity": {
+        "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+        "serverVersion": "0.9.6"
+      },
+      "temperature": 0,
+      "seed": 42,
+      "context": 8192,
+      "topK": 20,
+      "topP": 0.9,
+      "repeatPenalty": 1,
+      "keepAlive": "5m",
+      "thinking": false,
+      "maxOutputTokens": 2048,
+      "enabled": true
+    },
+    "timeoutMs": 120000,
+    "maxRetries": 1,
+    "prices": []
+  },
+  "records": [
+    {
+      "key": "41548783ff9bc16acea649329fd343125465acfb722e32ff8b65aad501f3cecc",
+      "role": "matching",
+      "rowIds": [
+        "row_11bb99b2fa",
+        "row_e0afb74574"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "qwen3:4b",
+      "mode": "replay",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 2.7684160000062548,
+      "status": "error",
+      "error": "server",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [
+        {
+          "raw": "{\"error\":\"invalid JSON schema in format\"}",
+          "elapsedMs": 1588.146166999999,
+          "error": "server",
+          "response": null
+        },
+        {
+          "raw": "{\"error\":\"invalid JSON schema in format\"}",
+          "elapsedMs": 73.67475000000559,
+          "error": "server",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "server"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "9b24aa56fc1cc7cc42543c3fb385358d8e514ae9a9156b944ff84f669af56a54",
+      "role": "matching",
+      "rowIds": [
+        "row_bdbc045131",
+        "row_e0afb74574"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "qwen3:4b",
+      "mode": "replay",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 4.249500000005355,
+      "status": "error",
+      "error": "server",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [
+        {
+          "raw": "{\"error\":\"invalid JSON schema in format\"}",
+          "elapsedMs": 39.13454199998523,
+          "error": "server",
+          "response": null
+        },
+        {
+          "raw": "{\"error\":\"invalid JSON schema in format\"}",
+          "elapsedMs": 49.085874999989755,
+          "error": "server",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "server"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "9da2c16b8a2493f66a907be0261d6254e15079f5aa310a5ff407cf5fe2e7633f",
+      "role": "matching",
+      "rowIds": [
+        "row_11bb99b2fa",
+        "row_bdbc045131"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "qwen3:4b",
+      "mode": "replay",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.5197920000064187,
+      "status": "error",
+      "error": "server",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [
+        {
+          "raw": "{\"error\":\"invalid JSON schema in format\"}",
+          "elapsedMs": 32.46441600000253,
+          "error": "server",
+          "response": null
+        },
+        {
+          "raw": "{\"error\":\"invalid JSON schema in format\"}",
+          "elapsedMs": 53.114707999979146,
+          "error": "server",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "server"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "a328ed3fb161dae10371f054474e64e666d723cddd78c7d0c17bddf90f506c60",
+      "role": "matching",
+      "rowIds": [
+        "row_55a8c9b86d",
+        "row_74b8f7797a"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "qwen3:4b",
+      "mode": "replay",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.8972080000094138,
+      "status": "error",
+      "error": "server",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [
+        {
+          "raw": "{\"error\":\"invalid JSON schema in format\"}",
+          "elapsedMs": 33.512458999990486,
+          "error": "server",
+          "response": null
+        },
+        {
+          "raw": "{\"error\":\"invalid JSON schema in format\"}",
+          "elapsedMs": 53.894582999986596,
+          "error": "server",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "server"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "1ea3017dc16f72a1000f450b51464d6ce62d42474fe653081264290940134d6b",
+      "role": "matching",
+      "rowIds": [
+        "row_fe3ff4b356",
+        "row_11bb99b2fa"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "qwen3:4b",
+      "mode": "replay",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.986124999995809,
+      "status": "error",
+      "error": "server",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [
+        {
+          "raw": "{\"error\":\"invalid JSON schema in format\"}",
+          "elapsedMs": 33.36891600000672,
+          "error": "server",
+          "response": null
+        },
+        {
+          "raw": "{\"error\":\"invalid JSON schema in format\"}",
+          "elapsedMs": 59.26000000000931,
+          "error": "server",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "server"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "3bb4a0b985466e35fcbf6fc566172979f026b2c73c40a038a8880d38e1468178",
+      "role": "matching",
+      "rowIds": [
+        "row_fe3ff4b356",
+        "row_bdbc045131"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "qwen3:4b",
+      "mode": "replay",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.5047499999927823,
+      "status": "error",
+      "error": "server",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [
+        {
+          "raw": "{\"error\":\"invalid JSON schema in format\"}",
+          "elapsedMs": 32.944874999986496,
+          "error": "server",
+          "response": null
+        },
+        {
+          "raw": "{\"error\":\"invalid JSON schema in format\"}",
+          "elapsedMs": 57.84941599998274,
+          "error": "server",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "server"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "52f0b5512dcd48cd9351d40818b60b859cfab5767779d9f0e22e60409bf4171a",
+      "role": "matching",
+      "rowIds": [
+        "row_fe3ff4b356",
+        "row_e0afb74574"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "qwen3:4b",
+      "mode": "replay",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.7750830000150017,
+      "status": "error",
+      "error": "server",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [
+        {
+          "raw": "{\"error\":\"invalid JSON schema in format\"}",
+          "elapsedMs": 31.573000000003958,
+          "error": "server",
+          "response": null
+        },
+        {
+          "raw": "{\"error\":\"invalid JSON schema in format\"}",
+          "elapsedMs": 57.67041699998663,
+          "error": "server",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "server"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "7e0fd6e70f0559e2cd2b92a5a07cc0fbea912988a82441c3f4af8a9004f1157b",
+      "role": "matching",
+      "rowIds": [
+        "row_b82f7fcc2a",
+        "row_bb6d2613d4"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "qwen3:4b",
+      "mode": "replay",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.6484590000181925,
+      "status": "error",
+      "error": "server",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [
+        {
+          "raw": "{\"error\":\"invalid JSON schema in format\"}",
+          "elapsedMs": 33.915792000014335,
+          "error": "server",
+          "response": null
+        },
+        {
+          "raw": "{\"error\":\"invalid JSON schema in format\"}",
+          "elapsedMs": 61.557124999992084,
+          "error": "server",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "server"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    }
+  ]
+}

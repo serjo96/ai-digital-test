@@ -1,0 +1,208 @@
+{
+  "quality": {
+    "jobs": 1,
+    "successful": 0,
+    "unsuccessful": 1,
+    "stages": {
+      "transport": {
+        "checked": 1,
+        "passed": 1,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "completion": {
+        "checked": 1,
+        "passed": 1,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "json": {
+        "checked": 1,
+        "passed": 1,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "schema": {
+        "checked": 1,
+        "passed": 1,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "citations": {
+        "checked": 1,
+        "passed": 0,
+        "failed": 1,
+        "unchecked": 0
+      },
+      "semantic": {
+        "checked": 0,
+        "passed": 0,
+        "failed": 0,
+        "unchecked": 1
+      }
+    },
+    "proposed": {
+      "correct": 1,
+      "unexpected": 0,
+      "missing": 0,
+      "malformed": 0,
+      "duplicate": 0
+    },
+    "accepted": {
+      "status": "provisional",
+      "version": "semantic-checks-v1",
+      "correct": 0,
+      "unexpected": 0,
+      "missing": 1,
+      "precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "recall": {
+        "numerator": 0,
+        "denominator": 1,
+        "value": 0
+      },
+      "types": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1
+      },
+      "categories": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1
+      },
+      "errors": [
+        {
+          "rowId": "row_11462769c5",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "colour_temperature_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 5
+          },
+          "actual": null
+        }
+      ]
+    },
+    "rejectedAdditions": 1,
+    "falseCitations": 3,
+    "reasons": [
+      {
+        "rowId": "row_11462769c5",
+        "kind": "addition",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_11462769c5",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_11462769c5",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_11462769c5",
+        "kind": "citation",
+        "reason": "absent quote"
+      }
+    ],
+    "unknowns": 0,
+    "review": {
+      "messages": 65,
+      "rows": 64,
+      "aiAffectedRows": 1,
+      "aiMessages": 1,
+      "shadowReview": 0
+    },
+    "recommendations": [],
+    "dangerousMerges": 0,
+    "unconfirmedMerges": 0,
+    "unknownMatching": 0
+  },
+  "performance": {
+    "calls": 0,
+    "retries": 0,
+    "medianMs": 17012.313457999997,
+    "p95Ms": 17012.313457999997,
+    "requests": [
+      {
+        "rowIds": [
+          "row_11462769c5"
+        ],
+        "latencyMs": 17012.313457999997,
+        "wallTimeMs": 2.6059170000007725,
+        "attempts": [
+          {
+            "elapsedMs": 17012.313457999997,
+            "error": null,
+            "response": {
+              "status": "completed",
+              "data": {
+                "rowId": "row_11462769c5",
+                "facts": [
+                  {
+                    "attribute": "colour_temperature_count",
+                    "value": 5,
+                    "unit": null,
+                    "scope": "product",
+                    "conditions": [],
+                    "evidence": {
+                      "rowId": "row_11462769c5",
+                      "field": "raw_specs",
+                      "quote": " 5 colour temps\",\"start\":4,"
+                    }
+                  }
+                ],
+                "type": {
+                  "value": "lamp",
+                  "evidence": {
+                    "rowId": "row_11462769c5",
+                    "field": "raw_title",
+                    "quote": "lamp\",\"start\":11,"
+                  }
+                },
+                "category": {
+                  "value": "home_kitchen",
+                  "evidence": {
+                    "rowId": "row_11462769c5",
+                    "field": "raw_title",
+                    "quote": "lamp\",\"start\":11,"
+                  }
+                },
+                "unknowns": []
+              },
+              "model": "gemma4:12b",
+              "requestId": null,
+              "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:24:53.290041Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_11462769c5\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"colour_temperature_count\\\",\\\"value\\\":5,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11462769c5\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\" 5 colour temps\\\\\\\",\\\\\\\"start\\\\\\\":4,\\\"} }],\\\"type\\\":{\\\"value\\\":\\\"lamp\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11462769c5\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"lamp\\\\\\\",\\\\\\\"start\\\\\\\":11,\\\"}},\\\"category\\\":{\\\"value\\\":\\\"home_kitchen\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11462769c5\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"lamp\\\\\\\",\\\\\\\"start\\\\\\\":11,\\\"}}, \\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":16977700625,\"load_duration\":31687833,\"prompt_eval_count\":785,\"prompt_eval_cached_count\":780,\"prompt_eval_duration\":2824700000,\"eval_count\":173,\"eval_duration\":13855047000}",
+              "jsonParsed": true,
+              "timings": {
+                "totalMs": 16977.700625,
+                "loadMs": 31.687833,
+                "promptMs": 2824.7,
+                "generationMs": 13855.047
+              },
+              "usage": {
+                "inputTokens": 785,
+                "outputTokens": 173,
+                "cachedInputTokens": 780,
+                "cacheWriteTokens": null
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "loadMs": 31.687833,
+    "generationMs": 13855.047,
+    "cachedTokens": null,
+    "localComputeCost": null,
+    "latencySource": "original-live-attempts"
+  }
+}

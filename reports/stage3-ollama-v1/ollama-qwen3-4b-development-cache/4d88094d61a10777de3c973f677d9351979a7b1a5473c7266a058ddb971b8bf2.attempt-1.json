@@ -1,0 +1,101 @@
+{
+  "elapsedMs": 17089.046834000008,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:08:54.203383Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n  \\\"facts\\\": [\\n    {\\n      \\\"attribute\\\": \\\"bluetooth_supported\\\",\\n      \\\"value\\\": true,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"BT 5.3\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"wireless_frequency\\\",\\n      \\\"value\\\": 2.4,\\n      \\\"unit\\\": \\\"GHz\\\",\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\\"radio_link\\\"],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"BT 5.3\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"colour_temperature_count\\\",\\n      \\\"value\\\": 1,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"black\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"size_count\\\",\\n      \\\"value\\\": 1,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"black\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"compatible_model\\\",\\n      \\\"value\\\": \\\"aerobuds pro\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\\"compatible_device\\\"],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"Aerobuds PRO earbud\\\"\\n      }\\n    }\\n  ]\\n  ,\\n  \\\"type\\\": null,\\n  \\\"category\\\": null\\n  ,\\n  \\\"unknowns\\\": [\\n    \\\"bluetooth_supported\\\",\\n    \\\"wireless_frequency\\\",\\n    \\\"colour_temperature_count\\\",\\n    \\\"size_count\\\",\\n    \\\"compatible_model\\\"\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":17054790625,\"load_duration\":136202083,\"prompt_eval_count\":1347,\"prompt_eval_duration\":3304647959,\"eval_count\":494,\"eval_duration\":13601813333}",
+    "data": {
+      "rowId": "row_11bb99b2fa",
+      "facts": [
+        {
+          "attribute": "bluetooth_supported",
+          "value": true,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_11bb99b2fa",
+            "field": "raw_specs",
+            "quote": "BT 5.3"
+          }
+        },
+        {
+          "attribute": "wireless_frequency",
+          "value": 2.4,
+          "unit": "GHz",
+          "scope": "product",
+          "conditions": [
+            "radio_link"
+          ],
+          "evidence": {
+            "rowId": "row_11bb99b2fa",
+            "field": "raw_specs",
+            "quote": "BT 5.3"
+          }
+        },
+        {
+          "attribute": "colour_temperature_count",
+          "value": 1,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_11bb99b2fa",
+            "field": "raw_title",
+            "quote": "black"
+          }
+        },
+        {
+          "attribute": "size_count",
+          "value": 1,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_11bb99b2fa",
+            "field": "raw_title",
+            "quote": "black"
+          }
+        },
+        {
+          "attribute": "compatible_model",
+          "value": "aerobuds pro",
+          "unit": null,
+          "scope": "product",
+          "conditions": [
+            "compatible_device"
+          ],
+          "evidence": {
+            "rowId": "row_11bb99b2fa",
+            "field": "raw_title",
+            "quote": "Aerobuds PRO earbud"
+          }
+        }
+      ],
+      "type": null,
+      "category": null,
+      "unknowns": [
+        "bluetooth_supported",
+        "wireless_frequency",
+        "colour_temperature_count",
+        "size_count",
+        "compatible_model"
+      ]
+    },
+    "jsonParsed": true,
+    "model": "qwen3:4b",
+    "requestId": null,
+    "usage": {
+      "inputTokens": 1347,
+      "outputTokens": 494,
+      "cachedInputTokens": null,
+      "cacheWriteTokens": null
+    },
+    "timings": {
+      "totalMs": 17054.790625,
+      "loadMs": 136.202083,
+      "promptMs": 3304.647959,
+      "generationMs": 13601.813333
+    }
+  }
+}

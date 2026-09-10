@@ -1,0 +1,1183 @@
+{
+  "schemaVersion": "3",
+  "rulesVersion": "B2-v1",
+  "runId": "ollama-gemma4-12b-development-replay",
+  "createdAt": "2026-09-10T12:48:56.675Z",
+  "status": "partial",
+  "mode": "replay",
+  "code": {
+    "commit": "61d740c9bcea3fc037145f1111b07c731e227f44",
+    "dirty": true,
+    "implementationHash": "140d0bfa2e4d9ec3c95ea4a15e8a6857144aac575fe72e1c36d70745595aec5f"
+  },
+  "config": {
+    "titleNormalization": "trim+collapse-whitespace+lowercase",
+    "dollarCurrency": "USD",
+    "split": "development",
+    "baseline": "b2",
+    "ai": {
+      "version": "B2-config-v1",
+      "extraction": {
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "identity": {
+          "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+          "serverVersion": "0.9.6"
+        },
+        "temperature": 0,
+        "seed": 42,
+        "context": 8192,
+        "topK": 20,
+        "topP": 0.9,
+        "repeatPenalty": 1,
+        "keepAlive": "5m",
+        "maxOutputTokens": 2048
+      },
+      "matching": {
+        "provider": "ollama",
+        "model": "gemma4:12b",
+        "identity": {
+          "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+          "serverVersion": "0.9.6"
+        },
+        "temperature": 0,
+        "seed": 42,
+        "context": 8192,
+        "topK": 20,
+        "topP": 0.9,
+        "repeatPenalty": 1,
+        "keepAlive": "5m",
+        "maxOutputTokens": 2048,
+        "enabled": true
+      },
+      "timeoutMs": 120000,
+      "maxRetries": 1,
+      "prices": []
+    },
+    "aiTask": "extraction",
+    "aiCohort": "development",
+    "aiRows": [
+      "row_05e5d126cb",
+      "row_11462769c5",
+      "row_22e59912ad",
+      "row_55a8c9b86d",
+      "row_74b8f7797a",
+      "row_a1bb1ad2e9",
+      "row_b82f7fcc2a",
+      "row_bb6d2613d4",
+      "row_fe3ff4b356",
+      "row_11bb99b2fa",
+      "row_e0afb74574",
+      "row_bdbc045131"
+    ]
+  },
+  "hashes": {
+    "feed": "6b6ebc7a54ab90abae315abf5b145b22d9ef11d2c673f8feeeb245ee2808d6b6",
+    "taxonomy": "f5bff72b7e07c270a3acd6dcc3c3d0ef8e6237710f270de1874ebcebe9ae70aa",
+    "labels": "74a194210658f908dcee23f4d000d27b345f242bba9c583e808a1383b9665989",
+    "config": "2e3c24170ead254952449acd4e6c00436bc280d44e4e61ea964a025081c130a3",
+    "checks": "3b1f1003325b434e024376f3e4901f11ad8d925878b5957508bbad8789bb20ca",
+    "semanticChecks": "b926db5a80acf0c0888816388e24fd7064e89fe76272bd1605e5be6bd6b81b61"
+  },
+  "audit": {
+    "inputRows": 220,
+    "accountedRows": 220,
+    "lostRows": 0,
+    "duplicateAssignments": 0,
+    "suppliers": 5,
+    "taxonomySize": 12,
+    "emptySpecs": 23,
+    "emptyTitles": 1,
+    "emptyPrices": 2,
+    "normalizedTitles": 169,
+    "nonProducts": 4,
+    "reviewRows": 64,
+    "groups": 156,
+    "groupedRows": 216,
+    "repeatedGroups": 56,
+    "priceStatuses": {
+      "parsed": 217,
+      "unknown_currency": 1,
+      "missing": 2
+    }
+  },
+  "checks": {
+    "status": "provisional",
+    "version": "stage2-dev-v1",
+    "categories": {
+      "numerator": 18,
+      "denominator": 18,
+      "value": 1
+    },
+    "facts": {
+      "numerator": 30,
+      "denominator": 30,
+      "value": 1
+    },
+    "reconciliation": {
+      "numerator": 4,
+      "denominator": 4,
+      "value": 1
+    },
+    "errors": []
+  },
+  "semanticChecks": {
+    "status": "provisional",
+    "version": "semantic-checks-v1",
+    "correct": 0,
+    "unexpected": 0,
+    "missing": 11,
+    "precision": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null
+    },
+    "recall": {
+      "numerator": 0,
+      "denominator": 11,
+      "value": 0
+    },
+    "types": {
+      "numerator": 12,
+      "denominator": 12,
+      "value": 1
+    },
+    "categories": {
+      "numerator": 12,
+      "denominator": 12,
+      "value": 1
+    },
+    "errors": [
+      {
+        "rowId": "row_11462769c5",
+        "kind": "missed_addition",
+        "expected": {
+          "attribute": "colour_temperature_count",
+          "conditions": [],
+          "scope": "product",
+          "unit": null,
+          "value": 5
+        },
+        "actual": null
+      },
+      {
+        "rowId": "row_55a8c9b86d",
+        "kind": "missed_addition",
+        "expected": {
+          "attribute": "bluetooth_supported",
+          "conditions": [],
+          "scope": "product",
+          "unit": null,
+          "value": true
+        },
+        "actual": null
+      },
+      {
+        "rowId": "row_55a8c9b86d",
+        "kind": "missed_addition",
+        "expected": {
+          "attribute": "wireless_frequency",
+          "conditions": [
+            "radio_link"
+          ],
+          "scope": "product",
+          "unit": "GHz",
+          "value": 2.4
+        },
+        "actual": null
+      },
+      {
+        "rowId": "row_74b8f7797a",
+        "kind": "missed_addition",
+        "expected": {
+          "attribute": "bluetooth_supported",
+          "conditions": [],
+          "scope": "product",
+          "unit": null,
+          "value": true
+        },
+        "actual": null
+      },
+      {
+        "rowId": "row_74b8f7797a",
+        "kind": "missed_addition",
+        "expected": {
+          "attribute": "wireless_frequency",
+          "conditions": [
+            "radio_link"
+          ],
+          "scope": "product",
+          "unit": "GHz",
+          "value": 2.4
+        },
+        "actual": null
+      },
+      {
+        "rowId": "row_a1bb1ad2e9",
+        "kind": "missed_addition",
+        "expected": {
+          "attribute": "colour_temperature_count",
+          "conditions": [],
+          "scope": "product",
+          "unit": null,
+          "value": 5
+        },
+        "actual": null
+      },
+      {
+        "rowId": "row_b82f7fcc2a",
+        "kind": "missed_addition",
+        "expected": {
+          "attribute": "colour_temperature_count",
+          "conditions": [],
+          "scope": "product",
+          "unit": null,
+          "value": 5
+        },
+        "actual": null
+      },
+      {
+        "rowId": "row_bb6d2613d4",
+        "kind": "missed_addition",
+        "expected": {
+          "attribute": "bluetooth_supported",
+          "conditions": [],
+          "scope": "product",
+          "unit": null,
+          "value": true
+        },
+        "actual": null
+      },
+      {
+        "rowId": "row_bb6d2613d4",
+        "kind": "missed_addition",
+        "expected": {
+          "attribute": "wireless_frequency",
+          "conditions": [
+            "radio_link"
+          ],
+          "scope": "product",
+          "unit": "GHz",
+          "value": 2.4
+        },
+        "actual": null
+      },
+      {
+        "rowId": "row_fe3ff4b356",
+        "kind": "missed_addition",
+        "expected": {
+          "attribute": "size_count",
+          "conditions": [],
+          "scope": "product",
+          "unit": null,
+          "value": 3
+        },
+        "actual": null
+      },
+      {
+        "rowId": "row_fe3ff4b356",
+        "kind": "missed_addition",
+        "expected": {
+          "attribute": "compatible_model",
+          "conditions": [
+            "compatible_device"
+          ],
+          "scope": "product",
+          "unit": null,
+          "value": "AeroBuds Pro"
+        },
+        "actual": null
+      }
+    ]
+  },
+  "ai": {
+    "targetRows": 12,
+    "jobs": 12,
+    "failedJobs": 12,
+    "origin": "real",
+    "requestHashes": [
+      "30d4e2d3d7e4b3379335c9e683406627b04e76c33ce97a015ec728402bc7a7a1",
+      "2264115595785d0c9b3170d234804b1ad10dedd4e83f2f602c2db649b36d458e",
+      "c973103443b9faeae36c83c550848cfc237a6d82fa418b077322d5545207c572",
+      "1941198a1541d42eade9d06b8a0bf6e40ca6f197009f94c0e87ff8b26b002b17",
+      "9865bdc15f8ead8d41c36fc14edaffc946fb049e24626f5a5ace3e669c73ed4f",
+      "0ee3506f83a0804d0824aa7b0fd5990efd90a785f76849e393c53dfb1916fcf0",
+      "0ed13dc50eb7267e7e85161f487c1d0c4176106fffe84dc808e33026509ee66d",
+      "5981d3ab988df6edf1def883ba28bc7c8f8a7abc16fc4ca71c0cf40a40357f29",
+      "b906e8978e158ea31984ce98b26afffb7bfaaecb16db0d1fdc746d0a9289b948",
+      "f35a881939c4fee67057752c7a485a7be5c46a36e248329aead23f987b3e7b7c",
+      "5bc17e9f0d7543100ed3cb07861126bce1bb360b5e96bbe4a08ad6c491aeb423",
+      "2d0d590e5ead6cb83ac8d1d4327405bc8fd310b87463c3267c1877a15bb4e319"
+    ]
+  },
+  "timing": {
+    "protocol": "cli-through-result-v1",
+    "node": "v24.14.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "pipelineMs": 54.13158400000009
+  },
+  "evaluation": {
+    "split": "development",
+    "status": "provisional",
+    "caseCount": 14,
+    "evaluatedRows": 59,
+    "tp": 17,
+    "fp": 0,
+    "fn": 0,
+    "precision": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1
+    },
+    "recall": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1
+    },
+    "unknownPairs": 2,
+    "unevaluatedPairs": [],
+    "errors": [],
+    "nonProducts": {
+      "correct": 59,
+      "checked": 59,
+      "errors": []
+    }
+  },
+  "generation": null,
+  "verifier": null,
+  "api": {
+    "calls": 0,
+    "errors": 0,
+    "retries": 0,
+    "cacheHits": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "tokens": 0,
+    "cost": 0
+  },
+  "wallTimeMs": 103.98599999999999,
+  "decisionsHash": "86df543682de86d54030f3f19329f64029c300702824905a04333de8f8de5191",
+  "metrics": [
+    {
+      "name": "accounting.coverage",
+      "numerator": 220,
+      "denominator": 220,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "accounting.duplicate_assignments",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "accounting.lost_rows",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.failed_jobs",
+      "value": 12,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.target_rows",
+      "value": 12,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "api.cache_hits",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "api.calls",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "api.cost",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "USD",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "api.errors",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "api.input_tokens",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "api.output_tokens",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "api.retries",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "api.tokens",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "categories.check_accuracy",
+      "numerator": 18,
+      "denominator": 18,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "errors.execution",
+      "value": 1,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "errors.matching",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "errors.non_product",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "errors.quality_checks",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "facts.accepted_attributes",
+      "value": 392,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "facts.check_accuracy",
+      "numerator": 30,
+      "denominator": 30,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "facts.conflicts",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "facts.extracted",
+      "value": 545,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "facts.incomparable",
+      "value": 1,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "facts.unparsed_fragments",
+      "value": 43,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "generation.quality",
+      "numerator": null,
+      "denominator": null,
+      "value": null,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "not_implemented"
+    },
+    {
+      "name": "input.rows",
+      "value": 220,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.candidate_recall",
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.false_merge",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.hard_negative_false_merges",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.hard_negative_specificity",
+      "numerator": 170,
+      "denominator": 170,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.missed_pair",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.negative_specificity",
+      "numerator": 1692,
+      "denominator": 1692,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.precision",
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.recall",
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.true_negative",
+      "value": 1692,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.true_positive",
+      "value": 17,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.unevaluated_attached_pairs",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.unknown_pairs",
+      "value": 2,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "non_product.accuracy",
+      "numerator": 59,
+      "denominator": 59,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "non_product.false_rejection",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "non_product.missed_trash",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "non_product.precision",
+      "numerator": 4,
+      "denominator": 4,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "non_product.recall",
+      "numerator": 4,
+      "denominator": 4,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "non_product.rejected_rows",
+      "value": 4,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "non_product.true_negative",
+      "value": 55,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "non_product.true_positive",
+      "value": 4,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "non_product.valid_product_retention",
+      "numerator": 55,
+      "denominator": 55,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "products.count",
+      "value": 156,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "reconciliation.check_accuracy",
+      "numerator": 4,
+      "denominator": 4,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "review.category_items",
+      "value": 2,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.conflict_items",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.extraction_items",
+      "value": 38,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.identity_items",
+      "value": 2,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.incomparable_items",
+      "value": 1,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.items",
+      "value": 76,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.missing_specs_items",
+      "value": 21,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.product_rate",
+      "numerator": 51,
+      "denominator": 156,
+      "value": 0.3269230769230769,
+      "unit": "ratio",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.products",
+      "value": 51,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.ai_error:server.items",
+      "value": 12,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.ai_error:server.rows",
+      "value": 12,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.fact_incomparable:power.items",
+      "value": 1,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.fact_incomparable:power.rows",
+      "value": 2,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.identity:incomplete_type_or_variant.items",
+      "value": 2,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.identity:incomplete_type_or_variant.rows",
+      "value": 3,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.missing_specs.items",
+      "value": 21,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.missing_specs.rows",
+      "value": 21,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.uncertain_category.items",
+      "value": 2,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.uncertain_category.rows",
+      "value": 2,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.unparsed_specs.items",
+      "value": 38,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.unparsed_specs.rows",
+      "value": 38,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.row_rate",
+      "numerator": 64,
+      "denominator": 220,
+      "value": 0.2909090909090909,
+      "unit": "ratio",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.rows",
+      "value": 64,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "semantic.categories",
+      "numerator": 12,
+      "denominator": 12,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "semantic.correct_additions",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "semantic.missed_additions",
+      "value": 11,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "semantic.precision",
+      "numerator": 0,
+      "denominator": 0,
+      "value": null,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "no_denominator"
+    },
+    {
+      "name": "semantic.recall",
+      "numerator": 0,
+      "denominator": 11,
+      "value": 0,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "semantic.types",
+      "numerator": 12,
+      "denominator": 12,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "semantic.unexpected_additions",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "timing.pipeline",
+      "value": 54.13158400000009,
+      "numerator": null,
+      "denominator": null,
+      "unit": "ms",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "timing.wall",
+      "value": 103.98599999999999,
+      "numerator": null,
+      "denominator": null,
+      "unit": "ms",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "verifier.quality",
+      "numerator": null,
+      "denominator": null,
+      "value": null,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "not_implemented"
+    }
+  ]
+}

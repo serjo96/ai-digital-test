@@ -95,7 +95,7 @@ test('shared runtime replays exact validated fixtures offline and invalidates in
   assert.equal(await new AiRuntime(registry(endpoint), conf, 'replay', dir).execute('openai', 'extraction', ['r'], request(), x => x), null);
   assert.equal(another.calls + endpoint.calls, 0);
   assert.equal(await live.execute('openai', 'extraction', ['r'], request(), x => x), null); assert.equal(p.calls, 1);
-  const file = join(dir, (await readdir(dir))[0]!); const cache = JSON.parse(await readFile(file, 'utf8')); cache.response.data = { changed: true };
+  const file = join(dir, (await readdir(dir)).find(f => !f.includes('.attempt-'))!); const cache = JSON.parse(await readFile(file, 'utf8')); cache.response.data = { changed: true };
   await writeFile(file, JSON.stringify(cache));
   assert.equal(await replay.execute('openai', 'extraction', ['r'], request(), x => x), null); assert.equal(p.calls, 1);
 }));
@@ -161,12 +161,12 @@ test('Astra matching is opt-in advisory and cannot authorize unknown variants or
   const p = new FixtureProvider('openai', 'fixture://matching', async r => {
     if (r.schemaName === 'semantic_extraction_v1') return response(empty((r.input as { row: { rowId: string } }).row.rowId));
     models.push(r.model); const data = r.input as { rows: { rowId: string; raw_title: string }[] };
-    return response({ rowIds: data.rows.map(x => x.rowId), decision: 'merge', evidence: data.rows.map(x => ({ rowId: x.rowId, field: 'raw_title', quote: x.raw_title })) });
+    return response({ rowIds: data.rows.map(x => x.rowId), decision: 'merge', confidence: 'high', reason: 'fixture', evidence: data.rows.map(x => ({ rowId: x.rowId, field: 'raw_title', quote: x.raw_title })) });
   });
   const conf = await config(); conf.matching.enabled = true;
   const result = await aiBaseline(rows, new AiRuntime(registry(p), conf, 'live', dir), 'matching');
   assert.equal(result.groups.length, 3); assert.equal(models.length, 2); assert.ok(models.every(m => m === 'gpt-6-astra'));
-  assert.ok(result.review.some(r => r.reason === 'identity:ai_advisory_merge'));
+  assert.deepEqual(result, productBaseline(rows));
 }));
 
 test('new semantic cohort excludes holdout and reports unexpected/absent additions and identity errors', () => {

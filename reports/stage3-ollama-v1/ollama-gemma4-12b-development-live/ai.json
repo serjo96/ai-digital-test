@@ -1,0 +1,860 @@
+{
+  "version": "ai-trace-v1",
+  "config": {
+    "version": "B2-config-v1",
+    "extraction": {
+      "provider": "ollama",
+      "model": "gemma4:12b",
+      "identity": {
+        "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+        "serverVersion": "0.9.6"
+      },
+      "temperature": 0,
+      "seed": 42,
+      "context": 8192,
+      "topK": 20,
+      "topP": 0.9,
+      "repeatPenalty": 1,
+      "keepAlive": "5m",
+      "maxOutputTokens": 2048
+    },
+    "matching": {
+      "provider": "ollama",
+      "model": "gemma4:12b",
+      "identity": {
+        "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+        "serverVersion": "0.9.6"
+      },
+      "temperature": 0,
+      "seed": 42,
+      "context": 8192,
+      "topK": 20,
+      "topP": 0.9,
+      "repeatPenalty": 1,
+      "keepAlive": "5m",
+      "maxOutputTokens": 2048,
+      "enabled": true
+    },
+    "timeoutMs": 120000,
+    "maxRetries": 1,
+    "prices": []
+  },
+  "records": [
+    {
+      "key": "30d4e2d3d7e4b3379335c9e683406627b04e76c33ce97a015ec728402bc7a7a1",
+      "role": "extraction",
+      "rowIds": [
+        "row_05e5d126cb"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 2,
+      "errors": 2,
+      "elapsedMs": 1968.9145410000056,
+      "status": "error",
+      "error": "server",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 581.9061250000086,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        },
+        {
+          "elapsedMs": 380.92108400000143,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "server"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "2264115595785d0c9b3170d234804b1ad10dedd4e83f2f602c2db649b36d458e",
+      "role": "extraction",
+      "rowIds": [
+        "row_11462769c5"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 2,
+      "errors": 2,
+      "elapsedMs": 1704.333500000008,
+      "status": "error",
+      "error": "server",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 331.42204100001254,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        },
+        {
+          "elapsedMs": 370.19879200001014,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "server"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "c973103443b9faeae36c83c550848cfc237a6d82fa418b077322d5545207c572",
+      "role": "extraction",
+      "rowIds": [
+        "row_22e59912ad"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 2,
+      "errors": 2,
+      "elapsedMs": 1701.0421250000072,
+      "status": "error",
+      "error": "server",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 325.31400000001304,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        },
+        {
+          "elapsedMs": 372.06741700001294,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "server"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "1941198a1541d42eade9d06b8a0bf6e40ca6f197009f94c0e87ff8b26b002b17",
+      "role": "extraction",
+      "rowIds": [
+        "row_55a8c9b86d"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 2,
+      "errors": 2,
+      "elapsedMs": 1701.9695000000065,
+      "status": "error",
+      "error": "server",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 329.00533300000825,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        },
+        {
+          "elapsedMs": 369.1077090000035,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "server"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "9865bdc15f8ead8d41c36fc14edaffc946fb049e24626f5a5ace3e669c73ed4f",
+      "role": "extraction",
+      "rowIds": [
+        "row_74b8f7797a"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 2,
+      "errors": 2,
+      "elapsedMs": 1688.4097089999996,
+      "status": "error",
+      "error": "server",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 321.32574999998906,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        },
+        {
+          "elapsedMs": 364.58091699998477,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "server"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "0ee3506f83a0804d0824aa7b0fd5990efd90a785f76849e393c53dfb1916fcf0",
+      "role": "extraction",
+      "rowIds": [
+        "row_a1bb1ad2e9"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 2,
+      "errors": 2,
+      "elapsedMs": 1718.2794580000045,
+      "status": "error",
+      "error": "server",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 331.2558330000029,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        },
+        {
+          "elapsedMs": 382.18512499998906,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "server"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "0ed13dc50eb7267e7e85161f487c1d0c4176106fffe84dc808e33026509ee66d",
+      "role": "extraction",
+      "rowIds": [
+        "row_b82f7fcc2a"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 2,
+      "errors": 2,
+      "elapsedMs": 1698.4692500000237,
+      "status": "error",
+      "error": "server",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 321.8056670000078,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        },
+        {
+          "elapsedMs": 371.7777500000084,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "server"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "5981d3ab988df6edf1def883ba28bc7c8f8a7abc16fc4ca71c0cf40a40357f29",
+      "role": "extraction",
+      "rowIds": [
+        "row_bb6d2613d4"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 2,
+      "errors": 2,
+      "elapsedMs": 1707.4691250000033,
+      "status": "error",
+      "error": "server",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 332.33620900000096,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        },
+        {
+          "elapsedMs": 371.0253329999978,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "server"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "b906e8978e158ea31984ce98b26afffb7bfaaecb16db0d1fdc746d0a9289b948",
+      "role": "extraction",
+      "rowIds": [
+        "row_fe3ff4b356"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 2,
+      "errors": 2,
+      "elapsedMs": 1685.005541999999,
+      "status": "error",
+      "error": "server",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 326.17250000001513,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        },
+        {
+          "elapsedMs": 356.11504200001946,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "server"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "f35a881939c4fee67057752c7a485a7be5c46a36e248329aead23f987b3e7b7c",
+      "role": "extraction",
+      "rowIds": [
+        "row_11bb99b2fa"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 2,
+      "errors": 2,
+      "elapsedMs": 1709.2268329999933,
+      "status": "error",
+      "error": "server",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 324.8534579999978,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        },
+        {
+          "elapsedMs": 377.7366670000192,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "server"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "5bc17e9f0d7543100ed3cb07861126bce1bb360b5e96bbe4a08ad6c491aeb423",
+      "role": "extraction",
+      "rowIds": [
+        "row_e0afb74574"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 2,
+      "errors": 2,
+      "elapsedMs": 1700.7665839999972,
+      "status": "error",
+      "error": "server",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 323.98958299998776,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        },
+        {
+          "elapsedMs": 373.7886249999865,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "server"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "2d0d590e5ead6cb83ac8d1d4327405bc8fd310b87463c3267c1877a15bb4e319",
+      "role": "extraction",
+      "rowIds": [
+        "row_bdbc045131"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 2,
+      "errors": 2,
+      "elapsedMs": 1697.0626660000125,
+      "status": "error",
+      "error": "server",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 325.28391600001487,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        },
+        {
+          "elapsedMs": 366.45604200000525,
+          "error": "server",
+          "response": null,
+          "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "server"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    }
+  ]
+}

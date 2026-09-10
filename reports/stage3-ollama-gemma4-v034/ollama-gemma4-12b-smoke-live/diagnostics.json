@@ -1,0 +1,33 @@
+[
+  {
+    "rowId": "row_28c6da70ee",
+    "outcome": "non_product",
+    "reasons": [
+      "mixed_pallet"
+    ]
+  },
+  {
+    "rowId": "row_7f570b374f",
+    "outcome": "non_product",
+    "reasons": [
+      "test_record",
+      "price_unknown_currency"
+    ]
+  },
+  {
+    "rowId": "row_80738b0804",
+    "outcome": "non_product",
+    "reasons": [
+      "empty_product",
+      "price_missing"
+    ]
+  },
+  {
+    "rowId": "row_f4de4c72c5",
+    "outcome": "non_product",
+    "reasons": [
+      "price_notice",
+      "price_missing"
+    ]
+  }
+]

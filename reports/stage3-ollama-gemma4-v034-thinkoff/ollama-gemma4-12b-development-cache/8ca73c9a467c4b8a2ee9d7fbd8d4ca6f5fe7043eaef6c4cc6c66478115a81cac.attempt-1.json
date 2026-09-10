@@ -1,0 +1,57 @@
+{
+  "elapsedMs": 19853.328167,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:26:05.531166Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_55a8c9b86d\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"bluetooth_supported\\\",\\\"value\\\":true,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_55a8c9b86d\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"BT\\\\\\\",\\\\\\\"start\\\\\\\":10,\\\"} }],\\\"type\\\":{\\\"value\\\":\\\"mouse\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_55a8c9b86d\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"mouse\\\\\\\",\\\\\\\"start\\\\\\\":19,\\\"}},\\\"category\\\":{\\\"value\\\":\\\"other\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_55a8c9b86d\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"mouse\\\\\\\",\\\\\\\"start\\\\\\\":19,\\\"}},\\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":19770755291,\"load_duration\":23588666,\"prompt_eval_count\":812,\"prompt_eval_cached_count\":272,\"prompt_eval_duration\":4994193000,\"eval_count\":165,\"eval_duration\":13155945000}",
+    "data": {
+      "rowId": "row_55a8c9b86d",
+      "facts": [
+        {
+          "attribute": "bluetooth_supported",
+          "value": true,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_55a8c9b86d",
+            "field": "raw_specs",
+            "quote": "BT\",\"start\":10,"
+          }
+        }
+      ],
+      "type": {
+        "value": "mouse",
+        "evidence": {
+          "rowId": "row_55a8c9b86d",
+          "field": "raw_title",
+          "quote": "mouse\",\"start\":19,"
+        }
+      },
+      "category": {
+        "value": "other",
+        "evidence": {
+          "rowId": "row_55a8c9b86d",
+          "field": "raw_title",
+          "quote": "mouse\",\"start\":19,"
+        }
+      },
+      "unknowns": []
+    },
+    "jsonParsed": true,
+    "model": "gemma4:12b",
+    "requestId": null,
+    "usage": {
+      "inputTokens": 812,
+      "outputTokens": 165,
+      "cachedInputTokens": 272,
+      "cacheWriteTokens": null
+    },
+    "timings": {
+      "totalMs": 19770.755291,
+      "loadMs": 23.588666,
+      "promptMs": 4994.193,
+      "generationMs": 13155.945
+    }
+  }
+}

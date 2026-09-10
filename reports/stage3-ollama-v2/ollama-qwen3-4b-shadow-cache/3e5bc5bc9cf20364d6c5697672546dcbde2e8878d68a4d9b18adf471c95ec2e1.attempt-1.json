@@ -1,0 +1,44 @@
+{
+  "elapsedMs": 7714.650624999995,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:14:04.243533Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_fe3ff4b356\\\",\\n    \\\"row_11bb99b2fa\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows describe earbud accessories for the AeroBuds Pro model. The first row specifies replacement ear tips (S/M/L) made of silicone, while the second row describes the Aerobuds PRO earbud itself with active noise cancelling, Bluetooth 5.3, 20 hours playback, and water resistance. Despite different product types (accessories vs. main product), they are both directly related to the AeroBuds Pro model and share the same brand name and model identifier. The shadow recommendation indicates they should be merged as they are part of the same product ecosystem.\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_fe3ff:ff4b356\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro replacement ear tips (S/M/L)\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"Aerobuds PRO earbud, black, ANC\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":7701828125,\"load_duration\":32487000,\"prompt_eval_count\":283,\"prompt_eval_duration\":430621625,\"eval_count\":276,\"eval_duration\":7225011750}",
+    "data": {
+      "rowIds": [
+        "row_fe3ff4b356",
+        "row_11bb99b2fa"
+      ],
+      "decision": "merge",
+      "confidence": "high",
+      "reason": "Both rows describe earbud accessories for the AeroBuds Pro model. The first row specifies replacement ear tips (S/M/L) made of silicone, while the second row describes the Aerobuds PRO earbud itself with active noise cancelling, Bluetooth 5.3, 20 hours playback, and water resistance. Despite different product types (accessories vs. main product), they are both directly related to the AeroBuds Pro model and share the same brand name and model identifier. The shadow recommendation indicates they should be merged as they are part of the same product ecosystem.",
+      "evidence": [
+        {
+          "rowId": "row_fe3ff:ff4b356",
+          "field": "raw_title",
+          "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+        },
+        {
+          "rowId": "row_11bb99b2fa",
+          "field": "raw_title",
+          "quote": "Aerobuds PRO earbud, black, ANC"
+        }
+      ]
+    },
+    "jsonParsed": true,
+    "model": "qwen3:4b",
+    "requestId": null,
+    "usage": {
+      "inputTokens": 283,
+      "outputTokens": 276,
+      "cachedInputTokens": null,
+      "cacheWriteTokens": null
+    },
+    "timings": {
+      "totalMs": 7701.828125,
+      "loadMs": 32.487,
+      "promptMs": 430.621625,
+      "generationMs": 7225.01175
+    }
+  }
+}

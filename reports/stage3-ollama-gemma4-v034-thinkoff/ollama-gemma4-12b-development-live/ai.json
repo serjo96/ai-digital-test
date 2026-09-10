@@ -1,0 +1,1943 @@
+{
+  "version": "ai-trace-v1",
+  "config": {
+    "version": "B2-config-v1",
+    "extraction": {
+      "provider": "ollama",
+      "model": "gemma4:12b",
+      "identity": {
+        "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+        "serverVersion": "0.34.0"
+      },
+      "temperature": 0,
+      "seed": 42,
+      "context": 8192,
+      "topK": 20,
+      "topP": 0.9,
+      "repeatPenalty": 1,
+      "keepAlive": "5m",
+      "thinking": false,
+      "maxOutputTokens": 2048
+    },
+    "matching": {
+      "provider": "ollama",
+      "model": "gemma4:12b",
+      "identity": {
+        "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+        "serverVersion": "0.34.0"
+      },
+      "temperature": 0,
+      "seed": 42,
+      "context": 8192,
+      "topK": 20,
+      "topP": 0.9,
+      "repeatPenalty": 1,
+      "keepAlive": "5m",
+      "thinking": false,
+      "maxOutputTokens": 2048,
+      "enabled": true
+    },
+    "timeoutMs": 120000,
+    "maxRetries": 1,
+    "prices": []
+  },
+  "records": [
+    {
+      "key": "a3b08564745d3ca7ca43ca3738196f1ea746915c3bfea6b74159e260e97b9dc1",
+      "role": "extraction",
+      "rowIds": [
+        "row_05e5d126cb"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 1,
+      "elapsedMs": 14540.713709,
+      "status": "error",
+      "error": "invalid_response",
+      "response": {
+        "status": "completed",
+        "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:25:08.19028Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_05e5d126cb\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"bluetooth_supported\\\",\\\"value\\\":false,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_05e5d126cb\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"AMAZING SOUND!!! BEST HEADPHONES 2026!!! GRAB IT FAST!!!\\\"} } ],\\\"type\\\":null,\\\"category\\\":null,\\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":14462911792,\"load_duration\":12447000,\"prompt_eval_count\":694,\"prompt_eval_cached_count\":272,\"prompt_eval_duration\":4152524000,\"eval_count\":103,\"eval_duration\":8217608000}",
+        "data": {
+          "rowId": "row_05e5d126cb",
+          "facts": [
+            {
+              "attribute": "bluetooth_supported",
+              "value": false,
+              "unit": null,
+              "scope": "product",
+              "conditions": [],
+              "evidence": {
+                "rowId": "row_05e5d126cb",
+                "field": "raw_specs",
+                "quote": "AMAZING SOUND!!! BEST HEADPHONES 2026!!! GRAB IT FAST!!!"
+              }
+            }
+          ],
+          "type": null,
+          "category": null,
+          "unknowns": []
+        },
+        "jsonParsed": true,
+        "model": "gemma4:12b",
+        "requestId": null,
+        "usage": {
+          "inputTokens": 694,
+          "outputTokens": 103,
+          "cachedInputTokens": 272,
+          "cacheWriteTokens": null
+        },
+        "timings": {
+          "totalMs": 14462.911792,
+          "loadMs": 12.447,
+          "promptMs": 4152.524,
+          "generationMs": 8217.608
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 694,
+          "outputTokens": 103,
+          "cachedInputTokens": 272,
+          "cacheWriteTokens": null
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 14509.980915999997,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:25:08.19028Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_05e5d126cb\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"bluetooth_supported\\\",\\\"value\\\":false,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_05e5d126cb\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"AMAZING SOUND!!! BEST HEADPHONES 2026!!! GRAB IT FAST!!!\\\"} } ],\\\"type\\\":null,\\\"category\\\":null,\\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":14462911792,\"load_duration\":12447000,\"prompt_eval_count\":694,\"prompt_eval_cached_count\":272,\"prompt_eval_duration\":4152524000,\"eval_count\":103,\"eval_duration\":8217608000}",
+            "data": {
+              "rowId": "row_05e5d126cb",
+              "facts": [
+                {
+                  "attribute": "bluetooth_supported",
+                  "value": false,
+                  "unit": null,
+                  "scope": "product",
+                  "conditions": [],
+                  "evidence": {
+                    "rowId": "row_05e5d126cb",
+                    "field": "raw_specs",
+                    "quote": "AMAZING SOUND!!! BEST HEADPHONES 2026!!! GRAB IT FAST!!!"
+                  }
+                }
+              ],
+              "type": null,
+              "category": null,
+              "unknowns": []
+            },
+            "jsonParsed": true,
+            "model": "gemma4:12b",
+            "requestId": null,
+            "usage": {
+              "inputTokens": 694,
+              "outputTokens": 103,
+              "cachedInputTokens": 272,
+              "cacheWriteTokens": null
+            },
+            "timings": {
+              "totalMs": 14462.911792,
+              "loadMs": 12.447,
+              "promptMs": 4152.524,
+              "generationMs": 8217.608
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "semantic": {
+          "checked": true,
+          "passed": false,
+          "reason": "unsupported semantic addition"
+        }
+      }
+    },
+    {
+      "key": "90f8cff4e15cdcbbf8caed0e096d21ef7fcec4b0430a1848dd1da8849e1e935c",
+      "role": "extraction",
+      "rowIds": [
+        "row_11462769c5"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 1,
+      "elapsedMs": 17226.631624999998,
+      "status": "error",
+      "error": "invalid_response",
+      "response": {
+        "status": "completed",
+        "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:25:25.338937Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_11462769c5\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"colour_temperature_count\\\",\\\"value\\\":5,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11462769c5\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\" 5 colour temps\\\\\\\",\\\\\\\"start\\\\\\\":4,\\\"} }],\\\"type\\\":{\\\"value\\\":\\\"lamp\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11462769c5\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"lamp\\\\\\\",\\\\\\\"start\\\\\\\":11,\\\"}},\\\"category\\\":{\\\"value\\\":\\\"home_kitchen\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11462769c5\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"lamp\\\\\\\",\\\\\\\"start\\\\\\\":11,\\\"}}, \\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":17054768417,\"load_duration\":19733209,\"prompt_eval_count\":785,\"prompt_eval_cached_count\":780,\"prompt_eval_duration\":1819589000,\"eval_count\":173,\"eval_duration\":13761765000}",
+        "data": {
+          "rowId": "row_11462769c5",
+          "facts": [
+            {
+              "attribute": "colour_temperature_count",
+              "value": 5,
+              "unit": null,
+              "scope": "product",
+              "conditions": [],
+              "evidence": {
+                "rowId": "row_11462769c5",
+                "field": "raw_specs",
+                "quote": " 5 colour temps\",\"start\":4,"
+              }
+            }
+          ],
+          "type": {
+            "value": "lamp",
+            "evidence": {
+              "rowId": "row_11462769c5",
+              "field": "raw_title",
+              "quote": "lamp\",\"start\":11,"
+            }
+          },
+          "category": {
+            "value": "home_kitchen",
+            "evidence": {
+              "rowId": "row_11462769c5",
+              "field": "raw_title",
+              "quote": "lamp\",\"start\":11,"
+            }
+          },
+          "unknowns": []
+        },
+        "jsonParsed": true,
+        "model": "gemma4:12b",
+        "requestId": null,
+        "usage": {
+          "inputTokens": 785,
+          "outputTokens": 173,
+          "cachedInputTokens": 780,
+          "cacheWriteTokens": null
+        },
+        "timings": {
+          "totalMs": 17054.768417,
+          "loadMs": 19.733209,
+          "promptMs": 1819.589,
+          "generationMs": 13761.765
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 785,
+          "outputTokens": 173,
+          "cachedInputTokens": 780,
+          "cacheWriteTokens": null
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 17198.331499999997,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:25:25.338937Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_11462769c5\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"colour_temperature_count\\\",\\\"value\\\":5,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11462769c5\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\" 5 colour temps\\\\\\\",\\\\\\\"start\\\\\\\":4,\\\"} }],\\\"type\\\":{\\\"value\\\":\\\"lamp\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11462769c5\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"lamp\\\\\\\",\\\\\\\"start\\\\\\\":11,\\\"}},\\\"category\\\":{\\\"value\\\":\\\"home_kitchen\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11462769c5\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"lamp\\\\\\\",\\\\\\\"start\\\\\\\":11,\\\"}}, \\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":17054768417,\"load_duration\":19733209,\"prompt_eval_count\":785,\"prompt_eval_cached_count\":780,\"prompt_eval_duration\":1819589000,\"eval_count\":173,\"eval_duration\":13761765000}",
+            "data": {
+              "rowId": "row_11462769c5",
+              "facts": [
+                {
+                  "attribute": "colour_temperature_count",
+                  "value": 5,
+                  "unit": null,
+                  "scope": "product",
+                  "conditions": [],
+                  "evidence": {
+                    "rowId": "row_11462769c5",
+                    "field": "raw_specs",
+                    "quote": " 5 colour temps\",\"start\":4,"
+                  }
+                }
+              ],
+              "type": {
+                "value": "lamp",
+                "evidence": {
+                  "rowId": "row_11462769c5",
+                  "field": "raw_title",
+                  "quote": "lamp\",\"start\":11,"
+                }
+              },
+              "category": {
+                "value": "home_kitchen",
+                "evidence": {
+                  "rowId": "row_11462769c5",
+                  "field": "raw_title",
+                  "quote": "lamp\",\"start\":11,"
+                }
+              },
+              "unknowns": []
+            },
+            "jsonParsed": true,
+            "model": "gemma4:12b",
+            "requestId": null,
+            "usage": {
+              "inputTokens": 785,
+              "outputTokens": 173,
+              "cachedInputTokens": 780,
+              "cacheWriteTokens": null
+            },
+            "timings": {
+              "totalMs": 17054.768417,
+              "loadMs": 19.733209,
+              "promptMs": 1819.589,
+              "generationMs": 13761.765
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": false,
+          "reason": "absent quote"
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "12be26917434d218731520196c140af95ade0bb1a84d646ea77dcf92ba71bf30",
+      "role": "extraction",
+      "rowIds": [
+        "row_22e59912ad"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 1,
+      "elapsedMs": 20207.51037499999,
+      "status": "error",
+      "error": "invalid_response",
+      "response": {
+        "status": "completed",
+        "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:25:45.574677Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_22e59912ad\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"bluetooth_supported\\\",\\\"value\\\":true,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_22e59912ad\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"fast\\\"} }],\\\"type\\\":{\\\"value\\\":\\\"SSD\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_22e59912ad\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"SSD\\\"}},\\\"category\\\":{\\\"value\\\":\\\"storage\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_22e59912ad\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"SSD\\\"}}, \\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":20053300208,\"load_duration\":18773333,\"prompt_eval_count\":1002,\"prompt_eval_cached_count\":272,\"prompt_eval_duration\":6406310000,\"eval_count\":146,\"eval_duration\":11871520000}",
+        "data": {
+          "rowId": "row_22e59912ad",
+          "facts": [
+            {
+              "attribute": "bluetooth_supported",
+              "value": true,
+              "unit": null,
+              "scope": "product",
+              "conditions": [],
+              "evidence": {
+                "rowId": "row_22e59912ad",
+                "field": "raw_specs",
+                "quote": "fast"
+              }
+            }
+          ],
+          "type": {
+            "value": "SSD",
+            "evidence": {
+              "rowId": "row_22e59912ad",
+              "field": "raw_title",
+              "quote": "SSD"
+            }
+          },
+          "category": {
+            "value": "storage",
+            "evidence": {
+              "rowId": "row_22e59912ad",
+              "field": "raw_title",
+              "quote": "SSD"
+            }
+          },
+          "unknowns": []
+        },
+        "jsonParsed": true,
+        "model": "gemma4:12b",
+        "requestId": null,
+        "usage": {
+          "inputTokens": 1002,
+          "outputTokens": 146,
+          "cachedInputTokens": 272,
+          "cacheWriteTokens": null
+        },
+        "timings": {
+          "totalMs": 20053.300208,
+          "loadMs": 18.773333,
+          "promptMs": 6406.31,
+          "generationMs": 11871.52
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 1002,
+          "outputTokens": 146,
+          "cachedInputTokens": 272,
+          "cacheWriteTokens": null
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 20160.372375000006,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:25:45.574677Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_22e59912ad\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"bluetooth_supported\\\",\\\"value\\\":true,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_22e59912ad\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"fast\\\"} }],\\\"type\\\":{\\\"value\\\":\\\"SSD\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_22e59912ad\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"SSD\\\"}},\\\"category\\\":{\\\"value\\\":\\\"storage\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_22e59912ad\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"SSD\\\"}}, \\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":20053300208,\"load_duration\":18773333,\"prompt_eval_count\":1002,\"prompt_eval_cached_count\":272,\"prompt_eval_duration\":6406310000,\"eval_count\":146,\"eval_duration\":11871520000}",
+            "data": {
+              "rowId": "row_22e59912ad",
+              "facts": [
+                {
+                  "attribute": "bluetooth_supported",
+                  "value": true,
+                  "unit": null,
+                  "scope": "product",
+                  "conditions": [],
+                  "evidence": {
+                    "rowId": "row_22e59912ad",
+                    "field": "raw_specs",
+                    "quote": "fast"
+                  }
+                }
+              ],
+              "type": {
+                "value": "SSD",
+                "evidence": {
+                  "rowId": "row_22e59912ad",
+                  "field": "raw_title",
+                  "quote": "SSD"
+                }
+              },
+              "category": {
+                "value": "storage",
+                "evidence": {
+                  "rowId": "row_22e59912ad",
+                  "field": "raw_title",
+                  "quote": "SSD"
+                }
+              },
+              "unknowns": []
+            },
+            "jsonParsed": true,
+            "model": "gemma4:12b",
+            "requestId": null,
+            "usage": {
+              "inputTokens": 1002,
+              "outputTokens": 146,
+              "cachedInputTokens": 272,
+              "cacheWriteTokens": null
+            },
+            "timings": {
+              "totalMs": 20053.300208,
+              "loadMs": 18.773333,
+              "promptMs": 6406.31,
+              "generationMs": 11871.52
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "semantic": {
+          "checked": true,
+          "passed": false,
+          "reason": "unsupported semantic addition"
+        }
+      }
+    },
+    {
+      "key": "8ca73c9a467c4b8a2ee9d7fbd8d4ca6f5fe7043eaef6c4cc6c66478115a81cac",
+      "role": "extraction",
+      "rowIds": [
+        "row_55a8c9b86d"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 1,
+      "elapsedMs": 19902.233458999995,
+      "status": "error",
+      "error": "invalid_response",
+      "response": {
+        "status": "completed",
+        "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:26:05.531166Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_55a8c9b86d\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"bluetooth_supported\\\",\\\"value\\\":true,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_55a8c9b86d\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"BT\\\\\\\",\\\\\\\"start\\\\\\\":10,\\\"} }],\\\"type\\\":{\\\"value\\\":\\\"mouse\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_55a8c9b86d\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"mouse\\\\\\\",\\\\\\\"start\\\\\\\":19,\\\"}},\\\"category\\\":{\\\"value\\\":\\\"other\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_55a8c9b86d\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"mouse\\\\\\\",\\\\\\\"start\\\\\\\":19,\\\"}},\\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":19770755291,\"load_duration\":23588666,\"prompt_eval_count\":812,\"prompt_eval_cached_count\":272,\"prompt_eval_duration\":4994193000,\"eval_count\":165,\"eval_duration\":13155945000}",
+        "data": {
+          "rowId": "row_55a8c9b86d",
+          "facts": [
+            {
+              "attribute": "bluetooth_supported",
+              "value": true,
+              "unit": null,
+              "scope": "product",
+              "conditions": [],
+              "evidence": {
+                "rowId": "row_55a8c9b86d",
+                "field": "raw_specs",
+                "quote": "BT\",\"start\":10,"
+              }
+            }
+          ],
+          "type": {
+            "value": "mouse",
+            "evidence": {
+              "rowId": "row_55a8c9b86d",
+              "field": "raw_title",
+              "quote": "mouse\",\"start\":19,"
+            }
+          },
+          "category": {
+            "value": "other",
+            "evidence": {
+              "rowId": "row_55a8c9b86d",
+              "field": "raw_title",
+              "quote": "mouse\",\"start\":19,"
+            }
+          },
+          "unknowns": []
+        },
+        "jsonParsed": true,
+        "model": "gemma4:12b",
+        "requestId": null,
+        "usage": {
+          "inputTokens": 812,
+          "outputTokens": 165,
+          "cachedInputTokens": 272,
+          "cacheWriteTokens": null
+        },
+        "timings": {
+          "totalMs": 19770.755291,
+          "loadMs": 23.588666,
+          "promptMs": 4994.193,
+          "generationMs": 13155.945
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 812,
+          "outputTokens": 165,
+          "cachedInputTokens": 272,
+          "cacheWriteTokens": null
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 19853.328167,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:26:05.531166Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_55a8c9b86d\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"bluetooth_supported\\\",\\\"value\\\":true,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_55a8c9b86d\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"BT\\\\\\\",\\\\\\\"start\\\\\\\":10,\\\"} }],\\\"type\\\":{\\\"value\\\":\\\"mouse\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_55a8c9b86d\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"mouse\\\\\\\",\\\\\\\"start\\\\\\\":19,\\\"}},\\\"category\\\":{\\\"value\\\":\\\"other\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_55a8c9b86d\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"mouse\\\\\\\",\\\\\\\"start\\\\\\\":19,\\\"}},\\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":19770755291,\"load_duration\":23588666,\"prompt_eval_count\":812,\"prompt_eval_cached_count\":272,\"prompt_eval_duration\":4994193000,\"eval_count\":165,\"eval_duration\":13155945000}",
+            "data": {
+              "rowId": "row_55a8c9b86d",
+              "facts": [
+                {
+                  "attribute": "bluetooth_supported",
+                  "value": true,
+                  "unit": null,
+                  "scope": "product",
+                  "conditions": [],
+                  "evidence": {
+                    "rowId": "row_55a8c9b86d",
+                    "field": "raw_specs",
+                    "quote": "BT\",\"start\":10,"
+                  }
+                }
+              ],
+              "type": {
+                "value": "mouse",
+                "evidence": {
+                  "rowId": "row_55a8c9b86d",
+                  "field": "raw_title",
+                  "quote": "mouse\",\"start\":19,"
+                }
+              },
+              "category": {
+                "value": "other",
+                "evidence": {
+                  "rowId": "row_55a8c9b86d",
+                  "field": "raw_title",
+                  "quote": "mouse\",\"start\":19,"
+                }
+              },
+              "unknowns": []
+            },
+            "jsonParsed": true,
+            "model": "gemma4:12b",
+            "requestId": null,
+            "usage": {
+              "inputTokens": 812,
+              "outputTokens": 165,
+              "cachedInputTokens": 272,
+              "cacheWriteTokens": null
+            },
+            "timings": {
+              "totalMs": 19770.755291,
+              "loadMs": 23.588666,
+              "promptMs": 4994.193,
+              "generationMs": 13155.945
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": false,
+          "reason": "absent quote"
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "03a390fec2b6d7c1f95cf296f1915fdc23cc146d1c2aaa6a3f02be7650c0da56",
+      "role": "extraction",
+      "rowIds": [
+        "row_74b8f7797a"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 1,
+      "elapsedMs": 14210.143083999996,
+      "status": "error",
+      "error": "invalid_response",
+      "response": {
+        "status": "completed",
+        "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:26:19.762471Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_74b8f7797a\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"bluetooth_supported\\\",\\\"value\\\":true,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_74b8f7797a\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"BT\\\\\\\",\\\\\\\"start\\\\\\\":10,\\\\\\\"end\\\\\\\":12},\\\"} }],\\\"type\\\":null,\\\"category\\\":null,\\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":14101360333,\"load_duration\":28217708,\"prompt_eval_count\":817,\"prompt_eval_cached_count\":272,\"prompt_eval_duration\":5244285000,\"eval_count\":96,\"eval_duration\":7568147000}",
+        "data": {
+          "rowId": "row_74b8f7797a",
+          "facts": [
+            {
+              "attribute": "bluetooth_supported",
+              "value": true,
+              "unit": null,
+              "scope": "product",
+              "conditions": [],
+              "evidence": {
+                "rowId": "row_74b8f7797a",
+                "field": "raw_specs",
+                "quote": "BT\",\"start\":10,\"end\":12},"
+              }
+            }
+          ],
+          "type": null,
+          "category": null,
+          "unknowns": []
+        },
+        "jsonParsed": true,
+        "model": "gemma4:12b",
+        "requestId": null,
+        "usage": {
+          "inputTokens": 817,
+          "outputTokens": 96,
+          "cachedInputTokens": 272,
+          "cacheWriteTokens": null
+        },
+        "timings": {
+          "totalMs": 14101.360333,
+          "loadMs": 28.217708,
+          "promptMs": 5244.285,
+          "generationMs": 7568.147
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 817,
+          "outputTokens": 96,
+          "cachedInputTokens": 272,
+          "cacheWriteTokens": null
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 14162.310124999989,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:26:19.762471Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_74b8f7797a\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"bluetooth_supported\\\",\\\"value\\\":true,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_74b8f7797a\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"BT\\\\\\\",\\\\\\\"start\\\\\\\":10,\\\\\\\"end\\\\\\\":12},\\\"} }],\\\"type\\\":null,\\\"category\\\":null,\\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":14101360333,\"load_duration\":28217708,\"prompt_eval_count\":817,\"prompt_eval_cached_count\":272,\"prompt_eval_duration\":5244285000,\"eval_count\":96,\"eval_duration\":7568147000}",
+            "data": {
+              "rowId": "row_74b8f7797a",
+              "facts": [
+                {
+                  "attribute": "bluetooth_supported",
+                  "value": true,
+                  "unit": null,
+                  "scope": "product",
+                  "conditions": [],
+                  "evidence": {
+                    "rowId": "row_74b8f7797a",
+                    "field": "raw_specs",
+                    "quote": "BT\",\"start\":10,\"end\":12},"
+                  }
+                }
+              ],
+              "type": null,
+              "category": null,
+              "unknowns": []
+            },
+            "jsonParsed": true,
+            "model": "gemma4:12b",
+            "requestId": null,
+            "usage": {
+              "inputTokens": 817,
+              "outputTokens": 96,
+              "cachedInputTokens": 272,
+              "cacheWriteTokens": null
+            },
+            "timings": {
+              "totalMs": 14101.360333,
+              "loadMs": 28.217708,
+              "promptMs": 5244.285,
+              "generationMs": 7568.147
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": false,
+          "reason": "absent quote"
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "a971f1ef4505e5baaf87e340688c8dbc67f6a96163bf1b1bc8f256936bf0d69f",
+      "role": "extraction",
+      "rowIds": [
+        "row_a1bb1ad2e9"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 1,
+      "elapsedMs": 18835.353709000003,
+      "status": "error",
+      "error": "invalid_response",
+      "response": {
+        "status": "completed",
+        "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:26:38.623547Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_a1bb1ad2e9\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"colour_temperature_count\\\",\\\"value\\\":5,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_a1bb1ad2e9\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"5 colour temps\\\\\\\",\\\\\\\"start\\\\\\\":4,\\\"} }],\\\"type\\\":{\\\"value\\\":\\\"lamp\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_a1bb1ad2e9\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"desk lamp\\\\\\\",\\\\\\\"start\\\\\\\":11,\\\"}},\\\"category\\\":{\\\"value\\\":\\\"home_kitchen\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_a1bb1ad2e9\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"desk lamp\\\\\\\",\\\\\\\"start\\\\\\\":11,\\\"}}, \\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":18743131166,\"load_duration\":31832125,\"prompt_eval_count\":793,\"prompt_eval_cached_count\":272,\"prompt_eval_duration\":4732083000,\"eval_count\":166,\"eval_duration\":13213897000}",
+        "data": {
+          "rowId": "row_a1bb1ad2e9",
+          "facts": [
+            {
+              "attribute": "colour_temperature_count",
+              "value": 5,
+              "unit": null,
+              "scope": "product",
+              "conditions": [],
+              "evidence": {
+                "rowId": "row_a1bb1ad2e9",
+                "field": "raw_specs",
+                "quote": "5 colour temps\",\"start\":4,"
+              }
+            }
+          ],
+          "type": {
+            "value": "lamp",
+            "evidence": {
+              "rowId": "row_a1bb1ad2e9",
+              "field": "raw_title",
+              "quote": "desk lamp\",\"start\":11,"
+            }
+          },
+          "category": {
+            "value": "home_kitchen",
+            "evidence": {
+              "rowId": "row_a1bb1ad2e9",
+              "field": "raw_title",
+              "quote": "desk lamp\",\"start\":11,"
+            }
+          },
+          "unknowns": []
+        },
+        "jsonParsed": true,
+        "model": "gemma4:12b",
+        "requestId": null,
+        "usage": {
+          "inputTokens": 793,
+          "outputTokens": 166,
+          "cachedInputTokens": 272,
+          "cacheWriteTokens": null
+        },
+        "timings": {
+          "totalMs": 18743.131166,
+          "loadMs": 31.832125,
+          "promptMs": 4732.083,
+          "generationMs": 13213.897
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 793,
+          "outputTokens": 166,
+          "cachedInputTokens": 272,
+          "cacheWriteTokens": null
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 18803.293208000003,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:26:38.623547Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_a1bb1ad2e9\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"colour_temperature_count\\\",\\\"value\\\":5,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_a1bb1ad2e9\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"5 colour temps\\\\\\\",\\\\\\\"start\\\\\\\":4,\\\"} }],\\\"type\\\":{\\\"value\\\":\\\"lamp\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_a1bb1ad2e9\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"desk lamp\\\\\\\",\\\\\\\"start\\\\\\\":11,\\\"}},\\\"category\\\":{\\\"value\\\":\\\"home_kitchen\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_a1bb1ad2e9\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"desk lamp\\\\\\\",\\\\\\\"start\\\\\\\":11,\\\"}}, \\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":18743131166,\"load_duration\":31832125,\"prompt_eval_count\":793,\"prompt_eval_cached_count\":272,\"prompt_eval_duration\":4732083000,\"eval_count\":166,\"eval_duration\":13213897000}",
+            "data": {
+              "rowId": "row_a1bb1ad2e9",
+              "facts": [
+                {
+                  "attribute": "colour_temperature_count",
+                  "value": 5,
+                  "unit": null,
+                  "scope": "product",
+                  "conditions": [],
+                  "evidence": {
+                    "rowId": "row_a1bb1ad2e9",
+                    "field": "raw_specs",
+                    "quote": "5 colour temps\",\"start\":4,"
+                  }
+                }
+              ],
+              "type": {
+                "value": "lamp",
+                "evidence": {
+                  "rowId": "row_a1bb1ad2e9",
+                  "field": "raw_title",
+                  "quote": "desk lamp\",\"start\":11,"
+                }
+              },
+              "category": {
+                "value": "home_kitchen",
+                "evidence": {
+                  "rowId": "row_a1bb1ad2e9",
+                  "field": "raw_title",
+                  "quote": "desk lamp\",\"start\":11,"
+                }
+              },
+              "unknowns": []
+            },
+            "jsonParsed": true,
+            "model": "gemma4:12b",
+            "requestId": null,
+            "usage": {
+              "inputTokens": 793,
+              "outputTokens": 166,
+              "cachedInputTokens": 272,
+              "cacheWriteTokens": null
+            },
+            "timings": {
+              "totalMs": 18743.131166,
+              "loadMs": 31.832125,
+              "promptMs": 4732.083,
+              "generationMs": 13213.897
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": false,
+          "reason": "absent quote"
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "fc725acd447e2fec7eb0ac74f938cdf3a28bde951e13adcc480df490266f9a4d",
+      "role": "extraction",
+      "rowIds": [
+        "row_b82f7fcc2a"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 1,
+      "elapsedMs": 20444.609416000007,
+      "status": "error",
+      "error": "invalid_response",
+      "response": {
+        "status": "completed",
+        "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:26:58.489759Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_b82f7fcc2a\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"colour_temperature_count\\\",\\\"value\\\":5,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_b82f7fcc2a\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\" 5 colour temps\\\\\\\",\\\\\\\"start\\\\\\\":4,\\\"} } ],\\\"type\\\":{\\\"value\\\":\\\"lamp\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_b82f7fcc2a\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"lamp\\\\\\\",\\\\\\\"start\\\\\\\":15,\\\"}},\\\"category\\\":{\\\"value\\\":\\\"home_kitchen\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_b82f7fcc2a\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"desk lamp\\\\\\\",\\\\\\\"start\\\\\\\":13,\\\"}}, \\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":19763585667,\"load_duration\":19276542,\"prompt_eval_count\":789,\"prompt_eval_cached_count\":280,\"prompt_eval_duration\":4562720000,\"eval_count\":171,\"eval_duration\":13384082000}",
+        "data": {
+          "rowId": "row_b82f7fcc2a",
+          "facts": [
+            {
+              "attribute": "colour_temperature_count",
+              "value": 5,
+              "unit": null,
+              "scope": "product",
+              "conditions": [],
+              "evidence": {
+                "rowId": "row_b82f7fcc2a",
+                "field": "raw_specs",
+                "quote": " 5 colour temps\",\"start\":4,"
+              }
+            }
+          ],
+          "type": {
+            "value": "lamp",
+            "evidence": {
+              "rowId": "row_b82f7fcc2a",
+              "field": "raw_title",
+              "quote": "lamp\",\"start\":15,"
+            }
+          },
+          "category": {
+            "value": "home_kitchen",
+            "evidence": {
+              "rowId": "row_b82f7fcc2a",
+              "field": "raw_title",
+              "quote": "desk lamp\",\"start\":13,"
+            }
+          },
+          "unknowns": []
+        },
+        "jsonParsed": true,
+        "model": "gemma4:12b",
+        "requestId": null,
+        "usage": {
+          "inputTokens": 789,
+          "outputTokens": 171,
+          "cachedInputTokens": 280,
+          "cacheWriteTokens": null
+        },
+        "timings": {
+          "totalMs": 19763.585667,
+          "loadMs": 19.276542,
+          "promptMs": 4562.72,
+          "generationMs": 13384.082
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 789,
+          "outputTokens": 171,
+          "cachedInputTokens": 280,
+          "cacheWriteTokens": null
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 20198.945542000016,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:26:58.489759Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_b82f7fcc2a\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"colour_temperature_count\\\",\\\"value\\\":5,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_b82f7fcc2a\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\" 5 colour temps\\\\\\\",\\\\\\\"start\\\\\\\":4,\\\"} } ],\\\"type\\\":{\\\"value\\\":\\\"lamp\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_b82f7fcc2a\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"lamp\\\\\\\",\\\\\\\"start\\\\\\\":15,\\\"}},\\\"category\\\":{\\\"value\\\":\\\"home_kitchen\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_b82f7fcc2a\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"desk lamp\\\\\\\",\\\\\\\"start\\\\\\\":13,\\\"}}, \\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":19763585667,\"load_duration\":19276542,\"prompt_eval_count\":789,\"prompt_eval_cached_count\":280,\"prompt_eval_duration\":4562720000,\"eval_count\":171,\"eval_duration\":13384082000}",
+            "data": {
+              "rowId": "row_b82f7fcc2a",
+              "facts": [
+                {
+                  "attribute": "colour_temperature_count",
+                  "value": 5,
+                  "unit": null,
+                  "scope": "product",
+                  "conditions": [],
+                  "evidence": {
+                    "rowId": "row_b82f7fcc2a",
+                    "field": "raw_specs",
+                    "quote": " 5 colour temps\",\"start\":4,"
+                  }
+                }
+              ],
+              "type": {
+                "value": "lamp",
+                "evidence": {
+                  "rowId": "row_b82f7fcc2a",
+                  "field": "raw_title",
+                  "quote": "lamp\",\"start\":15,"
+                }
+              },
+              "category": {
+                "value": "home_kitchen",
+                "evidence": {
+                  "rowId": "row_b82f7fcc2a",
+                  "field": "raw_title",
+                  "quote": "desk lamp\",\"start\":13,"
+                }
+              },
+              "unknowns": []
+            },
+            "jsonParsed": true,
+            "model": "gemma4:12b",
+            "requestId": null,
+            "usage": {
+              "inputTokens": 789,
+              "outputTokens": 171,
+              "cachedInputTokens": 280,
+              "cacheWriteTokens": null
+            },
+            "timings": {
+              "totalMs": 19763.585667,
+              "loadMs": 19.276542,
+              "promptMs": 4562.72,
+              "generationMs": 13384.082
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": false,
+          "reason": "absent quote"
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "a71ee2ded53a747fbaef2bf9c5e397d911d1b1b4e23b632a9a79bc4f7a93ee09",
+      "role": "extraction",
+      "rowIds": [
+        "row_bb6d2613d4"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 1,
+      "elapsedMs": 17160.654959000007,
+      "status": "error",
+      "error": "invalid_response",
+      "response": {
+        "status": "completed",
+        "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:27:16.320598Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_bb6d2613d4\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"bluetooth_supported\\\",\\\"value\\\":true,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_bb6d2613d4\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"BT\\\\\\\",\\\\\\\"start\\\\\\\":10,\\\\\\\"end\\\\\\\":12},\\\"} }],\\\"type\\\":null,\\\"category\\\":null,\\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":16959222917,\"load_duration\":129323958,\"prompt_eval_count\":810,\"prompt_eval_cached_count\":279,\"prompt_eval_duration\":5255147000,\"eval_count\":94,\"eval_duration\":7547575000}",
+        "data": {
+          "rowId": "row_bb6d2613d4",
+          "facts": [
+            {
+              "attribute": "bluetooth_supported",
+              "value": true,
+              "unit": null,
+              "scope": "product",
+              "conditions": [],
+              "evidence": {
+                "rowId": "row_bb6d2613d4",
+                "field": "raw_specs",
+                "quote": "BT\",\"start\":10,\"end\":12},"
+              }
+            }
+          ],
+          "type": null,
+          "category": null,
+          "unknowns": []
+        },
+        "jsonParsed": true,
+        "model": "gemma4:12b",
+        "requestId": null,
+        "usage": {
+          "inputTokens": 810,
+          "outputTokens": 94,
+          "cachedInputTokens": 279,
+          "cacheWriteTokens": null
+        },
+        "timings": {
+          "totalMs": 16959.222917,
+          "loadMs": 129.323958,
+          "promptMs": 5255.147,
+          "generationMs": 7547.575
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 810,
+          "outputTokens": 94,
+          "cachedInputTokens": 279,
+          "cacheWriteTokens": null
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 17076.875834000006,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:27:16.320598Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_bb6d2613d4\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"bluetooth_supported\\\",\\\"value\\\":true,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_bb6d2613d4\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"BT\\\\\\\",\\\\\\\"start\\\\\\\":10,\\\\\\\"end\\\\\\\":12},\\\"} }],\\\"type\\\":null,\\\"category\\\":null,\\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":16959222917,\"load_duration\":129323958,\"prompt_eval_count\":810,\"prompt_eval_cached_count\":279,\"prompt_eval_duration\":5255147000,\"eval_count\":94,\"eval_duration\":7547575000}",
+            "data": {
+              "rowId": "row_bb6d2613d4",
+              "facts": [
+                {
+                  "attribute": "bluetooth_supported",
+                  "value": true,
+                  "unit": null,
+                  "scope": "product",
+                  "conditions": [],
+                  "evidence": {
+                    "rowId": "row_bb6d2613d4",
+                    "field": "raw_specs",
+                    "quote": "BT\",\"start\":10,\"end\":12},"
+                  }
+                }
+              ],
+              "type": null,
+              "category": null,
+              "unknowns": []
+            },
+            "jsonParsed": true,
+            "model": "gemma4:12b",
+            "requestId": null,
+            "usage": {
+              "inputTokens": 810,
+              "outputTokens": 94,
+              "cachedInputTokens": 279,
+              "cacheWriteTokens": null
+            },
+            "timings": {
+              "totalMs": 16959.222917,
+              "loadMs": 129.323958,
+              "promptMs": 5255.147,
+              "generationMs": 7547.575
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": false,
+          "reason": "absent quote"
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "a1d9a106d987f9e7c8e727d5ea430f0a0ef74458e6e0c1d8a9bea17ffa08f613",
+      "role": "extraction",
+      "rowIds": [
+        "row_fe3ff4b356"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 1,
+      "elapsedMs": 17894.863624999998,
+      "status": "error",
+      "error": "invalid_response",
+      "response": {
+        "status": "completed",
+        "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:27:34.229221Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_fe3ff4b356\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"size_count\\\",\\\"value\\\":3,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_fe3ff4b356\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\" 3 sizes\\\\\\\",\\\\\\\"start\\\\\\\":9,\\\"} }],\\\"type\\\":{\\\"value\\\":\\\"ear tips\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_fe3ff4b356\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"ear tips\\\\\\\",\\\\\\\"start\\\\\\\":24,\\\"}},\\\"category\\\":{\\\"value\\\":\\\"other\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_fe3ff4b356\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"ear tips\\\\\\\",\\\\\\\"start\\\\\\\":24,\\\"}},\\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":17820711209,\"load_duration\":20787292,\"prompt_eval_count\":718,\"prompt_eval_cached_count\":272,\"prompt_eval_duration\":3899864000,\"eval_count\":161,\"eval_duration\":12770826000}",
+        "data": {
+          "rowId": "row_fe3ff4b356",
+          "facts": [
+            {
+              "attribute": "size_count",
+              "value": 3,
+              "unit": null,
+              "scope": "product",
+              "conditions": [],
+              "evidence": {
+                "rowId": "row_fe3ff4b356",
+                "field": "raw_specs",
+                "quote": " 3 sizes\",\"start\":9,"
+              }
+            }
+          ],
+          "type": {
+            "value": "ear tips",
+            "evidence": {
+              "rowId": "row_fe3ff4b356",
+              "field": "raw_title",
+              "quote": "ear tips\",\"start\":24,"
+            }
+          },
+          "category": {
+            "value": "other",
+            "evidence": {
+              "rowId": "row_fe3ff4b356",
+              "field": "raw_title",
+              "quote": "ear tips\",\"start\":24,"
+            }
+          },
+          "unknowns": []
+        },
+        "jsonParsed": true,
+        "model": "gemma4:12b",
+        "requestId": null,
+        "usage": {
+          "inputTokens": 718,
+          "outputTokens": 161,
+          "cachedInputTokens": 272,
+          "cacheWriteTokens": null
+        },
+        "timings": {
+          "totalMs": 17820.711209,
+          "loadMs": 20.787292,
+          "promptMs": 3899.864,
+          "generationMs": 12770.826
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 718,
+          "outputTokens": 161,
+          "cachedInputTokens": 272,
+          "cacheWriteTokens": null
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 17872.26691699997,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:27:34.229221Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_fe3ff4b356\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"size_count\\\",\\\"value\\\":3,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_fe3ff4b356\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\" 3 sizes\\\\\\\",\\\\\\\"start\\\\\\\":9,\\\"} }],\\\"type\\\":{\\\"value\\\":\\\"ear tips\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_fe3ff4b356\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"ear tips\\\\\\\",\\\\\\\"start\\\\\\\":24,\\\"}},\\\"category\\\":{\\\"value\\\":\\\"other\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_fe3ff4b356\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"ear tips\\\\\\\",\\\\\\\"start\\\\\\\":24,\\\"}},\\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":17820711209,\"load_duration\":20787292,\"prompt_eval_count\":718,\"prompt_eval_cached_count\":272,\"prompt_eval_duration\":3899864000,\"eval_count\":161,\"eval_duration\":12770826000}",
+            "data": {
+              "rowId": "row_fe3ff4b356",
+              "facts": [
+                {
+                  "attribute": "size_count",
+                  "value": 3,
+                  "unit": null,
+                  "scope": "product",
+                  "conditions": [],
+                  "evidence": {
+                    "rowId": "row_fe3ff4b356",
+                    "field": "raw_specs",
+                    "quote": " 3 sizes\",\"start\":9,"
+                  }
+                }
+              ],
+              "type": {
+                "value": "ear tips",
+                "evidence": {
+                  "rowId": "row_fe3ff4b356",
+                  "field": "raw_title",
+                  "quote": "ear tips\",\"start\":24,"
+                }
+              },
+              "category": {
+                "value": "other",
+                "evidence": {
+                  "rowId": "row_fe3ff4b356",
+                  "field": "raw_title",
+                  "quote": "ear tips\",\"start\":24,"
+                }
+              },
+              "unknowns": []
+            },
+            "jsonParsed": true,
+            "model": "gemma4:12b",
+            "requestId": null,
+            "usage": {
+              "inputTokens": 718,
+              "outputTokens": 161,
+              "cachedInputTokens": 272,
+              "cacheWriteTokens": null
+            },
+            "timings": {
+              "totalMs": 17820.711209,
+              "loadMs": 20.787292,
+              "promptMs": 3899.864,
+              "generationMs": 12770.826
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": false,
+          "reason": "absent quote"
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "d93aa1c70d3bf62a9f0644df4292ae6be4095bee25086e02956fc655d6c39361",
+      "role": "extraction",
+      "rowIds": [
+        "row_11bb99b2fa"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 1,
+      "elapsedMs": 27766.113957999973,
+      "status": "error",
+      "error": "invalid_response",
+      "response": {
+        "status": "completed",
+        "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:28:01.9663Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_11bb99b2fa\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"bluetooth_supported\\\",\\\"value\\\":true,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11bb99b2fa\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"BT 5.3\\\"}},{\\\"attribute\\\":\\\"wireless_frequency\\\",\\\"value\\\":5.3,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[\\\"radio_link\\\"],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11bb99b2fa\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"5.3\\\"}}],\\\"type\\\":{\\\"value\\\":\\\"earbud\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11bb99b2fa\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"earbud\\\"}},\\\"category\\\":{\\\"value\\\":\\\"audio_headphones\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11bb99b2fa\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"earbud\\\"}}, \\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":27641135708,\"load_duration\":17956167,\"prompt_eval_count\":1367,\"prompt_eval_cached_count\":271,\"prompt_eval_duration\":10205915000,\"eval_count\":208,\"eval_duration\":16574876000}",
+        "data": {
+          "rowId": "row_11bb99b2fa",
+          "facts": [
+            {
+              "attribute": "bluetooth_supported",
+              "value": true,
+              "unit": null,
+              "scope": "product",
+              "conditions": [],
+              "evidence": {
+                "rowId": "row_11bb99b2fa",
+                "field": "raw_specs",
+                "quote": "BT 5.3"
+              }
+            },
+            {
+              "attribute": "wireless_frequency",
+              "value": 5.3,
+              "unit": null,
+              "scope": "product",
+              "conditions": [
+                "radio_link"
+              ],
+              "evidence": {
+                "rowId": "row_11bb99b2fa",
+                "field": "raw_specs",
+                "quote": "5.3"
+              }
+            }
+          ],
+          "type": {
+            "value": "earbud",
+            "evidence": {
+              "rowId": "row_11bb99b2fa",
+              "field": "raw_title",
+              "quote": "earbud"
+            }
+          },
+          "category": {
+            "value": "audio_headphones",
+            "evidence": {
+              "rowId": "row_11bb99b2fa",
+              "field": "raw_title",
+              "quote": "earbud"
+            }
+          },
+          "unknowns": []
+        },
+        "jsonParsed": true,
+        "model": "gemma4:12b",
+        "requestId": null,
+        "usage": {
+          "inputTokens": 1367,
+          "outputTokens": 208,
+          "cachedInputTokens": 271,
+          "cacheWriteTokens": null
+        },
+        "timings": {
+          "totalMs": 27641.135708,
+          "loadMs": 17.956167,
+          "promptMs": 10205.915,
+          "generationMs": 16574.876
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 1367,
+          "outputTokens": 208,
+          "cachedInputTokens": 271,
+          "cacheWriteTokens": null
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 27711.068958000018,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:28:01.9663Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_11bb99b2fa\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"bluetooth_supported\\\",\\\"value\\\":true,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11bb99b2fa\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"BT 5.3\\\"}},{\\\"attribute\\\":\\\"wireless_frequency\\\",\\\"value\\\":5.3,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[\\\"radio_link\\\"],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11bb99b2fa\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"5.3\\\"}}],\\\"type\\\":{\\\"value\\\":\\\"earbud\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11bb99b2fa\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"earbud\\\"}},\\\"category\\\":{\\\"value\\\":\\\"audio_headphones\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11bb99b2fa\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"earbud\\\"}}, \\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":27641135708,\"load_duration\":17956167,\"prompt_eval_count\":1367,\"prompt_eval_cached_count\":271,\"prompt_eval_duration\":10205915000,\"eval_count\":208,\"eval_duration\":16574876000}",
+            "data": {
+              "rowId": "row_11bb99b2fa",
+              "facts": [
+                {
+                  "attribute": "bluetooth_supported",
+                  "value": true,
+                  "unit": null,
+                  "scope": "product",
+                  "conditions": [],
+                  "evidence": {
+                    "rowId": "row_11bb99b2fa",
+                    "field": "raw_specs",
+                    "quote": "BT 5.3"
+                  }
+                },
+                {
+                  "attribute": "wireless_frequency",
+                  "value": 5.3,
+                  "unit": null,
+                  "scope": "product",
+                  "conditions": [
+                    "radio_link"
+                  ],
+                  "evidence": {
+                    "rowId": "row_11bb99b2fa",
+                    "field": "raw_specs",
+                    "quote": "5.3"
+                  }
+                }
+              ],
+              "type": {
+                "value": "earbud",
+                "evidence": {
+                  "rowId": "row_11bb99b2fa",
+                  "field": "raw_title",
+                  "quote": "earbud"
+                }
+              },
+              "category": {
+                "value": "audio_headphones",
+                "evidence": {
+                  "rowId": "row_11bb99b2fa",
+                  "field": "raw_title",
+                  "quote": "earbud"
+                }
+              },
+              "unknowns": []
+            },
+            "jsonParsed": true,
+            "model": "gemma4:12b",
+            "requestId": null,
+            "usage": {
+              "inputTokens": 1367,
+              "outputTokens": 208,
+              "cachedInputTokens": 271,
+              "cacheWriteTokens": null
+            },
+            "timings": {
+              "totalMs": 27641.135708,
+              "loadMs": 17.956167,
+              "promptMs": 10205.915,
+              "generationMs": 16574.876
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "semantic": {
+          "checked": true,
+          "passed": false,
+          "reason": "unsupported semantic addition"
+        }
+      }
+    },
+    {
+      "key": "ac6efd03f5e396b0157abfb16c2be94a1cc776edda402822d4f5cb30866ec031",
+      "role": "extraction",
+      "rowIds": [
+        "row_e0afb74574"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 2,
+      "errors": 2,
+      "elapsedMs": 242268.79691600002,
+      "status": "error",
+      "error": "timeout",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 120127.604333,
+          "error": "timeout",
+          "response": null
+        },
+        {
+          "elapsedMs": 120837.39325000002,
+          "error": "timeout",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "timeout"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "63379d9be1bf7e19e2052bfa167cf1a14f209d67a8cf9e21d1a0f4a0b4a63a11",
+      "role": "extraction",
+      "rowIds": [
+        "row_bdbc045131"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 1,
+      "elapsedMs": 37030.12645900005,
+      "status": "error",
+      "error": "invalid_response",
+      "response": {
+        "status": "completed",
+        "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:32:41.484736Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_bdbc045131\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"bluetooth_supported\\\",\\\"value\\\":true,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_bdbc045131\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"Bluetooth 5.3\\\"}},{\\\"attribute\\\":\\\"wireless_frequency\\\",\\\"value\\\":5.3,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[\\\"radio_link\\\"],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_bdbc045131\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"5.3\\\"}}],\\\"type\\\":{\\\"value\\\":\\\"Earbuds\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_bdbc045131\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"Earbuds\\\"}},\\\"category\\\":{\\\"value\\\":\\\"audio_headphones\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_bdbc045131\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"Earbuds\\\"}}, \\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":36504466875,\"load_duration\":262748000,\"prompt_eval_count\":1351,\"prompt_eval_cached_count\":279,\"prompt_eval_duration\":9753588000,\"eval_count\":208,\"eval_duration\":16189225000}",
+        "data": {
+          "rowId": "row_bdbc045131",
+          "facts": [
+            {
+              "attribute": "bluetooth_supported",
+              "value": true,
+              "unit": null,
+              "scope": "product",
+              "conditions": [],
+              "evidence": {
+                "rowId": "row_bdbc045131",
+                "field": "raw_specs",
+                "quote": "Bluetooth 5.3"
+              }
+            },
+            {
+              "attribute": "wireless_frequency",
+              "value": 5.3,
+              "unit": null,
+              "scope": "product",
+              "conditions": [
+                "radio_link"
+              ],
+              "evidence": {
+                "rowId": "row_bdbc045131",
+                "field": "raw_specs",
+                "quote": "5.3"
+              }
+            }
+          ],
+          "type": {
+            "value": "Earbuds",
+            "evidence": {
+              "rowId": "row_bdbc045131",
+              "field": "raw_title",
+              "quote": "Earbuds"
+            }
+          },
+          "category": {
+            "value": "audio_headphones",
+            "evidence": {
+              "rowId": "row_bdbc045131",
+              "field": "raw_title",
+              "quote": "Earbuds"
+            }
+          },
+          "unknowns": []
+        },
+        "jsonParsed": true,
+        "model": "gemma4:12b",
+        "requestId": null,
+        "usage": {
+          "inputTokens": 1351,
+          "outputTokens": 208,
+          "cachedInputTokens": 279,
+          "cacheWriteTokens": null
+        },
+        "timings": {
+          "totalMs": 36504.466875,
+          "loadMs": 262.748,
+          "promptMs": 9753.588,
+          "generationMs": 16189.225
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 1351,
+          "outputTokens": 208,
+          "cachedInputTokens": 279,
+          "cacheWriteTokens": null
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 36819.834124999994,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:32:41.484736Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_bdbc045131\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"bluetooth_supported\\\",\\\"value\\\":true,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_bdbc045131\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"Bluetooth 5.3\\\"}},{\\\"attribute\\\":\\\"wireless_frequency\\\",\\\"value\\\":5.3,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[\\\"radio_link\\\"],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_bdbc045131\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"5.3\\\"}}],\\\"type\\\":{\\\"value\\\":\\\"Earbuds\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_bdbc045131\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"Earbuds\\\"}},\\\"category\\\":{\\\"value\\\":\\\"audio_headphones\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_bdbc045131\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"Earbuds\\\"}}, \\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":36504466875,\"load_duration\":262748000,\"prompt_eval_count\":1351,\"prompt_eval_cached_count\":279,\"prompt_eval_duration\":9753588000,\"eval_count\":208,\"eval_duration\":16189225000}",
+            "data": {
+              "rowId": "row_bdbc045131",
+              "facts": [
+                {
+                  "attribute": "bluetooth_supported",
+                  "value": true,
+                  "unit": null,
+                  "scope": "product",
+                  "conditions": [],
+                  "evidence": {
+                    "rowId": "row_bdbc045131",
+                    "field": "raw_specs",
+                    "quote": "Bluetooth 5.3"
+                  }
+                },
+                {
+                  "attribute": "wireless_frequency",
+                  "value": 5.3,
+                  "unit": null,
+                  "scope": "product",
+                  "conditions": [
+                    "radio_link"
+                  ],
+                  "evidence": {
+                    "rowId": "row_bdbc045131",
+                    "field": "raw_specs",
+                    "quote": "5.3"
+                  }
+                }
+              ],
+              "type": {
+                "value": "Earbuds",
+                "evidence": {
+                  "rowId": "row_bdbc045131",
+                  "field": "raw_title",
+                  "quote": "Earbuds"
+                }
+              },
+              "category": {
+                "value": "audio_headphones",
+                "evidence": {
+                  "rowId": "row_bdbc045131",
+                  "field": "raw_title",
+                  "quote": "Earbuds"
+                }
+              },
+              "unknowns": []
+            },
+            "jsonParsed": true,
+            "model": "gemma4:12b",
+            "requestId": null,
+            "usage": {
+              "inputTokens": 1351,
+              "outputTokens": 208,
+              "cachedInputTokens": 279,
+              "cacheWriteTokens": null
+            },
+            "timings": {
+              "totalMs": 36504.466875,
+              "loadMs": 262.748,
+              "promptMs": 9753.588,
+              "generationMs": 16189.225
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "semantic": {
+          "checked": true,
+          "passed": false,
+          "reason": "unsupported semantic addition"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "elapsedMs": 11786.159125,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:06:44.409409Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowId\\\": \\\"row_05e5d126cb\\\",\\n  \\\"facts\\\": [\\n    {\\n      \\\"attribute\\\": \\\"bluetooth_supported\\\",\\n      \\\"value\\\": \\\"true\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_05e5d126cb\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"AMAZING SOUND!!! BEST HEADPHONES 2026!!! GRAB IT FAST!!!\\\"\\n      }\\n    }\\n  ],\\n  \\\"type\\\": {\\n    \\\"value\\\": \\\"headphones\\\",\\n    \\\"evidence\\\": {\\n      \\\"rowId\\\": \\\"row_05e5d126cb\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"sony wh880n headphones OPEN BOX\\\"\\n    }\\n  },\\n  \\\"category\\\": {\\n    \\\"value\\\": \\\"audio_headphones\\\",\\n    \\\"evidence\\\": {\\n      \\\"rowId\\\": \\\"row_05e5d126cb\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"sony wh880n headphones OPEN BOX\\\"\\n    }\\n  }\\n  ,\\n  \\\"unknowns\\\": [\\n    \\\"wireless_frequency\\\",\\n    \\\"colour_temperature_count\\\",\\n    \\\"size_count\\\",\\n    \\\"compatible_model\\\"\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":11775348500,\"load_duration\":59081625,\"prompt_eval_count\":683,\"prompt_eval_duration\":3804284875,\"eval_count\":291,\"eval_duration\":7892623583}",
+    "data": {
+      "rowId": "row_05e5d126cb",
+      "facts": [
+        {
+          "attribute": "bluetooth_supported",
+          "value": "true",
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_05e5d126cb",
+            "field": "raw_specs",
+            "quote": "AMAZING SOUND!!! BEST HEADPHONES 2026!!! GRAB IT FAST!!!"
+          }
+        }
+      ],
+      "type": {
+        "value": "headphones",
+        "evidence": {
+          "rowId": "row_05e5d126cb",
+          "field": "raw_title",
+          "quote": "sony wh880n headphones OPEN BOX"
+        }
+      },
+      "category": {
+        "value": "audio_headphones",
+        "evidence": {
+          "rowId": "row_05e5d126cb",
+          "field": "raw_title",
+          "quote": "sony wh880n headphones OPEN BOX"
+        }
+      },
+      "unknowns": [
+        "wireless_frequency",
+        "colour_temperature_count",
+        "size_count",
+        "compatible_model"
+      ]
+    },
+    "jsonParsed": true,
+    "model": "qwen3:4b",
+    "requestId": null,
+    "usage": {
+      "inputTokens": 683,
+      "outputTokens": 291,
+      "cachedInputTokens": null,
+      "cacheWriteTokens": null
+    },
+    "timings": {
+      "totalMs": 11775.3485,
+      "loadMs": 59.081625,
+      "promptMs": 3804.284875,
+      "generationMs": 7892.623583
+    }
+  }
+}

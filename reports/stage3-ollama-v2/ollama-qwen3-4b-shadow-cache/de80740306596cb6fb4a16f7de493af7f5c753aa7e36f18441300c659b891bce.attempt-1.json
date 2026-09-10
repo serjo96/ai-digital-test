@@ -1,0 +1,54 @@
+{
+  "elapsedMs": 9824.510209,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:13:37.211213Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_bdbc045:31\\\",\\n    \\\"row_e0afb74574\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows describe the same product: AeroBuds Pro True Wireless Earbuds with Black color, Bluetooth 5.3, ANC, 20h total playback with case, IPX4, USB-C. The specifications match exactly when accounting for language differences and minor formatting variations (e.g., 'schwarz' for 'Black', 'Ladecase' for 'case').\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro True Wireless Earbuds - Black\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_e0afb74574\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AEROBUDS PRO / schwarz / ANC\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"ANC; Bluetooth 5.3; 20h total playback with case; IPX4; USB-C\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_e0afb74574\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"Bluetooth 5.3, Akku 18h, IPX4, USB-C Ladecase\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":9819521083,\"load_duration\":39148792,\"prompt_eval_count\":287,\"prompt_eval_duration\":440127583,\"eval_count\":350,\"eval_duration\":9321645000}",
+    "data": {
+      "rowIds": [
+        "row_bdbc045:31",
+        "row_e0afb74574"
+      ],
+      "decision": "merge",
+      "confidence": "high",
+      "reason": "Both rows describe the same product: AeroBuds Pro True Wireless Earbuds with Black color, Bluetooth 5.3, ANC, 20h total playback with case, IPX4, USB-C. The specifications match exactly when accounting for language differences and minor formatting variations (e.g., 'schwarz' for 'Black', 'Ladecase' for 'case').",
+      "evidence": [
+        {
+          "rowId": "row_bdbc045131",
+          "field": "raw_title",
+          "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+        },
+        {
+          "rowId": "row_e0afb74574",
+          "field": "raw_title",
+          "quote": "AEROBUDS PRO / schwarz / ANC"
+        },
+        {
+          "rowId": "row_bdbc045131",
+          "field": "raw_specs",
+          "quote": "ANC; Bluetooth 5.3; 20h total playback with case; IPX4; USB-C"
+        },
+        {
+          "rowId": "row_e0afb74574",
+          "field": "raw_specs",
+          "quote": "Bluetooth 5.3, Akku 18h, IPX4, USB-C Ladecase"
+        }
+      ]
+    },
+    "jsonParsed": true,
+    "model": "qwen3:4b",
+    "requestId": null,
+    "usage": {
+      "inputTokens": 287,
+      "outputTokens": 350,
+      "cachedInputTokens": null,
+      "cacheWriteTokens": null
+    },
+    "timings": {
+      "totalMs": 9819.521083,
+      "loadMs": 39.148792,
+      "promptMs": 440.127583,
+      "generationMs": 9321.645
+    }
+  }
+}

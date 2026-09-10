@@ -1,0 +1,115 @@
+{
+  "elapsedMs": 18480.226665999988,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:08:37.081851Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowId\\\": \\\"row_fe3ff4b356\\\",\\n  \\\"facts\\\": [\\n    {\\n      \\\"attribute\\\": \\\"bluetooth_supported\\\",\\n      \\\"value\\\": \\\"true\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_fe3ff4b356\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"Silicone, 3 sizes, compatible with AeroBuds Pro\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"wireless_frequency\\\",\\n      \\\"value\\\": 2.4,\\n      \\\"unit\\\": \\\"GHz\\\",\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\\"radio_link\\\"],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_fe3ff4b356\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"Silicone, 3 sizes, compatible with AeroBuds Pro\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"colour_temperature_count\\\",\\n      \\\"value\\\": 0,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_fe3ff4b356\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"Silicone, 3 sizes, compatible with AeroBuds Pro\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"size_count\\\",\\n      \\\"value\\\": 3,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_fe3ff4b356\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"3 sizes\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"compatible_model\\\",\\n      \\\"value\\\": \\\"AeroBuds Pro\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\\"compatible_device\\\"],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_fe3ff4b356\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\" compatible with AeroBuds Pro\\\"\\n      }\\n    }\\n  ],\\n  \\\"type\\\": {\\n    \\\"value\\\": \\\"ear_tips\\\",\\n    \\\"evidence\\\": {\\n      \\\"rowId\\\": \\\"row_fe3ff4b356\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro replacement ear tips (S/M/L)\\\"\\n    }\\n  },\\n  \\\"category\\\": {\\n    \\\"value\\\": \\\"other\\\",\\n    \\\"evidence\\\": {\\n      \\\"rowId\\\": \\\"row_fe3ff4b356\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro replacement ear tips (S/M/L)\\\"\\n    }\\n  }\\n  ,\\n  \\\"unknowns\\\": [\\n    \\\"bluetooth_supported\\\",\\n    \\\"wireless_frequency\\\",\\n    \\\"colour_temperature_count\\\",\\n    \\\"size_count\\\",\\n    \\\"compatible_model\\\"\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":18459118958,\"load_duration\":36598500,\"prompt_eval_count\":692,\"prompt_eval_duration\":1251706625,\"eval_count\":634,\"eval_duration\":17151543125}",
+    "data": {
+      "rowId": "row_fe3ff4b356",
+      "facts": [
+        {
+          "attribute": "bluetooth_supported",
+          "value": "true",
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_fe3ff4b356",
+            "field": "raw_specs",
+            "quote": "Silicone, 3 sizes, compatible with AeroBuds Pro"
+          }
+        },
+        {
+          "attribute": "wireless_frequency",
+          "value": 2.4,
+          "unit": "GHz",
+          "scope": "product",
+          "conditions": [
+            "radio_link"
+          ],
+          "evidence": {
+            "rowId": "row_fe3ff4b356",
+            "field": "raw_specs",
+            "quote": "Silicone, 3 sizes, compatible with AeroBuds Pro"
+          }
+        },
+        {
+          "attribute": "colour_temperature_count",
+          "value": 0,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_fe3ff4b356",
+            "field": "raw_specs",
+            "quote": "Silicone, 3 sizes, compatible with AeroBuds Pro"
+          }
+        },
+        {
+          "attribute": "size_count",
+          "value": 3,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_fe3ff4b356",
+            "field": "raw_specs",
+            "quote": "3 sizes"
+          }
+        },
+        {
+          "attribute": "compatible_model",
+          "value": "AeroBuds Pro",
+          "unit": null,
+          "scope": "product",
+          "conditions": [
+            "compatible_device"
+          ],
+          "evidence": {
+            "rowId": "row_fe3ff4b356",
+            "field": "raw_specs",
+            "quote": " compatible with AeroBuds Pro"
+          }
+        }
+      ],
+      "type": {
+        "value": "ear_tips",
+        "evidence": {
+          "rowId": "row_fe3ff4b356",
+          "field": "raw_title",
+          "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+        }
+      },
+      "category": {
+        "value": "other",
+        "evidence": {
+          "rowId": "row_fe3ff4b356",
+          "field": "raw_title",
+          "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+        }
+      },
+      "unknowns": [
+        "bluetooth_supported",
+        "wireless_frequency",
+        "colour_temperature_count",
+        "size_count",
+        "compatible_model"
+      ]
+    },
+    "jsonParsed": true,
+    "model": "qwen3:4b",
+    "requestId": null,
+    "usage": {
+      "inputTokens": 692,
+      "outputTokens": 634,
+      "cachedInputTokens": null,
+      "cacheWriteTokens": null
+    },
+    "timings": {
+      "totalMs": 18459.118958,
+      "loadMs": 36.5985,
+      "promptMs": 1251.706625,
+      "generationMs": 17151.543125
+    }
+  }
+}

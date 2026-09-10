@@ -14,10 +14,20 @@ export function selectAiRows(b1: ProductResult): string[] {
     .filter(id => active.has(id)).sort();
 }
 const requestFor = (role: RoleConfig, schemaName: string, schema: AiRequest['schema'], instructions: string, input: unknown): AiRequest => ({
-  model: role.model, parameters: { reasoning: role.reasoning, maxOutputTokens: role.maxOutputTokens }, schemaName, schema, instructions, input,
+  model: role.model, ... (role.identity ? { identity: role.identity } : {}), parameters: Object.fromEntries(Object.entries(role).filter(([key, value]) => !['provider', 'model', 'identity', 'enabled'].includes(key) && value !== undefined)) as AiRequest['parameters'], schemaName, schema, instructions, input,
 });
 const raw = (row: SourceRow) => ({ rowId: row.row_id, raw_title: row.raw_title, raw_specs: row.raw_specs });
 const policy = 'Only supplied taxonomy. Ear tips/tablet cases/laptop sleeves and ordinary non-gaming mice: other; USB-C hubs: chargers_cables. Never classify an accessory as its compatible device.';
+
+export function extractionRequest(row: SourceRow, config: RoleConfig): AiRequest {
+  const original = extract(row); const identity = identify(row, original.facts);
+  return requestFor(config, 'semantic_extraction_v1', jsonSchema(ExtractionSchema), extractionPrompt,
+    { row: raw(row), existingFacts: original.facts, identity, unresolved: original.unparsed, taxonomy: TAXONOMY, categoryPolicy: policy });
+}
+
+export function matchingRequest(members: SourceRow[], config: RoleConfig, pair: unknown): AiRequest {
+  return requestFor(config, 'ambiguous_matching_v3', jsonSchema(MatchingSchema), matchingPrompt, { rows: members.map(raw), codeDecision: pair });
+}
 
 function remaining(unparsed: Evidence[], facts: Fact[]): Evidence[] {
   return unparsed.filter(e => [...e.quote].some((char, i) => /[\p{L}\p{N}]/u.test(char) && !facts.some(f =>
@@ -29,10 +39,10 @@ export function selectedTaskRows(b1: ProductResult, task: 'extraction' | 'matchi
   return targets.filter(id => !eligible || eligible.has(id));
 }
 
-export async function aiBaseline(source: SourceRow[], runtime: AiRuntime, task: 'extraction' | 'matching' = 'extraction', eligible?: Set<string>): Promise<ProductResult> {
+export async function aiBaseline(source: SourceRow[], runtime: AiRuntime, task: 'extraction' | 'matching' = 'extraction', eligible?: Set<string>, fixedPairs?: [string, string][]): Promise<ProductResult> {
   const b1 = productBaseline(source);
   if (task === 'matching' && !runtime.config.matching.enabled) throw new Error('matching experiment is disabled in config');
-  const targets = task === 'extraction' ? selectedTaskRows(b1, task, eligible) : [];
+  const targets = task === 'extraction' ? (eligible ? [...eligible].filter(id => selectAiRows(b1).includes(id)) : selectedTaskRows(b1, task)) : [];
   const enrichment: ProductEnrichment = { extractions: new Map(), identities: new Map(), categories: new Map(), reviews: [], pairHints: new Map() };
   let authFailed = false;
   for (const id of targets) {
@@ -43,16 +53,21 @@ export async function aiBaseline(source: SourceRow[], runtime: AiRuntime, task: 
       continue;
     }
     const config = runtime.config.extraction;
-    const request = requestFor(config, 'semantic_extraction_v1', jsonSchema(ExtractionSchema), extractionPrompt,
-      { row: raw(row), existingFacts: original.facts, identity, unresolved: original.unparsed, taxonomy: TAXONOMY, categoryPolicy: policy });
+    const request = extractionRequest(row, config);
     const parsed = await runtime.execute(config.provider, 'extraction', [id], request, data => {
-      const parsed = ExtractionSchema.parse(data);
+      const parsed = runtime.check('schema', () => ExtractionSchema.parse(data));
+      runtime.check('citations', () => {
+        if (parsed.rowId !== id) throw new Error('foreign row');
+        for (const citation of [...parsed.facts.map(f => f.evidence), ...(parsed.type ? [parsed.type.evidence] : []), ...(parsed.category ? [parsed.category.evidence] : [])]) evidenceFor(citation, row);
+      });
+      return runtime.check('semantic', () => {
       if (parsed.rowId !== id) throw new Error('foreign row');
       const facts = parsed.facts.map(f => additionFact(f, row));
       if (new Set(facts.map(f => f.id)).size !== facts.length) throw new Error('duplicate addition');
       const typeEvidence = parsed.type ? evidenceFor(parsed.type.evidence, row) : null;
       const categoryEvidence = parsed.category ? evidenceFor(parsed.category.evidence, row) : null;
       return { parsed, facts, typeEvidence, categoryEvidence };
+      });
     });
     if (!parsed) {
       authFailed = runtime.records.at(-1)?.error === 'auth';
@@ -82,13 +97,13 @@ export async function aiBaseline(source: SourceRow[], runtime: AiRuntime, task: 
     }
   }
   if (task === 'matching' && !authFailed) {
-    for (const pair of b1.candidates.filter(c => c.status === 'review' && c.rowIds.every(id => !eligible || eligible.has(id)))) {
+    for (const pair of fixedPairs ? fixedPairs.map(rowIds => ({ rowIds, status: 'shadow' })) : b1.candidates.filter(c => c.status === 'review' && c.rowIds.every(id => !eligible || eligible.has(id)))) {
       const members = pair.rowIds.map(id => source.find(r => r.row_id === id)!);
       const config = runtime.config.matching;
-      const request = requestFor(config, 'ambiguous_matching_v1', jsonSchema(MatchingSchema), matchingPrompt,
-        { rows: members.map(raw), codeDecision: pair });
+      const request = matchingRequest(members, config, pair);
       const decision = await runtime.execute(config.provider, 'matching', pair.rowIds, request, data => {
-        const parsed = MatchingSchema.parse(data);
+        const parsed = runtime.check('schema', () => MatchingSchema.parse(data));
+        return runtime.check('citations', () => {
         if (JSON.stringify([...parsed.rowIds].sort()) !== JSON.stringify([...pair.rowIds].sort())) throw new Error('foreign pair');
         const evidence = parsed.evidence.map(c => {
           const row = members.find(r => r.row_id === c.rowId);
@@ -96,13 +111,14 @@ export async function aiBaseline(source: SourceRow[], runtime: AiRuntime, task: 
           return evidenceFor(c, row);
         });
         if (parsed.decision !== 'unknown' && members.some(row => !evidence.some(e => e.rowId === row.row_id))) throw new Error('missing pair evidence');
+        runtime.check('semantic', () => true);
         return { ...parsed, evidence };
+        });
       });
-      const key = JSON.stringify([...pair.rowIds].sort());
-      enrichment.pairHints.set(key, decision?.decision ?? 'unknown');
-      enrichment.reviews.push({ rowIds: pair.rowIds, reason: decision ? `identity:ai_advisory_${decision.decision}` : 'ai_error:matching', evidence: decision?.evidence ?? members.map(r => sourceEvidence(r, 'raw_title')) });
+      // Recommendations live exclusively in the AI trace; never mutate deterministic output.
+      void decision;
       if (runtime.records.at(-1)?.error === 'auth') break;
     }
   }
-  return productBaseline(source, enrichment);
+  return task === 'matching' ? b1 : productBaseline(source, enrichment);
 }

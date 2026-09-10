@@ -1,0 +1,100 @@
+{
+  "elapsedMs": 15904.219665999997,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:07:15.564217Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowId\\\": \\\"row_22e59912ad\\\",\\n  \\\"facts\\\": [\\n    {\\n      \\\"attribute\\\": \\\"size_count\\\",\\n      \\\"value\\\": 1,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_22e59912ad\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"2 terabyte\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"colour_temperature_count\\\",\\n      \\\"value\\\": 0,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_22e59912ad\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"fast\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"bluetooth_supported\\\",\\n      \\\"value\\\": false,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_22e59912ad\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"fast\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"wireless_frequency\\\",\\n      \\\"value\\\": 0,\\n      \\\"unit\\\": \\\"GHz\\\",\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\n        \\\"radio_link\\\"\\n      ],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_22e59912ad\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"fast\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"compatible_model\\\",\\n      \\\"value\\\": \\\"VAULT 2TB SSD portable drive\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\n        \\\"compatible_device\\\"\\n      ],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_22e59912ad\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"VAULT 2TB SSD portable drive\\\"\\n      }\\n    }\\n  ]\\n  ,\\n  \\\"type\\\": null,\\n  \\\"category\\\": null\\n  ,\\n  \\\"unknowns\\\": [\\n    \\\"bluetooth_supported\\\",\\n    \\\"wireless_frequency\\\",\\n    \\\"colour_temperature_count\\\",\\n    \\\"size_count\\\"\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":15899302000,\"load_duration\":28862292,\"prompt_eval_count\":981,\"prompt_eval_duration\":2145342459,\"eval_count\":500,\"eval_duration\":13711549583}",
+    "data": {
+      "rowId": "row_22e59912ad",
+      "facts": [
+        {
+          "attribute": "size_count",
+          "value": 1,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_22e59912ad",
+            "field": "raw_specs",
+            "quote": "2 terabyte"
+          }
+        },
+        {
+          "attribute": "colour_temperature_count",
+          "value": 0,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_22e59912ad",
+            "field": "raw_specs",
+            "quote": "fast"
+          }
+        },
+        {
+          "attribute": "bluetooth_supported",
+          "value": false,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_22e59912ad",
+            "field": "raw_specs",
+            "quote": "fast"
+          }
+        },
+        {
+          "attribute": "wireless_frequency",
+          "value": 0,
+          "unit": "GHz",
+          "scope": "product",
+          "conditions": [
+            "radio_link"
+          ],
+          "evidence": {
+            "rowId": "row_22e59912ad",
+            "field": "raw_specs",
+            "quote": "fast"
+          }
+        },
+        {
+          "attribute": "compatible_model",
+          "value": "VAULT 2TB SSD portable drive",
+          "unit": null,
+          "scope": "product",
+          "conditions": [
+            "compatible_device"
+          ],
+          "evidence": {
+            "rowId": "row_22e59912ad",
+            "field": "raw_title",
+            "quote": "VAULT 2TB SSD portable drive"
+          }
+        }
+      ],
+      "type": null,
+      "category": null,
+      "unknowns": [
+        "bluetooth_supported",
+        "wireless_frequency",
+        "colour_temperature_count",
+        "size_count"
+      ]
+    },
+    "jsonParsed": true,
+    "model": "qwen3:4b",
+    "requestId": null,
+    "usage": {
+      "inputTokens": 981,
+      "outputTokens": 500,
+      "cachedInputTokens": null,
+      "cacheWriteTokens": null
+    },
+    "timings": {
+      "totalMs": 15899.302,
+      "loadMs": 28.862292,
+      "promptMs": 2145.342459,
+      "generationMs": 13711.549583
+    }
+  }
+}

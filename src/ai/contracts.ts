@@ -4,14 +4,18 @@ export interface AiRequest {
   input: unknown;
   schema: Record<string, unknown>;
   schemaName: string;
-  parameters: { reasoning: 'low' | 'medium' | 'high'; maxOutputTokens: number };
+  parameters: { reasoning?: 'low' | 'medium' | 'high'; maxOutputTokens: number; temperature?: number; seed?: number; context?: number; topK?: number; topP?: number; repeatPenalty?: number; keepAlive?: string; thinking?: boolean };
+  identity?: { digest: string; serverVersion: string };
 }
 export interface AiResponse {
   status: 'completed' | 'refused' | 'incomplete' | 'invalid';
   data: unknown;
   model: string;
   requestId: string | null;
-  usage: { inputTokens: number; outputTokens: number; cachedInputTokens: number; cacheWriteTokens: number | null } | null;
+  raw?: string | undefined;
+  jsonParsed?: boolean | undefined;
+  timings?: { totalMs: number | null; loadMs: number | null; promptMs: number | null; generationMs: number | null } | undefined;
+  usage: { inputTokens: number; outputTokens: number; cachedInputTokens: number | null; cacheWriteTokens: number | null } | null;
 }
 export interface AiProvider {
   readonly id: string;
@@ -20,11 +24,13 @@ export interface AiProvider {
   readonly kind: 'real' | 'test';
   /** Local-only capability/credential check; must never perform I/O to a provider. */
   validateConfiguration?(request: AiRequest): void;
+  /** Pure decoding of saved raw output; never performs network I/O. */
+  replayResponse?(response: AiResponse): AiResponse;
   generate(request: AiRequest, signal: AbortSignal): Promise<AiResponse>;
 }
 export type ErrorKind = 'auth' | 'rate_limit' | 'server' | 'network' | 'timeout' | 'invalid_response' | 'configuration' | 'cache';
 export class AiError extends Error {
-  constructor(readonly kind: ErrorKind, readonly retryable = false) {
+  constructor(readonly kind: ErrorKind, readonly retryable = false, readonly rawBody?: string) {
     // Never include provider response bodies, request headers, or SDK error messages.
     super(`AI ${kind}`);
   }
@@ -57,6 +63,8 @@ export interface AiCallRecord {
   status: 'success' | 'error';
   error: string | null;
   response: AiResponse | null;
+  diagnostics?: Record<string, { checked: boolean; passed: boolean; reason: string | null }>;
+  attemptsLog?: { raw?: string | undefined; elapsedMs: number; error: string | null; response: AiResponse | null }[];
   attemptUsage: AiResponse['usage'][];
 }
 export interface AiSummary {

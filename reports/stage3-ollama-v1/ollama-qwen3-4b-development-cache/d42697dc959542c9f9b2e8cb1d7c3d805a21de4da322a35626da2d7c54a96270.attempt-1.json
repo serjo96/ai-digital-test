@@ -1,0 +1,101 @@
+{
+  "elapsedMs": 14923.732999999993,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:07:57.687677Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowId\\\": \\\"row_a1bb1ad2e9\\\",\\n  \\\"facts\\\": [\\n    {\\n      \\\"attribute\\\": \\\"bluetooth_supported\\\",\\n      \\\"value\\\": \\\"true\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_a1bb1ad2e9\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"USB-C\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"wireless_frequency\\\",\\n      \\\"value\\\": 2.4,\\n      \\\"unit\\\": \\\"GHz\\\",\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\n        \\\"radio_link\\\"\\n      ],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_a1bb1ad2e9\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"5 colour temps\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"colour_temperature_count\\\",\\n      \\\"value\\\": 5,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_a1bb1ad2e9\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"5 colour temps\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"size_count\\\",\\n      \\\"value\\\": 1,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_a1bb1ad2e9\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"5 colour temps\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"compatible_model\\\",\\n      \\\"value\\\": \\\"onyx 3\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\n        \\\"compatible_device\\\"\\n      ],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_a1bb1ad2e9\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"Onyx 3 desk lamp\\\"\\n      }\\n    }\\n  ]\\n  ,\\n  \\\"type\\\": null,\\n  \\\"category\\\": null\\n  ,\\n  \\\"unknowns\\\": [\\n    \\\"bluetooth_supported\\\",\\n    \\\"wireless_frequency\\\",\\n    \\\"colour_temperature_count\\\",\\n    \\\"size_count\\\",\\n    \\\"compatible_model\\\"\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":14916696083,\"load_duration\":25509708,\"prompt_eval_count\":765,\"prompt_eval_duration\":1432214417,\"eval_count\":494,\"eval_duration\":13454027875}",
+    "data": {
+      "rowId": "row_a1bb1ad2e9",
+      "facts": [
+        {
+          "attribute": "bluetooth_supported",
+          "value": "true",
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_a1bb1ad2e9",
+            "field": "raw_specs",
+            "quote": "USB-C"
+          }
+        },
+        {
+          "attribute": "wireless_frequency",
+          "value": 2.4,
+          "unit": "GHz",
+          "scope": "product",
+          "conditions": [
+            "radio_link"
+          ],
+          "evidence": {
+            "rowId": "row_a1bb1ad2e9",
+            "field": "raw_specs",
+            "quote": "5 colour temps"
+          }
+        },
+        {
+          "attribute": "colour_temperature_count",
+          "value": 5,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_a1bb1ad2e9",
+            "field": "raw_specs",
+            "quote": "5 colour temps"
+          }
+        },
+        {
+          "attribute": "size_count",
+          "value": 1,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_a1bb1ad2e9",
+            "field": "raw_specs",
+            "quote": "5 colour temps"
+          }
+        },
+        {
+          "attribute": "compatible_model",
+          "value": "onyx 3",
+          "unit": null,
+          "scope": "product",
+          "conditions": [
+            "compatible_device"
+          ],
+          "evidence": {
+            "rowId": "row_a1bb1ad2e9",
+            "field": "raw_title",
+            "quote": "Onyx 3 desk lamp"
+          }
+        }
+      ],
+      "type": null,
+      "category": null,
+      "unknowns": [
+        "bluetooth_supported",
+        "wireless_frequency",
+        "colour_temperature_count",
+        "size_count",
+        "compatible_model"
+      ]
+    },
+    "jsonParsed": true,
+    "model": "qwen3:4b",
+    "requestId": null,
+    "usage": {
+      "inputTokens": 765,
+      "outputTokens": 494,
+      "cachedInputTokens": null,
+      "cacheWriteTokens": null
+    },
+    "timings": {
+      "totalMs": 14916.696083,
+      "loadMs": 25.509708,
+      "promptMs": 1432.214417,
+      "generationMs": 13454.027875
+    }
+  }
+}

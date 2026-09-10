@@ -1,0 +1,208 @@
+{
+  "version": "ai-trace-v1",
+  "config": {
+    "version": "B2-config-v1",
+    "extraction": {
+      "provider": "ollama",
+      "model": "gemma4:12b",
+      "identity": {
+        "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+        "serverVersion": "0.34.0"
+      },
+      "temperature": 0,
+      "seed": 42,
+      "context": 8192,
+      "topK": 20,
+      "topP": 0.9,
+      "repeatPenalty": 1,
+      "keepAlive": "5m",
+      "thinking": false,
+      "maxOutputTokens": 2048
+    },
+    "matching": {
+      "provider": "ollama",
+      "model": "gemma4:12b",
+      "identity": {
+        "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+        "serverVersion": "0.34.0"
+      },
+      "temperature": 0,
+      "seed": 42,
+      "context": 8192,
+      "topK": 20,
+      "topP": 0.9,
+      "repeatPenalty": 1,
+      "keepAlive": "5m",
+      "thinking": false,
+      "maxOutputTokens": 2048,
+      "enabled": true
+    },
+    "timeoutMs": 120000,
+    "maxRetries": 0,
+    "prices": []
+  },
+  "records": [
+    {
+      "key": "90f8cff4e15cdcbbf8caed0e096d21ef7fcec4b0430a1848dd1da8849e1e935c",
+      "role": "extraction",
+      "rowIds": [
+        "row_11462769c5"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "replay",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 2.6059170000007725,
+      "status": "error",
+      "error": "invalid_response",
+      "response": {
+        "status": "completed",
+        "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:24:53.290041Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_11462769c5\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"colour_temperature_count\\\",\\\"value\\\":5,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11462769c5\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\" 5 colour temps\\\\\\\",\\\\\\\"start\\\\\\\":4,\\\"} }],\\\"type\\\":{\\\"value\\\":\\\"lamp\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11462769c5\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"lamp\\\\\\\",\\\\\\\"start\\\\\\\":11,\\\"}},\\\"category\\\":{\\\"value\\\":\\\"home_kitchen\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11462769c5\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"lamp\\\\\\\",\\\\\\\"start\\\\\\\":11,\\\"}}, \\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":16977700625,\"load_duration\":31687833,\"prompt_eval_count\":785,\"prompt_eval_cached_count\":780,\"prompt_eval_duration\":2824700000,\"eval_count\":173,\"eval_duration\":13855047000}",
+        "data": {
+          "rowId": "row_11462769c5",
+          "facts": [
+            {
+              "attribute": "colour_temperature_count",
+              "value": 5,
+              "unit": null,
+              "scope": "product",
+              "conditions": [],
+              "evidence": {
+                "rowId": "row_11462769c5",
+                "field": "raw_specs",
+                "quote": " 5 colour temps\",\"start\":4,"
+              }
+            }
+          ],
+          "type": {
+            "value": "lamp",
+            "evidence": {
+              "rowId": "row_11462769c5",
+              "field": "raw_title",
+              "quote": "lamp\",\"start\":11,"
+            }
+          },
+          "category": {
+            "value": "home_kitchen",
+            "evidence": {
+              "rowId": "row_11462769c5",
+              "field": "raw_title",
+              "quote": "lamp\",\"start\":11,"
+            }
+          },
+          "unknowns": []
+        },
+        "jsonParsed": true,
+        "model": "gemma4:12b",
+        "requestId": null,
+        "usage": {
+          "inputTokens": 785,
+          "outputTokens": 173,
+          "cachedInputTokens": 780,
+          "cacheWriteTokens": null
+        },
+        "timings": {
+          "totalMs": 16977.700625,
+          "loadMs": 31.687833,
+          "promptMs": 2824.7,
+          "generationMs": 13855.047
+        }
+      },
+      "attemptUsage": [],
+      "attemptsLog": [
+        {
+          "elapsedMs": 17012.313457999997,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "data": {
+              "rowId": "row_11462769c5",
+              "facts": [
+                {
+                  "attribute": "colour_temperature_count",
+                  "value": 5,
+                  "unit": null,
+                  "scope": "product",
+                  "conditions": [],
+                  "evidence": {
+                    "rowId": "row_11462769c5",
+                    "field": "raw_specs",
+                    "quote": " 5 colour temps\",\"start\":4,"
+                  }
+                }
+              ],
+              "type": {
+                "value": "lamp",
+                "evidence": {
+                  "rowId": "row_11462769c5",
+                  "field": "raw_title",
+                  "quote": "lamp\",\"start\":11,"
+                }
+              },
+              "category": {
+                "value": "home_kitchen",
+                "evidence": {
+                  "rowId": "row_11462769c5",
+                  "field": "raw_title",
+                  "quote": "lamp\",\"start\":11,"
+                }
+              },
+              "unknowns": []
+            },
+            "model": "gemma4:12b",
+            "requestId": null,
+            "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:24:53.290041Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_11462769c5\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"colour_temperature_count\\\",\\\"value\\\":5,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11462769c5\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\" 5 colour temps\\\\\\\",\\\\\\\"start\\\\\\\":4,\\\"} }],\\\"type\\\":{\\\"value\\\":\\\"lamp\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11462769c5\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"lamp\\\\\\\",\\\\\\\"start\\\\\\\":11,\\\"}},\\\"category\\\":{\\\"value\\\":\\\"home_kitchen\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_11462769c5\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"lamp\\\\\\\",\\\\\\\"start\\\\\\\":11,\\\"}}, \\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":16977700625,\"load_duration\":31687833,\"prompt_eval_count\":785,\"prompt_eval_cached_count\":780,\"prompt_eval_duration\":2824700000,\"eval_count\":173,\"eval_duration\":13855047000}",
+            "jsonParsed": true,
+            "timings": {
+              "totalMs": 16977.700625,
+              "loadMs": 31.687833,
+              "promptMs": 2824.7,
+              "generationMs": 13855.047
+            },
+            "usage": {
+              "inputTokens": 785,
+              "outputTokens": 173,
+              "cachedInputTokens": 780,
+              "cacheWriteTokens": null
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": false,
+          "reason": "absent quote"
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    }
+  ]
+}

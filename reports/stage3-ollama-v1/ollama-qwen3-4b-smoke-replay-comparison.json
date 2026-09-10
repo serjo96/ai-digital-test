@@ -1,0 +1,258 @@
+{
+  "replayEqual": true,
+  "liveQuality": {
+    "jobs": 1,
+    "successful": 0,
+    "unsuccessful": 1,
+    "stages": {
+      "transport": {
+        "checked": 1,
+        "passed": 1,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "completion": {
+        "checked": 1,
+        "passed": 1,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "json": {
+        "checked": 1,
+        "passed": 1,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "schema": {
+        "checked": 1,
+        "passed": 1,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "citations": {
+        "checked": 1,
+        "passed": 1,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "semantic": {
+        "checked": 1,
+        "passed": 0,
+        "failed": 1,
+        "unchecked": 0
+      }
+    },
+    "proposed": {
+      "correct": 1,
+      "unexpected": 4,
+      "missing": 0,
+      "malformed": 0,
+      "duplicate": 0
+    },
+    "accepted": {
+      "status": "provisional",
+      "version": "semantic-checks-v1",
+      "correct": 0,
+      "unexpected": 0,
+      "missing": 1,
+      "precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "recall": {
+        "numerator": 0,
+        "denominator": 1,
+        "value": 0
+      },
+      "types": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1
+      },
+      "categories": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1
+      },
+      "errors": [
+        {
+          "rowId": "row_11462769c5",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "colour_temperature_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 5
+          },
+          "actual": null
+        }
+      ]
+    },
+    "rejectedAdditions": 5,
+    "falseCitations": 0,
+    "reasons": [
+      {
+        "rowId": "row_11462769c5",
+        "kind": "addition",
+        "reason": "unsupported semantic addition"
+      },
+      {
+        "rowId": "row_11462769c5",
+        "kind": "addition",
+        "reason": "unsupported semantic addition"
+      },
+      {
+        "rowId": "row_11462769c5",
+        "kind": "addition",
+        "reason": "unsupported semantic addition"
+      },
+      {
+        "rowId": "row_11462769c5",
+        "kind": "addition",
+        "reason": "unsupported semantic addition"
+      }
+    ],
+    "unknowns": 5,
+    "review": {
+      "messages": 65,
+      "rows": 64,
+      "aiAffectedRows": 1,
+      "aiMessages": 1,
+      "shadowReview": 0
+    },
+    "recommendations": [],
+    "dangerousMerges": 0,
+    "unconfirmedMerges": 0,
+    "unknownMatching": 0
+  },
+  "replayQuality": {
+    "jobs": 1,
+    "successful": 0,
+    "unsuccessful": 1,
+    "stages": {
+      "transport": {
+        "checked": 1,
+        "passed": 1,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "completion": {
+        "checked": 1,
+        "passed": 1,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "json": {
+        "checked": 1,
+        "passed": 1,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "schema": {
+        "checked": 1,
+        "passed": 1,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "citations": {
+        "checked": 1,
+        "passed": 1,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "semantic": {
+        "checked": 1,
+        "passed": 0,
+        "failed": 1,
+        "unchecked": 0
+      }
+    },
+    "proposed": {
+      "correct": 1,
+      "unexpected": 4,
+      "missing": 0,
+      "malformed": 0,
+      "duplicate": 0
+    },
+    "accepted": {
+      "status": "provisional",
+      "version": "semantic-checks-v1",
+      "correct": 0,
+      "unexpected": 0,
+      "missing": 1,
+      "precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "recall": {
+        "numerator": 0,
+        "denominator": 1,
+        "value": 0
+      },
+      "types": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1
+      },
+      "categories": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1
+      },
+      "errors": [
+        {
+          "rowId": "row_11462769c5",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "colour_temperature_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 5
+          },
+          "actual": null
+        }
+      ]
+    },
+    "rejectedAdditions": 5,
+    "falseCitations": 0,
+    "reasons": [
+      {
+        "rowId": "row_11462769c5",
+        "kind": "addition",
+        "reason": "unsupported semantic addition"
+      },
+      {
+        "rowId": "row_11462769c5",
+        "kind": "addition",
+        "reason": "unsupported semantic addition"
+      },
+      {
+        "rowId": "row_11462769c5",
+        "kind": "addition",
+        "reason": "unsupported semantic addition"
+      },
+      {
+        "rowId": "row_11462769c5",
+        "kind": "addition",
+        "reason": "unsupported semantic addition"
+      }
+    ],
+    "unknowns": 5,
+    "review": {
+      "messages": 65,
+      "rows": 64,
+      "aiAffectedRows": 1,
+      "aiMessages": 1,
+      "shadowReview": 0
+    },
+    "recommendations": [],
+    "dangerousMerges": 0,
+    "unconfirmedMerges": 0,
+    "unknownMatching": 0
+  },
+  "decisionsEqual": true
+}

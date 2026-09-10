@@ -1,0 +1,10 @@
+{
+  "createdAt": "2026-09-10T09:06:32.564Z",
+  "code": {
+    "commit": "61d740c9bcea3fc037145f1111b07c731e227f44",
+    "dirty": true,
+    "implementationHash": "82333fb2b9b232d80de3ed85209108761f316e7238f13f5e6e0700343da89fd9"
+  },
+  "originalManifestHash": "3268861253ed364cf35f63f73d17dc109edfbc07b9dd23985183eaddc0883d24",
+  "reason": "Smoke transport/JSON/schema passed. Semantic rejection is a measured quality failure, not an integration incompatibility. Continue frozen development without another smoke or changes to prompts/schema/parameters/labels."
+}

@@ -1,0 +1,252 @@
+{
+  "quality": {
+    "jobs": 1,
+    "successful": 0,
+    "unsuccessful": 1,
+    "stages": {
+      "transport": {
+        "checked": 1,
+        "passed": 1,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "completion": {
+        "checked": 1,
+        "passed": 1,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "json": {
+        "checked": 1,
+        "passed": 1,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "schema": {
+        "checked": 1,
+        "passed": 1,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "citations": {
+        "checked": 1,
+        "passed": 1,
+        "failed": 0,
+        "unchecked": 0
+      },
+      "semantic": {
+        "checked": 1,
+        "passed": 0,
+        "failed": 1,
+        "unchecked": 0
+      }
+    },
+    "proposed": {
+      "correct": 1,
+      "unexpected": 4,
+      "missing": 0,
+      "malformed": 0,
+      "duplicate": 0
+    },
+    "accepted": {
+      "status": "provisional",
+      "version": "semantic-checks-v1",
+      "correct": 0,
+      "unexpected": 0,
+      "missing": 1,
+      "precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "recall": {
+        "numerator": 0,
+        "denominator": 1,
+        "value": 0
+      },
+      "types": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1
+      },
+      "categories": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1
+      },
+      "errors": [
+        {
+          "rowId": "row_11462769c5",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "colour_temperature_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 5
+          },
+          "actual": null
+        }
+      ]
+    },
+    "rejectedAdditions": 5,
+    "falseCitations": 0,
+    "reasons": [
+      {
+        "rowId": "row_11462769c5",
+        "kind": "addition",
+        "reason": "unsupported semantic addition"
+      },
+      {
+        "rowId": "row_11462769c5",
+        "kind": "addition",
+        "reason": "unsupported semantic addition"
+      },
+      {
+        "rowId": "row_11462769c5",
+        "kind": "addition",
+        "reason": "unsupported semantic addition"
+      },
+      {
+        "rowId": "row_11462769c5",
+        "kind": "addition",
+        "reason": "unsupported semantic addition"
+      }
+    ],
+    "unknowns": 5,
+    "review": {
+      "messages": 65,
+      "rows": 64,
+      "aiAffectedRows": 1,
+      "aiMessages": 1,
+      "shadowReview": 0
+    },
+    "recommendations": [],
+    "dangerousMerges": 0,
+    "unconfirmedMerges": 0,
+    "unknownMatching": 0
+  },
+  "performance": {
+    "calls": 0,
+    "retries": 0,
+    "medianMs": 37832.410375,
+    "p95Ms": 37832.410375,
+    "requests": [
+      {
+        "rowIds": [
+          "row_11462769c5"
+        ],
+        "latencyMs": 37832.410375,
+        "wallTimeMs": 3.7707079999963753,
+        "attempts": [
+          {
+            "elapsedMs": 37832.410375,
+            "error": null,
+            "response": {
+              "status": "completed",
+              "data": {
+                "rowId": "row_11462769c5",
+                "facts": [
+                  {
+                    "attribute": "bluetooth_supported",
+                    "value": "true",
+                    "unit": null,
+                    "scope": "product",
+                    "conditions": [],
+                    "evidence": {
+                      "rowId": "row_11462769c5",
+                      "field": "raw_specs",
+                      "quote": "5 colour temps; USB-C"
+                    }
+                  },
+                  {
+                    "attribute": "wireless_frequency",
+                    "value": 2.4,
+                    "unit": "GHz",
+                    "scope": "product",
+                    "conditions": [
+                      "radio_link"
+                    ],
+                    "evidence": {
+                      "rowId": "row_11462769c5",
+                      "field": "raw_specs",
+                      "quote": "5 colour temps; USB-C"
+                    }
+                  },
+                  {
+                    "attribute": "colour_temperature_count",
+                    "value": 5,
+                    "unit": null,
+                    "scope": "product",
+                    "conditions": [],
+                    "evidence": {
+                      "rowId": "row_11462769c5",
+                      "field": "raw_specs",
+                      "quote": "5 colour temps"
+                    }
+                  },
+                  {
+                    "attribute": "size_count",
+                    "value": 1,
+                    "unit": null,
+                    "scope": "product",
+                    "conditions": [],
+                    "evidence": {
+                      "rowId": "row_11462769c5",
+                      "field": "raw_specs",
+                      "quote": "5 colour temps"
+                    }
+                  },
+                  {
+                    "attribute": "compatible_model",
+                    "value": "Quill",
+                    "unit": null,
+                    "scope": "product",
+                    "conditions": [
+                      "compatible_device"
+                    ],
+                    "evidence": {
+                      "rowId": "row_11462769c5",
+                      "field": "raw_title",
+                      "quote": "Quill desk lamp"
+                    }
+                  }
+                ],
+                "type": null,
+                "category": null,
+                "unknowns": [
+                  "bluetooth_supported",
+                  "wireless_frequency",
+                  "colour_temperature_count",
+                  "size_count",
+                  "compatible_model"
+                ]
+              },
+              "model": "qwen3:4b",
+              "requestId": null,
+              "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:05:24.521898Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowId\\\": \\\"row_11462769c5\\\",\\n  \\\"facts\\\": [\\n    {\\n      \\\"attribute\\\": \\\"bluetooth_supported\\\",\\n      \\\"value\\\": \\\"true\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_11462769c5\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"5 colour temps; USB-C\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"wireless_frequency\\\",\\n      \\\"value\\\": 2.4,\\n      \\\"unit\\\": \\\"GHz\\\",\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\\"radio_link\\\"],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_11462769c5\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"5 colour temps; USB-C\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"colour_temperature_count\\\",\\n      \\\"value\\\": 5,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_11462769c5\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"5 colour temps\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"size_count\\\",\\n      \\\"value\\\": 1,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_11462769c5\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"5 colour temps\\\"\\n      }\\n    },\\n    {\\n      \\\"attribute\\\": \\\"compatible_model\\\",\\n      \\\"value\\\": \\\"Quill\\\",\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [\\\"compatible_device\\\"],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_11462769c5\\\",\\n        \\\"field\\\": \\\"raw_title\\\",\\n        \\\"quote\\\": \\\"Quill desk lamp\\\"\\n      }\\n    }\\n  ],\\n  \\\"type\\\": null,\\n  \\\"category\\\": null\\n  ,\\n  \\\"unknowns\\\": [\\n    \\\"bluetooth_supported\\\",\\n    \\\"wireless_frequency\\\",\\n    \\\"colour_temperature_count\\\",\\n    \\\"size_count\\\",\\n    \\\"compatible_model\\\"\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":37803165750,\"load_duration\":21760090959,\"prompt_eval_count\":763,\"prompt_eval_duration\":2284876792,\"eval_count\":507,\"eval_duration\":13731863083}",
+              "jsonParsed": true,
+              "timings": {
+                "totalMs": 37803.16575,
+                "loadMs": 21760.090959,
+                "promptMs": 2284.876792,
+                "generationMs": 13731.863083
+              },
+              "usage": {
+                "inputTokens": 763,
+                "outputTokens": 507,
+                "cachedInputTokens": null,
+                "cacheWriteTokens": null
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "loadMs": 21760.090959,
+    "generationMs": 13731.863083,
+    "cachedTokens": null,
+    "localComputeCost": null,
+    "latencySource": "original-live-attempts"
+  }
+}

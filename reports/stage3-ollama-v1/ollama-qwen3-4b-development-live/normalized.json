@@ -1,0 +1,543 @@
+[
+  {
+    "rowIds": [
+      "row_05e5d126cb"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "semantic": {
+        "checked": true,
+        "passed": false,
+        "reason": "unsupported semantic addition"
+      }
+    },
+    "data": null
+  },
+  {
+    "rowIds": [
+      "row_11462769c5"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "semantic": {
+        "checked": true,
+        "passed": false,
+        "reason": "unsupported semantic addition"
+      }
+    },
+    "data": null
+  },
+  {
+    "rowIds": [
+      "row_22e59912ad"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "semantic": {
+        "checked": true,
+        "passed": false,
+        "reason": "unsupported semantic addition"
+      }
+    },
+    "data": null
+  },
+  {
+    "rowIds": [
+      "row_55a8c9b86d"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "semantic": {
+        "checked": true,
+        "passed": false,
+        "reason": "unsupported semantic addition"
+      }
+    },
+    "data": null
+  },
+  {
+    "rowIds": [
+      "row_74b8f7797a"
+    ],
+    "status": "success",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "semantic": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      }
+    },
+    "data": {
+      "rowId": "row_74b8f7797a",
+      "facts": [
+        {
+          "attribute": "wireless_frequency",
+          "value": 2.4,
+          "unit": "GHz",
+          "scope": "product",
+          "conditions": [
+            "radio_link"
+          ],
+          "evidence": {
+            "rowId": "row_74b8f7797a",
+            "field": "raw_specs",
+            "quote": "2.4GHz + BT"
+          }
+        },
+        {
+          "attribute": "bluetooth_supported",
+          "value": true,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_74b8f7797a",
+            "field": "raw_specs",
+            "quote": "2.4GHz + BT"
+          }
+        }
+      ],
+      "type": {
+        "value": "mouse",
+        "evidence": {
+          "rowId": "row_74b8f7797a",
+          "field": "raw_title",
+          "quote": "Onyx Lite wireless mouse"
+        }
+      },
+      "category": {
+        "value": "gaming_accessories",
+        "evidence": {
+          "rowId": "row_74b8f7797a",
+          "field": "raw_title",
+          "quote": "Onyx Lite wireless mouse"
+        }
+      },
+      "unknowns": [
+        "colour_temperature_count",
+        "size_count",
+        "compatible_model"
+      ]
+    }
+  },
+  {
+    "rowIds": [
+      "row_a1bb1ad2e9"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "semantic": {
+        "checked": true,
+        "passed": false,
+        "reason": "unsupported semantic addition"
+      }
+    },
+    "data": null
+  },
+  {
+    "rowIds": [
+      "row_b82f7fcc2a"
+    ],
+    "status": "success",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "semantic": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      }
+    },
+    "data": {
+      "rowId": "row_b82f7fcc2a",
+      "facts": [
+        {
+          "attribute": "colour_temperature_count",
+          "value": 5,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_b82f7fcc2a",
+            "field": "raw_specs",
+            "quote": "5 colour temps"
+          }
+        }
+      ],
+      "type": null,
+      "category": null,
+      "unknowns": [
+        "colour_temperature_count",
+        "size_count"
+      ]
+    }
+  },
+  {
+    "rowIds": [
+      "row_bb6d2613d4"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "semantic": {
+        "checked": true,
+        "passed": false,
+        "reason": "unsupported semantic addition"
+      }
+    },
+    "data": null
+  },
+  {
+    "rowIds": [
+      "row_fe3ff4b356"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "semantic": {
+        "checked": true,
+        "passed": false,
+        "reason": "foreign subject"
+      }
+    },
+    "data": null
+  },
+  {
+    "rowIds": [
+      "row_11bb99b2fa"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "semantic": {
+        "checked": true,
+        "passed": false,
+        "reason": "unsupported semantic addition"
+      }
+    },
+    "data": null
+  },
+  {
+    "rowIds": [
+      "row_e0afb74574"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "semantic": {
+        "checked": true,
+        "passed": false,
+        "reason": "unsupported semantic addition"
+      }
+    },
+    "data": null
+  },
+  {
+    "rowIds": [
+      "row_bdbc045131"
+    ],
+    "status": "error",
+    "diagnostics": {
+      "transport": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "completion": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "json": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "schema": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "citations": {
+        "checked": true,
+        "passed": true,
+        "reason": null
+      },
+      "semantic": {
+        "checked": true,
+        "passed": false,
+        "reason": "unsupported semantic addition"
+      }
+    },
+    "data": null
+  }
+]

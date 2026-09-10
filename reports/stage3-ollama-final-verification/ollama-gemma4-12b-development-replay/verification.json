@@ -1,0 +1,10 @@
+{
+  "original": "reports/stage3-ollama-v1/ollama-gemma4-12b-development-live",
+  "cache": "reports/stage3-ollama-v1/ollama-gemma4-12b-development-cache",
+  "decisionsEqual": true,
+  "validationEqual": true,
+  "qualityEqual": true,
+  "networkCalls": 0,
+  "rawJsonDecodedAgain": true,
+  "successful": true
+}

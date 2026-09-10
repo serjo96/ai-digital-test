@@ -1,0 +1,106 @@
+# ollama-gemma4-12b-development-live — B2-v1
+
+Status: partial; mode: live; matching labels: **provisional**; development only. Holdout not evaluated.
+
+| Metric | Value | Numerator | Denominator | Scope | Status |
+|---|---|---|---|---|---|
+| accounting.coverage | 1 | 220 | 220 | full_input | not_applicable; measured |
+| accounting.duplicate_assignments | 0 | N/A | N/A | full_input | not_applicable; measured |
+| accounting.lost_rows | 0 | N/A | N/A | full_input | not_applicable; measured |
+| ai.failed_jobs | 12 | N/A | N/A | run | not_applicable; measured |
+| ai.target_rows | 12 | N/A | N/A | run | not_applicable; measured |
+| api.cache_hits | 0 | N/A | N/A | run | not_applicable; measured |
+| api.calls | 13 | N/A | N/A | run | not_applicable; measured |
+| api.cost | N/A | N/A | N/A | run | not_applicable; unavailable |
+| api.errors | 13 | N/A | N/A | run | not_applicable; measured |
+| api.input_tokens | N/A | N/A | N/A | run | not_applicable; unavailable |
+| api.output_tokens | N/A | N/A | N/A | run | not_applicable; unavailable |
+| api.retries | 1 | N/A | N/A | run | not_applicable; measured |
+| api.tokens | N/A | N/A | N/A | run | not_applicable; unavailable |
+| categories.check_accuracy | 1 | 18 | 18 | development | provisional; measured |
+| errors.execution | 1 | N/A | N/A | run | not_applicable; measured |
+| errors.matching | 0 | N/A | N/A | development | provisional; measured |
+| errors.non_product | 0 | N/A | N/A | development | provisional; measured |
+| errors.quality_checks | 0 | N/A | N/A | development | provisional; measured |
+| facts.accepted_attributes | 392 | N/A | N/A | full_input | not_applicable; measured |
+| facts.check_accuracy | 1 | 30 | 30 | development | provisional; measured |
+| facts.conflicts | 0 | N/A | N/A | full_input | not_applicable; measured |
+| facts.extracted | 545 | N/A | N/A | full_input | not_applicable; measured |
+| facts.incomparable | 1 | N/A | N/A | full_input | not_applicable; measured |
+| facts.unparsed_fragments | 43 | N/A | N/A | full_input | not_applicable; measured |
+| generation.quality | N/A | N/A | N/A | development | provisional; not_implemented |
+| input.rows | 220 | N/A | N/A | full_input | not_applicable; measured |
+| matching.candidate_recall | 1 | 17 | 17 | development | provisional; measured |
+| matching.false_merge | 0 | N/A | N/A | development | provisional; measured |
+| matching.hard_negative_false_merges | 0 | N/A | N/A | development | provisional; measured |
+| matching.hard_negative_specificity | 1 | 170 | 170 | development | provisional; measured |
+| matching.missed_pair | 0 | N/A | N/A | development | provisional; measured |
+| matching.negative_specificity | 1 | 1692 | 1692 | development | provisional; measured |
+| matching.precision | 1 | 17 | 17 | development | provisional; measured |
+| matching.recall | 1 | 17 | 17 | development | provisional; measured |
+| matching.true_negative | 1692 | N/A | N/A | development | provisional; measured |
+| matching.true_positive | 17 | N/A | N/A | development | provisional; measured |
+| matching.unevaluated_attached_pairs | 0 | N/A | N/A | development | provisional; measured |
+| matching.unknown_pairs | 2 | N/A | N/A | development | provisional; measured |
+| non_product.accuracy | 1 | 59 | 59 | development | provisional; measured |
+| non_product.false_rejection | 0 | N/A | N/A | development | provisional; measured |
+| non_product.missed_trash | 0 | N/A | N/A | development | provisional; measured |
+| non_product.precision | 1 | 4 | 4 | development | provisional; measured |
+| non_product.recall | 1 | 4 | 4 | development | provisional; measured |
+| non_product.rejected_rows | 4 | N/A | N/A | full_input | not_applicable; measured |
+| non_product.true_negative | 55 | N/A | N/A | development | provisional; measured |
+| non_product.true_positive | 4 | N/A | N/A | development | provisional; measured |
+| non_product.valid_product_retention | 1 | 55 | 55 | development | provisional; measured |
+| products.count | 156 | N/A | N/A | full_input | not_applicable; measured |
+| reconciliation.check_accuracy | 1 | 4 | 4 | development | provisional; measured |
+| review.category_items | 2 | N/A | N/A | full_input | not_applicable; measured |
+| review.conflict_items | 0 | N/A | N/A | full_input | not_applicable; measured |
+| review.extraction_items | 38 | N/A | N/A | full_input | not_applicable; measured |
+| review.identity_items | 2 | N/A | N/A | full_input | not_applicable; measured |
+| review.incomparable_items | 1 | N/A | N/A | full_input | not_applicable; measured |
+| review.items | 76 | N/A | N/A | full_input | not_applicable; measured |
+| review.missing_specs_items | 21 | N/A | N/A | full_input | not_applicable; measured |
+| review.product_rate | 0.3269230769230769 | 51 | 156 | full_input | not_applicable; measured |
+| review.products | 51 | N/A | N/A | full_input | not_applicable; measured |
+| review.reason.ai_error:invalid_response.items | 11 | N/A | N/A | full_input | not_applicable; measured |
+| review.reason.ai_error:invalid_response.rows | 11 | N/A | N/A | full_input | not_applicable; measured |
+| review.reason.ai_error:timeout.items | 1 | N/A | N/A | full_input | not_applicable; measured |
+| review.reason.ai_error:timeout.rows | 1 | N/A | N/A | full_input | not_applicable; measured |
+| review.reason.fact_incomparable:power.items | 1 | N/A | N/A | full_input | not_applicable; measured |
+| review.reason.fact_incomparable:power.rows | 2 | N/A | N/A | full_input | not_applicable; measured |
+| review.reason.identity:incomplete_type_or_variant.items | 2 | N/A | N/A | full_input | not_applicable; measured |
+| review.reason.identity:incomplete_type_or_variant.rows | 3 | N/A | N/A | full_input | not_applicable; measured |
+| review.reason.missing_specs.items | 21 | N/A | N/A | full_input | not_applicable; measured |
+| review.reason.missing_specs.rows | 21 | N/A | N/A | full_input | not_applicable; measured |
+| review.reason.uncertain_category.items | 2 | N/A | N/A | full_input | not_applicable; measured |
+| review.reason.uncertain_category.rows | 2 | N/A | N/A | full_input | not_applicable; measured |
+| review.reason.unparsed_specs.items | 38 | N/A | N/A | full_input | not_applicable; measured |
+| review.reason.unparsed_specs.rows | 38 | N/A | N/A | full_input | not_applicable; measured |
+| review.row_rate | 0.2909090909090909 | 64 | 220 | full_input | not_applicable; measured |
+| review.rows | 64 | N/A | N/A | full_input | not_applicable; measured |
+| semantic.categories | 1 | 12 | 12 | development | provisional; measured |
+| semantic.correct_additions | 0 | N/A | N/A | development | provisional; measured |
+| semantic.missed_additions | 11 | N/A | N/A | development | provisional; measured |
+| semantic.precision | N/A | 0 | 0 | development | provisional; no_denominator |
+| semantic.recall | 0 | 0 | 11 | development | provisional; measured |
+| semantic.types | 1 | 12 | 12 | development | provisional; measured |
+| semantic.unexpected_additions | 0 | N/A | N/A | development | provisional; measured |
+| timing.pipeline | 468124.909375 | N/A | N/A | run | not_applicable; measured |
+| timing.wall | 468210.11616700003 | N/A | N/A | run | not_applicable; measured |
+| verifier.quality | N/A | N/A | N/A | development | provisional; not_implemented |
+
+Matching errors: none.
+
+Quality check errors: [].
+
+Semantic check errors: [{"rowId":"row_11462769c5","kind":"missed_addition","expected":{"attribute":"colour_temperature_count","conditions":[],"scope":"product","unit":null,"value":5},"actual":null},{"rowId":"row_55a8c9b86d","kind":"missed_addition","expected":{"attribute":"bluetooth_supported","conditions":[],"scope":"product","unit":null,"value":true},"actual":null},{"rowId":"row_55a8c9b86d","kind":"missed_addition","expected":{"attribute":"wireless_frequency","conditions":["radio_link"],"scope":"product","unit":"GHz","value":2.4},"actual":null},{"rowId":"row_74b8f7797a","kind":"missed_addition","expected":{"attribute":"bluetooth_supported","conditions":[],"scope":"product","unit":null,"value":true},"actual":null},{"rowId":"row_74b8f7797a","kind":"missed_addition","expected":{"attribute":"wireless_frequency","conditions":["radio_link"],"scope":"product","unit":"GHz","value":2.4},"actual":null},{"rowId":"row_a1bb1ad2e9","kind":"missed_addition","expected":{"attribute":"colour_temperature_count","conditions":[],"scope":"product","unit":null,"value":5},"actual":null},{"rowId":"row_b82f7fcc2a","kind":"missed_addition","expected":{"attribute":"colour_temperature_count","conditions":[],"scope":"product","unit":null,"value":5},"actual":null},{"rowId":"row_bb6d2613d4","kind":"missed_addition","expected":{"attribute":"bluetooth_supported","conditions":[],"scope":"product","unit":null,"value":true},"actual":null},{"rowId":"row_bb6d2613d4","kind":"missed_addition","expected":{"attribute":"wireless_frequency","conditions":["radio_link"],"scope":"product","unit":"GHz","value":2.4},"actual":null},{"rowId":"row_fe3ff4b356","kind":"missed_addition","expected":{"attribute":"size_count","conditions":[],"scope":"product","unit":null,"value":3},"actual":null},{"rowId":"row_fe3ff4b356","kind":"missed_addition","expected":{"attribute":"compatible_model","conditions":["compatible_device"],"scope":"product","unit":null,"value":"AeroBuds Pro"},"actual":null}].
+
+AI: {"targetRows":12,"jobs":12,"failedJobs":12,"origin":"real","requestHashes":["a3b08564745d3ca7ca43ca3738196f1ea746915c3bfea6b74159e260e97b9dc1","90f8cff4e15cdcbbf8caed0e096d21ef7fcec4b0430a1848dd1da8849e1e935c","12be26917434d218731520196c140af95ade0bb1a84d646ea77dcf92ba71bf30","8ca73c9a467c4b8a2ee9d7fbd8d4ca6f5fe7043eaef6c4cc6c66478115a81cac","03a390fec2b6d7c1f95cf296f1915fdc23cc146d1c2aaa6a3f02be7650c0da56","a971f1ef4505e5baaf87e340688c8dbc67f6a96163bf1b1bc8f256936bf0d69f","fc725acd447e2fec7eb0ac74f938cdf3a28bde951e13adcc480df490266f9a4d","a71ee2ded53a747fbaef2bf9c5e397d911d1b1b4e23b632a9a79bc4f7a93ee09","a1d9a106d987f9e7c8e727d5ea430f0a0ef74458e6e0c1d8a9bea17ffa08f613","d93aa1c70d3bf62a9f0644df4292ae6be4095bee25086e02956fc655d6c39361","ac6efd03f5e396b0157abfb16c2be94a1cc776edda402822d4f5cb30866ec031","63379d9be1bf7e19e2052bfa167cf1a14f209d67a8cf9e21d1a0f4a0b4a63a11"]}; usage: {"calls":13,"errors":13,"retries":1,"cacheHits":0,"inputTokens":null,"outputTokens":null,"tokens":null,"cost":null}. Test fixtures are not real AI quality. Missing pricing/usage is N/A.
+
+Sources/config: {"feed":"6b6ebc7a54ab90abae315abf5b145b22d9ef11d2c673f8feeeb245ee2808d6b6","taxonomy":"f5bff72b7e07c270a3acd6dcc3c3d0ef8e6237710f270de1874ebcebe9ae70aa","labels":"74a194210658f908dcee23f4d000d27b345f242bba9c583e808a1383b9665989","config":"1b75c37cae4b4e1f544be73aa488b37366032551c90c80a4553d73264574032f","checks":"3b1f1003325b434e024376f3e4901f11ad8d925878b5957508bbad8789bb20ca","semanticChecks":"b926db5a80acf0c0888816388e24fd7064e89fe76272bd1605e5be6bd6b81b61"}
+
+Code: {"commit":"61d740c9bcea3fc037145f1111b07c731e227f44","dirty":true,"implementationHash":"781604ebd5a69e3efa8436d3cfb0b0d33d0fb21b1be94bcaace3b354bc5c32f2"}
+
+Timing: {"protocol":"cli-through-result-v1","node":"v24.14.1","platform":"darwin","arch":"arm64","pipelineMs":468124.909375}. Wall measurement ends after result/diagnostics, before metric/report serialization.
+
+No generation, verifier, or publication readiness. Counts over all inputs are diagnostics; quality is measured only on the provisional development labels/checks. Unknown relations are excluded.

@@ -1,0 +1,57 @@
+{
+  "elapsedMs": 17872.26691699997,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:27:34.229221Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_fe3ff4b356\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"size_count\\\",\\\"value\\\":3,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_fe3ff4b356\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\" 3 sizes\\\\\\\",\\\\\\\"start\\\\\\\":9,\\\"} }],\\\"type\\\":{\\\"value\\\":\\\"ear tips\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_fe3ff4b356\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"ear tips\\\\\\\",\\\\\\\"start\\\\\\\":24,\\\"}},\\\"category\\\":{\\\"value\\\":\\\"other\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_fe3ff4b356\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"ear tips\\\\\\\",\\\\\\\"start\\\\\\\":24,\\\"}},\\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":17820711209,\"load_duration\":20787292,\"prompt_eval_count\":718,\"prompt_eval_cached_count\":272,\"prompt_eval_duration\":3899864000,\"eval_count\":161,\"eval_duration\":12770826000}",
+    "data": {
+      "rowId": "row_fe3ff4b356",
+      "facts": [
+        {
+          "attribute": "size_count",
+          "value": 3,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_fe3ff4b356",
+            "field": "raw_specs",
+            "quote": " 3 sizes\",\"start\":9,"
+          }
+        }
+      ],
+      "type": {
+        "value": "ear tips",
+        "evidence": {
+          "rowId": "row_fe3ff4b356",
+          "field": "raw_title",
+          "quote": "ear tips\",\"start\":24,"
+        }
+      },
+      "category": {
+        "value": "other",
+        "evidence": {
+          "rowId": "row_fe3ff4b356",
+          "field": "raw_title",
+          "quote": "ear tips\",\"start\":24,"
+        }
+      },
+      "unknowns": []
+    },
+    "jsonParsed": true,
+    "model": "gemma4:12b",
+    "requestId": null,
+    "usage": {
+      "inputTokens": 718,
+      "outputTokens": 161,
+      "cachedInputTokens": 272,
+      "cacheWriteTokens": null
+    },
+    "timings": {
+      "totalMs": 17820.711209,
+      "loadMs": 20.787292,
+      "promptMs": 3899.864,
+      "generationMs": 12770.826
+    }
+  }
+}

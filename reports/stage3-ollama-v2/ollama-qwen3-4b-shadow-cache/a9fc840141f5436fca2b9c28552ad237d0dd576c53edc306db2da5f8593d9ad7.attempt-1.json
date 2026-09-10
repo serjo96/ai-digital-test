@@ -1,0 +1,54 @@
+{
+  "elapsedMs": 10381.84175,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:13:47.602882Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_11bb99b2fa\\\",\\n    \\\"row_bdbc045131\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows describe the same product: Aerobuds PRO earbuds with black color, active noise cancelling, Bluetooth 5.3, 20 hours playback (including charging case), and water resistance IPX4. The titles and specifications match exactly in terms of product features and specifications, with only minor differences in capitalization and formatting of the brand name (Aerobuds vs. Aerobuds PRO). The key product attributes are consistent across both rows.\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"Aerobuds PRO earbud, black, ANC\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_11bb99b2fa\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"Active noise cancelling, BT 5.3, 20 hours playback (incl. charging case), water resistant IPX4\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro True Wireless Earbuds - Black\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_bdbc045131\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"ANC; Bluetooth 5.3; 20h total playback with case; IPX4; USB-C\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":10369626250,\"load_duration\":94726833,\"prompt_eval_count\":293,\"prompt_eval_duration\":456665583,\"eval_count\":370,\"eval_duration\":9796558042}",
+    "data": {
+      "rowIds": [
+        "row_11bb99b2fa",
+        "row_bdbc045131"
+      ],
+      "decision": "merge",
+      "confidence": "high",
+      "reason": "Both rows describe the same product: Aerobuds PRO earbuds with black color, active noise cancelling, Bluetooth 5.3, 20 hours playback (including charging case), and water resistance IPX4. The titles and specifications match exactly in terms of product features and specifications, with only minor differences in capitalization and formatting of the brand name (Aerobuds vs. Aerobuds PRO). The key product attributes are consistent across both rows.",
+      "evidence": [
+        {
+          "rowId": "row_11bb99b2fa",
+          "field": "raw_title",
+          "quote": "Aerobuds PRO earbud, black, ANC"
+        },
+        {
+          "rowId": "row_11bb99b2fa",
+          "field": "raw_specs",
+          "quote": "Active noise cancelling, BT 5.3, 20 hours playback (incl. charging case), water resistant IPX4"
+        },
+        {
+          "rowId": "row_bdbc045131",
+          "field": "raw_title",
+          "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+        },
+        {
+          "rowId": "row_bdbc045131",
+          "field": "raw_specs",
+          "quote": "ANC; Bluetooth 5.3; 20h total playback with case; IPX4; USB-C"
+        }
+      ]
+    },
+    "jsonParsed": true,
+    "model": "qwen3:4b",
+    "requestId": null,
+    "usage": {
+      "inputTokens": 293,
+      "outputTokens": 370,
+      "cachedInputTokens": null,
+      "cacheWriteTokens": null
+    },
+    "timings": {
+      "totalMs": 10369.62625,
+      "loadMs": 94.726833,
+      "promptMs": 456.665583,
+      "generationMs": 9796.558042
+    }
+  }
+}

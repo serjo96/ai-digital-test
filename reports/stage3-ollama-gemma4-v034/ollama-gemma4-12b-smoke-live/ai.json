@@ -1,0 +1,104 @@
+{
+  "version": "ai-trace-v1",
+  "config": {
+    "version": "B2-config-v1",
+    "extraction": {
+      "provider": "ollama",
+      "model": "gemma4:12b",
+      "identity": {
+        "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+        "serverVersion": "0.34.0"
+      },
+      "temperature": 0,
+      "seed": 42,
+      "context": 8192,
+      "topK": 20,
+      "topP": 0.9,
+      "repeatPenalty": 1,
+      "keepAlive": "5m",
+      "maxOutputTokens": 2048
+    },
+    "matching": {
+      "provider": "ollama",
+      "model": "gemma4:12b",
+      "identity": {
+        "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+        "serverVersion": "0.34.0"
+      },
+      "temperature": 0,
+      "seed": 42,
+      "context": 8192,
+      "topK": 20,
+      "topP": 0.9,
+      "repeatPenalty": 1,
+      "keepAlive": "5m",
+      "maxOutputTokens": 2048,
+      "enabled": true
+    },
+    "timeoutMs": 120000,
+    "maxRetries": 0,
+    "prices": []
+  },
+  "records": [
+    {
+      "key": "00339b76e418bde198712455e28fa6533e7ff96e4add81f5d3a9740c02f7037b",
+      "role": "extraction",
+      "rowIds": [
+        "row_11462769c5"
+      ],
+      "provider": "ollama",
+      "endpoint": "http://127.0.0.1:11434",
+      "model": "gemma4:12b",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 1,
+      "elapsedMs": 120155.818667,
+      "status": "error",
+      "error": "timeout",
+      "response": null,
+      "attemptUsage": [
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 120116.97541700001,
+          "error": "timeout",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "timeout"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    }
+  ]
+}

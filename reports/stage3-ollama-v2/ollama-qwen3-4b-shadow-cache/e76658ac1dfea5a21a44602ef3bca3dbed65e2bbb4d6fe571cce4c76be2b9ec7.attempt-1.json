@@ -1,0 +1,44 @@
+{
+  "elapsedMs": 7614.5637910000005,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:14:19.42181Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_fe3ff:4b356\\\",\\n    \\\"row_e0afb74574\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows describe the AeroBuds Pro product line with specific variants: row_fe3ff4b356 specifies replacement ear tips (S/M/L) as a silicone accessory, while row_e0afb74574 describes the base product with Bluetooth 5.3, 18h battery, IPX4, and USB-C charging. The core product identity (AeroBuds Pro) is consistent, and the differences are accessory vs. base product with distinct specifications. Compatibility is not identity, so the shadow recommendation merges them as the same product line.\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_fe3ff4b356\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AeroBuds Pro replacement ear tips (S/M/L)\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_e0afb74574\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"AEROBUDS PRO / schwarz / ANC\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":7607161334,\"load_duration\":29257625,\"prompt_eval_count\":277,\"prompt_eval_duration\":285724791,\"eval_count\":275,\"eval_duration\":7272868417}",
+    "data": {
+      "rowIds": [
+        "row_fe3ff:4b356",
+        "row_e0afb74574"
+      ],
+      "decision": "merge",
+      "confidence": "high",
+      "reason": "Both rows describe the AeroBuds Pro product line with specific variants: row_fe3ff4b356 specifies replacement ear tips (S/M/L) as a silicone accessory, while row_e0afb74574 describes the base product with Bluetooth 5.3, 18h battery, IPX4, and USB-C charging. The core product identity (AeroBuds Pro) is consistent, and the differences are accessory vs. base product with distinct specifications. Compatibility is not identity, so the shadow recommendation merges them as the same product line.",
+      "evidence": [
+        {
+          "rowId": "row_fe3ff4b356",
+          "field": "raw_title",
+          "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+        },
+        {
+          "rowId": "row_e0afb74574",
+          "field": "raw_title",
+          "quote": "AEROBUDS PRO / schwarz / ANC"
+        }
+      ]
+    },
+    "jsonParsed": true,
+    "model": "qwen3:4b",
+    "requestId": null,
+    "usage": {
+      "inputTokens": 277,
+      "outputTokens": 275,
+      "cachedInputTokens": null,
+      "cacheWriteTokens": null
+    },
+    "timings": {
+      "totalMs": 7607.161334,
+      "loadMs": 29.257625,
+      "promptMs": 285.724791,
+      "generationMs": 7272.868417
+    }
+  }
+}

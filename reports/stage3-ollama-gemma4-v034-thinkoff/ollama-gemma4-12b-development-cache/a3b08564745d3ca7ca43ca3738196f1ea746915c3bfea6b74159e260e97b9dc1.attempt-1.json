@@ -1,0 +1,43 @@
+{
+  "elapsedMs": 14509.980915999997,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:25:08.19028Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_05e5d126cb\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"bluetooth_supported\\\",\\\"value\\\":false,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_05e5d126cb\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\"AMAZING SOUND!!! BEST HEADPHONES 2026!!! GRAB IT FAST!!!\\\"} } ],\\\"type\\\":null,\\\"category\\\":null,\\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":14462911792,\"load_duration\":12447000,\"prompt_eval_count\":694,\"prompt_eval_cached_count\":272,\"prompt_eval_duration\":4152524000,\"eval_count\":103,\"eval_duration\":8217608000}",
+    "data": {
+      "rowId": "row_05e5d126cb",
+      "facts": [
+        {
+          "attribute": "bluetooth_supported",
+          "value": false,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_05e5d126cb",
+            "field": "raw_specs",
+            "quote": "AMAZING SOUND!!! BEST HEADPHONES 2026!!! GRAB IT FAST!!!"
+          }
+        }
+      ],
+      "type": null,
+      "category": null,
+      "unknowns": []
+    },
+    "jsonParsed": true,
+    "model": "gemma4:12b",
+    "requestId": null,
+    "usage": {
+      "inputTokens": 694,
+      "outputTokens": 103,
+      "cachedInputTokens": 272,
+      "cacheWriteTokens": null
+    },
+    "timings": {
+      "totalMs": 14462.911792,
+      "loadMs": 12.447,
+      "promptMs": 4152.524,
+      "generationMs": 8217.608
+    }
+  }
+}

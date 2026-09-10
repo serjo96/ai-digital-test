@@ -1,0 +1,6 @@
+{
+  "elapsedMs": 1588.146166999999,
+  "error": "server",
+  "response": null,
+  "raw": "{\"error\":\"invalid JSON schema in format\"}"
+}

@@ -1,0 +1,57 @@
+{
+  "elapsedMs": 20198.945542000016,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "raw": "{\"model\":\"gemma4:12b\",\"created_at\":\"2026-09-10T13:26:58.489759Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"rowId\\\":\\\"row_b82f7fcc2a\\\",\\\"facts\\\":[{\\\"attribute\\\":\\\"colour_temperature_count\\\",\\\"value\\\":5,\\\"unit\\\":null,\\\"scope\\\":\\\"product\\\",\\\"conditions\\\":[],\\\"evidence\\\":{\\\"rowId\\\":\\\"row_b82f7fcc2a\\\",\\\"field\\\":\\\"raw_specs\\\",\\\"quote\\\":\\\" 5 colour temps\\\\\\\",\\\\\\\"start\\\\\\\":4,\\\"} } ],\\\"type\\\":{\\\"value\\\":\\\"lamp\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_b82f7fcc2a\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"lamp\\\\\\\",\\\\\\\"start\\\\\\\":15,\\\"}},\\\"category\\\":{\\\"value\\\":\\\"home_kitchen\\\",\\\"evidence\\\":{\\\"rowId\\\":\\\"row_b82f7fcc2a\\\",\\\"field\\\":\\\"raw_title\\\",\\\"quote\\\":\\\"desk lamp\\\\\\\",\\\\\\\"start\\\\\\\":13,\\\"}}, \\\"unknowns\\\":[]}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":19763585667,\"load_duration\":19276542,\"prompt_eval_count\":789,\"prompt_eval_cached_count\":280,\"prompt_eval_duration\":4562720000,\"eval_count\":171,\"eval_duration\":13384082000}",
+    "data": {
+      "rowId": "row_b82f7fcc2a",
+      "facts": [
+        {
+          "attribute": "colour_temperature_count",
+          "value": 5,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_b82f7fcc2a",
+            "field": "raw_specs",
+            "quote": " 5 colour temps\",\"start\":4,"
+          }
+        }
+      ],
+      "type": {
+        "value": "lamp",
+        "evidence": {
+          "rowId": "row_b82f7fcc2a",
+          "field": "raw_title",
+          "quote": "lamp\",\"start\":15,"
+        }
+      },
+      "category": {
+        "value": "home_kitchen",
+        "evidence": {
+          "rowId": "row_b82f7fcc2a",
+          "field": "raw_title",
+          "quote": "desk lamp\",\"start\":13,"
+        }
+      },
+      "unknowns": []
+    },
+    "jsonParsed": true,
+    "model": "gemma4:12b",
+    "requestId": null,
+    "usage": {
+      "inputTokens": 789,
+      "outputTokens": 171,
+      "cachedInputTokens": 280,
+      "cacheWriteTokens": null
+    },
+    "timings": {
+      "totalMs": 19763.585667,
+      "loadMs": 19.276542,
+      "promptMs": 4562.72,
+      "generationMs": 13384.082
+    }
+  }
+}

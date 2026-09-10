@@ -1,0 +1,10 @@
+{
+  "original": "reports/stage3-ollama-v2/ollama-qwen3-4b-shadow-live",
+  "cache": "reports/stage3-ollama-v2/ollama-qwen3-4b-shadow-cache",
+  "decisionsEqual": true,
+  "validationEqual": true,
+  "qualityEqual": true,
+  "networkCalls": 0,
+  "rawJsonDecodedAgain": true,
+  "successful": true
+}

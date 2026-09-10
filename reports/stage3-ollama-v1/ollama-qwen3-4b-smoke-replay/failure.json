@@ -1,0 +1,21 @@
+{
+  "status": "failed",
+  "baseline": "b2",
+  "runId": "ollama-qwen3-4b-smoke-replay",
+  "createdAt": "2026-09-10T09:05:24.803Z",
+  "wallTimeMs": 151.80020800000057,
+  "api": {
+    "calls": 0,
+    "errors": 0,
+    "retries": 0,
+    "cacheHits": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "tokens": 0,
+    "cost": 0
+  },
+  "mode": "replay",
+  "errors": [
+    "Incomplete AI run; inspect report.json and ai.json"
+  ]
+}

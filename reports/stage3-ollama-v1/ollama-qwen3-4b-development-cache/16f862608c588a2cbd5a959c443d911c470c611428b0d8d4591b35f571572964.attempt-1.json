@@ -1,0 +1,46 @@
+{
+  "elapsedMs": 5325.266291000007,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:08:03.022058Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowId\\\": \\\"row_b82f7fcc2a\\\",\\n  \\\"facts\\\": [\\n    {\\n      \\\"attribute\\\": \\\"colour_temperature_count\\\",\\n      \\\"value\\\": 5,\\n      \\\"unit\\\": null,\\n      \\\"scope\\\": \\\"product\\\",\\n      \\\"conditions\\\": [],\\n      \\\"evidence\\\": {\\n        \\\"rowId\\\": \\\"row_b82f7fcc2a\\\",\\n        \\\"field\\\": \\\"raw_specs\\\",\\n        \\\"quote\\\": \\\"5 colour temps\\\"\\n      }\\n    }\\n  ],\\n  \\\"type\\\": null,\\n  \\\"category\\\": null\\n  ,\\n  \\\"unknowns\\\": [\\n    \\\"colour_temperature_count\\\",\\n    \\\"size_count\\\"\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":5319726708,\"load_duration\":29694875,\"prompt_eval_count\":758,\"prompt_eval_duration\":1435956167,\"eval_count\":141,\"eval_duration\":3844250166}",
+    "data": {
+      "rowId": "row_b82f7fcc2a",
+      "facts": [
+        {
+          "attribute": "colour_temperature_count",
+          "value": 5,
+          "unit": null,
+          "scope": "product",
+          "conditions": [],
+          "evidence": {
+            "rowId": "row_b82f7fcc2a",
+            "field": "raw_specs",
+            "quote": "5 colour temps"
+          }
+        }
+      ],
+      "type": null,
+      "category": null,
+      "unknowns": [
+        "colour_temperature_count",
+        "size_count"
+      ]
+    },
+    "jsonParsed": true,
+    "model": "qwen3:4b",
+    "requestId": null,
+    "usage": {
+      "inputTokens": 758,
+      "outputTokens": 141,
+      "cachedInputTokens": null,
+      "cacheWriteTokens": null
+    },
+    "timings": {
+      "totalMs": 5319.726708,
+      "loadMs": 29.694875,
+      "promptMs": 1435.956167,
+      "generationMs": 3844.250166
+    }
+  }
+}

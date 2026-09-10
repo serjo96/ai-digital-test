@@ -1,0 +1,501 @@
+{
+  "quality": {
+    "jobs": 12,
+    "successful": 0,
+    "unsuccessful": 12,
+    "stages": {
+      "transport": {
+        "checked": 12,
+        "passed": 0,
+        "failed": 12,
+        "unchecked": 0
+      },
+      "completion": {
+        "checked": 0,
+        "passed": 0,
+        "failed": 0,
+        "unchecked": 12
+      },
+      "json": {
+        "checked": 0,
+        "passed": 0,
+        "failed": 0,
+        "unchecked": 12
+      },
+      "schema": {
+        "checked": 0,
+        "passed": 0,
+        "failed": 0,
+        "unchecked": 12
+      },
+      "citations": {
+        "checked": 0,
+        "passed": 0,
+        "failed": 0,
+        "unchecked": 12
+      },
+      "semantic": {
+        "checked": 0,
+        "passed": 0,
+        "failed": 0,
+        "unchecked": 12
+      }
+    },
+    "proposed": {
+      "correct": 0,
+      "unexpected": 0,
+      "missing": 11,
+      "malformed": 0,
+      "duplicate": 0
+    },
+    "accepted": {
+      "status": "provisional",
+      "version": "semantic-checks-v1",
+      "correct": 0,
+      "unexpected": 0,
+      "missing": 11,
+      "precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "recall": {
+        "numerator": 0,
+        "denominator": 11,
+        "value": 0
+      },
+      "types": {
+        "numerator": 12,
+        "denominator": 12,
+        "value": 1
+      },
+      "categories": {
+        "numerator": 12,
+        "denominator": 12,
+        "value": 1
+      },
+      "errors": [
+        {
+          "rowId": "row_11462769c5",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "colour_temperature_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 5
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_55a8c9b86d",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "bluetooth_supported",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": true
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_55a8c9b86d",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "wireless_frequency",
+            "conditions": [
+              "radio_link"
+            ],
+            "scope": "product",
+            "unit": "GHz",
+            "value": 2.4
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_74b8f7797a",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "bluetooth_supported",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": true
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_74b8f7797a",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "wireless_frequency",
+            "conditions": [
+              "radio_link"
+            ],
+            "scope": "product",
+            "unit": "GHz",
+            "value": 2.4
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_a1bb1ad2e9",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "colour_temperature_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 5
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_b82f7fcc2a",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "colour_temperature_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 5
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_bb6d2613d4",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "bluetooth_supported",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": true
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_bb6d2613d4",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "wireless_frequency",
+            "conditions": [
+              "radio_link"
+            ],
+            "scope": "product",
+            "unit": "GHz",
+            "value": 2.4
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_fe3ff4b356",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "size_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 3
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_fe3ff4b356",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "compatible_model",
+            "conditions": [
+              "compatible_device"
+            ],
+            "scope": "product",
+            "unit": null,
+            "value": "AeroBuds Pro"
+          },
+          "actual": null
+        }
+      ]
+    },
+    "rejectedAdditions": 0,
+    "falseCitations": 0,
+    "reasons": [],
+    "unknowns": 0,
+    "review": {
+      "messages": 76,
+      "rows": 64,
+      "aiAffectedRows": 12,
+      "aiMessages": 12,
+      "shadowReview": 0
+    },
+    "recommendations": [],
+    "dangerousMerges": 0,
+    "unconfirmedMerges": 0,
+    "unknownMatching": 0
+  },
+  "performance": {
+    "calls": 24,
+    "retries": 12,
+    "medianMs": 1701.0421250000072,
+    "p95Ms": 1968.9145410000056,
+    "requests": [
+      {
+        "rowIds": [
+          "row_05e5d126cb"
+        ],
+        "latencyMs": 1968.9145410000056,
+        "wallTimeMs": 1968.9145410000056,
+        "attempts": [
+          {
+            "elapsedMs": 581.9061250000086,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          },
+          {
+            "elapsedMs": 380.92108400000143,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_11462769c5"
+        ],
+        "latencyMs": 1704.333500000008,
+        "wallTimeMs": 1704.333500000008,
+        "attempts": [
+          {
+            "elapsedMs": 331.42204100001254,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          },
+          {
+            "elapsedMs": 370.19879200001014,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_22e59912ad"
+        ],
+        "latencyMs": 1701.0421250000072,
+        "wallTimeMs": 1701.0421250000072,
+        "attempts": [
+          {
+            "elapsedMs": 325.31400000001304,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          },
+          {
+            "elapsedMs": 372.06741700001294,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_55a8c9b86d"
+        ],
+        "latencyMs": 1701.9695000000065,
+        "wallTimeMs": 1701.9695000000065,
+        "attempts": [
+          {
+            "elapsedMs": 329.00533300000825,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          },
+          {
+            "elapsedMs": 369.1077090000035,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_74b8f7797a"
+        ],
+        "latencyMs": 1688.4097089999996,
+        "wallTimeMs": 1688.4097089999996,
+        "attempts": [
+          {
+            "elapsedMs": 321.32574999998906,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          },
+          {
+            "elapsedMs": 364.58091699998477,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_a1bb1ad2e9"
+        ],
+        "latencyMs": 1718.2794580000045,
+        "wallTimeMs": 1718.2794580000045,
+        "attempts": [
+          {
+            "elapsedMs": 331.2558330000029,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          },
+          {
+            "elapsedMs": 382.18512499998906,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_b82f7fcc2a"
+        ],
+        "latencyMs": 1698.4692500000237,
+        "wallTimeMs": 1698.4692500000237,
+        "attempts": [
+          {
+            "elapsedMs": 321.8056670000078,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          },
+          {
+            "elapsedMs": 371.7777500000084,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_bb6d2613d4"
+        ],
+        "latencyMs": 1707.4691250000033,
+        "wallTimeMs": 1707.4691250000033,
+        "attempts": [
+          {
+            "elapsedMs": 332.33620900000096,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          },
+          {
+            "elapsedMs": 371.0253329999978,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_fe3ff4b356"
+        ],
+        "latencyMs": 1685.005541999999,
+        "wallTimeMs": 1685.005541999999,
+        "attempts": [
+          {
+            "elapsedMs": 326.17250000001513,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          },
+          {
+            "elapsedMs": 356.11504200001946,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_11bb99b2fa"
+        ],
+        "latencyMs": 1709.2268329999933,
+        "wallTimeMs": 1709.2268329999933,
+        "attempts": [
+          {
+            "elapsedMs": 324.8534579999978,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          },
+          {
+            "elapsedMs": 377.7366670000192,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_e0afb74574"
+        ],
+        "latencyMs": 1700.7665839999972,
+        "wallTimeMs": 1700.7665839999972,
+        "attempts": [
+          {
+            "elapsedMs": 323.98958299998776,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          },
+          {
+            "elapsedMs": 373.7886249999865,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          }
+        ]
+      },
+      {
+        "rowIds": [
+          "row_bdbc045131"
+        ],
+        "latencyMs": 1697.0626660000125,
+        "wallTimeMs": 1697.0626660000125,
+        "attempts": [
+          {
+            "elapsedMs": 325.28391600001487,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          },
+          {
+            "elapsedMs": 366.45604200000525,
+            "error": "server",
+            "response": null,
+            "raw": "{\"error\":\"unable to load model: /Users/serjo-pro/.ollama/models/blobs/sha256-1278394b693672ac2799eadc9a83fd98259a6a88a40acfb1dcaa6c6fc895a606\"}"
+          }
+        ]
+      }
+    ],
+    "loadMs": null,
+    "generationMs": null,
+    "cachedTokens": null,
+    "localComputeCost": null,
+    "latencySource": "live"
+  }
+}

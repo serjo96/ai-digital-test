@@ -1,0 +1,57 @@
+{
+  "schema": "metrics-v1",
+  "createdAt": "2026-09-10T13:32:42.226Z",
+  "runs": [
+    {
+      "runId": "B1-control-code",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/stage3-ollama-gemma4-v034-thinkoff/B1-control-code",
+      "status": "success",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B1-v2",
+      "wallTimeMs": 58.36291600000004,
+      "decisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+      "implementationHash": "781604ebd5a69e3efa8436d3cfb0b0d33d0fb21b1be94bcaace3b354bc5c32f2"
+    },
+    {
+      "runId": "ollama-gemma4-12b-smoke-live",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/stage3-ollama-gemma4-v034-thinkoff/ollama-gemma4-12b-smoke-live",
+      "status": "partial",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B2-v1",
+      "wallTimeMs": 17174.621042,
+      "decisionsHash": "f11b1ae259e4965c76af32dfca5e159b012054985406e23b9d81886672df96d3",
+      "implementationHash": "781604ebd5a69e3efa8436d3cfb0b0d33d0fb21b1be94bcaace3b354bc5c32f2"
+    },
+    {
+      "runId": "ollama-gemma4-12b-smoke-replay",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/stage3-ollama-gemma4-v034-thinkoff/ollama-gemma4-12b-smoke-replay",
+      "status": "partial",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B2-v1",
+      "wallTimeMs": 149.08687500000087,
+      "decisionsHash": "f11b1ae259e4965c76af32dfca5e159b012054985406e23b9d81886672df96d3",
+      "implementationHash": "781604ebd5a69e3efa8436d3cfb0b0d33d0fb21b1be94bcaace3b354bc5c32f2"
+    },
+    {
+      "runId": "ollama-gemma4-12b-development-live",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/stage3-ollama-gemma4-v034-thinkoff/ollama-gemma4-12b-development-live",
+      "status": "partial",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B2-v1",
+      "wallTimeMs": 468210.11616700003,
+      "decisionsHash": "2750940d1ccfcf8e66b873aba3bf27ce5f19de4f6387a4d8ccaee9ebb91cb8ce",
+      "implementationHash": "781604ebd5a69e3efa8436d3cfb0b0d33d0fb21b1be94bcaace3b354bc5c32f2"
+    },
+    {
+      "runId": "ollama-gemma4-12b-development-replay",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/stage3-ollama-gemma4-v034-thinkoff/ollama-gemma4-12b-development-replay",
+      "status": "partial",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B2-v1",
+      "wallTimeMs": 197.79354099999182,
+      "decisionsHash": "2750940d1ccfcf8e66b873aba3bf27ce5f19de4f6387a4d8ccaee9ebb91cb8ce",
+      "implementationHash": "781604ebd5a69e3efa8436d3cfb0b0d33d0fb21b1be94bcaace3b354bc5c32f2"
+    }
+  ],
+  "observations": 412
+}

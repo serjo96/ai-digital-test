@@ -12,6 +12,12 @@ export class OpenAiAdapter implements AiProvider {
     if (!(this.key ?? process.env.OPENAI_API_KEY)) throw new AiError('auth');
   }
 
+  replayResponse(response: AiResponse): AiResponse {
+    if (response.raw === undefined || !['completed', 'invalid'].includes(response.status)) return response;
+    try { return { ...response, status: 'completed', data: JSON.parse(response.raw) }; }
+    catch { return { ...response, status: 'invalid', data: response.raw }; }
+  }
+
   async generate(request: AiRequest, signal: AbortSignal): Promise<AiResponse> {
     this.validateConfiguration(request);
     const apiKey = this.key ?? process.env.OPENAI_API_KEY;
@@ -21,7 +27,7 @@ export class OpenAiAdapter implements AiProvider {
     try {
       const response = await this.client.responses.create({
         model: request.model, instructions: request.instructions, input: JSON.stringify(request.input),
-        reasoning: { effort: request.parameters.reasoning }, max_output_tokens: request.parameters.maxOutputTokens,
+        ...(request.parameters.reasoning ? { reasoning: { effort: request.parameters.reasoning } } : {}), max_output_tokens: request.parameters.maxOutputTokens,
         text: { format: { type: 'json_schema', name: request.schemaName, strict: true, schema: request.schema } },
         store: false, tools: [], service_tier: 'default',
       }, { signal });
@@ -31,7 +37,7 @@ export class OpenAiAdapter implements AiProvider {
       if (status === 'completed') {
         try { data = JSON.parse(response.output_text); } catch { status = 'invalid'; data = response.output_text; }
       }
-      return { status, data, model: response.model, requestId: response.id,
+      return { status, data, raw: response.output_text, model: response.model, requestId: response.id,
         usage: response.usage ? { inputTokens: response.usage.input_tokens, outputTokens: response.usage.output_tokens,
           cachedInputTokens: response.usage.input_tokens_details.cached_tokens,
           cacheWriteTokens: response.usage.input_tokens_details.cache_write_tokens ?? null } : null };

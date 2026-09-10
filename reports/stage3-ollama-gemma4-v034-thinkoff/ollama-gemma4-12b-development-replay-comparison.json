@@ -1,0 +1,754 @@
+{
+  "replayEqual": true,
+  "liveQuality": {
+    "jobs": 12,
+    "successful": 0,
+    "unsuccessful": 12,
+    "stages": {
+      "transport": {
+        "checked": 12,
+        "passed": 11,
+        "failed": 1,
+        "unchecked": 0
+      },
+      "completion": {
+        "checked": 11,
+        "passed": 11,
+        "failed": 0,
+        "unchecked": 1
+      },
+      "json": {
+        "checked": 11,
+        "passed": 11,
+        "failed": 0,
+        "unchecked": 1
+      },
+      "schema": {
+        "checked": 11,
+        "passed": 11,
+        "failed": 0,
+        "unchecked": 1
+      },
+      "citations": {
+        "checked": 11,
+        "passed": 4,
+        "failed": 7,
+        "unchecked": 1
+      },
+      "semantic": {
+        "checked": 4,
+        "passed": 0,
+        "failed": 4,
+        "unchecked": 8
+      }
+    },
+    "proposed": {
+      "correct": 7,
+      "unexpected": 6,
+      "missing": 4,
+      "malformed": 0,
+      "duplicate": 0
+    },
+    "accepted": {
+      "status": "provisional",
+      "version": "semantic-checks-v1",
+      "correct": 0,
+      "unexpected": 0,
+      "missing": 11,
+      "precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "recall": {
+        "numerator": 0,
+        "denominator": 11,
+        "value": 0
+      },
+      "types": {
+        "numerator": 12,
+        "denominator": 12,
+        "value": 1
+      },
+      "categories": {
+        "numerator": 12,
+        "denominator": 12,
+        "value": 1
+      },
+      "errors": [
+        {
+          "rowId": "row_11462769c5",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "colour_temperature_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 5
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_55a8c9b86d",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "bluetooth_supported",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": true
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_55a8c9b86d",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "wireless_frequency",
+            "conditions": [
+              "radio_link"
+            ],
+            "scope": "product",
+            "unit": "GHz",
+            "value": 2.4
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_74b8f7797a",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "bluetooth_supported",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": true
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_74b8f7797a",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "wireless_frequency",
+            "conditions": [
+              "radio_link"
+            ],
+            "scope": "product",
+            "unit": "GHz",
+            "value": 2.4
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_a1bb1ad2e9",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "colour_temperature_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 5
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_b82f7fcc2a",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "colour_temperature_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 5
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_bb6d2613d4",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "bluetooth_supported",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": true
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_bb6d2613d4",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "wireless_frequency",
+            "conditions": [
+              "radio_link"
+            ],
+            "scope": "product",
+            "unit": "GHz",
+            "value": 2.4
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_fe3ff4b356",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "size_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 3
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_fe3ff4b356",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "compatible_model",
+            "conditions": [
+              "compatible_device"
+            ],
+            "scope": "product",
+            "unit": null,
+            "value": "AeroBuds Pro"
+          },
+          "actual": null
+        }
+      ]
+    },
+    "rejectedAdditions": 13,
+    "falseCitations": 17,
+    "reasons": [
+      {
+        "rowId": "row_05e5d126cb",
+        "kind": "addition",
+        "reason": "unsupported semantic addition"
+      },
+      {
+        "rowId": "row_11462769c5",
+        "kind": "addition",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_11462769c5",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_11462769c5",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_11462769c5",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_22e59912ad",
+        "kind": "addition",
+        "reason": "unsupported semantic addition"
+      },
+      {
+        "rowId": "row_55a8c9b86d",
+        "kind": "addition",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_55a8c9b86d",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_55a8c9b86d",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_55a8c9b86d",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_74b8f7797a",
+        "kind": "addition",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_74b8f7797a",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_a1bb1ad2e9",
+        "kind": "addition",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_a1bb1ad2e9",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_a1bb1ad2e9",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_a1bb1ad2e9",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_b82f7fcc2a",
+        "kind": "addition",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_b82f7fcc2a",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_b82f7fcc2a",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_b82f7fcc2a",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_bb6d2613d4",
+        "kind": "addition",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_bb6d2613d4",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_fe3ff4b356",
+        "kind": "addition",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_fe3ff4b356",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_fe3ff4b356",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_fe3ff4b356",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_11bb99b2fa",
+        "kind": "addition",
+        "reason": "unsupported semantic addition"
+      },
+      {
+        "rowId": "row_bdbc045131",
+        "kind": "addition",
+        "reason": "unsupported semantic addition"
+      }
+    ],
+    "unknowns": 0,
+    "review": {
+      "messages": 76,
+      "rows": 64,
+      "aiAffectedRows": 12,
+      "aiMessages": 12,
+      "shadowReview": 0
+    },
+    "recommendations": [],
+    "dangerousMerges": 0,
+    "unconfirmedMerges": 0,
+    "unknownMatching": 0
+  },
+  "replayQuality": {
+    "jobs": 12,
+    "successful": 0,
+    "unsuccessful": 12,
+    "stages": {
+      "transport": {
+        "checked": 12,
+        "passed": 11,
+        "failed": 1,
+        "unchecked": 0
+      },
+      "completion": {
+        "checked": 11,
+        "passed": 11,
+        "failed": 0,
+        "unchecked": 1
+      },
+      "json": {
+        "checked": 11,
+        "passed": 11,
+        "failed": 0,
+        "unchecked": 1
+      },
+      "schema": {
+        "checked": 11,
+        "passed": 11,
+        "failed": 0,
+        "unchecked": 1
+      },
+      "citations": {
+        "checked": 11,
+        "passed": 4,
+        "failed": 7,
+        "unchecked": 1
+      },
+      "semantic": {
+        "checked": 4,
+        "passed": 0,
+        "failed": 4,
+        "unchecked": 8
+      }
+    },
+    "proposed": {
+      "correct": 7,
+      "unexpected": 6,
+      "missing": 4,
+      "malformed": 0,
+      "duplicate": 0
+    },
+    "accepted": {
+      "status": "provisional",
+      "version": "semantic-checks-v1",
+      "correct": 0,
+      "unexpected": 0,
+      "missing": 11,
+      "precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "recall": {
+        "numerator": 0,
+        "denominator": 11,
+        "value": 0
+      },
+      "types": {
+        "numerator": 12,
+        "denominator": 12,
+        "value": 1
+      },
+      "categories": {
+        "numerator": 12,
+        "denominator": 12,
+        "value": 1
+      },
+      "errors": [
+        {
+          "rowId": "row_11462769c5",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "colour_temperature_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 5
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_55a8c9b86d",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "bluetooth_supported",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": true
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_55a8c9b86d",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "wireless_frequency",
+            "conditions": [
+              "radio_link"
+            ],
+            "scope": "product",
+            "unit": "GHz",
+            "value": 2.4
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_74b8f7797a",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "bluetooth_supported",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": true
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_74b8f7797a",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "wireless_frequency",
+            "conditions": [
+              "radio_link"
+            ],
+            "scope": "product",
+            "unit": "GHz",
+            "value": 2.4
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_a1bb1ad2e9",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "colour_temperature_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 5
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_b82f7fcc2a",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "colour_temperature_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 5
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_bb6d2613d4",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "bluetooth_supported",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": true
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_bb6d2613d4",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "wireless_frequency",
+            "conditions": [
+              "radio_link"
+            ],
+            "scope": "product",
+            "unit": "GHz",
+            "value": 2.4
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_fe3ff4b356",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "size_count",
+            "conditions": [],
+            "scope": "product",
+            "unit": null,
+            "value": 3
+          },
+          "actual": null
+        },
+        {
+          "rowId": "row_fe3ff4b356",
+          "kind": "missed_addition",
+          "expected": {
+            "attribute": "compatible_model",
+            "conditions": [
+              "compatible_device"
+            ],
+            "scope": "product",
+            "unit": null,
+            "value": "AeroBuds Pro"
+          },
+          "actual": null
+        }
+      ]
+    },
+    "rejectedAdditions": 13,
+    "falseCitations": 17,
+    "reasons": [
+      {
+        "rowId": "row_05e5d126cb",
+        "kind": "addition",
+        "reason": "unsupported semantic addition"
+      },
+      {
+        "rowId": "row_11462769c5",
+        "kind": "addition",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_11462769c5",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_11462769c5",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_11462769c5",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_22e59912ad",
+        "kind": "addition",
+        "reason": "unsupported semantic addition"
+      },
+      {
+        "rowId": "row_55a8c9b86d",
+        "kind": "addition",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_55a8c9b86d",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_55a8c9b86d",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_55a8c9b86d",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_74b8f7797a",
+        "kind": "addition",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_74b8f7797a",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_a1bb1ad2e9",
+        "kind": "addition",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_a1bb1ad2e9",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_a1bb1ad2e9",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_a1bb1ad2e9",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_b82f7fcc2a",
+        "kind": "addition",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_b82f7fcc2a",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_b82f7fcc2a",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_b82f7fcc2a",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_bb6d2613d4",
+        "kind": "addition",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_bb6d2613d4",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_fe3ff4b356",
+        "kind": "addition",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_fe3ff4b356",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_fe3ff4b356",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_fe3ff4b356",
+        "kind": "citation",
+        "reason": "absent quote"
+      },
+      {
+        "rowId": "row_11bb99b2fa",
+        "kind": "addition",
+        "reason": "unsupported semantic addition"
+      },
+      {
+        "rowId": "row_bdbc045131",
+        "kind": "addition",
+        "reason": "unsupported semantic addition"
+      }
+    ],
+    "unknowns": 0,
+    "review": {
+      "messages": 76,
+      "rows": 64,
+      "aiAffectedRows": 12,
+      "aiMessages": 12,
+      "shadowReview": 0
+    },
+    "recommendations": [],
+    "dangerousMerges": 0,
+    "unconfirmedMerges": 0,
+    "unknownMatching": 0
+  },
+  "decisionsEqual": true
+}

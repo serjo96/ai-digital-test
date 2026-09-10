@@ -1,0 +1,54 @@
+{
+  "elapsedMs": 8914.634333999998,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "raw": "{\"model\":\"qwen3:4b\",\"created_at\":\"2026-09-10T09:13:56.527747Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"rowIds\\\": [\\n    \\\"row_55a8c9b86d\\\",\\n    \\\"row_74b8f17797a\\\"\\n  ],\\n  \\\"decision\\\": \\\"merge\\\",\\n  \\\"confidence\\\": \\\"high\\\",\\n  \\\"reason\\\": \\\"Both rows have identical raw_title and raw_specs: 'Onyx Lite wireless mouse' with specs '2.4GHz + BT; 6 buttons; 70g'. No differences in product name, specifications, or other attributes. This is a clear match.\\\"\\n  ,\\n  \\\"evidence\\\": [\\n    {\\n      \\\"rowId\\\": \\\"row_55a8c9b86d\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"Onyx Lite wireless mouse\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_55a8c9b86d\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"2.4GHz + BT; 6 buttons; 70g\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_74b8f7797a\\\",\\n      \\\"field\\\": \\\"raw_title\\\",\\n      \\\"quote\\\": \\\"Onyx Lite wireless mouse\\\"\\n    },\\n    {\\n      \\\"rowId\\\": \\\"row_74b8f7797a\\\",\\n      \\\"field\\\": \\\"raw_specs\\\",\\n      \\\"quote\\\": \\\"2.4GHz + BT; 6 buttons; 70g\\\"\\n    }\\n  ]\\n}\\n\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":8908811250,\"load_duration\":66481875,\"prompt_eval_count\":271,\"prompt_eval_duration\":387949875,\"eval_count\":315,\"eval_duration\":8419698792}",
+    "data": {
+      "rowIds": [
+        "row_55a8c9b86d",
+        "row_74b8f17797a"
+      ],
+      "decision": "merge",
+      "confidence": "high",
+      "reason": "Both rows have identical raw_title and raw_specs: 'Onyx Lite wireless mouse' with specs '2.4GHz + BT; 6 buttons; 70g'. No differences in product name, specifications, or other attributes. This is a clear match.",
+      "evidence": [
+        {
+          "rowId": "row_55a8c9b86d",
+          "field": "raw_title",
+          "quote": "Onyx Lite wireless mouse"
+        },
+        {
+          "rowId": "row_55a8c9b86d",
+          "field": "raw_specs",
+          "quote": "2.4GHz + BT; 6 buttons; 70g"
+        },
+        {
+          "rowId": "row_74b8f7797a",
+          "field": "raw_title",
+          "quote": "Onyx Lite wireless mouse"
+        },
+        {
+          "rowId": "row_74b8f7797a",
+          "field": "raw_specs",
+          "quote": "2.4GHz + BT; 6 buttons; 70g"
+        }
+      ]
+    },
+    "jsonParsed": true,
+    "model": "qwen3:4b",
+    "requestId": null,
+    "usage": {
+      "inputTokens": 271,
+      "outputTokens": 315,
+      "cachedInputTokens": null,
+      "cacheWriteTokens": null
+    },
+    "timings": {
+      "totalMs": 8908.81125,
+      "loadMs": 66.481875,
+      "promptMs": 387.949875,
+      "generationMs": 8419.698792
+    }
+  }
+}
