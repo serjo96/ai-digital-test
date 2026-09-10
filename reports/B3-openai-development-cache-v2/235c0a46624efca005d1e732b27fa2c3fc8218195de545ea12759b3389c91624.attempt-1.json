@@ -1,0 +1,139 @@
+{
+  "elapsedMs": 16459.23429200001,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "1350aa9895c0b265f3866471e22812c1b7479f9712297563f0780087a4c08495",
+      "claims": [
+        {
+          "text": "The Quill 3 is a ",
+          "start": 0,
+          "end": 17,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:6ec7f513a312e0908e167280bffbb424b8c80f86110cfb0310fe24191f9130b7"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_641c690d68",
+              "field": "raw_title",
+              "quote": "Quill 3 USB-C hub"
+            },
+            {
+              "rowId": "row_73d3ec91bb",
+              "field": "raw_title",
+              "quote": "Quill 3 USB-C hub"
+            }
+          ],
+          "reason": "Both titles identify the model as Quill 3."
+        },
+        {
+          "text": "7-in-1 ",
+          "start": 17,
+          "end": 24,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_8cbc201279bebbc5b8be3324332b3ce67641ebd85f389e51860f4fa1e946335c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_641c690d68",
+              "field": "raw_specs",
+              "quote": "7-in-1"
+            }
+          ],
+          "reason": "The multifunction count is explicitly stated."
+        },
+        {
+          "text": "USB-C ",
+          "start": 24,
+          "end": 30,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_aaca2eea324a1e930b05dd3bdb3c92cf83dc2891dcad8faaf38ee71a448d482d"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_641c690d68",
+              "field": "raw_title",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The connector matches the source title."
+        },
+        {
+          "text": "hub with ",
+          "start": 30,
+          "end": 39,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_641c690d68",
+              "field": "raw_title",
+              "quote": "Quill 3 USB-C hub"
+            },
+            {
+              "rowId": "row_73d3ec91bb",
+              "field": "raw_title",
+              "quote": "Quill 3 USB-C hub"
+            }
+          ],
+          "reason": "Both titles identify the product as a hub."
+        },
+        {
+          "text": "4K@30fps video output ",
+          "start": 39,
+          "end": 61,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_23c2189ca8fdc725f0bcacc95261b35d5864a1b083dd56d39dfe645631e52e41"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_641c690d68",
+              "field": "raw_specs",
+              "quote": "4K30"
+            }
+          ],
+          "reason": "The allowed video-output support interprets the source's HDMI 4K30 specification as 4K@30fps."
+        },
+        {
+          "text": "and 100 W power with PD passthrough.",
+          "start": 61,
+          "end": 97,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_b2192e6067eed7e96ccd5c86d8777dbc06c56cd09dbcd99dff1927801a282062"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_641c690d68",
+              "field": "raw_specs",
+              "quote": "100W PD passthrough"
+            }
+          ],
+          "reason": "The power value and unit match, and the PD passthrough qualification is retained."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"1350aa9895c0b265f3866471e22812c1b7479f9712297563f0780087a4c08495\",\"claims\":[{\"text\":\"The Quill 3 is a \",\"start\":0,\"end\":17,\"verdict\":\"supported\",\"supportIds\":[\"identity:6ec7f513a312e0908e167280bffbb424b8c80f86110cfb0310fe24191f9130b7\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_641c690d68\",\"field\":\"raw_title\",\"quote\":\"Quill 3 USB-C hub\"},{\"rowId\":\"row_73d3ec91bb\",\"field\":\"raw_title\",\"quote\":\"Quill 3 USB-C hub\"}],\"reason\":\"Both titles identify the model as Quill 3.\"},{\"text\":\"7-in-1 \",\"start\":17,\"end\":24,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_8cbc201279bebbc5b8be3324332b3ce67641ebd85f389e51860f4fa1e946335c\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_641c690d68\",\"field\":\"raw_specs\",\"quote\":\"7-in-1\"}],\"reason\":\"The multifunction count is explicitly stated.\"},{\"text\":\"USB-C \",\"start\":24,\"end\":30,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_aaca2eea324a1e930b05dd3bdb3c92cf83dc2891dcad8faaf38ee71a448d482d\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_641c690d68\",\"field\":\"raw_title\",\"quote\":\"USB-C\"}],\"reason\":\"The connector matches the source title.\"},{\"text\":\"hub with \",\"start\":30,\"end\":39,\"verdict\":\"supported\",\"supportIds\":[\"identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_641c690d68\",\"field\":\"raw_title\",\"quote\":\"Quill 3 USB-C hub\"},{\"rowId\":\"row_73d3ec91bb\",\"field\":\"raw_title\",\"quote\":\"Quill 3 USB-C hub\"}],\"reason\":\"Both titles identify the product as a hub.\"},{\"text\":\"4K@30fps video output \",\"start\":39,\"end\":61,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_23c2189ca8fdc725f0bcacc95261b35d5864a1b083dd56d39dfe645631e52e41\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_641c690d68\",\"field\":\"raw_specs\",\"quote\":\"4K30\"}],\"reason\":\"The allowed video-output support interprets the source's HDMI 4K30 specification as 4K@30fps.\"},{\"text\":\"and 100 W power with PD passthrough.\",\"start\":61,\"end\":97,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_b2192e6067eed7e96ccd5c86d8777dbc06c56cd09dbcd99dff1927801a282062\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_641c690d68\",\"field\":\"raw_specs\",\"quote\":\"100W PD passthrough\"}],\"reason\":\"The power value and unit match, and the PD passthrough qualification is retained.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0b10b96cf879df02016aa2d66eea7887d0a8301f062ed49c41",
+    "usage": {
+      "inputTokens": 1251,
+      "outputTokens": 1025,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1248
+    }
+  }
+}

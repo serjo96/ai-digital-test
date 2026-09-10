@@ -1,0 +1,67 @@
+{
+  "elapsedMs": 6234.703416999997,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "848a347f68defa5100f4585a12209868070302871872c894ac5f5d2f1261e188",
+      "claims": [
+        {
+          "text": "Nimbus 2",
+          "start": 0,
+          "end": 8,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c2467f5304",
+              "field": "raw_title",
+              "quote": "NIMBUS 2 speaker - waterproof"
+            },
+            {
+              "rowId": "row_f3873a8816",
+              "field": "raw_title",
+              "quote": "Nimbus 2 Portable Bluetooth Speaker"
+            }
+          ],
+          "reason": "The supplied model identity support identifies Nimbus 2."
+        },
+        {
+          "text": "provides 12 W of output power.",
+          "start": 9,
+          "end": 38,
+          "verdict": "disputed",
+          "supportIds": [],
+          "decisionIds": [
+            "reconciled:power"
+          ],
+          "evidence": [
+            {
+              "rowId": "row_c2467f5304",
+              "field": "raw_specs",
+              "quote": "12 W"
+            },
+            {
+              "rowId": "row_f3873a8816",
+              "field": "raw_specs",
+              "quote": "12W output"
+            }
+          ],
+          "reason": "The supplied power reconciliation marks these observations incomparable because one specifies output and the other leaves purpose unspecified. No allowed support establishes reconciled output power."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"848a347f68defa5100f4585a12209868070302871872c894ac5f5d2f1261e188\",\"claims\":[{\"text\":\"Nimbus 2\",\"start\":0,\"end\":8,\"verdict\":\"supported\",\"supportIds\":[\"identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_title\",\"quote\":\"NIMBUS 2 speaker - waterproof\"},{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_title\",\"quote\":\"Nimbus 2 Portable Bluetooth Speaker\"}],\"reason\":\"The supplied model identity support identifies Nimbus 2.\"},{\"text\":\"provides 12 W of output power.\",\"start\":9,\"end\":38,\"verdict\":\"disputed\",\"supportIds\":[],\"decisionIds\":[\"reconciled:power\"],\"evidence\":[{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_specs\",\"quote\":\"12 W\"},{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_specs\",\"quote\":\"12W output\"}],\"reason\":\"The supplied power reconciliation marks these observations incomparable because one specifies output and the other leaves purpose unspecified. No allowed support establishes reconciled output power.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_04e8b6abfd84a425016aa2d52ea00487d082fdb2259ff544c0",
+    "usage": {
+      "inputTokens": 1473,
+      "outputTokens": 307,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1470
+    }
+  }
+}

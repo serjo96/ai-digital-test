@@ -1,0 +1,153 @@
+{
+  "elapsedMs": 14964.39883400005,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "668e12892786bcd101e70cad989a926c611fa16f2dbd5681f26fd785bba81204",
+      "claims": [
+        {
+          "text": "The PulseFit Band 3 tracker has a",
+          "start": 0,
+          "end": 33,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:177ee24685217ed4bda1f1719f5b8ee1d28fe16d3e7d160598d9a4ea8284650a",
+            "identity:7029be2c30b30faa1df523329d519862f1735a062f708fa5aa62fa73579e2162"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_3e2dd6416e",
+              "field": "raw_title",
+              "quote": "Pulsefit band 3 activity tracker"
+            },
+            {
+              "rowId": "row_94d9860adf",
+              "field": "raw_title",
+              "quote": "PulseFit Band 3 Fitness Tracker"
+            }
+          ],
+          "reason": "Both titles establish the model and tracker type."
+        },
+        {
+          "text": "1.1 in",
+          "start": 34,
+          "end": 40,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_bd28b059e2b1f36a2f09d48f5f8bb8701c3ef816ab76ae41ad2e722a9fbca629"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_3e2dd6416e",
+              "field": "raw_specs",
+              "quote": "1.1 inch"
+            }
+          ],
+          "reason": "Exact display size with an equivalent unit abbreviation."
+        },
+        {
+          "text": "AMOLED display",
+          "start": 41,
+          "end": 55,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_3c62483a26d91eac6afc2bd5f72ed9f654bf75185d71c806b35aeb286ac4c2c2"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_94d9860adf",
+              "field": "raw_specs",
+              "quote": "AMOLED"
+            }
+          ],
+          "reason": "The supplied display technology is AMOLED."
+        },
+        {
+          "text": "heart-rate",
+          "start": 57,
+          "end": 67,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_f2086c9c89696c94d0ddc394d8378d4c97ec2dd787f22efc9a4a080784e8e12e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_3e2dd6416e",
+              "field": "raw_specs",
+              "quote": "Heart rate"
+            }
+          ],
+          "reason": "Supports the heart-rate sensor in the coordinated sensor phrase."
+        },
+        {
+          "text": "and blood-oxygen sensors",
+          "start": 68,
+          "end": 92,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_d8f68ef6925decf10968af3eefec4070e34f35e4a6d2b7fccae21cf9733442b8"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_3e2dd6416e",
+              "field": "raw_specs",
+              "quote": "blood oxygen"
+            }
+          ],
+          "reason": "The supplied fact establishes blood-oxygen sensing."
+        },
+        {
+          "text": "and a 5 ATM water-pressure rating",
+          "start": 94,
+          "end": 127,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_6947f0e445381aca553e32d6fedf76df5ab435bf7c697ad1ea0bb718ae4a8d2d"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_3e2dd6416e",
+              "field": "raw_specs",
+              "quote": "5 ATM"
+            }
+          ],
+          "reason": "Matches the supplied pressure rating without implying additional water-use suitability."
+        },
+        {
+          "text": "Its battery runtime is 240 h with usage unspecified",
+          "start": 129,
+          "end": 180,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_5e169cf3b356ed0cc9b7ae622b1f4e2ea4b3e6707308e702b8aac02d22fd19d3"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_3e2dd6416e",
+              "field": "raw_specs",
+              "quote": "10-day battery"
+            }
+          ],
+          "reason": "Ten days converts to 240 hours; the claim retains the supplied usage-unspecified condition."
+        }
+      ]
+    },
+    "raw": "{\n  \"textHash\": \"668e12892786bcd101e70cad989a926c611fa16f2dbd5681f26fd785bba81204\",\n  \"claims\": [\n    {\n      \"text\": \"The PulseFit Band 3 tracker has a\",\n      \"start\": 0,\n      \"end\": 33,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"identity:177ee24685217ed4bda1f1719f5b8ee1d28fe16d3e7d160598d9a4ea8284650a\",\n        \"identity:7029be2c30b30faa1df523329d519862f1735a062f708fa5aa62fa73579e2162\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\"rowId\":\"row_3e2dd6416e\",\"field\":\"raw_title\",\"quote\":\"Pulsefit band 3 activity tracker\"},\n        {\"rowId\":\"row_94d9860adf\",\"field\":\"raw_title\",\"quote\":\"PulseFit Band 3 Fitness Tracker\"}\n      ],\n      \"reason\": \"Both titles establish the model and tracker type.\"\n    },\n    {\n      \"text\": \"1.1 in\",\n      \"start\": 34,\n      \"end\": 40,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"fact:fact_bd28b059e2b1f36a2f09d48f5f8bb8701c3ef816ab76ae41ad2e722a9fbca629\"],\n      \"decisionIds\": [],\n      \"evidence\": [{\"rowId\":\"row_3e2dd6416e\",\"field\":\"raw_specs\",\"quote\":\"1.1 inch\"}],\n      \"reason\": \"Exact display size with an equivalent unit abbreviation.\"\n    },\n    {\n      \"text\": \"AMOLED display\",\n      \"start\": 41,\n      \"end\": 55,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"fact:fact_3c62483a26d91eac6afc2bd5f72ed9f654bf75185d71c806b35aeb286ac4c2c2\"],\n      \"decisionIds\": [],\n      \"evidence\": [{\"rowId\":\"row_94d9860adf\",\"field\":\"raw_specs\",\"quote\":\"AMOLED\"}],\n      \"reason\": \"The supplied display technology is AMOLED.\"\n    },\n    {\n      \"text\": \"heart-rate\",\n      \"start\": 57,\n      \"end\": 67,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"fact:fact_f2086c9c89696c94d0ddc394d8378d4c97ec2dd787f22efc9a4a080784e8e12e\"],\n      \"decisionIds\": [],\n      \"evidence\": [{\"rowId\":\"row_3e2dd6416e\",\"field\":\"raw_specs\",\"quote\":\"Heart rate\"}],\n      \"reason\": \"Supports the heart-rate sensor in the coordinated sensor phrase.\"\n    },\n    {\n      \"text\": \"and blood-oxygen sensors\",\n      \"start\": 68,\n      \"end\": 92,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"fact:fact_d8f68ef6925decf10968af3eefec4070e34f35e4a6d2b7fccae21cf9733442b8\"],\n      \"decisionIds\": [],\n      \"evidence\": [{\"rowId\":\"row_3e2dd6416e\",\"field\":\"raw_specs\",\"quote\":\"blood oxygen\"}],\n      \"reason\": \"The supplied fact establishes blood-oxygen sensing.\"\n    },\n    {\n      \"text\": \"and a 5 ATM water-pressure rating\",\n      \"start\": 94,\n      \"end\": 127,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"fact:fact_6947f0e445381aca553e32d6fedf76df5ab435bf7c697ad1ea0bb718ae4a8d2d\"],\n      \"decisionIds\": [],\n      \"evidence\": [{\"rowId\":\"row_3e2dd6416e\",\"field\":\"raw_specs\",\"quote\":\"5 ATM\"}],\n      \"reason\": \"Matches the supplied pressure rating without implying additional water-use suitability.\"\n    },\n    {\n      \"text\": \"Its battery runtime is 240 h with usage unspecified\",\n      \"start\": 129,\n      \"end\": 180,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"fact:fact_5e169cf3b356ed0cc9b7ae622b1f4e2ea4b3e6707308e702b8aac02d22fd19d3\"],\n      \"decisionIds\": [],\n      \"evidence\": [{\"rowId\":\"row_3e2dd6416e\",\"field\":\"raw_specs\",\"quote\":\"10-day battery\"}],\n      \"reason\": \"Ten days converts to 240 hours; the claim retains the supplied usage-unspecified condition.\"\n    }\n  ]\n}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0f00f240790c0d99016aa2da71ef4887d0ac21191b6e38a70d",
+    "usage": {
+      "inputTokens": 3050,
+      "outputTokens": 1115,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 3047
+    }
+  }
+}

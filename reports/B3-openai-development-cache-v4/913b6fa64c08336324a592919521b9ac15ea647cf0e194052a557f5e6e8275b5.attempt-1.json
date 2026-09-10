@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1443.98545800001,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Cobalt X lamp features an LED light source and a USB-C connector."
+    },
+    "raw": "{\"text\":\"The Cobalt X lamp features an LED light source and a USB-C connector.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0ff3b9c168499189016aa2d9ec973887d0af731c0f2c4fe8f4",
+    "usage": {
+      "inputTokens": 543,
+      "outputTokens": 30,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

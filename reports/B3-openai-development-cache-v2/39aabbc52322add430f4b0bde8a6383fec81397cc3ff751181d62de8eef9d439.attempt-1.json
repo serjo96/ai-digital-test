@@ -1,0 +1,103 @@
+{
+  "elapsedMs": 15994.809499999974,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "6be22d71141838c7e4680c26ee84a67ffa258dcaa91f456c240f78dde9ecfa3b",
+      "claims": [
+        {
+          "text": "The Quill 2",
+          "start": 0,
+          "end": 11,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:8781d953cfd74517ff20e2961e5c7d53f71b3c3b0fe85208215ec52120821ab3"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_06dc75e525",
+              "field": "raw_title",
+              "quote": "Quill 2 action camera"
+            },
+            {
+              "rowId": "row_3f77cefacd",
+              "field": "raw_title",
+              "quote": "Quill 2 action camera"
+            }
+          ],
+          "reason": "Both raw titles identify the model as Quill 2."
+        },
+        {
+          "text": " is a camera",
+          "start": 11,
+          "end": 23,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_06dc75e525",
+              "field": "raw_title",
+              "quote": "Quill 2 action camera"
+            },
+            {
+              "rowId": "row_3f77cefacd",
+              "field": "raw_title",
+              "quote": "Quill 2 action camera"
+            }
+          ],
+          "reason": "The source classification of action camera entails camera."
+        },
+        {
+          "text": " that records video at 4K@60fps",
+          "start": 23,
+          "end": 54,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_9e81d5a1b2c8a25634754298e7124a09a38796aeaba9288032e57362de0a5c04"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_06dc75e525",
+              "field": "raw_specs",
+              "quote": "4K60"
+            }
+          ],
+          "reason": "The allowed video-recording support normalizes the raw specification 4K60 to 4K@60fps."
+        },
+        {
+          "text": " and is waterproof up to 10 m.",
+          "start": 54,
+          "end": 84,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_dd64e66a407e2c41617541e533bd16af3e1fcb81d842b6133bc70b44fd24cf78"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_06dc75e525",
+              "field": "raw_specs",
+              "quote": "waterproof to 10m"
+            }
+          ],
+          "reason": "The claim preserves the supported depth, unit, and up-to qualification."
+        }
+      ]
+    },
+    "raw": "{\n  \"textHash\": \"6be22d71141838c7e4680c26ee84a67ffa258dcaa91f456c240f78dde9ecfa3b\",\n  \"claims\": [\n    {\n      \"text\": \"The Quill 2\",\n      \"start\": 0,\n      \"end\": 11,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"identity:8781d953cfd74517ff20e2961e5c7d53f71b3c3b0fe85208215ec52120821ab3\"],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\"rowId\": \"row_06dc75e525\", \"field\": \"raw_title\", \"quote\": \"Quill 2 action camera\"},\n        {\"rowId\": \"row_3f77cefacd\", \"field\": \"raw_title\", \"quote\": \"Quill 2 action camera\"}\n      ],\n      \"reason\": \"Both raw titles identify the model as Quill 2.\"\n    },\n    {\n      \"text\": \" is a camera\",\n      \"start\": 11,\n      \"end\": 23,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e\"],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\"rowId\": \"row_06dc75e525\", \"field\": \"raw_title\", \"quote\": \"Quill 2 action camera\"},\n        {\"rowId\": \"row_3f77cefacd\", \"field\": \"raw_title\", \"quote\": \"Quill 2 action camera\"}\n      ],\n      \"reason\": \"The source classification of action camera entails camera.\"\n    },\n    {\n      \"text\": \" that records video at 4K@60fps\",\n      \"start\": 23,\n      \"end\": 54,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"fact:fact_9e81d5a1b2c8a25634754298e7124a09a38796aeaba9288032e57362de0a5c04\"],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\"rowId\": \"row_06dc75e525\", \"field\": \"raw_specs\", \"quote\": \"4K60\"}\n      ],\n      \"reason\": \"The allowed video-recording support normalizes the raw specification 4K60 to 4K@60fps.\"\n    },\n    {\n      \"text\": \" and is waterproof up to 10 m.\",\n      \"start\": 54,\n      \"end\": 84,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"fact:fact_dd64e66a407e2c41617541e533bd16af3e1fcb81d842b6133bc70b44fd24cf78\"],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\"rowId\": \"row_06dc75e525\", \"field\": \"raw_specs\", \"quote\": \"waterproof to 10m\"}\n      ],\n      \"reason\": \"The claim preserves the supported depth, unit, and up-to qualification.\"\n    }\n  ]\n}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_00a83aa7001e53cf016aa2d72ef21c87d0be24cbc9213e0200",
+    "usage": {
+      "inputTokens": 1025,
+      "outputTokens": 1029,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

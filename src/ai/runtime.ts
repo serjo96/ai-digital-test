@@ -3,7 +3,7 @@ import { join } from 'node:path';
 import { performance } from 'node:perf_hooks';
 import { z } from 'zod';
 import { hash } from '../baseline.js';
-import { AiError, ProviderRegistry, type AiCallRecord, type AiRequest, type AiResponse, type AiSummary } from './contracts.js';
+import { AiError, ProviderRegistry, type AiCallRecord, type AiRequest, type AiSummary } from './contracts.js';
 import type { RuntimeConfig } from './config.js';
 
 const responseSchema = z.strictObject({

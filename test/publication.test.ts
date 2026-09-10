@@ -113,5 +113,5 @@ test('B3 service writes schema-v4 artifacts, preserves B1 decisions and remains 
   const [before, beforeResult] = await readRun('reports/B1-v2'); const comparison = compareReports(before, report, beforeResult, result);
   assert.equal(comparison.comparable, false); // Test-origin B3 cannot be represented as real quality.
   assert.equal(comparison.decisionsEqual, true); assert.deepEqual(comparison.changedMatchingRowIds, []);
-  await assert.rejects(prepareWeb(runDir, join(dir, 'web')));
+  await assert.rejects(prepareWeb(runDir, join(dir, 'web')), /pre-generation results only/);
 }));

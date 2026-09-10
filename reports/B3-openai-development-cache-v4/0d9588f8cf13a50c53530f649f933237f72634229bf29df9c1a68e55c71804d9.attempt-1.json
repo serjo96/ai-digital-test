@@ -1,0 +1,157 @@
+{
+  "elapsedMs": 13467.931542000006,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "aa2f2d411d4d8cb159189d55e123306fb260f83408e6e48897c03ee35cb71e9c",
+      "claims": [
+        {
+          "text": "The Onyx Lite",
+          "start": 0,
+          "end": 13,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "256GB"
+            },
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "Onyx Lite microSD card 256GB"
+            }
+          ],
+          "reason": "The supplied title identifies the Onyx Lite model."
+        },
+        {
+          "text": "microSD memory card",
+          "start": 14,
+          "end": 33,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "256GB"
+            },
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "Onyx Lite microSD card 256GB"
+            }
+          ],
+          "reason": "The title specifies a microSD card, consistent with the supplied memory-card type."
+        },
+        {
+          "text": "has 256 GB of storage",
+          "start": 34,
+          "end": 55,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_73a80ca467fb4b89161556327cadafad9ec94ac8b64f4c2ea1df1d783890a9a6"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "256GB"
+            }
+          ],
+          "reason": "Storage capacity matches the supplied title and storage support."
+        },
+        {
+          "text": "a UHS-I bus rating",
+          "start": 57,
+          "end": 75,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_32e79b858e7a36dee279322ae5c92a58aa44abfbd087533693bd0b0431a96555"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_specs",
+              "quote": "UHS-I"
+            }
+          ],
+          "reason": "The bus rating matches the supplied specifications."
+        },
+        {
+          "text": "and an A2 application rating",
+          "start": 76,
+          "end": 104,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_929a0120cad95297067d2f4ce61ea10c36c1f75cbc721c33f48fced76a6a66d6"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_specs",
+              "quote": "A2"
+            }
+          ],
+          "reason": "The application rating matches the supplied specifications."
+        },
+        {
+          "text": "It supports transfer speeds up to 170 MB/s",
+          "start": 106,
+          "end": 148,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_50b977b84a83af9044c8145e627257f85642bc23253c9c328ff8ef2bfce2a13d"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_specs",
+              "quote": "up to 170MB/s"
+            }
+          ],
+          "reason": "The transfer speed and up-to qualifier match the supplied support; no read or write direction is asserted."
+        },
+        {
+          "text": "with direction unspecified",
+          "start": 150,
+          "end": 176,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_50b977b84a83af9044c8145e627257f85642bc23253c9c328ff8ef2bfce2a13d"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_specs",
+              "quote": "up to 170MB/s"
+            }
+          ],
+          "reason": "The raw specifications do not identify a transfer direction, and the supplied support explicitly retains the direction_unspecified condition."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"aa2f2d411d4d8cb159189d55e123306fb260f83408e6e48897c03ee35cb71e9c\",\"claims\":[{\"text\":\"The Onyx Lite\",\"start\":0,\"end\":13,\"verdict\":\"supported\",\"supportIds\":[\"identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite microSD card 256GB\"}],\"reason\":\"The supplied title identifies the Onyx Lite model.\"},{\"text\":\"microSD memory card\",\"start\":14,\"end\":33,\"verdict\":\"supported\",\"supportIds\":[\"identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite microSD card 256GB\"}],\"reason\":\"The title specifies a microSD card, consistent with the supplied memory-card type.\"},{\"text\":\"has 256 GB of storage\",\"start\":34,\"end\":55,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_73a80ca467fb4b89161556327cadafad9ec94ac8b64f4c2ea1df1d783890a9a6\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"}],\"reason\":\"Storage capacity matches the supplied title and storage support.\"},{\"text\":\"a UHS-I bus rating\",\"start\":57,\"end\":75,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_32e79b858e7a36dee279322ae5c92a58aa44abfbd087533693bd0b0431a96555\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_specs\",\"quote\":\"UHS-I\"}],\"reason\":\"The bus rating matches the supplied specifications.\"},{\"text\":\"and an A2 application rating\",\"start\":76,\"end\":104,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_929a0120cad95297067d2f4ce61ea10c36c1f75cbc721c33f48fced76a6a66d6\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_specs\",\"quote\":\"A2\"}],\"reason\":\"The application rating matches the supplied specifications.\"},{\"text\":\"It supports transfer speeds up to 170 MB/s\",\"start\":106,\"end\":148,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_50b977b84a83af9044c8145e627257f85642bc23253c9c328ff8ef2bfce2a13d\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"The transfer speed and up-to qualifier match the supplied support; no read or write direction is asserted.\"},{\"text\":\"with direction unspecified\",\"start\":150,\"end\":176,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_50b977b84a83af9044c8145e627257f85642bc23253c9c328ff8ef2bfce2a13d\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"The raw specifications do not identify a transfer direction, and the supplied support explicitly retains the direction_unspecified condition.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_00759e5eadb2564c016aa2d9d37a7087d09baf406323477417",
+    "usage": {
+      "inputTokens": 2841,
+      "outputTokens": 908,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2838
+    }
+  }
+}

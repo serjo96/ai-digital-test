@@ -1,0 +1,76 @@
+{
+  "elapsedMs": 9480.398125000007,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "660402beb3195d3a011f053e2cc2f8bb878649054721b22d12011c01a78c6c17",
+      "claims": [
+        {
+          "text": "The Onyx tablet case",
+          "start": 0,
+          "end": 20,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:14b6be4f6442225172188b34707c4f1e713e318b05cc3afe3c1534ecf976033b",
+            "identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_e571323780",
+              "field": "raw_title",
+              "quote": "Onyx tablet case"
+            }
+          ],
+          "reason": "The source title establishes the model and product type."
+        },
+        {
+          "text": " has a folio style",
+          "start": 20,
+          "end": 38,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_cb858226899b98c4a62231707687325603e43a9e98a757b4c3acf89ea238cbd1"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_e571323780",
+              "field": "raw_specs",
+              "quote": "folio"
+            }
+          ],
+          "reason": "The specifications explicitly identify the case style as folio."
+        },
+        {
+          "text": " and supports auto sleep/wake.",
+          "start": 38,
+          "end": 68,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_aaaf041a253425e02549636dd8c31cd52786406218fe040ef974cb872f2e18f8"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_e571323780",
+              "field": "raw_specs",
+              "quote": "auto sleep/wake"
+            }
+          ],
+          "reason": "The specifications explicitly list auto sleep/wake."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"660402beb3195d3a011f053e2cc2f8bb878649054721b22d12011c01a78c6c17\",\"claims\":[{\"text\":\"The Onyx tablet case\",\"start\":0,\"end\":20,\"verdict\":\"supported\",\"supportIds\":[\"identity:14b6be4f6442225172188b34707c4f1e713e318b05cc3afe3c1534ecf976033b\",\"identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_e571323780\",\"field\":\"raw_title\",\"quote\":\"Onyx tablet case\"}],\"reason\":\"The source title establishes the model and product type.\"},{\"text\":\" has a folio style\",\"start\":20,\"end\":38,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_cb858226899b98c4a62231707687325603e43a9e98a757b4c3acf89ea238cbd1\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_e571323780\",\"field\":\"raw_specs\",\"quote\":\"folio\"}],\"reason\":\"The specifications explicitly identify the case style as folio.\"},{\"text\":\" and supports auto sleep/wake.\",\"start\":38,\"end\":68,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_aaaf041a253425e02549636dd8c31cd52786406218fe040ef974cb872f2e18f8\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_e571323780\",\"field\":\"raw_specs\",\"quote\":\"auto sleep/wake\"}],\"reason\":\"The specifications explicitly list auto sleep/wake.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_02443d2d2d394352016aa2d6cf509887d0a796287004a335a7",
+    "usage": {
+      "inputTokens": 853,
+      "outputTokens": 564,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

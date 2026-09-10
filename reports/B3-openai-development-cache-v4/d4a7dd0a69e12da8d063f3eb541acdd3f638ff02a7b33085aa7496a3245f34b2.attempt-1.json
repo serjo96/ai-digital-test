@@ -1,0 +1,75 @@
+{
+  "elapsedMs": 7383.260875,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "60a0457b08a89f3901295a218969693e1bea17397c1def5fa3e972e21efe5b05",
+      "claims": [
+        {
+          "text": "Sony",
+          "start": 0,
+          "end": 4,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:9798b691ab1b90eb9454b76130be07a4a82950d26a0902485f36796bff811be5"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_1e60b0a9dc",
+              "field": "raw_title",
+              "quote": "SONY WH-880N Wireless Over-Ear"
+            }
+          ],
+          "reason": "The source title identifies the brand as Sony."
+        },
+        {
+          "text": "WH-880N",
+          "start": 5,
+          "end": 12,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_1e60b0a9dc",
+              "field": "raw_title",
+              "quote": "SONY WH-880N Wireless Over-Ear"
+            }
+          ],
+          "reason": "The source title explicitly names this model."
+        },
+        {
+          "text": "offers 30 hours of battery life",
+          "start": 13,
+          "end": 44,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_3368d2afb2efa0321ab192f36cb685ddec83d7d9486b5a2b5aa06280ea1c828a"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_1e60b0a9dc",
+              "field": "raw_specs",
+              "quote": "30h battery"
+            }
+          ],
+          "reason": "The source states 30 hours of battery runtime without specifying usage conditions; the description likewise specifies none."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"60a0457b08a89f3901295a218969693e1bea17397c1def5fa3e972e21efe5b05\",\"claims\":[{\"text\":\"Sony\",\"start\":0,\"end\":4,\"verdict\":\"supported\",\"supportIds\":[\"identity:9798b691ab1b90eb9454b76130be07a4a82950d26a0902485f36796bff811be5\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_title\",\"quote\":\"SONY WH-880N Wireless Over-Ear\"}],\"reason\":\"The source title identifies the brand as Sony.\"},{\"text\":\"WH-880N\",\"start\":5,\"end\":12,\"verdict\":\"supported\",\"supportIds\":[\"identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_title\",\"quote\":\"SONY WH-880N Wireless Over-Ear\"}],\"reason\":\"The source title explicitly names this model.\"},{\"text\":\"offers 30 hours of battery life\",\"start\":13,\"end\":44,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_3368d2afb2efa0321ab192f36cb685ddec83d7d9486b5a2b5aa06280ea1c828a\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_specs\",\"quote\":\"30h battery\"}],\"reason\":\"The source states 30 hours of battery runtime without specifying usage conditions; the description likewise specifies none.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_03ff80e259f0404a016aa2d90d9f4c87d0bea5890c50dd7b75",
+    "usage": {
+      "inputTokens": 2152,
+      "outputTokens": 406,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2149
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 9695.842124999996,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "66d57343d13a778515a3f8ac681df7a636e06d9aabfcbd660c680a55f286bedd",
+      "claims": [
+        {
+          "text": "AeroBuds Pro",
+          "start": 0,
+          "end": 12,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:2a20192985e0a5cdc2916b2caff1566907d4d6202a13eeb29a6781140ae81fd4"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_11bb99b2fa",
+              "field": "raw_title",
+              "quote": "Aerobuds PRO earbud, black, ANC"
+            },
+            {
+              "rowId": "row_11bb99b2fa",
+              "field": "raw_title",
+              "quote": "black"
+            },
+            {
+              "rowId": "row_bdbc045131",
+              "field": "raw_title",
+              "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+            },
+            {
+              "rowId": "row_bdbc045131",
+              "field": "raw_title",
+              "quote": "Black"
+            }
+          ],
+          "reason": "The supplied identity support identifies the model as AeroBuds Pro."
+        },
+        {
+          "text": "includes silicone replacement ear tips.",
+          "start": 13,
+          "end": 52,
+          "verdict": "unsupported",
+          "supportIds": [],
+          "decisionIds": [],
+          "evidence": [],
+          "reason": "Neither raw row nor any allowed support establishes included ear tips, silicone material, or replacement status. No supplied reconciliation decision establishes a dispute."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"66d57343d13a778515a3f8ac681df7a636e06d9aabfcbd660c680a55f286bedd\",\"claims\":[{\"text\":\"AeroBuds Pro\",\"start\":0,\"end\":12,\"verdict\":\"supported\",\"supportIds\":[\"identity:2a20192985e0a5cdc2916b2caff1566907d4d6202a13eeb29a6781140ae81fd4\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_11bb99b2fa\",\"field\":\"raw_title\",\"quote\":\"Aerobuds PRO earbud, black, ANC\"},{\"rowId\":\"row_11bb99b2fa\",\"field\":\"raw_title\",\"quote\":\"black\"},{\"rowId\":\"row_bdbc045131\",\"field\":\"raw_title\",\"quote\":\"AeroBuds Pro True Wireless Earbuds - Black\"},{\"rowId\":\"row_bdbc045131\",\"field\":\"raw_title\",\"quote\":\"Black\"}],\"reason\":\"The supplied identity support identifies the model as AeroBuds Pro.\"},{\"text\":\"includes silicone replacement ear tips.\",\"start\":13,\"end\":52,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[],\"reason\":\"Neither raw row nor any allowed support establishes included ear tips, silicone material, or replacement status. No supplied reconciliation decision establishes a dispute.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0ee2e421575b6f55016aa2d5156d4887d0a4833a55801d1695",
+    "usage": {
+      "inputTokens": 2141,
+      "outputTokens": 430,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2138
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "elapsedMs": 4929.345416999997,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "7ca6ed2b5021bf6d6504ecd9e84048c24bb7698393ba1702c3bf8af6104b1c03",
+      "claims": [
+        {
+          "text": "Sony WH-880N",
+          "start": 0,
+          "end": 12,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_1e60b0a9dc",
+              "field": "raw_title",
+              "quote": "SONY WH-880N Wireless Over-Ear"
+            }
+          ],
+          "reason": "The supplied model identity and title support this product name."
+        },
+        {
+          "text": "is an open-box product",
+          "start": 13,
+          "end": 35,
+          "verdict": "unsupported",
+          "supportIds": [],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_05e5d126cb",
+              "field": "raw_title",
+              "quote": "sony wh880n headphones OPEN BOX"
+            }
+          ],
+          "reason": "OPEN BOX describes one clearance supplier's offer, not the product generally. The description promotes an offer-specific condition to a product-level fact, and no allowed support entails that scope."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"7ca6ed2b5021bf6d6504ecd9e84048c24bb7698393ba1702c3bf8af6104b1c03\",\"claims\":[{\"text\":\"Sony WH-880N\",\"start\":0,\"end\":12,\"verdict\":\"supported\",\"supportIds\":[\"identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_title\",\"quote\":\"SONY WH-880N Wireless Over-Ear\"}],\"reason\":\"The supplied model identity and title support this product name.\"},{\"text\":\"is an open-box product\",\"start\":13,\"end\":35,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_05e5d126cb\",\"field\":\"raw_title\",\"quote\":\"sony wh880n headphones OPEN BOX\"}],\"reason\":\"OPEN BOX describes one clearance supplier's offer, not the product generally. The description promotes an offer-specific condition to a product-level fact, and no allowed support entails that scope.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_01961aac3bb14a87016aa2d946c09887d09c118026f78b4476",
+    "usage": {
+      "inputTokens": 2081,
+      "outputTokens": 274,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2078
+    }
+  }
+}

@@ -1,6 +1,6 @@
-# Shelf Ready — этап 5: экран B1 и промежуточная передача
+# Shelf Ready — B1 product baseline и B3 publication development
 
-Локальный pipeline: JSON → валидация → предложения → явные факты и evidence → кандидаты и совместимые товары → категории, согласование и review → development eval и сохранённые метрики. Текущие правила **B1-v2**. B0 сохранён как отдельный режим. B2 поддерживает OpenAI и экспериментальную локальную Ollama через общий контракт. Реальные development-прогоны Ollama и ограничения качества описаны в docs/STAGE3_REPORT.md. Генерация и verifier остаются этапу 4. Минимальный экран просмотра результатов добавлен в `web/` (сохранённый снимок B1 по умолчанию).
+Локальный pipeline: JSON → валидация → предложения → явные факты и evidence → кандидаты и совместимые товары → категории, согласование и review → генерация → атомарные claims → независимая проверка → development eval и сохранённые метрики. Принятый product baseline — **B1-v2**; B3 publication реализован поверх него и не использует B2. Реальный OpenAI development B3 и offline replay успешны, но human gate ещё открыт, поэтому full-input B3 не запускался. Минимальный экран по-прежнему показывает сохранённый B1 и сознательно отклоняет B3 до отдельного этапа 5.
 
 Стек: TypeScript 5.9, NestJS 12 standalone context, Node 24.14.1, npm; UI — Vite + React в `web/`. HTTP API, БД и deployment не нужны.
 
@@ -83,7 +83,7 @@ ID строятся детерминированно; перестановка �
 
 Matching labels: 20 provisional случаев, 14 development на 59 строках / 6 holdout на 49. Unknown-пары исключаются; присоединение неразмеченных строк отмечается unevaluated; межслучайные ложные объединения учитываются. `eval/stage2-checks.json` отдельно фиксирует 18 проверок категорий, 30 фактов/отсутствия фактов и 4 согласования. Это целевые проверки, не исчерпывающая оценка всех 545 фактов. Человеческая проверка обоих наборов открыта. Исходный `eval/REVIEW.md` сохранён как исторический пакет; поправка про schwarz описана в отчёте этапа 2.
 
-`compare` читает schema 1, 2 и 3, проверяет целостность решений и совпадение feed/taxonomy/labels/split. Неизвестная схема отклоняется. Разные входы/метки → несопоставимость, дельты N/A и exit code 1. Рост известных FP, нарушение учёта или провал quality checks также дают ненулевой код; сравнение сохраняется. Полная смена структуры строки и изменение состава matching-группы показываются отдельно. Для исторического B0 полноценный review — N/A, а не прежний ноль другого показателя. Новые категории/факты сравниваются только с тем же хэшем checks.
+`compare` читает schema 1–4, проверяет целостность решений и совпадение feed/taxonomy/labels/split. Для schema 4 отдельно сравнивается `publicationHash`; B1→B3 требует неизменных matching, offers, facts, review и row outcomes. Неизвестная схема отклоняется. Разные входы/метки → несопоставимость, дельты N/A и exit code 1. Рост известных FP, нарушение учёта или провал quality checks также дают ненулевой код; сравнение сохраняется. Для исторического B0 полноценный review — N/A, а не прежний ноль другого показателя.
 
 Текущие артефакты:
 
@@ -91,12 +91,28 @@ Matching labels: 20 provisional случаев, 14 development на 59 стро�
 - [Данные для графиков: 8 запусков](reports/benchmarks/stage2-v2/observations.jsonl), [перечень запусков](reports/benchmarks/stage2-v2/summary.json).
 - [Итог и передача этапа 2](docs/STAGE2_REPORT.md); [roadmap](docs/ROADMAP.md).
 
-Сохранённые B0, B0-repeat, промежуточный B1 и первый benchmark не переписывались. Файлы результатов сохраняются локально и предназначены для Git; автоматической отправки куда-либо нет. Для этапа 3 разрешён отдельный локальный эксперимент Ollama; OpenAI ожидает сообщения пользователя о добавлении ключа. См. [отчёт этапа 3](docs/STAGE3_REPORT.md) и [роли моделей](LLM_ROLES.md).
+Сохранённые исторические прогоны не переписываются. Файлы результатов сохраняются локально и предназначены для Git; автоматической отправки куда-либо нет. Результаты OpenAI B3 описаны в [отчёте этапа 4](docs/STAGE4_REPORT.md), локальный Ollama-эксперимент — в [отчёте этапа 3](docs/STAGE3_REPORT.md), распределение ответственности — в [ролях моделей](LLM_ROLES.md).
+
+## B3: OpenAI generation и verifier
+
+Локальный `.env` должен содержать `OPENAI_API_KEY`; ключ загружается через `AppConfig`, имеет меньший приоритет, чем process env, и не сохраняется в артефактах. Конфигурация B3 — `config/stage4.openai.json`: `gpt-5.6-sol` генерирует 1–3 коротких нейтральных предложения, отдельный `gpt-6-astra` разбивает весь текст на claims и проверяет evidence. Оба используют reasoning `low`, Responses API и strict Structured Outputs.
+
+Development live и replay:
+
+```sh
+npm run build
+node dist/src/cli.js pipeline --baseline b3 --ai-mode live --ai-cache reports/my-b3-cache --ai-config config/stage4.openai.json --ai-cohort development --claim-checks eval/stage4-claims.json --out reports --run-id my-b3-live
+node dist/src/cli.js pipeline --baseline b3 --ai-mode replay --ai-cache reports/my-b3-cache --ai-config config/stage4.openai.json --ai-cohort development --claim-checks eval/stage4-claims.json --out reports --run-id my-b3-replay
+```
+
+Каждый live run требует нового пустого cache directory; replay использует ровно его и не вызывает сеть. После live проверить `generated-review.json` по инструкции `eval/REVIEW.md`, заполнить rationale и human metadata. Full-input B3 требует явного `--stage4-gate` с успешно проверенным development report и обоими human-verified файлами; без этого CLI закрывается с ошибкой. Holdout и этап 5 этой командой не запускаются.
+
+Сохранённый development: [live](reports/B3-openai-development-live-v4/report.md), [replay](reports/B3-openai-development-replay-v4/report.md), [B1→B3](reports/comparisons/B1-v2-to-B3-openai-development-v4/comparison.md), [live→replay](reports/comparisons/B3-openai-development-live-to-replay-v4/comparison.md). Controlled gate: 4/4 unsupported, false block 0/7, disputed leakage 0/1, errors 0; 37/39 ready, 2 identity review. Эти значения provisional до человеческой проверки 158 generated claims.
 
 
 ## B2: провайдеры и локальный эксперимент
 
-Принятый product baseline — **B1-v2**. Ollama — экспериментальный development baseline. OpenAI не вызывается до явного сообщения пользователя о добавлении ключа. Генерация и verifier не реализованы.
+Принятый product baseline — **B1-v2**. Ollama остаётся экспериментальным development baseline этапа 3. OpenAI Sol/Astra используются только B3 publication; их результат не меняет B1 matching/facts и не повышает B2.
 
 `AiProvider` и Nest DI объединяют `OpenAiAdapter` (Responses API) и `OllamaAdapter` (native `/api/chat`, встроенный fetch, `stream:false`, общий JSON Schema в `format`). Предметный pipeline не импортирует провайдеры. Extraction/evidence, retries, cache/replay и метрики общие. Matching schema v3 сохраняет decision, confidence high/medium/low, reason и evidence только в `ai.json`; рекомендации не изменяют deterministic decisions, группы или confidence товаров.
 

@@ -1,0 +1,76 @@
+{
+  "elapsedMs": 11440.969166999988,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "014ec7694d1fe2db812ed28cd18569c41e3f3b5c28c76e734932c5141ae171e1",
+      "claims": [
+        {
+          "text": "The Quill lamp",
+          "start": 0,
+          "end": 14,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d",
+            "identity:e3251f21956dc8dbe69c4abd2570a44cda4e08864f6dc5b001c89f0e67ed1300"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_11462769c5",
+              "field": "raw_title",
+              "quote": "Quill desk lamp"
+            }
+          ],
+          "reason": "The title establishes Quill as the model and lamp as the product type."
+        },
+        {
+          "text": " features an LED light source",
+          "start": 14,
+          "end": 43,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_a2ef42e1a73eac83a71bcfbdb7e5b69e640087d2856af83179bcc2ab5dbc4475"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_11462769c5",
+              "field": "raw_specs",
+              "quote": "LED"
+            }
+          ],
+          "reason": "The supplied light-source support and raw specifications identify LED."
+        },
+        {
+          "text": " and a USB-C connector.",
+          "start": 43,
+          "end": 66,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_284692a6e23b24fc3aa2c1ecfe920286efb91d21a4ab3cba8ed27cee8a4d53db"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_11462769c5",
+              "field": "raw_specs",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The supplied connector support and raw specifications identify USB-C. The review context concerns an unrelated, unclaimed colour-temperature specification."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"014ec7694d1fe2db812ed28cd18569c41e3f3b5c28c76e734932c5141ae171e1\",\"claims\":[{\"text\":\"The Quill lamp\",\"start\":0,\"end\":14,\"verdict\":\"supported\",\"supportIds\":[\"identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d\",\"identity:e3251f21956dc8dbe69c4abd2570a44cda4e08864f6dc5b001c89f0e67ed1300\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_11462769c5\",\"field\":\"raw_title\",\"quote\":\"Quill desk lamp\"}],\"reason\":\"The title establishes Quill as the model and lamp as the product type.\"},{\"text\":\" features an LED light source\",\"start\":14,\"end\":43,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_a2ef42e1a73eac83a71bcfbdb7e5b69e640087d2856af83179bcc2ab5dbc4475\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_11462769c5\",\"field\":\"raw_specs\",\"quote\":\"LED\"}],\"reason\":\"The supplied light-source support and raw specifications identify LED.\"},{\"text\":\" and a USB-C connector.\",\"start\":43,\"end\":66,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_284692a6e23b24fc3aa2c1ecfe920286efb91d21a4ab3cba8ed27cee8a4d53db\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_11462769c5\",\"field\":\"raw_specs\",\"quote\":\"USB-C\"}],\"reason\":\"The supplied connector support and raw specifications identify USB-C. The review context concerns an unrelated, unclaimed colour-temperature specification.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0ccb993d9e822de6016aa2d554acfc87d0bf2091d40ebfd185",
+    "usage": {
+      "inputTokens": 957,
+      "outputTokens": 652,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

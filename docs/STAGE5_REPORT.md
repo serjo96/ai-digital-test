@@ -105,3 +105,11 @@ Build проходит с двумя предупреждениями Rollup о�
 Продолжение — завершить этап 3 после сообщения пользователя о ключе, затем реализовать и измерить этап 4. После принятого B3 интегрировать сохранённые claims/вердикты/разрешённый текст, зафиксировать правила/промпты и один раз оценить holdout; затем обновить итоговый комплект. Проекция сейчас сознательно создаёт null draft/published: не подключать B3 без изменения этого контракта. Просмотр снимка не равен replay AI; для реального replay нужен ещё не созданный live-кэш.
 
 Правила/промпты не настраивались по holdout. Этапы 3–4 автоматически не выполнялись, API не вызывался, публикации/деплоя/отправки и agent commits/push не было. Точный focused time не фиксировался; работа пересекала паузу пользователя, elapsed нельзя выдавать за время сосредоточенной реализации.
+
+## Передача из этапа 4 — 2026-09-10
+
+Эта запись дополняет исторический статус выше; UI этапа 5 в рамках этапа 4 не изменялся. B3-v1 contract и development artifacts готовы: [live](../reports/B3-openai-development-live-v4/report.md), [offline replay](../reports/B3-openai-development-replay-v4/report.md), [B1→B3](../reports/comparisons/B1-v2-to-B3-openai-development-v4/comparison.md), [live→replay](../reports/comparisons/B3-openai-development-live-to-replay-v4/comparison.md), полный [отчёт этапа 4](STAGE4_REPORT.md).
+
+Development: 37/39 ready, 2 identity review, 0 withheld; controlled verifier provisional — unsupported 4/4, false block 0/7, disputed leakage 0/1, errors 0. B1 `decisionsHash` неизменен, replay имеет тот же `publicationHash`. OpenAI live: 86 calls, 151618 tokens, $2.6475128, 0 errors/retries; replay: 86 cache hits, 0 calls.
+
+Блокер следующего этапа: человек должен проверить controlled suite и 158 generated claims, заполнить `reviewedBy/reviewedAt` и rationale. До успешного human gate full-input B3, holdout и финальная оценка не разрешены. `web:prepare` намеренно продолжает отклонять schema 4/B3; подключать listings к UI следует только отдельным заданием этапа 5. В этой передаче UI, deployment, commit и push не выполнялись.

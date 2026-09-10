@@ -1,0 +1,62 @@
+{
+  "elapsedMs": 8203.010124999993,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "dda81fb64c0d54944d1cae973ee2c2a05b88ab86ce6ab7835c98424cf35b85a8",
+      "claims": [
+        {
+          "text": "Onyx Lite",
+          "start": 0,
+          "end": 9,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "256GB"
+            },
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "Onyx Lite microSD card 256GB"
+            }
+          ],
+          "reason": "The supplied model identity is confirmed by the raw title."
+        },
+        {
+          "text": "supports transfer speeds up to 170 MB/s",
+          "start": 10,
+          "end": 49,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_50b977b84a83af9044c8145e627257f85642bc23253c9c328ff8ef2bfce2a13d"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_specs",
+              "quote": "up to 170MB/s"
+            }
+          ],
+          "reason": "Matches the supplied transfer speed, preserving the up-to qualifier and leaving direction unspecified."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"dda81fb64c0d54944d1cae973ee2c2a05b88ab86ce6ab7835c98424cf35b85a8\",\"claims\":[{\"text\":\"Onyx Lite\",\"start\":0,\"end\":9,\"verdict\":\"supported\",\"supportIds\":[\"identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite microSD card 256GB\"}],\"reason\":\"The supplied model identity is confirmed by the raw title.\"},{\"text\":\"supports transfer speeds up to 170 MB/s\",\"start\":10,\"end\":49,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_50b977b84a83af9044c8145e627257f85642bc23253c9c328ff8ef2bfce2a13d\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"Matches the supplied transfer speed, preserving the up-to qualifier and leaving direction unspecified.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0f8b8116d5cf038d016aa2d86e992887d0b7884ba5b2c0d2a7",
+    "usage": {
+      "inputTokens": 1355,
+      "outputTokens": 424,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1352
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schema": "metrics-v1",
+  "createdAt": "2026-09-10T16:31:09.224Z",
+  "runs": [
+    {
+      "runId": "B1-v2",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/B1-v2",
+      "status": "success",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B1-v2",
+      "wallTimeMs": 72.44475000000003,
+      "decisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+      "implementationHash": "ac6f99c0a44dc8dab0251c1dd504c5870d96735baf64ade7ac80ba84b815b9eb"
+    },
+    {
+      "runId": "B3-openai-development-live-v4",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/B3-openai-development-live-v4",
+      "status": "success",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B3-v1",
+      "wallTimeMs": 519931.2525,
+      "decisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+      "implementationHash": "d8f5d72a4686fb00b4de918e1eb5354f9299b0fc9fe5b5099e3b39af53abd3d8"
+    },
+    {
+      "runId": "B3-openai-development-replay-v4",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/B3-openai-development-replay-v4",
+      "status": "success",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B3-v1",
+      "wallTimeMs": 199.92904200000004,
+      "decisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+      "implementationHash": "d8f5d72a4686fb00b4de918e1eb5354f9299b0fc9fe5b5099e3b39af53abd3d8"
+    }
+  ],
+  "observations": 280
+}

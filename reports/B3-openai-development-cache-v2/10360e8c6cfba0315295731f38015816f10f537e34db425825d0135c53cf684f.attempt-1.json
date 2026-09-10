@@ -1,0 +1,93 @@
+{
+  "elapsedMs": 12498.627999999968,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "1dcd4a9b718b279e0a3cbad26128a5f6f9e7809b60809014738df36a5dce361f",
+      "claims": [
+        {
+          "text": "The Onyx Lite ",
+          "start": 0,
+          "end": 14,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_6f66c4cb9e",
+              "field": "raw_title",
+              "quote": "Onyx Lite action camera"
+            }
+          ],
+          "reason": "The source title identifies the model as Onyx Lite."
+        },
+        {
+          "text": "camera ",
+          "start": 14,
+          "end": 21,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_6f66c4cb9e",
+              "field": "raw_title",
+              "quote": "Onyx Lite action camera"
+            }
+          ],
+          "reason": "The source identifies the product as an action camera."
+        },
+        {
+          "text": "records video at 4K@60fps",
+          "start": 21,
+          "end": 46,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_ff11e9152d7ed4b396829ff8594a28aeff32dfabbdcedafea2d9708032a147f6"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_6f66c4cb9e",
+              "field": "raw_specs",
+              "quote": "4K60"
+            }
+          ],
+          "reason": "The supplied video-recording support normalizes the source's 4K60 specification to 4K@60fps."
+        },
+        {
+          "text": " and is waterproof up to 10 m.",
+          "start": 46,
+          "end": 76,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_f836b0905b847de0d3b9c89db444aadd694699ab9d9bb50e250b75dde662eb06"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_6f66c4cb9e",
+              "field": "raw_specs",
+              "quote": "waterproof to 10m"
+            }
+          ],
+          "reason": "The claim preserves the supported depth, unit, and up-to qualification."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"1dcd4a9b718b279e0a3cbad26128a5f6f9e7809b60809014738df36a5dce361f\",\"claims\":[{\"text\":\"The Onyx Lite \",\"start\":0,\"end\":14,\"verdict\":\"supported\",\"supportIds\":[\"identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_6f66c4cb9e\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite action camera\"}],\"reason\":\"The source title identifies the model as Onyx Lite.\"},{\"text\":\"camera \",\"start\":14,\"end\":21,\"verdict\":\"supported\",\"supportIds\":[\"identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_6f66c4cb9e\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite action camera\"}],\"reason\":\"The source identifies the product as an action camera.\"},{\"text\":\"records video at 4K@60fps\",\"start\":21,\"end\":46,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_ff11e9152d7ed4b396829ff8594a28aeff32dfabbdcedafea2d9708032a147f6\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_6f66c4cb9e\",\"field\":\"raw_specs\",\"quote\":\"4K60\"}],\"reason\":\"The supplied video-recording support normalizes the source's 4K60 specification to 4K@60fps.\"},{\"text\":\" and is waterproof up to 10 m.\",\"start\":46,\"end\":76,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_f836b0905b847de0d3b9c89db444aadd694699ab9d9bb50e250b75dde662eb06\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_6f66c4cb9e\",\"field\":\"raw_specs\",\"quote\":\"waterproof to 10m\"}],\"reason\":\"The claim preserves the supported depth, unit, and up-to qualification.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_039232338187aac4016aa2d63ea82c87d0985351e5c0dfaaaf",
+    "usage": {
+      "inputTokens": 908,
+      "outputTokens": 759,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

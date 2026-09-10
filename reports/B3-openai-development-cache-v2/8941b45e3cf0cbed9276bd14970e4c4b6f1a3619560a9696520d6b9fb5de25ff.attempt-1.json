@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 3161.7430419999873,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "AeroBuds Pro replacement ear tips in S, M, and L sizes, made of silicone."
+    },
+    "raw": "{\"text\":\"AeroBuds Pro replacement ear tips in S, M, and L sizes, made of silicone.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0c373b11e55e536c016aa2d567b14087d09b71f223d5f4f8f5",
+    "usage": {
+      "inputTokens": 475,
+      "outputTokens": 35,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

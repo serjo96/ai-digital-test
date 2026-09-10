@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2842.3436249999795,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The TaskFlow K2 is a TKL keyboard with hot-swappable brown tactile switches, a USB-C connector, and RGB backlighting."
+    },
+    "raw": "{\"text\":\"The TaskFlow K2 is a TKL keyboard with hot-swappable brown tactile switches, a USB-C connector, and RGB backlighting.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_013ec9d7b3878708016aa2daa714ac87d0b4682dad6889303a",
+    "usage": {
+      "inputTokens": 1992,
+      "outputTokens": 42,
+      "cachedInputTokens": 1989,
+      "cacheWriteTokens": 0
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "elapsedMs": 8298.974708000002,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "febc8d6a530a4652df8e8bed08a9a4f95553f1b99c8f485d4755d67336f0186a",
+      "claims": [
+        {
+          "text": "Sony",
+          "start": 0,
+          "end": 4,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:9798b691ab1b90eb9454b76130be07a4a82950d26a0902485f36796bff811be5"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_1e60b0a9dc",
+              "field": "raw_title",
+              "quote": "SONY WH-880N Wireless Over-Ear"
+            }
+          ],
+          "reason": "The raw title identifies the brand as Sony."
+        },
+        {
+          "text": "WH-880N",
+          "start": 5,
+          "end": 12,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_1e60b0a9dc",
+              "field": "raw_title",
+              "quote": "SONY WH-880N Wireless Over-Ear"
+            }
+          ],
+          "reason": "The raw title explicitly identifies model WH-880N."
+        },
+        {
+          "text": "supports active noise cancelling",
+          "start": 13,
+          "end": 45,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_35522b0d89ec7c4598333ad2ea46d218114f198c543a045deae29e51fe85e7bb"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_1e60b0a9dc",
+              "field": "raw_specs",
+              "quote": "ANC"
+            }
+          ],
+          "reason": "ANC denotes active noise cancelling and is explicitly listed in this product's raw specifications."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"febc8d6a530a4652df8e8bed08a9a4f95553f1b99c8f485d4755d67336f0186a\",\"claims\":[{\"text\":\"Sony\",\"start\":0,\"end\":4,\"verdict\":\"supported\",\"supportIds\":[\"identity:9798b691ab1b90eb9454b76130be07a4a82950d26a0902485f36796bff811be5\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_title\",\"quote\":\"SONY WH-880N Wireless Over-Ear\"}],\"reason\":\"The raw title identifies the brand as Sony.\"},{\"text\":\"WH-880N\",\"start\":5,\"end\":12,\"verdict\":\"supported\",\"supportIds\":[\"identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_title\",\"quote\":\"SONY WH-880N Wireless Over-Ear\"}],\"reason\":\"The raw title explicitly identifies model WH-880N.\"},{\"text\":\"supports active noise cancelling\",\"start\":13,\"end\":45,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_35522b0d89ec7c4598333ad2ea46d218114f198c543a045deae29e51fe85e7bb\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_specs\",\"quote\":\"ANC\"}],\"reason\":\"ANC denotes active noise cancelling and is explicitly listed in this product's raw specifications.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_087765447877f5a3016aa2d83532e887d0a8dfeb1525a258d1",
+    "usage": {
+      "inputTokens": 1754,
+      "outputTokens": 404,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1751
+    }
+  }
+}

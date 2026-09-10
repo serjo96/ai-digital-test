@@ -1,0 +1,117 @@
+{
+  "elapsedMs": 19482.394250000012,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "ea8a5817cf9db00858ab4906b1ac924692838c83629859daf022395353c410ee",
+      "claims": [
+        {
+          "text": "The Onyx Lite microSD memory card",
+          "start": 0,
+          "end": 33,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f",
+            "identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "256GB"
+            },
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "Onyx Lite microSD card 256GB"
+            }
+          ],
+          "reason": "The supplied identity supports and raw title establish the model and memory-card type."
+        },
+        {
+          "text": " has 256GB of storage",
+          "start": 33,
+          "end": 54,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_73a80ca467fb4b89161556327cadafad9ec94ac8b64f4c2ea1df1d783890a9a6"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "256GB"
+            }
+          ],
+          "reason": "The storage capacity matches the supplied fact and raw title."
+        },
+        {
+          "text": ", a UHS-I bus rating",
+          "start": 54,
+          "end": 74,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_32e79b858e7a36dee279322ae5c92a58aa44abfbd087533693bd0b0431a96555"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_specs",
+              "quote": "UHS-I"
+            }
+          ],
+          "reason": "The bus rating matches the supplied fact and raw specifications."
+        },
+        {
+          "text": " and an A2 application rating.",
+          "start": 74,
+          "end": 104,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_929a0120cad95297067d2f4ce61ea10c36c1f75cbc721c33f48fced76a6a66d6"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_specs",
+              "quote": "A2"
+            }
+          ],
+          "reason": "The application rating matches the supplied fact and raw specifications."
+        },
+        {
+          "text": " Transfer speed is up to 170MB/s, with direction unspecified.",
+          "start": 104,
+          "end": 165,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_50b977b84a83af9044c8145e627257f85642bc23253c9c328ff8ef2bfce2a13d"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_specs",
+              "quote": "up to 170MB/s"
+            }
+          ],
+          "reason": "The speed and unit match the source, and the description preserves both the upper-bound qualifier and the unspecified transfer direction."
+        }
+      ]
+    },
+    "raw": "{\n  \"textHash\": \"ea8a5817cf9db00858ab4906b1ac924692838c83629859daf022395353c410ee\",\n  \"claims\": [\n    {\n      \"text\": \"The Onyx Lite microSD memory card\",\n      \"start\": 0,\n      \"end\": 33,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f\",\n        \"identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_4730fd8686\",\n          \"field\": \"raw_title\",\n          \"quote\": \"256GB\"\n        },\n        {\n          \"rowId\": \"row_4730fd8686\",\n          \"field\": \"raw_title\",\n          \"quote\": \"Onyx Lite microSD card 256GB\"\n        }\n      ],\n      \"reason\": \"The supplied identity supports and raw title establish the model and memory-card type.\"\n    },\n    {\n      \"text\": \" has 256GB of storage\",\n      \"start\": 33,\n      \"end\": 54,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_73a80ca467fb4b89161556327cadafad9ec94ac8b64f4c2ea1df1d783890a9a6\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_4730fd8686\",\n          \"field\": \"raw_title\",\n          \"quote\": \"256GB\"\n        }\n      ],\n      \"reason\": \"The storage capacity matches the supplied fact and raw title.\"\n    },\n    {\n      \"text\": \", a UHS-I bus rating\",\n      \"start\": 54,\n      \"end\": 74,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_32e79b858e7a36dee279322ae5c92a58aa44abfbd087533693bd0b0431a96555\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_4730fd8686\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"UHS-I\"\n        }\n      ],\n      \"reason\": \"The bus rating matches the supplied fact and raw specifications.\"\n    },\n    {\n      \"text\": \" and an A2 application rating.\",\n      \"start\": 74,\n      \"end\": 104,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_929a0120cad95297067d2f4ce61ea10c36c1f75cbc721c33f48fced76a6a66d6\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_4730fd8686\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"A2\"\n        }\n      ],\n      \"reason\": \"The application rating matches the supplied fact and raw specifications.\"\n    },\n    {\n      \"text\": \" Transfer speed is up to 170MB/s, with direction unspecified.\",\n      \"start\": 104,\n      \"end\": 165,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_50b977b84a83af9044c8145e627257f85642bc23253c9c328ff8ef2bfce2a13d\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_4730fd8686\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"up to 170MB/s\"\n        }\n      ],\n      \"reason\": \"The speed and unit match the source, and the description preserves both the upper-bound qualifier and the unspecified transfer direction.\"\n    }\n  ]\n}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_01f72e2dec92fa24016aa2d5db8e1887d0b6d277a2d1d39b24",
+    "usage": {
+      "inputTokens": 1310,
+      "outputTokens": 1267,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1307
+    }
+  }
+}

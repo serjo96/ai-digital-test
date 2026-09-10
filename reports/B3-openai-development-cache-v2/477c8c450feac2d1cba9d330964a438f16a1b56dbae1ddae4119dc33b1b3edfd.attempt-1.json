@@ -1,0 +1,130 @@
+{
+  "elapsedMs": 18491.993750000023,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "db9f09d7bf42404f565e715f24d54e56d36f0811ff73ed1455542cf0448d2775",
+      "claims": [
+        {
+          "text": "The Nimbus 2 Pro speaker",
+          "start": 0,
+          "end": 24,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f",
+            "identity:e0d98b26014afbd4fb68e5d94e6585696ed9736b86f0c17b868d3cb3e8e92d08"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_cdf75e46ea",
+              "field": "raw_title",
+              "quote": "Nimbus 2 Pro Portable Bluetooth Speaker"
+            }
+          ],
+          "reason": "The source title identifies the model and product type."
+        },
+        {
+          "text": "has 24 W output,",
+          "start": 25,
+          "end": 41,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_1a9f65cc7088c63b1bb01a9919aefd1409aebb01d0c7c461b346abe8311f4d43"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_cdf75e46ea",
+              "field": "raw_specs",
+              "quote": "24W output"
+            }
+          ],
+          "reason": "The output power matches the source."
+        },
+        {
+          "text": "an 18-hour battery runtime with usage unspecified,",
+          "start": 42,
+          "end": 92,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_156b8ad7adaf0173c840e66451c75369075a05aae387b7310f6de813fc69120f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_cdf75e46ea",
+              "field": "raw_specs",
+              "quote": "18h battery"
+            }
+          ],
+          "reason": "The source states 18 hours and specifies no usage conditions; the description preserves that limitation."
+        },
+        {
+          "text": "an IP67 rating,",
+          "start": 93,
+          "end": 108,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_2a151452e05aba75cb79e3c594d49193f0315d7423554ca173aa3d6d1cf53229"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_cdf75e46ea",
+              "field": "raw_specs",
+              "quote": "IP67"
+            }
+          ],
+          "reason": "The rating matches the source."
+        },
+        {
+          "text": "and stereo pairing.",
+          "start": 109,
+          "end": 128,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_4c7e326143b2f744a9e6149e2c71a0ce21365629ca145254dd1253d7e646b59f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_cdf75e46ea",
+              "field": "raw_specs",
+              "quote": "stereo pairing"
+            }
+          ],
+          "reason": "Stereo pairing is explicitly listed."
+        },
+        {
+          "text": "It weighs 1,600 g.",
+          "start": 129,
+          "end": 147,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_555b1157151da47213365502f0cc8d47fd3f265a287de0baf02cb5cb87b63408"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_cdf75e46ea",
+              "field": "raw_specs",
+              "quote": "weight 1.6kg"
+            }
+          ],
+          "reason": "1.6 kg equals 1,600 g."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"db9f09d7bf42404f565e715f24d54e56d36f0811ff73ed1455542cf0448d2775\",\"claims\":[{\"text\":\"The Nimbus 2 Pro speaker\",\"start\":0,\"end\":24,\"verdict\":\"supported\",\"supportIds\":[\"identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f\",\"identity:e0d98b26014afbd4fb68e5d94e6585696ed9736b86f0c17b868d3cb3e8e92d08\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_cdf75e46ea\",\"field\":\"raw_title\",\"quote\":\"Nimbus 2 Pro Portable Bluetooth Speaker\"}],\"reason\":\"The source title identifies the model and product type.\"},{\"text\":\"has 24 W output,\",\"start\":25,\"end\":41,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_1a9f65cc7088c63b1bb01a9919aefd1409aebb01d0c7c461b346abe8311f4d43\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_cdf75e46ea\",\"field\":\"raw_specs\",\"quote\":\"24W output\"}],\"reason\":\"The output power matches the source.\"},{\"text\":\"an 18-hour battery runtime with usage unspecified,\",\"start\":42,\"end\":92,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_156b8ad7adaf0173c840e66451c75369075a05aae387b7310f6de813fc69120f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_cdf75e46ea\",\"field\":\"raw_specs\",\"quote\":\"18h battery\"}],\"reason\":\"The source states 18 hours and specifies no usage conditions; the description preserves that limitation.\"},{\"text\":\"an IP67 rating,\",\"start\":93,\"end\":108,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_2a151452e05aba75cb79e3c594d49193f0315d7423554ca173aa3d6d1cf53229\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_cdf75e46ea\",\"field\":\"raw_specs\",\"quote\":\"IP67\"}],\"reason\":\"The rating matches the source.\"},{\"text\":\"and stereo pairing.\",\"start\":109,\"end\":128,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_4c7e326143b2f744a9e6149e2c71a0ce21365629ca145254dd1253d7e646b59f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_cdf75e46ea\",\"field\":\"raw_specs\",\"quote\":\"stereo pairing\"}],\"reason\":\"Stereo pairing is explicitly listed.\"},{\"text\":\"It weighs 1,600 g.\",\"start\":129,\"end\":147,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_555b1157151da47213365502f0cc8d47fd3f265a287de0baf02cb5cb87b63408\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_cdf75e46ea\",\"field\":\"raw_specs\",\"quote\":\"weight 1.6kg\"}],\"reason\":\"1.6 kg equals 1,600 g.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_09f806bc38f4d4b5016aa2d58eb0f887d080c1f01a564add49",
+    "usage": {
+      "inputTokens": 1227,
+      "outputTokens": 1073,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1224
+    }
+  }
+}

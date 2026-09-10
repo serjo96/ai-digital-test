@@ -1,0 +1,76 @@
+{
+  "elapsedMs": 10467.93975000002,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "5265b2e6296092a5e58c22e9aae8ede45a876bfba9704a8e77e14f32bb3da3c5",
+      "claims": [
+        {
+          "text": "The Onyx Pro tablet case",
+          "start": 0,
+          "end": 24,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:3beaba0226187ae8f341d1840bc90913a2526cdaa0e0d404c8fc35c44d7f9661",
+            "identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_56f937bd9e",
+              "field": "raw_title",
+              "quote": "ONYX PRO TABLET CASE"
+            }
+          ],
+          "reason": "The supplied title supports the model name and product type."
+        },
+        {
+          "text": " has a folio style",
+          "start": 24,
+          "end": 42,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_dfc5f6299c59a9c4f5b1766a810acb94334de96d0380c2c89cf6f06a53e0c9e9"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_56f937bd9e",
+              "field": "raw_specs",
+              "quote": "folio"
+            }
+          ],
+          "reason": "The supplied specifications explicitly identify the case style as folio."
+        },
+        {
+          "text": " and supports auto sleep/wake.",
+          "start": 42,
+          "end": 72,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_651a9fc92c1448713bf286c0f1fcde06e7c96fe84339e5aed25c986dbeead247"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_56f937bd9e",
+              "field": "raw_specs",
+              "quote": "auto sleep/wake"
+            }
+          ],
+          "reason": "The supplied specifications explicitly list auto sleep/wake."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"5265b2e6296092a5e58c22e9aae8ede45a876bfba9704a8e77e14f32bb3da3c5\",\"claims\":[{\"text\":\"The Onyx Pro tablet case\",\"start\":0,\"end\":24,\"verdict\":\"supported\",\"supportIds\":[\"identity:3beaba0226187ae8f341d1840bc90913a2526cdaa0e0d404c8fc35c44d7f9661\",\"identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_56f937bd9e\",\"field\":\"raw_title\",\"quote\":\"ONYX PRO TABLET CASE\"}],\"reason\":\"The supplied title supports the model name and product type.\"},{\"text\":\" has a folio style\",\"start\":24,\"end\":42,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_dfc5f6299c59a9c4f5b1766a810acb94334de96d0380c2c89cf6f06a53e0c9e9\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_56f937bd9e\",\"field\":\"raw_specs\",\"quote\":\"folio\"}],\"reason\":\"The supplied specifications explicitly identify the case style as folio.\"},{\"text\":\" and supports auto sleep/wake.\",\"start\":42,\"end\":72,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_651a9fc92c1448713bf286c0f1fcde06e7c96fe84339e5aed25c986dbeead247\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_56f937bd9e\",\"field\":\"raw_specs\",\"quote\":\"auto sleep/wake\"}],\"reason\":\"The supplied specifications explicitly list auto sleep/wake.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_066b60f47c6cf842016aa2d632caf087d0b35b9202bb083236",
+    "usage": {
+      "inputTokens": 894,
+      "outputTokens": 692,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

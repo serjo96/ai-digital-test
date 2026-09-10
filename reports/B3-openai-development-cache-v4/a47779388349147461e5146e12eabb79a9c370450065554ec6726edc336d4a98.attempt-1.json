@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2921.5504170000204,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Quill 3 is a 7-in-1 USB-C hub with 4K@30fps video output and 100 W power under PD passthrough."
+    },
+    "raw": "{\"text\":\"The Quill 3 is a 7-in-1 USB-C hub with 4K@30fps video output and 100 W power under PD passthrough.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0ff4ab40583ee46d016aa2da330bb087d0b1b9f785186a5d7e",
+    "usage": {
+      "inputTokens": 831,
+      "outputTokens": 49,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

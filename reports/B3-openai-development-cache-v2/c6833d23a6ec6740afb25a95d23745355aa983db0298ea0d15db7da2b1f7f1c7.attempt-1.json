@@ -1,0 +1,60 @@
+{
+  "elapsedMs": 9028.81083300001,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "b53ac47c6ea398480a6ce2f2ffb083a760ac1cb8c9346b152d3c050b845b1d0d",
+      "claims": [
+        {
+          "text": "Onyx Lite",
+          "start": 0,
+          "end": 9,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "256GB"
+            },
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "Onyx Lite microSD card 256GB"
+            }
+          ],
+          "reason": "The supplied model identity support identifies Onyx Lite."
+        },
+        {
+          "text": "supports transfer speeds up to 180 MB/s",
+          "start": 10,
+          "end": 49,
+          "verdict": "unsupported",
+          "supportIds": [],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_specs",
+              "quote": "up to 170MB/s"
+            }
+          ],
+          "reason": "The source specifies up to 170 MB/s, not 180 MB/s. No supplied support entails the changed number, and no reconciliation decision establishes a dispute."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"b53ac47c6ea398480a6ce2f2ffb083a760ac1cb8c9346b152d3c050b845b1d0d\",\"claims\":[{\"text\":\"Onyx Lite\",\"start\":0,\"end\":9,\"verdict\":\"supported\",\"supportIds\":[\"identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite microSD card 256GB\"}],\"reason\":\"The supplied model identity support identifies Onyx Lite.\"},{\"text\":\"supports transfer speeds up to 180 MB/s\",\"start\":10,\"end\":49,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"The source specifies up to 170 MB/s, not 180 MB/s. No supplied support entails the changed number, and no reconciliation decision establishes a dispute.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_096fe52cfc28116d016aa2d876dfb087d0936cb21ab35560ca",
+    "usage": {
+      "inputTokens": 1357,
+      "outputTokens": 440,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1354
+    }
+  }
+}

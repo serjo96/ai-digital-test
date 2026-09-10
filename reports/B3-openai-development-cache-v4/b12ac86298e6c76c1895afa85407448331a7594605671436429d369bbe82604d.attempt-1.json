@@ -1,0 +1,93 @@
+{
+  "elapsedMs": 7582.499542000005,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "647aabeaa08969fbee508577eafeff8e98e94e2784a2eebb7ecf95903235eebd",
+      "claims": [
+        {
+          "text": "The Onyx 3",
+          "start": 0,
+          "end": 10,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:3ff90cbbb23f570707d3ce3f633a5088fe151fd9f4c44b1cde3d468eb08aeb58"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_a1bb1ad2e9",
+              "field": "raw_title",
+              "quote": "Onyx 3 desk lamp"
+            }
+          ],
+          "reason": "The supplied title identifies the model as Onyx 3."
+        },
+        {
+          "text": "lamp",
+          "start": 11,
+          "end": 15,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_a1bb1ad2e9",
+              "field": "raw_title",
+              "quote": "Onyx 3 desk lamp"
+            }
+          ],
+          "reason": "The supplied title identifies the product as a lamp."
+        },
+        {
+          "text": "uses an LED light source",
+          "start": 16,
+          "end": 40,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_a13726c0969034727373103473c3f0e1c70a2740be006bd0a5d57db11bad6488"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_a1bb1ad2e9",
+              "field": "raw_specs",
+              "quote": "LED"
+            }
+          ],
+          "reason": "The allowed light-source fact and raw specifications support LED."
+        },
+        {
+          "text": "and has a USB-C connector",
+          "start": 41,
+          "end": 66,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_778b9c614e83823535afa2883956aefaf85cf54b441508bcf5eb0409e8e9b4a4"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_a1bb1ad2e9",
+              "field": "raw_specs",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The allowed connector fact and raw specifications support USB-C."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"647aabeaa08969fbee508577eafeff8e98e94e2784a2eebb7ecf95903235eebd\",\"claims\":[{\"text\":\"The Onyx 3\",\"start\":0,\"end\":10,\"verdict\":\"supported\",\"supportIds\":[\"identity:3ff90cbbb23f570707d3ce3f633a5088fe151fd9f4c44b1cde3d468eb08aeb58\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_a1bb1ad2e9\",\"field\":\"raw_title\",\"quote\":\"Onyx 3 desk lamp\"}],\"reason\":\"The supplied title identifies the model as Onyx 3.\"},{\"text\":\"lamp\",\"start\":11,\"end\":15,\"verdict\":\"supported\",\"supportIds\":[\"identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_a1bb1ad2e9\",\"field\":\"raw_title\",\"quote\":\"Onyx 3 desk lamp\"}],\"reason\":\"The supplied title identifies the product as a lamp.\"},{\"text\":\"uses an LED light source\",\"start\":16,\"end\":40,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_a13726c0969034727373103473c3f0e1c70a2740be006bd0a5d57db11bad6488\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_a1bb1ad2e9\",\"field\":\"raw_specs\",\"quote\":\"LED\"}],\"reason\":\"The allowed light-source fact and raw specifications support LED.\"},{\"text\":\"and has a USB-C connector\",\"start\":41,\"end\":66,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_778b9c614e83823535afa2883956aefaf85cf54b441508bcf5eb0409e8e9b4a4\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_a1bb1ad2e9\",\"field\":\"raw_specs\",\"quote\":\"USB-C\"}],\"reason\":\"The allowed connector fact and raw specifications support USB-C.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_01fcdf46b7ee674c016aa2dade647087d0aa74cdf9bcd80a19",
+    "usage": {
+      "inputTokens": 1618,
+      "outputTokens": 502,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1615
+    }
+  }
+}

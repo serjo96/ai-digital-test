@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1868.1097500000615,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Quill 3 is a desk lamp."
+    },
+    "raw": "{\"text\":\"The Quill 3 is a desk lamp.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0e7cf6ddd3de15fd016aa2d76c460887d08ad487dcf42ed162",
+    "usage": {
+      "inputTokens": 438,
+      "outputTokens": 24,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

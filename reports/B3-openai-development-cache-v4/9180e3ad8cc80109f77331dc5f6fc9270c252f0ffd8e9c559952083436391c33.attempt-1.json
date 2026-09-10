@@ -1,0 +1,177 @@
+{
+  "elapsedMs": 13759.777292000013,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "df86aadc38bf61f81f601f63cec8ea8d01d205fad285be9ab8051c5cdc08feb8",
+      "claims": [
+        {
+          "text": "Sony",
+          "start": 0,
+          "end": 4,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:9798b691ab1b90eb9454b76130be07a4a82950d26a0902485f36796bff811be5"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_05e5d126cb",
+              "field": "raw_title",
+              "quote": "sony wh880n headphones OPEN BOX"
+            },
+            {
+              "rowId": "row_1e60b0a9dc",
+              "field": "raw_title",
+              "quote": "SONY WH-880N Wireless Over-Ear"
+            },
+            {
+              "rowId": "row_7f3f1b14c3",
+              "field": "raw_title",
+              "quote": "Sony Corp. WH880N Kopfhoerer"
+            }
+          ],
+          "reason": "The supplied brand identity supports Sony."
+        },
+        {
+          "text": "WH880N",
+          "start": 5,
+          "end": 11,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_05e5d126cb",
+              "field": "raw_title",
+              "quote": "sony wh880n headphones OPEN BOX"
+            },
+            {
+              "rowId": "row_1e60b0a9dc",
+              "field": "raw_title",
+              "quote": "SONY WH-880N Wireless Over-Ear"
+            },
+            {
+              "rowId": "row_7f3f1b14c3",
+              "field": "raw_title",
+              "quote": "Sony Corp. WH880N Kopfhoerer"
+            }
+          ],
+          "reason": "The supplied model identity supports WH880N."
+        },
+        {
+          "text": "headphones",
+          "start": 12,
+          "end": 22,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:12ccf8bc6a0db5726ad6de904e669e893996964d8991693bdc06dde9d5dc2a0d"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_05e5d126cb",
+              "field": "raw_title",
+              "quote": "sony wh880n headphones OPEN BOX"
+            },
+            {
+              "rowId": "row_1e60b0a9dc",
+              "field": "raw_title",
+              "quote": "SONY WH-880N Wireless Over-Ear"
+            },
+            {
+              "rowId": "row_7f3f1b14c3",
+              "field": "raw_title",
+              "quote": "Sony Corp. WH880N Kopfhoerer"
+            }
+          ],
+          "reason": "The supplied product-type identity supports headphones."
+        },
+        {
+          "text": "feature noise cancelling",
+          "start": 23,
+          "end": 47,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_35522b0d89ec7c4598333ad2ea46d218114f198c543a045deae29e51fe85e7bb"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_1e60b0a9dc",
+              "field": "raw_specs",
+              "quote": "ANC"
+            }
+          ],
+          "reason": "The supplied noise-cancelling fact explicitly supports this feature."
+        },
+        {
+          "text": "multipoint connectivity",
+          "start": 49,
+          "end": 72,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_e7d0d9d1e3f3df4c8d7fd2afc1b32ae704c446a993df68f976b66ef3eda1d55f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_1e60b0a9dc",
+              "field": "raw_specs",
+              "quote": "multipoint"
+            }
+          ],
+          "reason": "Multipoint is explicitly listed in the product specifications."
+        },
+        {
+          "text": "and a foldable design",
+          "start": 74,
+          "end": 95,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_6fd516d96bd1b1bc824bb4d05e7268b904020c7770a8a230a60c06681ed1b82d"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_1e60b0a9dc",
+              "field": "raw_specs",
+              "quote": "foldable"
+            }
+          ],
+          "reason": "The specifications explicitly describe the product as foldable."
+        },
+        {
+          "text": "Battery runtime is 30 hours under unspecified usage conditions",
+          "start": 97,
+          "end": 159,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_3368d2afb2efa0321ab192f36cb685ddec83d7d9486b5a2b5aa06280ea1c828a"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_1e60b0a9dc",
+              "field": "raw_specs",
+              "quote": "30h battery"
+            }
+          ],
+          "reason": "The supplied battery-runtime fact is 30 hours with usage_unspecified; the claim preserves that qualification without asserting a particular operating mode."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"df86aadc38bf61f81f601f63cec8ea8d01d205fad285be9ab8051c5cdc08feb8\",\"claims\":[{\"text\":\"Sony\",\"start\":0,\"end\":4,\"verdict\":\"supported\",\"supportIds\":[\"identity:9798b691ab1b90eb9454b76130be07a4a82950d26a0902485f36796bff811be5\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_05e5d126cb\",\"field\":\"raw_title\",\"quote\":\"sony wh880n headphones OPEN BOX\"},{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_title\",\"quote\":\"SONY WH-880N Wireless Over-Ear\"},{\"rowId\":\"row_7f3f1b14c3\",\"field\":\"raw_title\",\"quote\":\"Sony Corp. WH880N Kopfhoerer\"}],\"reason\":\"The supplied brand identity supports Sony.\"},{\"text\":\"WH880N\",\"start\":5,\"end\":11,\"verdict\":\"supported\",\"supportIds\":[\"identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_05e5d126cb\",\"field\":\"raw_title\",\"quote\":\"sony wh880n headphones OPEN BOX\"},{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_title\",\"quote\":\"SONY WH-880N Wireless Over-Ear\"},{\"rowId\":\"row_7f3f1b14c3\",\"field\":\"raw_title\",\"quote\":\"Sony Corp. WH880N Kopfhoerer\"}],\"reason\":\"The supplied model identity supports WH880N.\"},{\"text\":\"headphones\",\"start\":12,\"end\":22,\"verdict\":\"supported\",\"supportIds\":[\"identity:12ccf8bc6a0db5726ad6de904e669e893996964d8991693bdc06dde9d5dc2a0d\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_05e5d126cb\",\"field\":\"raw_title\",\"quote\":\"sony wh880n headphones OPEN BOX\"},{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_title\",\"quote\":\"SONY WH-880N Wireless Over-Ear\"},{\"rowId\":\"row_7f3f1b14c3\",\"field\":\"raw_title\",\"quote\":\"Sony Corp. WH880N Kopfhoerer\"}],\"reason\":\"The supplied product-type identity supports headphones.\"},{\"text\":\"feature noise cancelling\",\"start\":23,\"end\":47,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_35522b0d89ec7c4598333ad2ea46d218114f198c543a045deae29e51fe85e7bb\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_specs\",\"quote\":\"ANC\"}],\"reason\":\"The supplied noise-cancelling fact explicitly supports this feature.\"},{\"text\":\"multipoint connectivity\",\"start\":49,\"end\":72,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_e7d0d9d1e3f3df4c8d7fd2afc1b32ae704c446a993df68f976b66ef3eda1d55f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_specs\",\"quote\":\"multipoint\"}],\"reason\":\"Multipoint is explicitly listed in the product specifications.\"},{\"text\":\"and a foldable design\",\"start\":74,\"end\":95,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_6fd516d96bd1b1bc824bb4d05e7268b904020c7770a8a230a60c06681ed1b82d\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_specs\",\"quote\":\"foldable\"}],\"reason\":\"The specifications explicitly describe the product as foldable.\"},{\"text\":\"Battery runtime is 30 hours under unspecified usage conditions\",\"start\":97,\"end\":159,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_3368d2afb2efa0321ab192f36cb685ddec83d7d9486b5a2b5aa06280ea1c828a\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_specs\",\"quote\":\"30h battery\"}],\"reason\":\"The supplied battery-runtime fact is 30 hours with usage_unspecified; the claim preserves that qualification without asserting a particular operating mode.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0f3b2f6d6871b928016aa2da993fd487d0bccb4733294be149",
+    "usage": {
+      "inputTokens": 3088,
+      "outputTokens": 1044,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 3085
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1623.4716659999976,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Quill lamp features an LED light source and a USB-C connector."
+    },
+    "raw": "{\"text\":\"The Quill lamp features an LED light source and a USB-C connector.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0dccf86d691885aa016aa2d9669d4c87d0b155ae3fe77096af",
+    "usage": {
+      "inputTokens": 548,
+      "outputTokens": 29,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

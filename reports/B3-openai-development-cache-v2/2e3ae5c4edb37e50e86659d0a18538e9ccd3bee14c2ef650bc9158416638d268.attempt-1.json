@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1652.9898750000284,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Onyx 3 laptop sleeve is made of neoprene and is designed for compatible 14 in devices."
+    },
+    "raw": "{\"text\":\"The Onyx 3 laptop sleeve is made of neoprene and is designed for compatible 14 in devices.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_001802c277fdad8c016aa2d65c6aec87d0b672b4784bd5640d",
+    "usage": {
+      "inputTokens": 574,
+      "outputTokens": 36,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

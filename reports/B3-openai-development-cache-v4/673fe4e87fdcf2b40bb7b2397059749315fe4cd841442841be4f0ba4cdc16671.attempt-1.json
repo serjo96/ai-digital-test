@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2276.633916999999,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Onyx Lite microSD memory card has 256 GB of storage, a UHS-I bus rating and an A2 application rating. It supports transfer speeds up to 170 MB/s, with direction unspecified."
+    },
+    "raw": "{\"text\":\"The Onyx Lite microSD memory card has 256 GB of storage, a UHS-I bus rating and an A2 application rating. It supports transfer speeds up to 170 MB/s, with direction unspecified.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_07359a5cdce9be97016aa2d9d1327487d0a92b2b495d109ac8",
+    "usage": {
+      "inputTokens": 962,
+      "outputTokens": 57,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

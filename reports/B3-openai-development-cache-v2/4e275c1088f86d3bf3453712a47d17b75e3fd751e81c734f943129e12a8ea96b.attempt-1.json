@@ -1,0 +1,129 @@
+{
+  "elapsedMs": 15994.94299999997,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "f52fc7b3032330aa0252fd200feda2e71ab5e6615f8d58e74f2fe8750c670e15",
+      "claims": [
+        {
+          "text": "The Cobalt Pro",
+          "start": 0,
+          "end": 14,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:96d969e08edee1749289f9766f01002ff950b7a794566a04d22c86ae10e10169"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_bb41623d6c",
+              "field": "raw_title",
+              "quote": "Cobalt Pro bookshelf speaker pair"
+            }
+          ],
+          "reason": "The model matches the supplied identity support and source title."
+        },
+        {
+          "text": "speaker",
+          "start": 15,
+          "end": 22,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_bb41623d6c",
+              "field": "raw_title",
+              "quote": "Cobalt Pro bookshelf speaker pair"
+            }
+          ],
+          "reason": "The source identifies the product as a speaker."
+        },
+        {
+          "text": "pair",
+          "start": 23,
+          "end": 27,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_bb41623d6c",
+              "field": "raw_title",
+              "quote": "Cobalt Pro bookshelf speaker pair"
+            }
+          ],
+          "reason": "The source explicitly identifies the pair bundle."
+        },
+        {
+          "text": "is passive",
+          "start": 28,
+          "end": 38,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_966d3de7a3b87957c67e7cae439026fcf70787070b3a0d4483560e08a57f4581"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_bb41623d6c",
+              "field": "raw_specs",
+              "quote": "passive"
+            }
+          ],
+          "reason": "Passive amplification is explicitly supported."
+        },
+        {
+          "text": "with 4-ohm impedance",
+          "start": 40,
+          "end": 60,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_ddebf3a82cd83e83c81b7c0215caea251793743268e11361b90523e24ee19830"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_bb41623d6c",
+              "field": "raw_specs",
+              "quote": "4 ohm"
+            }
+          ],
+          "reason": "The impedance value and unit match the supplied fact."
+        },
+        {
+          "text": "and 40 W of unspecified-purpose power",
+          "start": 61,
+          "end": 98,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_d132117655f2c77d640aa580b10bc4aa277bdf167515506b9ff0ec680020db8e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_bb41623d6c",
+              "field": "raw_specs",
+              "quote": "40W"
+            }
+          ],
+          "reason": "The power value and unit match, and the wording preserves the purpose_unspecified qualifier without asserting a particular power rating type."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"f52fc7b3032330aa0252fd200feda2e71ab5e6615f8d58e74f2fe8750c670e15\",\"claims\":[{\"text\":\"The Cobalt Pro\",\"start\":0,\"end\":14,\"verdict\":\"supported\",\"supportIds\":[\"identity:96d969e08edee1749289f9766f01002ff950b7a794566a04d22c86ae10e10169\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_bb41623d6c\",\"field\":\"raw_title\",\"quote\":\"Cobalt Pro bookshelf speaker pair\"}],\"reason\":\"The model matches the supplied identity support and source title.\"},{\"text\":\"speaker\",\"start\":15,\"end\":22,\"verdict\":\"supported\",\"supportIds\":[\"identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_bb41623d6c\",\"field\":\"raw_title\",\"quote\":\"Cobalt Pro bookshelf speaker pair\"}],\"reason\":\"The source identifies the product as a speaker.\"},{\"text\":\"pair\",\"start\":23,\"end\":27,\"verdict\":\"supported\",\"supportIds\":[\"identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_bb41623d6c\",\"field\":\"raw_title\",\"quote\":\"Cobalt Pro bookshelf speaker pair\"}],\"reason\":\"The source explicitly identifies the pair bundle.\"},{\"text\":\"is passive\",\"start\":28,\"end\":38,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_966d3de7a3b87957c67e7cae439026fcf70787070b3a0d4483560e08a57f4581\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_bb41623d6c\",\"field\":\"raw_specs\",\"quote\":\"passive\"}],\"reason\":\"Passive amplification is explicitly supported.\"},{\"text\":\"with 4-ohm impedance\",\"start\":40,\"end\":60,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_ddebf3a82cd83e83c81b7c0215caea251793743268e11361b90523e24ee19830\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_bb41623d6c\",\"field\":\"raw_specs\",\"quote\":\"4 ohm\"}],\"reason\":\"The impedance value and unit match the supplied fact.\"},{\"text\":\"and 40 W of unspecified-purpose power\",\"start\":61,\"end\":98,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_d132117655f2c77d640aa580b10bc4aa277bdf167515506b9ff0ec680020db8e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_bb41623d6c\",\"field\":\"raw_specs\",\"quote\":\"40W\"}],\"reason\":\"The power value and unit match, and the wording preserves the purpose_unspecified qualifier without asserting a particular power rating type.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_05b3df8aef5f16fb016aa2d75c5b6887d095666d160a1253bb",
+    "usage": {
+      "inputTokens": 1078,
+      "outputTokens": 972,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1075
+    }
+  }
+}

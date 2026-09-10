@@ -1,0 +1,117 @@
+{
+  "elapsedMs": 10672.127500000002,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "2d58f07305605f457085bd16e39878c60c0cf3a1749f3619d422232b1fddf41d",
+      "claims": [
+        {
+          "text": "The Nimbus 2 speaker",
+          "start": 0,
+          "end": 20,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b",
+            "identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c2467f5304",
+              "field": "raw_title",
+              "quote": "NIMBUS 2 speaker - waterproof"
+            },
+            {
+              "rowId": "row_f3873a8816",
+              "field": "raw_title",
+              "quote": "Nimbus 2 Portable Bluetooth Speaker"
+            }
+          ],
+          "reason": "Both titles identify the Nimbus 2 as a speaker."
+        },
+        {
+          "text": "has an IP67 rating",
+          "start": 21,
+          "end": 39,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_6e693895d3a717613e71ec531993380f496ef6d83138d3aad1a2074843994dc2"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c2467f5304",
+              "field": "raw_specs",
+              "quote": "IP67"
+            }
+          ],
+          "reason": "The supplied rating support matches the raw specification."
+        },
+        {
+          "text": "and a mass of 1,200 g",
+          "start": 40,
+          "end": 61,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_9ddf5078be168242ceacdc32b5941c82b93f31a8faa78766e7ce54190f882673"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_f3873a8816",
+              "field": "raw_specs",
+              "quote": "weight 1.2kg"
+            }
+          ],
+          "reason": "The source's 1.2 kg equals 1,200 g, matching the allowed mass support."
+        },
+        {
+          "text": "Its battery runtime is 14 hours",
+          "start": 63,
+          "end": 94,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_deab25456923b0098f41887a614d627010f3bf746667de14c58f5865e05427bf"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c2467f5304",
+              "field": "raw_specs",
+              "quote": "14 hour battery"
+            }
+          ],
+          "reason": "The source states a 14-hour battery runtime; the following span retains the usage-unspecified qualifier."
+        },
+        {
+          "text": "with usage unspecified",
+          "start": 96,
+          "end": 118,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_deab25456923b0098f41887a614d627010f3bf746667de14c58f5865e05427bf"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c2467f5304",
+              "field": "raw_specs",
+              "quote": "14 hour battery"
+            }
+          ],
+          "reason": "The runtime support explicitly carries usage_unspecified, and the raw rows provide no runtime usage conditions."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"2d58f07305605f457085bd16e39878c60c0cf3a1749f3619d422232b1fddf41d\",\"claims\":[{\"text\":\"The Nimbus 2 speaker\",\"start\":0,\"end\":20,\"verdict\":\"supported\",\"supportIds\":[\"identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b\",\"identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_title\",\"quote\":\"NIMBUS 2 speaker - waterproof\"},{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_title\",\"quote\":\"Nimbus 2 Portable Bluetooth Speaker\"}],\"reason\":\"Both titles identify the Nimbus 2 as a speaker.\"},{\"text\":\"has an IP67 rating\",\"start\":21,\"end\":39,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_6e693895d3a717613e71ec531993380f496ef6d83138d3aad1a2074843994dc2\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_specs\",\"quote\":\"IP67\"}],\"reason\":\"The supplied rating support matches the raw specification.\"},{\"text\":\"and a mass of 1,200 g\",\"start\":40,\"end\":61,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_9ddf5078be168242ceacdc32b5941c82b93f31a8faa78766e7ce54190f882673\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_specs\",\"quote\":\"weight 1.2kg\"}],\"reason\":\"The source's 1.2 kg equals 1,200 g, matching the allowed mass support.\"},{\"text\":\"Its battery runtime is 14 hours\",\"start\":63,\"end\":94,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_deab25456923b0098f41887a614d627010f3bf746667de14c58f5865e05427bf\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_specs\",\"quote\":\"14 hour battery\"}],\"reason\":\"The source states a 14-hour battery runtime; the following span retains the usage-unspecified qualifier.\"},{\"text\":\"with usage unspecified\",\"start\":96,\"end\":118,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_deab25456923b0098f41887a614d627010f3bf746667de14c58f5865e05427bf\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_specs\",\"quote\":\"14 hour battery\"}],\"reason\":\"The runtime support explicitly carries usage_unspecified, and the raw rows provide no runtime usage conditions.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_00ec9df1e7d48e66016aa2d9c682c887d090e5aa7d237858c2",
+    "usage": {
+      "inputTokens": 2557,
+      "outputTokens": 697,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2554
+    }
+  }
+}

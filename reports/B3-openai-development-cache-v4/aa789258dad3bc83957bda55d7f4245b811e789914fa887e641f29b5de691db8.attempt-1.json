@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1575.1579159999965,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Quill 3 is a lamp."
+    },
+    "raw": "{\"text\":\"The Quill 3 is a lamp.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_09e997e852ca5192016aa2daf9f70c87d08e3c0a2da9bd5b67",
+    "usage": {
+      "inputTokens": 438,
+      "outputTokens": 23,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

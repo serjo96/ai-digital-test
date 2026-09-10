@@ -1,0 +1,76 @@
+{
+  "elapsedMs": 7320.2188750000205,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "b0aab124f3895b414db95d9be942e14a3ffeaa4fd6bc24964a784fdf59ffbace",
+      "claims": [
+        {
+          "text": "The Onyx 2",
+          "start": 0,
+          "end": 10,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:20838059deddca079bfd22dae215b0a64ffb74b0e4ddb9db4a225fb265bcf2dd"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_17f5e3070f",
+              "field": "raw_title",
+              "quote": "Onyx 2 bookshelf speaker pair"
+            }
+          ],
+          "reason": "The source title identifies the model as Onyx 2."
+        },
+        {
+          "text": "speakers",
+          "start": 11,
+          "end": 19,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f",
+            "identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_17f5e3070f",
+              "field": "raw_title",
+              "quote": "Onyx 2 bookshelf speaker pair"
+            }
+          ],
+          "reason": "The source identifies a speaker pair, supporting the plural product type."
+        },
+        {
+          "text": "come as a pair.",
+          "start": 20,
+          "end": 35,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_17f5e3070f",
+              "field": "raw_title",
+              "quote": "Onyx 2 bookshelf speaker pair"
+            }
+          ],
+          "reason": "The title and allowed bundle identity explicitly identify this product as a pair."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"b0aab124f3895b414db95d9be942e14a3ffeaa4fd6bc24964a784fdf59ffbace\",\"claims\":[{\"text\":\"The Onyx 2\",\"start\":0,\"end\":10,\"verdict\":\"supported\",\"supportIds\":[\"identity:20838059deddca079bfd22dae215b0a64ffb74b0e4ddb9db4a225fb265bcf2dd\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_17f5e3070f\",\"field\":\"raw_title\",\"quote\":\"Onyx 2 bookshelf speaker pair\"}],\"reason\":\"The source title identifies the model as Onyx 2.\"},{\"text\":\"speakers\",\"start\":11,\"end\":19,\"verdict\":\"supported\",\"supportIds\":[\"identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f\",\"identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_17f5e3070f\",\"field\":\"raw_title\",\"quote\":\"Onyx 2 bookshelf speaker pair\"}],\"reason\":\"The source identifies a speaker pair, supporting the plural product type.\"},{\"text\":\"come as a pair.\",\"start\":20,\"end\":35,\"verdict\":\"supported\",\"supportIds\":[\"identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_17f5e3070f\",\"field\":\"raw_title\",\"quote\":\"Onyx 2 bookshelf speaker pair\"}],\"reason\":\"The title and allowed bundle identity explicitly identify this product as a pair.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0ab67595cf39781d016aa2d5a2cb7087d0b1094a485370468b",
+    "usage": {
+      "inputTokens": 867,
+      "outputTokens": 432,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

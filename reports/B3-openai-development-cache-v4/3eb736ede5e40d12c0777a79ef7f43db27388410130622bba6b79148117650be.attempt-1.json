@@ -1,0 +1,81 @@
+{
+  "elapsedMs": 8059.699499999988,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "df429ec679d9f4873c384e50304f782eda880e974eaa006dde71f46c20b3701b",
+      "claims": [
+        {
+          "text": "The Quill Plus tablet case",
+          "start": 0,
+          "end": 26,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:4ef92a8ae65b97a63abe09c1be0f7edac3edb2f4f9b7055c41ca1c715ee7b8ed",
+            "identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_a60219abb1",
+              "field": "raw_title",
+              "quote": "QUILL PLUS TABLET CASE"
+            },
+            {
+              "rowId": "row_bddc33a831",
+              "field": "raw_title",
+              "quote": "QUILL PLUS TABLET CASE"
+            }
+          ],
+          "reason": "The supplied identity supports and raw titles identify the model and product type."
+        },
+        {
+          "text": "has a folio style",
+          "start": 27,
+          "end": 44,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_ba8ddbf008189bfa2d57de0ea8e16efef4cc5abbe5f2f299ed802e3b4d7606ac"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_a60219abb1",
+              "field": "raw_specs",
+              "quote": "folio"
+            }
+          ],
+          "reason": "The supplied case-style fact explicitly specifies folio."
+        },
+        {
+          "text": "and supports auto sleep/wake",
+          "start": 45,
+          "end": 73,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_347769b4fe344f36e3826b7545dfaaee3deec82a8a9b097e430df770036512d6"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_a60219abb1",
+              "field": "raw_specs",
+              "quote": "auto sleep/wake"
+            }
+          ],
+          "reason": "The supplied fact and raw specifications explicitly establish auto sleep/wake support."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"df429ec679d9f4873c384e50304f782eda880e974eaa006dde71f46c20b3701b\",\"claims\":[{\"text\":\"The Quill Plus tablet case\",\"start\":0,\"end\":26,\"verdict\":\"supported\",\"supportIds\":[\"identity:4ef92a8ae65b97a63abe09c1be0f7edac3edb2f4f9b7055c41ca1c715ee7b8ed\",\"identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_a60219abb1\",\"field\":\"raw_title\",\"quote\":\"QUILL PLUS TABLET CASE\"},{\"rowId\":\"row_bddc33a831\",\"field\":\"raw_title\",\"quote\":\"QUILL PLUS TABLET CASE\"}],\"reason\":\"The supplied identity supports and raw titles identify the model and product type.\"},{\"text\":\"has a folio style\",\"start\":27,\"end\":44,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_ba8ddbf008189bfa2d57de0ea8e16efef4cc5abbe5f2f299ed802e3b4d7606ac\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_a60219abb1\",\"field\":\"raw_specs\",\"quote\":\"folio\"}],\"reason\":\"The supplied case-style fact explicitly specifies folio.\"},{\"text\":\"and supports auto sleep/wake\",\"start\":45,\"end\":73,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_347769b4fe344f36e3826b7545dfaaee3deec82a8a9b097e430df770036512d6\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_a60219abb1\",\"field\":\"raw_specs\",\"quote\":\"auto sleep/wake\"}],\"reason\":\"The supplied fact and raw specifications explicitly establish auto sleep/wake support.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0b7c8d51df5ccf04016aa2da54958087d0811c8687c1c66f81",
+    "usage": {
+      "inputTokens": 1703,
+      "outputTokens": 464,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1700
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2366.1293750000186,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The PulseFit Band 3 tracker has a 1.1 in AMOLED display, heart-rate and blood-oxygen sensors, and a 5 ATM water-pressure rating. Its battery runtime is 240 h with usage unspecified."
+    },
+    "raw": "{\"text\":\"The PulseFit Band 3 tracker has a 1.1 in AMOLED display, heart-rate and blood-oxygen sensors, and a 5 ATM water-pressure rating. Its battery runtime is 240 h with usage unspecified.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0a664887f5176c61016aa2da6f5fac87d0a54e1b7f5779bc7e",
+    "usage": {
+      "inputTokens": 1057,
+      "outputTokens": 59,
+      "cachedInputTokens": 1054,
+      "cacheWriteTokens": 0
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1646.8481250000186,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Onyx Lite camera records video at 4K@60fps and is waterproof up to 10 m."
+    },
+    "raw": "{\"text\":\"The Onyx Lite camera records video at 4K@60fps and is waterproof up to 10 m.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_00c49d10b67ed738016aa2da14293487d0939fdd978e6376df",
+    "usage": {
+      "inputTokens": 573,
+      "outputTokens": 37,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

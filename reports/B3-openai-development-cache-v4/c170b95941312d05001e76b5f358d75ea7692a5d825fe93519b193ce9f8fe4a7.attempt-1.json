@@ -1,0 +1,76 @@
+{
+  "elapsedMs": 7191.159749999992,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "2a3e083ff7dc38280369b4c0d0ed4620237de23a4eecd8304ce1b364fcaad4c9",
+      "claims": [
+        {
+          "text": "The Cobalt X mouse",
+          "start": 0,
+          "end": 18,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:335df722e77165d393567d4144ff04009970552a248aaf23d2e477551aad076c",
+            "identity:9fda85e220bcf0c9d9354cc04048fa012a4066350dd4c3a126ceca4801945688"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_bb6d2613d4",
+              "field": "raw_title",
+              "quote": "Cobalt X wireless mouse"
+            }
+          ],
+          "reason": "The supplied title establishes the model and product type."
+        },
+        {
+          "text": "has 6 buttons",
+          "start": 19,
+          "end": 32,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_609d4d7f42fee6377f1a3759251b4d02de28cad49dba2a6841d7f787b37e9885"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_bb6d2613d4",
+              "field": "raw_specs",
+              "quote": "6 buttons"
+            }
+          ],
+          "reason": "The source explicitly states 6 buttons."
+        },
+        {
+          "text": "and a mass of 70 g",
+          "start": 33,
+          "end": 51,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_7881b0c3e3355bdcaad0713d1a7f05a19b4e77be175a52a56d73ae70f7a2c16c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_bb6d2613d4",
+              "field": "raw_specs",
+              "quote": "70g"
+            }
+          ],
+          "reason": "The supplied mass support and raw specifications establish 70 g without conditions."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"2a3e083ff7dc38280369b4c0d0ed4620237de23a4eecd8304ce1b364fcaad4c9\",\"claims\":[{\"text\":\"The Cobalt X mouse\",\"start\":0,\"end\":18,\"verdict\":\"supported\",\"supportIds\":[\"identity:335df722e77165d393567d4144ff04009970552a248aaf23d2e477551aad076c\",\"identity:9fda85e220bcf0c9d9354cc04048fa012a4066350dd4c3a126ceca4801945688\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_bb6d2613d4\",\"field\":\"raw_title\",\"quote\":\"Cobalt X wireless mouse\"}],\"reason\":\"The supplied title establishes the model and product type.\"},{\"text\":\"has 6 buttons\",\"start\":19,\"end\":32,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_609d4d7f42fee6377f1a3759251b4d02de28cad49dba2a6841d7f787b37e9885\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_bb6d2613d4\",\"field\":\"raw_specs\",\"quote\":\"6 buttons\"}],\"reason\":\"The source explicitly states 6 buttons.\"},{\"text\":\"and a mass of 70 g\",\"start\":33,\"end\":51,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_7881b0c3e3355bdcaad0713d1a7f05a19b4e77be175a52a56d73ae70f7a2c16c\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_bb6d2613d4\",\"field\":\"raw_specs\",\"quote\":\"70g\"}],\"reason\":\"The supplied mass support and raw specifications establish 70 g without conditions.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_05ed49b7b3ce0c8a016aa2d9f75d4c87d0854a8f9b4b44bfbd",
+    "usage": {
+      "inputTokens": 1499,
+      "outputTokens": 435,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1496
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2264.067374999984,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Quill 2 is a camera that records video at 4K@60fps and is waterproof up to 10 m."
+    },
+    "raw": "{\"text\":\"The Quill 2 is a camera that records video at 4K@60fps and is waterproof up to 10 m.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0c03ea719f373ff4016aa2d72cabd487d09430c36ad5b90786",
+    "usage": {
+      "inputTokens": 632,
+      "outputTokens": 41,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

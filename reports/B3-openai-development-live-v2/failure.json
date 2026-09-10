@@ -1,0 +1,21 @@
+{
+  "status": "failed",
+  "baseline": "b3",
+  "runId": "B3-openai-development-live-v2",
+  "createdAt": "2026-09-10T16:15:03.065Z",
+  "wallTimeMs": 691375.935875,
+  "api": {
+    "calls": 86,
+    "errors": 5,
+    "retries": 0,
+    "cacheHits": 0,
+    "inputTokens": 88216,
+    "outputTokens": 38489,
+    "tokens": 126705,
+    "cost": 2.712451
+  },
+  "mode": "live",
+  "errors": [
+    "Incomplete AI run; inspect report.json and ai.json"
+  ]
+}

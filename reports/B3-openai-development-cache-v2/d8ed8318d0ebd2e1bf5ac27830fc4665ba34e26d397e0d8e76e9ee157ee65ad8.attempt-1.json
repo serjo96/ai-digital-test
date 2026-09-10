@@ -1,0 +1,93 @@
+{
+  "elapsedMs": 13518.695250000048,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "aa6aef5933c2484f70833b9db1ae72aa3c2f230acfa8714e1edfcfa3536415cc",
+      "claims": [
+        {
+          "text": "The Cobalt X",
+          "start": 0,
+          "end": 12,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:9fda85e220bcf0c9d9354cc04048fa012a4066350dd4c3a126ceca4801945688"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_b2475a3df6",
+              "field": "raw_title",
+              "quote": "Cobalt X action camera"
+            }
+          ],
+          "reason": "The source title identifies the model as Cobalt X."
+        },
+        {
+          "text": " is a camera",
+          "start": 12,
+          "end": 24,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_b2475a3df6",
+              "field": "raw_title",
+              "quote": "Cobalt X action camera"
+            }
+          ],
+          "reason": "The source identifies the product as an action camera, which entails camera."
+        },
+        {
+          "text": " with 4K@60fps video recording",
+          "start": 24,
+          "end": 54,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_647464a78baa4fda9c52ed978887778cf37913296441cc1fb70cb2be59f1bd92"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_b2475a3df6",
+              "field": "raw_specs",
+              "quote": "4K60"
+            }
+          ],
+          "reason": "The supplied support normalizes the source specification 4K60 as 4K@60fps video recording."
+        },
+        {
+          "text": " and waterproofing up to 10 m.",
+          "start": 54,
+          "end": 84,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_ee7cd5b15024df91c202e6553e20f434047b4963a59e234c5c76dbf94dbb4ca0"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_b2475a3df6",
+              "field": "raw_specs",
+              "quote": "waterproof to 10m"
+            }
+          ],
+          "reason": "The description preserves the source's waterproof depth of 10 m and its up-to limit."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"aa6aef5933c2484f70833b9db1ae72aa3c2f230acfa8714e1edfcfa3536415cc\",\"claims\":[{\"text\":\"The Cobalt X\",\"start\":0,\"end\":12,\"verdict\":\"supported\",\"supportIds\":[\"identity:9fda85e220bcf0c9d9354cc04048fa012a4066350dd4c3a126ceca4801945688\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_b2475a3df6\",\"field\":\"raw_title\",\"quote\":\"Cobalt X action camera\"}],\"reason\":\"The source title identifies the model as Cobalt X.\"},{\"text\":\" is a camera\",\"start\":12,\"end\":24,\"verdict\":\"supported\",\"supportIds\":[\"identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_b2475a3df6\",\"field\":\"raw_title\",\"quote\":\"Cobalt X action camera\"}],\"reason\":\"The source identifies the product as an action camera, which entails camera.\"},{\"text\":\" with 4K@60fps video recording\",\"start\":24,\"end\":54,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_647464a78baa4fda9c52ed978887778cf37913296441cc1fb70cb2be59f1bd92\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_b2475a3df6\",\"field\":\"raw_specs\",\"quote\":\"4K60\"}],\"reason\":\"The supplied support normalizes the source specification 4K60 as 4K@60fps video recording.\"},{\"text\":\" and waterproofing up to 10 m.\",\"start\":54,\"end\":84,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_ee7cd5b15024df91c202e6553e20f434047b4963a59e234c5c76dbf94dbb4ca0\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_b2475a3df6\",\"field\":\"raw_specs\",\"quote\":\"waterproof to 10m\"}],\"reason\":\"The description preserves the source's waterproof depth of 10 m and its up-to limit.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_00e64efddaa8672b016aa2d621725887d0b756f32a2977ffc7",
+    "usage": {
+      "inputTokens": 889,
+      "outputTokens": 806,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

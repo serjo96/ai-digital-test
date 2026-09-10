@@ -1,0 +1,76 @@
+{
+  "elapsedMs": 10535.394124999992,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "569eed191059d2d7530565360885b4b3676cefee1f721087643091fe3f0a6c7e",
+      "claims": [
+        {
+          "text": "The Onyx 3 lamp",
+          "start": 0,
+          "end": 15,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d",
+            "identity:3ff90cbbb23f570707d3ce3f633a5088fe151fd9f4c44b1cde3d468eb08aeb58"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_a1bb1ad2e9",
+              "field": "raw_title",
+              "quote": "Onyx 3 desk lamp"
+            }
+          ],
+          "reason": "The title supports both the Onyx 3 model and lamp product type."
+        },
+        {
+          "text": " features an LED light source",
+          "start": 15,
+          "end": 44,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_a13726c0969034727373103473c3f0e1c70a2740be006bd0a5d57db11bad6488"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_a1bb1ad2e9",
+              "field": "raw_specs",
+              "quote": "LED"
+            }
+          ],
+          "reason": "The supplied light-source support and raw specifications identify LED."
+        },
+        {
+          "text": " and a USB-C connector.",
+          "start": 44,
+          "end": 67,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_778b9c614e83823535afa2883956aefaf85cf54b441508bcf5eb0409e8e9b4a4"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_a1bb1ad2e9",
+              "field": "raw_specs",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The supplied connector support and raw specifications identify USB-C."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"569eed191059d2d7530565360885b4b3676cefee1f721087643091fe3f0a6c7e\",\"claims\":[{\"text\":\"The Onyx 3 lamp\",\"start\":0,\"end\":15,\"verdict\":\"supported\",\"supportIds\":[\"identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d\",\"identity:3ff90cbbb23f570707d3ce3f633a5088fe151fd9f4c44b1cde3d468eb08aeb58\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_a1bb1ad2e9\",\"field\":\"raw_title\",\"quote\":\"Onyx 3 desk lamp\"}],\"reason\":\"The title supports both the Onyx 3 model and lamp product type.\"},{\"text\":\" features an LED light source\",\"start\":15,\"end\":44,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_a13726c0969034727373103473c3f0e1c70a2740be006bd0a5d57db11bad6488\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_a1bb1ad2e9\",\"field\":\"raw_specs\",\"quote\":\"LED\"}],\"reason\":\"The supplied light-source support and raw specifications identify LED.\"},{\"text\":\" and a USB-C connector.\",\"start\":44,\"end\":67,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_778b9c614e83823535afa2883956aefaf85cf54b441508bcf5eb0409e8e9b4a4\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_a1bb1ad2e9\",\"field\":\"raw_specs\",\"quote\":\"USB-C\"}],\"reason\":\"The supplied connector support and raw specifications identify USB-C.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_072eb0d63267d713016aa2d750281c87d080c707f649b8d300",
+    "usage": {
+      "inputTokens": 974,
+      "outputTokens": 618,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

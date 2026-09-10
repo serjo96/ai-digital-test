@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2760.3419580000045,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Cobalt X is a camera with 4K@60fps video recording and waterproofing up to 10 m."
+    },
+    "raw": "{\"text\":\"The Cobalt X is a camera with 4K@60fps video recording and waterproofing up to 10 m.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_09bf3ecf9ecde6e6016aa2d9fe850087d092688353dce4e525",
+    "usage": {
+      "inputTokens": 558,
+      "outputTokens": 39,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

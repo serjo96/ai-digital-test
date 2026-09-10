@@ -1,0 +1,129 @@
+{
+  "elapsedMs": 17515.667958000093,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "0750ec60ab09ae57d197a39dfb247586ee76a9eb6c99c4352acb8e0b32b012ed",
+      "claims": [
+        {
+          "text": "The Cobalt Lite is a ",
+          "start": 0,
+          "end": 21,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:de4700bf6a39db4fed9886bb1b912fc5e3df51aa3c32d15a5aeb9f6cb0251d3e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_3fdcec64b2",
+              "field": "raw_title",
+              "quote": "Cobalt Lite USB-C hub"
+            }
+          ],
+          "reason": "The raw title identifies the model as Cobalt Lite."
+        },
+        {
+          "text": "7-in-1 ",
+          "start": 21,
+          "end": 28,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_b5f455f41e8327ce6255f468c9561ccc8af893cd0816be7ba617a43fa6340555"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_3fdcec64b2",
+              "field": "raw_specs",
+              "quote": "7-in-1"
+            }
+          ],
+          "reason": "The multifunction count matches the source exactly."
+        },
+        {
+          "text": "USB-C ",
+          "start": 28,
+          "end": 34,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_aeabb2c25ad29c6308d82d567ae6aa936bc7b2d44bd920bc32fbb90ffbf5e604"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_3fdcec64b2",
+              "field": "raw_title",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The connector matches the raw title."
+        },
+        {
+          "text": "hub with ",
+          "start": 34,
+          "end": 43,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_3fdcec64b2",
+              "field": "raw_title",
+              "quote": "Cobalt Lite USB-C hub"
+            }
+          ],
+          "reason": "The source identifies the product as a hub."
+        },
+        {
+          "text": "4K@30fps video output and ",
+          "start": 43,
+          "end": 69,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_03f1016b443a400efd734fdd72d015e1cc24054ad47eae20d437732f4e8c5e17"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_3fdcec64b2",
+              "field": "raw_specs",
+              "quote": "4K30"
+            }
+          ],
+          "reason": "The supplied video-output support normalizes the source's 4K30 to 4K@30fps."
+        },
+        {
+          "text": "100 W power under PD passthrough conditions.",
+          "start": 69,
+          "end": 113,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_3db91a97757b2846c2a2c7f3b0da9e258470a3999fde5c455ca87bae01dfc9c0"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_3fdcec64b2",
+              "field": "raw_specs",
+              "quote": "100W PD passthrough"
+            }
+          ],
+          "reason": "The power value and unit match, and the PD passthrough condition is preserved."
+        }
+      ]
+    },
+    "raw": "{\n  \"textHash\": \"0750ec60ab09ae57d197a39dfb247586ee76a9eb6c99c4352acb8e0b32b012ed\",\n  \"claims\": [\n    {\n      \"text\": \"The Cobalt Lite is a \",\n      \"start\": 0,\n      \"end\": 21,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"identity:de4700bf6a39db4fed9886bb1b912fc5e3df51aa3c32d15a5aeb9f6cb0251d3e\"],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_3fdcec64b2\",\n          \"field\": \"raw_title\",\n          \"quote\": \"Cobalt Lite USB-C hub\"\n        }\n      ],\n      \"reason\": \"The raw title identifies the model as Cobalt Lite.\"\n    },\n    {\n      \"text\": \"7-in-1 \",\n      \"start\": 21,\n      \"end\": 28,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"fact:fact_b5f455f41e8327ce6255f468c9561ccc8af893cd0816be7ba617a43fa6340555\"],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_3fdcec64b2\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"7-in-1\"\n        }\n      ],\n      \"reason\": \"The multifunction count matches the source exactly.\"\n    },\n    {\n      \"text\": \"USB-C \",\n      \"start\": 28,\n      \"end\": 34,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"fact:fact_aeabb2c25ad29c6308d82d567ae6aa936bc7b2d44bd920bc32fbb90ffbf5e604\"],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_3fdcec64b2\",\n          \"field\": \"raw_title\",\n          \"quote\": \"USB-C\"\n        }\n      ],\n      \"reason\": \"The connector matches the raw title.\"\n    },\n    {\n      \"text\": \"hub with \",\n      \"start\": 34,\n      \"end\": 43,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4\"],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_3fdcec64b2\",\n          \"field\": \"raw_title\",\n          \"quote\": \"Cobalt Lite USB-C hub\"\n        }\n      ],\n      \"reason\": \"The source identifies the product as a hub.\"\n    },\n    {\n      \"text\": \"4K@30fps video output and \",\n      \"start\": 43,\n      \"end\": 69,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"fact:fact_03f1016b443a400efd734fdd72d015e1cc24054ad47eae20d437732f4e8c5e17\"],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_3fdcec64b2\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"4K30\"\n        }\n      ],\n      \"reason\": \"The supplied video-output support normalizes the source's 4K30 to 4K@30fps.\"\n    },\n    {\n      \"text\": \"100 W power under PD passthrough conditions.\",\n      \"start\": 69,\n      \"end\": 113,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"fact:fact_3db91a97757b2846c2a2c7f3b0da9e258470a3999fde5c455ca87bae01dfc9c0\"],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_3fdcec64b2\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"100W PD passthrough\"\n        }\n      ],\n      \"reason\": \"The power value and unit match, and the PD passthrough condition is preserved.\"\n    }\n  ]\n}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0048ae449e103ba1016aa2d775b73c87d0a5883d1e47784512",
+    "usage": {
+      "inputTokens": 1136,
+      "outputTokens": 1226,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1133
+    }
+  }
+}

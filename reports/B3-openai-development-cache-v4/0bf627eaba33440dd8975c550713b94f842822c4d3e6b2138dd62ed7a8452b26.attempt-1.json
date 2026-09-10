@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2633.9134579999954,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Slate 11 is a tablet."
+    },
+    "raw": "{\"text\":\"The Slate 11 is a tablet.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_08a332362a528f16016aa2da679ab487d087ba7b6546136042",
+    "usage": {
+      "inputTokens": 363,
+      "outputTokens": 22,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

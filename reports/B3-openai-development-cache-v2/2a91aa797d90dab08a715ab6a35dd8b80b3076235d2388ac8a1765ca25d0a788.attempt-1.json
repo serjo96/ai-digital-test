@@ -1,0 +1,85 @@
+{
+  "elapsedMs": 9295.067499999997,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "defc81b3e348e41f082e36a9f1ad732730113af4d00969203be09f38d3ffea37",
+      "claims": [
+        {
+          "text": "Onyx Lite is a ",
+          "start": 0,
+          "end": 15,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "256GB"
+            },
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "Onyx Lite microSD card 256GB"
+            }
+          ],
+          "reason": "The supplied model identity and raw title establish the Onyx Lite name."
+        },
+        {
+          "text": "256 GB",
+          "start": 15,
+          "end": 21,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_73a80ca467fb4b89161556327cadafad9ec94ac8b64f4c2ea1df1d783890a9a6"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "256GB"
+            }
+          ],
+          "reason": "The storage support states 256 GB without conditions."
+        },
+        {
+          "text": " microSD card.",
+          "start": 21,
+          "end": 35,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "256GB"
+            },
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "Onyx Lite microSD card 256GB"
+            }
+          ],
+          "reason": "The supplied type identity includes title evidence explicitly identifying this product as a microSD card."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"defc81b3e348e41f082e36a9f1ad732730113af4d00969203be09f38d3ffea37\",\"claims\":[{\"text\":\"Onyx Lite is a \",\"start\":0,\"end\":15,\"verdict\":\"supported\",\"supportIds\":[\"identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite microSD card 256GB\"}],\"reason\":\"The supplied model identity and raw title establish the Onyx Lite name.\"},{\"text\":\"256 GB\",\"start\":15,\"end\":21,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_73a80ca467fb4b89161556327cadafad9ec94ac8b64f4c2ea1df1d783890a9a6\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"}],\"reason\":\"The storage support states 256 GB without conditions.\"},{\"text\":\" microSD card.\",\"start\":21,\"end\":35,\"verdict\":\"supported\",\"supportIds\":[\"identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite microSD card 256GB\"}],\"reason\":\"The supplied type identity includes title evidence explicitly identifying this product as a microSD card.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_091985ae7073b6dc016aa2d4fda87487d09dfdca09a7397db5",
+    "usage": {
+      "inputTokens": 1286,
+      "outputTokens": 553,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1283
+    }
+  }
+}

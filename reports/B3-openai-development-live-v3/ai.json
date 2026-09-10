@@ -1,0 +1,4284 @@
+{
+  "version": "ai-trace-v1",
+  "config": {
+    "version": "B3-config-v1",
+    "generation": {
+      "provider": "openai",
+      "model": "gpt-5.6-sol",
+      "reasoning": "low",
+      "maxOutputTokens": 1024
+    },
+    "verifier": {
+      "provider": "openai",
+      "model": "gpt-6-astra",
+      "reasoning": "low",
+      "maxOutputTokens": 4096
+    },
+    "timeoutMs": 60000,
+    "maxRetries": 2,
+    "prices": [
+      {
+        "provider": "openai",
+        "model": "gpt-5.6-sol",
+        "inputPerMillion": 4,
+        "cachedInputPerMillion": 0.4,
+        "cacheWritePerMillion": 5,
+        "outputPerMillion": 20,
+        "maxInputTokens": 272000,
+        "source": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+        "checkedAt": "2026-09-10"
+      },
+      {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "inputPerMillion": 10,
+        "cachedInputPerMillion": 1,
+        "cacheWritePerMillion": 12.5,
+        "outputPerMillion": 50,
+        "maxInputTokens": 272000,
+        "source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+        "checkedAt": "2026-09-10"
+      }
+    ]
+  },
+  "records": [
+    {
+      "key": "4760e0fd4bd21ed24b971f3eae7daa320c46f20ee82dad3be3076539748f5340",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_05e5d126cb",
+        "row_1e60b0a9dc",
+        "row_7f3f1b14c3"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 0,
+      "elapsedMs": 8304.611708,
+      "status": "success",
+      "error": null,
+      "response": {
+        "status": "completed",
+        "data": {
+          "textHash": "febc8d6a530a4652df8e8bed08a9a4f95553f1b99c8f485d4755d67336f0186a",
+          "claims": [
+            {
+              "text": "Sony",
+              "start": 0,
+              "end": 4,
+              "verdict": "supported",
+              "supportIds": [
+                "identity:9798b691ab1b90eb9454b76130be07a4a82950d26a0902485f36796bff811be5"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_1e60b0a9dc",
+                  "field": "raw_title",
+                  "quote": "SONY WH-880N Wireless Over-Ear"
+                }
+              ],
+              "reason": "The raw title identifies the brand as Sony."
+            },
+            {
+              "text": "WH-880N",
+              "start": 5,
+              "end": 12,
+              "verdict": "supported",
+              "supportIds": [
+                "identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_1e60b0a9dc",
+                  "field": "raw_title",
+                  "quote": "SONY WH-880N Wireless Over-Ear"
+                }
+              ],
+              "reason": "The raw title explicitly identifies model WH-880N."
+            },
+            {
+              "text": "supports active noise cancelling",
+              "start": 13,
+              "end": 45,
+              "verdict": "supported",
+              "supportIds": [
+                "fact:fact_35522b0d89ec7c4598333ad2ea46d218114f198c543a045deae29e51fe85e7bb"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_1e60b0a9dc",
+                  "field": "raw_specs",
+                  "quote": "ANC"
+                }
+              ],
+              "reason": "ANC denotes active noise cancelling and is explicitly listed in this product's raw specifications."
+            }
+          ]
+        },
+        "raw": "{\"textHash\":\"febc8d6a530a4652df8e8bed08a9a4f95553f1b99c8f485d4755d67336f0186a\",\"claims\":[{\"text\":\"Sony\",\"start\":0,\"end\":4,\"verdict\":\"supported\",\"supportIds\":[\"identity:9798b691ab1b90eb9454b76130be07a4a82950d26a0902485f36796bff811be5\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_title\",\"quote\":\"SONY WH-880N Wireless Over-Ear\"}],\"reason\":\"The raw title identifies the brand as Sony.\"},{\"text\":\"WH-880N\",\"start\":5,\"end\":12,\"verdict\":\"supported\",\"supportIds\":[\"identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_title\",\"quote\":\"SONY WH-880N Wireless Over-Ear\"}],\"reason\":\"The raw title explicitly identifies model WH-880N.\"},{\"text\":\"supports active noise cancelling\",\"start\":13,\"end\":45,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_35522b0d89ec7c4598333ad2ea46d218114f198c543a045deae29e51fe85e7bb\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_specs\",\"quote\":\"ANC\"}],\"reason\":\"ANC denotes active noise cancelling and is explicitly listed in this product's raw specifications.\"}]}",
+        "model": "gpt-6-astra",
+        "requestId": "resp_087765447877f5a3016aa2d83532e887d0a8dfeb1525a258d1",
+        "usage": {
+          "inputTokens": 1754,
+          "outputTokens": 404,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 1751
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 1754,
+          "outputTokens": 404,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 1751
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 8298.974708000002,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "data": {
+              "textHash": "febc8d6a530a4652df8e8bed08a9a4f95553f1b99c8f485d4755d67336f0186a",
+              "claims": [
+                {
+                  "text": "Sony",
+                  "start": 0,
+                  "end": 4,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "identity:9798b691ab1b90eb9454b76130be07a4a82950d26a0902485f36796bff811be5"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_1e60b0a9dc",
+                      "field": "raw_title",
+                      "quote": "SONY WH-880N Wireless Over-Ear"
+                    }
+                  ],
+                  "reason": "The raw title identifies the brand as Sony."
+                },
+                {
+                  "text": "WH-880N",
+                  "start": 5,
+                  "end": 12,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_1e60b0a9dc",
+                      "field": "raw_title",
+                      "quote": "SONY WH-880N Wireless Over-Ear"
+                    }
+                  ],
+                  "reason": "The raw title explicitly identifies model WH-880N."
+                },
+                {
+                  "text": "supports active noise cancelling",
+                  "start": 13,
+                  "end": 45,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "fact:fact_35522b0d89ec7c4598333ad2ea46d218114f198c543a045deae29e51fe85e7bb"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_1e60b0a9dc",
+                      "field": "raw_specs",
+                      "quote": "ANC"
+                    }
+                  ],
+                  "reason": "ANC denotes active noise cancelling and is explicitly listed in this product's raw specifications."
+                }
+              ]
+            },
+            "raw": "{\"textHash\":\"febc8d6a530a4652df8e8bed08a9a4f95553f1b99c8f485d4755d67336f0186a\",\"claims\":[{\"text\":\"Sony\",\"start\":0,\"end\":4,\"verdict\":\"supported\",\"supportIds\":[\"identity:9798b691ab1b90eb9454b76130be07a4a82950d26a0902485f36796bff811be5\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_title\",\"quote\":\"SONY WH-880N Wireless Over-Ear\"}],\"reason\":\"The raw title identifies the brand as Sony.\"},{\"text\":\"WH-880N\",\"start\":5,\"end\":12,\"verdict\":\"supported\",\"supportIds\":[\"identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_title\",\"quote\":\"SONY WH-880N Wireless Over-Ear\"}],\"reason\":\"The raw title explicitly identifies model WH-880N.\"},{\"text\":\"supports active noise cancelling\",\"start\":13,\"end\":45,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_35522b0d89ec7c4598333ad2ea46d218114f198c543a045deae29e51fe85e7bb\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_specs\",\"quote\":\"ANC\"}],\"reason\":\"ANC denotes active noise cancelling and is explicitly listed in this product's raw specifications.\"}]}",
+            "model": "gpt-6-astra",
+            "requestId": "resp_087765447877f5a3016aa2d83532e887d0a8dfeb1525a258d1",
+            "usage": {
+              "inputTokens": 1754,
+              "outputTokens": 404,
+              "cachedInputTokens": 0,
+              "cacheWriteTokens": 1751
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "semantic": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "543834964eb14194466075e2c26568b41b01cad0e2b0f72a7bf76bfa94cb3663",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_05e5d126cb",
+        "row_1e60b0a9dc",
+        "row_7f3f1b14c3"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 0,
+      "elapsedMs": 10190.450291,
+      "status": "success",
+      "error": null,
+      "response": {
+        "status": "completed",
+        "data": {
+          "textHash": "60a0457b08a89f3901295a218969693e1bea17397c1def5fa3e972e21efe5b05",
+          "claims": [
+            {
+              "text": "Sony",
+              "start": 0,
+              "end": 4,
+              "verdict": "supported",
+              "supportIds": [
+                "identity:9798b691ab1b90eb9454b76130be07a4a82950d26a0902485f36796bff811be5"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_1e60b0a9dc",
+                  "field": "raw_title",
+                  "quote": "SONY WH-880N Wireless Over-Ear"
+                }
+              ],
+              "reason": "The supplied brand support and raw title identify Sony."
+            },
+            {
+              "text": "WH-880N",
+              "start": 5,
+              "end": 12,
+              "verdict": "supported",
+              "supportIds": [
+                "identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_1e60b0a9dc",
+                  "field": "raw_title",
+                  "quote": "SONY WH-880N Wireless Over-Ear"
+                }
+              ],
+              "reason": "The model appears explicitly in the raw title and is covered by the supplied model identity support."
+            },
+            {
+              "text": "offers 30 hours of battery life",
+              "start": 13,
+              "end": 44,
+              "verdict": "supported",
+              "supportIds": [
+                "fact:fact_3368d2afb2efa0321ab192f36cb685ddec83d7d9486b5a2b5aa06280ea1c828a"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_1e60b0a9dc",
+                  "field": "raw_specs",
+                  "quote": "30h battery"
+                }
+              ],
+              "reason": "The supplied battery-runtime fact states 30 hours with usage unspecified. The description adds no usage condition or offer-specific claim."
+            }
+          ]
+        },
+        "raw": "{\"textHash\":\"60a0457b08a89f3901295a218969693e1bea17397c1def5fa3e972e21efe5b05\",\"claims\":[{\"text\":\"Sony\",\"start\":0,\"end\":4,\"verdict\":\"supported\",\"supportIds\":[\"identity:9798b691ab1b90eb9454b76130be07a4a82950d26a0902485f36796bff811be5\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_title\",\"quote\":\"SONY WH-880N Wireless Over-Ear\"}],\"reason\":\"The supplied brand support and raw title identify Sony.\"},{\"text\":\"WH-880N\",\"start\":5,\"end\":12,\"verdict\":\"supported\",\"supportIds\":[\"identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_title\",\"quote\":\"SONY WH-880N Wireless Over-Ear\"}],\"reason\":\"The model appears explicitly in the raw title and is covered by the supplied model identity support.\"},{\"text\":\"offers 30 hours of battery life\",\"start\":13,\"end\":44,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_3368d2afb2efa0321ab192f36cb685ddec83d7d9486b5a2b5aa06280ea1c828a\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_specs\",\"quote\":\"30h battery\"}],\"reason\":\"The supplied battery-runtime fact states 30 hours with usage unspecified. The description adds no usage condition or offer-specific claim.\"}]}",
+        "model": "gpt-6-astra",
+        "requestId": "resp_03824d670140025d016aa2d83d250087d0a14b4323ddaa67df",
+        "usage": {
+          "inputTokens": 1751,
+          "outputTokens": 522,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 1748
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 1751,
+          "outputTokens": 522,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 1748
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 10185.049875,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "data": {
+              "textHash": "60a0457b08a89f3901295a218969693e1bea17397c1def5fa3e972e21efe5b05",
+              "claims": [
+                {
+                  "text": "Sony",
+                  "start": 0,
+                  "end": 4,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "identity:9798b691ab1b90eb9454b76130be07a4a82950d26a0902485f36796bff811be5"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_1e60b0a9dc",
+                      "field": "raw_title",
+                      "quote": "SONY WH-880N Wireless Over-Ear"
+                    }
+                  ],
+                  "reason": "The supplied brand support and raw title identify Sony."
+                },
+                {
+                  "text": "WH-880N",
+                  "start": 5,
+                  "end": 12,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_1e60b0a9dc",
+                      "field": "raw_title",
+                      "quote": "SONY WH-880N Wireless Over-Ear"
+                    }
+                  ],
+                  "reason": "The model appears explicitly in the raw title and is covered by the supplied model identity support."
+                },
+                {
+                  "text": "offers 30 hours of battery life",
+                  "start": 13,
+                  "end": 44,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "fact:fact_3368d2afb2efa0321ab192f36cb685ddec83d7d9486b5a2b5aa06280ea1c828a"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_1e60b0a9dc",
+                      "field": "raw_specs",
+                      "quote": "30h battery"
+                    }
+                  ],
+                  "reason": "The supplied battery-runtime fact states 30 hours with usage unspecified. The description adds no usage condition or offer-specific claim."
+                }
+              ]
+            },
+            "raw": "{\"textHash\":\"60a0457b08a89f3901295a218969693e1bea17397c1def5fa3e972e21efe5b05\",\"claims\":[{\"text\":\"Sony\",\"start\":0,\"end\":4,\"verdict\":\"supported\",\"supportIds\":[\"identity:9798b691ab1b90eb9454b76130be07a4a82950d26a0902485f36796bff811be5\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_title\",\"quote\":\"SONY WH-880N Wireless Over-Ear\"}],\"reason\":\"The supplied brand support and raw title identify Sony.\"},{\"text\":\"WH-880N\",\"start\":5,\"end\":12,\"verdict\":\"supported\",\"supportIds\":[\"identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_title\",\"quote\":\"SONY WH-880N Wireless Over-Ear\"}],\"reason\":\"The model appears explicitly in the raw title and is covered by the supplied model identity support.\"},{\"text\":\"offers 30 hours of battery life\",\"start\":13,\"end\":44,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_3368d2afb2efa0321ab192f36cb685ddec83d7d9486b5a2b5aa06280ea1c828a\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_specs\",\"quote\":\"30h battery\"}],\"reason\":\"The supplied battery-runtime fact states 30 hours with usage unspecified. The description adds no usage condition or offer-specific claim.\"}]}",
+            "model": "gpt-6-astra",
+            "requestId": "resp_03824d670140025d016aa2d83d250087d0a14b4323ddaa67df",
+            "usage": {
+              "inputTokens": 1751,
+              "outputTokens": 522,
+              "cachedInputTokens": 0,
+              "cacheWriteTokens": 1748
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "semantic": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "02cf109ead75ee573b511a033b64f19314087f776df7031a290e35d8032b6a44",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_11bb99b2fa",
+        "row_bdbc045131"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 0,
+      "elapsedMs": 11269.625250000001,
+      "status": "success",
+      "error": null,
+      "response": {
+        "status": "completed",
+        "data": {
+          "textHash": "e1de269cb3778f97b9e87399db2c4b08015ed0c10722bad7027d70da7fa93b63",
+          "claims": [
+            {
+              "text": "AeroBuds Pro",
+              "start": 0,
+              "end": 12,
+              "verdict": "supported",
+              "supportIds": [
+                "identity:2a20192985e0a5cdc2916b2caff1566907d4d6202a13eeb29a6781140ae81fd4"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_11bb99b2fa",
+                  "field": "raw_title",
+                  "quote": "Aerobuds PRO earbud, black, ANC"
+                },
+                {
+                  "rowId": "row_bdbc045131",
+                  "field": "raw_title",
+                  "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+                }
+              ],
+              "reason": "The supplied identity support and raw titles establish the model name."
+            },
+            {
+              "text": "provides 20 hours of total playback with the case",
+              "start": 13,
+              "end": 62,
+              "verdict": "supported",
+              "supportIds": [
+                "fact:fact_608dc6f58cf4fdb5a2000d1f276ed04011d4e24fe807d3b661227c6ddaf908a0"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_11bb99b2fa",
+                  "field": "raw_specs",
+                  "quote": "20 hours playback (incl. charging case)"
+                }
+              ],
+              "reason": "The supported runtime is 20 hours including the charging case; the description preserves that condition."
+            }
+          ]
+        },
+        "raw": "{\"textHash\":\"e1de269cb3778f97b9e87399db2c4b08015ed0c10722bad7027d70da7fa93b63\",\"claims\":[{\"text\":\"AeroBuds Pro\",\"start\":0,\"end\":12,\"verdict\":\"supported\",\"supportIds\":[\"identity:2a20192985e0a5cdc2916b2caff1566907d4d6202a13eeb29a6781140ae81fd4\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_11bb99b2fa\",\"field\":\"raw_title\",\"quote\":\"Aerobuds PRO earbud, black, ANC\"},{\"rowId\":\"row_bdbc045131\",\"field\":\"raw_title\",\"quote\":\"AeroBuds Pro True Wireless Earbuds - Black\"}],\"reason\":\"The supplied identity support and raw titles establish the model name.\"},{\"text\":\"provides 20 hours of total playback with the case\",\"start\":13,\"end\":62,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_608dc6f58cf4fdb5a2000d1f276ed04011d4e24fe807d3b661227c6ddaf908a0\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_11bb99b2fa\",\"field\":\"raw_specs\",\"quote\":\"20 hours playback (incl. charging case)\"}],\"reason\":\"The supported runtime is 20 hours including the charging case; the description preserves that condition.\"}]}",
+        "model": "gpt-6-astra",
+        "requestId": "resp_01064962cd5c45e8016aa2d84754d087d08025471cced973f1",
+        "usage": {
+          "inputTokens": 2213,
+          "outputTokens": 544,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 2210
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 2213,
+          "outputTokens": 544,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 2210
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 11266.496292,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "data": {
+              "textHash": "e1de269cb3778f97b9e87399db2c4b08015ed0c10722bad7027d70da7fa93b63",
+              "claims": [
+                {
+                  "text": "AeroBuds Pro",
+                  "start": 0,
+                  "end": 12,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "identity:2a20192985e0a5cdc2916b2caff1566907d4d6202a13eeb29a6781140ae81fd4"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_11bb99b2fa",
+                      "field": "raw_title",
+                      "quote": "Aerobuds PRO earbud, black, ANC"
+                    },
+                    {
+                      "rowId": "row_bdbc045131",
+                      "field": "raw_title",
+                      "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+                    }
+                  ],
+                  "reason": "The supplied identity support and raw titles establish the model name."
+                },
+                {
+                  "text": "provides 20 hours of total playback with the case",
+                  "start": 13,
+                  "end": 62,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "fact:fact_608dc6f58cf4fdb5a2000d1f276ed04011d4e24fe807d3b661227c6ddaf908a0"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_11bb99b2fa",
+                      "field": "raw_specs",
+                      "quote": "20 hours playback (incl. charging case)"
+                    }
+                  ],
+                  "reason": "The supported runtime is 20 hours including the charging case; the description preserves that condition."
+                }
+              ]
+            },
+            "raw": "{\"textHash\":\"e1de269cb3778f97b9e87399db2c4b08015ed0c10722bad7027d70da7fa93b63\",\"claims\":[{\"text\":\"AeroBuds Pro\",\"start\":0,\"end\":12,\"verdict\":\"supported\",\"supportIds\":[\"identity:2a20192985e0a5cdc2916b2caff1566907d4d6202a13eeb29a6781140ae81fd4\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_11bb99b2fa\",\"field\":\"raw_title\",\"quote\":\"Aerobuds PRO earbud, black, ANC\"},{\"rowId\":\"row_bdbc045131\",\"field\":\"raw_title\",\"quote\":\"AeroBuds Pro True Wireless Earbuds - Black\"}],\"reason\":\"The supplied identity support and raw titles establish the model name.\"},{\"text\":\"provides 20 hours of total playback with the case\",\"start\":13,\"end\":62,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_608dc6f58cf4fdb5a2000d1f276ed04011d4e24fe807d3b661227c6ddaf908a0\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_11bb99b2fa\",\"field\":\"raw_specs\",\"quote\":\"20 hours playback (incl. charging case)\"}],\"reason\":\"The supported runtime is 20 hours including the charging case; the description preserves that condition.\"}]}",
+            "model": "gpt-6-astra",
+            "requestId": "resp_01064962cd5c45e8016aa2d84754d087d08025471cced973f1",
+            "usage": {
+              "inputTokens": 2213,
+              "outputTokens": 544,
+              "cachedInputTokens": 0,
+              "cacheWriteTokens": 2210
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "semantic": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "77ca9f81a6f5d09ff033265d83f8100f726bf3d907f073b403918727ac92d5d5",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_c2467f5304",
+        "row_f3873a8816"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 0,
+      "elapsedMs": 6853.751,
+      "status": "success",
+      "error": null,
+      "response": {
+        "status": "completed",
+        "data": {
+          "textHash": "f85fe87839b99df2c96f945630f52171c2b494eb581cc2c4daa078dab0211d03",
+          "claims": [
+            {
+              "text": "Nimbus 2",
+              "start": 0,
+              "end": 8,
+              "verdict": "supported",
+              "supportIds": [
+                "identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_c2467f5304",
+                  "field": "raw_title",
+                  "quote": "NIMBUS 2 speaker - waterproof"
+                },
+                {
+                  "rowId": "row_f3873a8816",
+                  "field": "raw_title",
+                  "quote": "Nimbus 2 Portable Bluetooth Speaker"
+                }
+              ],
+              "reason": "Both titles identify the model as Nimbus 2."
+            },
+            {
+              "text": "weighs 1.2 kg",
+              "start": 9,
+              "end": 22,
+              "verdict": "supported",
+              "supportIds": [
+                "fact:fact_9ddf5078be168242ceacdc32b5941c82b93f31a8faa78766e7ce54190f882673"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_f3873a8816",
+                  "field": "raw_specs",
+                  "quote": "weight 1.2kg"
+                }
+              ],
+              "reason": "The raw specifications explicitly state weight 1.2kg, equivalent to the allowed mass support of 1200 g. No supplied mass conflict or incomparable decision applies."
+            }
+          ]
+        },
+        "raw": "{\"textHash\":\"f85fe87839b99df2c96f945630f52171c2b494eb581cc2c4daa078dab0211d03\",\"claims\":[{\"text\":\"Nimbus 2\",\"start\":0,\"end\":8,\"verdict\":\"supported\",\"supportIds\":[\"identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_title\",\"quote\":\"NIMBUS 2 speaker - waterproof\"},{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_title\",\"quote\":\"Nimbus 2 Portable Bluetooth Speaker\"}],\"reason\":\"Both titles identify the model as Nimbus 2.\"},{\"text\":\"weighs 1.2 kg\",\"start\":9,\"end\":22,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_9ddf5078be168242ceacdc32b5941c82b93f31a8faa78766e7ce54190f882673\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_specs\",\"quote\":\"weight 1.2kg\"}],\"reason\":\"The raw specifications explicitly state weight 1.2kg, equivalent to the allowed mass support of 1200 g. No supplied mass conflict or incomparable decision applies.\"}]}",
+        "model": "gpt-6-astra",
+        "requestId": "resp_04d2600eeb6e9be3016aa2d852a05c87d08199dcb4fbe4cf3d",
+        "usage": {
+          "inputTokens": 1539,
+          "outputTokens": 327,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 1536
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 1539,
+          "outputTokens": 327,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 1536
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 6850.582207999996,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "data": {
+              "textHash": "f85fe87839b99df2c96f945630f52171c2b494eb581cc2c4daa078dab0211d03",
+              "claims": [
+                {
+                  "text": "Nimbus 2",
+                  "start": 0,
+                  "end": 8,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_c2467f5304",
+                      "field": "raw_title",
+                      "quote": "NIMBUS 2 speaker - waterproof"
+                    },
+                    {
+                      "rowId": "row_f3873a8816",
+                      "field": "raw_title",
+                      "quote": "Nimbus 2 Portable Bluetooth Speaker"
+                    }
+                  ],
+                  "reason": "Both titles identify the model as Nimbus 2."
+                },
+                {
+                  "text": "weighs 1.2 kg",
+                  "start": 9,
+                  "end": 22,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "fact:fact_9ddf5078be168242ceacdc32b5941c82b93f31a8faa78766e7ce54190f882673"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_f3873a8816",
+                      "field": "raw_specs",
+                      "quote": "weight 1.2kg"
+                    }
+                  ],
+                  "reason": "The raw specifications explicitly state weight 1.2kg, equivalent to the allowed mass support of 1200 g. No supplied mass conflict or incomparable decision applies."
+                }
+              ]
+            },
+            "raw": "{\"textHash\":\"f85fe87839b99df2c96f945630f52171c2b494eb581cc2c4daa078dab0211d03\",\"claims\":[{\"text\":\"Nimbus 2\",\"start\":0,\"end\":8,\"verdict\":\"supported\",\"supportIds\":[\"identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_title\",\"quote\":\"NIMBUS 2 speaker - waterproof\"},{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_title\",\"quote\":\"Nimbus 2 Portable Bluetooth Speaker\"}],\"reason\":\"Both titles identify the model as Nimbus 2.\"},{\"text\":\"weighs 1.2 kg\",\"start\":9,\"end\":22,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_9ddf5078be168242ceacdc32b5941c82b93f31a8faa78766e7ce54190f882673\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_specs\",\"quote\":\"weight 1.2kg\"}],\"reason\":\"The raw specifications explicitly state weight 1.2kg, equivalent to the allowed mass support of 1200 g. No supplied mass conflict or incomparable decision applies.\"}]}",
+            "model": "gpt-6-astra",
+            "requestId": "resp_04d2600eeb6e9be3016aa2d852a05c87d08199dcb4fbe4cf3d",
+            "usage": {
+              "inputTokens": 1539,
+              "outputTokens": 327,
+              "cachedInputTokens": 0,
+              "cacheWriteTokens": 1536
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "semantic": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "693ff5633b002a00fb3ec1523c1c2296a8d0cec905fdc2d0273e4c705c1470ba",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_c2467f5304",
+        "row_f3873a8816"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 1,
+      "elapsedMs": 8977.105582999997,
+      "status": "error",
+      "error": "invalid_response",
+      "response": {
+        "status": "completed",
+        "data": {
+          "textHash": "ad860b5b5f337da12732f8d9ac2e6ea2260af3e1818df2a199c983b248e869cc",
+          "claims": [
+            {
+              "text": "Nimbus 2",
+              "start": 0,
+              "end": 8,
+              "verdict": "supported",
+              "supportIds": [
+                "identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_c2467f5304",
+                  "field": "raw_title",
+                  "quote": "NIMBUS 2 speaker - waterproof"
+                },
+                {
+                  "rowId": "row_f3873a8816",
+                  "field": "raw_title",
+                  "quote": "Nimbus 2 Portable Bluetooth Speaker"
+                }
+              ],
+              "reason": "The supplied model identity and both raw titles identify Nimbus 2."
+            },
+            {
+              "text": "has an IP67 rating",
+              "start": 9,
+              "end": 26,
+              "verdict": "supported",
+              "supportIds": [
+                "fact:fact_6e693895d3a717613e71ec531993380f496ef6d83138d3aad1a2074843994dc2"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_c2467f5304",
+                  "field": "raw_specs",
+                  "quote": "IP67"
+                }
+              ],
+              "reason": "The allowed IP-rating support is confirmed by 'IP67 rated' in the raw specifications. The power reconciliation does not affect this claim."
+            }
+          ]
+        },
+        "raw": "{\"textHash\":\"ad860b5b5f337da12732f8d9ac2e6ea2260af3e1818df2a199c983b248e869cc\",\"claims\":[{\"text\":\"Nimbus 2\",\"start\":0,\"end\":8,\"verdict\":\"supported\",\"supportIds\":[\"identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_title\",\"quote\":\"NIMBUS 2 speaker - waterproof\"},{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_title\",\"quote\":\"Nimbus 2 Portable Bluetooth Speaker\"}],\"reason\":\"The supplied model identity and both raw titles identify Nimbus 2.\"},{\"text\":\"has an IP67 rating\",\"start\":9,\"end\":26,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_6e693895d3a717613e71ec531993380f496ef6d83138d3aad1a2074843994dc2\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_specs\",\"quote\":\"IP67\"}],\"reason\":\"The allowed IP-rating support is confirmed by 'IP67 rated' in the raw specifications. The power reconciliation does not affect this claim.\"}]}",
+        "model": "gpt-6-astra",
+        "requestId": "resp_024e7199efd56a51016aa2d85bc50887d0a2ca65b274bfe736",
+        "usage": {
+          "inputTokens": 1542,
+          "outputTokens": 320,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 1539
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 1542,
+          "outputTokens": 320,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 1539
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 8973.845583000002,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "data": {
+              "textHash": "ad860b5b5f337da12732f8d9ac2e6ea2260af3e1818df2a199c983b248e869cc",
+              "claims": [
+                {
+                  "text": "Nimbus 2",
+                  "start": 0,
+                  "end": 8,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_c2467f5304",
+                      "field": "raw_title",
+                      "quote": "NIMBUS 2 speaker - waterproof"
+                    },
+                    {
+                      "rowId": "row_f3873a8816",
+                      "field": "raw_title",
+                      "quote": "Nimbus 2 Portable Bluetooth Speaker"
+                    }
+                  ],
+                  "reason": "The supplied model identity and both raw titles identify Nimbus 2."
+                },
+                {
+                  "text": "has an IP67 rating",
+                  "start": 9,
+                  "end": 26,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "fact:fact_6e693895d3a717613e71ec531993380f496ef6d83138d3aad1a2074843994dc2"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_c2467f5304",
+                      "field": "raw_specs",
+                      "quote": "IP67"
+                    }
+                  ],
+                  "reason": "The allowed IP-rating support is confirmed by 'IP67 rated' in the raw specifications. The power reconciliation does not affect this claim."
+                }
+              ]
+            },
+            "raw": "{\"textHash\":\"ad860b5b5f337da12732f8d9ac2e6ea2260af3e1818df2a199c983b248e869cc\",\"claims\":[{\"text\":\"Nimbus 2\",\"start\":0,\"end\":8,\"verdict\":\"supported\",\"supportIds\":[\"identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_title\",\"quote\":\"NIMBUS 2 speaker - waterproof\"},{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_title\",\"quote\":\"Nimbus 2 Portable Bluetooth Speaker\"}],\"reason\":\"The supplied model identity and both raw titles identify Nimbus 2.\"},{\"text\":\"has an IP67 rating\",\"start\":9,\"end\":26,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_6e693895d3a717613e71ec531993380f496ef6d83138d3aad1a2074843994dc2\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_specs\",\"quote\":\"IP67\"}],\"reason\":\"The allowed IP-rating support is confirmed by 'IP67 rated' in the raw specifications. The power reconciliation does not affect this claim.\"}]}",
+            "model": "gpt-6-astra",
+            "requestId": "resp_024e7199efd56a51016aa2d85bc50887d0a2ca65b274bfe736",
+            "usage": {
+              "inputTokens": 1542,
+              "outputTokens": 320,
+              "cachedInputTokens": 0,
+              "cacheWriteTokens": 1539
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "semantic": {
+          "checked": true,
+          "passed": false,
+          "reason": "invalid or overlapping claim span"
+        }
+      }
+    },
+    {
+      "key": "be6aebf67bf12d9aecc5b89d27fb334f30a39f499e10784e7a48c3d51a4ef518",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_4730fd8686"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 0,
+      "elapsedMs": 12161.246124999998,
+      "status": "success",
+      "error": null,
+      "response": {
+        "status": "completed",
+        "data": {
+          "textHash": "defc81b3e348e41f082e36a9f1ad732730113af4d00969203be09f38d3ffea37",
+          "claims": [
+            {
+              "text": "Onyx Lite",
+              "start": 0,
+              "end": 9,
+              "verdict": "supported",
+              "supportIds": [
+                "identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_4730fd8686",
+                  "field": "raw_title",
+                  "quote": "256GB"
+                },
+                {
+                  "rowId": "row_4730fd8686",
+                  "field": "raw_title",
+                  "quote": "Onyx Lite microSD card 256GB"
+                }
+              ],
+              "reason": "The supplied model identity and raw title identify Onyx Lite."
+            },
+            {
+              "text": "is a 256 GB",
+              "start": 10,
+              "end": 21,
+              "verdict": "supported",
+              "supportIds": [
+                "fact:fact_73a80ca467fb4b89161556327cadafad9ec94ac8b64f4c2ea1df1d783890a9a6"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_4730fd8686",
+                  "field": "raw_title",
+                  "quote": "256GB"
+                }
+              ],
+              "reason": "The supplied storage fact and raw title establish a capacity of 256 GB."
+            },
+            {
+              "text": "microSD card",
+              "start": 22,
+              "end": 34,
+              "verdict": "supported",
+              "supportIds": [
+                "identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_4730fd8686",
+                  "field": "raw_title",
+                  "quote": "256GB"
+                },
+                {
+                  "rowId": "row_4730fd8686",
+                  "field": "raw_title",
+                  "quote": "Onyx Lite microSD card 256GB"
+                }
+              ],
+              "reason": "The supplied type identity evidence explicitly describes the product as a microSD card."
+            }
+          ]
+        },
+        "raw": "{\"textHash\":\"defc81b3e348e41f082e36a9f1ad732730113af4d00969203be09f38d3ffea37\",\"claims\":[{\"text\":\"Onyx Lite\",\"start\":0,\"end\":9,\"verdict\":\"supported\",\"supportIds\":[\"identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite microSD card 256GB\"}],\"reason\":\"The supplied model identity and raw title identify Onyx Lite.\"},{\"text\":\"is a 256 GB\",\"start\":10,\"end\":21,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_73a80ca467fb4b89161556327cadafad9ec94ac8b64f4c2ea1df1d783890a9a6\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"}],\"reason\":\"The supplied storage fact and raw title establish a capacity of 256 GB.\"},{\"text\":\"microSD card\",\"start\":22,\"end\":34,\"verdict\":\"supported\",\"supportIds\":[\"identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite microSD card 256GB\"}],\"reason\":\"The supplied type identity evidence explicitly describes the product as a microSD card.\"}]}",
+        "model": "gpt-6-astra",
+        "requestId": "resp_0f06c29bedecd0e2016aa2d862735c87d0b781d79d181feb21",
+        "usage": {
+          "inputTokens": 1352,
+          "outputTokens": 551,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 1349
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 1352,
+          "outputTokens": 551,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 1349
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 12156.316458000001,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "data": {
+              "textHash": "defc81b3e348e41f082e36a9f1ad732730113af4d00969203be09f38d3ffea37",
+              "claims": [
+                {
+                  "text": "Onyx Lite",
+                  "start": 0,
+                  "end": 9,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_4730fd8686",
+                      "field": "raw_title",
+                      "quote": "256GB"
+                    },
+                    {
+                      "rowId": "row_4730fd8686",
+                      "field": "raw_title",
+                      "quote": "Onyx Lite microSD card 256GB"
+                    }
+                  ],
+                  "reason": "The supplied model identity and raw title identify Onyx Lite."
+                },
+                {
+                  "text": "is a 256 GB",
+                  "start": 10,
+                  "end": 21,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "fact:fact_73a80ca467fb4b89161556327cadafad9ec94ac8b64f4c2ea1df1d783890a9a6"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_4730fd8686",
+                      "field": "raw_title",
+                      "quote": "256GB"
+                    }
+                  ],
+                  "reason": "The supplied storage fact and raw title establish a capacity of 256 GB."
+                },
+                {
+                  "text": "microSD card",
+                  "start": 22,
+                  "end": 34,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_4730fd8686",
+                      "field": "raw_title",
+                      "quote": "256GB"
+                    },
+                    {
+                      "rowId": "row_4730fd8686",
+                      "field": "raw_title",
+                      "quote": "Onyx Lite microSD card 256GB"
+                    }
+                  ],
+                  "reason": "The supplied type identity evidence explicitly describes the product as a microSD card."
+                }
+              ]
+            },
+            "raw": "{\"textHash\":\"defc81b3e348e41f082e36a9f1ad732730113af4d00969203be09f38d3ffea37\",\"claims\":[{\"text\":\"Onyx Lite\",\"start\":0,\"end\":9,\"verdict\":\"supported\",\"supportIds\":[\"identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite microSD card 256GB\"}],\"reason\":\"The supplied model identity and raw title identify Onyx Lite.\"},{\"text\":\"is a 256 GB\",\"start\":10,\"end\":21,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_73a80ca467fb4b89161556327cadafad9ec94ac8b64f4c2ea1df1d783890a9a6\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"}],\"reason\":\"The supplied storage fact and raw title establish a capacity of 256 GB.\"},{\"text\":\"microSD card\",\"start\":22,\"end\":34,\"verdict\":\"supported\",\"supportIds\":[\"identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite microSD card 256GB\"}],\"reason\":\"The supplied type identity evidence explicitly describes the product as a microSD card.\"}]}",
+            "model": "gpt-6-astra",
+            "requestId": "resp_0f06c29bedecd0e2016aa2d862735c87d0b781d79d181feb21",
+            "usage": {
+              "inputTokens": 1352,
+              "outputTokens": 551,
+              "cachedInputTokens": 0,
+              "cacheWriteTokens": 1349
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "semantic": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "f16abfde422975413983e3221933e1e2226bb8d8f2d1e9022c5156374b73cb64",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_4730fd8686"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 0,
+      "elapsedMs": 8205.063332999991,
+      "status": "success",
+      "error": null,
+      "response": {
+        "status": "completed",
+        "data": {
+          "textHash": "dda81fb64c0d54944d1cae973ee2c2a05b88ab86ce6ab7835c98424cf35b85a8",
+          "claims": [
+            {
+              "text": "Onyx Lite",
+              "start": 0,
+              "end": 9,
+              "verdict": "supported",
+              "supportIds": [
+                "identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_4730fd8686",
+                  "field": "raw_title",
+                  "quote": "256GB"
+                },
+                {
+                  "rowId": "row_4730fd8686",
+                  "field": "raw_title",
+                  "quote": "Onyx Lite microSD card 256GB"
+                }
+              ],
+              "reason": "The supplied model identity is confirmed by the raw title."
+            },
+            {
+              "text": "supports transfer speeds up to 170 MB/s",
+              "start": 10,
+              "end": 49,
+              "verdict": "supported",
+              "supportIds": [
+                "fact:fact_50b977b84a83af9044c8145e627257f85642bc23253c9c328ff8ef2bfce2a13d"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_4730fd8686",
+                  "field": "raw_specs",
+                  "quote": "up to 170MB/s"
+                }
+              ],
+              "reason": "Matches the supplied transfer speed, preserving the up-to qualifier and leaving direction unspecified."
+            }
+          ]
+        },
+        "raw": "{\"textHash\":\"dda81fb64c0d54944d1cae973ee2c2a05b88ab86ce6ab7835c98424cf35b85a8\",\"claims\":[{\"text\":\"Onyx Lite\",\"start\":0,\"end\":9,\"verdict\":\"supported\",\"supportIds\":[\"identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite microSD card 256GB\"}],\"reason\":\"The supplied model identity is confirmed by the raw title.\"},{\"text\":\"supports transfer speeds up to 170 MB/s\",\"start\":10,\"end\":49,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_50b977b84a83af9044c8145e627257f85642bc23253c9c328ff8ef2bfce2a13d\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"Matches the supplied transfer speed, preserving the up-to qualifier and leaving direction unspecified.\"}]}",
+        "model": "gpt-6-astra",
+        "requestId": "resp_0f8b8116d5cf038d016aa2d86e992887d0b7884ba5b2c0d2a7",
+        "usage": {
+          "inputTokens": 1355,
+          "outputTokens": 424,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 1352
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 1355,
+          "outputTokens": 424,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 1352
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 8203.010124999993,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "data": {
+              "textHash": "dda81fb64c0d54944d1cae973ee2c2a05b88ab86ce6ab7835c98424cf35b85a8",
+              "claims": [
+                {
+                  "text": "Onyx Lite",
+                  "start": 0,
+                  "end": 9,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_4730fd8686",
+                      "field": "raw_title",
+                      "quote": "256GB"
+                    },
+                    {
+                      "rowId": "row_4730fd8686",
+                      "field": "raw_title",
+                      "quote": "Onyx Lite microSD card 256GB"
+                    }
+                  ],
+                  "reason": "The supplied model identity is confirmed by the raw title."
+                },
+                {
+                  "text": "supports transfer speeds up to 170 MB/s",
+                  "start": 10,
+                  "end": 49,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "fact:fact_50b977b84a83af9044c8145e627257f85642bc23253c9c328ff8ef2bfce2a13d"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_4730fd8686",
+                      "field": "raw_specs",
+                      "quote": "up to 170MB/s"
+                    }
+                  ],
+                  "reason": "Matches the supplied transfer speed, preserving the up-to qualifier and leaving direction unspecified."
+                }
+              ]
+            },
+            "raw": "{\"textHash\":\"dda81fb64c0d54944d1cae973ee2c2a05b88ab86ce6ab7835c98424cf35b85a8\",\"claims\":[{\"text\":\"Onyx Lite\",\"start\":0,\"end\":9,\"verdict\":\"supported\",\"supportIds\":[\"identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite microSD card 256GB\"}],\"reason\":\"The supplied model identity is confirmed by the raw title.\"},{\"text\":\"supports transfer speeds up to 170 MB/s\",\"start\":10,\"end\":49,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_50b977b84a83af9044c8145e627257f85642bc23253c9c328ff8ef2bfce2a13d\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"Matches the supplied transfer speed, preserving the up-to qualifier and leaving direction unspecified.\"}]}",
+            "model": "gpt-6-astra",
+            "requestId": "resp_0f8b8116d5cf038d016aa2d86e992887d0b7884ba5b2c0d2a7",
+            "usage": {
+              "inputTokens": 1355,
+              "outputTokens": 424,
+              "cachedInputTokens": 0,
+              "cacheWriteTokens": 1352
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "semantic": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "c6833d23a6ec6740afb25a95d23745355aa983db0298ea0d15db7da2b1f7f1c7",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_4730fd8686"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 0,
+      "elapsedMs": 9031.671665999995,
+      "status": "success",
+      "error": null,
+      "response": {
+        "status": "completed",
+        "data": {
+          "textHash": "b53ac47c6ea398480a6ce2f2ffb083a760ac1cb8c9346b152d3c050b845b1d0d",
+          "claims": [
+            {
+              "text": "Onyx Lite",
+              "start": 0,
+              "end": 9,
+              "verdict": "supported",
+              "supportIds": [
+                "identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_4730fd8686",
+                  "field": "raw_title",
+                  "quote": "256GB"
+                },
+                {
+                  "rowId": "row_4730fd8686",
+                  "field": "raw_title",
+                  "quote": "Onyx Lite microSD card 256GB"
+                }
+              ],
+              "reason": "The supplied model identity support identifies Onyx Lite."
+            },
+            {
+              "text": "supports transfer speeds up to 180 MB/s",
+              "start": 10,
+              "end": 49,
+              "verdict": "unsupported",
+              "supportIds": [],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_4730fd8686",
+                  "field": "raw_specs",
+                  "quote": "up to 170MB/s"
+                }
+              ],
+              "reason": "The source specifies up to 170 MB/s, not 180 MB/s. No supplied support entails the changed number, and no reconciliation decision establishes a dispute."
+            }
+          ]
+        },
+        "raw": "{\"textHash\":\"b53ac47c6ea398480a6ce2f2ffb083a760ac1cb8c9346b152d3c050b845b1d0d\",\"claims\":[{\"text\":\"Onyx Lite\",\"start\":0,\"end\":9,\"verdict\":\"supported\",\"supportIds\":[\"identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite microSD card 256GB\"}],\"reason\":\"The supplied model identity support identifies Onyx Lite.\"},{\"text\":\"supports transfer speeds up to 180 MB/s\",\"start\":10,\"end\":49,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"The source specifies up to 170 MB/s, not 180 MB/s. No supplied support entails the changed number, and no reconciliation decision establishes a dispute.\"}]}",
+        "model": "gpt-6-astra",
+        "requestId": "resp_096fe52cfc28116d016aa2d876dfb087d0936cb21ab35560ca",
+        "usage": {
+          "inputTokens": 1357,
+          "outputTokens": 440,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 1354
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 1357,
+          "outputTokens": 440,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 1354
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 9028.81083300001,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "data": {
+              "textHash": "b53ac47c6ea398480a6ce2f2ffb083a760ac1cb8c9346b152d3c050b845b1d0d",
+              "claims": [
+                {
+                  "text": "Onyx Lite",
+                  "start": 0,
+                  "end": 9,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_4730fd8686",
+                      "field": "raw_title",
+                      "quote": "256GB"
+                    },
+                    {
+                      "rowId": "row_4730fd8686",
+                      "field": "raw_title",
+                      "quote": "Onyx Lite microSD card 256GB"
+                    }
+                  ],
+                  "reason": "The supplied model identity support identifies Onyx Lite."
+                },
+                {
+                  "text": "supports transfer speeds up to 180 MB/s",
+                  "start": 10,
+                  "end": 49,
+                  "verdict": "unsupported",
+                  "supportIds": [],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_4730fd8686",
+                      "field": "raw_specs",
+                      "quote": "up to 170MB/s"
+                    }
+                  ],
+                  "reason": "The source specifies up to 170 MB/s, not 180 MB/s. No supplied support entails the changed number, and no reconciliation decision establishes a dispute."
+                }
+              ]
+            },
+            "raw": "{\"textHash\":\"b53ac47c6ea398480a6ce2f2ffb083a760ac1cb8c9346b152d3c050b845b1d0d\",\"claims\":[{\"text\":\"Onyx Lite\",\"start\":0,\"end\":9,\"verdict\":\"supported\",\"supportIds\":[\"identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite microSD card 256GB\"}],\"reason\":\"The supplied model identity support identifies Onyx Lite.\"},{\"text\":\"supports transfer speeds up to 180 MB/s\",\"start\":10,\"end\":49,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"The source specifies up to 170 MB/s, not 180 MB/s. No supplied support entails the changed number, and no reconciliation decision establishes a dispute.\"}]}",
+            "model": "gpt-6-astra",
+            "requestId": "resp_096fe52cfc28116d016aa2d876dfb087d0936cb21ab35560ca",
+            "usage": {
+              "inputTokens": 1357,
+              "outputTokens": 440,
+              "cachedInputTokens": 0,
+              "cacheWriteTokens": 1354
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "semantic": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "9c5b8a485f47d5055c11cb83b7c5f5ebc196f34f9aa526db9e844f7954880cb1",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_11bb99b2fa",
+        "row_bdbc045131"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 0,
+      "elapsedMs": 11534.691124999998,
+      "status": "success",
+      "error": null,
+      "response": {
+        "status": "completed",
+        "data": {
+          "textHash": "66d57343d13a778515a3f8ac681df7a636e06d9aabfcbd660c680a55f286bedd",
+          "claims": [
+            {
+              "text": "AeroBuds Pro",
+              "start": 0,
+              "end": 12,
+              "verdict": "supported",
+              "supportIds": [
+                "identity:2a20192985e0a5cdc2916b2caff1566907d4d6202a13eeb29a6781140ae81fd4"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_bdbc045131",
+                  "field": "raw_title",
+                  "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+                }
+              ],
+              "reason": "The supplied model identity support identifies AeroBuds Pro."
+            },
+            {
+              "text": "includes",
+              "start": 13,
+              "end": 21,
+              "verdict": "unsupported",
+              "supportIds": [],
+              "decisionIds": [],
+              "evidence": [],
+              "reason": "Neither source row establishes that ear tips are included."
+            },
+            {
+              "text": "silicone",
+              "start": 22,
+              "end": 30,
+              "verdict": "unsupported",
+              "supportIds": [],
+              "decisionIds": [],
+              "evidence": [],
+              "reason": "No supplied source establishes the claimed ear-tip material."
+            },
+            {
+              "text": "replacement",
+              "start": 31,
+              "end": 42,
+              "verdict": "unsupported",
+              "supportIds": [],
+              "decisionIds": [],
+              "evidence": [],
+              "reason": "No supplied source describes replacement ear tips."
+            },
+            {
+              "text": "ear tips",
+              "start": 43,
+              "end": 51,
+              "verdict": "unsupported",
+              "supportIds": [],
+              "decisionIds": [],
+              "evidence": [],
+              "reason": "Ear tips are not identified as product contents in the supplied sources or allowed supports."
+            }
+          ]
+        },
+        "raw": "{\"textHash\":\"66d57343d13a778515a3f8ac681df7a636e06d9aabfcbd660c680a55f286bedd\",\"claims\":[{\"text\":\"AeroBuds Pro\",\"start\":0,\"end\":12,\"verdict\":\"supported\",\"supportIds\":[\"identity:2a20192985e0a5cdc2916b2caff1566907d4d6202a13eeb29a6781140ae81fd4\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_bdbc045131\",\"field\":\"raw_title\",\"quote\":\"AeroBuds Pro True Wireless Earbuds - Black\"}],\"reason\":\"The supplied model identity support identifies AeroBuds Pro.\"},{\"text\":\"includes\",\"start\":13,\"end\":21,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[],\"reason\":\"Neither source row establishes that ear tips are included.\"},{\"text\":\"silicone\",\"start\":22,\"end\":30,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[],\"reason\":\"No supplied source establishes the claimed ear-tip material.\"},{\"text\":\"replacement\",\"start\":31,\"end\":42,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[],\"reason\":\"No supplied source describes replacement ear tips.\"},{\"text\":\"ear tips\",\"start\":43,\"end\":51,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[],\"reason\":\"Ear tips are not identified as product contents in the supplied sources or allowed supports.\"}]}",
+        "model": "gpt-6-astra",
+        "requestId": "resp_0a748082641f442d016aa2d87fe5ec87d088e711bf1313d909",
+        "usage": {
+          "inputTokens": 2207,
+          "outputTokens": 493,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 2204
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 2207,
+          "outputTokens": 493,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 2204
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 11530.870416999998,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "data": {
+              "textHash": "66d57343d13a778515a3f8ac681df7a636e06d9aabfcbd660c680a55f286bedd",
+              "claims": [
+                {
+                  "text": "AeroBuds Pro",
+                  "start": 0,
+                  "end": 12,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "identity:2a20192985e0a5cdc2916b2caff1566907d4d6202a13eeb29a6781140ae81fd4"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_bdbc045131",
+                      "field": "raw_title",
+                      "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+                    }
+                  ],
+                  "reason": "The supplied model identity support identifies AeroBuds Pro."
+                },
+                {
+                  "text": "includes",
+                  "start": 13,
+                  "end": 21,
+                  "verdict": "unsupported",
+                  "supportIds": [],
+                  "decisionIds": [],
+                  "evidence": [],
+                  "reason": "Neither source row establishes that ear tips are included."
+                },
+                {
+                  "text": "silicone",
+                  "start": 22,
+                  "end": 30,
+                  "verdict": "unsupported",
+                  "supportIds": [],
+                  "decisionIds": [],
+                  "evidence": [],
+                  "reason": "No supplied source establishes the claimed ear-tip material."
+                },
+                {
+                  "text": "replacement",
+                  "start": 31,
+                  "end": 42,
+                  "verdict": "unsupported",
+                  "supportIds": [],
+                  "decisionIds": [],
+                  "evidence": [],
+                  "reason": "No supplied source describes replacement ear tips."
+                },
+                {
+                  "text": "ear tips",
+                  "start": 43,
+                  "end": 51,
+                  "verdict": "unsupported",
+                  "supportIds": [],
+                  "decisionIds": [],
+                  "evidence": [],
+                  "reason": "Ear tips are not identified as product contents in the supplied sources or allowed supports."
+                }
+              ]
+            },
+            "raw": "{\"textHash\":\"66d57343d13a778515a3f8ac681df7a636e06d9aabfcbd660c680a55f286bedd\",\"claims\":[{\"text\":\"AeroBuds Pro\",\"start\":0,\"end\":12,\"verdict\":\"supported\",\"supportIds\":[\"identity:2a20192985e0a5cdc2916b2caff1566907d4d6202a13eeb29a6781140ae81fd4\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_bdbc045131\",\"field\":\"raw_title\",\"quote\":\"AeroBuds Pro True Wireless Earbuds - Black\"}],\"reason\":\"The supplied model identity support identifies AeroBuds Pro.\"},{\"text\":\"includes\",\"start\":13,\"end\":21,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[],\"reason\":\"Neither source row establishes that ear tips are included.\"},{\"text\":\"silicone\",\"start\":22,\"end\":30,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[],\"reason\":\"No supplied source establishes the claimed ear-tip material.\"},{\"text\":\"replacement\",\"start\":31,\"end\":42,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[],\"reason\":\"No supplied source describes replacement ear tips.\"},{\"text\":\"ear tips\",\"start\":43,\"end\":51,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[],\"reason\":\"Ear tips are not identified as product contents in the supplied sources or allowed supports.\"}]}",
+            "model": "gpt-6-astra",
+            "requestId": "resp_0a748082641f442d016aa2d87fe5ec87d088e711bf1313d909",
+            "usage": {
+              "inputTokens": 2207,
+              "outputTokens": 493,
+              "cachedInputTokens": 0,
+              "cacheWriteTokens": 2204
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "semantic": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "596c038e6bdb2fb48a3e45dd90b1c5d28dfa5c44a2ba30051bbc750472a6bd84",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_4730fd8686"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 1,
+      "elapsedMs": 6016.486417000007,
+      "status": "error",
+      "error": "invalid_response",
+      "response": {
+        "status": "completed",
+        "data": {
+          "textHash": "e35628be577b6e9f9bc28964bcaaf0837f77bf4fa4930dc8bbe06d09aa7233b8",
+          "claims": [
+            {
+              "text": "Onyx Lite",
+              "start": 0,
+              "end": 9,
+              "verdict": "supported",
+              "supportIds": [
+                "identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_4730fd8686",
+                  "field": "raw_title",
+                  "quote": "256GB"
+                },
+                {
+                  "rowId": "row_4730fd8686",
+                  "field": "raw_title",
+                  "quote": "Onyx Lite microSD card 256GB"
+                }
+              ],
+              "reason": "The supplied model identity and raw title identify Onyx Lite."
+            },
+            {
+              "text": "transfers data at 170 MB/s",
+              "start": 10,
+              "end": 34,
+              "verdict": "unsupported",
+              "supportIds": [],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_4730fd8686",
+                  "field": "raw_specs",
+                  "quote": "up to 170MB/s"
+                }
+              ],
+              "reason": "The source specifies only an upper-bound transfer speed, 'up to 170MB/s'. The description removes that qualifier and asserts an unqualified transfer rate."
+            }
+          ]
+        },
+        "raw": "{\"textHash\":\"e35628be577b6e9f9bc28964bcaaf0837f77bf4fa4930dc8bbe06d09aa7233b8\",\"claims\":[{\"text\":\"Onyx Lite\",\"start\":0,\"end\":9,\"verdict\":\"supported\",\"supportIds\":[\"identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite microSD card 256GB\"}],\"reason\":\"The supplied model identity and raw title identify Onyx Lite.\"},{\"text\":\"transfers data at 170 MB/s\",\"start\":10,\"end\":34,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"The source specifies only an upper-bound transfer speed, 'up to 170MB/s'. The description removes that qualifier and asserts an unqualified transfer rate.\"}]}",
+        "model": "gpt-6-astra",
+        "requestId": "resp_0ed24fa8de415fc4016aa2d88b63ec87d0829a0afdcb879328",
+        "usage": {
+          "inputTokens": 1352,
+          "outputTokens": 291,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 1349
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 1352,
+          "outputTokens": 291,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 1349
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 6010.204916000002,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "data": {
+              "textHash": "e35628be577b6e9f9bc28964bcaaf0837f77bf4fa4930dc8bbe06d09aa7233b8",
+              "claims": [
+                {
+                  "text": "Onyx Lite",
+                  "start": 0,
+                  "end": 9,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_4730fd8686",
+                      "field": "raw_title",
+                      "quote": "256GB"
+                    },
+                    {
+                      "rowId": "row_4730fd8686",
+                      "field": "raw_title",
+                      "quote": "Onyx Lite microSD card 256GB"
+                    }
+                  ],
+                  "reason": "The supplied model identity and raw title identify Onyx Lite."
+                },
+                {
+                  "text": "transfers data at 170 MB/s",
+                  "start": 10,
+                  "end": 34,
+                  "verdict": "unsupported",
+                  "supportIds": [],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_4730fd8686",
+                      "field": "raw_specs",
+                      "quote": "up to 170MB/s"
+                    }
+                  ],
+                  "reason": "The source specifies only an upper-bound transfer speed, 'up to 170MB/s'. The description removes that qualifier and asserts an unqualified transfer rate."
+                }
+              ]
+            },
+            "raw": "{\"textHash\":\"e35628be577b6e9f9bc28964bcaaf0837f77bf4fa4930dc8bbe06d09aa7233b8\",\"claims\":[{\"text\":\"Onyx Lite\",\"start\":0,\"end\":9,\"verdict\":\"supported\",\"supportIds\":[\"identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite microSD card 256GB\"}],\"reason\":\"The supplied model identity and raw title identify Onyx Lite.\"},{\"text\":\"transfers data at 170 MB/s\",\"start\":10,\"end\":34,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"The source specifies only an upper-bound transfer speed, 'up to 170MB/s'. The description removes that qualifier and asserts an unqualified transfer rate.\"}]}",
+            "model": "gpt-6-astra",
+            "requestId": "resp_0ed24fa8de415fc4016aa2d88b63ec87d0829a0afdcb879328",
+            "usage": {
+              "inputTokens": 1352,
+              "outputTokens": 291,
+              "cachedInputTokens": 0,
+              "cacheWriteTokens": 1349
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "semantic": {
+          "checked": true,
+          "passed": false,
+          "reason": "invalid or overlapping claim span"
+        }
+      }
+    },
+    {
+      "key": "af26ba6cf5968415672a4eec509f99e6124d6f6763f96eb8656ae80af5d4d637",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_05e5d126cb",
+        "row_1e60b0a9dc",
+        "row_7f3f1b14c3"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 0,
+      "elapsedMs": 10136.318041000006,
+      "status": "success",
+      "error": null,
+      "response": {
+        "status": "completed",
+        "data": {
+          "textHash": "7ca6ed2b5021bf6d6504ecd9e84048c24bb7698393ba1702c3bf8af6104b1c03",
+          "claims": [
+            {
+              "text": "Sony WH-880N",
+              "start": 0,
+              "end": 12,
+              "verdict": "supported",
+              "supportIds": [
+                "identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_05e5d126cb",
+                  "field": "raw_title",
+                  "quote": "sony wh880n headphones OPEN BOX"
+                },
+                {
+                  "rowId": "row_1e60b0a9dc",
+                  "field": "raw_title",
+                  "quote": "SONY WH-880N Wireless Over-Ear"
+                },
+                {
+                  "rowId": "row_7f3f1b14c3",
+                  "field": "raw_title",
+                  "quote": "Sony Corp. WH880N Kopfhoerer"
+                }
+              ],
+              "reason": "The supplied model identity supports this product name."
+            },
+            {
+              "text": "is an open-box product",
+              "start": 13,
+              "end": 35,
+              "verdict": "unsupported",
+              "supportIds": [],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_05e5d126cb",
+                  "field": "raw_title",
+                  "quote": "sony wh880n headphones OPEN BOX"
+                }
+              ],
+              "reason": "OPEN BOX describes a single clearance offer, not the product generally. No allowed support establishes open-box condition as a product-level attribute."
+            }
+          ]
+        },
+        "raw": "{\"textHash\":\"7ca6ed2b5021bf6d6504ecd9e84048c24bb7698393ba1702c3bf8af6104b1c03\",\"claims\":[{\"text\":\"Sony WH-880N\",\"start\":0,\"end\":12,\"verdict\":\"supported\",\"supportIds\":[\"identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_05e5d126cb\",\"field\":\"raw_title\",\"quote\":\"sony wh880n headphones OPEN BOX\"},{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_title\",\"quote\":\"SONY WH-880N Wireless Over-Ear\"},{\"rowId\":\"row_7f3f1b14c3\",\"field\":\"raw_title\",\"quote\":\"Sony Corp. WH880N Kopfhoerer\"}],\"reason\":\"The supplied model identity supports this product name.\"},{\"text\":\"is an open-box product\",\"start\":13,\"end\":35,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_05e5d126cb\",\"field\":\"raw_title\",\"quote\":\"sony wh880n headphones OPEN BOX\"}],\"reason\":\"OPEN BOX describes a single clearance offer, not the product generally. No allowed support establishes open-box condition as a product-level attribute.\"}]}",
+        "model": "gpt-6-astra",
+        "requestId": "resp_041a08c12c051d72016aa2d891764087d0a526a330dc9f4c87",
+        "usage": {
+          "inputTokens": 1752,
+          "outputTokens": 441,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 1749
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 1752,
+          "outputTokens": 441,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 1749
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 10125.175000000003,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "data": {
+              "textHash": "7ca6ed2b5021bf6d6504ecd9e84048c24bb7698393ba1702c3bf8af6104b1c03",
+              "claims": [
+                {
+                  "text": "Sony WH-880N",
+                  "start": 0,
+                  "end": 12,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_05e5d126cb",
+                      "field": "raw_title",
+                      "quote": "sony wh880n headphones OPEN BOX"
+                    },
+                    {
+                      "rowId": "row_1e60b0a9dc",
+                      "field": "raw_title",
+                      "quote": "SONY WH-880N Wireless Over-Ear"
+                    },
+                    {
+                      "rowId": "row_7f3f1b14c3",
+                      "field": "raw_title",
+                      "quote": "Sony Corp. WH880N Kopfhoerer"
+                    }
+                  ],
+                  "reason": "The supplied model identity supports this product name."
+                },
+                {
+                  "text": "is an open-box product",
+                  "start": 13,
+                  "end": 35,
+                  "verdict": "unsupported",
+                  "supportIds": [],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_05e5d126cb",
+                      "field": "raw_title",
+                      "quote": "sony wh880n headphones OPEN BOX"
+                    }
+                  ],
+                  "reason": "OPEN BOX describes a single clearance offer, not the product generally. No allowed support establishes open-box condition as a product-level attribute."
+                }
+              ]
+            },
+            "raw": "{\"textHash\":\"7ca6ed2b5021bf6d6504ecd9e84048c24bb7698393ba1702c3bf8af6104b1c03\",\"claims\":[{\"text\":\"Sony WH-880N\",\"start\":0,\"end\":12,\"verdict\":\"supported\",\"supportIds\":[\"identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_05e5d126cb\",\"field\":\"raw_title\",\"quote\":\"sony wh880n headphones OPEN BOX\"},{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_title\",\"quote\":\"SONY WH-880N Wireless Over-Ear\"},{\"rowId\":\"row_7f3f1b14c3\",\"field\":\"raw_title\",\"quote\":\"Sony Corp. WH880N Kopfhoerer\"}],\"reason\":\"The supplied model identity supports this product name.\"},{\"text\":\"is an open-box product\",\"start\":13,\"end\":35,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_05e5d126cb\",\"field\":\"raw_title\",\"quote\":\"sony wh880n headphones OPEN BOX\"}],\"reason\":\"OPEN BOX describes a single clearance offer, not the product generally. No allowed support establishes open-box condition as a product-level attribute.\"}]}",
+            "model": "gpt-6-astra",
+            "requestId": "resp_041a08c12c051d72016aa2d891764087d0a526a330dc9f4c87",
+            "usage": {
+              "inputTokens": 1752,
+              "outputTokens": 441,
+              "cachedInputTokens": 0,
+              "cacheWriteTokens": 1749
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "semantic": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "22d66a8ea9e7a7b12ee97cd0c68f8bd706221de0058c9f91b1a210413e67138b",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_c2467f5304",
+        "row_f3873a8816"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 1,
+      "errors": 1,
+      "elapsedMs": 6328.338875000001,
+      "status": "error",
+      "error": "invalid_response",
+      "response": {
+        "status": "completed",
+        "data": {
+          "textHash": "848a347f68defa5100f4585a12209868070302871872c894ac5f5d2f1261e188",
+          "claims": [
+            {
+              "text": "Nimbus 2",
+              "start": 0,
+              "end": 8,
+              "verdict": "supported",
+              "supportIds": [
+                "identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b"
+              ],
+              "decisionIds": [],
+              "evidence": [
+                {
+                  "rowId": "row_c2467f5304",
+                  "field": "raw_title",
+                  "quote": "NIMBUS 2 speaker - waterproof"
+                },
+                {
+                  "rowId": "row_f3873a8816",
+                  "field": "raw_title",
+                  "quote": "Nimbus 2 Portable Bluetooth Speaker"
+                }
+              ],
+              "reason": "The supplied model identity supports Nimbus 2."
+            },
+            {
+              "text": "provides 12 W of output power.",
+              "start": 9,
+              "end": 38,
+              "verdict": "disputed",
+              "supportIds": [],
+              "decisionIds": [
+                "reconciled:power"
+              ],
+              "evidence": [
+                {
+                  "rowId": "row_c2467f5304",
+                  "field": "raw_specs",
+                  "quote": "12 W"
+                },
+                {
+                  "rowId": "row_f3873a8816",
+                  "field": "raw_specs",
+                  "quote": "12W output"
+                }
+              ],
+              "reason": "The supplied power reconciliation marks the observations incomparable because one specifies output and the other leaves purpose unspecified. No allowed power support resolves this decision."
+            }
+          ]
+        },
+        "raw": "{\"textHash\":\"848a347f68defa5100f4585a12209868070302871872c894ac5f5d2f1261e188\",\"claims\":[{\"text\":\"Nimbus 2\",\"start\":0,\"end\":8,\"verdict\":\"supported\",\"supportIds\":[\"identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_title\",\"quote\":\"NIMBUS 2 speaker - waterproof\"},{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_title\",\"quote\":\"Nimbus 2 Portable Bluetooth Speaker\"}],\"reason\":\"The supplied model identity supports Nimbus 2.\"},{\"text\":\"provides 12 W of output power.\",\"start\":9,\"end\":38,\"verdict\":\"disputed\",\"supportIds\":[],\"decisionIds\":[\"reconciled:power\"],\"evidence\":[{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_specs\",\"quote\":\"12 W\"},{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_specs\",\"quote\":\"12W output\"}],\"reason\":\"The supplied power reconciliation marks the observations incomparable because one specifies output and the other leaves purpose unspecified. No allowed power support resolves this decision.\"}]}",
+        "model": "gpt-6-astra",
+        "requestId": "resp_012ad90eb1dae542016aa2d89b876087d0af6d7cfeccb1286c",
+        "usage": {
+          "inputTokens": 1539,
+          "outputTokens": 305,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 1536
+        }
+      },
+      "attemptUsage": [
+        {
+          "inputTokens": 1539,
+          "outputTokens": 305,
+          "cachedInputTokens": 0,
+          "cacheWriteTokens": 1536
+        }
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 6324.290708,
+          "error": null,
+          "response": {
+            "status": "completed",
+            "data": {
+              "textHash": "848a347f68defa5100f4585a12209868070302871872c894ac5f5d2f1261e188",
+              "claims": [
+                {
+                  "text": "Nimbus 2",
+                  "start": 0,
+                  "end": 8,
+                  "verdict": "supported",
+                  "supportIds": [
+                    "identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b"
+                  ],
+                  "decisionIds": [],
+                  "evidence": [
+                    {
+                      "rowId": "row_c2467f5304",
+                      "field": "raw_title",
+                      "quote": "NIMBUS 2 speaker - waterproof"
+                    },
+                    {
+                      "rowId": "row_f3873a8816",
+                      "field": "raw_title",
+                      "quote": "Nimbus 2 Portable Bluetooth Speaker"
+                    }
+                  ],
+                  "reason": "The supplied model identity supports Nimbus 2."
+                },
+                {
+                  "text": "provides 12 W of output power.",
+                  "start": 9,
+                  "end": 38,
+                  "verdict": "disputed",
+                  "supportIds": [],
+                  "decisionIds": [
+                    "reconciled:power"
+                  ],
+                  "evidence": [
+                    {
+                      "rowId": "row_c2467f5304",
+                      "field": "raw_specs",
+                      "quote": "12 W"
+                    },
+                    {
+                      "rowId": "row_f3873a8816",
+                      "field": "raw_specs",
+                      "quote": "12W output"
+                    }
+                  ],
+                  "reason": "The supplied power reconciliation marks the observations incomparable because one specifies output and the other leaves purpose unspecified. No allowed power support resolves this decision."
+                }
+              ]
+            },
+            "raw": "{\"textHash\":\"848a347f68defa5100f4585a12209868070302871872c894ac5f5d2f1261e188\",\"claims\":[{\"text\":\"Nimbus 2\",\"start\":0,\"end\":8,\"verdict\":\"supported\",\"supportIds\":[\"identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_title\",\"quote\":\"NIMBUS 2 speaker - waterproof\"},{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_title\",\"quote\":\"Nimbus 2 Portable Bluetooth Speaker\"}],\"reason\":\"The supplied model identity supports Nimbus 2.\"},{\"text\":\"provides 12 W of output power.\",\"start\":9,\"end\":38,\"verdict\":\"disputed\",\"supportIds\":[],\"decisionIds\":[\"reconciled:power\"],\"evidence\":[{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_specs\",\"quote\":\"12 W\"},{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_specs\",\"quote\":\"12W output\"}],\"reason\":\"The supplied power reconciliation marks the observations incomparable because one specifies output and the other leaves purpose unspecified. No allowed power support resolves this decision.\"}]}",
+            "model": "gpt-6-astra",
+            "requestId": "resp_012ad90eb1dae542016aa2d89b876087d0af6d7cfeccb1286c",
+            "usage": {
+              "inputTokens": 1539,
+              "outputTokens": 305,
+              "cachedInputTokens": 0,
+              "cacheWriteTokens": 1536
+            }
+          }
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "completion": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "json": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "schema": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "citations": {
+          "checked": true,
+          "passed": true,
+          "reason": null
+        },
+        "semantic": {
+          "checked": true,
+          "passed": false,
+          "reason": "invalid or overlapping claim span"
+        }
+      }
+    },
+    {
+      "key": "835aae2934284d01a9d9a5479cb76c86c4f0ac45e3d584852e0cd1dadb4d2856",
+      "role": "generation",
+      "rowIds": [
+        "row_71847a9c05"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.3307499999937136,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "d3e7bccc35f121bc91142e6d30052c7f0029cab0fb6863144cb70cbec391e330",
+      "role": "generation",
+      "rowIds": [
+        "row_1134eb89e7"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.554959000000963,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "51655741c261caa021f326720ef0baf72d39eff5b063d357911a88df0a35b782",
+      "role": "generation",
+      "rowIds": [
+        "row_11462769c5"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.1658750000060536,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "6820820ced0cb912ca3606f04a2378d23e2916a50308c0edea0152411d039a4a",
+      "role": "generation",
+      "rowIds": [
+        "row_833c7feebb"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.1341250000114087,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "8941b45e3cf0cbed9276bd14970e4c4b6f1a3619560a9696520d6b9fb5de25ff",
+      "role": "generation",
+      "rowIds": [
+        "row_fe3ff4b356"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.34762500000942964,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "23084203afc176b05c5ba6f425a0d5be2d4038b40eac723ebbf14796f1c1dad9",
+      "role": "generation",
+      "rowIds": [
+        "row_87ace126d4",
+        "row_92da044aa3"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.32787500000267755,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "2c0dfcfb3d2e0b4a08b47ce118634fe25c1140bab5d0dce2ff7a50c995292b9d",
+      "role": "generation",
+      "rowIds": [
+        "row_cdf75e46ea"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.24666599999181926,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "fc69b32c8b222b524fe05b0444f11e9c7cfded9b600ca2506acf4e4bba26e135",
+      "role": "generation",
+      "rowIds": [
+        "row_17f5e3070f"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.1900420000019949,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "1afdc7e765aa6a15b33ed317643a80f028c2bb3ec9872dac08a713969ad4ed53",
+      "role": "generation",
+      "rowIds": [
+        "row_654f1fb60f"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.163749999992433,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "149454176eed0c31e3a1e6e6074aa4ed157f0ef510a87d37cc5ab04050a24d7c",
+      "role": "generation",
+      "rowIds": [
+        "row_a8a875a60c"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.27987499999289867,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "add82151bad23b95a5b9be8b82e453a7445ea1caf2e5012a6c8853725bc42b36",
+      "role": "generation",
+      "rowIds": [
+        "row_c2467f5304",
+        "row_f3873a8816"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.1748749999969732,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "673fe4e87fdcf2b40bb7b2397059749315fe4cd841442841be4f0ba4cdc16671",
+      "role": "generation",
+      "rowIds": [
+        "row_4730fd8686"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.21604200000001583,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "30a8919fd34e63fd524787a13093f21d39036bca6798e3cd23e57dac19259a60",
+      "role": "generation",
+      "rowIds": [
+        "row_22e59912ad",
+        "row_fbe753d7cc"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.2741669999959413,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "913b6fa64c08336324a592919521b9ac15ea647cf0e194052a557f5e6e8275b5",
+      "role": "generation",
+      "rowIds": [
+        "row_b82f7fcc2a"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.1643329999933485,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "9e73266d124458d1aebf386a162a0ed7b9425f6b80ffa8060136517c2ff372f0",
+      "role": "generation",
+      "rowIds": [
+        "row_bb6d2613d4"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.14383299999462906,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "1572e230a57772a875de44d582d66b3d22da944d66b6c5a1cb0095609798a0d8",
+      "role": "generation",
+      "rowIds": [
+        "row_b2475a3df6"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.2908329999918351,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "e34938042e51b0b5b05034a474865a2c6ef5d996e91ee938dbef93959dc09afb",
+      "role": "generation",
+      "rowIds": [
+        "row_56f937bd9e"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.11954099999275059,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "c5462653638add391e6a8fec6a5836e90c083cc0dd45743cf996db5bddeb5504",
+      "role": "generation",
+      "rowIds": [
+        "row_6f66c4cb9e"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.12424999999348074,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "2864634da9d23af59a49d39bd6e4c2d8ec2f628340cdbcfec675a9b0ad3af43b",
+      "role": "generation",
+      "rowIds": [
+        "row_b40060c12f"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.12183400000503752,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "2e3ae5c4edb37e50e86659d0a18538e9ccd3bee14c2ef650bc9158416638d268",
+      "role": "generation",
+      "rowIds": [
+        "row_5824054a52"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.11587500000314321,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "a47779388349147461e5146e12eabb79a9c370450065554ec6726edc336d4a98",
+      "role": "generation",
+      "rowIds": [
+        "row_641c690d68",
+        "row_73d3ec91bb"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.17104200000176206,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "aec435ce6094146a2f2ec6a5367860f7f9b7f206c4559cab1338e631f9e28395",
+      "role": "generation",
+      "rowIds": [
+        "row_6eddbd5517",
+        "row_f0ad473862"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.15412500000093132,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "31d2c588c8d195a074142349bf44f10282ed77e497633bb3438c565d3f9f90ac",
+      "role": "generation",
+      "rowIds": [
+        "row_a60219abb1",
+        "row_bddc33a831"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.12670800001069438,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "b9f8f222c8421121015f8ef6fe0dad2bd270ecd82288973cf60b8e131eb4871d",
+      "role": "generation",
+      "rowIds": [
+        "row_55a8c9b86d",
+        "row_74b8f7797a"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.2642909999995027,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "0bf627eaba33440dd8975c550713b94f842822c4d3e6b2138dd62ed7a8452b26",
+      "role": "generation",
+      "rowIds": [
+        "row_76b28cdc31"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.11950000000069849,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "d6a20198ceaf18d2a3a220c7aa3202822dd89918905d0181ff796eb8661170d9",
+      "role": "generation",
+      "rowIds": [
+        "row_3e2dd6416e",
+        "row_94d9860adf"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.17799999999988358,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "f0e9478b2ab407c41dded82451754ee29b51c9713032070e496ad53d78ab6646",
+      "role": "generation",
+      "rowIds": [
+        "row_e571323780"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.11316599999554455,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "737d96041a23845cd0760fc37c3ae71486985db05419706c76c1d7060664b4a3",
+      "role": "generation",
+      "rowIds": [
+        "row_1d1bdffe92",
+        "row_83da10f114"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.1699159999989206,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "e7768a819a883237849c1de81a240ef766616561019e1ffabd9a82edb48cab93",
+      "role": "generation",
+      "rowIds": [
+        "row_05e5d126cb",
+        "row_1e60b0a9dc",
+        "row_7f3f1b14c3"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.1965419999905862,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "65d6c9b7db8c1b483a2cd2400f6265736dd4e2298f13e28390ff65a74baf012b",
+      "role": "generation",
+      "rowIds": [
+        "row_64543589fc",
+        "row_a386736693"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.33095799999136943,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "e2dc6e73c0acfbdbd9359297ea24965503971873f7b22e78e19bfe8a29b94ea3",
+      "role": "generation",
+      "rowIds": [
+        "row_68d860d397",
+        "row_78b4c42770"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.12270900000294205,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "a5fa666136ad02dfe2d6d37557ba0aec0c6b0170b8e007012447ab0348a5feea",
+      "role": "generation",
+      "rowIds": [
+        "row_06dc75e525",
+        "row_3f77cefacd"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.2632080000039423,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "be88994b1225e3575202476df35bb8d09af4deaa7e17c2a815ceceec1131244b",
+      "role": "generation",
+      "rowIds": [
+        "row_e67082ee31"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.12729200000467245,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "5f5a081085a5382ce70e1f5db1093ce3270e5a89fb7d3f1a3d65ec6b308281b4",
+      "role": "generation",
+      "rowIds": [
+        "row_a1bb1ad2e9"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.08600000001024455,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "370cecaecbe1685254c9096987a727dd4cfe41fe33743fb44e1b9a6462c9de2d",
+      "role": "generation",
+      "rowIds": [
+        "row_bb41623d6c"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.0947500000038417,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "aa789258dad3bc83957bda55d7f4245b811e789914fa887e641f29b5de691db8",
+      "role": "generation",
+      "rowIds": [
+        "row_4d609c9ff9",
+        "row_6668f30f9e"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.07445899999584071,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "a9795e0d46e7ba666321fdc19ef8643a2be381b86dc7a6622a9d0c7c157acff4",
+      "role": "generation",
+      "rowIds": [
+        "row_3fdcec64b2"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.20775000000139698,
+      "status": "error",
+      "error": "cache",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    }
+  ]
+}

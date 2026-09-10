@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1697.389749999973,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Cobalt smart scale uses BIA, supports app sync, and has a maximum load of 180 kg."
+    },
+    "raw": "{\"text\":\"The Cobalt smart scale uses BIA, supports app sync, and has a maximum load of 180 kg.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0d1c5e96903a095a016aa2d71dce8c87d09cce3bb9b764ab99",
+    "usage": {
+      "inputTokens": 706,
+      "outputTokens": 37,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

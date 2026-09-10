@@ -1,0 +1,62 @@
+{
+  "elapsedMs": 6342.505000000001,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "ad860b5b5f337da12732f8d9ac2e6ea2260af3e1818df2a199c983b248e869cc",
+      "claims": [
+        {
+          "text": "Nimbus 2",
+          "start": 0,
+          "end": 8,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c2467f5304",
+              "field": "raw_title",
+              "quote": "NIMBUS 2 speaker - waterproof"
+            },
+            {
+              "rowId": "row_f3873a8816",
+              "field": "raw_title",
+              "quote": "Nimbus 2 Portable Bluetooth Speaker"
+            }
+          ],
+          "reason": "The supplied model identity and raw titles identify Nimbus 2."
+        },
+        {
+          "text": "has an IP67 rating",
+          "start": 9,
+          "end": 27,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_6e693895d3a717613e71ec531993380f496ef6d83138d3aad1a2074843994dc2"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c2467f5304",
+              "field": "raw_specs",
+              "quote": "IP67"
+            }
+          ],
+          "reason": "The supplied IP rating support is confirmed by the raw specifications stating IP67 rated; no supplied decision disputes this attribute."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"ad860b5b5f337da12732f8d9ac2e6ea2260af3e1818df2a199c983b248e869cc\",\"claims\":[{\"text\":\"Nimbus 2\",\"start\":0,\"end\":8,\"verdict\":\"supported\",\"supportIds\":[\"identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_title\",\"quote\":\"NIMBUS 2 speaker - waterproof\"},{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_title\",\"quote\":\"Nimbus 2 Portable Bluetooth Speaker\"}],\"reason\":\"The supplied model identity and raw titles identify Nimbus 2.\"},{\"text\":\"has an IP67 rating\",\"start\":9,\"end\":27,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_6e693895d3a717613e71ec531993380f496ef6d83138d3aad1a2074843994dc2\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_specs\",\"quote\":\"IP67\"}],\"reason\":\"The supplied IP rating support is confirmed by the raw specifications stating IP67 rated; no supplied decision disputes this attribute.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0c22be206364cb1b016aa2d921f33487d095c680f0530a71da",
+    "usage": {
+      "inputTokens": 1807,
+      "outputTokens": 315,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1804
+    }
+  }
+}

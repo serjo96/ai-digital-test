@@ -1,0 +1,76 @@
+{
+  "elapsedMs": 6979.533124999987,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "aee94a7fffc6e6cd022d841174bd1f54dcec27d052e2be34036e3cf2319a7bcd",
+      "claims": [
+        {
+          "text": "The Onyx 2 camera",
+          "start": 0,
+          "end": 17,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:20838059deddca079bfd22dae215b0a64ffb74b0e4ddb9db4a225fb265bcf2dd",
+            "identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_654f1fb60f",
+              "field": "raw_title",
+              "quote": "Onyx 2 action camera"
+            }
+          ],
+          "reason": "The source title identifies Onyx 2 as a camera."
+        },
+        {
+          "text": "supports 4K video recording at 60 fps",
+          "start": 18,
+          "end": 55,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_594f7973ae39308dc68cdc075e0807778485250d88141a912dca837727b2283b"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_654f1fb60f",
+              "field": "raw_specs",
+              "quote": "4K60"
+            }
+          ],
+          "reason": "The supplied video-recording fact and raw specification support 4K at 60 fps."
+        },
+        {
+          "text": "and is waterproof up to 10 m",
+          "start": 56,
+          "end": 84,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_78f8981d2270447e0071e05fbac7fa1146d095184d0f09dc7107b8630b17557e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_654f1fb60f",
+              "field": "raw_specs",
+              "quote": "waterproof to 10m"
+            }
+          ],
+          "reason": "The source supports waterproofing to 10 m, and the claim preserves the supplied up-to qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"aee94a7fffc6e6cd022d841174bd1f54dcec27d052e2be34036e3cf2319a7bcd\",\"claims\":[{\"text\":\"The Onyx 2 camera\",\"start\":0,\"end\":17,\"verdict\":\"supported\",\"supportIds\":[\"identity:20838059deddca079bfd22dae215b0a64ffb74b0e4ddb9db4a225fb265bcf2dd\",\"identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_654f1fb60f\",\"field\":\"raw_title\",\"quote\":\"Onyx 2 action camera\"}],\"reason\":\"The source title identifies Onyx 2 as a camera.\"},{\"text\":\"supports 4K video recording at 60 fps\",\"start\":18,\"end\":55,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_594f7973ae39308dc68cdc075e0807778485250d88141a912dca837727b2283b\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_654f1fb60f\",\"field\":\"raw_specs\",\"quote\":\"4K60\"}],\"reason\":\"The supplied video-recording fact and raw specification support 4K at 60 fps.\"},{\"text\":\"and is waterproof up to 10 m\",\"start\":56,\"end\":84,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_78f8981d2270447e0071e05fbac7fa1146d095184d0f09dc7107b8630b17557e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_654f1fb60f\",\"field\":\"raw_specs\",\"quote\":\"waterproof to 10m\"}],\"reason\":\"The source supports waterproofing to 10 m, and the claim preserves the supplied up-to qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_00e332e953ad6b4d016aa2d9b04ae887d0884caddb1702f7b1",
+    "usage": {
+      "inputTokens": 1681,
+      "outputTokens": 453,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1678
+    }
+  }
+}

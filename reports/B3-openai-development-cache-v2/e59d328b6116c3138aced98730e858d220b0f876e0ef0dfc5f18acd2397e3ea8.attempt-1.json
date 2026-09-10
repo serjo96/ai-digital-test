@@ -1,0 +1,57 @@
+{
+  "elapsedMs": 5732.93541700003,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "3dc8d43633c26b0f42355c38d99baed884e43eebd5e910db7df9516e34e155f5",
+      "claims": [
+        {
+          "text": "The Slate 11",
+          "start": 0,
+          "end": 12,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:b818e42a09f9c272f5c72f34b56077565119d6f22ee6967c97e3a42490546d58"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_76b28cdc31",
+              "field": "raw_title",
+              "quote": "Slate 11 tablet"
+            }
+          ],
+          "reason": "The supplied model identity and raw title support the model name."
+        },
+        {
+          "text": " is a tablet.",
+          "start": 12,
+          "end": 25,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:19d895f16c76069b127e3932a3e2c182a2484afa2f2e6fae16e775c7a14f695c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_76b28cdc31",
+              "field": "raw_title",
+              "quote": "Slate 11 tablet"
+            }
+          ],
+          "reason": "The supplied type identity and raw title explicitly classify this model as a tablet; missing specifications do not undermine that classification."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"3dc8d43633c26b0f42355c38d99baed884e43eebd5e910db7df9516e34e155f5\",\"claims\":[{\"text\":\"The Slate 11\",\"start\":0,\"end\":12,\"verdict\":\"supported\",\"supportIds\":[\"identity:b818e42a09f9c272f5c72f34b56077565119d6f22ee6967c97e3a42490546d58\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_76b28cdc31\",\"field\":\"raw_title\",\"quote\":\"Slate 11 tablet\"}],\"reason\":\"The supplied model identity and raw title support the model name.\"},{\"text\":\" is a tablet.\",\"start\":12,\"end\":25,\"verdict\":\"supported\",\"supportIds\":[\"identity:19d895f16c76069b127e3932a3e2c182a2484afa2f2e6fae16e775c7a14f695c\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_76b28cdc31\",\"field\":\"raw_title\",\"quote\":\"Slate 11 tablet\"}],\"reason\":\"The supplied type identity and raw title explicitly classify this model as a tablet; missing specifications do not undermine that classification.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0318b0b6970bdc65016aa2d6af100087d094bcb63f9f0c6fe2",
+    "usage": {
+      "inputTokens": 749,
+      "outputTokens": 294,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

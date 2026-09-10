@@ -1,0 +1,79 @@
+{
+  "elapsedMs": 11530.870416999998,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "66d57343d13a778515a3f8ac681df7a636e06d9aabfcbd660c680a55f286bedd",
+      "claims": [
+        {
+          "text": "AeroBuds Pro",
+          "start": 0,
+          "end": 12,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:2a20192985e0a5cdc2916b2caff1566907d4d6202a13eeb29a6781140ae81fd4"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_bdbc045131",
+              "field": "raw_title",
+              "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+            }
+          ],
+          "reason": "The supplied model identity support identifies AeroBuds Pro."
+        },
+        {
+          "text": "includes",
+          "start": 13,
+          "end": 21,
+          "verdict": "unsupported",
+          "supportIds": [],
+          "decisionIds": [],
+          "evidence": [],
+          "reason": "Neither source row establishes that ear tips are included."
+        },
+        {
+          "text": "silicone",
+          "start": 22,
+          "end": 30,
+          "verdict": "unsupported",
+          "supportIds": [],
+          "decisionIds": [],
+          "evidence": [],
+          "reason": "No supplied source establishes the claimed ear-tip material."
+        },
+        {
+          "text": "replacement",
+          "start": 31,
+          "end": 42,
+          "verdict": "unsupported",
+          "supportIds": [],
+          "decisionIds": [],
+          "evidence": [],
+          "reason": "No supplied source describes replacement ear tips."
+        },
+        {
+          "text": "ear tips",
+          "start": 43,
+          "end": 51,
+          "verdict": "unsupported",
+          "supportIds": [],
+          "decisionIds": [],
+          "evidence": [],
+          "reason": "Ear tips are not identified as product contents in the supplied sources or allowed supports."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"66d57343d13a778515a3f8ac681df7a636e06d9aabfcbd660c680a55f286bedd\",\"claims\":[{\"text\":\"AeroBuds Pro\",\"start\":0,\"end\":12,\"verdict\":\"supported\",\"supportIds\":[\"identity:2a20192985e0a5cdc2916b2caff1566907d4d6202a13eeb29a6781140ae81fd4\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_bdbc045131\",\"field\":\"raw_title\",\"quote\":\"AeroBuds Pro True Wireless Earbuds - Black\"}],\"reason\":\"The supplied model identity support identifies AeroBuds Pro.\"},{\"text\":\"includes\",\"start\":13,\"end\":21,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[],\"reason\":\"Neither source row establishes that ear tips are included.\"},{\"text\":\"silicone\",\"start\":22,\"end\":30,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[],\"reason\":\"No supplied source establishes the claimed ear-tip material.\"},{\"text\":\"replacement\",\"start\":31,\"end\":42,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[],\"reason\":\"No supplied source describes replacement ear tips.\"},{\"text\":\"ear tips\",\"start\":43,\"end\":51,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[],\"reason\":\"Ear tips are not identified as product contents in the supplied sources or allowed supports.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0a748082641f442d016aa2d87fe5ec87d088e711bf1313d909",
+    "usage": {
+      "inputTokens": 2207,
+      "outputTokens": 493,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2204
+    }
+  }
+}

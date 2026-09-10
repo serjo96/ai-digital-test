@@ -1,0 +1,62 @@
+{
+  "elapsedMs": 6466.7148750000015,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "e1de269cb3778f97b9e87399db2c4b08015ed0c10722bad7027d70da7fa93b63",
+      "claims": [
+        {
+          "text": "AeroBuds Pro",
+          "start": 0,
+          "end": 12,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:2a20192985e0a5cdc2916b2caff1566907d4d6202a13eeb29a6781140ae81fd4"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_11bb99b2fa",
+              "field": "raw_title",
+              "quote": "Aerobuds PRO earbud, black, ANC"
+            },
+            {
+              "rowId": "row_bdbc045131",
+              "field": "raw_title",
+              "quote": "AeroBuds Pro True Wireless Earbuds - Black"
+            }
+          ],
+          "reason": "The supplied model identity and both raw titles identify AeroBuds Pro."
+        },
+        {
+          "text": "provides 20 hours of total playback with the case",
+          "start": 13,
+          "end": 62,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_608dc6f58cf4fdb5a2000d1f276ed04011d4e24fe807d3b661227c6ddaf908a0"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_11bb99b2fa",
+              "field": "raw_specs",
+              "quote": "20 hours playback (incl. charging case)"
+            }
+          ],
+          "reason": "The supplied runtime support states 20 hours including the charging case. The claim retains that condition and correctly describes combined playback, rather than earbuds-only runtime."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"e1de269cb3778f97b9e87399db2c4b08015ed0c10722bad7027d70da7fa93b63\",\"claims\":[{\"text\":\"AeroBuds Pro\",\"start\":0,\"end\":12,\"verdict\":\"supported\",\"supportIds\":[\"identity:2a20192985e0a5cdc2916b2caff1566907d4d6202a13eeb29a6781140ae81fd4\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_11bb99b2fa\",\"field\":\"raw_title\",\"quote\":\"Aerobuds PRO earbud, black, ANC\"},{\"rowId\":\"row_bdbc045131\",\"field\":\"raw_title\",\"quote\":\"AeroBuds Pro True Wireless Earbuds - Black\"}],\"reason\":\"The supplied model identity and both raw titles identify AeroBuds Pro.\"},{\"text\":\"provides 20 hours of total playback with the case\",\"start\":13,\"end\":62,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_608dc6f58cf4fdb5a2000d1f276ed04011d4e24fe807d3b661227c6ddaf908a0\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_11bb99b2fa\",\"field\":\"raw_specs\",\"quote\":\"20 hours playback (incl. charging case)\"}],\"reason\":\"The supplied runtime support states 20 hours including the charging case. The claim retains that condition and correctly describes combined playback, rather than earbuds-only runtime.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0be893c0946bd8fd016aa2d9151ac087d0962a71b6892bca6d",
+    "usage": {
+      "inputTokens": 2758,
+      "outputTokens": 351,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2755
+    }
+  }
+}

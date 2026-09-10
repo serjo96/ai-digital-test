@@ -1,0 +1,93 @@
+{
+  "elapsedMs": 8248.90191700001,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "bb4c03b01e89b44f21ad9269f37d7e9506144e1a802c447d5422c51994ab2810",
+      "claims": [
+        {
+          "text": "The Onyx 3",
+          "start": 0,
+          "end": 10,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:3ff90cbbb23f570707d3ce3f633a5088fe151fd9f4c44b1cde3d468eb08aeb58"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_5824054a52",
+              "field": "raw_title",
+              "quote": "ONYX 3 LAPTOP SLEEVE"
+            }
+          ],
+          "reason": "The supplied model identity supports Onyx 3."
+        },
+        {
+          "text": "laptop sleeve",
+          "start": 11,
+          "end": 24,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_5824054a52",
+              "field": "raw_title",
+              "quote": "ONYX 3 LAPTOP SLEEVE"
+            }
+          ],
+          "reason": "The supplied type identity identifies a laptop sleeve."
+        },
+        {
+          "text": "is made of neoprene",
+          "start": 25,
+          "end": 44,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_fe6af0a78e11fb1346945830722d38a4283c0cc95f1d8848df9dbc3b3c7cd909"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_5824054a52",
+              "field": "raw_specs",
+              "quote": "neoprene"
+            }
+          ],
+          "reason": "The material fact specifies neoprene."
+        },
+        {
+          "text": "and is compatible with 14 in devices",
+          "start": 45,
+          "end": 81,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_2a85b8213bad78a62f21e68c2065337e5fdd524beaacea2a96614d7d21d07bc9"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_5824054a52",
+              "field": "raw_specs",
+              "quote": "14in"
+            }
+          ],
+          "reason": "The supplied 14-inch display-size fact is qualified as compatible_device; the description preserves that compatibility scope."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"bb4c03b01e89b44f21ad9269f37d7e9506144e1a802c447d5422c51994ab2810\",\"claims\":[{\"text\":\"The Onyx 3\",\"start\":0,\"end\":10,\"verdict\":\"supported\",\"supportIds\":[\"identity:3ff90cbbb23f570707d3ce3f633a5088fe151fd9f4c44b1cde3d468eb08aeb58\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_5824054a52\",\"field\":\"raw_title\",\"quote\":\"ONYX 3 LAPTOP SLEEVE\"}],\"reason\":\"The supplied model identity supports Onyx 3.\"},{\"text\":\"laptop sleeve\",\"start\":11,\"end\":24,\"verdict\":\"supported\",\"supportIds\":[\"identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_5824054a52\",\"field\":\"raw_title\",\"quote\":\"ONYX 3 LAPTOP SLEEVE\"}],\"reason\":\"The supplied type identity identifies a laptop sleeve.\"},{\"text\":\"is made of neoprene\",\"start\":25,\"end\":44,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_fe6af0a78e11fb1346945830722d38a4283c0cc95f1d8848df9dbc3b3c7cd909\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_5824054a52\",\"field\":\"raw_specs\",\"quote\":\"neoprene\"}],\"reason\":\"The material fact specifies neoprene.\"},{\"text\":\"and is compatible with 14 in devices\",\"start\":45,\"end\":81,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_2a85b8213bad78a62f21e68c2065337e5fdd524beaacea2a96614d7d21d07bc9\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_5824054a52\",\"field\":\"raw_specs\",\"quote\":\"14in\"}],\"reason\":\"The supplied 14-inch display-size fact is qualified as compatible_device; the description preserves that compatibility scope.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0c80655deb4411f2016aa2da2acd7c87d0919b20005b282acb",
+    "usage": {
+      "inputTokens": 1664,
+      "outputTokens": 518,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1661
+    }
+  }
+}

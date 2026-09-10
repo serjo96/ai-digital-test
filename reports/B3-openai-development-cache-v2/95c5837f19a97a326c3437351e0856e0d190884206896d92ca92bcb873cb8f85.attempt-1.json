@@ -1,0 +1,67 @@
+{
+  "elapsedMs": 5677.205124999979,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "1c30898612e1003101496fae11ede5f878d7e3973e5f6b254843b8236deebcc1",
+      "claims": [
+        {
+          "text": "The Quill 3",
+          "start": 0,
+          "end": 11,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:6ec7f513a312e0908e167280bffbb424b8c80f86110cfb0310fe24191f9130b7"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4d609c9ff9",
+              "field": "raw_title",
+              "quote": "Quill 3 desk lamp"
+            },
+            {
+              "rowId": "row_6668f30f9e",
+              "field": "raw_title",
+              "quote": "QUILL 3 DESK LAMP"
+            }
+          ],
+          "reason": "Both supplied titles identify the model as Quill 3."
+        },
+        {
+          "text": " is a desk lamp.",
+          "start": 11,
+          "end": 27,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4d609c9ff9",
+              "field": "raw_title",
+              "quote": "Quill 3 desk lamp"
+            },
+            {
+              "rowId": "row_6668f30f9e",
+              "field": "raw_title",
+              "quote": "QUILL 3 DESK LAMP"
+            }
+          ],
+          "reason": "Both supplied titles explicitly describe the product as a desk lamp. Missing specifications do not undermine this title-supported classification."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"1c30898612e1003101496fae11ede5f878d7e3973e5f6b254843b8236deebcc1\",\"claims\":[{\"text\":\"The Quill 3\",\"start\":0,\"end\":11,\"verdict\":\"supported\",\"supportIds\":[\"identity:6ec7f513a312e0908e167280bffbb424b8c80f86110cfb0310fe24191f9130b7\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4d609c9ff9\",\"field\":\"raw_title\",\"quote\":\"Quill 3 desk lamp\"},{\"rowId\":\"row_6668f30f9e\",\"field\":\"raw_title\",\"quote\":\"QUILL 3 DESK LAMP\"}],\"reason\":\"Both supplied titles identify the model as Quill 3.\"},{\"text\":\" is a desk lamp.\",\"start\":11,\"end\":27,\"verdict\":\"supported\",\"supportIds\":[\"identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4d609c9ff9\",\"field\":\"raw_title\",\"quote\":\"Quill 3 desk lamp\"},{\"rowId\":\"row_6668f30f9e\",\"field\":\"raw_title\",\"quote\":\"QUILL 3 DESK LAMP\"}],\"reason\":\"Both supplied titles explicitly describe the product as a desk lamp. Missing specifications do not undermine this title-supported classification.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_090b20c163ba9786016aa2d76e261887d0b0ba1d1a1e2510e9",
+    "usage": {
+      "inputTokens": 978,
+      "outputTokens": 353,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

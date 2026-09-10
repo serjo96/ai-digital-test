@@ -1,0 +1,93 @@
+{
+  "elapsedMs": 15459.911166000005,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "e4531d27211a7e1ebc95c2a98249976f3dc6a9ad5ed01351fa1146204003e63b",
+      "claims": [
+        {
+          "text": "The Cobalt Pro",
+          "start": 0,
+          "end": 14,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:96d969e08edee1749289f9766f01002ff950b7a794566a04d22c86ae10e10169"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_b40060c12f",
+              "field": "raw_title",
+              "quote": "Cobalt Pro action camera"
+            }
+          ],
+          "reason": "The supplied model identity and raw title identify Cobalt Pro."
+        },
+        {
+          "text": " camera",
+          "start": 14,
+          "end": 21,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_b40060c12f",
+              "field": "raw_title",
+              "quote": "Cobalt Pro action camera"
+            }
+          ],
+          "reason": "The raw title identifies the product as a camera."
+        },
+        {
+          "text": " records video at 4K@60fps",
+          "start": 21,
+          "end": 47,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_f91d71a080aafe4c90f90d42bc2bf8c92d0cc1c3e69b8e4ab1d942aa52faf1b2"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_b40060c12f",
+              "field": "raw_specs",
+              "quote": "4K60"
+            }
+          ],
+          "reason": "The supplied video-recording support normalizes the raw specification 4K60 to 4K@60fps."
+        },
+        {
+          "text": " and is waterproof up to 10 m.",
+          "start": 47,
+          "end": 77,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_1d2e794ccdb45fe5c7a81253d7629309ab8c5cc67ac057fe832e11c986683517"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_b40060c12f",
+              "field": "raw_specs",
+              "quote": "waterproof to 10m"
+            }
+          ],
+          "reason": "The claim preserves the supplied waterproof depth of 10 m and its up-to qualification."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"e4531d27211a7e1ebc95c2a98249976f3dc6a9ad5ed01351fa1146204003e63b\",\"claims\":[{\"text\":\"The Cobalt Pro\",\"start\":0,\"end\":14,\"verdict\":\"supported\",\"supportIds\":[\"identity:96d969e08edee1749289f9766f01002ff950b7a794566a04d22c86ae10e10169\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_b40060c12f\",\"field\":\"raw_title\",\"quote\":\"Cobalt Pro action camera\"}],\"reason\":\"The supplied model identity and raw title identify Cobalt Pro.\"},{\"text\":\" camera\",\"start\":14,\"end\":21,\"verdict\":\"supported\",\"supportIds\":[\"identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_b40060c12f\",\"field\":\"raw_title\",\"quote\":\"Cobalt Pro action camera\"}],\"reason\":\"The raw title identifies the product as a camera.\"},{\"text\":\" records video at 4K@60fps\",\"start\":21,\"end\":47,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_f91d71a080aafe4c90f90d42bc2bf8c92d0cc1c3e69b8e4ab1d942aa52faf1b2\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_b40060c12f\",\"field\":\"raw_specs\",\"quote\":\"4K60\"}],\"reason\":\"The supplied video-recording support normalizes the raw specification 4K60 to 4K@60fps.\"},{\"text\":\" and is waterproof up to 10 m.\",\"start\":47,\"end\":77,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_1d2e794ccdb45fe5c7a81253d7629309ab8c5cc67ac057fe832e11c986683517\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_b40060c12f\",\"field\":\"raw_specs\",\"quote\":\"waterproof to 10m\"}],\"reason\":\"The claim preserves the supplied waterproof depth of 10 m and its up-to qualification.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_01e9e487ca8c53cf016aa2d64cf9c487d083a24b377be1f1d3",
+    "usage": {
+      "inputTokens": 892,
+      "outputTokens": 830,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "elapsedMs": 18100.338624999975,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "0c7763b946d56c8d5d222c8d208cebad2af4844cb0c7b7f108acc4f494301c0f",
+      "claims": [
+        {
+          "text": "The TaskFlow K2 is a",
+          "start": 0,
+          "end": 20,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:65b54d9a0a6996544dee0527d651d6ddbb4589df4749ca0c8c70fa06e0c57f82"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_64543589fc",
+              "field": "raw_title",
+              "quote": "TaskFlow K2 Mechanical Keyboard (brown switch)"
+            }
+          ],
+          "reason": "The title explicitly identifies the TaskFlow K2."
+        },
+        {
+          "text": "TKL",
+          "start": 21,
+          "end": 24,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_08fb0a8fd89d6a12f04f227e78074d157aca55f046dbb50d97b5b2c403b86edd"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_64543589fc",
+              "field": "raw_specs",
+              "quote": "TKL"
+            }
+          ],
+          "reason": "The specifications explicitly state TKL."
+        },
+        {
+          "text": "keyboard",
+          "start": 25,
+          "end": 33,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:c5b3ffa14216a45627966f254d05745076499ab48409fda17ed0cc166837807c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_64543589fc",
+              "field": "raw_title",
+              "quote": "TaskFlow K2 Mechanical Keyboard (brown switch)"
+            }
+          ],
+          "reason": "The title identifies the product as a keyboard."
+        },
+        {
+          "text": "with hot-swappable",
+          "start": 34,
+          "end": 52,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_dddf9982b1beb4a84f60ce3b35a5eaa2456c16d035cc7e4f90f68a70d9c8899c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_64543589fc",
+              "field": "raw_specs",
+              "quote": "hot-swap"
+            }
+          ],
+          "reason": "The hot-swap specification supports hot-swappable switches."
+        },
+        {
+          "text": "brown tactile switches",
+          "start": 53,
+          "end": 75,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_02e83e74faf3fe5e990cfc6adabbaca57d6f0fed00ead2fb0972fb2c5705d432"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_64543589fc",
+              "field": "raw_specs",
+              "quote": "brown tactile switches"
+            }
+          ],
+          "reason": "The exact phrase supports both the brown variant and tactile switches."
+        },
+        {
+          "text": "a USB-C connector",
+          "start": 77,
+          "end": 94,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_87455c8ecac168a558fdd1b770dfc9849acdf2e4d13d9866af4a4e80d700e6eb"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_64543589fc",
+              "field": "raw_specs",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The supplied connector fact and specifications identify USB-C."
+        },
+        {
+          "text": "and RGB backlighting",
+          "start": 96,
+          "end": 116,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_e8298bd23785ca6d9b56ca6bb2db426363cd867475c86eaf54a9eda7aa8a229e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_64543589fc",
+              "field": "raw_specs",
+              "quote": "RGB"
+            }
+          ],
+          "reason": "The supplied backlight fact identifies RGB, consistent with the second row's explicit RGB backlight specification."
+        }
+      ]
+    },
+    "raw": "{\n  \"textHash\": \"0c7763b946d56c8d5d222c8d208cebad2af4844cb0c7b7f108acc4f494301c0f\",\n  \"claims\": [\n    {\n      \"text\": \"The TaskFlow K2 is a\",\n      \"start\": 0,\n      \"end\": 20,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"identity:65b54d9a0a6996544dee0527d651d6ddbb4589df4749ca0c8c70fa06e0c57f82\"],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_64543589fc\",\n          \"field\": \"raw_title\",\n          \"quote\": \"TaskFlow K2 Mechanical Keyboard (brown switch)\"\n        }\n      ],\n      \"reason\": \"The title explicitly identifies the TaskFlow K2.\"\n    },\n    {\n      \"text\": \"TKL\",\n      \"start\": 21,\n      \"end\": 24,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"fact:fact_08fb0a8fd89d6a12f04f227e78074d157aca55f046dbb50d97b5b2c403b86edd\"],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_64543589fc\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"TKL\"\n        }\n      ],\n      \"reason\": \"The specifications explicitly state TKL.\"\n    },\n    {\n      \"text\": \"keyboard\",\n      \"start\": 25,\n      \"end\": 33,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"identity:c5b3ffa14216a45627966f254d05745076499ab48409fda17ed0cc166837807c\"],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_64543589fc\",\n          \"field\": \"raw_title\",\n          \"quote\": \"TaskFlow K2 Mechanical Keyboard (brown switch)\"\n        }\n      ],\n      \"reason\": \"The title identifies the product as a keyboard.\"\n    },\n    {\n      \"text\": \"with hot-swappable\",\n      \"start\": 34,\n      \"end\": 52,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"fact:fact_dddf9982b1beb4a84f60ce3b35a5eaa2456c16d035cc7e4f90f68a70d9c8899c\"],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_64543589fc\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"hot-swap\"\n        }\n      ],\n      \"reason\": \"The hot-swap specification supports hot-swappable switches.\"\n    },\n    {\n      \"text\": \"brown tactile switches\",\n      \"start\": 53,\n      \"end\": 75,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"fact:fact_02e83e74faf3fe5e990cfc6adabbaca57d6f0fed00ead2fb0972fb2c5705d432\"],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_64543589fc\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"brown tactile switches\"\n        }\n      ],\n      \"reason\": \"The exact phrase supports both the brown variant and tactile switches.\"\n    },\n    {\n      \"text\": \"a USB-C connector\",\n      \"start\": 77,\n      \"end\": 94,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"fact:fact_87455c8ecac168a558fdd1b770dfc9849acdf2e4d13d9866af4a4e80d700e6eb\"],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_64543589fc\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"USB-C\"\n        }\n      ],\n      \"reason\": \"The supplied connector fact and specifications identify USB-C.\"\n    },\n    {\n      \"text\": \"and RGB backlighting\",\n      \"start\": 96,\n      \"end\": 116,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\"fact:fact_e8298bd23785ca6d9b56ca6bb2db426363cd867475c86eaf54a9eda7aa8a229e\"],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_64543589fc\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"RGB\"\n        }\n      ],\n      \"reason\": \"The supplied backlight fact identifies RGB, consistent with the second row's explicit RGB backlight specification.\"\n    }\n  ]\n}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_066dc02f026d3759016aa2daa9e3b487d08b02a76414d8699e",
+    "usage": {
+      "inputTokens": 3454,
+      "outputTokens": 1160,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 3451
+    }
+  }
+}

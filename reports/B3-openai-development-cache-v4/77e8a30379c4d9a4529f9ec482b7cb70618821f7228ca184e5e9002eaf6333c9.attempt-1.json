@@ -1,0 +1,127 @@
+{
+  "elapsedMs": 14761.566417000024,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "26dc8c2c0655f1d70c21b72e5d53898ab199468615c756527a544bb2c4e0132e",
+      "claims": [
+        {
+          "text": "The Cobalt Pro is a",
+          "start": 0,
+          "end": 19,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:96d969e08edee1749289f9766f01002ff950b7a794566a04d22c86ae10e10169"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_6eddbd5517",
+              "field": "raw_title",
+              "quote": "Cobalt Pro USB-C hub"
+            },
+            {
+              "rowId": "row_f0ad473862",
+              "field": "raw_title",
+              "quote": "Cobalt Pro USB-C hub"
+            }
+          ],
+          "reason": "The supplied titles identify the model as Cobalt Pro."
+        },
+        {
+          "text": "7-in-1",
+          "start": 20,
+          "end": 26,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_4ad328740e2e56babfaa7c3f09271c6eb67704fa22c21517823d3f5eadee69bd"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_6eddbd5517",
+              "field": "raw_specs",
+              "quote": "7-in-1"
+            }
+          ],
+          "reason": "The multifunction count matches the raw specifications."
+        },
+        {
+          "text": "USB-C hub",
+          "start": 27,
+          "end": 36,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_7b25eb890990725eb96e0abad3b5ac67750cfb81a396492994397bcad044fe1b",
+            "identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_6eddbd5517",
+              "field": "raw_title",
+              "quote": "USB-C"
+            },
+            {
+              "rowId": "row_6eddbd5517",
+              "field": "raw_title",
+              "quote": "Cobalt Pro USB-C hub"
+            },
+            {
+              "rowId": "row_f0ad473862",
+              "field": "raw_title",
+              "quote": "Cobalt Pro USB-C hub"
+            }
+          ],
+          "reason": "The titles support both the connector and product type."
+        },
+        {
+          "text": "with 4K@30fps video output",
+          "start": 37,
+          "end": 63,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_783dfd466340bab2ab9d34f01e4199ac8dcb03fad8f01e1b3a0b5082aac58ebc"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_6eddbd5517",
+              "field": "raw_specs",
+              "quote": "4K30"
+            }
+          ],
+          "reason": "The allowed video-output support normalizes the raw HDMI 4K30 specification to 4K@30fps."
+        },
+        {
+          "text": "and 100 W power with PD passthrough",
+          "start": 64,
+          "end": 99,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_90630997f368b0ab0645c6440b10b735b0e18e6727244da9bba90dfde9903e74"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_6eddbd5517",
+              "field": "raw_specs",
+              "quote": "100W PD passthrough"
+            }
+          ],
+          "reason": "The power value matches the source and retains the PD passthrough qualification."
+        }
+      ]
+    },
+    "raw": "{\n  \"textHash\": \"26dc8c2c0655f1d70c21b72e5d53898ab199468615c756527a544bb2c4e0132e\",\n  \"claims\": [\n    {\n      \"text\": \"The Cobalt Pro is a\",\n      \"start\": 0,\n      \"end\": 19,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"identity:96d969e08edee1749289f9766f01002ff950b7a794566a04d22c86ae10e10169\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_6eddbd5517\",\n          \"field\": \"raw_title\",\n          \"quote\": \"Cobalt Pro USB-C hub\"\n        },\n        {\n          \"rowId\": \"row_f0ad473862\",\n          \"field\": \"raw_title\",\n          \"quote\": \"Cobalt Pro USB-C hub\"\n        }\n      ],\n      \"reason\": \"The supplied titles identify the model as Cobalt Pro.\"\n    },\n    {\n      \"text\": \"7-in-1\",\n      \"start\": 20,\n      \"end\": 26,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_4ad328740e2e56babfaa7c3f09271c6eb67704fa22c21517823d3f5eadee69bd\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_6eddbd5517\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"7-in-1\"\n        }\n      ],\n      \"reason\": \"The multifunction count matches the raw specifications.\"\n    },\n    {\n      \"text\": \"USB-C hub\",\n      \"start\": 27,\n      \"end\": 36,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_7b25eb890990725eb96e0abad3b5ac67750cfb81a396492994397bcad044fe1b\",\n        \"identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_6eddbd5517\",\n          \"field\": \"raw_title\",\n          \"quote\": \"USB-C\"\n        },\n        {\n          \"rowId\": \"row_6eddbd5517\",\n          \"field\": \"raw_title\",\n          \"quote\": \"Cobalt Pro USB-C hub\"\n        },\n        {\n          \"rowId\": \"row_f0ad473862\",\n          \"field\": \"raw_title\",\n          \"quote\": \"Cobalt Pro USB-C hub\"\n        }\n      ],\n      \"reason\": \"The titles support both the connector and product type.\"\n    },\n    {\n      \"text\": \"with 4K@30fps video output\",\n      \"start\": 37,\n      \"end\": 63,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_783dfd466340bab2ab9d34f01e4199ac8dcb03fad8f01e1b3a0b5082aac58ebc\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_6eddbd5517\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"4K30\"\n        }\n      ],\n      \"reason\": \"The allowed video-output support normalizes the raw HDMI 4K30 specification to 4K@30fps.\"\n    },\n    {\n      \"text\": \"and 100 W power with PD passthrough\",\n      \"start\": 64,\n      \"end\": 99,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_90630997f368b0ab0645c6440b10b735b0e18e6727244da9bba90dfde9903e74\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_6eddbd5517\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"100W PD passthrough\"\n        }\n      ],\n      \"reason\": \"The power value matches the source and retains the PD passthrough qualification.\"\n    }\n  ]\n}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0be04fed0924efe7016aa2da43e52887d0b6f738498afdd44e",
+    "usage": {
+      "inputTokens": 2167,
+      "outputTokens": 1065,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2164
+    }
+  }
+}

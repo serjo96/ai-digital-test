@@ -1,0 +1,94 @@
+{
+  "elapsedMs": 12909.441666999992,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "f69720ee174c0a3b43a23002cac28be38e1d368c19105b1a543e4bebb1dd93c2",
+      "claims": [
+        {
+          "text": "The Cobalt 3 scale",
+          "start": 0,
+          "end": 18,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7",
+            "identity:bd84167f97aa2cd9060ff648439b535b8940338bf14e1d69fd975e1b87226b53"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_71847a9c05",
+              "field": "raw_title",
+              "quote": "COBALT 3 SMART SCALE"
+            }
+          ],
+          "reason": "The raw title identifies the model as Cobalt 3 and the product type as a scale."
+        },
+        {
+          "text": " uses BIA, ",
+          "start": 18,
+          "end": 29,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_5488308e9afc1cafa6bcc4da3c1160aafdc16b863e2424c7951b770ff105c463"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_71847a9c05",
+              "field": "raw_specs",
+              "quote": "BIA"
+            }
+          ],
+          "reason": "The supplied specification explicitly lists BIA."
+        },
+        {
+          "text": "supports app sync, ",
+          "start": 29,
+          "end": 48,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_c800a8a100c7650a3750060785d41a9ef967dd3959bd8f6fbf9d524a30c12f6c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_71847a9c05",
+              "field": "raw_specs",
+              "quote": "app sync"
+            }
+          ],
+          "reason": "The supplied specification explicitly lists app sync."
+        },
+        {
+          "text": "and has a maximum load of 180 kg.",
+          "start": 48,
+          "end": 81,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_5f300d140b0014e3217226171d9e75a79aee5c3385ae21d9f8eb106845a647fc"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_71847a9c05",
+              "field": "raw_specs",
+              "quote": "180kg max"
+            }
+          ],
+          "reason": "The claim preserves the supplied maximum-load value, unit, and maximum qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"f69720ee174c0a3b43a23002cac28be38e1d368c19105b1a543e4bebb1dd93c2\",\"claims\":[{\"text\":\"The Cobalt 3 scale\",\"start\":0,\"end\":18,\"verdict\":\"supported\",\"supportIds\":[\"identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7\",\"identity:bd84167f97aa2cd9060ff648439b535b8940338bf14e1d69fd975e1b87226b53\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_71847a9c05\",\"field\":\"raw_title\",\"quote\":\"COBALT 3 SMART SCALE\"}],\"reason\":\"The raw title identifies the model as Cobalt 3 and the product type as a scale.\"},{\"text\":\" uses BIA, \",\"start\":18,\"end\":29,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_5488308e9afc1cafa6bcc4da3c1160aafdc16b863e2424c7951b770ff105c463\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_71847a9c05\",\"field\":\"raw_specs\",\"quote\":\"BIA\"}],\"reason\":\"The supplied specification explicitly lists BIA.\"},{\"text\":\"supports app sync, \",\"start\":29,\"end\":48,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_c800a8a100c7650a3750060785d41a9ef967dd3959bd8f6fbf9d524a30c12f6c\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_71847a9c05\",\"field\":\"raw_specs\",\"quote\":\"app sync\"}],\"reason\":\"The supplied specification explicitly lists app sync.\"},{\"text\":\"and has a maximum load of 180 kg.\",\"start\":48,\"end\":81,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_5f300d140b0014e3217226171d9e75a79aee5c3385ae21d9f8eb106845a647fc\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_71847a9c05\",\"field\":\"raw_specs\",\"quote\":\"180kg max\"}],\"reason\":\"The claim preserves the supplied maximum-load value, unit, and maximum qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_00547388b926fb43016aa2d536543487d0828059140983c84c",
+    "usage": {
+      "inputTokens": 993,
+      "outputTokens": 824,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "elapsedMs": 9066.828167000029,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "aac7efe2939fe3f5124aa075ee528ed81b6fdea6196464e8e4cc9b11dfd75b33",
+      "claims": [
+        {
+          "text": "The Cobalt 2 scale",
+          "start": 0,
+          "end": 18,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:e01b2462627df8ede2d1f554bdfbae44544b68c9ec828135c0d17397bd36bcd8",
+            "identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_e67082ee31",
+              "field": "raw_title",
+              "quote": "Cobalt 2 smart scale"
+            }
+          ],
+          "reason": "The source title identifies the model as Cobalt 2 and the product as a scale."
+        },
+        {
+          "text": "uses BIA",
+          "start": 19,
+          "end": 27,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_f11cfd8bb4cb1d9acf9a39e51e82bfd99bc5cd36c20aff6a94e493d239720d94"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_e67082ee31",
+              "field": "raw_specs",
+              "quote": "BIA"
+            }
+          ],
+          "reason": "The specifications state BIA as the body composition method."
+        },
+        {
+          "text": "supports app sync",
+          "start": 29,
+          "end": 46,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_e46ae8909129b022d3eefaf5cf367835be3d22756a0468007847364285fa6fa4"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_e67082ee31",
+              "field": "raw_specs",
+              "quote": "app sync"
+            }
+          ],
+          "reason": "The specifications explicitly list app sync."
+        },
+        {
+          "text": "and has a maximum load of 180 kg",
+          "start": 48,
+          "end": 80,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_0fa724f983ee3ad403f1e0950f44edc7df6a54ccac7c5310e85b7d0f95eb000f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_e67082ee31",
+              "field": "raw_specs",
+              "quote": "180kg max"
+            }
+          ],
+          "reason": "The stated load matches the source value and preserves its maximum qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"aac7efe2939fe3f5124aa075ee528ed81b6fdea6196464e8e4cc9b11dfd75b33\",\"claims\":[{\"text\":\"The Cobalt 2 scale\",\"start\":0,\"end\":18,\"verdict\":\"supported\",\"supportIds\":[\"identity:e01b2462627df8ede2d1f554bdfbae44544b68c9ec828135c0d17397bd36bcd8\",\"identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_e67082ee31\",\"field\":\"raw_title\",\"quote\":\"Cobalt 2 smart scale\"}],\"reason\":\"The source title identifies the model as Cobalt 2 and the product as a scale.\"},{\"text\":\"uses BIA\",\"start\":19,\"end\":27,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_f11cfd8bb4cb1d9acf9a39e51e82bfd99bc5cd36c20aff6a94e493d239720d94\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_e67082ee31\",\"field\":\"raw_specs\",\"quote\":\"BIA\"}],\"reason\":\"The specifications state BIA as the body composition method.\"},{\"text\":\"supports app sync\",\"start\":29,\"end\":46,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_e46ae8909129b022d3eefaf5cf367835be3d22756a0468007847364285fa6fa4\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_e67082ee31\",\"field\":\"raw_specs\",\"quote\":\"app sync\"}],\"reason\":\"The specifications explicitly list app sync.\"},{\"text\":\"and has a maximum load of 180 kg\",\"start\":48,\"end\":80,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_0fa724f983ee3ad403f1e0950f44edc7df6a54ccac7c5310e85b7d0f95eb000f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_e67082ee31\",\"field\":\"raw_specs\",\"quote\":\"180kg max\"}],\"reason\":\"The stated load matches the source value and preserves its maximum qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_07da2685fba22919016aa2dad3a1f087d0b0d71ec4f8b30bfc",
+    "usage": {
+      "inputTokens": 1738,
+      "outputTokens": 538,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1735
+    }
+  }
+}

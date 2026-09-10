@@ -1,0 +1,1415 @@
+{
+  "schemaVersion": "4",
+  "rulesVersion": "B3-v1",
+  "runId": "B3-openai-development-live-v4",
+  "createdAt": "2026-09-10T16:30:06.194Z",
+  "status": "success",
+  "mode": "live",
+  "code": {
+    "commit": "c9c76ca46689a260194191776271bee5464770cf",
+    "dirty": true,
+    "implementationHash": "d8f5d72a4686fb00b4de918e1eb5354f9299b0fc9fe5b5099e3b39af53abd3d8"
+  },
+  "config": {
+    "titleNormalization": "trim+collapse-whitespace+lowercase",
+    "dollarCurrency": "USD",
+    "split": "development",
+    "baseline": "b3",
+    "ai": {
+      "version": "B3-config-v1",
+      "generation": {
+        "provider": "openai",
+        "model": "gpt-5.6-sol",
+        "reasoning": "low",
+        "maxOutputTokens": 1024
+      },
+      "verifier": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "reasoning": "low",
+        "maxOutputTokens": 4096
+      },
+      "timeoutMs": 60000,
+      "maxRetries": 2,
+      "prices": [
+        {
+          "provider": "openai",
+          "model": "gpt-5.6-sol",
+          "inputPerMillion": 4,
+          "cachedInputPerMillion": 0.4,
+          "cacheWritePerMillion": 5,
+          "outputPerMillion": 20,
+          "maxInputTokens": 272000,
+          "source": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+          "checkedAt": "2026-09-10"
+        },
+        {
+          "provider": "openai",
+          "model": "gpt-6-astra",
+          "inputPerMillion": 10,
+          "cachedInputPerMillion": 1,
+          "cacheWritePerMillion": 12.5,
+          "outputPerMillion": 50,
+          "maxInputTokens": 272000,
+          "source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+          "checkedAt": "2026-09-10"
+        }
+      ]
+    },
+    "aiCohort": "development"
+  },
+  "hashes": {
+    "feed": "6b6ebc7a54ab90abae315abf5b145b22d9ef11d2c673f8feeeb245ee2808d6b6",
+    "taxonomy": "f5bff72b7e07c270a3acd6dcc3c3d0ef8e6237710f270de1874ebcebe9ae70aa",
+    "labels": "74a194210658f908dcee23f4d000d27b345f242bba9c583e808a1383b9665989",
+    "config": "2a0af9f03d1582e9021a0803302e41ce477af37849fe421f51077a0f2fe9cd61",
+    "checks": "3b1f1003325b434e024376f3e4901f11ad8d925878b5957508bbad8789bb20ca",
+    "claimChecks": "64f11bdced7910401cb402dae1c312cebd2dc2feeba00b3bda4ad49c6dfba092"
+  },
+  "audit": {
+    "inputRows": 220,
+    "accountedRows": 220,
+    "lostRows": 0,
+    "duplicateAssignments": 0,
+    "suppliers": 5,
+    "taxonomySize": 12,
+    "emptySpecs": 23,
+    "emptyTitles": 1,
+    "emptyPrices": 2,
+    "normalizedTitles": 169,
+    "nonProducts": 4,
+    "reviewRows": 64,
+    "groups": 156,
+    "groupedRows": 216,
+    "repeatedGroups": 56,
+    "priceStatuses": {
+      "parsed": 217,
+      "unknown_currency": 1,
+      "missing": 2
+    }
+  },
+  "checks": {
+    "status": "provisional",
+    "version": "stage2-dev-v1",
+    "categories": {
+      "numerator": 18,
+      "denominator": 18,
+      "value": 1
+    },
+    "facts": {
+      "numerator": 30,
+      "denominator": 30,
+      "value": 1
+    },
+    "reconciliation": {
+      "numerator": 4,
+      "denominator": 4,
+      "value": 1
+    },
+    "errors": []
+  },
+  "ai": {
+    "targetRows": 39,
+    "jobs": 86,
+    "failedJobs": 0,
+    "origin": "real",
+    "requestHashes": [
+      "55e5ad1f2439eadb7dc2e7d62f5525eba33ba80048a524aa8c29e60e83334bdc",
+      "d4a7dd0a69e12da8d063f3eb541acdd3f638ff02a7b33085aa7496a3245f34b2",
+      "93de9d1d9b495e20efcb2f6ed4969c36b0d99048c71b41623ee7d23cb0eda8fc",
+      "95afb744a573f7b0b75a72b3595825f7aff9a70ba33348b158a1399d7c15c393",
+      "1806786f62765a62590ccd6e0401f445469082bc18c4a96f1bcfba2168fcd3a7",
+      "4420a602c0f9d874f1f2367a4ba02b6a83513155bf6bfaee47f6461c9f199565",
+      "4fa7758920295cfca2608e388b3afec18637928b1595d4db1e7127a0ddcfc1d7",
+      "fd6e90dbb1861876a058a01d400ab2b21ca03d13adca7ccd6c4fc2a32920982c",
+      "34a3305f838999a15e06c85cda996e4cc3b85b603f0a394ab71a9a8755f7772a",
+      "e001157f61f8779afc722955aa58591eac4e8b874a03b914dfcc750b881a7490",
+      "fdce4df209bcb9dfd6528ef1d802932da5c44c07f06baf0eefb4c3911bec0f26",
+      "ebeb680c85c3af8bca5387e31011451d023ebd89721b4a0b4b5fe23664e7dde7",
+      "835aae2934284d01a9d9a5479cb76c86c4f0ac45e3d584852e0cd1dadb4d2856",
+      "dda43d8bac98fab9983090de2d026c7a037f45c10bbc21336076ec9c4938ea28",
+      "d3e7bccc35f121bc91142e6d30052c7f0029cab0fb6863144cb70cbec391e330",
+      "d017613bdd3a45ba44de84d43f700015b6c3494a78551e0e30e1c072b069edfe",
+      "51655741c261caa021f326720ef0baf72d39eff5b063d357911a88df0a35b782",
+      "3ba666d32b98f14e7204465a303788cd952fc23493600134d664ff27f162ab97",
+      "6820820ced0cb912ca3606f04a2378d23e2916a50308c0edea0152411d039a4a",
+      "def21410d983c4430ed1b6ba85bc92fd4a4a315a6554f959fc576a701f5f91c5",
+      "8941b45e3cf0cbed9276bd14970e4c4b6f1a3619560a9696520d6b9fb5de25ff",
+      "022d768c951f6ee53ab869e18adbf1fe5d4a3a1f4b8507bcd4b21d80a94b9012",
+      "23084203afc176b05c5ba6f425a0d5be2d4038b40eac723ebbf14796f1c1dad9",
+      "7dd68bb728960764d1697f083e27bdecd9df587206885f89f055821ba173b70f",
+      "2c0dfcfb3d2e0b4a08b47ce118634fe25c1140bab5d0dce2ff7a50c995292b9d",
+      "c7c3223567dc13bcba69900d60a424caf2933ec0236cdd347e2a7808f854c6d9",
+      "fc69b32c8b222b524fe05b0444f11e9c7cfded9b600ca2506acf4e4bba26e135",
+      "c2d4c08b24edb6ffa606ed45064e1c48b2eb1563f08bedc2acece710d696bf8c",
+      "1afdc7e765aa6a15b33ed317643a80f028c2bb3ec9872dac08a713969ad4ed53",
+      "46f863f73636b20e2038ae97080715b2641b4158dd13e7386034ce1c6b603268",
+      "149454176eed0c31e3a1e6e6074aa4ed157f0ef510a87d37cc5ab04050a24d7c",
+      "886490ac7a3044890b0ab8e4b35a058105d9f8c15250eb8a04a3363db25f51ad",
+      "add82151bad23b95a5b9be8b82e453a7445ea1caf2e5012a6c8853725bc42b36",
+      "d209b391d832a3c99a32b85c35bdfd4f9c34c4e7f9b514906833eac1f74fff6c",
+      "673fe4e87fdcf2b40bb7b2397059749315fe4cd841442841be4f0ba4cdc16671",
+      "0d9588f8cf13a50c53530f649f933237f72634229bf29df9c1a68e55c71804d9",
+      "30a8919fd34e63fd524787a13093f21d39036bca6798e3cd23e57dac19259a60",
+      "50149530e320e8bb515e00fb1940ace6b746506e7e3706ed54db23f10e957661",
+      "913b6fa64c08336324a592919521b9ac15ea647cf0e194052a557f5e6e8275b5",
+      "bd12f17f7f9b3dc097e974ef26e31e0c9fce2cce6051f444fb29a5720c4f416d",
+      "9e73266d124458d1aebf386a162a0ed7b9425f6b80ffa8060136517c2ff372f0",
+      "c170b95941312d05001e76b5f358d75ea7692a5d825fe93519b193ce9f8fe4a7",
+      "1572e230a57772a875de44d582d66b3d22da944d66b6c5a1cb0095609798a0d8",
+      "34416ab55230dd98e5cf21bcff797502c84ec04b2ba25d5577d648520ea614f7",
+      "e34938042e51b0b5b05034a474865a2c6ef5d996e91ee938dbef93959dc09afb",
+      "3c7f67fdcf793d832689bc0ecc6f4f9e83ed22b455dfe73cccbdde9f565f9ba6",
+      "c5462653638add391e6a8fec6a5836e90c083cc0dd45743cf996db5bddeb5504",
+      "319d3a33a2d0b801b7e6da1f1e66dbdbf77f56067125fe1c7411720694dc24a4",
+      "2864634da9d23af59a49d39bd6e4c2d8ec2f628340cdbcfec675a9b0ad3af43b",
+      "34ce750e7d4226c891654ed35d5d7dec6267faf1ec0ba94670ffefb7bc30fee3",
+      "2e3ae5c4edb37e50e86659d0a18538e9ccd3bee14c2ef650bc9158416638d268",
+      "4bc72cb9f940c39c865dc8a5c94d6864f68692213fd775e7c0d80a3f1a0e49d3",
+      "a47779388349147461e5146e12eabb79a9c370450065554ec6726edc336d4a98",
+      "de98c4499bd1eb1b16374319dfb52ff6e93acc2331596fb50bf110b20f45a3b4",
+      "aec435ce6094146a2f2ec6a5367860f7f9b7f206c4559cab1338e631f9e28395",
+      "77e8a30379c4d9a4529f9ec482b7cb70618821f7228ca184e5e9002eaf6333c9",
+      "31d2c588c8d195a074142349bf44f10282ed77e497633bb3438c565d3f9f90ac",
+      "3eb736ede5e40d12c0777a79ef7f43db27388410130622bba6b79148117650be",
+      "b9f8f222c8421121015f8ef6fe0dad2bd270ecd82288973cf60b8e131eb4871d",
+      "44f35d7c0026eb102b5db907150b076e049b67f04d5d047952762b2761575eef",
+      "0bf627eaba33440dd8975c550713b94f842822c4d3e6b2138dd62ed7a8452b26",
+      "ad7d43fec57e2dbd7ad065fd237c198a9188d389c7badc6abe51df6a19f19eea",
+      "d6a20198ceaf18d2a3a220c7aa3202822dd89918905d0181ff796eb8661170d9",
+      "5818b014479f4958d09813cd91f21c0351c0eee0574e607f93478a97f66d574c",
+      "f0e9478b2ab407c41dded82451754ee29b51c9713032070e496ad53d78ab6646",
+      "c6000b19103b3f50f3554a4a20dc986c79d17a9f4c5347ef3599adf0df5e8c51",
+      "737d96041a23845cd0760fc37c3ae71486985db05419706c76c1d7060664b4a3",
+      "19f7382f59b4779a2a9385b863489bea8316d55043307c7c91ca0c571d183141",
+      "e7768a819a883237849c1de81a240ef766616561019e1ffabd9a82edb48cab93",
+      "9180e3ad8cc80109f77331dc5f6fc9270c252f0ffd8e9c559952083436391c33",
+      "65d6c9b7db8c1b483a2cd2400f6265736dd4e2298f13e28390ff65a74baf012b",
+      "8b5e0172ae68ec96556cb47e3d432df3f8e37c85043989b5302d0638ec2d6fd5",
+      "e2dc6e73c0acfbdbd9359297ea24965503971873f7b22e78e19bfe8a29b94ea3",
+      "19a3000c8cced9c29886311e0dc90ba9f8aca2e20e5ce63d149c5d1b4511d616",
+      "a5fa666136ad02dfe2d6d37557ba0aec0c6b0170b8e007012447ab0348a5feea",
+      "c352f183ee9556eab4eba2a77d8a72318c670e404607224a51ae2eef9b0e5931",
+      "be88994b1225e3575202476df35bb8d09af4deaa7e17c2a815ceceec1131244b",
+      "a5bbf4387eba46b4b6a364ea5066b48e2beac96ee71d1d661ce2df07a3e30bda",
+      "5f5a081085a5382ce70e1f5db1093ce3270e5a89fb7d3f1a3d65ec6b308281b4",
+      "b12ac86298e6c76c1895afa85407448331a7594605671436429d369bbe82604d",
+      "370cecaecbe1685254c9096987a727dd4cfe41fe33743fb44e1b9a6462c9de2d",
+      "4251e2ebbc6c2a3ec6099a1c07688e242f6bea0f91eb1520fd45d0c26604bb49",
+      "aa789258dad3bc83957bda55d7f4245b811e789914fa887e641f29b5de691db8",
+      "c705e8946acc1f1b0c39d9cb2c5561484d35164dd3afdb51440c45197c60e6df",
+      "a9795e0d46e7ba666321fdc19ef8643a2be381b86dc7a6622a9d0c7c157acff4",
+      "237c89009f9c9ce9b212c5f08c1cfd7da1c8b62ee89838280833026668c776d6"
+    ],
+    "roles": {
+      "controlled_verification": {
+        "calls": 12,
+        "errors": 0,
+        "retries": 0,
+        "cacheHits": 0,
+        "inputTokens": 24237,
+        "outputTokens": 3986,
+        "tokens": 28223,
+        "cost": 0.5021725,
+        "jobs": 12,
+        "medianWallMs": 6244.822915999997,
+        "p95WallMs": 7386.647292
+      },
+      "generation": {
+        "calls": 37,
+        "errors": 0,
+        "retries": 0,
+        "cacheHits": 0,
+        "inputTokens": 27166,
+        "outputTokens": 1416,
+        "tokens": 28582,
+        "cost": 0.11190280000000001,
+        "jobs": 37,
+        "medianWallMs": 1937.392583000008,
+        "p95WallMs": 2953.858416999996
+      },
+      "verification": {
+        "calls": 37,
+        "errors": 0,
+        "retries": 0,
+        "cacheHits": 0,
+        "inputTokens": 72117,
+        "outputTokens": 22696,
+        "tokens": 94813,
+        "cost": 2.0334375000000002,
+        "jobs": 37,
+        "medianWallMs": 9013.772832999995,
+        "p95WallMs": 17800.581166999997
+      }
+    }
+  },
+  "timing": {
+    "protocol": "cli-through-result-v1",
+    "node": "v24.14.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "pipelineMs": 519859.379
+  },
+  "evaluation": {
+    "split": "development",
+    "status": "provisional",
+    "caseCount": 14,
+    "evaluatedRows": 59,
+    "tp": 17,
+    "fp": 0,
+    "fn": 0,
+    "precision": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1
+    },
+    "recall": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1
+    },
+    "unknownPairs": 2,
+    "unevaluatedPairs": [],
+    "errors": [],
+    "nonProducts": {
+      "correct": 59,
+      "checked": 59,
+      "errors": []
+    }
+  },
+  "generation": {
+    "products": 39,
+    "drafts": 37,
+    "ready": 37,
+    "withheld": 0,
+    "review": 2,
+    "coveredRows": 52,
+    "repairAttempted": 0,
+    "repairSucceeded": 0,
+    "reasons": {
+      "identity:incomplete_type_or_variant": 4
+    }
+  },
+  "verifier": {
+    "controlled": {
+      "status": "provisional",
+      "checked": 12,
+      "supported": {
+        "allowed": 7,
+        "total": 7,
+        "falseBlocks": 0
+      },
+      "unsupported": {
+        "blocked": 4,
+        "total": 4,
+        "leaked": 0
+      },
+      "disputed": {
+        "blocked": 1,
+        "total": 1,
+        "leaked": 0
+      },
+      "errors": []
+    },
+    "generated": {
+      "status": "not_evaluated",
+      "checkedPublishedClaims": 0,
+      "publishedClaimErrors": 0
+    }
+  },
+  "api": {
+    "calls": 86,
+    "errors": 0,
+    "retries": 0,
+    "cacheHits": 0,
+    "inputTokens": 123520,
+    "outputTokens": 28098,
+    "tokens": 151618,
+    "cost": 2.6475128000000003
+  },
+  "wallTimeMs": 519931.2525,
+  "decisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+  "publicationHash": "e478435a3d39afd21969ec549a47a41fb55dfa6c7f4cd4db48c2a71d01484ce3",
+  "metrics": [
+    {
+      "name": "accounting.coverage",
+      "numerator": 220,
+      "denominator": 220,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "accounting.duplicate_assignments",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "accounting.lost_rows",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.failed_jobs",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.role.controlled_verification.calls",
+      "value": 12,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.role.controlled_verification.cost",
+      "value": 0.5021725,
+      "numerator": null,
+      "denominator": null,
+      "unit": "USD",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.role.controlled_verification.errors",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.role.controlled_verification.jobs",
+      "value": 12,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.role.controlled_verification.median_wall",
+      "value": 6244.822915999997,
+      "numerator": null,
+      "denominator": null,
+      "unit": "ms",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.role.controlled_verification.p95_wall",
+      "value": 7386.647292,
+      "numerator": null,
+      "denominator": null,
+      "unit": "ms",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.role.controlled_verification.tokens",
+      "value": 28223,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.role.generation.calls",
+      "value": 37,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.role.generation.cost",
+      "value": 0.11190280000000001,
+      "numerator": null,
+      "denominator": null,
+      "unit": "USD",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.role.generation.errors",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.role.generation.jobs",
+      "value": 37,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.role.generation.median_wall",
+      "value": 1937.392583000008,
+      "numerator": null,
+      "denominator": null,
+      "unit": "ms",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.role.generation.p95_wall",
+      "value": 2953.858416999996,
+      "numerator": null,
+      "denominator": null,
+      "unit": "ms",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.role.generation.tokens",
+      "value": 28582,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.role.verification.calls",
+      "value": 37,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.role.verification.cost",
+      "value": 2.0334375000000002,
+      "numerator": null,
+      "denominator": null,
+      "unit": "USD",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.role.verification.errors",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.role.verification.jobs",
+      "value": 37,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.role.verification.median_wall",
+      "value": 9013.772832999995,
+      "numerator": null,
+      "denominator": null,
+      "unit": "ms",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.role.verification.p95_wall",
+      "value": 17800.581166999997,
+      "numerator": null,
+      "denominator": null,
+      "unit": "ms",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.role.verification.tokens",
+      "value": 94813,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "ai.target_rows",
+      "value": 39,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "api.cache_hits",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "api.calls",
+      "value": 86,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "api.cost",
+      "value": 2.6475128000000003,
+      "numerator": null,
+      "denominator": null,
+      "unit": "USD",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "api.errors",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "api.input_tokens",
+      "value": 123520,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "api.output_tokens",
+      "value": 28098,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "api.retries",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "api.tokens",
+      "value": 151618,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "categories.check_accuracy",
+      "numerator": 18,
+      "denominator": 18,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "errors.execution",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "errors.matching",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "errors.non_product",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "errors.quality_checks",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "facts.accepted_attributes",
+      "value": 392,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "facts.check_accuracy",
+      "numerator": 30,
+      "denominator": 30,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "facts.conflicts",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "facts.extracted",
+      "value": 545,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "facts.incomparable",
+      "value": 1,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "facts.unparsed_fragments",
+      "value": 43,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "input.rows",
+      "value": 220,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.candidate_recall",
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.false_merge",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.hard_negative_false_merges",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.hard_negative_specificity",
+      "numerator": 170,
+      "denominator": 170,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.missed_pair",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.negative_specificity",
+      "numerator": 1692,
+      "denominator": 1692,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.precision",
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.recall",
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.true_negative",
+      "value": 1692,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.true_positive",
+      "value": 17,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.unevaluated_attached_pairs",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "matching.unknown_pairs",
+      "value": 2,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "non_product.accuracy",
+      "numerator": 59,
+      "denominator": 59,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "non_product.false_rejection",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "non_product.missed_trash",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "non_product.precision",
+      "numerator": 4,
+      "denominator": 4,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "non_product.recall",
+      "numerator": 4,
+      "denominator": 4,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "non_product.rejected_rows",
+      "value": 4,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "non_product.true_negative",
+      "value": 55,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "non_product.true_positive",
+      "value": 4,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "non_product.valid_product_retention",
+      "numerator": 55,
+      "denominator": 55,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "products.count",
+      "value": 156,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "publication.covered_rows",
+      "value": 52,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "publication.drafts",
+      "value": 37,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "publication.products",
+      "value": 39,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "publication.ready",
+      "value": 37,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "publication.ready_rate",
+      "numerator": 37,
+      "denominator": 39,
+      "value": 0.9487179487179487,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "publication.reason.identity:incomplete_type_or_variant",
+      "value": 4,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "publication.repair_attempted",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "publication.repair_succeeded",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "publication.review",
+      "value": 2,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "publication.withheld",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "reconciliation.check_accuracy",
+      "numerator": 4,
+      "denominator": 4,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "review.category_items",
+      "value": 2,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.conflict_items",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.extraction_items",
+      "value": 38,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.identity_items",
+      "value": 2,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.incomparable_items",
+      "value": 1,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.items",
+      "value": 64,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.missing_specs_items",
+      "value": 21,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.product_rate",
+      "numerator": 51,
+      "denominator": 156,
+      "value": 0.3269230769230769,
+      "unit": "ratio",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.products",
+      "value": 51,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.fact_incomparable:power.items",
+      "value": 1,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.fact_incomparable:power.rows",
+      "value": 2,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.identity:incomplete_type_or_variant.items",
+      "value": 2,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.identity:incomplete_type_or_variant.rows",
+      "value": 3,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.missing_specs.items",
+      "value": 21,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.missing_specs.rows",
+      "value": 21,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.uncertain_category.items",
+      "value": 2,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.uncertain_category.rows",
+      "value": 2,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.unparsed_specs.items",
+      "value": 38,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.reason.unparsed_specs.rows",
+      "value": 38,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.row_rate",
+      "numerator": 64,
+      "denominator": 220,
+      "value": 0.2909090909090909,
+      "unit": "ratio",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "review.rows",
+      "value": 64,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "full_input",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "timing.pipeline",
+      "value": 519859.379,
+      "numerator": null,
+      "denominator": null,
+      "unit": "ms",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "timing.wall",
+      "value": 519931.2525,
+      "numerator": null,
+      "denominator": null,
+      "unit": "ms",
+      "scope": "run",
+      "qualityStatus": "not_applicable",
+      "availability": "measured"
+    },
+    {
+      "name": "verifier.controlled.disputed_leakage",
+      "numerator": 0,
+      "denominator": 1,
+      "value": 0,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "verifier.controlled.errors",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "verifier.controlled.false_block_rate",
+      "numerator": 0,
+      "denominator": 7,
+      "value": 0,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "verifier.controlled.unsupported_detection_recall",
+      "numerator": 4,
+      "denominator": 4,
+      "value": 1,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "provisional",
+      "availability": "measured"
+    },
+    {
+      "name": "verifier.generated.checked_published_claims",
+      "value": 0,
+      "numerator": null,
+      "denominator": null,
+      "unit": "count",
+      "scope": "development",
+      "qualityStatus": "not_evaluated",
+      "availability": "measured"
+    },
+    {
+      "name": "verifier.generated.published_claim_error_rate",
+      "numerator": 0,
+      "denominator": 0,
+      "value": null,
+      "unit": "ratio",
+      "scope": "development",
+      "qualityStatus": "not_evaluated",
+      "availability": "no_denominator"
+    }
+  ]
+}

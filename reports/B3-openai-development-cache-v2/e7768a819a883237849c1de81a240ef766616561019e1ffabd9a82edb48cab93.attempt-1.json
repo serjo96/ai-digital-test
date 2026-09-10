@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1810.3061659999657,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "Sony WH880N headphones feature noise cancelling, multipoint connectivity, and a foldable design. Battery runtime is 30 hours under unspecified usage conditions."
+    },
+    "raw": "{\"text\":\"Sony WH880N headphones feature noise cancelling, multipoint connectivity, and a foldable design. Battery runtime is 30 hours under unspecified usage conditions.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0fb88ffb30cff92c016aa2d6ece10487d0aff82b3fb1441700",
+    "usage": {
+      "inputTokens": 1114,
+      "outputTokens": 44,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1111
+    }
+  }
+}

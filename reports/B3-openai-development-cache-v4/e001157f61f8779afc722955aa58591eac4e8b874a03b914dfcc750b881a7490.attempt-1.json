@@ -1,0 +1,60 @@
+{
+  "elapsedMs": 6572.379333000004,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "e35628be577b6e9f9bc28964bcaaf0837f77bf4fa4930dc8bbe06d09aa7233b8",
+      "claims": [
+        {
+          "text": "Onyx Lite",
+          "start": 0,
+          "end": 9,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "256GB"
+            },
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "Onyx Lite microSD card 256GB"
+            }
+          ],
+          "reason": "The supplied model identity supports this name."
+        },
+        {
+          "text": "transfers data at 170 MB/s",
+          "start": 10,
+          "end": 36,
+          "verdict": "unsupported",
+          "supportIds": [],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_specs",
+              "quote": "up to 170MB/s"
+            }
+          ],
+          "reason": "The source specifies only an upper-bound speed, 'up to 170MB/s'. Removing 'up to' asserts an unqualified transfer speed that the source does not entail."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"e35628be577b6e9f9bc28964bcaaf0837f77bf4fa4930dc8bbe06d09aa7233b8\",\"claims\":[{\"text\":\"Onyx Lite\",\"start\":0,\"end\":9,\"verdict\":\"supported\",\"supportIds\":[\"identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite microSD card 256GB\"}],\"reason\":\"The supplied model identity supports this name.\"},{\"text\":\"transfers data at 170 MB/s\",\"start\":10,\"end\":36,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"The source specifies only an upper-bound speed, 'up to 170MB/s'. Removing 'up to' asserts an unqualified transfer speed that the source does not entail.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_03179e6fc105f4bb016aa2d94055f887d0b3a55a803dd05b49",
+    "usage": {
+      "inputTokens": 1689,
+      "outputTokens": 291,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1686
+    }
+  }
+}

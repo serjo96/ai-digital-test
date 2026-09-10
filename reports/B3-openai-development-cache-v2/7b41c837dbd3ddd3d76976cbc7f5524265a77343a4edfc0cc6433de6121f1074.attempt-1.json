@@ -1,0 +1,76 @@
+{
+  "elapsedMs": 14642.91154099995,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "d6bdd80b94097fe85c75e21d39ab3f86b809888d987f01c3cffb8e393369ef28",
+      "claims": [
+        {
+          "text": "The Cobalt X lamp",
+          "start": 0,
+          "end": 17,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d",
+            "identity:9fda85e220bcf0c9d9354cc04048fa012a4066350dd4c3a126ceca4801945688"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_b82f7fcc2a",
+              "field": "raw_title",
+              "quote": "Cobalt X desk lamp"
+            }
+          ],
+          "reason": "The raw title supports both the Cobalt X model identity and the lamp product type."
+        },
+        {
+          "text": " uses an LED light source",
+          "start": 17,
+          "end": 42,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_c1ded43eda686c735b2de8fc71e93581847968203d8f393370cf18a350fd50fd"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_b82f7fcc2a",
+              "field": "raw_specs",
+              "quote": "LED"
+            }
+          ],
+          "reason": "The supplied light_source support and raw specifications identify LED."
+        },
+        {
+          "text": " and has a USB-C connector.",
+          "start": 42,
+          "end": 69,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_d34a0ff9bcf546c5fcc7018c74cfd4db84183cdddb73f4867a0571104f266179"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_b82f7fcc2a",
+              "field": "raw_specs",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The supplied connector support and raw specifications identify USB-C."
+        }
+      ]
+    },
+    "raw": "{\n  \"textHash\": \"d6bdd80b94097fe85c75e21d39ab3f86b809888d987f01c3cffb8e393369ef28\",\n  \"claims\": [\n    {\n      \"text\": \"The Cobalt X lamp\",\n      \"start\": 0,\n      \"end\": 17,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d\",\n        \"identity:9fda85e220bcf0c9d9354cc04048fa012a4066350dd4c3a126ceca4801945688\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_b82f7fcc2a\",\n          \"field\": \"raw_title\",\n          \"quote\": \"Cobalt X desk lamp\"\n        }\n      ],\n      \"reason\": \"The raw title supports both the Cobalt X model identity and the lamp product type.\"\n    },\n    {\n      \"text\": \" uses an LED light source\",\n      \"start\": 17,\n      \"end\": 42,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_c1ded43eda686c735b2de8fc71e93581847968203d8f393370cf18a350fd50fd\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_b82f7fcc2a\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"LED\"\n        }\n      ],\n      \"reason\": \"The supplied light_source support and raw specifications identify LED.\"\n    },\n    {\n      \"text\": \" and has a USB-C connector.\",\n      \"start\": 42,\n      \"end\": 69,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_d34a0ff9bcf546c5fcc7018c74cfd4db84183cdddb73f4867a0571104f266179\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_b82f7fcc2a\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"USB-C\"\n        }\n      ],\n      \"reason\": \"The supplied connector support and raw specifications identify USB-C.\"\n    }\n  ]\n}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0cd929ef36eb6358016aa2d6047cd087d087eea4309017eb91",
+    "usage": {
+      "inputTokens": 954,
+      "outputTokens": 811,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

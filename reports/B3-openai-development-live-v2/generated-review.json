@@ -1,0 +1,1101 @@
+{
+  "version": "stage4-generated-review-v1",
+  "status": "provisional",
+  "publicationHash": "e8cd78fbc882c9f7d202a6f6494ee6db791f049a74e485db2025c933b25c5d88",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "claims": [
+    {
+      "productId": "product_0b218ba3bce177cf3237fd9ca8f09bedffc596afc87177663ce95ae38416913b",
+      "attempt": 1,
+      "claimId": "claim_41791c0d4fdee0104fb6ac3ed37b23633d66179d6ccf2d5ad3010bc289617e08",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_0b218ba3bce177cf3237fd9ca8f09bedffc596afc87177663ce95ae38416913b",
+      "attempt": 1,
+      "claimId": "claim_17a8acd7510afb573aa3b7e16972920699f2bd9768eb01181ba9bce742bdd91d",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_0b218ba3bce177cf3237fd9ca8f09bedffc596afc87177663ce95ae38416913b",
+      "attempt": 1,
+      "claimId": "claim_8253601febdd6f80375f8be99fde52e3b80d8db6aa5c0c72ebe1234af340ae22",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_0b218ba3bce177cf3237fd9ca8f09bedffc596afc87177663ce95ae38416913b",
+      "attempt": 1,
+      "claimId": "claim_3f132ed6754ba4e89d3f45ea4e3af710ce606f91e26e95b2cb11f8433501770a",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_13f90e6faf7b028dedcbf4a9666b157b09278c161316790de8416799d9dee2df",
+      "attempt": 1,
+      "claimId": "claim_8f3bfe972bbc14aabe9cbbd00ccf58f0e41b1de520f438b71c7feaf0f95be2d3",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_13f90e6faf7b028dedcbf4a9666b157b09278c161316790de8416799d9dee2df",
+      "attempt": 1,
+      "claimId": "claim_211d12a2674752a2a75a0711a7f0b38508b215f30d17ece5fa529e064d4bc168",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_13f90e6faf7b028dedcbf4a9666b157b09278c161316790de8416799d9dee2df",
+      "attempt": 1,
+      "claimId": "claim_2d633fe4f94c1d5f3340b854f8a6dd119f81167f2cbd93cd553cde6c914c49ed",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_13f90e6faf7b028dedcbf4a9666b157b09278c161316790de8416799d9dee2df",
+      "attempt": 1,
+      "claimId": "claim_41f63a03a979b7f3da5e4ef9405a57a900c448d00e2db7704c82fb31361da4f6",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_13f90e6faf7b028dedcbf4a9666b157b09278c161316790de8416799d9dee2df",
+      "attempt": 1,
+      "claimId": "claim_955fc851ed270ec00f35d981c096c560cbd41e448b99f9324631d47e943388f8",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_1c232e46b60cb27350cf18240cc7b90f64ca3ecc03b70ceb22549cc44de49aaa",
+      "attempt": 1,
+      "claimId": "claim_ff8060caab40c4c9fa3016cbccdcc833a078ba35d9ef3417ac66ab2327e54800",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_1c232e46b60cb27350cf18240cc7b90f64ca3ecc03b70ceb22549cc44de49aaa",
+      "attempt": 1,
+      "claimId": "claim_8510120666de0f220256049d65e9f1d5ec5cd216eb83830d540677cd71bbbf21",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_1c232e46b60cb27350cf18240cc7b90f64ca3ecc03b70ceb22549cc44de49aaa",
+      "attempt": 1,
+      "claimId": "claim_9577ae108035fe7e017eacad0c61b8dc6be3a214c3d081b46fa08773edf44f60",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_252c1a614d97a3282ebaceebd8075d02f15462a2fb0e667e4500ea9b10125aeb",
+      "attempt": 1,
+      "claimId": "claim_bf7e176be35d30c3b88576d136e2ee3f57fd1ce4143510f8c17d5751a05fa828",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_252c1a614d97a3282ebaceebd8075d02f15462a2fb0e667e4500ea9b10125aeb",
+      "attempt": 1,
+      "claimId": "claim_919e87cd97a3e951f4fcb15e97584dc22c1aa24025dd865799a3ddc8eaf1f159",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_29a6cd73bfa67681da62b49990cbb211b18e01ba88ec2a4326372242cf6327d0",
+      "attempt": 1,
+      "claimId": "claim_f2afdd591037331afd7bf5f5f0b7416cd5d4bc5d7034eede07afd87bebabf72c",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_29a6cd73bfa67681da62b49990cbb211b18e01ba88ec2a4326372242cf6327d0",
+      "attempt": 1,
+      "claimId": "claim_1942bab10f0c04b533257d0b8327f250d16cba54738a02a5fc56089f5dab978a",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_29a6cd73bfa67681da62b49990cbb211b18e01ba88ec2a4326372242cf6327d0",
+      "attempt": 1,
+      "claimId": "claim_157eaa8cf18b32dc8154c495c2a8d37f36402c8ace88d07bad44ae70fef61eea",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_29a6cd73bfa67681da62b49990cbb211b18e01ba88ec2a4326372242cf6327d0",
+      "attempt": 1,
+      "claimId": "claim_4c70609acf0dec767d3ab3e350dfe75ca4c1306f62a624a8b115e4a4e93afaf3",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_2d74339899e163b407d73a96c034f3fc9793f2b0a65e7ebb047d61440ddecec3",
+      "attempt": 1,
+      "claimId": "claim_3f8b2bd3d0c7840e457748fb516b8155b311ef96f2718cd16ccda69cc48ee7e0",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_2d74339899e163b407d73a96c034f3fc9793f2b0a65e7ebb047d61440ddecec3",
+      "attempt": 1,
+      "claimId": "claim_99e271a9cc579ba94f6c4d044a47740dffa50d4c79dc73bc8dc41a1d4ce870e3",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_2d74339899e163b407d73a96c034f3fc9793f2b0a65e7ebb047d61440ddecec3",
+      "attempt": 1,
+      "claimId": "claim_23dc06cf3840bcc0d9ccde6cb3ccb5fd16e913db61d166a94157463a9ed48131",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_2d74339899e163b407d73a96c034f3fc9793f2b0a65e7ebb047d61440ddecec3",
+      "attempt": 1,
+      "claimId": "claim_a9c685fe77997b271256df6f99b8bca192bed79a4c56f2620c0bc6ed23a39bea",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_2d74339899e163b407d73a96c034f3fc9793f2b0a65e7ebb047d61440ddecec3",
+      "attempt": 1,
+      "claimId": "claim_1be7666bc97162923529a537adb4ae110f870620861f5444228614c8f8e2879e",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_3aa2f8bca3c9e23b683af314ab6af5143a2091f008b93b78c509f1b89404d709",
+      "attempt": 1,
+      "claimId": "claim_c807ad9e077e9b2a83fdbcbc3c7ed17029b6d97df15139d31eb170a011a00244",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_3aa2f8bca3c9e23b683af314ab6af5143a2091f008b93b78c509f1b89404d709",
+      "attempt": 1,
+      "claimId": "claim_73d02161de7a8ed104f11e610405a1dd416b996717e86e72ec599ce59e0d03c1",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_3aa2f8bca3c9e23b683af314ab6af5143a2091f008b93b78c509f1b89404d709",
+      "attempt": 1,
+      "claimId": "claim_35a1a4722bcfd55a14c7e2431fdc8a3946a9d0af9961611dfb99831b54b353b6",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_3aa2f8bca3c9e23b683af314ab6af5143a2091f008b93b78c509f1b89404d709",
+      "attempt": 1,
+      "claimId": "claim_0c04c95a6fd11a93124e76c621595ba16cc9c14b9e49aa62046eb72417cc1ee1",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_3aa2f8bca3c9e23b683af314ab6af5143a2091f008b93b78c509f1b89404d709",
+      "attempt": 1,
+      "claimId": "claim_44090acb1835da948c0a4cbc6a80faa33bb1058211f2672790671abde7e3562c",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_3aa2f8bca3c9e23b683af314ab6af5143a2091f008b93b78c509f1b89404d709",
+      "attempt": 1,
+      "claimId": "claim_184b4c776f980314fc4e8b8c144f0994cde1237d400bbffcc27348ce65922aac",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_3c0cb67b0a3bcdcbb420d32f7b04efe5d3d0c3c54153c6d46053ac803270f47a",
+      "attempt": 1,
+      "claimId": "claim_6863885055744a7e386e0017a9a3f06ecf36ffc9413cc4067ee757b7e6618e58",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_3c0cb67b0a3bcdcbb420d32f7b04efe5d3d0c3c54153c6d46053ac803270f47a",
+      "attempt": 1,
+      "claimId": "claim_a99fb3e082550cbdeffa99027034dab8fd781fb0815a575ca919e4d4d8cd510d",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_3c0cb67b0a3bcdcbb420d32f7b04efe5d3d0c3c54153c6d46053ac803270f47a",
+      "attempt": 1,
+      "claimId": "claim_23d7292944101c8a28e51266707dfefa84b41a6df1526de3586678d6356ff575",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_408f0f01d1a87d83982d7cf170ff9c5dc1190065688df3ccb0f56a1438da199b",
+      "attempt": 1,
+      "claimId": "claim_4cfe90c4e4018933d3161486fb1614ea282c7f598cc01818531fe893a5d05d8b",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_408f0f01d1a87d83982d7cf170ff9c5dc1190065688df3ccb0f56a1438da199b",
+      "attempt": 1,
+      "claimId": "claim_4c38ef390b82d698a769e182fbdb360426cfa5d410df6d49119184df4e0d48bd",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_408f0f01d1a87d83982d7cf170ff9c5dc1190065688df3ccb0f56a1438da199b",
+      "attempt": 1,
+      "claimId": "claim_c4942af45fe46033a1c3ce46426b932c28945e875403ae4ad61cfd2128442eeb",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_4355321a7fc7c79c6d36dcc3e5b7c6a1e8071ea725e3513014cfc582762c33ba",
+      "attempt": 1,
+      "claimId": "claim_f88730b679793dbba5ae04c02001b98f9b41633102bfc3f2a30cc4faf665cce8",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_4355321a7fc7c79c6d36dcc3e5b7c6a1e8071ea725e3513014cfc582762c33ba",
+      "attempt": 1,
+      "claimId": "claim_b23c7afb40ae0b7ac554b02970f3d32b24ab23ea2b40924c4ac3d2f706983581",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_4355321a7fc7c79c6d36dcc3e5b7c6a1e8071ea725e3513014cfc582762c33ba",
+      "attempt": 1,
+      "claimId": "claim_8a12ab0224bab8336fe1a2438e49e40b2e8f106f394eb6b947648336b70e3688",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_4504127231e1d697e9308366a2a526cb77bae55fdfce0cedfbf501c043ebfe2f",
+      "attempt": 1,
+      "claimId": "claim_02768e11487e106c9611ae19ca16155d828ced9dc931d7029c39630802b166bc",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_4504127231e1d697e9308366a2a526cb77bae55fdfce0cedfbf501c043ebfe2f",
+      "attempt": 1,
+      "claimId": "claim_19a24e331be1740bf50c3c4dee5a035b6878223691ba466fb47a55188be31aff",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_4504127231e1d697e9308366a2a526cb77bae55fdfce0cedfbf501c043ebfe2f",
+      "attempt": 1,
+      "claimId": "claim_d8bf243769cf586d6744286b03e80c0b12ce2cb0f6cd94f08ee83bd0d15fafa6",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_4504127231e1d697e9308366a2a526cb77bae55fdfce0cedfbf501c043ebfe2f",
+      "attempt": 1,
+      "claimId": "claim_7b566bef5220f5077b4ffa404d01b7498157be185df10504d7927b91685752bb",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_46973d673a5601fdd85c69783c9d69c991bdd5afd782d837a5d21c0d3f20d681",
+      "attempt": 1,
+      "claimId": "claim_580a0c70e02363548d78387420934954ad0208accd5f414690d9a3ffb88aa951",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_46973d673a5601fdd85c69783c9d69c991bdd5afd782d837a5d21c0d3f20d681",
+      "attempt": 1,
+      "claimId": "claim_d9f0417711a85d6c92ce7e3fc40abded24d083ccdbb9a2807f7279910ddf99bc",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_46973d673a5601fdd85c69783c9d69c991bdd5afd782d837a5d21c0d3f20d681",
+      "attempt": 1,
+      "claimId": "claim_ddbbb42fcfccd4922c576ac8ff57ce0942600d3c83ec4805b4d7ed4336d0c184",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_46973d673a5601fdd85c69783c9d69c991bdd5afd782d837a5d21c0d3f20d681",
+      "attempt": 1,
+      "claimId": "claim_532200dd92cddf991c4d997bf7b11dc7167bf38104ca8ac42a2d5d626ea3eba9",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_46973d673a5601fdd85c69783c9d69c991bdd5afd782d837a5d21c0d3f20d681",
+      "attempt": 1,
+      "claimId": "claim_e125e16d96e339573ac782a52a579221b1337d826e19166d77df40c347b9cdae",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_541e18766fd9337c56b6f0dcb999eea80bb39bf98e0ecb083d64265bfc0e02f2",
+      "attempt": 1,
+      "claimId": "claim_dee640fdd65b6684e25d8e8c221164f673975a82d5c6816fcb882201385263b0",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_541e18766fd9337c56b6f0dcb999eea80bb39bf98e0ecb083d64265bfc0e02f2",
+      "attempt": 1,
+      "claimId": "claim_ca92034cd098b4367f01612c65159a1cd175a53208ae816e309b554a1a7c659f",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_541e18766fd9337c56b6f0dcb999eea80bb39bf98e0ecb083d64265bfc0e02f2",
+      "attempt": 1,
+      "claimId": "claim_eeeaa8fc8f6cbb04f2ad4d50cb3a1776368737c5ce9b0c1c772782c4fcd4a199",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_541e18766fd9337c56b6f0dcb999eea80bb39bf98e0ecb083d64265bfc0e02f2",
+      "attempt": 1,
+      "claimId": "claim_89a8a2e442bca1a28ec1946a0263422c4f4aade25adc0d880f491cda3b033f29",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_541e18766fd9337c56b6f0dcb999eea80bb39bf98e0ecb083d64265bfc0e02f2",
+      "attempt": 1,
+      "claimId": "claim_f7c9777dc30c1b79173bcd25f4bf40e421451e9e16ca55c6979a49c52a354a7c",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_611b26b106f1ad7d8f0807887a56027de9aaead61ae2bec632431cb37120ebb9",
+      "attempt": 1,
+      "claimId": "claim_fa77639cf10de31252520307fd945298290efe08da434d3c608f132980cf1013",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_611b26b106f1ad7d8f0807887a56027de9aaead61ae2bec632431cb37120ebb9",
+      "attempt": 1,
+      "claimId": "claim_eabd053fd96c413b56f371a8fc0327b232cf6a73e447fa48d962f400302f9c45",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_611b26b106f1ad7d8f0807887a56027de9aaead61ae2bec632431cb37120ebb9",
+      "attempt": 1,
+      "claimId": "claim_29ea78a83578300a56fcd1eedfac75a1ea41f1b646358f62e046a07a26e3611d",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_6b15d37d2e2526d8485f5266a6687fa580daa106273e16c19a49c6648e30f8d9",
+      "attempt": 1,
+      "claimId": "claim_0bbc5eb620c4306499e519025172ae1e47c1415ba4d0240eacf1c0be935ac623",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_6b15d37d2e2526d8485f5266a6687fa580daa106273e16c19a49c6648e30f8d9",
+      "attempt": 1,
+      "claimId": "claim_80cae2d2266963075b2bc0a23a91ebbf8e4476fb6cbebe6cd8e319d7ee10565d",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_6b15d37d2e2526d8485f5266a6687fa580daa106273e16c19a49c6648e30f8d9",
+      "attempt": 1,
+      "claimId": "claim_e4c5e539425dc481bc42165d800ec086a98f93ea5c7f2948bb5ef181cff9d16c",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_71ac1428088a14d4f20302d60b96f146f02a033cec210430c40ed761484cf388",
+      "attempt": 1,
+      "claimId": "claim_e26a86cc3917204e29092317bb3401dcde16b312b5da70a4f6481ec1019a934c",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_71ac1428088a14d4f20302d60b96f146f02a033cec210430c40ed761484cf388",
+      "attempt": 1,
+      "claimId": "claim_9877cdab8cc7d94e821550a307b5df863d90797dbc6ed2df52bd5b0d3e98b727",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_71ac1428088a14d4f20302d60b96f146f02a033cec210430c40ed761484cf388",
+      "attempt": 1,
+      "claimId": "claim_c7dd15f1b28a290fa7bff9734b3ebc6e2c87260ff767332e870bd6b573833f1b",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_71ac1428088a14d4f20302d60b96f146f02a033cec210430c40ed761484cf388",
+      "attempt": 1,
+      "claimId": "claim_fa4e854d87054ec4c123a4fcaede9cda1d9412b6e7c2ac5bf2deb01ee47ec343",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_78bce03424dfde8091eeacbaf6ef9e4a9cd2be50608abff576252f70b09d61c2",
+      "attempt": 1,
+      "claimId": "claim_81623411a74ff71d5dc1fa5617a92d3bbbe2a4dfbe36d8856a48a38a2fa71177",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_78bce03424dfde8091eeacbaf6ef9e4a9cd2be50608abff576252f70b09d61c2",
+      "attempt": 1,
+      "claimId": "claim_b396389b743abc0796592e9d96daf62c273f48df9bf6efc9d191b9afebbf89cf",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_78bce03424dfde8091eeacbaf6ef9e4a9cd2be50608abff576252f70b09d61c2",
+      "attempt": 1,
+      "claimId": "claim_3a76c31c42073b365b0345eca6a08e7c83cace66d94d96a50e5a04816b6174b6",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_822dabc399558eaa2acd65eecdc2592e75b4f8f8772eec7eff9f46a437cd0ff6",
+      "attempt": 1,
+      "claimId": "claim_18130c7f61ccda0585ed37b45b1f18a3b5a22f92aa074ca470127fc57adc78ec",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_822dabc399558eaa2acd65eecdc2592e75b4f8f8772eec7eff9f46a437cd0ff6",
+      "attempt": 1,
+      "claimId": "claim_f6204cd4b3b11ba39504c3fa391a3e70d14f2f7154fe7f59a90c846e510ecffd",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_822dabc399558eaa2acd65eecdc2592e75b4f8f8772eec7eff9f46a437cd0ff6",
+      "attempt": 1,
+      "claimId": "claim_ac2e1b466e2834e36691aca4cc3460f5ad0833aa9d60d5d1e8cc9fc267328e55",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_822dabc399558eaa2acd65eecdc2592e75b4f8f8772eec7eff9f46a437cd0ff6",
+      "attempt": 1,
+      "claimId": "claim_a671ea0915ff944f2f502ea7d9c7c84aebb8ad541d37385a7453bf009d070121",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_86dc978ab09e20de9215a879faba843953af38941c7e7184cce3c06f85eb4931",
+      "attempt": 1,
+      "claimId": "claim_6d8eb44d39e299bd17d61701698d1185a4111767fc056b177d7b9d2e87dc4882",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_86dc978ab09e20de9215a879faba843953af38941c7e7184cce3c06f85eb4931",
+      "attempt": 1,
+      "claimId": "claim_a4395b68593d2767052c443ffdcb7a47e289df79c8c94f2febb0f094924dfb1a",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_86dc978ab09e20de9215a879faba843953af38941c7e7184cce3c06f85eb4931",
+      "attempt": 1,
+      "claimId": "claim_78cfc60a844874b100d9b20672c40bf957fc5e3dd15ce1792545a0c2ada2d5d4",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_86dc978ab09e20de9215a879faba843953af38941c7e7184cce3c06f85eb4931",
+      "attempt": 1,
+      "claimId": "claim_c39e673b847b94de80b238ea690f741b4abb6cf2e94706fae4f4014a093074d9",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_872cb86804c10da3388b19cd9624af5d90e503cee7e1a72d0b4f2a988979b677",
+      "attempt": 1,
+      "claimId": "claim_b6a4082e6d2d3fd44218ed4794c135d16ebd6c600a53f874ffa2e70d55c77cfc",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_872cb86804c10da3388b19cd9624af5d90e503cee7e1a72d0b4f2a988979b677",
+      "attempt": 1,
+      "claimId": "claim_d1b21428d451097f0ee4e1fbc08691921882f40aee724593a3c46eb0ade0f3aa",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_872cb86804c10da3388b19cd9624af5d90e503cee7e1a72d0b4f2a988979b677",
+      "attempt": 1,
+      "claimId": "claim_271a2e42d8f04dc9d99d77983e4d2df4f91b9cd2c687a28a9c8db040d5e9da46",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_872cb86804c10da3388b19cd9624af5d90e503cee7e1a72d0b4f2a988979b677",
+      "attempt": 1,
+      "claimId": "claim_68a3218d0527b046b3c92d6abbee51798b07ee7b28b505882c8494b3920d5d9e",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_973254aec33b7639121ee0072aae4a9fccff862ba20ac2df091b35d80952885c",
+      "attempt": 1,
+      "claimId": "claim_2e80a358d8bdb553db5f0c36d8ee91bdf8dfb9be49f0136822e72ddf7bd11d62",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_973254aec33b7639121ee0072aae4a9fccff862ba20ac2df091b35d80952885c",
+      "attempt": 1,
+      "claimId": "claim_21fd61d6c0c24254d22f5c813700bbd6c8ea0a37a02c9c9ea3c7c9cd0050f9b1",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_973254aec33b7639121ee0072aae4a9fccff862ba20ac2df091b35d80952885c",
+      "attempt": 1,
+      "claimId": "claim_56f6ddd60828ce66e8cab6fc033972a3aa82e37d67e8242973484f45aa1c4881",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_973254aec33b7639121ee0072aae4a9fccff862ba20ac2df091b35d80952885c",
+      "attempt": 1,
+      "claimId": "claim_0e34659639347949c77335acaafa45e116c26db75ae75b703666a33ac7164b50",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_973254aec33b7639121ee0072aae4a9fccff862ba20ac2df091b35d80952885c",
+      "attempt": 1,
+      "claimId": "claim_d3fa7aec04bf32e382f7e5d98d8cc7b1c5a693a69fea4b7b5a06cf4265696e48",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_973254aec33b7639121ee0072aae4a9fccff862ba20ac2df091b35d80952885c",
+      "attempt": 1,
+      "claimId": "claim_d1a90b4dcf3b8631c90828893dbc6b7d75d9d9126cbc32ccb31231533ae7f6d1",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_97c45999f5d54a7d76bfca8e6f5bf874a4f666051b361c1c889a4c462bc7d7a2",
+      "attempt": 1,
+      "claimId": "claim_72e2a3dd4ef0621b1983f378cf0ee7722f5e45c708dcc35b13a8cdaa0cf888f4",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_97c45999f5d54a7d76bfca8e6f5bf874a4f666051b361c1c889a4c462bc7d7a2",
+      "attempt": 1,
+      "claimId": "claim_2914978a46b8d77b84b467fcb20fae1d2aad6c65a03f353fbfce998011c5d137",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_97c45999f5d54a7d76bfca8e6f5bf874a4f666051b361c1c889a4c462bc7d7a2",
+      "attempt": 1,
+      "claimId": "claim_2dce7af84b65e3b3b831e5a9d6d92b5c06c7aff2494337e28171010ef96a1540",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_97c45999f5d54a7d76bfca8e6f5bf874a4f666051b361c1c889a4c462bc7d7a2",
+      "attempt": 1,
+      "claimId": "claim_7293c77fcc374deecbda8c7f444b4da5beae47fedca6737cae08b88d7faa13c2",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_97c45999f5d54a7d76bfca8e6f5bf874a4f666051b361c1c889a4c462bc7d7a2",
+      "attempt": 1,
+      "claimId": "claim_5902dda52064d68fe8fd3d43f6456abd940493f0b8e3053e552204352b8aae55",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_97c45999f5d54a7d76bfca8e6f5bf874a4f666051b361c1c889a4c462bc7d7a2",
+      "attempt": 1,
+      "claimId": "claim_05ec894e3ccf34600a40be1c78b20b6bf682d3e386258416830e56321deffe06",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_9b41f3a7698cb87fb55f57fc7dfbef2d1fb0f225ad3ce7d256418fe2327ca5ae",
+      "attempt": 1,
+      "claimId": "claim_50f6c8c0fecb00a4dc54421932723a9518399c9d16bcacb041c43ed731599bd4",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_9b41f3a7698cb87fb55f57fc7dfbef2d1fb0f225ad3ce7d256418fe2327ca5ae",
+      "attempt": 1,
+      "claimId": "claim_d1faa505a8beb5231e6aedaa6db25804a6dcf6f4c1d9837f0d1b2f1c3f23729e",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_9b41f3a7698cb87fb55f57fc7dfbef2d1fb0f225ad3ce7d256418fe2327ca5ae",
+      "attempt": 1,
+      "claimId": "claim_77f5f4a273ecbbc9325433b00a5b08e2b477c4e87fe6d66ef4dea8dac0cb102f",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_a060e924b3a3ba56f84dff1b012d2daa12eecde4f9426a8f4d249f4969944e11",
+      "attempt": 1,
+      "claimId": "claim_ef97987b25d045d56422a4e00f7ab261cda14c198355c69ffebf6867802c991e",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_a060e924b3a3ba56f84dff1b012d2daa12eecde4f9426a8f4d249f4969944e11",
+      "attempt": 1,
+      "claimId": "claim_0aaa59d0a1c4e0e9bb97580fe790be9003bde4a919ead61bba78fa5f94754997",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_a060e924b3a3ba56f84dff1b012d2daa12eecde4f9426a8f4d249f4969944e11",
+      "attempt": 1,
+      "claimId": "claim_e36b223ad63c72e9882c643a4fbc20dd429b18ab9776a516fa0cb4860b8b2711",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_a1cb7545d898206a7af546b9023a4c5f4a1dd4e27fb564ca4f509d3073ea3f27",
+      "attempt": 1,
+      "claimId": "claim_17f1ce75eef4e4ad362f15c232ce0492eb549416774d0f8356e789fde4c99725",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_a1cb7545d898206a7af546b9023a4c5f4a1dd4e27fb564ca4f509d3073ea3f27",
+      "attempt": 1,
+      "claimId": "claim_3d149aadbce8a357fabc1da79e3df55b0852a702935da4f705cb0f072d630f0e",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_a4eeee9e507346c728aac241e97dfd41b247d822a0266331a83290f60fed0aba",
+      "attempt": 1,
+      "claimId": "claim_b4d4bddfbd368fb476f3294f6cbd52e3444bad7cb9b0d8f702280f56ddc2ec4e",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_a4eeee9e507346c728aac241e97dfd41b247d822a0266331a83290f60fed0aba",
+      "attempt": 1,
+      "claimId": "claim_96a959cf7de4c32b0bfb48399f2ee72d0579076231bbb0c5dd322c0ce6048d9b",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_a4eeee9e507346c728aac241e97dfd41b247d822a0266331a83290f60fed0aba",
+      "attempt": 1,
+      "claimId": "claim_79c41a7b811912ce0e9485a3f13760dd58e1c65d0ee9715122f321752f0dacad",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_a4eeee9e507346c728aac241e97dfd41b247d822a0266331a83290f60fed0aba",
+      "attempt": 1,
+      "claimId": "claim_7457102aa619a09afee4c974399a05a46aa440165279a1ec451c2833ec39c5e8",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_a4eeee9e507346c728aac241e97dfd41b247d822a0266331a83290f60fed0aba",
+      "attempt": 1,
+      "claimId": "claim_d68c95cb75b9167cf51e27ffe3f34c7f0dda7f161210cab7e7104fe77beeed86",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_a4eeee9e507346c728aac241e97dfd41b247d822a0266331a83290f60fed0aba",
+      "attempt": 1,
+      "claimId": "claim_0b181987bf35f527cb7217b158c0a1cd6d4855dfa4d5dfdf32abd02c285dc8ac",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_a4eeee9e507346c728aac241e97dfd41b247d822a0266331a83290f60fed0aba",
+      "attempt": 1,
+      "claimId": "claim_d700707e82818fdb57aeed53623ada4fc530c7133c5923659774e2166ee31843",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_ad720648626b6df4ec3f0d9db1dc939a0e0f83a61080d8cde8378a0243ca25af",
+      "attempt": 1,
+      "claimId": "claim_5aa257d53e4d0292468f9b5bc0c9dd4373edfac95ff7c5ee643586d8c3e95693",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_ad720648626b6df4ec3f0d9db1dc939a0e0f83a61080d8cde8378a0243ca25af",
+      "attempt": 1,
+      "claimId": "claim_a8629e533052bb0a8267b6b68fe30bb4f55a8b2e44de6af05fdae28303cec1e2",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_ad720648626b6df4ec3f0d9db1dc939a0e0f83a61080d8cde8378a0243ca25af",
+      "attempt": 1,
+      "claimId": "claim_49325fa8d796b2139af65e7182adbc07401b2e913f0a090aa7c42c3c7ec08560",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_b0598b678919ee91b417f322f20a657ef9a11b0d8ae99da6f4930d8c41fa3e4a",
+      "attempt": 1,
+      "claimId": "claim_9751a178c481442d432209ffdb174c69b211b53a73db3f761107df23872947e3",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_b0598b678919ee91b417f322f20a657ef9a11b0d8ae99da6f4930d8c41fa3e4a",
+      "attempt": 1,
+      "claimId": "claim_60879472adacb5d90f21f79605a94363c981e320b918ee9aac8d545c71c850ba",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_b0598b678919ee91b417f322f20a657ef9a11b0d8ae99da6f4930d8c41fa3e4a",
+      "attempt": 1,
+      "claimId": "claim_3a75c769154333fc2b9c0456ac9efbc6ec0fa472d4489f0b5295561d04246e81",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_b0598b678919ee91b417f322f20a657ef9a11b0d8ae99da6f4930d8c41fa3e4a",
+      "attempt": 1,
+      "claimId": "claim_0cda88af4be8030e053ab0aa15fe9f6458d648d9340ed1280f22acbe8aea4d9f",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_b0598b678919ee91b417f322f20a657ef9a11b0d8ae99da6f4930d8c41fa3e4a",
+      "attempt": 1,
+      "claimId": "claim_3d9b05ef18f7211229b46a429fc1986278043b3b0c881761dde1bff3abab9d3b",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_b721447e466c06e29b91ae0549145bf757a744c90dbffad97dc6adad90fb4c58",
+      "attempt": 1,
+      "claimId": "claim_5b5c483f13c4a4747e568683e50958e4305fdbd514def6cc903c55aefa9a34ad",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_b721447e466c06e29b91ae0549145bf757a744c90dbffad97dc6adad90fb4c58",
+      "attempt": 1,
+      "claimId": "claim_6dfe44c218b61c6bfec3eb4bf6c900725a7e8049326f965d16395b0fb2e6d632",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_b721447e466c06e29b91ae0549145bf757a744c90dbffad97dc6adad90fb4c58",
+      "attempt": 1,
+      "claimId": "claim_0ceea4dd68ef3d036c6a81c42fc8e5a89923e1d96e5b3643dc2d669cfa6fee73",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_b721447e466c06e29b91ae0549145bf757a744c90dbffad97dc6adad90fb4c58",
+      "attempt": 1,
+      "claimId": "claim_43f28bd756db8599372fd8f2aba043a1f2a113d40492f05418fab6e60415bf52",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_b721447e466c06e29b91ae0549145bf757a744c90dbffad97dc6adad90fb4c58",
+      "attempt": 1,
+      "claimId": "claim_8e1eae5340fc1aa617d389c989ca08c14121ad329dc826ebdf7626fd083b2410",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_b721447e466c06e29b91ae0549145bf757a744c90dbffad97dc6adad90fb4c58",
+      "attempt": 1,
+      "claimId": "claim_000cba5ea1471bffc26d52325be4777d00e37a4b90bb3ca3454828aa64d1cd1b",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_b721447e466c06e29b91ae0549145bf757a744c90dbffad97dc6adad90fb4c58",
+      "attempt": 1,
+      "claimId": "claim_24c031565f1b07c3d13dbee168cd6faace96196fed5c773e49f3adea571b43f3",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_b9e8a346ca6db2e74f436699a4943a60ea90e30aa73f2fd173c352c2c03a3337",
+      "attempt": 1,
+      "claimId": "claim_3bcaa783696667972211de0b9dba236f5eb1314b69cc6daa179b01ee02cc25ad",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_b9e8a346ca6db2e74f436699a4943a60ea90e30aa73f2fd173c352c2c03a3337",
+      "attempt": 1,
+      "claimId": "claim_52e22e770c49fb641627fb581600818601eef839389040b298a4e8387744596d",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_b9e8a346ca6db2e74f436699a4943a60ea90e30aa73f2fd173c352c2c03a3337",
+      "attempt": 1,
+      "claimId": "claim_a41fbb325ec094235d04000432cbf4dbb279b741bbd05fd6bbdd9d8c96e21114",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_b9e8a346ca6db2e74f436699a4943a60ea90e30aa73f2fd173c352c2c03a3337",
+      "attempt": 1,
+      "claimId": "claim_5e6b431598818b6d623a76f585ba02ce3adee1f0ee5ccad595e9fd37f35bc8d4",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_b9e8a346ca6db2e74f436699a4943a60ea90e30aa73f2fd173c352c2c03a3337",
+      "attempt": 1,
+      "claimId": "claim_a50628db4dfe85a406540006d7c1281a37de595ec20b4d1457d478a5bd157987",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_b9e8a346ca6db2e74f436699a4943a60ea90e30aa73f2fd173c352c2c03a3337",
+      "attempt": 1,
+      "claimId": "claim_ddbc569ee46c57d4296a70f3f897891ef645086adcea405a5884c94268dfe8b5",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_b9e8a346ca6db2e74f436699a4943a60ea90e30aa73f2fd173c352c2c03a3337",
+      "attempt": 1,
+      "claimId": "claim_08a34b0fe061e49340542eea6c6476d04bae50a10baea0ec4b5ff354a6ad9bb6",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_b9e8a346ca6db2e74f436699a4943a60ea90e30aa73f2fd173c352c2c03a3337",
+      "attempt": 1,
+      "claimId": "claim_b1b672989d82e8b063e7889298b7c972b379ed447626e6c9afb4685a10081aed",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_beb21df3d3688638af25926ec2121a565983d53127ef82331320ad3b42cfd85f",
+      "attempt": 1,
+      "claimId": "claim_3f5b0fc7f2d839d3a26313c56facb005064842d0eb2f916ce1d126b247f114fc",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_beb21df3d3688638af25926ec2121a565983d53127ef82331320ad3b42cfd85f",
+      "attempt": 1,
+      "claimId": "claim_ea2979899d67716326c5442caf2799d38fe3d16bf236c1661f41e0de0790213e",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_beb21df3d3688638af25926ec2121a565983d53127ef82331320ad3b42cfd85f",
+      "attempt": 1,
+      "claimId": "claim_4806e4a461cf809ffdb0f458a70a4d9cd789c5a668e8a5748d077a9eb36dd723",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_beb21df3d3688638af25926ec2121a565983d53127ef82331320ad3b42cfd85f",
+      "attempt": 1,
+      "claimId": "claim_59d4edce5ca2f65a0c0fc0bfcfb510f5eca2d28fb6ab83b0062612177e51f0ea",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_c16f9e204ee2133297a8c538830df691354f22e8946aef9631cba421b8187fd1",
+      "attempt": 1,
+      "claimId": "claim_df68b640d88c15c339affafaab0617aad53e29e191b75522b99d79e3f1b13a77",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_c16f9e204ee2133297a8c538830df691354f22e8946aef9631cba421b8187fd1",
+      "attempt": 1,
+      "claimId": "claim_6fa2eab15b698c7268a080be9fde4b036a83159da30f8278d93d585fd1bf5ba3",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_c16f9e204ee2133297a8c538830df691354f22e8946aef9631cba421b8187fd1",
+      "attempt": 1,
+      "claimId": "claim_8fefbba33a00b5edc54bd6724bd765c7ea7efccd0449e434789872cf98820737",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_c16f9e204ee2133297a8c538830df691354f22e8946aef9631cba421b8187fd1",
+      "attempt": 1,
+      "claimId": "claim_6601ce297bb3cf664f23c4cc3cf32729bdcaf182696b0bc7344ee39b0c7c5f73",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_c2bcd2e89ea2474173008eff733a2b53b4b3fc7af9800d7e0dc093f2e6e4631a",
+      "attempt": 1,
+      "claimId": "claim_d62b57173cc522832c8329a1203dfa38de68d827aeb9209659e311f5dac0e016",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_c2bcd2e89ea2474173008eff733a2b53b4b3fc7af9800d7e0dc093f2e6e4631a",
+      "attempt": 1,
+      "claimId": "claim_1c86e4ef32ab674540a307129adb82b90195956b7c5bf6a373e409056357a3a9",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_c2bcd2e89ea2474173008eff733a2b53b4b3fc7af9800d7e0dc093f2e6e4631a",
+      "attempt": 1,
+      "claimId": "claim_4c177a2c1caad7216b6f848bb52061af3b945c39643faebd64643bc5cd7974ee",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_c2bcd2e89ea2474173008eff733a2b53b4b3fc7af9800d7e0dc093f2e6e4631a",
+      "attempt": 1,
+      "claimId": "claim_4d0ad485b6223c6c780a9ab8d15271f4f9a6e18f78785ab7a288bdc12fd2669e",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_c4ce60c73af5dc3df7aa9b72735f613219097ac07c7a9818c04a4378367aa4d4",
+      "attempt": 1,
+      "claimId": "claim_57b271d36bbe56787e8b2ad7f50a870f5a2145769e82499bd8afc06beb765e84",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_c4ce60c73af5dc3df7aa9b72735f613219097ac07c7a9818c04a4378367aa4d4",
+      "attempt": 1,
+      "claimId": "claim_0617973b4b48771907bae77c311194958184e40493a658b5203fcc2dce9f3d06",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_c4ce60c73af5dc3df7aa9b72735f613219097ac07c7a9818c04a4378367aa4d4",
+      "attempt": 1,
+      "claimId": "claim_250695e3e5d6b01977a51b4bd5175721491ed92d8751b7b0d49e05d547fa655a",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_d61728331d68824684040c734fafb6aede33a7157f1a5e9a3a1d090f1afa490d",
+      "attempt": 1,
+      "claimId": "claim_f91bbafa9885353e466e1477e1794deda0f45fb48b13190105a8b2f002428ebc",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_d61728331d68824684040c734fafb6aede33a7157f1a5e9a3a1d090f1afa490d",
+      "attempt": 1,
+      "claimId": "claim_6c5218e1045f86891ba209808606bc6c6ed1bf29fbd7c0e5d066ff0e545ad122",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_d61728331d68824684040c734fafb6aede33a7157f1a5e9a3a1d090f1afa490d",
+      "attempt": 1,
+      "claimId": "claim_d56d2ebeba18cf07a7059ef691345dc2296296cac5572da66b1b5c9f8dd976ad",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_d61728331d68824684040c734fafb6aede33a7157f1a5e9a3a1d090f1afa490d",
+      "attempt": 1,
+      "claimId": "claim_e586258180d2ddbcd19e6599b0b7db0efb81db106e6b3c0944ce7edf65ba3478",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_d61728331d68824684040c734fafb6aede33a7157f1a5e9a3a1d090f1afa490d",
+      "attempt": 1,
+      "claimId": "claim_15d3bc646d25ba8ad30d8380ced58a10f77b584697aa359ac4422524d2b820dc",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_d61728331d68824684040c734fafb6aede33a7157f1a5e9a3a1d090f1afa490d",
+      "attempt": 1,
+      "claimId": "claim_a4c327fb2966c83739324188a98a7463d70ba367cf6addaccb55c31116dc56f5",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_e83a72dc635c2b3118fdc0f86b07a13e56278dad8a13ccadb16adbd8b9804fb1",
+      "attempt": 1,
+      "claimId": "claim_f4f70991b90035a2be30061fb0f8bddb751a7a34923775fa05d95d1cbb4e9405",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_e83a72dc635c2b3118fdc0f86b07a13e56278dad8a13ccadb16adbd8b9804fb1",
+      "attempt": 1,
+      "claimId": "claim_62ed73feb2fd18a550321da21b90a3f2d7c34e3c6c415f2a0ded368d3d1c0983",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_f4b0d32bf91a59ec3a03e73f4fe2fce247d0083a5589ebd2e071332537c25d5f",
+      "attempt": 1,
+      "claimId": "claim_72c893995d4a41f510a31033742b31b6be04e8de0fc67c11a518b55ba476792b",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_f4b0d32bf91a59ec3a03e73f4fe2fce247d0083a5589ebd2e071332537c25d5f",
+      "attempt": 1,
+      "claimId": "claim_404e217edeb05c7c434460c2c7b43d28ea0c4e45ddfb877c695f1e63376623d7",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_f4b0d32bf91a59ec3a03e73f4fe2fce247d0083a5589ebd2e071332537c25d5f",
+      "attempt": 1,
+      "claimId": "claim_5d1fa6d8991fb2e4098e6f46d7b708c3b1604471db2d577644937aaa8d426137",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_f4b0d32bf91a59ec3a03e73f4fe2fce247d0083a5589ebd2e071332537c25d5f",
+      "attempt": 1,
+      "claimId": "claim_340d3057c85fae0607424c1996aad15f62d7f6c6b1c78c1af5ccd1440e236dca",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_f4b0d32bf91a59ec3a03e73f4fe2fce247d0083a5589ebd2e071332537c25d5f",
+      "attempt": 1,
+      "claimId": "claim_79c5bba1f43389d7f5f463833283f24e3bd2e641eade3dcd2abe1786726fc545",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    },
+    {
+      "productId": "product_f4b0d32bf91a59ec3a03e73f4fe2fce247d0083a5589ebd2e071332537c25d5f",
+      "attempt": 1,
+      "claimId": "claim_d9ec778d00ef97fab3a031316dbfa6590c467645189464ef5132685fc2f8d24a",
+      "expectedVerdict": "supported",
+      "rationale": ""
+    }
+  ]
+}

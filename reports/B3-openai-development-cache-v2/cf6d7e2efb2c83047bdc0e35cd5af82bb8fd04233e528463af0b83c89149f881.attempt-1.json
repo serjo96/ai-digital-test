@@ -1,0 +1,112 @@
+{
+  "elapsedMs": 18395.97220800002,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "68f925982c9824a5607571cfdebe7a346a3717ae7f927b05fe61cc5a0f3b312a",
+      "claims": [
+        {
+          "text": "The LedgerLite Book 14 laptop",
+          "start": 0,
+          "end": 29,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:e18a666ca5783c55a87507243a0f787b7599ca626dec30fd92db753f4bfa5b19",
+            "identity:04c9caa40f99111a4ba883d5a2f2c161465e71950791dfded876b075b5b5bbee"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_87ace126d4",
+              "field": "raw_title",
+              "quote": "LedgerLite Book 14 Laptop"
+            }
+          ],
+          "reason": "The raw title directly identifies the model and product type."
+        },
+        {
+          "text": " has a 14 in display,",
+          "start": 29,
+          "end": 50,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_6ffa2345ec4c76c1e47e088855941c366d36a5004e0b7e7299b5a09413b408e4"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_87ace126d4",
+              "field": "raw_specs",
+              "quote": "14\" display"
+            }
+          ],
+          "reason": "The supplied display fact and raw specifications support a 14-inch display."
+        },
+        {
+          "text": " 16 GB of RAM,",
+          "start": 50,
+          "end": 64,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_008ad0eecc5c8ce908f75e7c13f9f9a9f18ce716ee6b26943e04763a4a6b4435"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_87ace126d4",
+              "field": "raw_specs",
+              "quote": "16 GB memory"
+            }
+          ],
+          "reason": "The supplied RAM fact is supported by the raw memory specification."
+        },
+        {
+          "text": " 512 GB of storage,",
+          "start": 64,
+          "end": 83,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_3205c59a09454966c22d66406e9480ffcbd9b315249c93430e1be8916100569c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_87ace126d4",
+              "field": "raw_specs",
+              "quote": "512 GB storage"
+            }
+          ],
+          "reason": "The storage capacity matches the raw specification."
+        },
+        {
+          "text": " and a mass of 1300 g.",
+          "start": 83,
+          "end": 105,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_fdcc5bb88eae2392d84bdfdc9efa0d2b109c655a1cde8a86dd6d5e1a0cc50aa9"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_92da044aa3",
+              "field": "raw_specs",
+              "quote": "1.3 kg"
+            }
+          ],
+          "reason": "The raw mass of 1.3 kg converts to 1300 g, matching the supplied mass fact."
+        }
+      ]
+    },
+    "raw": "{\n  \"textHash\": \"68f925982c9824a5607571cfdebe7a346a3717ae7f927b05fe61cc5a0f3b312a\",\n  \"claims\": [\n    {\n      \"text\": \"The LedgerLite Book 14 laptop\",\n      \"start\": 0,\n      \"end\": 29,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"identity:e18a666ca5783c55a87507243a0f787b7599ca626dec30fd92db753f4bfa5b19\",\n        \"identity:04c9caa40f99111a4ba883d5a2f2c161465e71950791dfded876b075b5b5bbee\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_87ace126d4\",\n          \"field\": \"raw_title\",\n          \"quote\": \"LedgerLite Book 14 Laptop\"\n        }\n      ],\n      \"reason\": \"The raw title directly identifies the model and product type.\"\n    },\n    {\n      \"text\": \" has a 14 in display,\",\n      \"start\": 29,\n      \"end\": 50,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_6ffa2345ec4c76c1e47e088855941c366d36a5004e0b7e7299b5a09413b408e4\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_87ace126d4\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"14\\\" display\"\n        }\n      ],\n      \"reason\": \"The supplied display fact and raw specifications support a 14-inch display.\"\n    },\n    {\n      \"text\": \" 16 GB of RAM,\",\n      \"start\": 50,\n      \"end\": 64,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_008ad0eecc5c8ce908f75e7c13f9f9a9f18ce716ee6b26943e04763a4a6b4435\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_87ace126d4\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"16 GB memory\"\n        }\n      ],\n      \"reason\": \"The supplied RAM fact is supported by the raw memory specification.\"\n    },\n    {\n      \"text\": \" 512 GB of storage,\",\n      \"start\": 64,\n      \"end\": 83,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_3205c59a09454966c22d66406e9480ffcbd9b315249c93430e1be8916100569c\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_87ace126d4\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"512 GB storage\"\n        }\n      ],\n      \"reason\": \"The storage capacity matches the raw specification.\"\n    },\n    {\n      \"text\": \" and a mass of 1300 g.\",\n      \"start\": 83,\n      \"end\": 105,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_fdcc5bb88eae2392d84bdfdc9efa0d2b109c655a1cde8a86dd6d5e1a0cc50aa9\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_92da044aa3\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"1.3 kg\"\n        }\n      ],\n      \"reason\": \"The raw mass of 1.3 kg converts to 1300 g, matching the supplied mass fact.\"\n    }\n  ]\n}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_047220292f481d58016aa2d57a80bc87d0ae5a9734a1f099b1",
+    "usage": {
+      "inputTokens": 1997,
+      "outputTokens": 1203,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1994
+    }
+  }
+}

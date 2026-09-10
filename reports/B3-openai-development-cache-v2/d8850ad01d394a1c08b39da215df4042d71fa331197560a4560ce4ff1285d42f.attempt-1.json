@@ -1,0 +1,93 @@
+{
+  "elapsedMs": 13497.879833999992,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "01c5bf4ef56a5617c6dc04e877b48e88dbc741848499325763cba572afefbd0a",
+      "claims": [
+        {
+          "text": "AeroBuds Pro",
+          "start": 0,
+          "end": 12,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:a252b0f02cb5d2f236ae37a5c50729bc24ce403337b3bb0eb2c51739a7d67093"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_fe3ff4b356",
+              "field": "raw_title",
+              "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+            }
+          ],
+          "reason": "The title explicitly identifies AeroBuds Pro."
+        },
+        {
+          "text": "replacement ear tips",
+          "start": 13,
+          "end": 33,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:e559f76edd417252ff095bbf8f508c219fdc1e3f2df3273d248d69fc5983d0b7"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_fe3ff4b356",
+              "field": "raw_title",
+              "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+            }
+          ],
+          "reason": "The title explicitly describes replacement ear tips."
+        },
+        {
+          "text": "in S, M, and L sizes",
+          "start": 34,
+          "end": 54,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:a252b0f02cb5d2f236ae37a5c50729bc24ce403337b3bb0eb2c51739a7d67093"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_fe3ff4b356",
+              "field": "raw_title",
+              "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+            }
+          ],
+          "reason": "The title supplies the S/M/L size designations."
+        },
+        {
+          "text": "made of silicone.",
+          "start": 56,
+          "end": 73,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_43fb367aa489e8f9c8eaacd719788c63cc70c03c5d586dd73526a11587d39ef9"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_fe3ff4b356",
+              "field": "raw_specs",
+              "quote": "Silicone"
+            }
+          ],
+          "reason": "The supplied material fact explicitly identifies silicone."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"01c5bf4ef56a5617c6dc04e877b48e88dbc741848499325763cba572afefbd0a\",\"claims\":[{\"text\":\"AeroBuds Pro\",\"start\":0,\"end\":12,\"verdict\":\"supported\",\"supportIds\":[\"identity:a252b0f02cb5d2f236ae37a5c50729bc24ce403337b3bb0eb2c51739a7d67093\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_fe3ff4b356\",\"field\":\"raw_title\",\"quote\":\"AeroBuds Pro replacement ear tips (S/M/L)\"}],\"reason\":\"The title explicitly identifies AeroBuds Pro.\"},{\"text\":\"replacement ear tips\",\"start\":13,\"end\":33,\"verdict\":\"supported\",\"supportIds\":[\"identity:e559f76edd417252ff095bbf8f508c219fdc1e3f2df3273d248d69fc5983d0b7\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_fe3ff4b356\",\"field\":\"raw_title\",\"quote\":\"AeroBuds Pro replacement ear tips (S/M/L)\"}],\"reason\":\"The title explicitly describes replacement ear tips.\"},{\"text\":\"in S, M, and L sizes\",\"start\":34,\"end\":54,\"verdict\":\"supported\",\"supportIds\":[\"identity:a252b0f02cb5d2f236ae37a5c50729bc24ce403337b3bb0eb2c51739a7d67093\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_fe3ff4b356\",\"field\":\"raw_title\",\"quote\":\"AeroBuds Pro replacement ear tips (S/M/L)\"}],\"reason\":\"The title supplies the S/M/L size designations.\"},{\"text\":\"made of silicone.\",\"start\":56,\"end\":73,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_43fb367aa489e8f9c8eaacd719788c63cc70c03c5d586dd73526a11587d39ef9\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_fe3ff4b356\",\"field\":\"raw_specs\",\"quote\":\"Silicone\"}],\"reason\":\"The supplied material fact explicitly identifies silicone.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0ecf054b4fa66b5f016aa2d56ae21887d08f10b62ed2e16af1",
+    "usage": {
+      "inputTokens": 923,
+      "outputTokens": 735,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

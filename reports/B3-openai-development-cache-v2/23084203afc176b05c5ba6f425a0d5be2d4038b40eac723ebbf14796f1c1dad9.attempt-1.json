@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2130.260083000001,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The LedgerLite Book 14 laptop has a 14 in display, 16 GB of RAM, 512 GB of storage, and a mass of 1300 g."
+    },
+    "raw": "{\"text\":\"The LedgerLite Book 14 laptop has a 14 in display, 16 GB of RAM, 512 GB of storage, and a mass of 1300 g.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0445fa64c7720a0e016aa2d57865cc87d083e1fa21ecdff0ac",
+    "usage": {
+      "inputTokens": 1573,
+      "outputTokens": 49,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1570
+    }
+  }
+}
