@@ -1,0 +1,22 @@
+{
+  "version": "stage4-claims-v1",
+  "status": "provisional",
+  "feedHash": "6b6ebc7a54ab90abae315abf5b145b22d9ef11d2c673f8feeeb245ee2808d6b6",
+  "b1DecisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "cases": [
+    { "id": "supported-sony-anc", "rowId": "row_1e60b0a9dc", "text": "Sony WH-880N supports active noise cancelling.", "expectedVerdict": "supported", "kind": "supported", "rationale": "ANC is an agreed product fact with source evidence." },
+    { "id": "supported-sony-battery", "rowId": "row_1e60b0a9dc", "text": "Sony WH-880N offers 30 hours of battery life.", "expectedVerdict": "supported", "kind": "supported", "rationale": "The product has an agreed 30 h battery_runtime observation." },
+    { "id": "supported-aerobuds-case", "rowId": "row_bdbc045131", "text": "AeroBuds Pro provides 20 hours of total playback with the case.", "expectedVerdict": "supported", "kind": "supported", "rationale": "The value, total-playback meaning and with_case condition are preserved." },
+    { "id": "supported-nimbus-mass", "rowId": "row_c2467f5304", "text": "Nimbus 2 weighs 1.2 kg.", "expectedVerdict": "supported", "kind": "supported", "rationale": "Mass observations reconcile under the documented rounding interval." },
+    { "id": "supported-nimbus-ip", "rowId": "row_c2467f5304", "text": "Nimbus 2 has an IP67 rating.", "expectedVerdict": "supported", "kind": "supported", "rationale": "IP67 is an agreed product fact." },
+    { "id": "supported-onyx-storage", "rowId": "row_4730fd8686", "text": "Onyx Lite is a 256 GB microSD card.", "expectedVerdict": "supported", "kind": "supported", "rationale": "Identity and 256 GB storage are supported by the title and accepted facts." },
+    { "id": "supported-onyx-speed", "rowId": "row_4730fd8686", "text": "Onyx Lite supports transfer speeds up to 170 MB/s.", "expectedVerdict": "supported", "kind": "supported", "rationale": "The upper-limit qualifier is retained." },
+    { "id": "unsupported-number", "rowId": "row_4730fd8686", "text": "Onyx Lite supports transfer speeds up to 180 MB/s.", "expectedVerdict": "unsupported", "kind": "different_number", "rationale": "The source says 170 MB/s, not 180 MB/s." },
+    { "id": "unsupported-foreign-accessory", "rowId": "row_bdbc045131", "text": "AeroBuds Pro includes silicone replacement ear tips.", "expectedVerdict": "unsupported", "kind": "foreign_characteristic", "rationale": "Silicone is evidenced for a separate accessory product, not this product." },
+    { "id": "unsupported-removed-limit", "rowId": "row_4730fd8686", "text": "Onyx Lite transfers data at 170 MB/s.", "expectedVerdict": "unsupported", "kind": "removed_qualifier", "rationale": "The claim removes the source's up-to qualifier." },
+    { "id": "unsupported-offer-scope", "rowId": "row_05e5d126cb", "text": "Sony WH-880N is an open-box product.", "expectedVerdict": "unsupported", "kind": "wrong_scope", "rationale": "OPEN BOX applies to one supplier offer, not the canonical product." },
+    { "id": "disputed-nimbus-power", "rowId": "row_c2467f5304", "text": "Nimbus 2 provides 12 W of output power.", "expectedVerdict": "disputed", "kind": "incomparable", "rationale": "Power observations are incomparable and purpose_unspecified does not establish output power." }
+  ]
+}
