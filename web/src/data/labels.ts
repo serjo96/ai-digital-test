@@ -179,3 +179,17 @@ export function evidenceFieldLabel(field: string): string {
       return field.replaceAll('_', ' ');
   }
 }
+
+/** Default short rationale written when the reviewer picks a verdict button. */
+export function defaultReviewRationale(verdict: string): string {
+  switch (verdict) {
+    case 'supported':
+      return 'Matches the supplier evidence.';
+    case 'unsupported':
+      return 'Does not match the supplier evidence.';
+    case 'disputed':
+      return 'Supplier sources conflict on this point.';
+    default:
+      return 'Reviewed against supplier evidence.';
+  }
+}

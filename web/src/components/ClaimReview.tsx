@@ -5,6 +5,7 @@ import { productDisplayName, type CatalogSnapshot, type ReviewClaim } from '../d
 import {
   aiVerdictPhrase,
   controlledKindLabel,
+  defaultReviewRationale,
   evidenceFieldLabel,
   verdictExplanation,
   verdictLabel,
@@ -203,6 +204,21 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
     }));
   }
 
+  /** Picking a verdict is the decision: write a default reason if empty so "checked" updates immediately. */
+  function chooseVerdict(id: string, value: Verdict) {
+    setGenerated(current => ({
+      ...current,
+      claims: current.claims.map(item => {
+        if (item.claimId !== id) return item;
+        return {
+          ...item,
+          expectedVerdict: value,
+          rationale: item.rationale.trim() ? item.rationale : defaultReviewRationale(value),
+        };
+      }),
+    }));
+  }
+
   function exportReview() {
     const complete = exportReady;
     const output: GeneratedReview = {
@@ -387,15 +403,18 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                         <div className="human-decision">
                           <fieldset className="verdict-picker">
                             <legend>Does the generated wording match the supplied data?</legend>
+                            <p className="muted verdict-picker-hint">
+                              Choose an option to mark this statement checked. A short reason is filled in — edit it if needed.
+                            </p>
                             <div className="verdict-options" role="radiogroup" aria-label="Your decision">
                               {VERDICTS.map(value => (
                                 <button
                                   key={value}
                                   type="button"
                                   role="radio"
-                                  aria-checked={human.expectedVerdict === value}
-                                  className={`verdict-option ${verdictClass(value)}${human.expectedVerdict === value ? ' selected' : ''}`}
-                                  onClick={() => updateClaim(activeClaim.id, { expectedVerdict: value })}
+                                  aria-checked={human.expectedVerdict === value && Boolean(human.rationale.trim())}
+                                  className={`verdict-option ${verdictClass(value)}${human.expectedVerdict === value && human.rationale.trim() ? ' selected' : ''}`}
+                                  onClick={() => chooseVerdict(activeClaim.id, value)}
                                 >
                                   <span className="verdict-option-label">{verdictLabel(value)}</span>
                                   <span className="verdict-option-hint">{verdictExplanation(value)}</span>
@@ -404,12 +423,17 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                             </div>
                           </fieldset>
                           <label>
-                            Why? Required to mark this as reviewed
+                            Why? (editable)
                             <textarea
                               value={human.rationale}
                               onChange={event => updateClaim(activeClaim.id, { rationale: event.target.value })}
-                              placeholder="Example: The feed says “180kg max”; the generated phrase keeps the same value, unit, and maximum qualifier."
+                              placeholder="Filled when you choose a decision. Add detail if the case is subtle."
                             />
+                            {!human.rationale.trim() ? (
+                              <span className="field-hint muted">Not checked yet — pick a decision above.</span>
+                            ) : (
+                              <span className="field-hint muted">Checked. Counter updates as soon as a decision is chosen.</span>
+                            )}
                           </label>
                           <div className="claim-stepper">
                             <button type="button" disabled={activeIndex <= 0} onClick={() => goToAdjacentClaim(-1)}>

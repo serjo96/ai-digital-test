@@ -6,6 +6,7 @@ import { productStatus } from '../src/data/catalog.ts';
 import { demoCatalog } from '../src/data/fixtures.ts';
 import {
   aiVerdictPhrase,
+  defaultReviewRationale,
   evidenceFieldLabel,
   formatReason,
   primaryReviewReason,
@@ -106,4 +107,10 @@ test('evidenceFieldLabel maps source fields to plain language', () => {
   assert.equal(evidenceFieldLabel('raw_title'), 'Supplier title');
   assert.equal(evidenceFieldLabel('raw_specs'), 'Supplier specs');
   assert.equal(evidenceFieldLabel('custom_field'), 'custom field');
+});
+
+test('defaultReviewRationale fills a short reason when a verdict is chosen', () => {
+  assert.equal(defaultReviewRationale('supported'), 'Matches the supplier evidence.');
+  assert.equal(defaultReviewRationale('unsupported'), 'Does not match the supplier evidence.');
+  assert.equal(defaultReviewRationale('disputed'), 'Supplier sources conflict on this point.');
 });
