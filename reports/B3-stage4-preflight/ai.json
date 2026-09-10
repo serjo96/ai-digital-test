@@ -1,0 +1,100 @@
+{
+  "version": "ai-trace-v1",
+  "config": {
+    "version": "B3-config-v1",
+    "generation": {
+      "provider": "openai",
+      "model": "gpt-5.6-sol",
+      "reasoning": "low",
+      "maxOutputTokens": 1024
+    },
+    "verifier": {
+      "provider": "openai",
+      "model": "gpt-6-astra",
+      "reasoning": "low",
+      "maxOutputTokens": 4096
+    },
+    "timeoutMs": 60000,
+    "maxRetries": 2,
+    "prices": [
+      {
+        "provider": "openai",
+        "model": "gpt-5.6-sol",
+        "inputPerMillion": 4,
+        "cachedInputPerMillion": 0.4,
+        "cacheWritePerMillion": 5,
+        "outputPerMillion": 20,
+        "maxInputTokens": 272000,
+        "source": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+        "checkedAt": "2026-09-10"
+      },
+      {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "inputPerMillion": 10,
+        "cachedInputPerMillion": 1,
+        "cacheWritePerMillion": 12.5,
+        "outputPerMillion": 50,
+        "maxInputTokens": 272000,
+        "source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+        "checkedAt": "2026-09-10"
+      }
+    ]
+  },
+  "records": [
+    {
+      "key": "3e804b87abe4efad4e661c7cd747ec87895f90a2834366b3584f532e642e3e3c",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_05e5d126cb",
+        "row_1e60b0a9dc",
+        "row_7f3f1b14c3"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 0,
+      "errors": 1,
+      "elapsedMs": 0.36366600000002336,
+      "status": "error",
+      "error": "auth",
+      "response": null,
+      "attemptUsage": [],
+      "attemptsLog": [],
+      "diagnostics": {
+        "transport": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    }
+  ]
+}
