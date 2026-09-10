@@ -1,0 +1,541 @@
+{
+  "before": "B1-stage5-control",
+  "after": "B1-stage5-repeat",
+  "comparable": true,
+  "incompatible": [],
+  "interpretation": "Saved run comparison",
+  "qualityStatus": "provisional",
+  "beforeMetrics": {
+    "inputRows": 220,
+    "accountedRows": 220,
+    "lostRows": 0,
+    "duplicateAssignments": 0,
+    "groups": 156,
+    "nonProducts": 4,
+    "reviewRows": 64,
+    "tp": 17,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1,
+    "recall": 1
+  },
+  "afterMetrics": {
+    "inputRows": 220,
+    "accountedRows": 220,
+    "lostRows": 0,
+    "duplicateAssignments": 0,
+    "groups": 156,
+    "nonProducts": 4,
+    "reviewRows": 64,
+    "tp": 17,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1,
+    "recall": 1
+  },
+  "deltas": {
+    "inputRows": 0,
+    "accountedRows": 0,
+    "lostRows": 0,
+    "duplicateAssignments": 0,
+    "groups": 0,
+    "nonProducts": 0,
+    "reviewRows": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 0,
+    "precision": 0,
+    "recall": 0
+  },
+  "decisionsEqual": true,
+  "changedRowIds": [],
+  "changedMatchingRowIds": [],
+  "metricDeltas": [
+    {
+      "name": "accounting.coverage",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "accounting.duplicate_assignments",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "accounting.lost_rows",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "ai.failed_jobs",
+      "before": null,
+      "after": null,
+      "delta": null
+    },
+    {
+      "name": "ai.target_rows",
+      "before": null,
+      "after": null,
+      "delta": null
+    },
+    {
+      "name": "api.cache_hits",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "api.calls",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "api.cost",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "api.errors",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "api.input_tokens",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "api.output_tokens",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "api.retries",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "api.tokens",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "categories.check_accuracy",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "errors.execution",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "errors.matching",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "errors.non_product",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "errors.quality_checks",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "facts.accepted_attributes",
+      "before": 392,
+      "after": 392,
+      "delta": 0
+    },
+    {
+      "name": "facts.check_accuracy",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "facts.conflicts",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "facts.extracted",
+      "before": 545,
+      "after": 545,
+      "delta": 0
+    },
+    {
+      "name": "facts.incomparable",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "facts.unparsed_fragments",
+      "before": 43,
+      "after": 43,
+      "delta": 0
+    },
+    {
+      "name": "generation.quality",
+      "before": null,
+      "after": null,
+      "delta": null
+    },
+    {
+      "name": "input.rows",
+      "before": 220,
+      "after": 220,
+      "delta": 0
+    },
+    {
+      "name": "matching.candidate_recall",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "matching.false_merge",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "matching.hard_negative_false_merges",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "matching.hard_negative_specificity",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "matching.missed_pair",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "matching.negative_specificity",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "matching.precision",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "matching.recall",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "matching.true_negative",
+      "before": 1692,
+      "after": 1692,
+      "delta": 0
+    },
+    {
+      "name": "matching.true_positive",
+      "before": 17,
+      "after": 17,
+      "delta": 0
+    },
+    {
+      "name": "matching.unevaluated_attached_pairs",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "matching.unknown_pairs",
+      "before": 2,
+      "after": 2,
+      "delta": 0
+    },
+    {
+      "name": "non_product.accuracy",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "non_product.false_rejection",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "non_product.missed_trash",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "non_product.precision",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "non_product.recall",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "non_product.rejected_rows",
+      "before": 4,
+      "after": 4,
+      "delta": 0
+    },
+    {
+      "name": "non_product.true_negative",
+      "before": 55,
+      "after": 55,
+      "delta": 0
+    },
+    {
+      "name": "non_product.true_positive",
+      "before": 4,
+      "after": 4,
+      "delta": 0
+    },
+    {
+      "name": "non_product.valid_product_retention",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "products.count",
+      "before": 156,
+      "after": 156,
+      "delta": 0
+    },
+    {
+      "name": "reconciliation.check_accuracy",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "review.category_items",
+      "before": 2,
+      "after": 2,
+      "delta": 0
+    },
+    {
+      "name": "review.conflict_items",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "review.extraction_items",
+      "before": 38,
+      "after": 38,
+      "delta": 0
+    },
+    {
+      "name": "review.identity_items",
+      "before": 2,
+      "after": 2,
+      "delta": 0
+    },
+    {
+      "name": "review.incomparable_items",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "review.items",
+      "before": 64,
+      "after": 64,
+      "delta": 0
+    },
+    {
+      "name": "review.missing_specs_items",
+      "before": 21,
+      "after": 21,
+      "delta": 0
+    },
+    {
+      "name": "review.product_rate",
+      "before": 0.3269230769230769,
+      "after": 0.3269230769230769,
+      "delta": 0
+    },
+    {
+      "name": "review.products",
+      "before": 51,
+      "after": 51,
+      "delta": 0
+    },
+    {
+      "name": "review.reason.fact_incomparable:power.items",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "review.reason.fact_incomparable:power.rows",
+      "before": 2,
+      "after": 2,
+      "delta": 0
+    },
+    {
+      "name": "review.reason.identity:incomplete_type_or_variant.items",
+      "before": 2,
+      "after": 2,
+      "delta": 0
+    },
+    {
+      "name": "review.reason.identity:incomplete_type_or_variant.rows",
+      "before": 3,
+      "after": 3,
+      "delta": 0
+    },
+    {
+      "name": "review.reason.missing_specs.items",
+      "before": 21,
+      "after": 21,
+      "delta": 0
+    },
+    {
+      "name": "review.reason.missing_specs.rows",
+      "before": 21,
+      "after": 21,
+      "delta": 0
+    },
+    {
+      "name": "review.reason.uncertain_category.items",
+      "before": 2,
+      "after": 2,
+      "delta": 0
+    },
+    {
+      "name": "review.reason.uncertain_category.rows",
+      "before": 2,
+      "after": 2,
+      "delta": 0
+    },
+    {
+      "name": "review.reason.unparsed_specs.items",
+      "before": 38,
+      "after": 38,
+      "delta": 0
+    },
+    {
+      "name": "review.reason.unparsed_specs.rows",
+      "before": 38,
+      "after": 38,
+      "delta": 0
+    },
+    {
+      "name": "review.row_rate",
+      "before": 0.2909090909090909,
+      "after": 0.2909090909090909,
+      "delta": 0
+    },
+    {
+      "name": "review.rows",
+      "before": 64,
+      "after": 64,
+      "delta": 0
+    },
+    {
+      "name": "semantic.categories",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "semantic.correct_additions",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "semantic.missed_additions",
+      "before": 11,
+      "after": 11,
+      "delta": 0
+    },
+    {
+      "name": "semantic.precision",
+      "before": null,
+      "after": null,
+      "delta": null
+    },
+    {
+      "name": "semantic.recall",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "semantic.types",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "semantic.unexpected_additions",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "timing.pipeline",
+      "before": 37.22445799999997,
+      "after": 38.408957999999984,
+      "delta": 1.184500000000014
+    },
+    {
+      "name": "timing.wall",
+      "before": 81.957,
+      "after": 80.12112499999998,
+      "delta": -1.8358750000000157
+    },
+    {
+      "name": "verifier.quality",
+      "before": null,
+      "after": null,
+      "delta": null
+    }
+  ],
+  "configChanged": false,
+  "wallTimeMs": {
+    "before": 81.957,
+    "after": 80.12112499999998
+  },
+  "violations": []
+}

@@ -1,0 +1,147 @@
+{
+  "schema": "metrics-v1",
+  "createdAt": "2026-09-09T16:59:46.646Z",
+  "runs": [
+    {
+      "runId": "B0",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/B0",
+      "status": "success",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B0-v1",
+      "wallTimeMs": 43.05804200000003,
+      "decisionsHash": "25daa7d7325b01ee62f3ad7496708080fa31aa609eb6b1ebd2ec2559965ebee0",
+      "implementationHash": "f135691eda19b8240ffa53a8805fe46a3d0af480a339e8191376ffa1f63063d8"
+    },
+    {
+      "runId": "B0-repeat",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/B0-repeat",
+      "status": "success",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B0-v1",
+      "wallTimeMs": 40.68033399999999,
+      "decisionsHash": "25daa7d7325b01ee62f3ad7496708080fa31aa609eb6b1ebd2ec2559965ebee0",
+      "implementationHash": "f135691eda19b8240ffa53a8805fe46a3d0af480a339e8191376ffa1f63063d8"
+    },
+    {
+      "runId": "B1-development-01",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/experiments/B1-development-01",
+      "status": "success",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B1-v1",
+      "wallTimeMs": 69.06575000000001,
+      "decisionsHash": "e8ac3f459b21b667cf34a783bd6f83530c2c1061bbd4807f4683822973ba77a2",
+      "implementationHash": "d83796f67943305ae6c93c62833a543ff50063a0a4dcafdae926f780144f6e0e"
+    },
+    {
+      "runId": "B0-stage2-control",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/B0-stage2-control",
+      "status": "success",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B0-v1",
+      "wallTimeMs": 32.804040999999984,
+      "decisionsHash": "25daa7d7325b01ee62f3ad7496708080fa31aa609eb6b1ebd2ec2559965ebee0",
+      "implementationHash": "1680def45a30f59af3e0813285ea1ef1b9d5917b9b973c3582948549d14ebbcb"
+    },
+    {
+      "runId": "B1",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/B1",
+      "status": "success",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B1-v1",
+      "wallTimeMs": 72.201709,
+      "decisionsHash": "65da774334dc33839cc26f5c283cda9f2c2fe3f56af9289b88bc6a34d3a77596",
+      "implementationHash": "1680def45a30f59af3e0813285ea1ef1b9d5917b9b973c3582948549d14ebbcb"
+    },
+    {
+      "runId": "B1-repeat",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/B1-repeat",
+      "status": "success",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B1-v1",
+      "wallTimeMs": 71.69791699999999,
+      "decisionsHash": "65da774334dc33839cc26f5c283cda9f2c2fe3f56af9289b88bc6a34d3a77596",
+      "implementationHash": "1680def45a30f59af3e0813285ea1ef1b9d5917b9b973c3582948549d14ebbcb"
+    },
+    {
+      "runId": "B1-v2",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/B1-v2",
+      "status": "success",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B1-v2",
+      "wallTimeMs": 72.44475000000003,
+      "decisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+      "implementationHash": "ac6f99c0a44dc8dab0251c1dd504c5870d96735baf64ade7ac80ba84b815b9eb"
+    },
+    {
+      "runId": "B1-v2-repeat",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/B1-v2-repeat",
+      "status": "success",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B1-v2",
+      "wallTimeMs": 71.196167,
+      "decisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+      "implementationHash": "ac6f99c0a44dc8dab0251c1dd504c5870d96735baf64ade7ac80ba84b815b9eb"
+    },
+    {
+      "runId": "B1-stage3-control",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/B1-stage3-control",
+      "status": "success",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B1-v2",
+      "wallTimeMs": 77.46604100000002,
+      "decisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+      "implementationHash": "1187f107c6d19ec08a903646004f9e99bac762d2a1e3977448d1531fdb95dc0c"
+    },
+    {
+      "runId": "B1-stage3-repeat",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/B1-stage3-repeat",
+      "status": "success",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B1-v2",
+      "wallTimeMs": 72.63612499999999,
+      "decisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+      "implementationHash": "1187f107c6d19ec08a903646004f9e99bac762d2a1e3977448d1531fdb95dc0c"
+    },
+    {
+      "runId": "B1-stage3-control-v2",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/B1-stage3-control-v2",
+      "status": "success",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B1-v2",
+      "wallTimeMs": 71.50545799999998,
+      "decisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+      "implementationHash": "f74e5f577810f0d52d97da69c34cd102b24dc930d7d9f1dc3b72dbd56554b2f0"
+    },
+    {
+      "runId": "B1-stage3-repeat-v2",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/B1-stage3-repeat-v2",
+      "status": "success",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B1-v2",
+      "wallTimeMs": 89.95962500000002,
+      "decisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+      "implementationHash": "f74e5f577810f0d52d97da69c34cd102b24dc930d7d9f1dc3b72dbd56554b2f0"
+    },
+    {
+      "runId": "B1-stage5-control",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/B1-stage5-control",
+      "status": "success",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B1-v2",
+      "wallTimeMs": 81.957,
+      "decisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+      "implementationHash": "dd2a29a28a1fee0640de5faffe177125955f7e3d06b1cb4399d174742e9c075b"
+    },
+    {
+      "runId": "B1-stage5-repeat",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/B1-stage5-repeat",
+      "status": "success",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B1-v2",
+      "wallTimeMs": 80.12112499999998,
+      "decisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+      "implementationHash": "dd2a29a28a1fee0640de5faffe177125955f7e3d06b1cb4399d174742e9c075b"
+    }
+  ],
+  "observations": 963
+}

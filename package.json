@@ -15,7 +15,9 @@
     "benchmark": "npm run build && node dist/src/cli.js benchmark",
     "compare": "npm run build && node dist/src/cli.js compare",
     "web": "npm --prefix web run dev",
-    "web:build": "npm --prefix web run build"
+    "web:build": "npm --prefix web run build",
+    "web:prepare": "npm run build && node dist/src/prepare-web.js",
+    "web:test": "node --experimental-strip-types --test web/test/*.test.ts"
   },
   "dependencies": {
     "@nestjs/common": "12.0.1",

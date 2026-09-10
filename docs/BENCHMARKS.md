@@ -79,3 +79,12 @@ Schema 3 сохраняет метрики без пересчёта, как sch
 `api.calls` — реальные попытки обращения к провайдеру, включая повторы; локальная ошибка конфигурации/ключа до вызова не увеличивает calls. `api.errors` — ошибки таких live-попыток, включая невалидный результат, но не промахи replay-кэша. `ai.failed_jobs` считает неуспешные задания, в том числе cache/config ошибки. `api.tokens`, input/output tokens и cost относятся к текущему live-прогону, replay показывает 0 новых затрат и cache_hits. Исходные usage и ответы остаются в ai.json/кэше; usage неизвестного failed-request не восстанавливается вымышленными числами. Тариф учитывает cache read и cache write отдельно.
 
 Граница `timing.wall` сохраняется: вход в CLI → запись результатов/диагностики (для B2 также ai.json), без компиляции, ранних imports и сериализации report/metrics. `timing.pipeline` включает ожидание AI и retry/replay для B2. Тайминги code-only/live/replay показывать отдельно. Сравнение Sol/Astra выполняется с `--ai-task matching --ai-cohort development` на фиксированных review-парах B1, отдельно от extraction; текущие пары unknown и не дают подтверждённой оценки правильности рекомендаций.
+
+
+## Этап 5: кодовый контроль и экран
+
+[stage5-offline](../reports/benchmarks/stage5-offline/summary.json) расширяет stage3-offline двумя прогонами: **14 запусков, 963 наблюдения**. [JSONL](../reports/benchmarks/stage5-offline/observations.jsonl) сохраняет прежние определения метрик, scopes и provisional-статус.
+
+[Контроль](../reports/B1-stage5-control/report.md) / [повтор](../reports/B1-stage5-repeat/report.md): решения B1-v2 идентичны; все сравнимые нетайминговые значения неизменны. Учёт 220/220, товары 156, не-товары 4, TP/FP/FN 17/0/0; review 64 сообщения, 64 строки, 51 товар. Wall 81.957 / 80.121 ms; pipeline 37.224 / 38.409 ms на Node 24.14.1, darwin arm64. Это одиночные наблюдения, не доказательство ускорения. API calls/tokens/USD: 0/0/0; генерация/verifier N/A, holdout не оценивался.
+
+Сравнения: [B1-v2 → этап 5](../reports/comparisons/B1-v2-to-stage5/comparison.md), [этап 3 → этап 5](../reports/comparisons/stage3-to-stage5/comparison.md), [повтор](../reports/comparisons/stage5-repeat/comparison.md). Браузерный просмотр JSON не является модельным replay. Прогоны чистого окружения служат проверкой воспроизводимости и вынесены в `reports/ui/stage5/clean-environment.json`, не добавлены как новые эксперименты качества.
