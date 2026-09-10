@@ -98,6 +98,11 @@ export default function App() {
 
   const selected = filtered.find(p => p.id === selectedId) ?? null;
   const selectedListing = selected ? catalog.listings[selected.id] : undefined;
+  const filtersActive = needsReviewOnly || Boolean(query.trim());
+  const clearFilters = () => {
+    setQuery('');
+    setNeedsReviewOnly(false);
+  };
 
   return (
     <div className="app">
@@ -135,6 +140,11 @@ export default function App() {
               />
               Needs review
             </label>
+            {filtersActive ? (
+              <button type="button" className="clear-filters" onClick={clearFilters}>
+                Clear filters
+              </button>
+            ) : null}
           </div>
           <ProductList
             products={filtered}
@@ -143,7 +153,7 @@ export default function App() {
             selectedId={selectedId}
             onSelect={setSelectedId}
             emptyMessage={
-              needsReviewOnly || query.trim()
+              filtersActive
                 ? 'No matching products.'
                 : 'No products in this catalog.'
             }
@@ -163,11 +173,18 @@ export default function App() {
               statusText={statusLabel(productStatus(selected, selectedListing))}
             />
           ) : (
-            <p className="state" role="status">
-              {filtered.length === 0 && (needsReviewOnly || query.trim())
-                ? 'No matching products to display.'
-                : 'Select a product to inspect.'}
-            </p>
+            <div className="state" role="status">
+              <p>
+                {filtered.length === 0 && filtersActive
+                  ? 'No matching products to display.'
+                  : 'Select a product to inspect.'}
+              </p>
+              {filtered.length === 0 && filtersActive ? (
+                <button type="button" className="clear-filters" onClick={clearFilters}>
+                  Clear filters
+                </button>
+              ) : null}
+            </div>
           )}
         </main>
       </div>

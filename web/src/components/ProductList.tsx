@@ -6,6 +6,7 @@ import {
   statusLabel,
   type ListingView,
 } from '../data/catalog.ts';
+import { hasUnresolvedFacts, primaryReviewReason } from '../data/labels.ts';
 
 interface Props {
   products: CanonicalProduct[];
@@ -31,7 +32,10 @@ export function ProductList({
   return (
     <ul className="product-list">
       {products.map(product => {
-        const status = productStatus(product, listings[product.id]);
+        const listing = listings[product.id];
+        const status = productStatus(product, listing);
+        const primary = primaryReviewReason(product, listing);
+        const unresolved = hasUnresolvedFacts(product);
         return (
           <li key={product.id}>
             <button
@@ -44,7 +48,12 @@ export function ProductList({
               <span className="product-meta">
                 <span className="category">{product.category}</span>
                 <span className={`badge badge-${status}`}>{statusLabel(status)}</span>
+                {unresolved ? <span className="chip chip-conflict">conflict</span> : null}
+                <span className="chip">{product.offerIds.length} offers</span>
               </span>
+              {primary ? (
+                <span className="product-reason muted">{primary.label}</span>
+              ) : null}
             </button>
           </li>
         );

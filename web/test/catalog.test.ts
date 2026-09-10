@@ -4,6 +4,11 @@ import { readFileSync } from 'node:fs';
 import { loadCatalog, projectProductResult } from '../src/data/loadCatalog.ts';
 import { productStatus } from '../src/data/catalog.ts';
 import { demoCatalog } from '../src/data/fixtures.ts';
+import {
+  formatReason,
+  primaryReviewReason,
+  uniqueReasons,
+} from '../src/data/labels.ts';
 
 const result = JSON.parse(readFileSync('reports/B1-stage3-control-v2/result.json', 'utf8'));
 
@@ -43,4 +48,29 @@ test('empty saved result stays empty and synthetic conflict stays explicitly dem
   const conflict = demoCatalog.products.find(product => product.facts.some(fact => fact.status === 'conflict'))!;
   assert.equal(productStatus(conflict, demoCatalog.listings[conflict.id]), 'needs_review');
   assert.ok(demoCatalog.demoNotice?.includes('not a pipeline'));
+});
+
+test('formatReason maps known codes and keeps unknown codes readable', () => {
+  assert.equal(formatReason('missing_specs').label, 'Empty supplier specs');
+  assert.equal(formatReason('missing_specs').known, true);
+  assert.equal(formatReason('fact_conflict:battery_runtime').label, 'Conflicting product attribute: battery_runtime');
+  assert.equal(formatReason('fact_incomparable:power').label, 'Incomparable product attribute: power');
+  assert.equal(formatReason('identity:incomplete_type_or_variant').label, 'Identity check needs review: incomplete type or variant');
+  assert.equal(formatReason('literal_type:headphones').label, 'Recognized type: headphones');
+  assert.equal(formatReason('generation_not_run').label, 'Generation and claim verification have not run');
+  const unknown = formatReason('brand_new_signal_xyz');
+  assert.equal(unknown.known, false);
+  assert.equal(unknown.code, 'brand_new_signal_xyz');
+  assert.match(unknown.label, /brand new signal xyz/);
+});
+
+test('uniqueReasons and primaryReviewReason preserve first-seen order', () => {
+  assert.deepEqual(uniqueReasons(['missing_specs', 'unparsed_specs', 'missing_specs']), [
+    'missing_specs',
+    'unparsed_specs',
+  ]);
+  const product = demoCatalog.products.find(p => p.id === 'demo_product_aerobuds')!;
+  const primary = primaryReviewReason(product, demoCatalog.listings[product.id]);
+  assert.equal(primary?.code, 'fact_conflict:battery_runtime');
+  assert.match(primary?.label ?? '', /Conflicting product attribute/);
 });
