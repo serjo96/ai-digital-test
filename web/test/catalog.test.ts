@@ -91,15 +91,15 @@ test('uniqueReasons and primaryReviewReason preserve first-seen order', () => {
 });
 
 test('verdict helpers use plain language for review UI', () => {
-  assert.equal(verdictLabel('supported'), 'Supported');
-  assert.equal(verdictLabel('unsupported'), 'Not supported');
-  assert.equal(verdictLabel('disputed'), 'Disputed');
-  assert.equal(verdictExplanation('supported'), 'Sources confirm this statement.');
-  assert.equal(verdictExplanation('unsupported'), 'Sources do not confirm this statement.');
-  assert.equal(verdictExplanation('disputed'), 'Sources disagree about this statement.');
-  assert.equal(aiVerdictPhrase('supported'), 'AI says: Supported by sources');
-  assert.equal(aiVerdictPhrase('unsupported'), 'AI says: Not supported by sources');
-  assert.equal(aiVerdictPhrase('disputed'), 'AI says: Sources dispute this');
+  assert.equal(verdictLabel('supported'), 'Matches supplied data');
+  assert.equal(verdictLabel('unsupported'), 'Does not match supplied data');
+  assert.equal(verdictLabel('disputed'), 'Supplied sources conflict');
+  assert.equal(verdictExplanation('supported'), 'The wording fully preserves the supplied statement.');
+  assert.equal(verdictExplanation('unsupported'), 'The wording adds, changes, or omits something important.');
+  assert.equal(verdictExplanation('disputed'), 'Supplier records disagree, so neither version is safe.');
+  assert.equal(aiVerdictPhrase('supported'), 'AI: matches supplied data');
+  assert.equal(aiVerdictPhrase('unsupported'), 'AI: does not match supplied data');
+  assert.equal(aiVerdictPhrase('disputed'), 'AI: supplied sources conflict');
 });
 
 test('evidenceFieldLabel maps source fields to plain language', () => {

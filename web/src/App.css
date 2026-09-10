@@ -548,6 +548,37 @@ summary { cursor: pointer; }
 .review-sidebar .product-list { max-height: 70vh; overflow-y: auto; }
 .review-detail { display: grid; gap: 1rem; }
 
+.verification-scope {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .75rem;
+  padding: .8rem;
+  border: 1px solid color-mix(in srgb, var(--warn) 45%, var(--border));
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--warn) 8%, var(--panel));
+}
+
+.verification-scope div {
+  min-width: 0;
+}
+
+.verification-scope strong {
+  display: block;
+  margin-bottom: .25rem;
+}
+
+.verification-scope p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .88rem;
+  line-height: 1.4;
+}
+
+.fixture-scope {
+  border-color: var(--border);
+  background: color-mix(in srgb, var(--accent) 6%, var(--panel));
+}
+
 .reading-zone {
   display: grid;
   gap: .65rem;
@@ -688,6 +719,19 @@ summary { cursor: pointer; }
   justify-content: space-between;
   gap: .75rem;
   align-items: flex-start;
+}
+
+.generated-phrase {
+  display: grid;
+  gap: .25rem;
+}
+
+.comparison-label {
+  color: var(--muted);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
 }
 
 .claim-evidence { margin-top: .75rem; display: grid; gap: .65rem; }
@@ -835,5 +879,6 @@ summary { cursor: pointer; }
 @media (max-width: 800px) {
   .review-layout { grid-template-columns: 1fr; }
   .review-sidebar .product-list { max-height: 15rem; }
+  .verification-scope { grid-template-columns: 1fr; }
   .verdict-options { grid-template-columns: 1fr; }
 }

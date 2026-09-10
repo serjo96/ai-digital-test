@@ -58,9 +58,10 @@ function EvidenceList({ claim, catalog }: { claim: ReviewClaim; catalog: Catalog
       </div>
       {claim.evidence.length ? (
         <div className="evidence-section">
-          <h4>Supplier evidence the AI used</h4>
+          <h4>Supplier statement to compare</h4>
           <p className="muted evidence-intro">
-            Exact quote from the source feed. Expand the row if you need the full title or specs.
+            This is unverified text received in the input feed — not a manufacturer specification sheet.
+            Check only whether the generated wording preserves it accurately.
           </p>
           {claim.evidence.map((evidence, index) => {
             const row = catalog.rows.find(item => item.source.row_id === evidence.rowId);
@@ -69,7 +70,7 @@ function EvidenceList({ claim, catalog }: { claim: ReviewClaim; catalog: Catalog
                 <p className="evidence-field muted">{evidenceFieldLabel(evidence.field)}</p>
                 <p className="evidence-quote"><q>{evidence.quote}</q></p>
                 <p className="evidence-source-meta muted">
-                  Source: {row ? `${row.source.supplier} · SKU ${row.source.supplier_sku}` : evidence.rowId}
+                  Feed record: {row ? `${row.source.supplier} · SKU ${row.source.supplier_sku}` : evidence.rowId}
                 </p>
                 {row ? (
                   <details className="evidence-source">
@@ -99,9 +100,9 @@ function EvidenceList({ claim, catalog }: { claim: ReviewClaim; catalog: Catalog
 function ClaimLegend() {
   return (
     <ul className="claim-legend" aria-label="Highlight colors">
-      <li><span className={`legend-swatch ${verdictClass('supported')}`} />Supported</li>
-      <li><span className={`legend-swatch ${verdictClass('disputed')}`} />Disputed</li>
-      <li><span className={`legend-swatch ${verdictClass('unsupported')}`} />Not supported</li>
+      <li><span className={`legend-swatch ${verdictClass('supported')}`} />Matches feed</li>
+      <li><span className={`legend-swatch ${verdictClass('disputed')}`} />Sources conflict</li>
+      <li><span className={`legend-swatch ${verdictClass('unsupported')}`} />Does not match</li>
     </ul>
   );
 }
@@ -181,6 +182,10 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
   const activeIndex = activeClaim ? claims.findIndex(claim => claim.id === activeClaim.id) : -1;
   const completed = generated.claims.filter(item => item.rationale.trim()).length;
   const exportReady = completed === generated.claims.length && Boolean(reviewer.trim());
+  const productRows = product
+    ? catalog.rows.filter(row => product.rowIds.includes(row.source.row_id))
+    : [];
+  const supplierCount = new Set(productRows.map(row => row.source.supplier)).size;
 
   function selectClaim(id: string, scroll = false) {
     setSelectedClaim(id);
@@ -230,7 +235,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
       <div className="review-toolbar">
         <div>
           <p className="review-mode-label">
-            {mode === 'listings' ? 'Published listings' : 'Fixed test cases'}
+            {mode === 'listings' ? 'Supplier-text fidelity review' : 'Verifier test cases'}
           </p>
           {mode === 'listings' ? (
             <div className="review-progress" role="status">
@@ -245,8 +250,8 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
             onClick={() => setMode(mode === 'listings' ? 'fixtures' : 'listings')}
           >
             {mode === 'listings'
-              ? `QA fixtures (${data.controlled.length} cases)`
-              : 'Back to published listings'}
+              ? `Verifier test cases (${data.controlled.length})`
+              : 'Back to listing-text review'}
           </button>
         ) : null}
       </div>
@@ -255,7 +260,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
         <>
           <div className="review-layout">
             <aside className="review-sidebar">
-              <h3 className="sidebar-heading">Listings to review</h3>
+              <h3 className="sidebar-heading">Generated listings</h3>
               <label className="search">
                 <span>Search products</span>
                 <input type="search" value={query} onChange={event => setQuery(event.target.value)} />
@@ -305,18 +310,28 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                     <div>
                       <h2>{productDisplayName(product, catalog.rows)}</h2>
                       <p className="muted">
-                        {claims.length} statement{claims.length === 1 ? '' : 's'} to check
+                        Built from {productRows.length} feed record{productRows.length === 1 ? '' : 's'} from {supplierCount} supplier{supplierCount === 1 ? '' : 's'} · {claims.length} phrase{claims.length === 1 ? '' : 's'} to compare
                       </p>
                     </div>
-                    <span className="badge badge-ready">Published listing</span>
+                    <span className="badge badge-ready">Generated from supplier feed</span>
                   </header>
+
+                  <aside className="verification-scope" role="note">
+                    <div>
+                      <strong>What you can decide here</strong>
+                      <p>Does the generated phrase mean the same thing as the supplier-provided title or specs shown below?</p>
+                    </div>
+                    <div>
+                      <strong>External truth: not verified</strong>
+                      <p>No authoritative manufacturer URL is included in this feed. Do not judge whether the product really has this feature.</p>
+                    </div>
+                  </aside>
 
                   <div className="reading-zone">
                     <div className="reading-zone-header">
-                      <h3>Published product text</h3>
+                      <h3>Generated listing text</h3>
                       <p className="muted">
-                        This is the listing copy under review. Colored underlines mark statements —
-                        click one to open its evidence and decide below.
+                        Colored underlines split the text into phrases. Click a phrase, compare it with the supplier statement, then record whether the meaning was preserved.
                       </p>
                     </div>
                     <ClaimLegend />
@@ -360,7 +375,10 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                         id={`claim-decision-${activeClaim.id}`}
                       >
                         <div className="claim-card-header">
-                          <strong><q>{activeClaim.text}</q></strong>
+                          <div className="generated-phrase">
+                            <span className="comparison-label">Generated wording</span>
+                            <strong><q>{activeClaim.text}</q></strong>
+                          </div>
                           <span className={`badge ${verdictClass(activeClaim.verdict)}`}>
                             {aiVerdictPhrase(activeClaim.verdict)}
                           </span>
@@ -368,7 +386,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                         <EvidenceList claim={activeClaim} catalog={catalog} />
                         <div className="human-decision">
                           <fieldset className="verdict-picker">
-                            <legend>Your decision</legend>
+                            <legend>Does the generated wording match the supplied data?</legend>
                             <div className="verdict-options" role="radiogroup" aria-label="Your decision">
                               {VERDICTS.map(value => (
                                 <button
@@ -390,7 +408,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                             <textarea
                               value={human.rationale}
                               onChange={event => updateClaim(activeClaim.id, { rationale: event.target.value })}
-                              placeholder="Why does the source support or reject this claim?"
+                              placeholder="Example: The feed says “180kg max”; the generated phrase keeps the same value, unit, and maximum qualifier."
                             />
                           </label>
                           <div className="claim-stepper">
@@ -441,7 +459,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
       ) : (
         <div className="review-layout">
           <aside className="review-sidebar">
-            <h3 className="sidebar-heading">Fixed test cases</h3>
+            <h3 className="sidebar-heading">Verifier test cases</h3>
             <ul className="product-list">
               {data.controlled.map(entry => (
                 <li key={entry.item.id}>
@@ -461,6 +479,16 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
           <main className="review-detail">
             {controlled ? (
               <>
+                <aside className="verification-scope fixture-scope" role="note">
+                  <div>
+                    <strong>What are these 12 cases?</strong>
+                    <p>Prewritten QA examples used to test the verifier. They are not additional products and you do not need to label them.</p>
+                  </div>
+                  <div>
+                    <strong>How to read them</strong>
+                    <p>“Expected” is the answer designed into the test; the badge is the verifier’s saved answer. They should agree.</p>
+                  </div>
+                </aside>
                 <header className="detail-header">
                   <div>
                     <h2>{controlledKindLabel(controlled.item.kind)}</h2>

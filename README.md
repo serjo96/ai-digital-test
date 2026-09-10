@@ -26,7 +26,7 @@ npm run web:prepare -- --run-dir reports/B3-openai-development-live-v4
 npm run web
 ```
 
-Сборка: `npm run web:build`. [Полная инструкция и URL override](web/README.md). В B3 вкладка **Claim review** показывает generated и controlled claims, точные фрагменты, verdict и evidence; разметка хранится локально в браузере и экспортируется в JSON. Экран не вызывает модели и не меняет исходный run. Для B1 текст по-прежнему недоступен с причиной `generation_not_run`.
+Сборка: `npm run web:build`. [Полная инструкция и URL override](web/README.md). В B3 вкладка **Check listing text** проверяет только точность пересказа supplied feed: рядом показаны generated wording и supplier statement, а отсутствие внешнего authoritative source отмечено явно. Отдельный экран verifier test cases объясняет 12 QA-примеров. Разметка хранится локально в браузере и экспортируется в JSON; экран не вызывает модели и не меняет исходный run. Для B1 текст по-прежнему недоступен с причиной `generation_not_run`.
 
 `pipeline` и `eval` выполняют одинаковый полный pipeline с development-оценкой. По умолчанию выбран B1; каждый запуск создаёт новый каталог в игнорируемом `reports/local/`. Чтобы результаты оставались частью репозитория для будущих графиков, использовать `--out reports`:
 

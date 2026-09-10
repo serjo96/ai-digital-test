@@ -24,10 +24,11 @@ npm run pipeline -- --baseline b1 --semantic-checks eval/stage3-checks.json --ou
 npm run web:prepare -- --run-dir reports/local/my-ui-run
 ```
 
-To review the saved OpenAI development run, use the first command above. Open **Review claims**:
+To review the saved OpenAI development run, use the first command above. Open **Check listing text**. This is a supplier-text fidelity review, not external product research: the feed contains no authoritative manufacturer URL, and supplier titles/specs are unverified input statements.
 
-- **Published listings** groups published statements by product and highlights their exact text ranges. Review one statement at a time: AI verdict, reason, source quotes, then your decision and required rationale.
-- **QA fixtures** (secondary) renders the fixed development cases next to their expected verdicts and saved atomic verifier output.
+- **Generated listings** groups phrases by product and highlights their exact text ranges. For each phrase, compare **Generated wording** with **Supplier statement to compare**.
+- Human choices are phrased by the actual task: **Matches supplied data**, **Does not match supplied data**, or **Supplied sources conflict**. They do not assert that the supplier statement is true in the real world.
+- **Verifier test cases** (secondary) explains and renders the 12 prewritten QA examples. They test the saved verifier and are not additional products for the reviewer to label.
 - Human verdicts and rationales are saved in browser `localStorage`, keyed by `publicationHash`. **Download review** exports a provisional file until every statement has a rationale and a reviewer is set; only then is the export marked `human_verified` with a timestamp.
 
 The export is not written back into the repository automatically. Review it and deliberately replace the relevant review artifact before running any gate.

@@ -113,11 +113,11 @@ export type ClaimVerdictLabel = 'supported' | 'unsupported' | 'disputed' | 'erro
 export function verdictLabel(verdict: string): string {
   switch (verdict) {
     case 'supported':
-      return 'Supported';
+      return 'Matches supplied data';
     case 'unsupported':
-      return 'Not supported';
+      return 'Does not match supplied data';
     case 'disputed':
-      return 'Disputed';
+      return 'Supplied sources conflict';
     case 'error':
       return 'Error';
     case 'unknown':
@@ -131,11 +131,11 @@ export function verdictLabel(verdict: string): string {
 export function verdictExplanation(verdict: string): string {
   switch (verdict) {
     case 'supported':
-      return 'Sources confirm this statement.';
+      return 'The wording fully preserves the supplied statement.';
     case 'unsupported':
-      return 'Sources do not confirm this statement.';
+      return 'The wording adds, changes, or omits something important.';
     case 'disputed':
-      return 'Sources disagree about this statement.';
+      return 'Supplier records disagree, so neither version is safe.';
     case 'error':
       return 'Verification could not complete.';
     case 'unknown':
@@ -149,11 +149,11 @@ export function verdictExplanation(verdict: string): string {
 export function aiVerdictPhrase(verdict: string): string {
   switch (verdict) {
     case 'supported':
-      return 'AI says: Supported by sources';
+      return 'AI: matches supplied data';
     case 'unsupported':
-      return 'AI says: Not supported by sources';
+      return 'AI: does not match supplied data';
     case 'disputed':
-      return 'AI says: Sources dispute this';
+      return 'AI: supplied sources conflict';
     default:
       return `AI says: ${verdictLabel(verdict)}`;
   }

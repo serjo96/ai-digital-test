@@ -124,11 +124,11 @@ export default function App() {
       <RunOverview catalog={catalog} />
       {catalog.claimReview ? <nav className="view-tabs" aria-label="Result view">
         <button type="button" className={view === 'catalog' ? 'active' : ''} onClick={() => setView('catalog')}>Catalog</button>
-        <button type="button" className={view === 'claims' ? 'active' : ''} onClick={() => setView('claims')}>Review claims</button>
+        <button type="button" className={view === 'claims' ? 'active' : ''} onClick={() => setView('claims')}>Check listing text</button>
       </nav> : null}
       {view === 'claims' && catalog.claimReview ? <>
         <p className="review-task" role="note">
-          Check each highlighted statement against supplier evidence. Agree or change the AI verdict and write a short reason.
+          Check whether each generated phrase accurately repeats the supplied feed. You are not confirming that the product specification is true in the real world.
         </p>
         <ClaimReview catalog={catalog} />
       </> : <div className="layout">
