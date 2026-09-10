@@ -2,6 +2,7 @@ node_modules/
 dist/
 web/node_modules/
 web/dist/
+# Local secrets — never commit API keys or private env files.
 .env
 .env.*
 !.env.example

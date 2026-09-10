@@ -40,7 +40,7 @@ npm run benchmark -- --runs reports/B0,reports/my-b1,reports/my-b1-repeat --out 
 
 Существующие run ID и каталоги сравнения/экспорта не перезаписываются. Коммиты и push команды не выполняют.
 
-Пути задаются `--feed`, `--taxonomy`, `--labels`, `--checks`, `--out`. CLI имеет приоритет над `FEED_PATH`, `TAXONOMY_PATH`, `LABELS_PATH`, `REPORTS_DIR`, затем стандартными файлами. Для `--checks` переменной окружения нет; по умолчанию `eval/stage2-checks.json`. `.env.example` документирует переменные; `.env` автоматически не загружается. Для B0/B1 API-ключ не нужен.
+Пути задаются `--feed`, `--taxonomy`, `--labels`, `--checks`, `--out`. CLI имеет приоритет над значениями из `.env` / `FEED_PATH`, `TAXONOMY_PATH`, `LABELS_PATH`, `REPORTS_DIR`, затем стандартными файлами. Для `--checks` переменной окружения нет; по умолчанию `eval/stage2-checks.json`. Пример переменных — `.env.example`; файлы `.env` и `.env.{NODE_ENV}` читаются при старте, секреты в Git не входят. Для B0/B1 API-ключ не нужен.
 
 Development-проверки привязаны к хэшу конкретного feed и строкам development labels. Для другого feed передавать соответствующие labels/checks, а не применять готовые метки к новым данным. B0 не использует stage2-checks. Holdout не оценивается; команды оценки holdout пока нет.
 
@@ -128,7 +128,7 @@ node dist/src/replay-ollama-run.js reports/stage3-ollama-v1/ollama-qwen3-4b-deve
 
 Искусственные ответы тестов имеют origin=test и не допускаются в реальный benchmark. Непроверенные уровни validation остаются unchecked; N/A для неизвестных cache-показателей и стоимости локального вычисления не означает нулевую стоимость. Подробный протокол — [BENCHMARKS.md](docs/BENCHMARKS.md).
 
-OpenAI-профили `config/ai.json`, `config/ai.matching-sol.json`, `config/ai.matching-astra.json` сохранены. Ключ задаётся только окружением терминала; не помещать его в config, CLI-аргументы или frontend. `.env` автоматически не загружается. Доступ Sol/Astra и актуальность тарифов требуют проверки после получения ключа.
+OpenAI-профили `config/ai.json`, `config/ai.matching-sol.json`, `config/ai.matching-astra.json` сохранены. Ключ читается из `.env` / `OPENAI_API_KEY`; не помещать его в JSON-config, CLI-аргументы или frontend. Доступ Sol/Astra и актуальность тарифов требуют проверки после получения ключа.
 
 ## Этап 5: локальный экран сохранённого B1
 
