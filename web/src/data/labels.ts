@@ -106,3 +106,60 @@ export function publicationState(listing: ListingView | undefined): {
 export function hasUnresolvedFacts(product: CanonicalProduct): boolean {
   return product.facts.some(fact => fact.status === 'conflict' || fact.status === 'incomparable');
 }
+
+export type ClaimVerdictLabel = 'supported' | 'unsupported' | 'disputed' | 'error' | 'unknown';
+
+/** Short human label for a claim verdict shown in the review UI. */
+export function verdictLabel(verdict: string): string {
+  switch (verdict) {
+    case 'supported':
+      return 'Supported';
+    case 'unsupported':
+      return 'Not supported';
+    case 'disputed':
+      return 'Disputed';
+    case 'error':
+      return 'Error';
+    case 'unknown':
+      return 'Unknown';
+    default:
+      return verdict.replaceAll('_', ' ');
+  }
+}
+
+/** One-line explanation of what a human verdict means for the reviewer. */
+export function verdictExplanation(verdict: string): string {
+  switch (verdict) {
+    case 'supported':
+      return 'Sources confirm this statement.';
+    case 'unsupported':
+      return 'Sources do not confirm this statement.';
+    case 'disputed':
+      return 'Sources disagree about this statement.';
+    case 'error':
+      return 'Verification could not complete.';
+    case 'unknown':
+      return 'No clear verdict from verification.';
+    default:
+      return '';
+  }
+}
+
+/** Label used next to the saved AI verdict badge. */
+export function aiVerdictPhrase(verdict: string): string {
+  switch (verdict) {
+    case 'supported':
+      return 'AI says: Supported by sources';
+    case 'unsupported':
+      return 'AI says: Not supported by sources';
+    case 'disputed':
+      return 'AI says: Sources dispute this';
+    default:
+      return `AI says: ${verdictLabel(verdict)}`;
+  }
+}
+
+/** Human-readable label for a controlled fixture kind. */
+export function controlledKindLabel(kind: string): string {
+  return kind.replaceAll('_', ' ');
+}

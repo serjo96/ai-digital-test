@@ -402,7 +402,8 @@ summary { cursor: pointer; }
 
 .view-tabs button,
 .mode-tabs button,
-.review-actions button {
+.review-finish button,
+.claim-stepper button {
   border: 1px solid var(--border);
   border-radius: 7px;
   padding: .5rem .8rem;
@@ -418,13 +419,21 @@ summary { cursor: pointer; }
   color: var(--accent);
 }
 
+.review-task {
+  margin: 0 0 1rem;
+  padding: .7rem .9rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--accent) 8%, var(--panel));
+  color: var(--ink);
+}
+
 .claim-review {
   display: grid;
   gap: 1rem;
 }
 
-.review-toolbar,
-.review-actions {
+.review-toolbar {
   display: flex;
   gap: .75rem;
   align-items: center;
@@ -436,9 +445,81 @@ summary { cursor: pointer; }
   padding: .8rem 1rem;
 }
 
-.review-actions { justify-content: flex-start; }
-.review-actions label { display: flex; align-items: center; gap: .5rem; }
-.review-actions input,
+.review-mode-label {
+  margin: 0;
+  font-weight: 700;
+}
+
+.review-progress {
+  margin-top: .25rem;
+  color: var(--muted);
+}
+
+.secondary-link {
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  text-decoration: underline;
+  cursor: pointer;
+  padding: .25rem;
+  font: inherit;
+}
+
+.sidebar-heading {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.product-progress {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.progress-dot {
+  width: .55rem;
+  height: .55rem;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.progress-dot.partial {
+  background: color-mix(in srgb, var(--warn) 70%, transparent);
+  border-color: var(--warn);
+}
+
+.progress-dot.done {
+  background: var(--ok);
+  border-color: var(--ok);
+}
+
+.review-finish {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel);
+  padding: 1rem;
+  display: grid;
+  gap: .65rem;
+}
+
+.review-finish h3 { margin: 0; }
+
+.review-finish-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  align-items: end;
+}
+
+.review-finish label {
+  display: grid;
+  gap: .35rem;
+  font-weight: 600;
+}
+
+.review-finish input,
 .human-decision select,
 .human-decision textarea {
   border: 1px solid var(--border);
@@ -468,10 +549,55 @@ summary { cursor: pointer; }
 .review-sidebar .product-list { max-height: 70vh; overflow-y: auto; }
 .review-detail { display: grid; gap: 1rem; }
 
+.reading-zone {
+  display: grid;
+  gap: .65rem;
+  padding: .85rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent) 5%, var(--panel));
+}
+
+.reading-zone-header h3 {
+  margin: 0 0 .25rem;
+  font-size: 1rem;
+}
+
+.reading-zone-header p {
+  margin: 0;
+  font-size: .9rem;
+  line-height: 1.4;
+}
+
+.claim-legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem 1rem;
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+.claim-legend li {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+}
+
+.legend-swatch {
+  width: .75rem;
+  height: .75rem;
+  border-radius: 2px;
+  background: currentColor;
+}
+
 .review-text {
   margin: 0;
   padding: 1rem;
   border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
   border-radius: 8px;
   background: var(--bg);
   font-size: 1.08rem;
@@ -485,32 +611,141 @@ summary { cursor: pointer; }
   border-radius: 3px;
   padding: .05rem .12rem;
   color: inherit;
-  background: transparent;
+  background: color-mix(in srgb, currentColor 10%, transparent);
   font: inherit;
   cursor: pointer;
 }
 
-.claim-mark.selected { outline: 2px solid var(--accent); outline-offset: 2px; }
+.claim-mark.selected {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
 .verdict-supported { color: var(--ok); }
 .verdict-disputed { color: var(--warn); }
 .verdict-unsupported { color: var(--danger); }
 
+.claim-nav {
+  display: grid;
+  gap: .4rem;
+}
+
+.claim-nav-item {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: .55rem;
+  align-items: center;
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--bg);
+  color: var(--ink);
+  padding: .45rem .6rem;
+  cursor: pointer;
+  opacity: .78;
+}
+
+.claim-nav-item:hover { border-color: var(--accent); opacity: 1; }
+.claim-nav-item.selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  opacity: 1;
+}
+.claim-nav-item.checked { opacity: 1; }
+
+.claim-nav-index {
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.claim-nav-excerpt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: .9rem;
+}
+
 .claim-list { display: grid; gap: .8rem; }
+
 .claim-card {
   border: 1px solid var(--border);
   border-radius: 9px;
   background: var(--bg);
   padding: .9rem;
-  cursor: pointer;
 }
+
 .claim-card.selected { border-color: var(--accent); }
-.claim-card-header { display: flex; justify-content: space-between; gap: .75rem; align-items: flex-start; }
-.claim-evidence { margin-top: .75rem; }
-.human-decision { display: grid; gap: .7rem; margin-top: .9rem; padding-top: .8rem; border-top: 1px solid var(--border); }
+
+.decision-panel {
+  scroll-margin-top: 1rem;
+}
+
+@media (min-width: 801px) {
+  .decision-panel {
+    position: sticky;
+    bottom: .75rem;
+    box-shadow: 0 -8px 24px color-mix(in srgb, var(--ink) 8%, transparent);
+  }
+}
+
+.claim-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: .75rem;
+  align-items: flex-start;
+}
+
+.claim-evidence { margin-top: .75rem; display: grid; gap: .65rem; }
+
+.ai-reason h4 {
+  margin: 0 0 .35rem;
+  font-size: .95rem;
+}
+
+.ai-reason p { margin: 0; }
+
+.evidence-quote { margin: 0 0 .35rem; }
+
+.evidence-source,
+.technical-ids {
+  font-size: .9rem;
+}
+
+.field-hint {
+  font-weight: 400;
+  font-size: .85rem;
+}
+
+.human-decision {
+  display: grid;
+  gap: .7rem;
+  margin-top: .9rem;
+  padding-top: .8rem;
+  border-top: 1px solid var(--border);
+}
+
 .human-decision label { display: grid; gap: .35rem; font-weight: 600; }
 .human-decision textarea { min-height: 5rem; resize: vertical; font: inherit; }
+
+.claim-stepper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.claim-stepper button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
 
 @media (max-width: 800px) {
   .review-layout { grid-template-columns: 1fr; }
   .review-sidebar .product-list { max-height: 15rem; }
+  .decision-panel { position: static; box-shadow: none; }
 }

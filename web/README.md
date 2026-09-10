@@ -24,11 +24,11 @@ npm run pipeline -- --baseline b1 --semantic-checks eval/stage3-checks.json --ou
 npm run web:prepare -- --run-dir reports/local/my-ui-run
 ```
 
-To review the saved OpenAI development run, use the first command above. Open **Claim review**:
+To review the saved OpenAI development run, use the first command above. Open **Review claims**:
 
-- **Generated** groups 158 published claims by product and highlights their exact text ranges. Each claim shows the saved AI verdict, reason, support IDs and source evidence.
-- **Controlled** renders all 12 fixed development cases next to their expected verdicts and saved atomic verifier output.
-- Human verdicts and rationales are saved in browser `localStorage`, keyed by `publicationHash`. **Export review JSON** downloads a provisional file until every claim has a rationale and a reviewer is set; only then is the export marked `human_verified` with a timestamp.
+- **Published listings** groups published statements by product and highlights their exact text ranges. Review one statement at a time: AI verdict, reason, source quotes, then your decision and required rationale.
+- **QA fixtures** (secondary) renders the fixed development cases next to their expected verdicts and saved atomic verifier output.
+- Human verdicts and rationales are saved in browser `localStorage`, keyed by `publicationHash`. **Download review** exports a provisional file until every statement has a rationale and a reviewer is set; only then is the export marked `human_verified` with a timestamp.
 
 The export is not written back into the repository automatically. Review it and deliberately replace the relevant review artifact before running any gate.
 

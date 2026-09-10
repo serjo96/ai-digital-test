@@ -5,9 +5,12 @@ import { loadCatalog, projectProductResult } from '../src/data/loadCatalog.ts';
 import { productStatus } from '../src/data/catalog.ts';
 import { demoCatalog } from '../src/data/fixtures.ts';
 import {
+  aiVerdictPhrase,
   formatReason,
   primaryReviewReason,
   uniqueReasons,
+  verdictExplanation,
+  verdictLabel,
 } from '../src/data/labels.ts';
 
 const result = JSON.parse(readFileSync('reports/B1-stage3-control-v2/result.json', 'utf8'));
@@ -84,4 +87,16 @@ test('uniqueReasons and primaryReviewReason preserve first-seen order', () => {
   const primary = primaryReviewReason(product, demoCatalog.listings[product.id]);
   assert.equal(primary?.code, 'fact_conflict:battery_runtime');
   assert.match(primary?.label ?? '', /Conflicting product attribute/);
+});
+
+test('verdict helpers use plain language for review UI', () => {
+  assert.equal(verdictLabel('supported'), 'Supported');
+  assert.equal(verdictLabel('unsupported'), 'Not supported');
+  assert.equal(verdictLabel('disputed'), 'Disputed');
+  assert.equal(verdictExplanation('supported'), 'Sources confirm this statement.');
+  assert.equal(verdictExplanation('unsupported'), 'Sources do not confirm this statement.');
+  assert.equal(verdictExplanation('disputed'), 'Sources disagree about this statement.');
+  assert.equal(aiVerdictPhrase('supported'), 'AI says: Supported by sources');
+  assert.equal(aiVerdictPhrase('unsupported'), 'AI says: Not supported by sources');
+  assert.equal(aiVerdictPhrase('disputed'), 'AI says: Sources dispute this');
 });
