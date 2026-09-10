@@ -163,3 +163,19 @@ export function aiVerdictPhrase(verdict: string): string {
 export function controlledKindLabel(kind: string): string {
   return kind.replaceAll('_', ' ');
 }
+
+/** Turn an evidence field code into a short source label. */
+export function evidenceFieldLabel(field: string): string {
+  switch (field) {
+    case 'raw_title':
+      return 'Supplier title';
+    case 'raw_specs':
+      return 'Supplier specs';
+    case 'price':
+      return 'Supplier price';
+    case 'stock':
+      return 'Supplier stock';
+    default:
+      return field.replaceAll('_', ' ');
+  }
+}

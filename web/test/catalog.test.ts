@@ -6,6 +6,7 @@ import { productStatus } from '../src/data/catalog.ts';
 import { demoCatalog } from '../src/data/fixtures.ts';
 import {
   aiVerdictPhrase,
+  evidenceFieldLabel,
   formatReason,
   primaryReviewReason,
   uniqueReasons,
@@ -99,4 +100,10 @@ test('verdict helpers use plain language for review UI', () => {
   assert.equal(aiVerdictPhrase('supported'), 'AI says: Supported by sources');
   assert.equal(aiVerdictPhrase('unsupported'), 'AI says: Not supported by sources');
   assert.equal(aiVerdictPhrase('disputed'), 'AI says: Sources dispute this');
+});
+
+test('evidenceFieldLabel maps source fields to plain language', () => {
+  assert.equal(evidenceFieldLabel('raw_title'), 'Supplier title');
+  assert.equal(evidenceFieldLabel('raw_specs'), 'Supplier specs');
+  assert.equal(evidenceFieldLabel('custom_field'), 'custom field');
 });

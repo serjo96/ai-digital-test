@@ -5,12 +5,15 @@ import { productDisplayName, type CatalogSnapshot, type ReviewClaim } from '../d
 import {
   aiVerdictPhrase,
   controlledKindLabel,
+  evidenceFieldLabel,
   verdictExplanation,
   verdictLabel,
 } from '../data/labels.ts';
 
 type ReviewMode = 'listings' | 'fixtures';
 type Verdict = GeneratedReview['claims'][number]['expectedVerdict'];
+
+const VERDICTS: Verdict[] = ['supported', 'unsupported', 'disputed'];
 
 const reviewKey = (publicationHash: string) => `shelf-ready-review:${publicationHash}`;
 const claimKey = (item: GeneratedReview['claims'][number]) => `${item.productId}:${item.attempt}:${item.claimId}`;
@@ -53,26 +56,35 @@ function EvidenceList({ claim, catalog }: { claim: ReviewClaim; catalog: Catalog
         <h4>Why the AI decided this</h4>
         <p>{claim.reason}</p>
       </div>
-      {claim.evidence.map((evidence, index) => {
-        const row = catalog.rows.find(item => item.source.row_id === evidence.rowId);
-        return (
-          <div className="evidence-card" key={`${evidence.rowId}:${index}`}>
-            <p className="evidence-quote">
-              <strong>{evidence.field}:</strong> <q>{evidence.quote}</q>
-            </p>
-            <p className="muted">
-              {row ? `${row.source.supplier} / ${row.source.supplier_sku}` : evidence.rowId}
-            </p>
-            {row ? (
-              <details className="evidence-source">
-                <summary>Full source row</summary>
-                <p><strong>Title:</strong> {row.source.raw_title || '(empty)'}</p>
-                <p><strong>Specs:</strong> {row.source.raw_specs || '(empty)'}</p>
-              </details>
-            ) : null}
-          </div>
-        );
-      })}
+      {claim.evidence.length ? (
+        <div className="evidence-section">
+          <h4>Supplier evidence the AI used</h4>
+          <p className="muted evidence-intro">
+            Exact quote from the source feed. Expand the row if you need the full title or specs.
+          </p>
+          {claim.evidence.map((evidence, index) => {
+            const row = catalog.rows.find(item => item.source.row_id === evidence.rowId);
+            return (
+              <div className="evidence-card" key={`${evidence.rowId}:${index}`}>
+                <p className="evidence-field muted">{evidenceFieldLabel(evidence.field)}</p>
+                <p className="evidence-quote"><q>{evidence.quote}</q></p>
+                <p className="evidence-source-meta muted">
+                  Source: {row ? `${row.source.supplier} · SKU ${row.source.supplier_sku}` : evidence.rowId}
+                </p>
+                {row ? (
+                  <details className="evidence-source">
+                    <summary>Show full supplier row</summary>
+                    <p><strong>Title:</strong> {row.source.raw_title || '(empty)'}</p>
+                    <p><strong>Specs:</strong> {row.source.raw_specs || '(empty)'}</p>
+                  </details>
+                ) : null}
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <p className="muted">No supplier quotes were attached to this AI verdict.</p>
+      )}
       {hasTechnicalIds ? (
         <details className="technical-ids">
           <summary>Technical IDs</summary>
@@ -355,18 +367,24 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                         </div>
                         <EvidenceList claim={activeClaim} catalog={catalog} />
                         <div className="human-decision">
-                          <label>
-                            Your decision
-                            <select
-                              value={human.expectedVerdict}
-                              onChange={event => updateClaim(activeClaim.id, { expectedVerdict: event.target.value as Verdict })}
-                            >
-                              <option value="supported">{verdictLabel('supported')}</option>
-                              <option value="unsupported">{verdictLabel('unsupported')}</option>
-                              <option value="disputed">{verdictLabel('disputed')}</option>
-                            </select>
-                            <span className="field-hint muted">{verdictExplanation(human.expectedVerdict)}</span>
-                          </label>
+                          <fieldset className="verdict-picker">
+                            <legend>Your decision</legend>
+                            <div className="verdict-options" role="radiogroup" aria-label="Your decision">
+                              {VERDICTS.map(value => (
+                                <button
+                                  key={value}
+                                  type="button"
+                                  role="radio"
+                                  aria-checked={human.expectedVerdict === value}
+                                  className={`verdict-option ${verdictClass(value)}${human.expectedVerdict === value ? ' selected' : ''}`}
+                                  onClick={() => updateClaim(activeClaim.id, { expectedVerdict: value })}
+                                >
+                                  <span className="verdict-option-label">{verdictLabel(value)}</span>
+                                  <span className="verdict-option-hint">{verdictExplanation(value)}</span>
+                                </button>
+                              ))}
+                            </div>
+                          </fieldset>
                           <label>
                             Why? Required to mark this as reviewed
                             <textarea
