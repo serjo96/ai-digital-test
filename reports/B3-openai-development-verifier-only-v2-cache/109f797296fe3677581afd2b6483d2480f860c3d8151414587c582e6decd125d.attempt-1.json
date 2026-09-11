@@ -1,0 +1,40 @@
+{
+  "elapsedMs": 5178.550208000001,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "66c13cd25d4865afc7f2d3e71fe2c47eb3d7df51f093ea9e5cde9bb16027eb39",
+      "claims": [
+        {
+          "text": "Cobalt Pro earbuds",
+          "start": 0,
+          "end": 18,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:47c7023f12a8692fc7cdd6ece0fa14e4cba01d6fee75210a9a409669472b8445",
+            "identity:96d969e08edee1749289f9766f01002ff950b7a794566a04d22c86ae10e10169"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_833c7feebb",
+              "field": "raw_title",
+              "quote": "COBALT PRO WIRED EARBUDS"
+            }
+          ],
+          "reason": "The supplied title and identity supports establish the Cobalt Pro model and earbuds product type."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"66c13cd25d4865afc7f2d3e71fe2c47eb3d7df51f093ea9e5cde9bb16027eb39\",\"claims\":[{\"text\":\"Cobalt Pro earbuds\",\"start\":0,\"end\":18,\"verdict\":\"supported\",\"supportIds\":[\"identity:47c7023f12a8692fc7cdd6ece0fa14e4cba01d6fee75210a9a409669472b8445\",\"identity:96d969e08edee1749289f9766f01002ff950b7a794566a04d22c86ae10e10169\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_833c7feebb\",\"field\":\"raw_title\",\"quote\":\"COBALT PRO WIRED EARBUDS\"}],\"reason\":\"The supplied title and identity supports establish the Cobalt Pro model and earbuds product type.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_01c6351084aad2ec016aa44c00904087d0920feae465f7d4e3",
+    "usage": {
+      "inputTokens": 1165,
+      "outputTokens": 220,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1162
+    }
+  }
+}

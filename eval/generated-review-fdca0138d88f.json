@@ -1,0 +1,926 @@
+{
+  "version": "stage4-generated-review-v2",
+  "status": "human_verified",
+  "publicationHash": "fdca0138d88fdd3658feffcab1ba5ea86838f27e2061145bb5efe85054d4d33d",
+  "reviewedBy": "Sergei",
+  "reviewedAt": "2026-09-11T13:12:21.717Z",
+  "sampleProductIds": [
+    "product_0b218ba3bce177cf3237fd9ca8f09bedffc596afc87177663ce95ae38416913b",
+    "product_13f90e6faf7b028dedcbf4a9666b157b09278c161316790de8416799d9dee2df",
+    "product_1c232e46b60cb27350cf18240cc7b90f64ca3ecc03b70ceb22549cc44de49aaa",
+    "product_252c1a614d97a3282ebaceebd8075d02f15462a2fb0e667e4500ea9b10125aeb",
+    "product_29a6cd73bfa67681da62b49990cbb211b18e01ba88ec2a4326372242cf6327d0",
+    "product_2d74339899e163b407d73a96c034f3fc9793f2b0a65e7ebb047d61440ddecec3",
+    "product_3aa2f8bca3c9e23b683af314ab6af5143a2091f008b93b78c509f1b89404d709",
+    "product_3c0cb67b0a3bcdcbb420d32f7b04efe5d3d0c3c54153c6d46053ac803270f47a",
+    "product_408f0f01d1a87d83982d7cf170ff9c5dc1190065688df3ccb0f56a1438da199b",
+    "product_4355321a7fc7c79c6d36dcc3e5b7c6a1e8071ea725e3513014cfc582762c33ba",
+    "product_4504127231e1d697e9308366a2a526cb77bae55fdfce0cedfbf501c043ebfe2f",
+    "product_6b15d37d2e2526d8485f5266a6687fa580daa106273e16c19a49c6648e30f8d9",
+    "product_a060e924b3a3ba56f84dff1b012d2daa12eecde4f9426a8f4d249f4969944e11",
+    "product_a1cb7545d898206a7af546b9023a4c5f4a1dd4e27fb564ca4f509d3073ea3f27",
+    "product_a4eeee9e507346c728aac241e97dfd41b247d822a0266331a83290f60fed0aba",
+    "product_b721447e466c06e29b91ae0549145bf757a744c90dbffad97dc6adad90fb4c58",
+    "product_c16f9e204ee2133297a8c538830df691354f22e8946aef9631cba421b8187fd1",
+    "product_c4ce60c73af5dc3df7aa9b72735f613219097ac07c7a9818c04a4378367aa4d4",
+    "product_46973d673a5601fdd85c69783c9d69c991bdd5afd782d837a5d21c0d3f20d681",
+    "product_973254aec33b7639121ee0072aae4a9fccff862ba20ac2df091b35d80952885c"
+  ],
+  "claims": [
+    {
+      "productId": "product_0b218ba3bce177cf3237fd9ca8f09bedffc596afc87177663ce95ae38416913b",
+      "attempt": 1,
+      "claimId": "claim_d6ad61b2a69e73d6cfc9edce001f9befaf9362aa66a7afa0bd8943a7dcfe8350",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Title names Cobalt 3 as a scale. | Matches the supplier evidence.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_0b218ba3bce177cf3237fd9ca8f09bedffc596afc87177663ce95ae38416913b",
+      "attempt": 1,
+      "claimId": "claim_6c2eb523402b347907637ff47bc3b326d71122678d8e9c00d88b414d48e0c291",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Matches the supplier evidence.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_0b218ba3bce177cf3237fd9ca8f09bedffc596afc87177663ce95ae38416913b",
+      "attempt": 1,
+      "claimId": "claim_956ec239eeae60a77efc94a7d9f08b772c37e7a31e026e3a459faffa496061a9",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Matches the supplier evidence.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_13f90e6faf7b028dedcbf4a9666b157b09278c161316790de8416799d9dee2df",
+      "attempt": 1,
+      "claimId": "claim_1161c489fa8e9a272b48f11b07b68f21cabe13c23010328985d1138ce50bf37f",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Matches the supplier evidence. | Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_13f90e6faf7b028dedcbf4a9666b157b09278c161316790de8416799d9dee2df",
+      "attempt": 1,
+      "claimId": "claim_9e3d671c25c5fed4d6adbda16a0cb3ee6bbeda5ad21476d20b54a23f9e7dba33",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_1c232e46b60cb27350cf18240cc7b90f64ca3ecc03b70ceb22549cc44de49aaa",
+      "attempt": 1,
+      "claimId": "claim_db1fb2eeb4dcfe99d014576ede2c900f89dd23c6edb743b8c050c4b3ef38c825",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Источник прямо называет товар Quill desk lamp; фраза использует более общее lamp. | Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_1c232e46b60cb27350cf18240cc7b90f64ca3ecc03b70ceb22549cc44de49aaa",
+      "attempt": 1,
+      "claimId": "claim_6cf9503447f699a880cb630a57f1e3d30ffdb0942416c4576ec4fcf6ce505b8c",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_252c1a614d97a3282ebaceebd8075d02f15462a2fb0e667e4500ea9b10125aeb",
+      "attempt": 1,
+      "claimId": "claim_f97ce257418a6e0f54a29e85f7aee1a1a6506c4eaa69d75c33d3dbbf19b00914",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Matches the supplier evidence.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_29a6cd73bfa67681da62b49990cbb211b18e01ba88ec2a4326372242cf6327d0",
+      "attempt": 1,
+      "claimId": "claim_f1771a3194caae34a196a22c89a25f55f9dfda8c0783c41570366b675abf45ff",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_29a6cd73bfa67681da62b49990cbb211b18e01ba88ec2a4326372242cf6327d0",
+      "attempt": 1,
+      "claimId": "claim_c0ca6a343db30fc2acc45bcd3f25cfbab42c8c1dd29293db0a84d7564654a62f",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_2d74339899e163b407d73a96c034f3fc9793f2b0a65e7ebb047d61440ddecec3",
+      "attempt": 1,
+      "claimId": "claim_3f8b2bd3d0c7840e457748fb516b8155b311ef96f2718cd16ccda69cc48ee7e0",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "LedgerLite Book 14 — название модели, дословно присутствующее в обоих supplier titles. | Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_2d74339899e163b407d73a96c034f3fc9793f2b0a65e7ebb047d61440ddecec3",
+      "attempt": 1,
+      "claimId": "claim_4b30c12ade7431520a492a16f0b590fae07aa142778a01620aebc30907f6c5cc",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_2d74339899e163b407d73a96c034f3fc9793f2b0a65e7ebb047d61440ddecec3",
+      "attempt": 1,
+      "claimId": "claim_86d75a2c5d2308256457efec557556577ac3ecb9ee41077441763a2de7d1aa44",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Supplier feed содержит 16 GB memory и 16GB RAM; фактический смысл подтверждён входными данными.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_2d74339899e163b407d73a96c034f3fc9793f2b0a65e7ebb047d61440ddecec3",
+      "attempt": 1,
+      "claimId": "claim_f2ea1e2736875ae4251b45e10cce5de453c0dac2036af75382f74617cc62a04f",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_2d74339899e163b407d73a96c034f3fc9793f2b0a65e7ebb047d61440ddecec3",
+      "attempt": 1,
+      "claimId": "claim_0bcd457177038a41b251a192be7401a9bfa7b79cb5c6e5e52dad7ba398ea5be9",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_3aa2f8bca3c9e23b683af314ab6af5143a2091f008b93b78c509f1b89404d709",
+      "attempt": 1,
+      "claimId": "claim_afbed5338c674a9d211db123076057772db3075fad3389b55560426d58196d85",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_3aa2f8bca3c9e23b683af314ab6af5143a2091f008b93b78c509f1b89404d709",
+      "attempt": 1,
+      "claimId": "claim_9572f3878527dd7175cda07bb7c2cda761eb68b1c198a5da70fd31efb30dea17",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_3aa2f8bca3c9e23b683af314ab6af5143a2091f008b93b78c509f1b89404d709",
+      "attempt": 1,
+      "claimId": "claim_b7e4962287dff99541cb0ff971c87dffbcbdb5b88d691ed15c798557f05c3fb8",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_3aa2f8bca3c9e23b683af314ab6af5143a2091f008b93b78c509f1b89404d709",
+      "attempt": 1,
+      "claimId": "claim_cff0acd649c393f3e20ebfd2fb49cbdc25275ea40e49b864d5b8ae82454cf7b1",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_3aa2f8bca3c9e23b683af314ab6af5143a2091f008b93b78c509f1b89404d709",
+      "attempt": 1,
+      "claimId": "claim_7fb212bff53d4c65abf2db1df5883fd702766d83fabfb7e0ea9f96b36ea39e81",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_3c0cb67b0a3bcdcbb420d32f7b04efe5d3d0c3c54153c6d46053ac803270f47a",
+      "attempt": 1,
+      "claimId": "claim_f6a0afb0660d2013ed5e67cbf3332655053a268c73eb7456c1e2d19b384293ac",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Matches the supplier evidence. | Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_408f0f01d1a87d83982d7cf170ff9c5dc1190065688df3ccb0f56a1438da199b",
+      "attempt": 1,
+      "claimId": "claim_0d598670a49d54f69d0845e175af39c64b0bfad3ccf26efeace72310eafd8861",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_408f0f01d1a87d83982d7cf170ff9c5dc1190065688df3ccb0f56a1438da199b",
+      "attempt": 1,
+      "claimId": "claim_e9d18e2c7e5e5193b2e17bfe322eaad95280ad9223bd70a74c60984e9bbecbd0",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_4355321a7fc7c79c6d36dcc3e5b7c6a1e8071ea725e3513014cfc582762c33ba",
+      "attempt": 1,
+      "claimId": "claim_bb51d0affc7f8db0feddf662e21e7e7092a881cfee8b075b421f88821af1fe2b",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_4355321a7fc7c79c6d36dcc3e5b7c6a1e8071ea725e3513014cfc582762c33ba",
+      "attempt": 1,
+      "claimId": "claim_f5c67382f4265c443b14e410d4d7fdc7053d00dd5b47f517cfafab5981d18a4a",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_4355321a7fc7c79c6d36dcc3e5b7c6a1e8071ea725e3513014cfc582762c33ba",
+      "attempt": 1,
+      "claimId": "claim_70c4d4f05cae9aeeedfc09d90988cc1fa9120d29681d64466036abec8c164773",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_4504127231e1d697e9308366a2a526cb77bae55fdfce0cedfbf501c043ebfe2f",
+      "attempt": 1,
+      "claimId": "claim_42250f3fa9b9ef6dbbb2b30158cd98a670eaac90f2f6e673d333517087096320",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_4504127231e1d697e9308366a2a526cb77bae55fdfce0cedfbf501c043ebfe2f",
+      "attempt": 1,
+      "claimId": "claim_de6515ef70923a0b56e13f4007df75849f7974078784596d50ee3fe2933bdd9d",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_4504127231e1d697e9308366a2a526cb77bae55fdfce0cedfbf501c043ebfe2f",
+      "attempt": 1,
+      "claimId": "claim_32f0eb1ae9cf5052d3874d635d262244c08df719d2b1a304b14ad21b4f3a0f07",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика. | Источник указывает 14 hour battery без условий использования; qualifier фактически корректен, но написан неясно.",
+      "issueTypes": [
+        "unclear_copy"
+      ]
+    },
+    {
+      "productId": "product_46973d673a5601fdd85c69783c9d69c991bdd5afd782d837a5d21c0d3f20d681",
+      "attempt": 1,
+      "claimId": "claim_819120c6f64ed76033c72ffa93c088ae816686820fd2ac162d93cb2c7020c34b",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "совпадает у 2 варианта, у первой фразы только со второй фразой есть общая связь по размерам флешки | Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_46973d673a5601fdd85c69783c9d69c991bdd5afd782d837a5d21c0d3f20d681",
+      "attempt": 1,
+      "claimId": "claim_ed9d6c35401f0473f439d07aa0193b238e9e6ecd8490b74f4628ce10008d9985",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_46973d673a5601fdd85c69783c9d69c991bdd5afd782d837a5d21c0d3f20d681",
+      "attempt": 1,
+      "claimId": "claim_ef50668631c565a8a4a2291734e87c5c944fb70a5b24cc2dbd10b15fc63b4659",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_46973d673a5601fdd85c69783c9d69c991bdd5afd782d837a5d21c0d3f20d681",
+      "attempt": 1,
+      "claimId": "claim_05b995f4e69d10d7fa0b203481da78c87af6984ab18bb23fee1450ecf2017811",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика. | Источник указывает up to 170MB/s без направления; qualifier корректен по feed, но неудачен как copy.",
+      "issueTypes": [
+        "unclear_copy"
+      ]
+    },
+    {
+      "productId": "product_541e18766fd9337c56b6f0dcb999eea80bb39bf98e0ecb083d64265bfc0e02f2",
+      "attempt": 1,
+      "claimId": "claim_461a6b008c9b3a20076a66f21697bc7d45c911f76da410f70ac33c2a135fb3e7",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_541e18766fd9337c56b6f0dcb999eea80bb39bf98e0ecb083d64265bfc0e02f2",
+      "attempt": 1,
+      "claimId": "claim_c4ff1d65d0219fd66ca8bf21bfe6641924b629910705970caab0dc401b8f65b6",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_541e18766fd9337c56b6f0dcb999eea80bb39bf98e0ecb083d64265bfc0e02f2",
+      "attempt": 1,
+      "claimId": "claim_ecb0780a93b838612d488e2c03f236bdf5f03c4ba2bd8a006b3655a7d9ca5318",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_541e18766fd9337c56b6f0dcb999eea80bb39bf98e0ecb083d64265bfc0e02f2",
+      "attempt": 1,
+      "claimId": "claim_d5d1b1a61f50f4dce098c4b77547667cb08856ab25a75d146598f0240faa6009",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_611b26b106f1ad7d8f0807887a56027de9aaead61ae2bec632431cb37120ebb9",
+      "attempt": 1,
+      "claimId": "claim_f63c634c7c0e556f0b858250585e9744b8ed9533a3a0e3bae2e537297b3f8fbf",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_611b26b106f1ad7d8f0807887a56027de9aaead61ae2bec632431cb37120ebb9",
+      "attempt": 1,
+      "claimId": "claim_c6e7ecc49c3d374a37730b25ea858b4755d21abc3a4333683e7ac5f38635fe19",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_6b15d37d2e2526d8485f5266a6687fa580daa106273e16c19a49c6648e30f8d9",
+      "attempt": 1,
+      "claimId": "claim_4fc4bb357f43c5ec63e53a27d67020a29b43b1b97afdf3f631e6920e24bb941b",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_6b15d37d2e2526d8485f5266a6687fa580daa106273e16c19a49c6648e30f8d9",
+      "attempt": 1,
+      "claimId": "claim_4cd54307c3428fedf30254f8757ac2ee7a6e14f12256015a373e3c4405509c43",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_71ac1428088a14d4f20302d60b96f146f02a033cec210430c40ed761484cf388",
+      "attempt": 1,
+      "claimId": "claim_da676985bac1aae6a1b3142ee1054a807fd3cca17f94ae7ac3edc312cfa89b3b",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_71ac1428088a14d4f20302d60b96f146f02a033cec210430c40ed761484cf388",
+      "attempt": 1,
+      "claimId": "claim_84c64f64d3f49efbe2581fc42d84aab3469a19f2de7d623e1031f8fcaeb30850",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_71ac1428088a14d4f20302d60b96f146f02a033cec210430c40ed761484cf388",
+      "attempt": 1,
+      "claimId": "claim_5822c2aea789d2f54944d22715558376e4287343d03b3566ea361c86e09c4a6c",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_78bce03424dfde8091eeacbaf6ef9e4a9cd2be50608abff576252f70b09d61c2",
+      "attempt": 1,
+      "claimId": "claim_597b969579387eab8dd68778c4705fdc12eb1136d8af6e382b2e6917eb76c81c",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_78bce03424dfde8091eeacbaf6ef9e4a9cd2be50608abff576252f70b09d61c2",
+      "attempt": 1,
+      "claimId": "claim_40b2d65d275872cae87369565809c67454fd314a0130987561dc563c6beba23d",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_822dabc399558eaa2acd65eecdc2592e75b4f8f8772eec7eff9f46a437cd0ff6",
+      "attempt": 1,
+      "claimId": "claim_40e95f3cca05260ddb3174618206c30c2d653bff4987d5131deb73c401573f3e",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_822dabc399558eaa2acd65eecdc2592e75b4f8f8772eec7eff9f46a437cd0ff6",
+      "attempt": 1,
+      "claimId": "claim_9e1f6a8694c65bfedebbe7a644cb544dfd7902b7b4f26948cb6725c6693b1e4e",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_86dc978ab09e20de9215a879faba843953af38941c7e7184cce3c06f85eb4931",
+      "attempt": 1,
+      "claimId": "claim_6ea4fa9161a55c683eb25868a88613952db948d41758234a9c9f941a72d52331",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_86dc978ab09e20de9215a879faba843953af38941c7e7184cce3c06f85eb4931",
+      "attempt": 1,
+      "claimId": "claim_bb75f0af5736371dd6edd36819ef2273158887ea23f91c22fc4c65042ba20175",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_86dc978ab09e20de9215a879faba843953af38941c7e7184cce3c06f85eb4931",
+      "attempt": 1,
+      "claimId": "claim_13aceff940d5d0784564f1e5ee4d4a7fbb75956cf541ba35e2ff503c21a136f5",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_872cb86804c10da3388b19cd9624af5d90e503cee7e1a72d0b4f2a988979b677",
+      "attempt": 1,
+      "claimId": "claim_c4d936ebe0b7b65d407d3550e8d83b75d4a0c21732f8c8223027e314e4876098",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_872cb86804c10da3388b19cd9624af5d90e503cee7e1a72d0b4f2a988979b677",
+      "attempt": 1,
+      "claimId": "claim_b4989619bd7ce81c6d8033b4277847642cc8519681dfef02d3b7bfeeddd1970a",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_973254aec33b7639121ee0072aae4a9fccff862ba20ac2df091b35d80952885c",
+      "attempt": 1,
+      "claimId": "claim_971e7bda279daf9580902f4490a0ed359583cced815004ef932e72520f7f4fbb",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Atomic-v2 span resolves the prior structural issue. Prior human rationale: Идентичность Quill 3 подтверждена supplier title, но выделенный span синтаксически не завершён. | Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_973254aec33b7639121ee0072aae4a9fccff862ba20ac2df091b35d80952885c",
+      "attempt": 1,
+      "claimId": "claim_8d45f00099f9bc27327a365dc9a10cbdd9c8ca91d486f0f7bc5376232f99e62d",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_973254aec33b7639121ee0072aae4a9fccff862ba20ac2df091b35d80952885c",
+      "attempt": 1,
+      "claimId": "claim_e8f54b32f32feb5306ec869e1af48323012c5f06b2a95c2fb8b63943c7e84390",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_97c45999f5d54a7d76bfca8e6f5bf874a4f666051b361c1c889a4c462bc7d7a2",
+      "attempt": 1,
+      "claimId": "claim_41d1e1e19c6e9aec7f078cddaba9350198e1df0972574a84952efae074147d40",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_97c45999f5d54a7d76bfca8e6f5bf874a4f666051b361c1c889a4c462bc7d7a2",
+      "attempt": 1,
+      "claimId": "claim_9b6be05b8cec06165b6e602486bf5d60e71d5be42d5f9c39ba66bd49350c0166",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_97c45999f5d54a7d76bfca8e6f5bf874a4f666051b361c1c889a4c462bc7d7a2",
+      "attempt": 1,
+      "claimId": "claim_787c8dec05d0d0d23872deb9a2fb1d091babc42a5e9bce732289850eab4f97a9",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_9b41f3a7698cb87fb55f57fc7dfbef2d1fb0f225ad3ce7d256418fe2327ca5ae",
+      "attempt": 1,
+      "claimId": "claim_abc23796a9dc511280995cf7b9ad31e441a9c78bee1a9d7d27ee942b6d75a86b",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_9b41f3a7698cb87fb55f57fc7dfbef2d1fb0f225ad3ce7d256418fe2327ca5ae",
+      "attempt": 1,
+      "claimId": "claim_92595b2cd9412e4f4e61070f8fbee5b74a1a2f3db695c2a16528927919716652",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_a060e924b3a3ba56f84dff1b012d2daa12eecde4f9426a8f4d249f4969944e11",
+      "attempt": 1,
+      "claimId": "claim_b9789df64b37fe688eb28bfb7b8b21158a2dc75bdea52518fa94187cf6bf2bb5",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_a060e924b3a3ba56f84dff1b012d2daa12eecde4f9426a8f4d249f4969944e11",
+      "attempt": 1,
+      "claimId": "claim_43915ba9e2767902ce4c33a0861d9485a219b6b4029dc9ade7df933cb86edc26",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_a1cb7545d898206a7af546b9023a4c5f4a1dd4e27fb564ca4f509d3073ea3f27",
+      "attempt": 1,
+      "claimId": "claim_d1424c100a9fab3b544db6600cfefeb56913f4a77a8c0ddc4c1127050d11a1b7",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_a4eeee9e507346c728aac241e97dfd41b247d822a0266331a83290f60fed0aba",
+      "attempt": 1,
+      "claimId": "claim_540d8300fd3b703d7d112ddee80ba1cde67db98bb9468f038d444c6d1bea08ce",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Atomic-v2 span resolves the prior structural issue. Prior human rationale: Идентичность PulseFit Band 3 tracker подтверждена supplier titles, но claim заканчивается на незавершённом has a. | Оба supplier feeds указывают дисплей 1.1 inch/1.1in; число подтверждено, но span без display неатомарен. | Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_a4eeee9e507346c728aac241e97dfd41b247d822a0266331a83290f60fed0aba",
+      "attempt": 1,
+      "claimId": "claim_5d942aaae50a4c81401f906a71ec626803c6cb8c9068f34ac4e0cbaff3db7678",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_a4eeee9e507346c728aac241e97dfd41b247d822a0266331a83290f60fed0aba",
+      "attempt": 1,
+      "claimId": "claim_d0b70c2256a0cb9400216ad34a8e2a68dcc179b9068f4eed9f341bd981d5502d",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_a4eeee9e507346c728aac241e97dfd41b247d822a0266331a83290f60fed0aba",
+      "attempt": 1,
+      "claimId": "claim_2571feae4f97f8d55b4b8ad7751aaf946aaf3eccbaeabd8026c22725e2000978",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_ad720648626b6df4ec3f0d9db1dc939a0e0f83a61080d8cde8378a0243ca25af",
+      "attempt": 1,
+      "claimId": "claim_c9845a8e7f676fbf780731f04f88723626a00c3687679b597f0581fa249beb42",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_ad720648626b6df4ec3f0d9db1dc939a0e0f83a61080d8cde8378a0243ca25af",
+      "attempt": 1,
+      "claimId": "claim_6da82b502919301d91e8cf093211a9ce14ef7c8d5d35362ccf38e1f82329b76e",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_b0598b678919ee91b417f322f20a657ef9a11b0d8ae99da6f4930d8c41fa3e4a",
+      "attempt": 1,
+      "claimId": "claim_d2f223d8bbbda8f56d205774078040379123db697b841a37eba9d53e09f9ea89",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_b0598b678919ee91b417f322f20a657ef9a11b0d8ae99da6f4930d8c41fa3e4a",
+      "attempt": 1,
+      "claimId": "claim_64aff59cc59b653741da1ad2932a28ec6471cbe727514335d826104ca80c9d81",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_b0598b678919ee91b417f322f20a657ef9a11b0d8ae99da6f4930d8c41fa3e4a",
+      "attempt": 1,
+      "claimId": "claim_cc08b1a1f78b84b94ec14a88b771ce150b95646fd0bab37b828eb59d5cd13155",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_b0598b678919ee91b417f322f20a657ef9a11b0d8ae99da6f4930d8c41fa3e4a",
+      "attempt": 1,
+      "claimId": "claim_3235db158151ee72ad575057969297d6dcc5fe937480184047d912cdc8c7df10",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_b721447e466c06e29b91ae0549145bf757a744c90dbffad97dc6adad90fb4c58",
+      "attempt": 1,
+      "claimId": "claim_a7fbd13647164418ec0d7a055b4283298721054bf486b6d3de3b9e1f2c2ab50c",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Matches the supplier evidence.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_b721447e466c06e29b91ae0549145bf757a744c90dbffad97dc6adad90fb4c58",
+      "attempt": 1,
+      "claimId": "claim_a549b4c4f4ea26785e1cbf5b3825f772b3f805ecf9f0330423b9269cecf82f75",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Matches the supplier evidence.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_b721447e466c06e29b91ae0549145bf757a744c90dbffad97dc6adad90fb4c58",
+      "attempt": 1,
+      "claimId": "claim_e7d5ce5d2a7ee08765d40045c10567814a38f0c36361593555f03d291d0e322b",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Matches the supplier evidence.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_b721447e466c06e29b91ae0549145bf757a744c90dbffad97dc6adad90fb4c58",
+      "attempt": 1,
+      "claimId": "claim_14d5508276d96020849e3d6ef99059feee90b7cdfa48eb28a01ab4662c545a35",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Matches the supplier evidence.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_b9e8a346ca6db2e74f436699a4943a60ea90e30aa73f2fd173c352c2c03a3337",
+      "attempt": 1,
+      "claimId": "claim_cb4112a8d1564ba6d4e8710d377ba8179a5cdff56e21d451647a66d7ac0c38f0",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_b9e8a346ca6db2e74f436699a4943a60ea90e30aa73f2fd173c352c2c03a3337",
+      "attempt": 1,
+      "claimId": "claim_66c82d68a62f4c9f81cf4b797006485c7005ed943f4e87ed5929d2ade7c24f44",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_b9e8a346ca6db2e74f436699a4943a60ea90e30aa73f2fd173c352c2c03a3337",
+      "attempt": 1,
+      "claimId": "claim_af3d92ba4baac897f1c4bf2ebe2aa2acd1351d52d129d43c2a1ff945ab6dc6a0",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_b9e8a346ca6db2e74f436699a4943a60ea90e30aa73f2fd173c352c2c03a3337",
+      "attempt": 1,
+      "claimId": "claim_80af020b84ceca19bc44aa7a5c25a923898a6fe500fa5ed201b805c3d5624c44",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_beb21df3d3688638af25926ec2121a565983d53127ef82331320ad3b42cfd85f",
+      "attempt": 1,
+      "claimId": "claim_284fde6a9bd4ec8642891ae26cb95e418c549a417ab9a124bacec62027fbba1c",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_beb21df3d3688638af25926ec2121a565983d53127ef82331320ad3b42cfd85f",
+      "attempt": 1,
+      "claimId": "claim_40dfa5b25852a6d38b9e23d1bddf8f411951620f97a97195688776fce65ae5a1",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_beb21df3d3688638af25926ec2121a565983d53127ef82331320ad3b42cfd85f",
+      "attempt": 1,
+      "claimId": "claim_3a38eb631b53f76e1c8e62823a6b05a754cf113691aac75270ac6cb5234b3781",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_c16f9e204ee2133297a8c538830df691354f22e8946aef9631cba421b8187fd1",
+      "attempt": 1,
+      "claimId": "claim_2e83667c0f77aeaf7b7ec0d81d0d38876b55db800bb521b9f942427576a0bed4",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_c16f9e204ee2133297a8c538830df691354f22e8946aef9631cba421b8187fd1",
+      "attempt": 1,
+      "claimId": "claim_9ee1af77ff2f92fdd4b2ef1435aafa1e4de78e09f77d8b0f13ede3323775f477",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_c2bcd2e89ea2474173008eff733a2b53b4b3fc7af9800d7e0dc093f2e6e4631a",
+      "attempt": 1,
+      "claimId": "claim_9905b9d15e1b1f871632be01e76aea5c1ad49443b4815f3e41e2e2870a60fc24",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_c2bcd2e89ea2474173008eff733a2b53b4b3fc7af9800d7e0dc093f2e6e4631a",
+      "attempt": 1,
+      "claimId": "claim_4bacf729d4f832440fe4b42c8fa356cf93d07c7022d18fa39c1f46d2b4037e7a",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_c2bcd2e89ea2474173008eff733a2b53b4b3fc7af9800d7e0dc093f2e6e4631a",
+      "attempt": 1,
+      "claimId": "claim_a26a6874352a3512e0d0afaff8f34bb4c349ff74eff4f936766dba03e32ed54b",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_c4ce60c73af5dc3df7aa9b72735f613219097ac07c7a9818c04a4378367aa4d4",
+      "attempt": 1,
+      "claimId": "claim_2130ca4bea4c3d87061abf0b4c51f90d236a7e2ac6c971adb92c443a86ec472b",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Matches the supplier evidence. | Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_c4ce60c73af5dc3df7aa9b72735f613219097ac07c7a9818c04a4378367aa4d4",
+      "attempt": 1,
+      "claimId": "claim_0588a3b010f3f10110ad3b2f5eda43e21a943764b1b056c974c19868978b1d6e",
+      "state": "reviewed",
+      "humanVerdict": "supported",
+      "rationale": "Совпадает с доказательствами поставщика.",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_d61728331d68824684040c734fafb6aede33a7157f1a5e9a3a1d090f1afa490d",
+      "attempt": 1,
+      "claimId": "claim_867b786b1a9657f9dc68246c0654033e9236d41f52046cd2cbe669837d368415",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_d61728331d68824684040c734fafb6aede33a7157f1a5e9a3a1d090f1afa490d",
+      "attempt": 1,
+      "claimId": "claim_e139e7ab8d9cb537a18dc2498ad1be67b7654924ee4ba17d6b77254850621dde",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_d61728331d68824684040c734fafb6aede33a7157f1a5e9a3a1d090f1afa490d",
+      "attempt": 1,
+      "claimId": "claim_3cb481a5276b354b24ab26dc7f5284dd0f90f0c5bbfd9d612b564c53cf819217",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_e83a72dc635c2b3118fdc0f86b07a13e56278dad8a13ccadb16adbd8b9804fb1",
+      "attempt": 1,
+      "claimId": "claim_cf7d9a0b9bbfe671e6287a56f389bae3dbd49b79fd9a6eca1d9a4d0c4c3dfc56",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_f4b0d32bf91a59ec3a03e73f4fe2fce247d0083a5589ebd2e071332537c25d5f",
+      "attempt": 1,
+      "claimId": "claim_346287c3819eb91b0127ea7cfef611198c5415e338f82143613007cb7b6d65eb",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_f4b0d32bf91a59ec3a03e73f4fe2fce247d0083a5589ebd2e071332537c25d5f",
+      "attempt": 1,
+      "claimId": "claim_418aceab61808911b1f83372e286a19dcb8bd74936cd45adf597db5acfb5dc0d",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    },
+    {
+      "productId": "product_f4b0d32bf91a59ec3a03e73f4fe2fce247d0083a5589ebd2e071332537c25d5f",
+      "attempt": 1,
+      "claimId": "claim_1a8cdd2b708507ea21b39021711e0fc324d4b5b30f9af70ef5c024559f914230",
+      "state": "pending",
+      "humanVerdict": null,
+      "rationale": "",
+      "issueTypes": []
+    }
+  ]
+}

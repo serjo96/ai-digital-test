@@ -1,0 +1,83 @@
+{
+  "elapsedMs": 9898.840582999983,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "869cf53e89b16b65f94f916153772031c90076f5c81404c7afa75927dd06c94b",
+      "claims": [
+        {
+          "text": "The Cobalt Pro speaker pair features passive amplification",
+          "start": 0,
+          "end": 58,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f",
+            "identity:96d969e08edee1749289f9766f01002ff950b7a794566a04d22c86ae10e10169",
+            "identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704",
+            "fact:fact_966d3de7a3b87957c67e7cae439026fcf70787070b3a0d4483560e08a57f4581"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_bb41623d6c",
+              "field": "raw_title",
+              "quote": "Cobalt Pro bookshelf speaker pair"
+            },
+            {
+              "rowId": "row_bb41623d6c",
+              "field": "raw_specs",
+              "quote": "passive"
+            }
+          ],
+          "reason": "The title supports the model, speaker type and pair bundle; the specifications explicitly state passive amplification."
+        },
+        {
+          "text": "and 4-ohm impedance",
+          "start": 59,
+          "end": 78,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_ddebf3a82cd83e83c81b7c0215caea251793743268e11361b90523e24ee19830"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_bb41623d6c",
+              "field": "raw_specs",
+              "quote": "4 ohm"
+            }
+          ],
+          "reason": "The impedance matches the supplied fact and raw specifications."
+        },
+        {
+          "text": "Power is 40 W for an unspecified purpose",
+          "start": 80,
+          "end": 120,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_d132117655f2c77d640aa580b10bc4aa277bdf167515506b9ff0ec680020db8e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_bb41623d6c",
+              "field": "raw_specs",
+              "quote": "40W"
+            }
+          ],
+          "reason": "The power value matches the source and retains the supplied purpose_unspecified qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"869cf53e89b16b65f94f916153772031c90076f5c81404c7afa75927dd06c94b\",\"claims\":[{\"text\":\"The Cobalt Pro speaker pair features passive amplification\",\"start\":0,\"end\":58,\"verdict\":\"supported\",\"supportIds\":[\"identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f\",\"identity:96d969e08edee1749289f9766f01002ff950b7a794566a04d22c86ae10e10169\",\"identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704\",\"fact:fact_966d3de7a3b87957c67e7cae439026fcf70787070b3a0d4483560e08a57f4581\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_bb41623d6c\",\"field\":\"raw_title\",\"quote\":\"Cobalt Pro bookshelf speaker pair\"},{\"rowId\":\"row_bb41623d6c\",\"field\":\"raw_specs\",\"quote\":\"passive\"}],\"reason\":\"The title supports the model, speaker type and pair bundle; the specifications explicitly state passive amplification.\"},{\"text\":\"and 4-ohm impedance\",\"start\":59,\"end\":78,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_ddebf3a82cd83e83c81b7c0215caea251793743268e11361b90523e24ee19830\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_bb41623d6c\",\"field\":\"raw_specs\",\"quote\":\"4 ohm\"}],\"reason\":\"The impedance matches the supplied fact and raw specifications.\"},{\"text\":\"Power is 40 W for an unspecified purpose\",\"start\":80,\"end\":120,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_d132117655f2c77d640aa580b10bc4aa277bdf167515506b9ff0ec680020db8e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_bb41623d6c\",\"field\":\"raw_specs\",\"quote\":\"40W\"}],\"reason\":\"The power value matches the source and retains the supplied purpose_unspecified qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0e521ce985bfced0016aa44d33fe2087d0b327eaf380618043",
+    "usage": {
+      "inputTokens": 2294,
+      "outputTokens": 537,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2291
+    }
+  }
+}

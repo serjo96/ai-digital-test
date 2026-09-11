@@ -1,0 +1,87 @@
+{
+  "elapsedMs": 13111.738083000004,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "2d58f07305605f457085bd16e39878c60c0cf3a1749f3619d422232b1fddf41d",
+      "claims": [
+        {
+          "text": "The Nimbus 2 speaker has an IP67 rating",
+          "start": 0,
+          "end": 39,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f",
+            "identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b",
+            "fact:fact_6e693895d3a717613e71ec531993380f496ef6d83138d3aad1a2074843994dc2"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c2467f5304",
+              "field": "raw_title",
+              "quote": "NIMBUS 2 speaker - waterproof"
+            },
+            {
+              "rowId": "row_f3873a8816",
+              "field": "raw_title",
+              "quote": "Nimbus 2 Portable Bluetooth Speaker"
+            },
+            {
+              "rowId": "row_c2467f5304",
+              "field": "raw_specs",
+              "quote": "IP67"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and product type; the specifications explicitly state IP67."
+        },
+        {
+          "text": "and a mass of 1,200 g",
+          "start": 40,
+          "end": 61,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_9ddf5078be168242ceacdc32b5941c82b93f31a8faa78766e7ce54190f882673"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_f3873a8816",
+              "field": "raw_specs",
+              "quote": "weight 1.2kg"
+            }
+          ],
+          "reason": "The supplied mass support states 1.2 kg, equivalent to 1,200 g."
+        },
+        {
+          "text": "Its battery runtime is 14 hours, with usage unspecified",
+          "start": 63,
+          "end": 118,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_deab25456923b0098f41887a614d627010f3bf746667de14c58f5865e05427bf"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c2467f5304",
+              "field": "raw_specs",
+              "quote": "14 hour battery"
+            }
+          ],
+          "reason": "The source states a 14-hour battery runtime without usage conditions; the claim preserves the supplied usage_unspecified qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"2d58f07305605f457085bd16e39878c60c0cf3a1749f3619d422232b1fddf41d\",\"claims\":[{\"text\":\"The Nimbus 2 speaker has an IP67 rating\",\"start\":0,\"end\":39,\"verdict\":\"supported\",\"supportIds\":[\"identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f\",\"identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b\",\"fact:fact_6e693895d3a717613e71ec531993380f496ef6d83138d3aad1a2074843994dc2\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_title\",\"quote\":\"NIMBUS 2 speaker - waterproof\"},{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_title\",\"quote\":\"Nimbus 2 Portable Bluetooth Speaker\"},{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_specs\",\"quote\":\"IP67\"}],\"reason\":\"The supplied identity supports establish the model and product type; the specifications explicitly state IP67.\"},{\"text\":\"and a mass of 1,200 g\",\"start\":40,\"end\":61,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_9ddf5078be168242ceacdc32b5941c82b93f31a8faa78766e7ce54190f882673\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_specs\",\"quote\":\"weight 1.2kg\"}],\"reason\":\"The supplied mass support states 1.2 kg, equivalent to 1,200 g.\"},{\"text\":\"Its battery runtime is 14 hours, with usage unspecified\",\"start\":63,\"end\":118,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_deab25456923b0098f41887a614d627010f3bf746667de14c58f5865e05427bf\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_specs\",\"quote\":\"14 hour battery\"}],\"reason\":\"The source states a 14-hour battery runtime without usage conditions; the claim preserves the supplied usage_unspecified qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0b23c0a92bdea908016aa44c3e030087d093b769e75a9738c0",
+    "usage": {
+      "inputTokens": 2700,
+      "outputTokens": 556,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2697
+    }
+  }
+}

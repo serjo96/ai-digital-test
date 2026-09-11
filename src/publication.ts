@@ -174,8 +174,9 @@ function identityBlock(result: ProductResult, product: CanonicalProduct): string
 
 export interface PublicationRun { result: PublicationResult; controlledClaims: Map<string, VerifiedClaim[]> }
 
-export async function publicationPipeline(result: ProductResult, runtime: AiRuntime<Stage4Config>, config: Stage4Config, eligibleRows?: Set<string>, suite?: ClaimSuite | null): Promise<PublicationRun> {
+export async function publicationPipeline(result: ProductResult, runtime: AiRuntime<Stage4Config>, config: Stage4Config, eligibleRows?: Set<string>, suite?: ClaimSuite | null, frozenPublication?: PublicationResult): Promise<PublicationRun> {
   const productByRow = new Map(result.products.flatMap(p => p.rowIds.map(id => [id, p] as const)));
+  const frozenListings = new Map(frozenPublication?.listings.map(listing => [listing.productId, listing]) ?? []);
   const controlledClaims = new Map<string, VerifiedClaim[]>();
   if (suite) for (const item of suite.cases) {
     const product = productByRow.get(item.rowId)!;
@@ -199,6 +200,23 @@ export async function publicationPipeline(result: ProductResult, runtime: AiRunt
     }
     if (authFailed) {
       listings.push({ productId: product.id, status: 'withheld', supports, attempts: [], draftText: null, publishedText: null, selectedAttempt: null, withholdReasons: ['generation_error:skipped_after_auth'] });
+      continue;
+    }
+    if (frozenPublication) {
+      const frozen = frozenListings.get(product.id);
+      const frozenAttempt = frozen?.attempts.find(attempt => attempt.attempt === frozen.selectedAttempt);
+      if (!frozen?.publishedText || !frozenAttempt) {
+        listings.push({ productId: product.id, status: 'withheld', supports, attempts: [], draftText: null, publishedText: null, selectedAttempt: null, withholdReasons: ['frozen_publication_missing'] });
+        continue;
+      }
+      const checked = await verify(runtime, config.verifier, result, product, supports, frozen.publishedText);
+      const attempt = listingAttempt(frozenAttempt.attempt, frozenAttempt.role, frozen.publishedText, frozenAttempt.generationRecordKey, checked);
+      if (attempt.verificationStatus === 'supported') {
+        listings.push({ productId: product.id, status: 'ready', supports, attempts: [attempt], draftText: frozen.publishedText, publishedText: frozen.publishedText, selectedAttempt: attempt.attempt, withholdReasons: [] });
+      } else {
+        listings.push({ productId: product.id, status: 'withheld', supports, attempts: [attempt], draftText: frozen.publishedText, publishedText: null, selectedAttempt: null, withholdReasons: ['frozen_verification_failed', ...attempt.reasons] });
+      }
+      authFailed = runtime.records.at(-1)?.error === 'auth';
       continue;
     }
     const initial = await generate(runtime, config.generation, product, supports);

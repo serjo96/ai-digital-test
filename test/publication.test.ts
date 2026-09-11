@@ -80,6 +80,17 @@ test('publication publishes supported text and replay reproduces it without anot
   assert.deepEqual(replay.result, live.result); assert.equal(provider.calls, calls);
 }));
 
+test('verifier-only publication freezes prior text and makes no generation request', async () => temporary(async dir => {
+  const sourceProvider = new PublicationProvider();
+  const source = await publicationPipeline(b1(), new AiRuntime(registry(sourceProvider), config, 'live', join(dir, 'source')), config);
+  const verifier = new PublicationProvider();
+  const frozen = await publicationPipeline(b1(), new AiRuntime(registry(verifier), config, 'live', join(dir, 'frozen')), config, undefined, null, source.result);
+  assert.equal(verifier.calls, 1);
+  assert.equal(verifier.verificationCalls, 1);
+  assert.equal(frozen.result.listings[0]!.publishedText, source.result.listings[0]!.publishedText);
+  assert.equal(frozen.result.listings[0]!.status, 'ready');
+}));
+
 test('one blocked verification gets one repair, and a second block withholds without a third attempt', async () => temporary(async dir => {
   const repairedProvider = new PublicationProvider(1);
   const repaired = await publicationPipeline(b1(), new AiRuntime(registry(repairedProvider), config, 'live', join(dir, 'repair')), config);
@@ -128,6 +139,20 @@ test('canonical generated review preserves the completed sample and reports exac
   assert.equal(new Set(review.claims.map((claim: { productId: string; attempt: number; claimId: string }) => `${claim.productId}:${claim.attempt}:${claim.claimId}`)).size, 158);
 });
 
+test('atomic-v2 canonical review passes the full-input development gate with exact denominators', async () => {
+  const publication = JSON.parse(await readFile('reports/B3-openai-development-verifier-only-v2-live/result.json', 'utf8'));
+  const report = JSON.parse(await readFile('reports/B3-openai-development-verifier-only-v2-live/report.json', 'utf8'));
+  const review = JSON.parse(await readFile('eval/generated-review-fdca0138d88f.json', 'utf8'));
+  const evaluation = evaluateGenerated(review, publication, report.publicationHash);
+  assert.deepEqual({ checked: evaluation.checkedPublishedClaims, total: evaluation.totalPublishedClaims }, { checked: 76, total: 99 });
+  assert.deepEqual({ checked: evaluation.fullyCheckedProducts, total: evaluation.totalPublishedProducts }, { checked: 28, total: 37 });
+  assert.deepEqual({ completed: evaluation.completedSampleProducts, required: evaluation.requiredSampleProducts }, { completed: 20, required: 20 });
+  assert.equal(evaluation.publishedClaimErrors, 0);
+  assert.equal(evaluation.nonAtomicIssueClaims, 0);
+  assert.equal(evaluation.unclearCopyIssueClaims, 2);
+  assert.equal(generatedReviewGatePassed(evaluation), true);
+});
+
 test('generated review rebases only stable reviewed keys onto a changed publication', async () => {
   const publication = JSON.parse(await readFile('reports/B3-openai-development-live-v4/result.json', 'utf8'));
   const source = JSON.parse(await readFile('eval/generated-review-e478435a3d39.json', 'utf8'));
@@ -145,6 +170,54 @@ test('generated review rebases only stable reviewed keys onto a changed publicat
   assert.equal(rebased.claims.some((claim: { claimId: string }) => claim.claimId === oldId), false);
   assert.equal(rebased.claims.filter((claim: { state: string }) => claim.state === 'reviewed').length, 119);
   assert.equal(evaluateGenerated(rebased, changed, publicationHash).checkedPublishedClaims, 119);
+});
+
+test('generated review safely merges reviewed spans when frozen publication text is unchanged', async () => {
+  const publication = JSON.parse(await readFile('reports/B3-openai-development-live-v4/result.json', 'utf8'));
+  const source = JSON.parse(await readFile('eval/generated-review-e478435a3d39.json', 'utf8'));
+  const changed = structuredClone(publication);
+  const listing = changed.listings.find((item: { productId: string; selectedAttempt: number | null }) => source.sampleProductIds.includes(item.productId) && item.selectedAttempt !== null);
+  const attempt = listing.attempts.find((item: { attempt: number }) => item.attempt === listing.selectedAttempt);
+  const pairIndex = attempt.claims.findIndex((claim: { id: string }, index: number, claims: { id: string }[]) => {
+    const pair = claims[index + 1];
+    if (!pair) return false;
+    return [claim, pair].every(item => source.claims.some((review: { claimId: string; state: string; issueTypes: string[] }) => review.claimId === item.id && review.state === 'reviewed' && !review.issueTypes.includes('non_atomic_claim')));
+  });
+  assert.ok(pairIndex >= 0);
+  const first = attempt.claims[pairIndex]; const second = attempt.claims[pairIndex + 1];
+  const merged = {
+    ...first,
+    id: `claim_${'e'.repeat(64)}`,
+    text: attempt.text.slice(first.start, second.end),
+    end: second.end,
+    supportIds: [...new Set([...first.supportIds, ...second.supportIds])],
+    decisionIds: [...new Set([...first.decisionIds, ...second.decisionIds])],
+    evidence: [...first.evidence, ...second.evidence],
+    reason: `${first.reason} ${second.reason}`,
+  };
+  attempt.claims.splice(pairIndex, 2, merged);
+  const publicationHash = hash(JSON.stringify(changed.listings));
+  const rebased = rebaseGeneratedReview(source, changed, publicationHash, publication);
+  const migrated = rebased.claims.find((claim: { claimId: string }) => claim.claimId === merged.id)!;
+  assert.equal(migrated.state, 'reviewed');
+  assert.equal(migrated.humanVerdict, 'supported');
+  assert.ok(migrated.rationale.includes(' | '));
+  assert.equal(evaluateGenerated(rebased, changed, publicationHash).checkedPublishedClaims, 119);
+});
+
+test('generated review resolves a prior non-atomic flag only when the new frozen-text span covers its reviewed facts', async () => {
+  const oldPublication = JSON.parse(await readFile('reports/B3-openai-development-human-gate-v2/result.json', 'utf8'));
+  const newPublication = JSON.parse(await readFile('reports/B3-openai-development-verifier-only-v2-live/result.json', 'utf8'));
+  const source = JSON.parse(await readFile('eval/generated-review-e478435a3d39.json', 'utf8'));
+  const publicationHash = hash(JSON.stringify(newPublication.listings));
+  const rebased = rebaseGeneratedReview(source, newPublication, publicationHash, oldPublication);
+  const sampleClaims = rebased.claims.filter(claim => rebased.sampleProductIds.includes(claim.productId));
+  assert.ok(sampleClaims.every(claim => claim.state === 'reviewed'));
+  assert.ok(rebased.claims.every(claim => !claim.issueTypes.includes('non_atomic_claim')));
+  assert.ok(rebased.claims.some(claim => claim.rationale.startsWith('Atomic-v2 span resolves the prior structural issue.')));
+  const evaluation = evaluateGenerated({ ...rebased, status: 'human_verified', reviewedBy: 'Reviewer', reviewedAt: '2026-09-12T00:00:00.000Z' }, newPublication, publicationHash);
+  assert.equal(evaluation.completedSampleProducts, 20);
+  assert.equal(generatedReviewGatePassed(evaluation), true);
 });
 
 test('generated review v2 requires explicit valid reviewed claims and a complete 20-product human sample', async () => {

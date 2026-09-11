@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 7564.30475000001,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "5fba70d4f74fc4d122714290c1f80d0cfac5118ad1ec6edd0ea2ebd92345e12b",
+      "claims": [
+        {
+          "text": "The Onyx Lite mouse has 6 buttons",
+          "start": 0,
+          "end": 33,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f",
+            "identity:335df722e77165d393567d4144ff04009970552a248aaf23d2e477551aad076c",
+            "fact:fact_834e4ab916c577c404788eb242ded593fa4003248e3630894e450d6912c24ac1"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_55a8c9b86d",
+              "field": "raw_title",
+              "quote": "Onyx Lite wireless mouse"
+            },
+            {
+              "rowId": "row_74b8f7797a",
+              "field": "raw_title",
+              "quote": "Onyx Lite wireless mouse"
+            },
+            {
+              "rowId": "row_55a8c9b86d",
+              "field": "raw_specs",
+              "quote": "6 buttons"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and product type, and the buttons support explicitly states 6 buttons."
+        },
+        {
+          "text": "and a mass of 70 g",
+          "start": 34,
+          "end": 52,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_5fccb1d903e31013fbd341e3ba0ed0bd1cec17cbf8067b9cd78ec0a156086cdf"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_55a8c9b86d",
+              "field": "raw_specs",
+              "quote": "70g"
+            }
+          ],
+          "reason": "The supplied mass support specifies 70 g without qualifiers."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"5fba70d4f74fc4d122714290c1f80d0cfac5118ad1ec6edd0ea2ebd92345e12b\",\"claims\":[{\"text\":\"The Onyx Lite mouse has 6 buttons\",\"start\":0,\"end\":33,\"verdict\":\"supported\",\"supportIds\":[\"identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f\",\"identity:335df722e77165d393567d4144ff04009970552a248aaf23d2e477551aad076c\",\"fact:fact_834e4ab916c577c404788eb242ded593fa4003248e3630894e450d6912c24ac1\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_55a8c9b86d\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite wireless mouse\"},{\"rowId\":\"row_74b8f7797a\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite wireless mouse\"},{\"rowId\":\"row_55a8c9b86d\",\"field\":\"raw_specs\",\"quote\":\"6 buttons\"}],\"reason\":\"The supplied identity supports establish the model and product type, and the buttons support explicitly states 6 buttons.\"},{\"text\":\"and a mass of 70 g\",\"start\":34,\"end\":52,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_5fccb1d903e31013fbd341e3ba0ed0bd1cec17cbf8067b9cd78ec0a156086cdf\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_55a8c9b86d\",\"field\":\"raw_specs\",\"quote\":\"70g\"}],\"reason\":\"The supplied mass support specifies 70 g without qualifiers.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_06a134815dab6c53016aa44cb7735087d0a61044267cf1e006",
+    "usage": {
+      "inputTokens": 1871,
+      "outputTokens": 424,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1868
+    }
+  }
+}

@@ -138,15 +138,48 @@ export function generatedReviewTemplate(result: PublicationResult, publicationHa
 }
 
 /** Carry only stable reviewed claim keys into a new publication; changed claims remain pending. */
-export function rebaseGeneratedReview(input: unknown, result: PublicationResult, publicationHash: string): GeneratedReview {
+export function rebaseGeneratedReview(input: unknown, result: PublicationResult, publicationHash: string, sourceResult?: PublicationResult): GeneratedReview {
   const source = migrateGeneratedReview(input);
   const target = generatedReviewTemplate(result, publicationHash);
   const targetProducts = new Set(target.claims.map(claim => claim.productId));
   const reviewed = new Map(source.claims.filter(claim => claim.state === 'reviewed').map(claim => [`${claim.productId}:${claim.attempt}:${claim.claimId}`, claim]));
+  const sourceListings = new Map(sourceResult?.listings.map(listing => [listing.productId, listing]) ?? []);
+  const targetListings = new Map(result.listings.map(listing => [listing.productId, listing]));
+  const migrateByCoverage = (claim: GeneratedReview['claims'][number]) => {
+    const oldListing = sourceListings.get(claim.productId);
+    const newListing = targetListings.get(claim.productId);
+    if (!oldListing?.publishedText || oldListing.publishedText !== newListing?.publishedText) return null;
+    const oldAttempt = oldListing.attempts.find(attempt => attempt.attempt === oldListing.selectedAttempt);
+    const newAttempt = newListing.attempts.find(attempt => attempt.attempt === newListing.selectedAttempt);
+    const newClaim = newAttempt?.claims.find(item => item.id === claim.claimId);
+    if (!oldAttempt || !newClaim || oldAttempt.attempt !== newAttempt?.attempt) return null;
+    const coveredClaims = oldAttempt.claims.filter(item => item.start >= newClaim.start && item.end <= newClaim.end);
+    if (!coveredClaims.length) return null;
+    for (let index = newClaim.start; index < newClaim.end; index++) {
+      if (/[\p{L}\p{N}]/u.test(newAttempt.text[index]!) && !coveredClaims.some(item => item.start <= index && item.end > index)) return null;
+    }
+    const decisions = coveredClaims.map(item => reviewed.get(`${claim.productId}:${oldAttempt.attempt}:${item.id}`));
+    if (decisions.some(item => !item || item.humanVerdict !== 'supported')) return null;
+    const complete = decisions as GeneratedReview['claims'];
+    const resolvedAtomicity = complete.some(item => item.issueTypes.includes('non_atomic_claim'));
+    return {
+      ...claim,
+      state: 'reviewed' as const,
+      humanVerdict: 'supported' as const,
+      rationale: `${resolvedAtomicity ? 'Atomic-v2 span resolves the prior structural issue. Prior human rationale: ' : ''}${[...new Set(complete.map(item => item.rationale))].join(' | ')}`,
+      issueTypes: [...new Set(complete.flatMap(item => item.issueTypes).filter(issue => issue !== 'non_atomic_claim'))],
+    };
+  };
+  const claims = target.claims.map(claim => reviewed.get(`${claim.productId}:${claim.attempt}:${claim.claimId}`) ?? migrateByCoverage(claim) ?? claim);
+  const sampleProductIds = source.sampleProductIds.filter(productId => targetProducts.has(productId));
+  const sampleComplete = sampleProductIds.length >= 20 && sampleProductIds.every(productId => claims.filter(claim => claim.productId === productId).every(claim => claim.state === 'reviewed'));
   return GeneratedReviewSchema.parse({
     ...target,
-    sampleProductIds: source.sampleProductIds.filter(productId => targetProducts.has(productId)),
-    claims: target.claims.map(claim => reviewed.get(`${claim.productId}:${claim.attempt}:${claim.claimId}`) ?? claim),
+    status: source.status === 'human_verified' && sampleComplete ? 'human_verified' : 'provisional',
+    reviewedBy: source.status === 'human_verified' && sampleComplete ? source.reviewedBy : null,
+    reviewedAt: source.status === 'human_verified' && sampleComplete ? source.reviewedAt : null,
+    sampleProductIds,
+    claims,
   });
 }
 

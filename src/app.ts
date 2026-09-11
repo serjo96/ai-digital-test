@@ -27,7 +27,7 @@ import { evaluateControlled, evaluateGenerated, generatedReviewGatePassed, gener
 import { publicationPipeline } from './publication.js';
 
 export interface RunOptions { feed: string; taxonomy: string; labels: string; out: string; runId: string; baseline?: 'b0' | 'b1' | 'b2' | 'b3'; checks?: string;
-  aiRows?: string[]; aiPairs?: [string, string][]; aiConfig?: string; aiMode?: 'live' | 'replay'; aiCache?: string; semanticChecks?: string; aiTask?: 'extraction' | 'matching'; aiCohort?: 'development' | 'full_input'; claimChecks?: string; generatedChecks?: string; stage4Gate?: string }
+  aiRows?: string[]; aiPairs?: [string, string][]; aiConfig?: string; aiMode?: 'live' | 'replay'; aiCache?: string; semanticChecks?: string; aiTask?: 'extraction' | 'matching'; aiCohort?: 'development' | 'full_input'; claimChecks?: string; generatedChecks?: string; stage4Gate?: string; publicationSource?: string }
 const baseConfig = { titleNormalization: 'trim+collapse-whitespace+lowercase', dollarCurrency: 'USD', split: 'development' as const };
 export const saveJson = (path: string, value: unknown) => writeFile(path, JSON.stringify(value, null, 2) + '\n', { flag: 'wx' });
 
@@ -79,13 +79,14 @@ export class PipelineService {
       const labels = validateLabels(JSON.parse(labelsText), rows);
       const selected = options.baseline ?? 'b1';
       if ((selected === 'b2' || selected === 'b3') && (!options.aiMode || !options.aiCache)) throw new Error(`${selected.toUpperCase()} requires explicit --ai-mode live|replay and --ai-cache DIR`);
-      if (!['b2', 'b3'].includes(selected) && (options.aiConfig || options.aiMode || options.aiCache || options.aiTask || options.aiCohort || options.claimChecks || options.generatedChecks || options.stage4Gate)) throw new Error('AI options require --baseline b2 or b3');
-      if (selected === 'b2' && (options.claimChecks || options.generatedChecks || options.stage4Gate)) throw new Error('publication checks require --baseline b3');
+      if (!['b2', 'b3'].includes(selected) && (options.aiConfig || options.aiMode || options.aiCache || options.aiTask || options.aiCohort || options.claimChecks || options.generatedChecks || options.stage4Gate || options.publicationSource)) throw new Error('AI options require --baseline b2 or b3');
+      if (selected === 'b2' && (options.claimChecks || options.generatedChecks || options.stage4Gate || options.publicationSource)) throw new Error('publication checks require --baseline b3');
       if (selected === 'b3' && (options.aiTask || options.aiRows || options.aiPairs || options.semanticChecks)) throw new Error('stage3 AI options are not valid for B3');
+      if (options.publicationSource && (selected !== 'b3' || (options.aiCohort ?? 'full_input') !== 'development')) throw new Error('--publication-source requires B3 development');
       const ai = selected === 'b2' ? await readAiConfig(options.aiConfig ?? 'config/ai.json') : selected === 'b3' ? await readStage4Config(options.aiConfig ?? 'config/stage4.openai.json') : undefined;
-      const config = { ...baseConfig, baseline: selected, ...(ai ? selected === 'b2'
+      const config: RunReport['config'] = { ...baseConfig, baseline: selected, ...(ai ? selected === 'b2'
         ? { ai, aiTask: options.aiTask ?? 'extraction', aiCohort: options.aiCohort ?? 'full_input', ...(options.aiRows ? { aiRows: options.aiRows } : {}), ...(options.aiPairs ? { aiPairs: options.aiPairs } : {}) }
-        : { ai, aiCohort: options.aiCohort ?? 'full_input' } : {}) };
+        : { ai, aiCohort: options.aiCohort ?? 'full_input', ...(options.publicationSource ? { publicationSourceRunId: '' } : {}) } : {}) };
       let eligible = options.aiCohort === 'development' ? new Set(labels.cases.filter(c => c.split === 'development').flatMap(c => c.rowIds)) : undefined;
       const checksText = selected !== 'b0' ? await readFile(options.checks ?? 'eval/stage2-checks.json', 'utf8') : null;
       const suite = checksText ? validateQuality(JSON.parse(checksText), labels, hash(feedText)) : null;
@@ -100,6 +101,21 @@ export class PipelineService {
       const pipelineStart = performance.now();
       const b1 = productBaseline(rows);
       const baseDecisionsHash = hash(JSON.stringify(b1));
+      let publicationSource: PublicationResult | undefined;
+      let publicationSourceHash: string | undefined;
+      if (options.publicationSource) {
+        const [sourceReport, sourceResult] = await readRun(options.publicationSource);
+        if (!isPublicationResult(sourceResult) || sourceReport.schemaVersion !== '4' || sourceReport.rulesVersion !== 'B3-v1' || sourceReport.status !== 'success'
+          || sourceReport.mode === 'test' || sourceReport.ai?.origin === 'test' || sourceReport.config.aiCohort !== 'development'
+          || sourceReport.hashes.feed !== hash(feedText) || sourceReport.hashes.taxonomy !== hash(taxonomyText) || sourceReport.hashes.labels !== hash(labelsText)
+          || JSON.stringify(sourceReport.config.ai) !== JSON.stringify(ai) || sourceReport.decisionsHash !== baseDecisionsHash
+          || sourceReport.publicationHash !== hash(JSON.stringify(sourceResult.listings))) {
+          throw new Error('publication source is not a compatible successful development run');
+        }
+        publicationSource = sourceResult;
+        publicationSourceHash = sourceReport.publicationHash;
+        config.publicationSourceRunId = sourceReport.runId;
+      }
       const claimText = selected === 'b3' ? await readFile(options.claimChecks ?? 'eval/stage4-claims.json', 'utf8') : null;
       const claimSuite = claimText ? validateClaimSuite(JSON.parse(claimText), labels, b1, hash(feedText), baseDecisionsHash) : null;
       let gateText: string | null = null;
@@ -115,7 +131,7 @@ export class PipelineService {
       }
       let controlledClaims = new Map<string, VerifiedClaim[]>();
       const result = selected === 'b3'
-        ? await publicationPipeline(b1, runtime as AiRuntime<import('./publication-config.js').Stage4Config>, ai as import('./publication-config.js').Stage4Config, options.aiCohort === 'development' ? new Set(labels.cases.filter(c => c.split === 'development').flatMap(c => c.rowIds)) : undefined, claimSuite).then(run => { controlledClaims = run.controlledClaims; return run.result; })
+        ? await publicationPipeline(b1, runtime as AiRuntime<import('./publication-config.js').Stage4Config>, ai as import('./publication-config.js').Stage4Config, options.aiCohort === 'development' ? new Set(labels.cases.filter(c => c.split === 'development').flatMap(c => c.rowIds)) : undefined, claimSuite, publicationSource).then(run => { controlledClaims = run.controlledClaims; return run.result; })
         : runtime ? await aiBaseline(rows, runtime as AiRuntime<AiConfig>, options.aiTask ?? 'extraction', eligible, options.aiPairs) : selected === 'b1' ? b1 : baseline(rows);
       const pipelineMs = performance.now() - pipelineStart;
       assertAccounting(rows, result);
@@ -132,7 +148,7 @@ export class PipelineService {
         schemaVersion: selected === 'b3' ? '4' : runtime || semanticSuite ? '3' : '2', rulesVersion: selected === 'b3' ? 'B3-v1' : runtime ? 'B2-v1' : selected === 'b1' ? 'B1-v2' : 'B0-v1', runId: options.runId, createdAt: new Date().toISOString(),
         status: runtime?.records.some(r => r.status === 'error') || gateFailed ? 'partial' : 'success',
         mode: runtime ? runtime.records.some(r => r.origin === 'test') ? 'test' : options.aiMode! : 'code-only', code, config,
-        hashes: { feed: hash(feedText), taxonomy: hash(taxonomyText), labels: hash(labelsText), config: hash(JSON.stringify(config)), ...(checksText ? { checks: hash(checksText) } : {}), ...(semanticText ? { semanticChecks: hash(semanticText) } : {}), ...(claimText ? { claimChecks: hash(claimText) } : {}), ...(generatedText ? { generatedChecks: hash(generatedText) } : {}), ...(gateText ? { stage4Gate: hash(gateText) } : {}) },
+        hashes: { feed: hash(feedText), taxonomy: hash(taxonomyText), labels: hash(labelsText), config: hash(JSON.stringify(config)), ...(checksText ? { checks: hash(checksText) } : {}), ...(semanticText ? { semanticChecks: hash(semanticText) } : {}), ...(claimText ? { claimChecks: hash(claimText) } : {}), ...(generatedText ? { generatedChecks: hash(generatedText) } : {}), ...(gateText ? { stage4Gate: hash(gateText) } : {}), ...(publicationSourceHash ? { publicationSource: publicationSourceHash } : {}) },
         audit: {
           inputRows: rows.length, accountedRows: result.rows.length, lostRows: 0, duplicateAssignments: 0,
           suppliers: new Set(rows.map(r => r.supplier)).size, taxonomySize: (taxonomy as string[]).length,

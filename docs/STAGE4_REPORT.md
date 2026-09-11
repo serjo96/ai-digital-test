@@ -1,12 +1,12 @@
 # Этап 4 — генерация, claims и B3
 
-Обновлено: 2026-09-11. Статус: контракт и development-прогон B3 реализованы; human review принят, но full-input safety gate ещё закрыт. Пользователь подтвердил все 12 controlled cases и завершил generated выборку 20/20; [offline review replay](../reports/B3-openai-development-human-gate-v2/report.md) сохранил те же решения и публикацию без сетевых вызовов. Четыре non-atomic claims требуют исправления до full-input; full-input B3 не запускался.
+Обновлено: 2026-09-12. Статус: контракт и development-прогон B3 реализованы; human review и P0.2 development safety gate приняты. Пользователь подтвердил все 12 controlled cases и завершил generated выборку 20/20. Verifier-only live устранил четыре non-atomic spans без повторной генерации, а [human-gate replay](../reports/B3-openai-development-verifier-only-v2-human-gate-replay/report.md) воспроизвёл решения и публикацию без сетевых вызовов. Full-input B3 не запускался и требует отдельного разрешения.
 
 ## Фактическая исходная точка
 
 - Product baseline остался B1-v2: 220/220 строк учтены, 156 товаров, 4 не-товара, TP/FP/FN 17/0/0.
 - `decisionsHash` до и после публикационного pipeline: `749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e`.
-- Node 24.14.1; после офлайн-части P0.2 проходят 67 backend- и 13 web-тестов, typecheck/build.
+- Node 24.14.1; после P0.2 проходят 71 backend- и 13 web-тестов, typecheck/build.
 - OpenAI подключён через Responses API и Structured Outputs. Генератор — `gpt-5.6-sol`, verifier — отдельный `gpt-6-astra`, reasoning `low`.
 - Секрет загружается из локального `.env` через `AppConfig`, в отчёты, cache keys и prompts не записывается.
 
@@ -54,11 +54,11 @@ Live выполнил 86 API calls: 12 controlled verification, 37 generation, 3
 
 [Human-review replay](../reports/B3-openai-development-human-gate-v2/report.md) повторно использовал те же 86 cache entries и сделал 0 API calls. Он сохранил `decisionsHash` и `publicationHash`, зафиксировал controlled `human_verified` 12/12 и generated `human_verified`: claims 120/158, products 28/37, sample 20/20, factual errors 0, non-atomic 4, unclear-copy 2. Это авторитетный review artifact после P0.1, но не разрешающий full-input gate: четыре non-atomic issues остаются unresolved.
 
-## Открытый human gate и передача
+## Исторический human gate и передача
 
 Исторический [generated-review.json](../reports/B3-openai-development-live-v4/generated-review.json) остаётся неизменённым run-шаблоном v1. Пользовательский экспорт сохранён как канонический [generated-review-e478435a3d39.json](../eval/generated-review-e478435a3d39.json) v2: 120/158 claims, 28/37 полностью проверенных карточек и 20/20 карточек фиксированной выборки. Controlled suite уже подтверждена человеком и повторной проверки не требует. Pipeline валидирует metadata, hash binding и запрещает holdout в development suite.
 
-Ручная разметка больше не блокирует этап: factual errors 0, sample 20/20, development replay завершён. Однако четыре non-atomic span остаются unresolved structural issues и поэтому честно блокируют full-input gate; две unclear-copy формулировки измеряются отдельно. После исправления spans и повторной development-проверки для полного закрытия этапа 4 останутся full-input live/replay, выполняемые только отдельным последующим заданием.
+На этом историческом artifact ручная разметка больше не блокировала этап, но четыре non-atomic span оставались unresolved structural issues. Их исправление и повторная development-проверка описаны ниже. Для полного закрытия этапа 4 теперь остаются full-input live/replay, выполняемые только отдельным последующим заданием.
 
 ## P0.2 — офлайн-исправление atomicity
 
@@ -70,6 +70,12 @@ Verifier переведён на schema name `publication_verification_v2`. Prom
 
 [Offline replay](../reports/B3-openai-development-atomic-v2-replay/report.md) воспроизвёл 88 ответов из cache без сети и сохранил `decisionsHash=749beaa9...` и `publicationHash=15dee06a...`. [Live→replay comparison](../reports/comparisons/B3-openai-development-atomic-v2-live-to-replay/comparison.md) имеет `decisionsEqual=true`, `publicationEqual=true`, пустые changed row IDs и violations.
 
-Новый live также заново сгенерировал descriptions: 17/37 опубликованных текстов изменились, а verifier укрупнил сегментацию с 158 до 102 claims. Поэтому безопасный перенос через `web:prepare --generated-checks` сохранил только 3/120 reviewed keys и ни одного claim обязательной выборки; текущий bundle имеет 55/55 sample claims pending. Full-input остаётся запрещён до нового human review. Чтобы не заставлять человека повторно проверять всю выборку, следующий рекомендуемый эксперимент — отдельный verifier-only development run по замороженным старым draft texts; он не выполнялся и требует отдельного решения и разрешения на AI.
+Новый live также заново сгенерировал descriptions: 17/37 опубликованных текстов изменились, а verifier укрупнил сегментацию с 158 до 102 claims. Поэтому точный перенос по стабильным ключам сохранил только 3/120 reviewed keys и ни одного claim обязательной выборки; промежуточный bundle имел 55/55 sample claims pending. Этот диагностический результат не стал новым human baseline.
 
-После основного этапа 4 отдельным разрешённым заданием добавлен только human-review UI. `web:prepare` принимает сохранённый schema 4/B3, проверяет `decisionsHash`, `publicationHash`, generated review, controlled suite и сохранённые verifier records. Вкладки Generated/Controlled показывают точные ranges, verdict, причины и evidence; generated-разметка сохраняется локально и экспортируется без автоматической записи в репозиторий. Это не закрывает этап 5: holdout, full-input B3, финальная оценка, deployment, commit и push не выполнялись.
+После отдельного разрешения реализован `--publication-source`: режим доступен только для B3 development, валидирует совместимость и hashes сохранённого successful real run, замораживает его published texts и generation records и вызывает только verifier. [Verifier-only live](../reports/B3-openai-development-verifier-only-v2-live/report.md) выполнил 49 calls — 12 controlled и 37 publication verification, без generation role; 103361/21972 input/output tokens, всего 125333, $2.390245, 0 errors/retries. Все 37 published texts побитово совпадают с [исходным human-reviewed run](../reports/B3-openai-development-human-gate-v2/report.md). Результат: controlled 12/12, 37/39 ready, 2 identity review, 0 withheld и 0 запрещённых atomicity-паттернов среди 99 claims.
+
+Миграция нового review сначала использует точный ключ `productId + attempt + claimId`. При неизменном опубликованном тексте она также переносит только `reviewed + supported` решения, когда новый claim полностью покрыт прежними reviewed spans без буквенно-цифровых пробелов. Если единственной старой проблемой был `non_atomic_claim`, новый span снимает этот флаг только после прохождения atomic-v2 validator; прочие issue-флаги сохраняются. Новый канонический [generated-review-fdca0138d88f.json](../eval/generated-review-fdca0138d88f.json) имеет `human_verified`: 76/99 reviewed claims, 28/37 products, sample 20/20, factual errors 0, non-atomic 0, unclear-copy 2. Остальные 23 pending claims находятся вне обязательной выборки.
+
+[Human-gate replay](../reports/B3-openai-development-verifier-only-v2-human-gate-replay/report.md) дал 49 cache hits и 0 calls, сохранил `decisionsHash=749beaa9...` и `publicationHash=fdca0138...`. [Live→human-gate comparison](../reports/comparisons/B3-openai-development-verifier-only-v2-live-to-human-gate-replay/comparison.md) имеет `decisionsEqual=true`, `publicationEqual=true`, пустые changed row IDs и violations. Development gate принят; full-input и holdout не запускались.
+
+После основного этапа 4 отдельным разрешённым заданием добавлен human-review UI. `web:prepare` принимает сохранённый schema 4/B3, проверяет `decisionsHash`, `publicationHash`, generated review, controlled suite и сохранённые verifier records. Вкладки Generated/Controlled показывают точные ranges, verdict, причины и evidence; generated-разметка сохраняется локально и экспортируется без автоматической записи в репозиторий. Опции `--generated-source-run` и `--generated-review-out` позволяют подготовить coverage migration и отдельный канонический review, не переписывая run. Это не закрывает этап 5: holdout, full-input B3, финальная оценка, deployment, commit и push не выполнялись.

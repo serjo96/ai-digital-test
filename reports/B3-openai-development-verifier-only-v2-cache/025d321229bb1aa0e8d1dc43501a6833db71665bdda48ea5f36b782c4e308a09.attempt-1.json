@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 8198.59704199998,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "282f13fc5821abaaff074d15df44fe74e426c2273ef17089d151121824fa252c",
+      "claims": [
+        {
+          "text": "The Quill 2 camera records video at 4K@60fps",
+          "start": 0,
+          "end": 44,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e",
+            "identity:8781d953cfd74517ff20e2961e5c7d53f71b3c3b0fe85208215ec52120821ab3",
+            "fact:fact_9e81d5a1b2c8a25634754298e7124a09a38796aeaba9288032e57362de0a5c04"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_06dc75e525",
+              "field": "raw_title",
+              "quote": "Quill 2 action camera"
+            },
+            {
+              "rowId": "row_3f77cefacd",
+              "field": "raw_title",
+              "quote": "Quill 2 action camera"
+            },
+            {
+              "rowId": "row_06dc75e525",
+              "field": "raw_specs",
+              "quote": "4K60"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and camera type; the video support interprets the raw 4K60 specification as 4K@60fps."
+        },
+        {
+          "text": "and is waterproof up to 10 m",
+          "start": 45,
+          "end": 73,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_dd64e66a407e2c41617541e533bd16af3e1fcb81d842b6133bc70b44fd24cf78"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_06dc75e525",
+              "field": "raw_specs",
+              "quote": "waterproof to 10m"
+            }
+          ],
+          "reason": "The raw specification and supplied water-depth support establish waterproofing to 10 m, retaining the up-to qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"282f13fc5821abaaff074d15df44fe74e426c2273ef17089d151121824fa252c\",\"claims\":[{\"text\":\"The Quill 2 camera records video at 4K@60fps\",\"start\":0,\"end\":44,\"verdict\":\"supported\",\"supportIds\":[\"identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e\",\"identity:8781d953cfd74517ff20e2961e5c7d53f71b3c3b0fe85208215ec52120821ab3\",\"fact:fact_9e81d5a1b2c8a25634754298e7124a09a38796aeaba9288032e57362de0a5c04\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_06dc75e525\",\"field\":\"raw_title\",\"quote\":\"Quill 2 action camera\"},{\"rowId\":\"row_3f77cefacd\",\"field\":\"raw_title\",\"quote\":\"Quill 2 action camera\"},{\"rowId\":\"row_06dc75e525\",\"field\":\"raw_specs\",\"quote\":\"4K60\"}],\"reason\":\"The supplied identity supports establish the model and camera type; the video support interprets the raw 4K60 specification as 4K@60fps.\"},{\"text\":\"and is waterproof up to 10 m\",\"start\":45,\"end\":73,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_dd64e66a407e2c41617541e533bd16af3e1fcb81d842b6133bc70b44fd24cf78\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_06dc75e525\",\"field\":\"raw_specs\",\"quote\":\"waterproof to 10m\"}],\"reason\":\"The raw specification and supplied water-depth support establish waterproofing to 10 m, retaining the up-to qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_05758f4eacec8f0b016aa44d1b448087d0a6eba9a144cafd7f",
+    "usage": {
+      "inputTokens": 1859,
+      "outputTokens": 448,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1856
+    }
+  }
+}

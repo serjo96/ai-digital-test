@@ -1,0 +1,710 @@
+{
+  "before": "B3-openai-development-verifier-only-v2-live",
+  "after": "B3-openai-development-verifier-only-v2-human-gate-replay",
+  "comparable": true,
+  "incompatible": [],
+  "interpretation": "Saved run comparison",
+  "qualityStatus": "provisional",
+  "beforeMetrics": {
+    "inputRows": 220,
+    "accountedRows": 220,
+    "lostRows": 0,
+    "duplicateAssignments": 0,
+    "groups": 156,
+    "nonProducts": 4,
+    "reviewRows": 64,
+    "tp": 17,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1,
+    "recall": 1
+  },
+  "afterMetrics": {
+    "inputRows": 220,
+    "accountedRows": 220,
+    "lostRows": 0,
+    "duplicateAssignments": 0,
+    "groups": 156,
+    "nonProducts": 4,
+    "reviewRows": 64,
+    "tp": 17,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1,
+    "recall": 1
+  },
+  "deltas": {
+    "inputRows": 0,
+    "accountedRows": 0,
+    "lostRows": 0,
+    "duplicateAssignments": 0,
+    "groups": 0,
+    "nonProducts": 0,
+    "reviewRows": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 0,
+    "precision": 0,
+    "recall": 0
+  },
+  "decisionsEqual": true,
+  "publicationEqual": true,
+  "changedRowIds": [],
+  "changedMatchingRowIds": [],
+  "metricDeltas": [
+    {
+      "name": "accounting.coverage",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "accounting.duplicate_assignments",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "accounting.lost_rows",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "ai.failed_jobs",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "ai.role.controlled_verification.calls",
+      "before": 12,
+      "after": 0,
+      "delta": -12
+    },
+    {
+      "name": "ai.role.controlled_verification.cost",
+      "before": 0.4572725,
+      "after": 0,
+      "delta": -0.4572725
+    },
+    {
+      "name": "ai.role.controlled_verification.errors",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "ai.role.controlled_verification.jobs",
+      "before": 12,
+      "after": 12,
+      "delta": 0
+    },
+    {
+      "name": "ai.role.controlled_verification.median_wall",
+      "before": 6087.085792000002,
+      "after": 1.0189169999999876,
+      "delta": -6086.066875000001
+    },
+    {
+      "name": "ai.role.controlled_verification.p95_wall",
+      "before": 7499.262959,
+      "after": 4.198542000000032,
+      "delta": -7495.064417
+    },
+    {
+      "name": "ai.role.controlled_verification.tokens",
+      "before": 28612,
+      "after": 0,
+      "delta": -28612
+    },
+    {
+      "name": "ai.role.verification.calls",
+      "before": 37,
+      "after": 0,
+      "delta": -37
+    },
+    {
+      "name": "ai.role.verification.cost",
+      "before": 1.9329724999999993,
+      "after": 0,
+      "delta": -1.9329724999999993
+    },
+    {
+      "name": "ai.role.verification.errors",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "ai.role.verification.jobs",
+      "before": 37,
+      "after": 37,
+      "delta": 0
+    },
+    {
+      "name": "ai.role.verification.median_wall",
+      "before": 8665.12041599999,
+      "after": 1.040540999999962,
+      "delta": -8664.07987499999
+    },
+    {
+      "name": "ai.role.verification.p95_wall",
+      "before": 15721.711165999994,
+      "after": 1.3567079999999692,
+      "delta": -15720.354457999994
+    },
+    {
+      "name": "ai.role.verification.tokens",
+      "before": 96721,
+      "after": 0,
+      "delta": -96721
+    },
+    {
+      "name": "ai.target_rows",
+      "before": 39,
+      "after": 39,
+      "delta": 0
+    },
+    {
+      "name": "api.cache_hits",
+      "before": 0,
+      "after": 49,
+      "delta": 49
+    },
+    {
+      "name": "api.calls",
+      "before": 49,
+      "after": 0,
+      "delta": -49
+    },
+    {
+      "name": "api.cost",
+      "before": 2.3902450000000006,
+      "after": 0,
+      "delta": -2.3902450000000006
+    },
+    {
+      "name": "api.errors",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "api.input_tokens",
+      "before": 103361,
+      "after": 0,
+      "delta": -103361
+    },
+    {
+      "name": "api.output_tokens",
+      "before": 21972,
+      "after": 0,
+      "delta": -21972
+    },
+    {
+      "name": "api.retries",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "api.tokens",
+      "before": 125333,
+      "after": 0,
+      "delta": -125333
+    },
+    {
+      "name": "categories.check_accuracy",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "errors.execution",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "errors.matching",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "errors.non_product",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "errors.quality_checks",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "facts.accepted_attributes",
+      "before": 392,
+      "after": 392,
+      "delta": 0
+    },
+    {
+      "name": "facts.check_accuracy",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "facts.conflicts",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "facts.extracted",
+      "before": 545,
+      "after": 545,
+      "delta": 0
+    },
+    {
+      "name": "facts.incomparable",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "facts.unparsed_fragments",
+      "before": 43,
+      "after": 43,
+      "delta": 0
+    },
+    {
+      "name": "input.rows",
+      "before": 220,
+      "after": 220,
+      "delta": 0
+    },
+    {
+      "name": "matching.candidate_recall",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "matching.false_merge",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "matching.hard_negative_false_merges",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "matching.hard_negative_specificity",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "matching.missed_pair",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "matching.negative_specificity",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "matching.precision",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "matching.recall",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "matching.true_negative",
+      "before": 1692,
+      "after": 1692,
+      "delta": 0
+    },
+    {
+      "name": "matching.true_positive",
+      "before": 17,
+      "after": 17,
+      "delta": 0
+    },
+    {
+      "name": "matching.unevaluated_attached_pairs",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "matching.unknown_pairs",
+      "before": 2,
+      "after": 2,
+      "delta": 0
+    },
+    {
+      "name": "non_product.accuracy",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "non_product.false_rejection",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "non_product.missed_trash",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "non_product.precision",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "non_product.recall",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "non_product.rejected_rows",
+      "before": 4,
+      "after": 4,
+      "delta": 0
+    },
+    {
+      "name": "non_product.true_negative",
+      "before": 55,
+      "after": 55,
+      "delta": 0
+    },
+    {
+      "name": "non_product.true_positive",
+      "before": 4,
+      "after": 4,
+      "delta": 0
+    },
+    {
+      "name": "non_product.valid_product_retention",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "products.count",
+      "before": 156,
+      "after": 156,
+      "delta": 0
+    },
+    {
+      "name": "publication.covered_rows",
+      "before": 52,
+      "after": 52,
+      "delta": 0
+    },
+    {
+      "name": "publication.drafts",
+      "before": 37,
+      "after": 37,
+      "delta": 0
+    },
+    {
+      "name": "publication.products",
+      "before": 39,
+      "after": 39,
+      "delta": 0
+    },
+    {
+      "name": "publication.ready",
+      "before": 37,
+      "after": 37,
+      "delta": 0
+    },
+    {
+      "name": "publication.ready_rate",
+      "before": 0.9487179487179487,
+      "after": 0.9487179487179487,
+      "delta": 0
+    },
+    {
+      "name": "publication.reason.identity:incomplete_type_or_variant",
+      "before": 4,
+      "after": 4,
+      "delta": 0
+    },
+    {
+      "name": "publication.repair_attempted",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "publication.repair_succeeded",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "publication.review",
+      "before": 2,
+      "after": 2,
+      "delta": 0
+    },
+    {
+      "name": "publication.withheld",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "reconciliation.check_accuracy",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "review.category_items",
+      "before": 2,
+      "after": 2,
+      "delta": 0
+    },
+    {
+      "name": "review.conflict_items",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "review.extraction_items",
+      "before": 38,
+      "after": 38,
+      "delta": 0
+    },
+    {
+      "name": "review.identity_items",
+      "before": 2,
+      "after": 2,
+      "delta": 0
+    },
+    {
+      "name": "review.incomparable_items",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "review.items",
+      "before": 64,
+      "after": 64,
+      "delta": 0
+    },
+    {
+      "name": "review.missing_specs_items",
+      "before": 21,
+      "after": 21,
+      "delta": 0
+    },
+    {
+      "name": "review.product_rate",
+      "before": 0.3269230769230769,
+      "after": 0.3269230769230769,
+      "delta": 0
+    },
+    {
+      "name": "review.products",
+      "before": 51,
+      "after": 51,
+      "delta": 0
+    },
+    {
+      "name": "review.reason.fact_incomparable:power.items",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "review.reason.fact_incomparable:power.rows",
+      "before": 2,
+      "after": 2,
+      "delta": 0
+    },
+    {
+      "name": "review.reason.identity:incomplete_type_or_variant.items",
+      "before": 2,
+      "after": 2,
+      "delta": 0
+    },
+    {
+      "name": "review.reason.identity:incomplete_type_or_variant.rows",
+      "before": 3,
+      "after": 3,
+      "delta": 0
+    },
+    {
+      "name": "review.reason.missing_specs.items",
+      "before": 21,
+      "after": 21,
+      "delta": 0
+    },
+    {
+      "name": "review.reason.missing_specs.rows",
+      "before": 21,
+      "after": 21,
+      "delta": 0
+    },
+    {
+      "name": "review.reason.uncertain_category.items",
+      "before": 2,
+      "after": 2,
+      "delta": 0
+    },
+    {
+      "name": "review.reason.uncertain_category.rows",
+      "before": 2,
+      "after": 2,
+      "delta": 0
+    },
+    {
+      "name": "review.reason.unparsed_specs.items",
+      "before": 38,
+      "after": 38,
+      "delta": 0
+    },
+    {
+      "name": "review.reason.unparsed_specs.rows",
+      "before": 38,
+      "after": 38,
+      "delta": 0
+    },
+    {
+      "name": "review.row_rate",
+      "before": 0.2909090909090909,
+      "after": 0.2909090909090909,
+      "delta": 0
+    },
+    {
+      "name": "review.rows",
+      "before": 64,
+      "after": 64,
+      "delta": 0
+    },
+    {
+      "name": "timing.pipeline",
+      "before": 434194.562291,
+      "after": 129.80075,
+      "delta": -434064.761541
+    },
+    {
+      "name": "timing.wall",
+      "before": 434259.96175,
+      "after": 210.27166700000004,
+      "delta": -434049.690083
+    },
+    {
+      "name": "verifier.controlled.disputed_leakage",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "verifier.controlled.errors",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "verifier.controlled.false_block_rate",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "name": "verifier.controlled.unsupported_detection_recall",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "name": "verifier.generated.checked_published_claims",
+      "before": 0,
+      "after": 76,
+      "delta": null
+    },
+    {
+      "name": "verifier.generated.completed_sample_products",
+      "before": 0,
+      "after": 20,
+      "delta": null
+    },
+    {
+      "name": "verifier.generated.fully_checked_products",
+      "before": 0,
+      "after": 28,
+      "delta": null
+    },
+    {
+      "name": "verifier.generated.non_atomic_issue_claims",
+      "before": 0,
+      "after": 0,
+      "delta": null
+    },
+    {
+      "name": "verifier.generated.published_claim_error_rate",
+      "before": null,
+      "after": 0,
+      "delta": null
+    },
+    {
+      "name": "verifier.generated.required_sample_products",
+      "before": 0,
+      "after": 20,
+      "delta": null
+    },
+    {
+      "name": "verifier.generated.total_published_claims",
+      "before": 99,
+      "after": 99,
+      "delta": null
+    },
+    {
+      "name": "verifier.generated.total_published_products",
+      "before": 37,
+      "after": 37,
+      "delta": null
+    },
+    {
+      "name": "verifier.generated.unclear_copy_issue_claims",
+      "before": 0,
+      "after": 2,
+      "delta": null
+    }
+  ],
+  "configChanged": false,
+  "wallTimeMs": {
+    "before": 434259.96175,
+    "after": 210.27166700000004
+  },
+  "violations": []
+}

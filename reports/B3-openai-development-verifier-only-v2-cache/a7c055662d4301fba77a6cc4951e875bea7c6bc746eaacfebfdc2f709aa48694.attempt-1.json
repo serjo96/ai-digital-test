@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7212.756290999998,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "b0533b3604604db3d15d1a4862015aa46ff9c632468242272db1f4299ed0db7b",
+      "claims": [
+        {
+          "text": "The Cobalt X lamp features an LED light source",
+          "start": 0,
+          "end": 46,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d",
+            "identity:9fda85e220bcf0c9d9354cc04048fa012a4066350dd4c3a126ceca4801945688",
+            "fact:fact_c1ded43eda686c735b2de8fc71e93581847968203d8f393370cf18a350fd50fd"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_b82f7fcc2a",
+              "field": "raw_title",
+              "quote": "Cobalt X desk lamp"
+            },
+            {
+              "rowId": "row_b82f7fcc2a",
+              "field": "raw_specs",
+              "quote": "LED"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and lamp type; the light-source support establishes LED."
+        },
+        {
+          "text": "and a USB-C connector",
+          "start": 47,
+          "end": 68,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_d34a0ff9bcf546c5fcc7018c74cfd4db84183cdddb73f4867a0571104f266179"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_b82f7fcc2a",
+              "field": "raw_specs",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The connector support explicitly identifies USB-C for this product."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"b0533b3604604db3d15d1a4862015aa46ff9c632468242272db1f4299ed0db7b\",\"claims\":[{\"text\":\"The Cobalt X lamp features an LED light source\",\"start\":0,\"end\":46,\"verdict\":\"supported\",\"supportIds\":[\"identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d\",\"identity:9fda85e220bcf0c9d9354cc04048fa012a4066350dd4c3a126ceca4801945688\",\"fact:fact_c1ded43eda686c735b2de8fc71e93581847968203d8f393370cf18a350fd50fd\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_b82f7fcc2a\",\"field\":\"raw_title\",\"quote\":\"Cobalt X desk lamp\"},{\"rowId\":\"row_b82f7fcc2a\",\"field\":\"raw_specs\",\"quote\":\"LED\"}],\"reason\":\"The supplied identity supports establish the model and lamp type; the light-source support establishes LED.\"},{\"text\":\"and a USB-C connector\",\"start\":47,\"end\":68,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_d34a0ff9bcf546c5fcc7018c74cfd4db84183cdddb73f4867a0571104f266179\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_b82f7fcc2a\",\"field\":\"raw_specs\",\"quote\":\"USB-C\"}],\"reason\":\"The connector support explicitly identifies USB-C for this product.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_04793cae712c4fd2016aa44c610f0887d0a7eae5bac7171a82",
+    "usage": {
+      "inputTokens": 1755,
+      "outputTokens": 385,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1752
+    }
+  }
+}

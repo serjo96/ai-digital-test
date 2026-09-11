@@ -1,0 +1,45 @@
+{
+  "elapsedMs": 6120.006374999997,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "1e3cce9e8945a31ff018e9a52d2cd9d3013e8cf57128dc2e3d6265a9d45b4db4",
+      "claims": [
+        {
+          "text": "The Quill 3 is a lamp",
+          "start": 0,
+          "end": 21,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d",
+            "identity:6ec7f513a312e0908e167280bffbb424b8c80f86110cfb0310fe24191f9130b7"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4d609c9ff9",
+              "field": "raw_title",
+              "quote": "Quill 3 desk lamp"
+            },
+            {
+              "rowId": "row_6668f30f9e",
+              "field": "raw_title",
+              "quote": "QUILL 3 DESK LAMP"
+            }
+          ],
+          "reason": "Both raw titles identify the Quill 3 as a desk lamp, supporting its model identity and classification as a lamp."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"1e3cce9e8945a31ff018e9a52d2cd9d3013e8cf57128dc2e3d6265a9d45b4db4\",\"claims\":[{\"text\":\"The Quill 3 is a lamp\",\"start\":0,\"end\":21,\"verdict\":\"supported\",\"supportIds\":[\"identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d\",\"identity:6ec7f513a312e0908e167280bffbb424b8c80f86110cfb0310fe24191f9130b7\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4d609c9ff9\",\"field\":\"raw_title\",\"quote\":\"Quill 3 desk lamp\"},{\"rowId\":\"row_6668f30f9e\",\"field\":\"raw_title\",\"quote\":\"QUILL 3 DESK LAMP\"}],\"reason\":\"Both raw titles identify the Quill 3 as a desk lamp, supporting its model identity and classification as a lamp.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0b10cde20b1911e1016aa44d3de84887d0b1c69e8234cf3519",
+    "usage": {
+      "inputTokens": 1411,
+      "outputTokens": 262,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1408
+    }
+  }
+}

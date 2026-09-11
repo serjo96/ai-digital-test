@@ -1,0 +1,45 @@
+{
+  "elapsedMs": 7495.158334,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "febc8d6a530a4652df8e8bed08a9a4f95553f1b99c8f485d4755d67336f0186a",
+      "claims": [
+        {
+          "text": "Sony WH-880N supports active noise cancelling",
+          "start": 0,
+          "end": 45,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149",
+            "fact:fact_35522b0d89ec7c4598333ad2ea46d218114f198c543a045deae29e51fe85e7bb"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_1e60b0a9dc",
+              "field": "raw_title",
+              "quote": "SONY WH-880N Wireless Over-Ear"
+            },
+            {
+              "rowId": "row_1e60b0a9dc",
+              "field": "raw_specs",
+              "quote": "ANC"
+            }
+          ],
+          "reason": "The title identifies the model, and ANC explicitly supports active noise cancelling. No supplied reconciliation decision conflicts with this feature."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"febc8d6a530a4652df8e8bed08a9a4f95553f1b99c8f485d4755d67336f0186a\",\"claims\":[{\"text\":\"Sony WH-880N supports active noise cancelling\",\"start\":0,\"end\":45,\"verdict\":\"supported\",\"supportIds\":[\"identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149\",\"fact:fact_35522b0d89ec7c4598333ad2ea46d218114f198c543a045deae29e51fe85e7bb\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_title\",\"quote\":\"SONY WH-880N Wireless Over-Ear\"},{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_specs\",\"quote\":\"ANC\"}],\"reason\":\"The title identifies the model, and ANC explicitly supports active noise cancelling. No supplied reconciliation decision conflicts with this feature.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0eba9f42728b6f24016aa44b9ea2ac87d0afd5d2435e99182c",
+    "usage": {
+      "inputTokens": 2306,
+      "outputTokens": 257,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2303
+    }
+  }
+}

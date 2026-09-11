@@ -1,0 +1,76 @@
+{
+  "elapsedMs": 8306.641207999986,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "aa6aef5933c2484f70833b9db1ae72aa3c2f230acfa8714e1edfcfa3536415cc",
+      "claims": [
+        {
+          "text": "The Cobalt X is a camera",
+          "start": 0,
+          "end": 24,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e",
+            "identity:9fda85e220bcf0c9d9354cc04048fa012a4066350dd4c3a126ceca4801945688"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_b2475a3df6",
+              "field": "raw_title",
+              "quote": "Cobalt X action camera"
+            }
+          ],
+          "reason": "The source title establishes the model and camera type."
+        },
+        {
+          "text": "with 4K@60fps video recording",
+          "start": 25,
+          "end": 54,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_647464a78baa4fda9c52ed978887778cf37913296441cc1fb70cb2be59f1bd92"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_b2475a3df6",
+              "field": "raw_specs",
+              "quote": "4K60"
+            }
+          ],
+          "reason": "The supplied video-recording support normalizes the source's 4K60 to 4K@60fps."
+        },
+        {
+          "text": "and waterproofing up to 10 m",
+          "start": 55,
+          "end": 83,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_ee7cd5b15024df91c202e6553e20f434047b4963a59e234c5c76dbf94dbb4ca0"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_b2475a3df6",
+              "field": "raw_specs",
+              "quote": "waterproof to 10m"
+            }
+          ],
+          "reason": "The depth and up-to qualifier match the supplied support and source specification."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"aa6aef5933c2484f70833b9db1ae72aa3c2f230acfa8714e1edfcfa3536415cc\",\"claims\":[{\"text\":\"The Cobalt X is a camera\",\"start\":0,\"end\":24,\"verdict\":\"supported\",\"supportIds\":[\"identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e\",\"identity:9fda85e220bcf0c9d9354cc04048fa012a4066350dd4c3a126ceca4801945688\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_b2475a3df6\",\"field\":\"raw_title\",\"quote\":\"Cobalt X action camera\"}],\"reason\":\"The source title establishes the model and camera type.\"},{\"text\":\"with 4K@60fps video recording\",\"start\":25,\"end\":54,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_647464a78baa4fda9c52ed978887778cf37913296441cc1fb70cb2be59f1bd92\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_b2475a3df6\",\"field\":\"raw_specs\",\"quote\":\"4K60\"}],\"reason\":\"The supplied video-recording support normalizes the source's 4K60 to 4K@60fps.\"},{\"text\":\"and waterproofing up to 10 m\",\"start\":55,\"end\":83,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_ee7cd5b15024df91c202e6553e20f434047b4963a59e234c5c76dbf94dbb4ca0\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_b2475a3df6\",\"field\":\"raw_specs\",\"quote\":\"waterproof to 10m\"}],\"reason\":\"The depth and up-to qualifier match the supplied support and source specification.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_01c8bb4e58117e2d016aa44c6fb44487d0a27dcb33397a2012",
+    "usage": {
+      "inputTokens": 1811,
+      "outputTokens": 453,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1808
+    }
+  }
+}

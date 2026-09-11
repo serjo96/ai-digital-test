@@ -1,0 +1,37 @@
+{
+  "elapsedMs": 4605.9646250000005,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "e35628be577b6e9f9bc28964bcaaf0837f77bf4fa4930dc8bbe06d09aa7233b8",
+      "claims": [
+        {
+          "text": "Onyx Lite transfers data at 170 MB/s",
+          "start": 0,
+          "end": 36,
+          "verdict": "unsupported",
+          "supportIds": [],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_specs",
+              "quote": "up to 170MB/s"
+            }
+          ],
+          "reason": "The source specifies an upper bound of up to 170 MB/s, not an unqualified transfer speed of 170 MB/s. The claim removes the required 'up to' qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"e35628be577b6e9f9bc28964bcaaf0837f77bf4fa4930dc8bbe06d09aa7233b8\",\"claims\":[{\"text\":\"Onyx Lite transfers data at 170 MB/s\",\"start\":0,\"end\":36,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"The source specifies an upper bound of up to 170 MB/s, not an unqualified transfer speed of 170 MB/s. The claim removes the required 'up to' qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0b2166ea670a8e92016aa44bd497f087d09c9f7cea5ac9e267",
+    "usage": {
+      "inputTokens": 1832,
+      "outputTokens": 161,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1829
+    }
+  }
+}

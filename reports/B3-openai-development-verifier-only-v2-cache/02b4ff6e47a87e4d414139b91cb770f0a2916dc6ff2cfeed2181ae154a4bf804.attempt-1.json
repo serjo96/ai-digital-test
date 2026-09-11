@@ -1,0 +1,118 @@
+{
+  "elapsedMs": 12486.50837499999,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "db9f09d7bf42404f565e715f24d54e56d36f0811ff73ed1455542cf0448d2775",
+      "claims": [
+        {
+          "text": "The Nimbus 2 Pro speaker has 24 W output",
+          "start": 0,
+          "end": 40,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:e0d98b26014afbd4fb68e5d94e6585696ed9736b86f0c17b868d3cb3e8e92d08",
+            "identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f",
+            "fact:fact_1a9f65cc7088c63b1bb01a9919aefd1409aebb01d0c7c461b346abe8311f4d43"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_cdf75e46ea",
+              "field": "raw_title",
+              "quote": "Nimbus 2 Pro Portable Bluetooth Speaker"
+            },
+            {
+              "rowId": "row_cdf75e46ea",
+              "field": "raw_specs",
+              "quote": "24W output"
+            }
+          ],
+          "reason": "The title establishes model and product type; the specifications explicitly state 24W output."
+        },
+        {
+          "text": "an 18-hour battery runtime with usage unspecified",
+          "start": 42,
+          "end": 91,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_156b8ad7adaf0173c840e66451c75369075a05aae387b7310f6de813fc69120f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_cdf75e46ea",
+              "field": "raw_specs",
+              "quote": "18h battery"
+            }
+          ],
+          "reason": "The source states 18h battery and supplies no usage conditions, matching the support's usage_unspecified qualifier."
+        },
+        {
+          "text": "an IP67 rating",
+          "start": 93,
+          "end": 107,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_2a151452e05aba75cb79e3c594d49193f0315d7423554ca173aa3d6d1cf53229"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_cdf75e46ea",
+              "field": "raw_specs",
+              "quote": "IP67"
+            }
+          ],
+          "reason": "The specifications explicitly list IP67."
+        },
+        {
+          "text": "and stereo pairing",
+          "start": 109,
+          "end": 127,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_4c7e326143b2f744a9e6149e2c71a0ce21365629ca145254dd1253d7e646b59f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_cdf75e46ea",
+              "field": "raw_specs",
+              "quote": "stereo pairing"
+            }
+          ],
+          "reason": "Stereo pairing is explicitly listed."
+        },
+        {
+          "text": "It weighs 1,600 g",
+          "start": 129,
+          "end": 146,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_555b1157151da47213365502f0cc8d47fd3f265a287de0baf02cb5cb87b63408"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_cdf75e46ea",
+              "field": "raw_specs",
+              "quote": "weight 1.6kg"
+            }
+          ],
+          "reason": "The stated weight of 1.6 kg equals 1,600 g."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"db9f09d7bf42404f565e715f24d54e56d36f0811ff73ed1455542cf0448d2775\",\"claims\":[{\"text\":\"The Nimbus 2 Pro speaker has 24 W output\",\"start\":0,\"end\":40,\"verdict\":\"supported\",\"supportIds\":[\"identity:e0d98b26014afbd4fb68e5d94e6585696ed9736b86f0c17b868d3cb3e8e92d08\",\"identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f\",\"fact:fact_1a9f65cc7088c63b1bb01a9919aefd1409aebb01d0c7c461b346abe8311f4d43\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_cdf75e46ea\",\"field\":\"raw_title\",\"quote\":\"Nimbus 2 Pro Portable Bluetooth Speaker\"},{\"rowId\":\"row_cdf75e46ea\",\"field\":\"raw_specs\",\"quote\":\"24W output\"}],\"reason\":\"The title establishes model and product type; the specifications explicitly state 24W output.\"},{\"text\":\"an 18-hour battery runtime with usage unspecified\",\"start\":42,\"end\":91,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_156b8ad7adaf0173c840e66451c75369075a05aae387b7310f6de813fc69120f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_cdf75e46ea\",\"field\":\"raw_specs\",\"quote\":\"18h battery\"}],\"reason\":\"The source states 18h battery and supplies no usage conditions, matching the support's usage_unspecified qualifier.\"},{\"text\":\"an IP67 rating\",\"start\":93,\"end\":107,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_2a151452e05aba75cb79e3c594d49193f0315d7423554ca173aa3d6d1cf53229\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_cdf75e46ea\",\"field\":\"raw_specs\",\"quote\":\"IP67\"}],\"reason\":\"The specifications explicitly list IP67.\"},{\"text\":\"and stereo pairing\",\"start\":109,\"end\":127,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_4c7e326143b2f744a9e6149e2c71a0ce21365629ca145254dd1253d7e646b59f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_cdf75e46ea\",\"field\":\"raw_specs\",\"quote\":\"stereo pairing\"}],\"reason\":\"Stereo pairing is explicitly listed.\"},{\"text\":\"It weighs 1,600 g\",\"start\":129,\"end\":146,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_555b1157151da47213365502f0cc8d47fd3f265a287de0baf02cb5cb87b63408\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_cdf75e46ea\",\"field\":\"raw_specs\",\"quote\":\"weight 1.6kg\"}],\"reason\":\"The stated weight of 1.6 kg equals 1,600 g.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_037f23236ed2891b016aa44c1b65b487d0ae38abeddcddf15a",
+    "usage": {
+      "inputTokens": 2653,
+      "outputTokens": 744,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2650
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # Shelf Ready — B1 product baseline и B3 publication development
 
-Локальный pipeline: JSON → валидация → предложения → явные факты и evidence → кандидаты и совместимые товары → категории, согласование и review → генерация → атомарные claims → независимая проверка → development eval и сохранённые метрики. Принятый product baseline — **B1-v2**; B3 publication реализован поверх него и не использует B2. Реальный OpenAI development B3 и offline replay успешны; human review завершён, но четыре non-atomic claims ещё блокируют full-input gate. Full-input B3 не запускался. Экран результатов поддерживает B1-каталог и отдельный режим человеческой проверки сохранённого development B3.
+Локальный pipeline: JSON → валидация → предложения → явные факты и evidence → кандидаты и совместимые товары → категории, согласование и review → генерация → атомарные claims → независимая проверка → development eval и сохранённые метрики. Принятый product baseline — **B1-v2**; B3 publication реализован поверх него и не использует B2. Human-verified development gate P0.2 пройден и воспроизводится offline; full-input B3 не запускался. Экран результатов поддерживает B1-каталог и отдельный режим человеческой проверки сохранённого development B3.
 
 Стек: TypeScript 5.9, NestJS 12 standalone context, Node 24.14.1, npm; UI — Vite + React в `web/`. HTTP API, БД и deployment не нужны.
 
@@ -22,7 +22,7 @@ npm run eval
 
 ```sh
 npm --prefix web ci
-npm run web:prepare -- --run-dir reports/B3-openai-development-human-gate-v2 --generated-checks eval/generated-review-e478435a3d39.json
+npm run web:prepare -- --run-dir reports/B3-openai-development-verifier-only-v2-human-gate-replay --generated-checks eval/generated-review-fdca0138d88f.json
 npm run web
 ```
 
@@ -105,19 +105,19 @@ node dist/src/cli.js pipeline --baseline b3 --ai-mode live --ai-cache reports/my
 node dist/src/cli.js pipeline --baseline b3 --ai-mode replay --ai-cache reports/my-b3-cache --ai-config config/stage4.openai.json --ai-cohort development --claim-checks eval/stage4-claims.json --out reports --run-id my-b3-replay
 ```
 
-Каждый live run требует нового пустого cache directory; replay использует ровно его и не вызывает сеть. Generated review использует контракт `stage4-generated-review-v2`: model verdict не является human verdict, каждый проверенный claim имеет явный `state=reviewed`, `humanVerdict` и rationale, а проблемы атомарности/текста отмечаются отдельно. Для текущего development-run сохранён human-verified файл `eval/generated-review-e478435a3d39.json`: 120/158 claims, 28/37 карточек и полная фиксированная выборка 20/20.
+Каждый live run требует нового пустого cache directory; replay использует ровно его и не вызывает сеть. Generated review использует контракт `stage4-generated-review-v2`: model verdict не является human verdict, каждый проверенный claim имеет явный `state=reviewed`, `humanVerdict` и rationale, а проблемы атомарности/текста отмечаются отдельно. Актуальный human-verified файл — `eval/generated-review-fdca0138d88f.json`: 76/99 claims, 28/37 карточек и полная фиксированная выборка 20/20.
 
 Подготовить UI с этой разметкой можно без изменения исторического run:
 
 ```sh
-npm run web:prepare -- --run-dir reports/B3-openai-development-human-gate-v2 --generated-checks eval/generated-review-e478435a3d39.json
+npm run web:prepare -- --run-dir reports/B3-openai-development-verifier-only-v2-human-gate-replay --generated-checks eval/generated-review-fdca0138d88f.json
 ```
 
 Full-input B3 требует явного `--stage4-gate` с успешно проверенным development report, human-verified controlled suite и завершённой выборкой generated review. Factual errors и unresolved `non_atomic_claim` закрывают gate; `unclear_copy` измеряется и раскрывается отдельно. Holdout этой командой не запускается.
 
-P0.2 перевёл verifier на `publication_verification_v2`: prompt требует законченные смысловые claims, а локальный валидатор отклоняет оборванные `is a`/`has a` и голые измерения без атрибута. Разрешённый development live выполнил 88 calls за $2.619013, controlled 12/12, 37/39 ready и 0 запрещённых spans; offline replay дал 88 cache hits и идентичную публикацию. Поскольку live заново сгенерировал 17/37 descriptions, строгий перенос по стабильным ключам оставил 55 sample claims pending. До их проверки либо отдельного verifier-only запуска по замороженным старым текстам full-input gate закрыт.
+P0.2 перевёл verifier на `publication_verification_v2`: prompt требует законченные смысловые claims, а локальный валидатор отклоняет оборванные `is a`/`has a` и голые измерения без атрибута. После диагностического full development live выполнен verifier-only run по замороженным текстам: 49 calls, $2.390245, controlled 12/12, 37/39 ready и 0 запрещённых spans. Human-gate replay дал 49 cache hits, generated 76/99, sample 20/20, factual/non-atomic errors 0/0 и идентичную публикацию. Development gate принят.
 
-Сохранённый development: [live](reports/B3-openai-development-live-v4/report.md), [первичный replay](reports/B3-openai-development-replay-v4/report.md), [human-review replay](reports/B3-openai-development-human-gate-v2/report.md), [B1→B3](reports/comparisons/B1-v2-to-B3-openai-development-v4/comparison.md), [live→replay](reports/comparisons/B3-openai-development-live-to-replay-v4/comparison.md). Human-verified controlled gate: 4/4 unsupported, false block 0/7, disputed leakage 0/1, errors 0. Generated review: 120/158 claims, 28/37 products, sample 20/20, factual errors 0, non-atomic 4, unclear-copy 2. Четыре non-atomic issues должны быть исправлены до full-input. Результат: 37/39 ready, 2 identity review.
+Актуальный development gate: [verifier-only live](reports/B3-openai-development-verifier-only-v2-live/report.md), [human-gate replay](reports/B3-openai-development-verifier-only-v2-human-gate-replay/report.md) и [сравнение](reports/comparisons/B3-openai-development-verifier-only-v2-live-to-human-gate-replay/comparison.md). Human-verified controlled gate: 4/4 unsupported, false block 0/7, disputed leakage 0/1, errors 0. Generated review: 76/99 claims, 28/37 products, sample 20/20, factual errors 0, non-atomic 0, unclear-copy 2. Результат: 37/39 ready, 2 identity review; full-input остаётся отдельным разрешаемым запуском. Исторические v1 live/replay и review сохранены без перезаписи.
 
 
 ## B2: провайдеры и локальный эксперимент

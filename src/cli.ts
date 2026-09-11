@@ -18,11 +18,12 @@ async function main(): Promise<void> {
       'ai-task': { type: 'string' }, 'ai-cohort': { type: 'string' },
       'claim-checks': { type: 'string' }, 'generated-checks': { type: 'string' },
       'stage4-gate': { type: 'string' },
+      'publication-source': { type: 'string' },
     },
   });
   const [command] = positionals;
-  if ((command === 'compare' || command === 'benchmark') && (values['ai-config'] || values['ai-mode'] || values['ai-cache'] || values['semantic-checks'] || values['ai-task'] || values['ai-cohort'] || values['claim-checks'] || values['generated-checks'] || values['stage4-gate'])) throw new Error('AI and evaluation options require pipeline or eval');
-  if (positionals.length !== 1 || !['pipeline', 'eval', 'compare', 'benchmark'].includes(command ?? '')) throw new Error('Usage: benchmark --runs DIR,DIR [--out DIR --run-id ID] | pipeline|eval [--baseline b0|b1|b2|b3 --ai-mode live|replay --ai-cache DIR --ai-config PATH --semantic-checks PATH --claim-checks PATH --generated-checks PATH --checks PATH --feed PATH --taxonomy PATH --labels PATH --out DIR --run-id ID] | compare --before DIR|none --after DIR [--out DIR --run-id ID]');
+  if ((command === 'compare' || command === 'benchmark') && (values['ai-config'] || values['ai-mode'] || values['ai-cache'] || values['semantic-checks'] || values['ai-task'] || values['ai-cohort'] || values['claim-checks'] || values['generated-checks'] || values['stage4-gate'] || values['publication-source'])) throw new Error('AI and evaluation options require pipeline or eval');
+  if (positionals.length !== 1 || !['pipeline', 'eval', 'compare', 'benchmark'].includes(command ?? '')) throw new Error('Usage: benchmark --runs DIR,DIR [--out DIR --run-id ID] | pipeline|eval [--baseline b0|b1|b2|b3 --ai-mode live|replay --ai-cache DIR --ai-config PATH --semantic-checks PATH --claim-checks PATH --generated-checks PATH --publication-source RUN_DIR --checks PATH --feed PATH --taxonomy PATH --labels PATH --out DIR --run-id ID] | compare --before DIR|none --after DIR [--out DIR --run-id ID]');
   const app = await NestFactory.createApplicationContext(AppModule, { logger: false });
   try {
     const service = app.get(PipelineService);
@@ -53,6 +54,7 @@ async function main(): Promise<void> {
         ...(values['claim-checks'] ? { claimChecks: values['claim-checks'] } : {}),
         ...(values['generated-checks'] ? { generatedChecks: values['generated-checks'] } : {}),
         ...(values['stage4-gate'] ? { stage4Gate: values['stage4-gate'] } : {}),
+        ...(values['publication-source'] ? { publicationSource: values['publication-source'] } : {}),
         feed: values.feed ?? config.paths.feed,
         taxonomy: values.taxonomy ?? config.paths.taxonomy,
         labels: values.labels ?? config.paths.labels, out, runId: id,

@@ -1,0 +1,45 @@
+{
+  "elapsedMs": 6299.677000000003,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "f85fe87839b99df2c96f945630f52171c2b494eb581cc2c4daa078dab0211d03",
+      "claims": [
+        {
+          "text": "Nimbus 2 weighs 1.2 kg",
+          "start": 0,
+          "end": 22,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b",
+            "fact:fact_9ddf5078be168242ceacdc32b5941c82b93f31a8faa78766e7ce54190f882673"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_f3873a8816",
+              "field": "raw_title",
+              "quote": "Nimbus 2 Portable Bluetooth Speaker"
+            },
+            {
+              "rowId": "row_f3873a8816",
+              "field": "raw_specs",
+              "quote": "weight 1.2kg"
+            }
+          ],
+          "reason": "The raw row identifies Nimbus 2 and explicitly states its weight as 1.2 kg, matching the allowed mass support of 1200 g. The supplied incomparable decision concerns power, not mass."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"f85fe87839b99df2c96f945630f52171c2b494eb581cc2c4daa078dab0211d03\",\"claims\":[{\"text\":\"Nimbus 2 weighs 1.2 kg\",\"start\":0,\"end\":22,\"verdict\":\"supported\",\"supportIds\":[\"identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b\",\"fact:fact_9ddf5078be168242ceacdc32b5941c82b93f31a8faa78766e7ce54190f882673\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_title\",\"quote\":\"Nimbus 2 Portable Bluetooth Speaker\"},{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_specs\",\"quote\":\"weight 1.2kg\"}],\"reason\":\"The raw row identifies Nimbus 2 and explicitly states its weight as 1.2 kg, matching the allowed mass support of 1200 g. The supplied incomparable decision concerns power, not mass.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0f37703475493e24016aa44bb1fd1087d096332e2dca9d5910",
+    "usage": {
+      "inputTokens": 1907,
+      "outputTokens": 263,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1904
+    }
+  }
+}

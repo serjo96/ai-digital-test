@@ -1,6 +1,6 @@
 # Этап 5 — доступная часть на B1 выполнена
 
-Дата исходной реализации: 2026-09-10 (Asia/Bangkok); дополнено 2026-09-11. **Этап 5 целиком не завершён:** B1-каталог и B3 human-review UI готовы, но четыре non-atomic claims ещё блокируют development safety gate; full-input artifact, holdout, human-verified matching labels и финальная передача остаются открыты. Принятым product baseline остаётся B1-v2; holdout не оценивался.
+Дата исходной реализации: 2026-09-10 (Asia/Bangkok); дополнено 2026-09-12. **Этап 5 целиком не завершён:** B1-каталог и B3 human-review UI готовы, development safety gate принят; full-input artifact, holdout, human-verified matching labels и финальная передача остаются открыты. Принятым product baseline остаётся B1-v2; holdout не оценивался.
 
 ## Фактическая основа и изменения
 
@@ -112,7 +112,7 @@ Build проходит с двумя предупреждениями Rollup о�
 
 Development: 37/39 ready, 2 identity review, 0 withheld; controlled verifier human-verified — unsupported 4/4, false block 0/7, disputed leakage 0/1, errors 0. B1 `decisionsHash` неизменен, replay имеет тот же `publicationHash`. OpenAI live: 86 calls, 151618 tokens, $2.6475128, 0 errors/retries; replay: 86 cache hits, 0 calls.
 
-Исторический блокер на момент этой передачи был generated human review; controlled suite из 12 случаев пользователь подтвердил 2026-09-11. Позднее выборка review принята в P0.1, а [human-review replay](../reports/B3-openai-development-human-gate-v2/report.md) синхронно зафиксировал обе human-verified оценки. Четыре non-atomic claims всё ещё блокируют full-input safety gate; full-input B3, holdout и финальная оценка остаются отдельными шагами. Исторически `web:prepare` отклонял schema 4/B3; это ограничение снято отдельным заданием этапа 5.
+Исторический блокер на момент этой передачи был generated human review; controlled suite из 12 случаев пользователь подтвердил 2026-09-11. Позднее выборка review принята в P0.1, а P0.2 устранил четыре non-atomic spans и зафиксировал новый [human-gate replay](../reports/B3-openai-development-verifier-only-v2-human-gate-replay/report.md). Development safety gate принят; full-input B3, holdout и финальная оценка остаются отдельными шагами. Исторически `web:prepare` отклонял schema 4/B3; это ограничение снято отдельным заданием этапа 5.
 
 ## Узкое дополнение: B3 claim review — 2026-09-11
 
@@ -128,4 +128,10 @@ Development: 37/39 ready, 2 identity review, 0 withheld; controlled verifier hum
 
 Review UI переведён на `stage4-generated-review-v2`: автоматический verdict больше не выглядит выбранным человеком, claim становится `reviewed` только после отдельного подтверждения при наличии human verdict и rationale. Проблемы атомарности и качества текста отмечаются независимо от factual verdict. Прогресс показывает точные claims/products/sample знаменатели; экспорт получает `human_verified` после завершения фиксированной выборки из 20 карточек и заполнения reviewer, а не после всех 158 claims.
 
-Канонический файл `eval/generated-review-e478435a3d39.json` обновлён последним экспортом: 120/158 claims, 28/37 карточек, sample 20/20 и статус `human_verified`. Девять расхождений разобраны по supplier feed: factual errors 0, отдельно сохранены 4 non-atomic и 2 unclear-copy issues. Старый localStorage переносится по `productId + attempt + claimId`, но не может затереть repository-backed reviewed decisions. В UI добавлены фильтр расхождений/issues и явное сравнение human/AI verdict. `web:prepare --generated-checks` подключает файл без перезаписи исторического run. Offline development replay выполнен без API; full-input gate остаётся закрыт до исправления non-atomic issues. Full-input, holdout, deployment, commit и push не выполнялись.
+Исторический канонический файл `eval/generated-review-e478435a3d39.json` содержит 120/158 claims, 28/37 карточек, sample 20/20 и статус `human_verified`; он сохранён без перезаписи. Старый localStorage переносится по `productId + attempt + claimId`, но не может затереть repository-backed reviewed decisions. В UI добавлены фильтр расхождений/issues и явное сравнение human/AI verdict. `web:prepare --generated-checks` подключает файл без изменения сохранённого run.
+
+## P0.2: development safety gate — 2026-09-12
+
+Verifier prompt v2 и локальный fail-closed валидатор запрещают оборванные `is a`/`has a` и значения без измеряемого атрибута. После диагностического full development live выполнен verifier-only run по замороженным human-reviewed текстам: generator не вызывался, 49 verifier calls, 125333 tokens, $2.390245, controlled 12/12, 37/39 ready и 0 запрещённых spans. Все 37 опубликованных текстов побитово совпадают с исходным human-reviewed artifact.
+
+Новый канонический `eval/generated-review-fdca0138d88f.json` имеет статус `human_verified`: claims 76/99, products 28/37, sample 20/20, factual errors 0, non-atomic 0, unclear-copy 2. Оставшиеся 23 pending claims находятся вне обязательной выборки и gate не блокируют. Offline replay дал 49 cache hits, 0 calls и те же `decisionsHash`/`publicationHash`; development gate принят. Full-input, holdout, deployment, commit и push не выполнялись.
