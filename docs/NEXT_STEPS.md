@@ -1,6 +1,6 @@
 # Текущий статус и следующий рабочий блок
 
-Зафиксировано: 2026-09-11, ветка `multilang`, базовый commit `5d3d4ef`. P0.1 реализован поверх ранее начатых изменений документации; commit/push не выполнялись. Проходят 66 backend-тестов, 13 web-тестов, typecheck и production build.
+Зафиксировано: 2026-09-11, ветка `multilang`, базовый commit `5d3d4ef`. P0.1 и офлайн-часть P0.2 реализованы поверх ранее начатых изменений документации; commit/push не выполнялись. Проходят 67 backend-тестов, 13 web-тестов, typecheck и production build.
 
 Этот файл — короткая передача для следующего чата. Полный scope и критерии остаются в [ROADMAP.md](ROADMAP.md).
 
@@ -35,7 +35,16 @@ P0.1 завершён, дополнительная ручная разметк�
 
 ### P0.2. Закрыть этап 4 целиком
 
-Human-review часть закрыта: replay получил `human_verified` для controlled и generated review. Сначала нужно исправить четыре отмеченных non-atomic claims и повторить development verification/replay до нулевого structural gate. Затем остаётся один full-input B3 live и offline replay с фиксацией стоимости, времени, ready/review/withheld и hash-эквивалентности. Новые модельные и дорогие API-шаги автоматически не запускаются.
+Human-review часть закрыта: replay получил `human_verified` для controlled и generated review. Офлайн-исправление подготовлено: verifier prompt v2 требует законченные смысловые spans, а локальный fail-closed валидатор отклоняет оборванные `is a`/`has a` и голые измерения. Помимо четырёх human-flagged claims аудит нашёл тот же паттерн в двух pending published claims и двух controlled spans; человеческие флаги задним числом не добавлялись. При новом publication hash `web:prepare --generated-checks` переносит только reviewed-решения с неизменившимися стабильными ключами, оставляя новые claims pending.
+
+Следующее действие требует отдельного разрешения: новый development live с пустым cache и verifier schema `publication_verification_v2`. Ожидается 86 базовых запросов и стоимость примерно уровня предыдущего development live ($2.65, немного выше из-за расширенного prompt); repair может увеличить объём. После него нужно открыть UI с rebased review, проверить только новые claims в обязательных Quill/Pulse карточках, экспортировать новый review и выполнить offline replay. Только при нуле non-atomic issues можно переходить к full-input live/replay.
+
+Подготовленная, но не выполненная команда:
+
+```sh
+npm run build
+node dist/src/cli.js pipeline --baseline b3 --ai-mode live --ai-cache reports/B3-openai-development-atomic-v2-cache --ai-config config/stage4.openai.json --ai-cohort development --claim-checks eval/stage4-claims.json --out reports --run-id B3-openai-development-atomic-v2-live
+```
 
 ### P0.3. Закрыть этап 5
 
@@ -62,4 +71,4 @@ Human-review часть закрыта: replay получил `human_verified` �
 
 ## Стартовый запрос для нового чата
 
-> Прочитай `docs/NEXT_STEPS.md` и выполни только первый блок P0.2: исправь четыре non-atomic generated claims и получи development report с нулём unresolved structural issues. Новые модельные вызовы и full-input API запускай только после отдельного явного разрешения. Holdout и архитектурный рефакторинг не запускать.
+> Прочитай `docs/NEXT_STEPS.md` и, после моего явного разрешения, запусти только подготовленный P0.2 development live. Не запускай full-input или holdout. После live перенеси стабильные human decisions через `web:prepare --generated-checks`, покажи мне только новые claims обязательной выборки и не объявляй gate пройденным до нового экспорта и offline replay.

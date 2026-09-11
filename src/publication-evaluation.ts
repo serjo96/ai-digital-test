@@ -137,6 +137,19 @@ export function generatedReviewTemplate(result: PublicationResult, publicationHa
     })))) };
 }
 
+/** Carry only stable reviewed claim keys into a new publication; changed claims remain pending. */
+export function rebaseGeneratedReview(input: unknown, result: PublicationResult, publicationHash: string): GeneratedReview {
+  const source = migrateGeneratedReview(input);
+  const target = generatedReviewTemplate(result, publicationHash);
+  const targetProducts = new Set(target.claims.map(claim => claim.productId));
+  const reviewed = new Map(source.claims.filter(claim => claim.state === 'reviewed').map(claim => [`${claim.productId}:${claim.attempt}:${claim.claimId}`, claim]));
+  return GeneratedReviewSchema.parse({
+    ...target,
+    sampleProductIds: source.sampleProductIds.filter(productId => targetProducts.has(productId)),
+    claims: target.claims.map(claim => reviewed.get(`${claim.productId}:${claim.attempt}:${claim.claimId}`) ?? claim),
+  });
+}
+
 export function evaluateGenerated(input: unknown | null, result: PublicationResult, publicationHash: string): GeneratedClaimEvaluation {
   const publishedListings = result.listings.filter(l => l.publishedText !== null);
   const totalPublishedClaims = publishedListings.reduce((count, listing) => count + listing.attempts.filter(a => a.attempt === listing.selectedAttempt).reduce((sum, attempt) => sum + attempt.claims.length, 0), 0);

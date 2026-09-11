@@ -6,7 +6,7 @@ import { createHash } from 'node:crypto';
 import { provenanceSchema, validateProductResult } from './catalog-snapshot.js';
 import { hash } from './baseline.js';
 import { isPublicationResult } from './domain.js';
-import { ClaimSuiteSchema, evaluateGenerated, migrateGeneratedReview } from './publication-evaluation.js';
+import { ClaimSuiteSchema, evaluateGenerated, migrateGeneratedReview, rebaseGeneratedReview } from './publication-evaluation.js';
 import { VerificationSchema } from './publication.js';
 
 export async function prepareWeb(runDir: string, output = 'web/public/data', claimChecks = 'eval/stage4-claims.json', generatedChecks?: string): Promise<string> {
@@ -20,7 +20,11 @@ export async function prepareWeb(runDir: string, output = 'web/public/data', cla
     const { listings: _listings, ...base } = result;
     decisionInput = base;
     if (hash(JSON.stringify(result.listings)) !== report.publicationHash) throw new Error('B3 publication hash mismatch');
-    const generated = migrateGeneratedReview(JSON.parse(await readFile(generatedChecks ?? join(runDir, 'generated-review.json'), 'utf8')));
+    const generatedInput = JSON.parse(await readFile(generatedChecks ?? join(runDir, 'generated-review.json'), 'utf8'));
+    const migrated = migrateGeneratedReview(generatedInput);
+    const generated = generatedChecks && migrated.publicationHash !== report.publicationHash
+      ? rebaseGeneratedReview(migrated, result, report.publicationHash)
+      : migrated;
     if (generated.publicationHash !== report.publicationHash) throw new Error('Generated review does not match B3 publication');
     evaluateGenerated(generated, result, report.publicationHash);
     const claimText = await readFile(claimChecks, 'utf8');

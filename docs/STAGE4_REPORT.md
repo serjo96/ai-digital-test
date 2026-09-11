@@ -6,7 +6,7 @@
 
 - Product baseline остался B1-v2: 220/220 строк учтены, 156 товаров, 4 не-товара, TP/FP/FN 17/0/0.
 - `decisionsHash` до и после публикационного pipeline: `749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e`.
-- Node 24.14.1; после P0.1 проходят 66 backend- и 13 web-тестов, typecheck/build.
+- Node 24.14.1; после офлайн-части P0.2 проходят 67 backend- и 13 web-тестов, typecheck/build.
 - OpenAI подключён через Responses API и Structured Outputs. Генератор — `gpt-5.6-sol`, verifier — отдельный `gpt-6-astra`, reasoning `low`.
 - Секрет загружается из локального `.env` через `AppConfig`, в отчёты, cache keys и prompts не записывается.
 
@@ -59,5 +59,13 @@ Live выполнил 86 API calls: 12 controlled verification, 37 generation, 3
 Исторический [generated-review.json](../reports/B3-openai-development-live-v4/generated-review.json) остаётся неизменённым run-шаблоном v1. Пользовательский экспорт сохранён как канонический [generated-review-e478435a3d39.json](../eval/generated-review-e478435a3d39.json) v2: 120/158 claims, 28/37 полностью проверенных карточек и 20/20 карточек фиксированной выборки. Controlled suite уже подтверждена человеком и повторной проверки не требует. Pipeline валидирует metadata, hash binding и запрещает holdout в development suite.
 
 Ручная разметка больше не блокирует этап: factual errors 0, sample 20/20, development replay завершён. Однако четыре non-atomic span остаются unresolved structural issues и поэтому честно блокируют full-input gate; две unclear-copy формулировки измеряются отдельно. После исправления spans и повторной development-проверки для полного закрытия этапа 4 останутся full-input live/replay, выполняемые только отдельным последующим заданием.
+
+## P0.2 — офлайн-исправление atomicity
+
+Verifier переведён на schema name `publication_verification_v2`. Prompt теперь явно запрещает заканчивать claim на `is a`/`has a`, отделять значение от измеряемого атрибута и содержит корректные примеры для Quill/Pulse. Независимо от ответа модели локальный semantic validator fail-closed отклоняет такие spans. Регрессионные тесты покрывают оба паттерна.
+
+Аудит исторических 158 claims нашёл шесть published spans этого класса: четыре уже отмечены человеком, ещё `The TaskFlow K2 is a` и `The Cobalt Lite is a` находятся среди pending claims. В controlled response также присутствовали `Onyx Lite is a` и голый `256 GB`. Канонической human-разметке эти флаги автоматически не приписывались; новый live должен пересегментировать весь класс.
+
+Новый verifier prompt меняет cache key, поэтому старый replay не может доказать исправление. Development live подготовлен, но не запускался: с пустым cache базовый объём — 12 controlled verification + 37 generation + 37 publication verification = 86 запросов; возможный repair добавляет generation/verification пары. После live старый review можно безопасно передать в `web:prepare --generated-checks`: переносится только `reviewed` по неизменившимся `productId + attempt + claimId`, изменённые claims остаются pending и требуют точечной проверки. Full-input остаётся запрещён до нового review export и успешного offline replay с нулём non-atomic issues.
 
 После основного этапа 4 отдельным разрешённым заданием добавлен только human-review UI. `web:prepare` принимает сохранённый schema 4/B3, проверяет `decisionsHash`, `publicationHash`, generated review, controlled suite и сохранённые verifier records. Вкладки Generated/Controlled показывают точные ranges, verdict, причины и evidence; generated-разметка сохраняется локально и экспортируется без автоматической записи в репозиторий. Это не закрывает этап 5: holdout, full-input B3, финальная оценка, deployment, commit и push не выполнялись.

@@ -115,6 +115,8 @@ npm run web:prepare -- --run-dir reports/B3-openai-development-human-gate-v2 --g
 
 Full-input B3 требует явного `--stage4-gate` с успешно проверенным development report, human-verified controlled suite и завершённой выборкой generated review. Factual errors и unresolved `non_atomic_claim` закрывают gate; `unclear_copy` измеряется и раскрывается отдельно. Holdout этой командой не запускается.
 
+P0.2 подготовил verifier `publication_verification_v2`: prompt требует законченные смысловые claims, а локальный валидатор отклоняет оборванные `is a`/`has a` и голые измерения без атрибута. Это меняет cache key и требует отдельного разрешённого development live; модели автоматически не запускаются. После нового live `web:prepare --generated-checks` умеет перенести прежние reviewed-решения только по неизменившимся стабильным ключам, оставляя пересегментированные claims pending.
+
 Сохранённый development: [live](reports/B3-openai-development-live-v4/report.md), [первичный replay](reports/B3-openai-development-replay-v4/report.md), [human-review replay](reports/B3-openai-development-human-gate-v2/report.md), [B1→B3](reports/comparisons/B1-v2-to-B3-openai-development-v4/comparison.md), [live→replay](reports/comparisons/B3-openai-development-live-to-replay-v4/comparison.md). Human-verified controlled gate: 4/4 unsupported, false block 0/7, disputed leakage 0/1, errors 0. Generated review: 120/158 claims, 28/37 products, sample 20/20, factual errors 0, non-atomic 4, unclear-copy 2. Четыре non-atomic issues должны быть исправлены до full-input. Результат: 37/39 ready, 2 identity review.
 
 

@@ -11,7 +11,7 @@ import { publicationPipeline, publicationSupports, validateClaims } from '../src
 import { hash } from '../src/baseline.js';
 import type { Stage4Config } from '../src/publication-config.js';
 import type { SourceRow, Labels } from '../src/types.js';
-import { evaluateControlled, evaluateGenerated, generatedReviewGatePassed, generatedReviewTemplate, migrateGeneratedReview, validateClaimSuite } from '../src/publication-evaluation.js';
+import { evaluateControlled, evaluateGenerated, generatedReviewGatePassed, generatedReviewTemplate, migrateGeneratedReview, rebaseGeneratedReview, validateClaimSuite } from '../src/publication-evaluation.js';
 import { PipelineService } from '../src/app.js';
 import { readRun } from '../src/benchmark.js';
 import { compareReports } from '../src/reports.js';
@@ -62,6 +62,11 @@ test('claim validation enforces exact spans, complete coverage, allowed evidence
   assert.throws(() => validateClaims({ ...valid, claims: [{ ...valid.claims[0], end: 4, text: 'Demo' }] }, text, supports, [row], new Set()), /coverage/);
   assert.throws(() => validateClaims({ ...valid, claims: [{ ...valid.claims[0], supportIds: ['unknown'] }] }, text, supports, [row], new Set()), /support/);
   assert.throws(() => validateClaims({ ...valid, claims: [{ ...valid.claims[0], verdict: 'disputed', supportIds: [], evidence: [] }] }, text, supports, [row], new Set()), /conflict/);
+  const quill = 'The Quill 3 is a USB-C hub';
+  const split = (claimText: string, start: number) => ({ ...valid.claims[0], text: claimText, start, end: start + claimText.length });
+  assert.throws(() => validateClaims({ textHash: hash(quill), claims: [split('The Quill 3 is a', 0), split('USB-C hub', 17)] }, quill, supports, [row], new Set()), /semantically atomic/);
+  const display = '1.1 in display';
+  assert.throws(() => validateClaims({ textHash: hash(display), claims: [split('1.1 in', 0), split('display', 7)] }, display, supports, [row], new Set()), /semantically atomic/);
 });
 
 test('publication publishes supported text and replay reproduces it without another provider call', async () => temporary(async dir => {
@@ -121,6 +126,25 @@ test('canonical generated review preserves the completed sample and reports exac
   assert.equal(evaluation.nonAtomicIssueClaims, 4);
   assert.equal(evaluation.unclearCopyIssueClaims, 2);
   assert.equal(new Set(review.claims.map((claim: { productId: string; attempt: number; claimId: string }) => `${claim.productId}:${claim.attempt}:${claim.claimId}`)).size, 158);
+});
+
+test('generated review rebases only stable reviewed keys onto a changed publication', async () => {
+  const publication = JSON.parse(await readFile('reports/B3-openai-development-live-v4/result.json', 'utf8'));
+  const source = JSON.parse(await readFile('eval/generated-review-e478435a3d39.json', 'utf8'));
+  const changed = structuredClone(publication);
+  const listing = changed.listings.find((item: { selectedAttempt: number | null }) => item.selectedAttempt !== null);
+  const attempt = listing.attempts.find((item: { attempt: number }) => item.attempt === listing.selectedAttempt);
+  const reviewedClaim = attempt.claims.find((claim: { id: string }) => source.claims.some((item: { claimId: string; state: string }) => item.claimId === claim.id && item.state === 'reviewed'));
+  const oldId = reviewedClaim.id; reviewedClaim.id = `claim_${'f'.repeat(64)}`;
+  const publicationHash = hash(JSON.stringify(changed.listings));
+  const rebased = rebaseGeneratedReview(source, changed, publicationHash);
+  assert.equal(rebased.status, 'provisional');
+  assert.equal(rebased.publicationHash, publicationHash);
+  assert.equal(rebased.sampleProductIds.length, 20);
+  assert.equal(rebased.claims.find((claim: { claimId: string }) => claim.claimId === reviewedClaim.id)!.state, 'pending');
+  assert.equal(rebased.claims.some((claim: { claimId: string }) => claim.claimId === oldId), false);
+  assert.equal(rebased.claims.filter((claim: { state: string }) => claim.state === 'reviewed').length, 119);
+  assert.equal(evaluateGenerated(rebased, changed, publicationHash).checkedPublishedClaims, 119);
 });
 
 test('generated review v2 requires explicit valid reviewed claims and a complete 20-product human sample', async () => {
