@@ -1,0 +1,87 @@
+{
+  "elapsedMs": 9252.85529200011,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "7e28c0cfb6d9ea66fa93f3d980e3e54645ab20a63582edb8e5f16b09735d6fd5",
+      "claims": [
+        {
+          "text": "The Cobalt smart scale uses BIA",
+          "start": 0,
+          "end": 31,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7",
+            "identity:127eb160687e3f69260ca9366f9e80072a40ba5892bcc33bc1d9fc8f50ca2182",
+            "fact:fact_27402da0a619a931829f1683869e8057efea1719b1759baa44ecbb7e77a3e2ac"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_68d860d397",
+              "field": "raw_title",
+              "quote": "Cobalt smart scale"
+            },
+            {
+              "rowId": "row_78b4c42770",
+              "field": "raw_title",
+              "quote": "Cobalt smart scale"
+            },
+            {
+              "rowId": "row_68d860d397",
+              "field": "raw_specs",
+              "quote": "BIA"
+            }
+          ],
+          "reason": "The titles establish the Cobalt smart scale identity, and the specifications explicitly state BIA."
+        },
+        {
+          "text": "supports app sync",
+          "start": 33,
+          "end": 50,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_506af9f89c71f527903e3b99ac062b612533bda47a81bb1e85928e067a9b7eb5"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_68d860d397",
+              "field": "raw_specs",
+              "quote": "app sync"
+            }
+          ],
+          "reason": "App synchronization is explicitly listed in the specifications."
+        },
+        {
+          "text": "and has a maximum load of 180 kg",
+          "start": 52,
+          "end": 84,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_e170603ce379c946334009aed661e18b8ef8b5d5c80591da08a25335b2b5bd83"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_68d860d397",
+              "field": "raw_specs",
+              "quote": "180kg max"
+            }
+          ],
+          "reason": "The stated load matches the source value and unit and retains the maximum qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"7e28c0cfb6d9ea66fa93f3d980e3e54645ab20a63582edb8e5f16b09735d6fd5\",\"claims\":[{\"text\":\"The Cobalt smart scale uses BIA\",\"start\":0,\"end\":31,\"verdict\":\"supported\",\"supportIds\":[\"identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7\",\"identity:127eb160687e3f69260ca9366f9e80072a40ba5892bcc33bc1d9fc8f50ca2182\",\"fact:fact_27402da0a619a931829f1683869e8057efea1719b1759baa44ecbb7e77a3e2ac\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_68d860d397\",\"field\":\"raw_title\",\"quote\":\"Cobalt smart scale\"},{\"rowId\":\"row_78b4c42770\",\"field\":\"raw_title\",\"quote\":\"Cobalt smart scale\"},{\"rowId\":\"row_68d860d397\",\"field\":\"raw_specs\",\"quote\":\"BIA\"}],\"reason\":\"The titles establish the Cobalt smart scale identity, and the specifications explicitly state BIA.\"},{\"text\":\"supports app sync\",\"start\":33,\"end\":50,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_506af9f89c71f527903e3b99ac062b612533bda47a81bb1e85928e067a9b7eb5\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_68d860d397\",\"field\":\"raw_specs\",\"quote\":\"app sync\"}],\"reason\":\"App synchronization is explicitly listed in the specifications.\"},{\"text\":\"and has a maximum load of 180 kg\",\"start\":52,\"end\":84,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_e170603ce379c946334009aed661e18b8ef8b5d5c80591da08a25335b2b5bd83\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_68d860d397\",\"field\":\"raw_specs\",\"quote\":\"180kg max\"}],\"reason\":\"The stated load matches the source value and unit and retains the maximum qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_004863c094bbd234016aa45529b65887d08479c1beec0dec51",
+    "usage": {
+      "inputTokens": 2030,
+      "outputTokens": 528,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2027
+    }
+  }
+}

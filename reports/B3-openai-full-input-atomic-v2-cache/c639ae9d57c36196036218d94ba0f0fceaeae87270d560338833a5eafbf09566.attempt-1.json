@@ -1,0 +1,39 @@
+{
+  "elapsedMs": 6504.581208,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "e1de269cb3778f97b9e87399db2c4b08015ed0c10722bad7027d70da7fa93b63",
+      "claims": [
+        {
+          "text": "AeroBuds Pro provides 20 hours of total playback with the case",
+          "start": 0,
+          "end": 62,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_608dc6f58cf4fdb5a2000d1f276ed04011d4e24fe807d3b661227c6ddaf908a0"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_11bb99b2fa",
+              "field": "raw_specs",
+              "quote": "20 hours playback (incl. charging case)"
+            }
+          ],
+          "reason": "The supplied battery-runtime support specifies 20 hours including the charging case, preserving the claim's total-playback scope and with-case condition. The raw rows identify AeroBuds Pro and agree on this runtime."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"e1de269cb3778f97b9e87399db2c4b08015ed0c10722bad7027d70da7fa93b63\",\"claims\":[{\"text\":\"AeroBuds Pro provides 20 hours of total playback with the case\",\"start\":0,\"end\":62,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_608dc6f58cf4fdb5a2000d1f276ed04011d4e24fe807d3b661227c6ddaf908a0\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_11bb99b2fa\",\"field\":\"raw_specs\",\"quote\":\"20 hours playback (incl. charging case)\"}],\"reason\":\"The supplied battery-runtime support specifies 20 hours including the charging case, preserving the claim's total-playback scope and with-case condition. The raw rows identify AeroBuds Pro and agree on this runtime.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0e9bdcd5946e406c016aa45036752c87d09e5f68805dbac3bc",
+    "usage": {
+      "inputTokens": 2901,
+      "outputTokens": 217,
+      "cachedInputTokens": 2898,
+      "cacheWriteTokens": 0
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2627.1374580000993,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Sable Lite is a 7-in-1 USB-C hub supporting 4K at 30 fps video output and 100 W power with PD passthrough."
+    },
+    "raw": "{\"text\":\"The Sable Lite is a 7-in-1 USB-C hub supporting 4K at 30 fps video output and 100 W power with PD passthrough.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0e362fc160c8e4a2016aa456eaf96887d08a8fd2009a262743",
+    "usage": {
+      "inputTokens": 780,
+      "outputTokens": 49,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

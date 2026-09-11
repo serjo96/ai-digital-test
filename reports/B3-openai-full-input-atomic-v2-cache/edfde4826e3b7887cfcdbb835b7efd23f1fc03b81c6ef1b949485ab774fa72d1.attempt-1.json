@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7298.243875000015,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "5b796b5bbd7ce96d819fa395b9012b99a6a13c3473bbf2d177b4fedac66b6049",
+      "claims": [
+        {
+          "text": "The Juniper Pro lamp uses an LED light source",
+          "start": 0,
+          "end": 45,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:f64e41f7c32afbc6b982bd3f8a1c5aebe3432cdcbb4ae424887bfca1de86901b",
+            "identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d",
+            "fact:fact_398507b8499c6bb7b3552c3bada9741a660436b30147af20eeac33c9d89e96da"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_904fefcad0",
+              "field": "raw_title",
+              "quote": "Juniper Pro desk lamp"
+            },
+            {
+              "rowId": "row_904fefcad0",
+              "field": "raw_specs",
+              "quote": "LED"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and product type; the light-source support explicitly identifies LED."
+        },
+        {
+          "text": "and has a USB-C connector",
+          "start": 46,
+          "end": 71,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_a6e06663d971dc109ad13fc29204a676115301682a5d29e77303ddc50048b5d3"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_904fefcad0",
+              "field": "raw_specs",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The supplied connector support explicitly identifies USB-C for this lamp."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"5b796b5bbd7ce96d819fa395b9012b99a6a13c3473bbf2d177b4fedac66b6049\",\"claims\":[{\"text\":\"The Juniper Pro lamp uses an LED light source\",\"start\":0,\"end\":45,\"verdict\":\"supported\",\"supportIds\":[\"identity:f64e41f7c32afbc6b982bd3f8a1c5aebe3432cdcbb4ae424887bfca1de86901b\",\"identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d\",\"fact:fact_398507b8499c6bb7b3552c3bada9741a660436b30147af20eeac33c9d89e96da\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_904fefcad0\",\"field\":\"raw_title\",\"quote\":\"Juniper Pro desk lamp\"},{\"rowId\":\"row_904fefcad0\",\"field\":\"raw_specs\",\"quote\":\"LED\"}],\"reason\":\"The supplied identity supports establish the model and product type; the light-source support explicitly identifies LED.\"},{\"text\":\"and has a USB-C connector\",\"start\":46,\"end\":71,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_a6e06663d971dc109ad13fc29204a676115301682a5d29e77303ddc50048b5d3\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_904fefcad0\",\"field\":\"raw_specs\",\"quote\":\"USB-C\"}],\"reason\":\"The supplied connector support explicitly identifies USB-C for this lamp.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0b39b8facb77b1cb016aa450d240d487d09870d76c8a7f4d95",
+    "usage": {
+      "inputTokens": 1783,
+      "outputTokens": 393,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1780
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "elapsedMs": 11283.25183300022,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "f42d8cd3172a6d40f49d2e753c7aa8f3014c0a4743acde4e4121297a2510155d",
+      "claims": [
+        {
+          "text": "The Marlow Pro is a 7-in-1 USB-C hub",
+          "start": 0,
+          "end": 36,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:4c65b25035e693e6a274172b00dc79db82d4d1e2808396d330c0f9041ecdbab7",
+            "identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4",
+            "fact:fact_238bfeaa397ae6ef8b2aed059b00dfb7df1bbedb6760c9cbca9c0392540d503e",
+            "fact:fact_88073fbc82298cf3be7223299f39a3e56c6b32020eb128600103111d13b04948"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_2b25cbbe3f",
+              "field": "raw_title",
+              "quote": "Marlow Pro USB-C hub"
+            },
+            {
+              "rowId": "row_2b25cbbe3f",
+              "field": "raw_title",
+              "quote": "USB-C"
+            },
+            {
+              "rowId": "row_2b25cbbe3f",
+              "field": "raw_specs",
+              "quote": "7-in-1"
+            }
+          ],
+          "reason": "The supplied identity and specification supports establish the model, hub type, connector, and multifunction count."
+        },
+        {
+          "text": "with 4K@30fps video output",
+          "start": 37,
+          "end": 63,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_f69d3455af94fd9c5e6aa88423b81b87f1c9e3dec2cf6aca5efcae236c908872"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_2b25cbbe3f",
+              "field": "raw_specs",
+              "quote": "4K30"
+            }
+          ],
+          "reason": "The supplied video-output support normalizes the raw HDMI 4K30 specification to 4K@30fps."
+        },
+        {
+          "text": "and 100 W PD passthrough",
+          "start": 64,
+          "end": 88,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_55393ecab193fcd4d66e921127e0ab256ac35ef970843bdf318e827fc3754879"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_2b25cbbe3f",
+              "field": "raw_specs",
+              "quote": "100W PD passthrough"
+            }
+          ],
+          "reason": "The claim preserves the specified power value and its PD-passthrough qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"f42d8cd3172a6d40f49d2e753c7aa8f3014c0a4743acde4e4121297a2510155d\",\"claims\":[{\"text\":\"The Marlow Pro is a 7-in-1 USB-C hub\",\"start\":0,\"end\":36,\"verdict\":\"supported\",\"supportIds\":[\"identity:4c65b25035e693e6a274172b00dc79db82d4d1e2808396d330c0f9041ecdbab7\",\"identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4\",\"fact:fact_238bfeaa397ae6ef8b2aed059b00dfb7df1bbedb6760c9cbca9c0392540d503e\",\"fact:fact_88073fbc82298cf3be7223299f39a3e56c6b32020eb128600103111d13b04948\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_2b25cbbe3f\",\"field\":\"raw_title\",\"quote\":\"Marlow Pro USB-C hub\"},{\"rowId\":\"row_2b25cbbe3f\",\"field\":\"raw_title\",\"quote\":\"USB-C\"},{\"rowId\":\"row_2b25cbbe3f\",\"field\":\"raw_specs\",\"quote\":\"7-in-1\"}],\"reason\":\"The supplied identity and specification supports establish the model, hub type, connector, and multifunction count.\"},{\"text\":\"with 4K@30fps video output\",\"start\":37,\"end\":63,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_f69d3455af94fd9c5e6aa88423b81b87f1c9e3dec2cf6aca5efcae236c908872\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_2b25cbbe3f\",\"field\":\"raw_specs\",\"quote\":\"4K30\"}],\"reason\":\"The supplied video-output support normalizes the raw HDMI 4K30 specification to 4K@30fps.\"},{\"text\":\"and 100 W PD passthrough\",\"start\":64,\"end\":88,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_55393ecab193fcd4d66e921127e0ab256ac35ef970843bdf318e827fc3754879\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_2b25cbbe3f\",\"field\":\"raw_specs\",\"quote\":\"100W PD passthrough\"}],\"reason\":\"The claim preserves the specified power value and its PD-passthrough qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0517d4b332ada68b016aa45510f2a487d0b12e486f594b8366",
+    "usage": {
+      "inputTokens": 2091,
+      "outputTokens": 614,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2088
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7305.913792000007,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "a2e06d7d7feb27946feddc6ab66ff01374d4886a6146e1983ebfdd7441071887",
+      "claims": [
+        {
+          "text": "Pivot earbuds feature a 3.5mm connector",
+          "start": 0,
+          "end": 39,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:0f62b92d58cd9efa2519a138e0ff9411bd1ff660d030679381a4f70ea411d126",
+            "identity:47c7023f12a8692fc7cdd6ece0fa14e4cba01d6fee75210a9a409669472b8445",
+            "fact:fact_129ec4d6973b36e2460ef2bbdffc99e150107e54b1851e4c7ded805fb5e75b91"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_04ecd45818",
+              "field": "raw_title",
+              "quote": "Pivot wired earbuds"
+            },
+            {
+              "rowId": "row_04ecd45818",
+              "field": "raw_specs",
+              "quote": "3.5mm"
+            }
+          ],
+          "reason": "The title establishes the model and product type, and the specifications give the connector size."
+        },
+        {
+          "text": "and an in-line microphone",
+          "start": 40,
+          "end": 65,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_220457119119a5ae51db48672fd123c2a0f38d312924ef1ef2436e7c2748ceee"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_04ecd45818",
+              "field": "raw_specs",
+              "quote": "in-line mic"
+            }
+          ],
+          "reason": "The specifications explicitly list an in-line mic for these earbuds."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"a2e06d7d7feb27946feddc6ab66ff01374d4886a6146e1983ebfdd7441071887\",\"claims\":[{\"text\":\"Pivot earbuds feature a 3.5mm connector\",\"start\":0,\"end\":39,\"verdict\":\"supported\",\"supportIds\":[\"identity:0f62b92d58cd9efa2519a138e0ff9411bd1ff660d030679381a4f70ea411d126\",\"identity:47c7023f12a8692fc7cdd6ece0fa14e4cba01d6fee75210a9a409669472b8445\",\"fact:fact_129ec4d6973b36e2460ef2bbdffc99e150107e54b1851e4c7ded805fb5e75b91\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_04ecd45818\",\"field\":\"raw_title\",\"quote\":\"Pivot wired earbuds\"},{\"rowId\":\"row_04ecd45818\",\"field\":\"raw_specs\",\"quote\":\"3.5mm\"}],\"reason\":\"The title establishes the model and product type, and the specifications give the connector size.\"},{\"text\":\"and an in-line microphone\",\"start\":40,\"end\":65,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_220457119119a5ae51db48672fd123c2a0f38d312924ef1ef2436e7c2748ceee\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_04ecd45818\",\"field\":\"raw_specs\",\"quote\":\"in-line mic\"}],\"reason\":\"The specifications explicitly list an in-line mic for these earbuds.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0b8ede3a1c868f14016aa4506d4bcc87d0a99e23f331ab61a2",
+    "usage": {
+      "inputTokens": 1642,
+      "outputTokens": 387,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1639
+    }
+  }
+}

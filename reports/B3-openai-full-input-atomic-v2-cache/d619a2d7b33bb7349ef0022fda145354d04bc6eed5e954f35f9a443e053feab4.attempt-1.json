@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7769.507125000004,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "ae7929b68135fbd7f2fb87685413c8bae4fea2b639fd9a412a9a8940ae148b00",
+      "claims": [
+        {
+          "text": "The Sable Lite laptop sleeve is made of neoprene",
+          "start": 0,
+          "end": 48,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:152630490253ae35ac2cc550f63d425bfc37bbb232045a7b5e5c71a42b5f617a",
+            "identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db",
+            "fact:fact_ee7571505c96cb978f8dee31315c1bf2019f3b8ce768a16424239440d9527e56"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_0eb52882db",
+              "field": "raw_title",
+              "quote": "Sable Lite laptop sleeve"
+            },
+            {
+              "rowId": "row_0eb52882db",
+              "field": "raw_specs",
+              "quote": "neoprene"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and product type, and the material support explicitly specifies neoprene."
+        },
+        {
+          "text": "and is compatible with 14 in devices",
+          "start": 49,
+          "end": 85,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_af5c86610dc8c5c932ee898b60781854cc6df60b4530b079fdf9bf1a838e0d57"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_0eb52882db",
+              "field": "raw_specs",
+              "quote": "14in"
+            }
+          ],
+          "reason": "The supplied size support specifies 14 inches with the compatible_device condition, matching the stated compatibility rather than asserting a sleeve dimension."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"ae7929b68135fbd7f2fb87685413c8bae4fea2b639fd9a412a9a8940ae148b00\",\"claims\":[{\"text\":\"The Sable Lite laptop sleeve is made of neoprene\",\"start\":0,\"end\":48,\"verdict\":\"supported\",\"supportIds\":[\"identity:152630490253ae35ac2cc550f63d425bfc37bbb232045a7b5e5c71a42b5f617a\",\"identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db\",\"fact:fact_ee7571505c96cb978f8dee31315c1bf2019f3b8ce768a16424239440d9527e56\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_0eb52882db\",\"field\":\"raw_title\",\"quote\":\"Sable Lite laptop sleeve\"},{\"rowId\":\"row_0eb52882db\",\"field\":\"raw_specs\",\"quote\":\"neoprene\"}],\"reason\":\"The supplied identity supports establish the model and product type, and the material support explicitly specifies neoprene.\"},{\"text\":\"and is compatible with 14 in devices\",\"start\":49,\"end\":85,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_af5c86610dc8c5c932ee898b60781854cc6df60b4530b079fdf9bf1a838e0d57\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_0eb52882db\",\"field\":\"raw_specs\",\"quote\":\"14in\"}],\"reason\":\"The supplied size support specifies 14 inches with the compatible_device condition, matching the stated compatibility rather than asserting a sleeve dimension.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_04671b6d8757818d016aa45478f9c887d09fa97f098be145e4",
+    "usage": {
+      "inputTokens": 1810,
+      "outputTokens": 409,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1807
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1376.5724590000464,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Ember 2 mouse has 6 buttons and a mass of 70 g."
+    },
+    "raw": "{\"text\":\"The Ember 2 mouse has 6 buttons and a mass of 70 g.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0cc587a548951801016aa45163d0d087d09e6b81a797733b1b",
+    "usage": {
+      "inputTokens": 630,
+      "outputTokens": 31,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

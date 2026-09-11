@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1645.9484999999986,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Kestrel mouse has 6 buttons and a mass of 70 g."
+    },
+    "raw": "{\"text\":\"The Kestrel mouse has 6 buttons and a mass of 70 g.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_05409e41446e5461016aa4509d2bb487d0a5e707d5f3dc15f1",
+    "usage": {
+      "inputTokens": 626,
+      "outputTokens": 31,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2253.6393339999486,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Torrent 2 memory card has 256 GB of storage, a UHS-I bus rating and an A2 application rating. Its transfer speed is up to 170 MB/s, with direction unspecified."
+    },
+    "raw": "{\"text\":\"The Torrent 2 memory card has 256 GB of storage, a UHS-I bus rating and an A2 application rating. Its transfer speed is up to 170 MB/s, with direction unspecified.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_030527dc0fec3a95016aa452aaa9ac87d084f9a48233d0bf14",
+    "usage": {
+      "inputTokens": 977,
+      "outputTokens": 55,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7139.173165999819,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "c5469bca109a7aecbba11280e08abd4d7de3216af774ecdc192318c157a8d1f3",
+      "claims": [
+        {
+          "text": "The Larkspur tablet case has a folio style",
+          "start": 0,
+          "end": 42,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02",
+            "identity:8a1564cbb33e205bd41f07605529fad975599327b90eaa882ec806a7c3c4f169",
+            "fact:fact_3ce64a555d850a6a8b2f0ef7a38044d54a539bfd8ee192b6bb58dcf5fa88df89"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_0749740cfc",
+              "field": "raw_title",
+              "quote": "Larkspur tablet case"
+            },
+            {
+              "rowId": "row_0749740cfc",
+              "field": "raw_specs",
+              "quote": "folio"
+            }
+          ],
+          "reason": "The supplied identity and case-style supports establish the named tablet case and its folio style."
+        },
+        {
+          "text": "and supports auto sleep/wake",
+          "start": 43,
+          "end": 71,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_df6f8a03c002e14b94951e57f32d378c6b0f02e4b1b70b536c23a05afa9e4f82"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_0749740cfc",
+              "field": "raw_specs",
+              "quote": "auto sleep/wake"
+            }
+          ],
+          "reason": "The supplied feature support explicitly establishes auto sleep/wake for this case."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"c5469bca109a7aecbba11280e08abd4d7de3216af774ecdc192318c157a8d1f3\",\"claims\":[{\"text\":\"The Larkspur tablet case has a folio style\",\"start\":0,\"end\":42,\"verdict\":\"supported\",\"supportIds\":[\"identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02\",\"identity:8a1564cbb33e205bd41f07605529fad975599327b90eaa882ec806a7c3c4f169\",\"fact:fact_3ce64a555d850a6a8b2f0ef7a38044d54a539bfd8ee192b6bb58dcf5fa88df89\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_0749740cfc\",\"field\":\"raw_title\",\"quote\":\"Larkspur tablet case\"},{\"rowId\":\"row_0749740cfc\",\"field\":\"raw_specs\",\"quote\":\"folio\"}],\"reason\":\"The supplied identity and case-style supports establish the named tablet case and its folio style.\"},{\"text\":\"and supports auto sleep/wake\",\"start\":43,\"end\":71,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_df6f8a03c002e14b94951e57f32d378c6b0f02e4b1b70b536c23a05afa9e4f82\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_0749740cfc\",\"field\":\"raw_specs\",\"quote\":\"auto sleep/wake\"}],\"reason\":\"The supplied feature support explicitly establishes auto sleep/wake for this case.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_00e783e1688b4781016aa456b6f61087d0b71227a6a87cce5b",
+    "usage": {
+      "inputTokens": 1704,
+      "outputTokens": 404,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1701
+    }
+  }
+}

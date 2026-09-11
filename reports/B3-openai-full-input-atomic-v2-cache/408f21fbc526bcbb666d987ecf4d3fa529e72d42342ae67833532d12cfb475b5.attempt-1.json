@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2223.4620420001447,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Basalt Pro is a pair of passive speakers with 4-ohm impedance and 40 W power for an unspecified purpose."
+    },
+    "raw": "{\"text\":\"The Basalt Pro is a pair of passive speakers with 4-ohm impedance and 40 W power for an unspecified purpose.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0bc59eb6e6d94536016aa455f742ec87d0ac3985da55ad1048",
+    "usage": {
+      "inputTokens": 852,
+      "outputTokens": 40,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

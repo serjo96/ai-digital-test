@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1542.2724170000292,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Alto X is a 7-in-1 USB-C hub with 4K@30fps video output and 100 W PD passthrough."
+    },
+    "raw": "{\"text\":\"The Alto X is a 7-in-1 USB-C hub with 4K@30fps video output and 100 W PD passthrough.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_072f4aa38984bdb4016aa454ce299487d08603f54fcfc062fc",
+    "usage": {
+      "inputTokens": 841,
+      "outputTokens": 45,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

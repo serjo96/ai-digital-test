@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2093.8900419999845,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Pivot Lite scale uses BIA, supports app sync, and has a maximum load of 180 kg."
+    },
+    "raw": "{\"text\":\"The Pivot Lite scale uses BIA, supports app sync, and has a maximum load of 180 kg.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_06104e517d29598c016aa4540473e887d0b273965da7c0f7f4",
+    "usage": {
+      "inputTokens": 646,
+      "outputTokens": 36,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

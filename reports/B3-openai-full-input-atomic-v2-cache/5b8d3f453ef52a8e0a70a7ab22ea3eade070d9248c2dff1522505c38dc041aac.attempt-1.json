@@ -1,0 +1,82 @@
+{
+  "elapsedMs": 9458.597624999937,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "04268a1d8276dabdda5bedee496a055b7826ad02a4dea62ac3c74a0527eae076",
+      "claims": [
+        {
+          "text": "The Cirrus Lite scale uses BIA",
+          "start": 0,
+          "end": 30,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:06316e3c5a88f9d4b6ba031712edf275f190b8701cfd5f3e96d15c4ed1325990",
+            "identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7",
+            "fact:fact_abe0a6123ba41f867a29a68aeefcf795676e5d6b81b2a7271989522f7c2ffd9a"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_fb6dff1674",
+              "field": "raw_title",
+              "quote": "Cirrus Lite smart scale"
+            },
+            {
+              "rowId": "row_fb6dff1674",
+              "field": "raw_specs",
+              "quote": "BIA"
+            }
+          ],
+          "reason": "The supplied identity supports identify the Cirrus Lite scale, and its specifications explicitly list BIA."
+        },
+        {
+          "text": "supports app sync",
+          "start": 32,
+          "end": 49,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_6e25baf001ba55041f7d93f4c594653fe3043caa99b0d602c80211ad582348ec"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_fb6dff1674",
+              "field": "raw_specs",
+              "quote": "app sync"
+            }
+          ],
+          "reason": "App sync is explicitly listed in the scale's specifications."
+        },
+        {
+          "text": "and has a maximum load of 180 kg",
+          "start": 51,
+          "end": 83,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_04788a29e5dc28a7372b4989475b68d35811cf3ec64adf019de74fdc99ca26fb"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_fb6dff1674",
+              "field": "raw_specs",
+              "quote": "180kg max"
+            }
+          ],
+          "reason": "The maximum load matches the supplied value of 180 kg and retains the maximum qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"04268a1d8276dabdda5bedee496a055b7826ad02a4dea62ac3c74a0527eae076\",\"claims\":[{\"text\":\"The Cirrus Lite scale uses BIA\",\"start\":0,\"end\":30,\"verdict\":\"supported\",\"supportIds\":[\"identity:06316e3c5a88f9d4b6ba031712edf275f190b8701cfd5f3e96d15c4ed1325990\",\"identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7\",\"fact:fact_abe0a6123ba41f867a29a68aeefcf795676e5d6b81b2a7271989522f7c2ffd9a\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_fb6dff1674\",\"field\":\"raw_title\",\"quote\":\"Cirrus Lite smart scale\"},{\"rowId\":\"row_fb6dff1674\",\"field\":\"raw_specs\",\"quote\":\"BIA\"}],\"reason\":\"The supplied identity supports identify the Cirrus Lite scale, and its specifications explicitly list BIA.\"},{\"text\":\"supports app sync\",\"start\":32,\"end\":49,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_6e25baf001ba55041f7d93f4c594653fe3043caa99b0d602c80211ad582348ec\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_fb6dff1674\",\"field\":\"raw_specs\",\"quote\":\"app sync\"}],\"reason\":\"App sync is explicitly listed in the scale's specifications.\"},{\"text\":\"and has a maximum load of 180 kg\",\"start\":51,\"end\":83,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_04788a29e5dc28a7372b4989475b68d35811cf3ec64adf019de74fdc99ca26fb\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_fb6dff1674\",\"field\":\"raw_specs\",\"quote\":\"180kg max\"}],\"reason\":\"The maximum load matches the supplied value of 180 kg and retains the maximum qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_09c3b9e84db31818016aa453abb3b487d0bddbb61bb3fc74c5",
+    "usage": {
+      "inputTokens": 1902,
+      "outputTokens": 508,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1899
+    }
+  }
+}

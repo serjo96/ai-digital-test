@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1518.8147909999825,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Mesa X mouse has 6 buttons and a mass of 70 g."
+    },
+    "raw": "{\"text\":\"The Mesa X mouse has 6 buttons and a mass of 70 g.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0b1a3ad21b3d3512016aa4525fe3d087d0bb93afd77d11823a",
+    "usage": {
+      "inputTokens": 616,
+      "outputTokens": 30,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

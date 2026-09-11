@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2591.150792000117,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Alto scale uses BIA, supports app sync, and has a maximum load of 180 kg."
+    },
+    "raw": "{\"text\":\"The Alto scale uses BIA, supports app sync, and has a maximum load of 180 kg.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_093b92e0f1883127016aa45653b33887d08c6c28cca752c4cb",
+    "usage": {
+      "inputTokens": 653,
+      "outputTokens": 35,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1778.2032079999917,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "Cobalt X wired earbuds feature a 3.5mm connector and an in-line microphone."
+    },
+    "raw": "{\"text\":\"Cobalt X wired earbuds feature a 3.5mm connector and an in-line microphone.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_08f5d363d7fad1f9016aa451fe8eb487d081284a94a63c9ea2",
+    "usage": {
+      "inputTokens": 561,
+      "outputTokens": 33,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "elapsedMs": 4812.239917000006,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "7ca6ed2b5021bf6d6504ecd9e84048c24bb7698393ba1702c3bf8af6104b1c03",
+      "claims": [
+        {
+          "text": "Sony WH-880N is an open-box product",
+          "start": 0,
+          "end": 35,
+          "verdict": "unsupported",
+          "supportIds": [],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_05e5d126cb",
+              "field": "raw_title",
+              "quote": "sony wh880n headphones OPEN BOX"
+            }
+          ],
+          "reason": "OPEN BOX describes a single supplier offer's condition, not an inherent condition of the product. The claim improperly promotes that offer-specific condition to the product."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"7ca6ed2b5021bf6d6504ecd9e84048c24bb7698393ba1702c3bf8af6104b1c03\",\"claims\":[{\"text\":\"Sony WH-880N is an open-box product\",\"start\":0,\"end\":35,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_05e5d126cb\",\"field\":\"raw_title\",\"quote\":\"sony wh880n headphones OPEN BOX\"}],\"reason\":\"OPEN BOX describes a single supplier offer's condition, not an inherent condition of the product. The claim improperly promotes that offer-specific condition to the product.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_031e5fc4536b4fed016aa45062931487d0ac9d4cf068dc3a9f",
+    "usage": {
+      "inputTokens": 2224,
+      "outputTokens": 157,
+      "cachedInputTokens": 2221,
+      "cacheWriteTokens": 0
+    }
+  }
+}

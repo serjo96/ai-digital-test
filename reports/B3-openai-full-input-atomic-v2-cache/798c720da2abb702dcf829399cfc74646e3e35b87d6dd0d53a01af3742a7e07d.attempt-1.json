@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 7479.083708999999,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "3660acba95771233cc3f8dc4894150bd879956ed8185a193fb8b9b0d81f4497e",
+      "claims": [
+        {
+          "text": "The Larkspur Lite camera records video at 4K@60fps",
+          "start": 0,
+          "end": 50,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:59db00754e956ac7a299e9c072ce370ddad8c50e825d316a0a73e699c0018051",
+            "identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e",
+            "fact:fact_ee2b566e05bfabc757ef95838efe8238801bf2ff203eb0a204b2937a45e2ae4e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_be3b86088a",
+              "field": "raw_title",
+              "quote": "LARKSPUR LITE ACTION CAMERA"
+            },
+            {
+              "rowId": "row_d40a3f9143",
+              "field": "raw_title",
+              "quote": "Larkspur Lite action camera"
+            },
+            {
+              "rowId": "row_be3b86088a",
+              "field": "raw_specs",
+              "quote": "4K60"
+            }
+          ],
+          "reason": "The titles establish the model and camera type; the supplied video-recording support interprets 4K60 as 4K@60fps."
+        },
+        {
+          "text": "and is waterproof up to 10 m",
+          "start": 51,
+          "end": 79,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_9c2306a7eb4e4b72ffee09767ff68da6006f2d811be7df567e6d571ae9e52700"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_be3b86088a",
+              "field": "raw_specs",
+              "quote": "waterproof to 10m"
+            }
+          ],
+          "reason": "The source explicitly states waterproofing to 10 m, preserving the supplied up-to qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"3660acba95771233cc3f8dc4894150bd879956ed8185a193fb8b9b0d81f4497e\",\"claims\":[{\"text\":\"The Larkspur Lite camera records video at 4K@60fps\",\"start\":0,\"end\":50,\"verdict\":\"supported\",\"supportIds\":[\"identity:59db00754e956ac7a299e9c072ce370ddad8c50e825d316a0a73e699c0018051\",\"identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e\",\"fact:fact_ee2b566e05bfabc757ef95838efe8238801bf2ff203eb0a204b2937a45e2ae4e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_be3b86088a\",\"field\":\"raw_title\",\"quote\":\"LARKSPUR LITE ACTION CAMERA\"},{\"rowId\":\"row_d40a3f9143\",\"field\":\"raw_title\",\"quote\":\"Larkspur Lite action camera\"},{\"rowId\":\"row_be3b86088a\",\"field\":\"raw_specs\",\"quote\":\"4K60\"}],\"reason\":\"The titles establish the model and camera type; the supplied video-recording support interprets 4K60 as 4K@60fps.\"},{\"text\":\"and is waterproof up to 10 m\",\"start\":51,\"end\":79,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_9c2306a7eb4e4b72ffee09767ff68da6006f2d811be7df567e6d571ae9e52700\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_be3b86088a\",\"field\":\"raw_specs\",\"quote\":\"waterproof to 10m\"}],\"reason\":\"The source explicitly states waterproofing to 10 m, preserving the supplied up-to qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_08a3a24c15d41849016aa4507f53a087d0ae196bcf52d4b98e",
+    "usage": {
+      "inputTokens": 1915,
+      "outputTokens": 445,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1912
+    }
+  }
+}

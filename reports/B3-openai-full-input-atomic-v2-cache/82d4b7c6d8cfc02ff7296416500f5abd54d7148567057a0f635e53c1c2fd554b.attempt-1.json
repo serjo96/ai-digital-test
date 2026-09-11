@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7198.66729100002,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "7d7b01dcea951f96ca5ec6b7d17ad939884105ff4aa0b094ff0727bee1b19511",
+      "claims": [
+        {
+          "text": "The Pivot Pro laptop sleeve is made of neoprene",
+          "start": 0,
+          "end": 47,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:6ad886b9cc8b1752483f4952f8d0e23bbcbfe61198fbc6bb61826479517c6aa2",
+            "identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db",
+            "fact:fact_da725f7cc31b3ac17719c16c09cd3150b471afae62b24c05309d4d377197241f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_6b647120b8",
+              "field": "raw_title",
+              "quote": "Pivot Pro laptop sleeve"
+            },
+            {
+              "rowId": "row_6b647120b8",
+              "field": "raw_specs",
+              "quote": "neoprene"
+            }
+          ],
+          "reason": "The title establishes the model and product type; the specifications identify neoprene as the material."
+        },
+        {
+          "text": "and is compatible with devices with a 14 in display",
+          "start": 48,
+          "end": 99,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_9d9327d8771623bb051315400e5776bfe4ba88af5c1bfddbffe142d4be30ce02"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_6b647120b8",
+              "field": "raw_specs",
+              "quote": "14in"
+            }
+          ],
+          "reason": "The supplied display-size support specifies 14 inches under the compatible_device condition, which the description preserves."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"7d7b01dcea951f96ca5ec6b7d17ad939884105ff4aa0b094ff0727bee1b19511\",\"claims\":[{\"text\":\"The Pivot Pro laptop sleeve is made of neoprene\",\"start\":0,\"end\":47,\"verdict\":\"supported\",\"supportIds\":[\"identity:6ad886b9cc8b1752483f4952f8d0e23bbcbfe61198fbc6bb61826479517c6aa2\",\"identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db\",\"fact:fact_da725f7cc31b3ac17719c16c09cd3150b471afae62b24c05309d4d377197241f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_6b647120b8\",\"field\":\"raw_title\",\"quote\":\"Pivot Pro laptop sleeve\"},{\"rowId\":\"row_6b647120b8\",\"field\":\"raw_specs\",\"quote\":\"neoprene\"}],\"reason\":\"The title establishes the model and product type; the specifications identify neoprene as the material.\"},{\"text\":\"and is compatible with devices with a 14 in display\",\"start\":48,\"end\":99,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_9d9327d8771623bb051315400e5776bfe4ba88af5c1bfddbffe142d4be30ce02\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_6b647120b8\",\"field\":\"raw_specs\",\"quote\":\"14in\"}],\"reason\":\"The supplied display-size support specifies 14 inches under the compatible_device condition, which the description preserves.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0c0926a32bd19660016aa456e3c6f487d0a63551d2d9badb19",
+    "usage": {
+      "inputTokens": 1936,
+      "outputTokens": 406,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1933
+    }
+  }
+}

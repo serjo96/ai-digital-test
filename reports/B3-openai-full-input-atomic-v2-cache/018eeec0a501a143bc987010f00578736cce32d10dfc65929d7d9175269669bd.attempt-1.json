@@ -1,0 +1,76 @@
+{
+  "elapsedMs": 9872.694709000003,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "16bcc6addcbf2608d333014c9c6a79f1c1be82ef5d9a852cc16892fb0f3d1c07",
+      "claims": [
+        {
+          "text": "Cobalt X wired earbuds",
+          "start": 0,
+          "end": 22,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:47c7023f12a8692fc7cdd6ece0fa14e4cba01d6fee75210a9a409669472b8445",
+            "identity:9fda85e220bcf0c9d9354cc04048fa012a4066350dd4c3a126ceca4801945688"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_a8a875a60c",
+              "field": "raw_title",
+              "quote": "Cobalt X wired earbuds"
+            }
+          ],
+          "reason": "The source title explicitly identifies the model and describes it as wired earbuds."
+        },
+        {
+          "text": "feature a 3.5mm connector",
+          "start": 23,
+          "end": 48,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_4dea6516ed2655142b44edf4ab4eb76e656f8a978b72c5c320d874ef438cf736"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_a8a875a60c",
+              "field": "raw_specs",
+              "quote": "3.5mm"
+            }
+          ],
+          "reason": "The supplied connector fact and source specification support a 3.5mm connector."
+        },
+        {
+          "text": "and an in-line microphone",
+          "start": 49,
+          "end": 74,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_359880581af2e122037614b252cfc31a67d28c40e77039e38e28f35d6bfb8869"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_a8a875a60c",
+              "field": "raw_specs",
+              "quote": "in-line mic"
+            }
+          ],
+          "reason": "The specification explicitly lists an in-line mic, supporting the microphone feature."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"16bcc6addcbf2608d333014c9c6a79f1c1be82ef5d9a852cc16892fb0f3d1c07\",\"claims\":[{\"text\":\"Cobalt X wired earbuds\",\"start\":0,\"end\":22,\"verdict\":\"supported\",\"supportIds\":[\"identity:47c7023f12a8692fc7cdd6ece0fa14e4cba01d6fee75210a9a409669472b8445\",\"identity:9fda85e220bcf0c9d9354cc04048fa012a4066350dd4c3a126ceca4801945688\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_a8a875a60c\",\"field\":\"raw_title\",\"quote\":\"Cobalt X wired earbuds\"}],\"reason\":\"The source title explicitly identifies the model and describes it as wired earbuds.\"},{\"text\":\"feature a 3.5mm connector\",\"start\":23,\"end\":48,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_4dea6516ed2655142b44edf4ab4eb76e656f8a978b72c5c320d874ef438cf736\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_a8a875a60c\",\"field\":\"raw_specs\",\"quote\":\"3.5mm\"}],\"reason\":\"The supplied connector fact and source specification support a 3.5mm connector.\"},{\"text\":\"and an in-line microphone\",\"start\":49,\"end\":74,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_359880581af2e122037614b252cfc31a67d28c40e77039e38e28f35d6bfb8869\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_a8a875a60c\",\"field\":\"raw_specs\",\"quote\":\"in-line mic\"}],\"reason\":\"The specification explicitly lists an in-line mic, supporting the microphone feature.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_059a6a1b88aa1f9c016aa4520084b887d08e458c07740535de",
+    "usage": {
+      "inputTokens": 1739,
+      "outputTokens": 447,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1736
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2179.6596249998547,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Larkspur lamp features an LED light source and a USB-C connector."
+    },
+    "raw": "{\"text\":\"The Larkspur lamp features an LED light source and a USB-C connector.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0a707a1ff57d0759016aa455a6de7087d099d2ab4f765105b1",
+    "usage": {
+      "inputTokens": 621,
+      "outputTokens": 30,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

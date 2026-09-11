@@ -1,0 +1,98 @@
+{
+  "elapsedMs": 12075.74008300004,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "0f5c6d1065c34c64e54c21c894e84937212c5a91bd083c5a70e24aa2c90b41de",
+      "claims": [
+        {
+          "text": "The Torrent X speaker pair features passive amplification",
+          "start": 0,
+          "end": 57,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f",
+            "identity:827680e109afa33e0940956e106be189e131154715bfb91b5f04911475046a45",
+            "identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704",
+            "fact:fact_13329e98b6f3a9ec664c733aee65ba0aeafc47a1926b8dae3592ea30fbb3c277"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_3c159f1aea",
+              "field": "raw_title",
+              "quote": "TORRENT X BOOKSHELF SPEAKER PAIR"
+            },
+            {
+              "rowId": "row_ca51ad691e",
+              "field": "raw_title",
+              "quote": "Torrent X bookshelf speaker pair"
+            },
+            {
+              "rowId": "row_decc7f2137",
+              "field": "raw_title",
+              "quote": "Torrent X bookshelf speaker pair"
+            },
+            {
+              "rowId": "row_f35a2ab58f",
+              "field": "raw_title",
+              "quote": "Torrent X bookshelf speaker pair"
+            },
+            {
+              "rowId": "row_3c159f1aea",
+              "field": "raw_specs",
+              "quote": "passive"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model, speaker type and pair bundle; the amplification support states passive."
+        },
+        {
+          "text": "and 4 ohm impedance",
+          "start": 58,
+          "end": 77,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_2f3384d4a066870e358f8e54e0eb9123beaa753d8675cc4bfc3b1983ad4257ea"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_3c159f1aea",
+              "field": "raw_specs",
+              "quote": "4 ohm"
+            }
+          ],
+          "reason": "The impedance value and unit match the supplied support."
+        },
+        {
+          "text": "Power is 40 W for an unspecified purpose",
+          "start": 79,
+          "end": 119,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_da815fd59de75d89e4a1ecf9263f4ee9cba65038a91b77bbda16819f713177a5"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_3c159f1aea",
+              "field": "raw_specs",
+              "quote": "40W"
+            }
+          ],
+          "reason": "The power value matches the source and preserves the support's purpose_unspecified qualifier without assigning an output, consumption or per-speaker scope."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"0f5c6d1065c34c64e54c21c894e84937212c5a91bd083c5a70e24aa2c90b41de\",\"claims\":[{\"text\":\"The Torrent X speaker pair features passive amplification\",\"start\":0,\"end\":57,\"verdict\":\"supported\",\"supportIds\":[\"identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f\",\"identity:827680e109afa33e0940956e106be189e131154715bfb91b5f04911475046a45\",\"identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704\",\"fact:fact_13329e98b6f3a9ec664c733aee65ba0aeafc47a1926b8dae3592ea30fbb3c277\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_3c159f1aea\",\"field\":\"raw_title\",\"quote\":\"TORRENT X BOOKSHELF SPEAKER PAIR\"},{\"rowId\":\"row_ca51ad691e\",\"field\":\"raw_title\",\"quote\":\"Torrent X bookshelf speaker pair\"},{\"rowId\":\"row_decc7f2137\",\"field\":\"raw_title\",\"quote\":\"Torrent X bookshelf speaker pair\"},{\"rowId\":\"row_f35a2ab58f\",\"field\":\"raw_title\",\"quote\":\"Torrent X bookshelf speaker pair\"},{\"rowId\":\"row_3c159f1aea\",\"field\":\"raw_specs\",\"quote\":\"passive\"}],\"reason\":\"The supplied identity supports establish the model, speaker type and pair bundle; the amplification support states passive.\"},{\"text\":\"and 4 ohm impedance\",\"start\":58,\"end\":77,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_2f3384d4a066870e358f8e54e0eb9123beaa753d8675cc4bfc3b1983ad4257ea\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_3c159f1aea\",\"field\":\"raw_specs\",\"quote\":\"4 ohm\"}],\"reason\":\"The impedance value and unit match the supplied support.\"},{\"text\":\"Power is 40 W for an unspecified purpose\",\"start\":79,\"end\":119,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_da815fd59de75d89e4a1ecf9263f4ee9cba65038a91b77bbda16819f713177a5\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_3c159f1aea\",\"field\":\"raw_specs\",\"quote\":\"40W\"}],\"reason\":\"The power value matches the source and preserves the support's purpose_unspecified qualifier without assigning an output, consumption or per-speaker scope.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0dc1fec00fb50e1a016aa4543d35fc87d086b186bdaeddd4d8",
+    "usage": {
+      "inputTokens": 2796,
+      "outputTokens": 643,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2793
+    }
+  }
+}

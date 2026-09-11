@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 8274.413750000007,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "d5aab000d300e2e580e99c1842247ceb913c70528d1670acdaee1d814cf3169c",
+      "claims": [
+        {
+          "text": "The Alto X laptop sleeve is made of neoprene",
+          "start": 0,
+          "end": 44,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:95d522e7e15f8da02ed3f69857f1e2fb6a7e764b8613fc13fc9707bbb6cb8304",
+            "identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db",
+            "fact:fact_9eafa35a0c8db6c49e96e0a22dc7c9d0f86b5c2758b62359e9d9ef684b461455"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_ad9b8ea940",
+              "field": "raw_title",
+              "quote": "ALTO X LAPTOP SLEEVE"
+            },
+            {
+              "rowId": "row_ad9b8ea940",
+              "field": "raw_specs",
+              "quote": "neoprene"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and product type, and the material support specifies neoprene."
+        },
+        {
+          "text": "and is compatible with 14 in devices",
+          "start": 45,
+          "end": 81,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_18f5d82a9311fa793e66368225b5288b86dd0eb0e5d45ac78067fee2852e0e55"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_ad9b8ea940",
+              "field": "raw_specs",
+              "quote": "14in"
+            }
+          ],
+          "reason": "The supplied 14-inch display-size support is explicitly qualified as compatible_device, matching device compatibility in the laptop-sleeve context."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"d5aab000d300e2e580e99c1842247ceb913c70528d1670acdaee1d814cf3169c\",\"claims\":[{\"text\":\"The Alto X laptop sleeve is made of neoprene\",\"start\":0,\"end\":44,\"verdict\":\"supported\",\"supportIds\":[\"identity:95d522e7e15f8da02ed3f69857f1e2fb6a7e764b8613fc13fc9707bbb6cb8304\",\"identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db\",\"fact:fact_9eafa35a0c8db6c49e96e0a22dc7c9d0f86b5c2758b62359e9d9ef684b461455\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_ad9b8ea940\",\"field\":\"raw_title\",\"quote\":\"ALTO X LAPTOP SLEEVE\"},{\"rowId\":\"row_ad9b8ea940\",\"field\":\"raw_specs\",\"quote\":\"neoprene\"}],\"reason\":\"The supplied identity supports establish the model and product type, and the material support specifies neoprene.\"},{\"text\":\"and is compatible with 14 in devices\",\"start\":45,\"end\":81,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_18f5d82a9311fa793e66368225b5288b86dd0eb0e5d45ac78067fee2852e0e55\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_ad9b8ea940\",\"field\":\"raw_specs\",\"quote\":\"14in\"}],\"reason\":\"The supplied 14-inch display-size support is explicitly qualified as compatible_device, matching device compatibility in the laptop-sleeve context.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_000de0024e197e3d016aa450a8fd0487d094d9d6b7be5b7f76",
+    "usage": {
+      "inputTokens": 1807,
+      "outputTokens": 424,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1804
+    }
+  }
+}

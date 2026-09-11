@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7850.453458999997,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "0ddf14b5611b445c6da2fe3ce894486e0c17c796ac16ee0b0381614b5c7693cc",
+      "claims": [
+        {
+          "text": "The Pivot 2 lamp features an LED light source",
+          "start": 0,
+          "end": 45,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d",
+            "identity:afdbe549009cbc01a8cea40d08f0d7aff3c70cbf870eb9fbb05108935b8d69a7",
+            "fact:fact_be8d5b832fe1d58b2d0e6762eb09492cd78e6745873849e50457d02969a04fba"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_28b9db3a0d",
+              "field": "raw_title",
+              "quote": "Pivot 2 desk lamp"
+            },
+            {
+              "rowId": "row_28b9db3a0d",
+              "field": "raw_specs",
+              "quote": "LED"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and lamp type, and the light-source support establishes LED."
+        },
+        {
+          "text": "and a USB-C connector",
+          "start": 46,
+          "end": 67,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_5de25c840923e5c6f5d432951ca02e834fc4426590b42a86830b9db3ea59c613"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_28b9db3a0d",
+              "field": "raw_specs",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The supplied connector support explicitly identifies USB-C for this lamp."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"0ddf14b5611b445c6da2fe3ce894486e0c17c796ac16ee0b0381614b5c7693cc\",\"claims\":[{\"text\":\"The Pivot 2 lamp features an LED light source\",\"start\":0,\"end\":45,\"verdict\":\"supported\",\"supportIds\":[\"identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d\",\"identity:afdbe549009cbc01a8cea40d08f0d7aff3c70cbf870eb9fbb05108935b8d69a7\",\"fact:fact_be8d5b832fe1d58b2d0e6762eb09492cd78e6745873849e50457d02969a04fba\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_28b9db3a0d\",\"field\":\"raw_title\",\"quote\":\"Pivot 2 desk lamp\"},{\"rowId\":\"row_28b9db3a0d\",\"field\":\"raw_specs\",\"quote\":\"LED\"}],\"reason\":\"The supplied identity supports establish the model and lamp type, and the light-source support establishes LED.\"},{\"text\":\"and a USB-C connector\",\"start\":46,\"end\":67,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_5de25c840923e5c6f5d432951ca02e834fc4426590b42a86830b9db3ea59c613\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_28b9db3a0d\",\"field\":\"raw_specs\",\"quote\":\"USB-C\"}],\"reason\":\"The supplied connector support explicitly identifies USB-C for this lamp.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_04ba41b569c6d4cc016aa45095561887d0ab536c506441e0f9",
+    "usage": {
+      "inputTokens": 1768,
+      "outputTokens": 402,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1765
+    }
+  }
+}

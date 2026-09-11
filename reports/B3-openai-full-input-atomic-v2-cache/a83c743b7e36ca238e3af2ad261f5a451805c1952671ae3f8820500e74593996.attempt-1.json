@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 3124.4118749999907,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Marlow 2 camera records video at 4K@60fps and is waterproof up to 10 m."
+    },
+    "raw": "{\"text\":\"The Marlow 2 camera records video at 4K@60fps and is waterproof up to 10 m.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_053300d8db190796016aa45591602487d0ba6ab6a8c6b4e6b6",
+    "usage": {
+      "inputTokens": 573,
+      "outputTokens": 38,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "elapsedMs": 5131.895666999975,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "8e5aa7585952d8d82a4bfe18315315926feac4ebe95fc0d3f82d28421f4f4f8e",
+      "claims": [
+        {
+          "text": "Sable Plus earbuds",
+          "start": 0,
+          "end": 18,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:cfa078f3546f56f5e9998873c37fd2081458db7abdaa46dd5199906bcbe919d2",
+            "identity:47c7023f12a8692fc7cdd6ece0fa14e4cba01d6fee75210a9a409669472b8445"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_81cd8108b0",
+              "field": "raw_title",
+              "quote": "SABLE PLUS WIRED EARBUDS"
+            }
+          ],
+          "reason": "The source title supports both the Sable Plus model name and the earbuds product type."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"8e5aa7585952d8d82a4bfe18315315926feac4ebe95fc0d3f82d28421f4f4f8e\",\"claims\":[{\"text\":\"Sable Plus earbuds\",\"start\":0,\"end\":18,\"verdict\":\"supported\",\"supportIds\":[\"identity:cfa078f3546f56f5e9998873c37fd2081458db7abdaa46dd5199906bcbe919d2\",\"identity:47c7023f12a8692fc7cdd6ece0fa14e4cba01d6fee75210a9a409669472b8445\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_81cd8108b0\",\"field\":\"raw_title\",\"quote\":\"SABLE PLUS WIRED EARBUDS\"}],\"reason\":\"The source title supports both the Sable Plus model name and the earbuds product type.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0481b759c1e1eb6c016aa4553f32c887d097d3b7a9fad5b35a",
+    "usage": {
+      "inputTokens": 1162,
+      "outputTokens": 218,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1159
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 7935.493415999925,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "bbeef13936ca57b873f9b6bd9068b62bc84f7ff2acd4375c881d1e2ddabe010b",
+      "claims": [
+        {
+          "text": "The Sable lamp features an LED light source",
+          "start": 0,
+          "end": 43,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d",
+            "identity:841941801ef00aba4ca73349d8ef6deacf5988b6c53903ad633c3ab2c46852ec",
+            "fact:fact_46bc5c33ba032563f7d24242d242b152d2acc3478de7a9e99ddd1ee88391d529"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_70bdd4eb63",
+              "field": "raw_title",
+              "quote": "SABLE DESK LAMP"
+            },
+            {
+              "rowId": "row_aa35314055",
+              "field": "raw_title",
+              "quote": "SABLE DESK LAMP"
+            },
+            {
+              "rowId": "row_70bdd4eb63",
+              "field": "raw_specs",
+              "quote": "LED"
+            }
+          ],
+          "reason": "The titles support the Sable lamp identity, and the supplied light-source support identifies LED."
+        },
+        {
+          "text": "and USB-C connector",
+          "start": 44,
+          "end": 63,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_458b6db06782b66f52373f264194b9d71e858ddbb6c0882230055a39aae84b4c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_70bdd4eb63",
+              "field": "raw_specs",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The supplied connector support and raw specifications identify USB-C for this lamp."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"bbeef13936ca57b873f9b6bd9068b62bc84f7ff2acd4375c881d1e2ddabe010b\",\"claims\":[{\"text\":\"The Sable lamp features an LED light source\",\"start\":0,\"end\":43,\"verdict\":\"supported\",\"supportIds\":[\"identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d\",\"identity:841941801ef00aba4ca73349d8ef6deacf5988b6c53903ad633c3ab2c46852ec\",\"fact:fact_46bc5c33ba032563f7d24242d242b152d2acc3478de7a9e99ddd1ee88391d529\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_70bdd4eb63\",\"field\":\"raw_title\",\"quote\":\"SABLE DESK LAMP\"},{\"rowId\":\"row_aa35314055\",\"field\":\"raw_title\",\"quote\":\"SABLE DESK LAMP\"},{\"rowId\":\"row_70bdd4eb63\",\"field\":\"raw_specs\",\"quote\":\"LED\"}],\"reason\":\"The titles support the Sable lamp identity, and the supplied light-source support identifies LED.\"},{\"text\":\"and USB-C connector\",\"start\":44,\"end\":63,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_458b6db06782b66f52373f264194b9d71e858ddbb6c0882230055a39aae84b4c\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_70bdd4eb63\",\"field\":\"raw_specs\",\"quote\":\"USB-C\"}],\"reason\":\"The supplied connector support and raw specifications identify USB-C for this lamp.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0b7542590554d7d9016aa455ef3cf087d0914b0da32fb3576b",
+    "usage": {
+      "inputTokens": 1909,
+      "outputTokens": 410,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1906
+    }
+  }
+}

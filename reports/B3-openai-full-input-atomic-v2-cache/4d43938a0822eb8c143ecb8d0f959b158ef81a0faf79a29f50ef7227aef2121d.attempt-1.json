@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7648.795207999996,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "9af73b338686074f782b36ae1d51c6399ecb810c715cb4e32f5e48bcbc642c4c",
+      "claims": [
+        {
+          "text": "Mesa earbuds feature a 3.5mm connector",
+          "start": 0,
+          "end": 38,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:b2fdf1d644efb05faf61227cd3029f4f1a8f90ae4876eec99838f959c3838c9e",
+            "identity:47c7023f12a8692fc7cdd6ece0fa14e4cba01d6fee75210a9a409669472b8445",
+            "fact:fact_976c3a742ee8616dcb8001376f886dbb0d438138d1a7987f3f0fe15e5e13d3e0"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_87e1e24c27",
+              "field": "raw_title",
+              "quote": "Mesa wired earbuds"
+            },
+            {
+              "rowId": "row_87e1e24c27",
+              "field": "raw_specs",
+              "quote": "3.5mm"
+            }
+          ],
+          "reason": "The supplied identity and connector supports establish Mesa earbuds with a 3.5mm connector."
+        },
+        {
+          "text": "and an in-line microphone",
+          "start": 39,
+          "end": 64,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_9e014e780440dcfd6c81e96d2beaac2a5d07f9518d98ebe2cb18382dfafe6c38"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_87e1e24c27",
+              "field": "raw_specs",
+              "quote": "in-line mic"
+            }
+          ],
+          "reason": "The source explicitly lists an in-line mic for these earbuds."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"9af73b338686074f782b36ae1d51c6399ecb810c715cb4e32f5e48bcbc642c4c\",\"claims\":[{\"text\":\"Mesa earbuds feature a 3.5mm connector\",\"start\":0,\"end\":38,\"verdict\":\"supported\",\"supportIds\":[\"identity:b2fdf1d644efb05faf61227cd3029f4f1a8f90ae4876eec99838f959c3838c9e\",\"identity:47c7023f12a8692fc7cdd6ece0fa14e4cba01d6fee75210a9a409669472b8445\",\"fact:fact_976c3a742ee8616dcb8001376f886dbb0d438138d1a7987f3f0fe15e5e13d3e0\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_87e1e24c27\",\"field\":\"raw_title\",\"quote\":\"Mesa wired earbuds\"},{\"rowId\":\"row_87e1e24c27\",\"field\":\"raw_specs\",\"quote\":\"3.5mm\"}],\"reason\":\"The supplied identity and connector supports establish Mesa earbuds with a 3.5mm connector.\"},{\"text\":\"and an in-line microphone\",\"start\":39,\"end\":64,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_9e014e780440dcfd6c81e96d2beaac2a5d07f9518d98ebe2cb18382dfafe6c38\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_87e1e24c27\",\"field\":\"raw_specs\",\"quote\":\"in-line mic\"}],\"reason\":\"The source explicitly lists an in-line mic for these earbuds.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_02c0d08b006213e0016aa453e4819c87d0a27048866696affd",
+    "usage": {
+      "inputTokens": 1650,
+      "outputTokens": 407,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1647
+    }
+  }
+}

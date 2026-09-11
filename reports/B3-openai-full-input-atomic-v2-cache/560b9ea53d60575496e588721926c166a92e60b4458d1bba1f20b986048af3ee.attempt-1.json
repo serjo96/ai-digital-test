@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2050.6397919999436,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Basalt is a 7-in-1 USB-C hub with 4K@30fps video output and 100 W power with PD passthrough."
+    },
+    "raw": "{\"text\":\"The Basalt is a 7-in-1 USB-C hub with 4K@30fps video output and 100 W power with PD passthrough.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0d91bc93cc212f96016aa4566ac6d887d08ba407c709219769",
+    "usage": {
+      "inputTokens": 849,
+      "outputTokens": 47,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

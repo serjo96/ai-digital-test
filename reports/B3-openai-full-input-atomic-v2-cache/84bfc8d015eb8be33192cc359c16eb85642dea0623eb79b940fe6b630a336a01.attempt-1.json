@@ -1,0 +1,93 @@
+{
+  "elapsedMs": 11767.170082999859,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "9dcc821c51a8a2e588dbd3f3d9fd6f7070cc717405dc01a549baaad9a172af21",
+      "claims": [
+        {
+          "text": "The Alto X is a 7-in-1 USB-C hub",
+          "start": 0,
+          "end": 32,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:95d522e7e15f8da02ed3f69857f1e2fb6a7e764b8613fc13fc9707bbb6cb8304",
+            "identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4",
+            "fact:fact_003a55733988fb65d9dc9746dec0f81ec5405b85ba012899043c7c7110a48d4b",
+            "fact:fact_2c0b734dbfaf6a4ec42f8ccdc8e2edbeec30d9f52c1c55ed5c09a899b3bb7a31"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_841c563697",
+              "field": "raw_title",
+              "quote": "Alto X USB-C hub"
+            },
+            {
+              "rowId": "row_934d37c5c3",
+              "field": "raw_title",
+              "quote": "ALTO X USB-C HUB"
+            },
+            {
+              "rowId": "row_841c563697",
+              "field": "raw_specs",
+              "quote": "7-in-1"
+            },
+            {
+              "rowId": "row_841c563697",
+              "field": "raw_title",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The supplied identity and specification evidence supports the model, hub type, connector and multifunction count."
+        },
+        {
+          "text": "with 4K@30fps video output",
+          "start": 33,
+          "end": 59,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_73939be2aff216af63882ec48575fe66643e2a33a829455dc7beddcbf3a89b90"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_841c563697",
+              "field": "raw_specs",
+              "quote": "4K30"
+            }
+          ],
+          "reason": "The raw HDMI 4K30 specification supports the supplied normalized video-output value of 4K@30fps."
+        },
+        {
+          "text": "and 100 W PD passthrough",
+          "start": 60,
+          "end": 84,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_1342ad94482fcd6c624a2ea1a8c1eb65d34c7ca771a4abb28b667ba4f51dae49"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_841c563697",
+              "field": "raw_specs",
+              "quote": "100W PD passthrough"
+            }
+          ],
+          "reason": "The claim preserves both the stated power value and its PD-passthrough qualification."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"9dcc821c51a8a2e588dbd3f3d9fd6f7070cc717405dc01a549baaad9a172af21\",\"claims\":[{\"text\":\"The Alto X is a 7-in-1 USB-C hub\",\"start\":0,\"end\":32,\"verdict\":\"supported\",\"supportIds\":[\"identity:95d522e7e15f8da02ed3f69857f1e2fb6a7e764b8613fc13fc9707bbb6cb8304\",\"identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4\",\"fact:fact_003a55733988fb65d9dc9746dec0f81ec5405b85ba012899043c7c7110a48d4b\",\"fact:fact_2c0b734dbfaf6a4ec42f8ccdc8e2edbeec30d9f52c1c55ed5c09a899b3bb7a31\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_841c563697\",\"field\":\"raw_title\",\"quote\":\"Alto X USB-C hub\"},{\"rowId\":\"row_934d37c5c3\",\"field\":\"raw_title\",\"quote\":\"ALTO X USB-C HUB\"},{\"rowId\":\"row_841c563697\",\"field\":\"raw_specs\",\"quote\":\"7-in-1\"},{\"rowId\":\"row_841c563697\",\"field\":\"raw_title\",\"quote\":\"USB-C\"}],\"reason\":\"The supplied identity and specification evidence supports the model, hub type, connector and multifunction count.\"},{\"text\":\"with 4K@30fps video output\",\"start\":33,\"end\":59,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_73939be2aff216af63882ec48575fe66643e2a33a829455dc7beddcbf3a89b90\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_841c563697\",\"field\":\"raw_specs\",\"quote\":\"4K30\"}],\"reason\":\"The raw HDMI 4K30 specification supports the supplied normalized video-output value of 4K@30fps.\"},{\"text\":\"and 100 W PD passthrough\",\"start\":60,\"end\":84,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_1342ad94482fcd6c624a2ea1a8c1eb65d34c7ca771a4abb28b667ba4f51dae49\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_841c563697\",\"field\":\"raw_specs\",\"quote\":\"100W PD passthrough\"}],\"reason\":\"The claim preserves both the stated power value and its PD-passthrough qualification.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0d6bfb94836e1b19016aa454cfb79087d089f2566bf180e6e8",
+    "usage": {
+      "inputTokens": 2189,
+      "outputTokens": 632,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2186
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "elapsedMs": 9622.798042000039,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "c39b115d03a3ba8476419387eceeb937c13d04364a60c17b75ca69ec8eb1c149",
+      "claims": [
+        {
+          "text": "The Juniper 2 scale uses BIA",
+          "start": 0,
+          "end": 28,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7",
+            "identity:9ed142ffb92c69f1800cdef21cd3418a40a3602a72dec989ba1a3fd80554dc28",
+            "fact:fact_88efa61cb9ff445a6dd1209654481f51d2a57955ae0801f7644a8bed5eeab4c4"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_93a80ae523",
+              "field": "raw_title",
+              "quote": "Juniper 2 smart scale"
+            },
+            {
+              "rowId": "row_93a80ae523",
+              "field": "raw_specs",
+              "quote": "BIA"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and scale type, and the specifications explicitly list BIA."
+        },
+        {
+          "text": "supports app sync",
+          "start": 30,
+          "end": 47,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_fa659ec487c8c080dabf8a6ecda25ee38886e99ce4a557686ba6a9f61f5ac5e4"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_93a80ae523",
+              "field": "raw_specs",
+              "quote": "app sync"
+            }
+          ],
+          "reason": "The specifications explicitly list app sync."
+        },
+        {
+          "text": "and has a maximum load of 180 kg",
+          "start": 49,
+          "end": 81,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_8842895cb4bd1bc2e3701502f82e49e875c94f4e35cece92fa22b66a176a446d"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_93a80ae523",
+              "field": "raw_specs",
+              "quote": "180kg max"
+            }
+          ],
+          "reason": "The maximum-load support specifies 180 kg with the maximum qualifier preserved."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"c39b115d03a3ba8476419387eceeb937c13d04364a60c17b75ca69ec8eb1c149\",\"claims\":[{\"text\":\"The Juniper 2 scale uses BIA\",\"start\":0,\"end\":28,\"verdict\":\"supported\",\"supportIds\":[\"identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7\",\"identity:9ed142ffb92c69f1800cdef21cd3418a40a3602a72dec989ba1a3fd80554dc28\",\"fact:fact_88efa61cb9ff445a6dd1209654481f51d2a57955ae0801f7644a8bed5eeab4c4\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_93a80ae523\",\"field\":\"raw_title\",\"quote\":\"Juniper 2 smart scale\"},{\"rowId\":\"row_93a80ae523\",\"field\":\"raw_specs\",\"quote\":\"BIA\"}],\"reason\":\"The supplied identity supports establish the model and scale type, and the specifications explicitly list BIA.\"},{\"text\":\"supports app sync\",\"start\":30,\"end\":47,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_fa659ec487c8c080dabf8a6ecda25ee38886e99ce4a557686ba6a9f61f5ac5e4\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_93a80ae523\",\"field\":\"raw_specs\",\"quote\":\"app sync\"}],\"reason\":\"The specifications explicitly list app sync.\"},{\"text\":\"and has a maximum load of 180 kg\",\"start\":49,\"end\":81,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_8842895cb4bd1bc2e3701502f82e49e875c94f4e35cece92fa22b66a176a446d\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_93a80ae523\",\"field\":\"raw_specs\",\"quote\":\"180kg max\"}],\"reason\":\"The maximum-load support specifies 180 kg with the maximum qualifier preserved.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_05832fafc7fa449b016aa456fdcb1887d09f164bfc9f1ab3af",
+    "usage": {
+      "inputTokens": 1890,
+      "outputTokens": 503,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1887
+    }
+  }
+}

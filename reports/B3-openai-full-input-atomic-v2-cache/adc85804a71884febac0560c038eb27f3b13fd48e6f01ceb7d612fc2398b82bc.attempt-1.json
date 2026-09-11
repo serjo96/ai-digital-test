@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 8209.573124999995,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "515037a9d52edeb19f8f9ec6df3cf23a3d0a91049ca153c2704d49169748c57e",
+      "claims": [
+        {
+          "text": "The Vertex Plus camera records video at 4K@60fps",
+          "start": 0,
+          "end": 48,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:b0032a085637daacddc4f3901c807855d25db76fe34569147b646cd30695a197",
+            "identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e",
+            "fact:fact_d9958133ca1a4d7586318085b30b43cdc0cb4364932651efdb2ce18c22fd2e79"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_5cc18c2896",
+              "field": "raw_title",
+              "quote": "Vertex Plus action camera"
+            },
+            {
+              "rowId": "row_9970a553e5",
+              "field": "raw_title",
+              "quote": "VERTEX PLUS ACTION CAMERA"
+            },
+            {
+              "rowId": "row_5cc18c2896",
+              "field": "raw_specs",
+              "quote": "4K60"
+            }
+          ],
+          "reason": "The titles establish the model and camera type; the supplied recording support normalizes 4K60 to 4K@60fps."
+        },
+        {
+          "text": "and is waterproof up to 10 m",
+          "start": 49,
+          "end": 77,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_5ad25923bfaff2f09e845dec3e7c1bf720b6dc93f6050793ce20473d7a7faa8e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_5cc18c2896",
+              "field": "raw_specs",
+              "quote": "waterproof to 10m"
+            }
+          ],
+          "reason": "The source explicitly supports waterproofing to 10 m, and the description preserves the up-to qualifier. Missing specifications in the other row do not contradict this claim."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"515037a9d52edeb19f8f9ec6df3cf23a3d0a91049ca153c2704d49169748c57e\",\"claims\":[{\"text\":\"The Vertex Plus camera records video at 4K@60fps\",\"start\":0,\"end\":48,\"verdict\":\"supported\",\"supportIds\":[\"identity:b0032a085637daacddc4f3901c807855d25db76fe34569147b646cd30695a197\",\"identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e\",\"fact:fact_d9958133ca1a4d7586318085b30b43cdc0cb4364932651efdb2ce18c22fd2e79\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_5cc18c2896\",\"field\":\"raw_title\",\"quote\":\"Vertex Plus action camera\"},{\"rowId\":\"row_9970a553e5\",\"field\":\"raw_title\",\"quote\":\"VERTEX PLUS ACTION CAMERA\"},{\"rowId\":\"row_5cc18c2896\",\"field\":\"raw_specs\",\"quote\":\"4K60\"}],\"reason\":\"The titles establish the model and camera type; the supplied recording support normalizes 4K60 to 4K@60fps.\"},{\"text\":\"and is waterproof up to 10 m\",\"start\":49,\"end\":77,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_5ad25923bfaff2f09e845dec3e7c1bf720b6dc93f6050793ce20473d7a7faa8e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_5cc18c2896\",\"field\":\"raw_specs\",\"quote\":\"waterproof to 10m\"}],\"reason\":\"The source explicitly supports waterproofing to 10 m, and the description preserves the up-to qualifier. Missing specifications in the other row do not contradict this claim.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_09b7e0a7a7ee077a016aa45297c34087d09e5d4a03c24f9cad",
+    "usage": {
+      "inputTokens": 1963,
+      "outputTokens": 452,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1960
+    }
+  }
+}

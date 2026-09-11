@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 8326.549584000022,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "40e124f8376511e030d0a0d73e86b31c0c84757cc7da75da6541276ed15e7d9f",
+      "claims": [
+        {
+          "text": "The Cobalt X camera records video at 4K@60fps",
+          "start": 0,
+          "end": 45,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e",
+            "identity:9fda85e220bcf0c9d9354cc04048fa012a4066350dd4c3a126ceca4801945688",
+            "fact:fact_647464a78baa4fda9c52ed978887778cf37913296441cc1fb70cb2be59f1bd92"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_b2475a3df6",
+              "field": "raw_title",
+              "quote": "Cobalt X action camera"
+            },
+            {
+              "rowId": "row_b2475a3df6",
+              "field": "raw_specs",
+              "quote": "4K60"
+            }
+          ],
+          "reason": "The title establishes the camera model and type; the supplied video recording support interprets 4K60 as 4K@60fps."
+        },
+        {
+          "text": "and is waterproof up to 10 m",
+          "start": 46,
+          "end": 74,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_ee7cd5b15024df91c202e6553e20f434047b4963a59e234c5c76dbf94dbb4ca0"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_b2475a3df6",
+              "field": "raw_specs",
+              "quote": "waterproof to 10m"
+            }
+          ],
+          "reason": "The source states waterproof to 10m, and the claim preserves the supplied up-to qualification."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"40e124f8376511e030d0a0d73e86b31c0c84757cc7da75da6541276ed15e7d9f\",\"claims\":[{\"text\":\"The Cobalt X camera records video at 4K@60fps\",\"start\":0,\"end\":45,\"verdict\":\"supported\",\"supportIds\":[\"identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e\",\"identity:9fda85e220bcf0c9d9354cc04048fa012a4066350dd4c3a126ceca4801945688\",\"fact:fact_647464a78baa4fda9c52ed978887778cf37913296441cc1fb70cb2be59f1bd92\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_b2475a3df6\",\"field\":\"raw_title\",\"quote\":\"Cobalt X action camera\"},{\"rowId\":\"row_b2475a3df6\",\"field\":\"raw_specs\",\"quote\":\"4K60\"}],\"reason\":\"The title establishes the camera model and type; the supplied video recording support interprets 4K60 as 4K@60fps.\"},{\"text\":\"and is waterproof up to 10 m\",\"start\":46,\"end\":74,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_ee7cd5b15024df91c202e6553e20f434047b4963a59e234c5c76dbf94dbb4ca0\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_b2475a3df6\",\"field\":\"raw_specs\",\"quote\":\"waterproof to 10m\"}],\"reason\":\"The source states waterproof to 10m, and the claim preserves the supplied up-to qualification.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0a17ee091f6b1ee2016aa4533493ac87d0a03fb937539058d5",
+    "usage": {
+      "inputTokens": 1739,
+      "outputTokens": 421,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1736
+    }
+  }
+}

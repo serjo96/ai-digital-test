@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 3136.393792000017,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Harbor Plus is a scale."
+    },
+    "raw": "{\"text\":\"The Harbor Plus is a scale.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0d922acf4ad36aaf016aa45198411887d0b87da1c2b1c4a951",
+    "usage": {
+      "inputTokens": 357,
+      "outputTokens": 21,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

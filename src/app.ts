@@ -11,7 +11,7 @@ import { evaluateQuality, validateQuality } from './quality.js';
 import { metricsFor } from './metrics.js';
 import { readRun } from './benchmark.js';
 import type { RunReport } from './types.js';
-import { AI_PROVIDERS, ProviderRegistry } from './ai/contracts.js';
+import { AI_PROVIDERS, ProviderRegistry, type AiCallRecord } from './ai/contracts.js';
 import { OllamaAdapter } from './ai/ollama.js';
 import { OpenAiAdapter } from './ai/openai.js';
 import { AppConfigModule } from './config/config.module.js';
@@ -54,6 +54,11 @@ function roleSummaries(runtime: AiRuntime): NonNullable<NonNullable<RunReport['a
     result[role] = { ...runtime.summary(role), jobs: records.length, medianWallMs: percentile(0.5), p95WallMs: percentile(0.95) };
   }
   return result;
+}
+
+/** B3 may safely recover an invalid first verification through its single bounded repair. */
+export function hasUnrecoveredAiErrors(baseline: RunOptions['baseline'], records: Pick<AiCallRecord, 'status'>[], controlledErrors: number, publicationWithheld: number): boolean {
+  return records.some(record => record.status === 'error') && (baseline !== 'b3' || controlledErrors > 0 || publicationWithheld > 0);
 }
 
 async function reserve(root: string, id: string): Promise<string> {
@@ -144,9 +149,10 @@ export class PipelineService {
       const generated = isPublicationResult(result) ? evaluateGenerated(generatedText ? JSON.parse(generatedText) : null, result, publicationHash!) : null;
       const publication = isPublicationResult(result) ? publicationSummary(result) : null;
       const gateFailed = controlled.status === 'human_verified' && (controlled.unsupported.leaked > 0 || controlled.disputed.leaked > 0 || controlled.supported.allowed === 0);
+      const executionFailed = runtime ? hasUnrecoveredAiErrors(selected, runtime.records, controlled.errors.length, publication?.withheld ?? 0) : false;
       const report: RunReport = {
         schemaVersion: selected === 'b3' ? '4' : runtime || semanticSuite ? '3' : '2', rulesVersion: selected === 'b3' ? 'B3-v1' : runtime ? 'B2-v1' : selected === 'b1' ? 'B1-v2' : 'B0-v1', runId: options.runId, createdAt: new Date().toISOString(),
-        status: runtime?.records.some(r => r.status === 'error') || gateFailed ? 'partial' : 'success',
+        status: executionFailed || gateFailed ? 'partial' : 'success',
         mode: runtime ? runtime.records.some(r => r.origin === 'test') ? 'test' : options.aiMode! : 'code-only', code, config,
         hashes: { feed: hash(feedText), taxonomy: hash(taxonomyText), labels: hash(labelsText), config: hash(JSON.stringify(config)), ...(checksText ? { checks: hash(checksText) } : {}), ...(semanticText ? { semanticChecks: hash(semanticText) } : {}), ...(claimText ? { claimChecks: hash(claimText) } : {}), ...(generatedText ? { generatedChecks: hash(generatedText) } : {}), ...(gateText ? { stage4Gate: hash(gateText) } : {}), ...(publicationSourceHash ? { publicationSource: publicationSourceHash } : {}) },
         audit: {

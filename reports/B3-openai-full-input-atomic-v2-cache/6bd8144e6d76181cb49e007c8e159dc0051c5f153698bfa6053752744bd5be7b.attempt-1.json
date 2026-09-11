@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7210.191624999978,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "47d430bb420730f243417974e7b05214b739224c9bf5013f5918882d22abf397",
+      "claims": [
+        {
+          "text": "The Kestrel Lite tablet case has a folio style",
+          "start": 0,
+          "end": 46,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02",
+            "identity:ed813140d3dac6d437f5ce3535d99d3893bfaf3be1b594c42008f431706ae2f1",
+            "fact:fact_09913028377ab0fdd47079fd48607b4db984f609607743cd509ca7bff3ce92ad"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_60fe207b81",
+              "field": "raw_title",
+              "quote": "Kestrel Lite tablet case"
+            },
+            {
+              "rowId": "row_60fe207b81",
+              "field": "raw_specs",
+              "quote": "folio"
+            }
+          ],
+          "reason": "The source identifies the model and product type and explicitly specifies folio style."
+        },
+        {
+          "text": "and supports auto sleep/wake",
+          "start": 47,
+          "end": 75,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_7eb796c649dda82f06934ae04a00c682737e3442db9cd8b00ae9af123e5427ea"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_60fe207b81",
+              "field": "raw_specs",
+              "quote": "auto sleep/wake"
+            }
+          ],
+          "reason": "The source explicitly lists auto sleep/wake for this case."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"47d430bb420730f243417974e7b05214b739224c9bf5013f5918882d22abf397\",\"claims\":[{\"text\":\"The Kestrel Lite tablet case has a folio style\",\"start\":0,\"end\":46,\"verdict\":\"supported\",\"supportIds\":[\"identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02\",\"identity:ed813140d3dac6d437f5ce3535d99d3893bfaf3be1b594c42008f431706ae2f1\",\"fact:fact_09913028377ab0fdd47079fd48607b4db984f609607743cd509ca7bff3ce92ad\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_60fe207b81\",\"field\":\"raw_title\",\"quote\":\"Kestrel Lite tablet case\"},{\"rowId\":\"row_60fe207b81\",\"field\":\"raw_specs\",\"quote\":\"folio\"}],\"reason\":\"The source identifies the model and product type and explicitly specifies folio style.\"},{\"text\":\"and supports auto sleep/wake\",\"start\":47,\"end\":75,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_7eb796c649dda82f06934ae04a00c682737e3442db9cd8b00ae9af123e5427ea\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_60fe207b81\",\"field\":\"raw_specs\",\"quote\":\"auto sleep/wake\"}],\"reason\":\"The source explicitly lists auto sleep/wake for this case.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_03a4d2b430b7e092016aa454a16b8487d0919256135aa1be8d",
+    "usage": {
+      "inputTokens": 1726,
+      "outputTokens": 383,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1723
+    }
+  }
+}

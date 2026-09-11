@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1700.3632499999949,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Kestrel is a tablet case."
+    },
+    "raw": "{\"text\":\"The Kestrel is a tablet case.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0331d62a7d4dfa75016aa4522f827487d0a32e7b435d1232b4",
+    "usage": {
+      "inputTokens": 372,
+      "outputTokens": 23,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

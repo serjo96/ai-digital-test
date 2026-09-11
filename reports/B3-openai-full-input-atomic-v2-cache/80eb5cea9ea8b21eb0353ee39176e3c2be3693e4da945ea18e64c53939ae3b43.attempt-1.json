@@ -1,0 +1,82 @@
+{
+  "elapsedMs": 8611.485957999947,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "aac7efe2939fe3f5124aa075ee528ed81b6fdea6196464e8e4cc9b11dfd75b33",
+      "claims": [
+        {
+          "text": "The Cobalt 2 scale uses BIA",
+          "start": 0,
+          "end": 27,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7",
+            "identity:e01b2462627df8ede2d1f554bdfbae44544b68c9ec828135c0d17397bd36bcd8",
+            "fact:fact_f11cfd8bb4cb1d9acf9a39e51e82bfd99bc5cd36c20aff6a94e493d239720d94"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_e67082ee31",
+              "field": "raw_title",
+              "quote": "Cobalt 2 smart scale"
+            },
+            {
+              "rowId": "row_e67082ee31",
+              "field": "raw_specs",
+              "quote": "BIA"
+            }
+          ],
+          "reason": "The title establishes the model and product type; the specifications explicitly identify BIA."
+        },
+        {
+          "text": "supports app sync",
+          "start": 29,
+          "end": 46,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_e46ae8909129b022d3eefaf5cf367835be3d22756a0468007847364285fa6fa4"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_e67082ee31",
+              "field": "raw_specs",
+              "quote": "app sync"
+            }
+          ],
+          "reason": "App sync is explicitly listed in the specifications."
+        },
+        {
+          "text": "and has a maximum load of 180 kg",
+          "start": 48,
+          "end": 80,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_0fa724f983ee3ad403f1e0950f44edc7df6a54ccac7c5310e85b7d0f95eb000f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_e67082ee31",
+              "field": "raw_specs",
+              "quote": "180kg max"
+            }
+          ],
+          "reason": "The specified maximum load is 180 kg, retaining the maximum qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"aac7efe2939fe3f5124aa075ee528ed81b6fdea6196464e8e4cc9b11dfd75b33\",\"claims\":[{\"text\":\"The Cobalt 2 scale uses BIA\",\"start\":0,\"end\":27,\"verdict\":\"supported\",\"supportIds\":[\"identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7\",\"identity:e01b2462627df8ede2d1f554bdfbae44544b68c9ec828135c0d17397bd36bcd8\",\"fact:fact_f11cfd8bb4cb1d9acf9a39e51e82bfd99bc5cd36c20aff6a94e493d239720d94\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_e67082ee31\",\"field\":\"raw_title\",\"quote\":\"Cobalt 2 smart scale\"},{\"rowId\":\"row_e67082ee31\",\"field\":\"raw_specs\",\"quote\":\"BIA\"}],\"reason\":\"The title establishes the model and product type; the specifications explicitly identify BIA.\"},{\"text\":\"supports app sync\",\"start\":29,\"end\":46,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_e46ae8909129b022d3eefaf5cf367835be3d22756a0468007847364285fa6fa4\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_e67082ee31\",\"field\":\"raw_specs\",\"quote\":\"app sync\"}],\"reason\":\"App sync is explicitly listed in the specifications.\"},{\"text\":\"and has a maximum load of 180 kg\",\"start\":48,\"end\":80,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_0fa724f983ee3ad403f1e0950f44edc7df6a54ccac7c5310e85b7d0f95eb000f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_e67082ee31\",\"field\":\"raw_specs\",\"quote\":\"180kg max\"}],\"reason\":\"The specified maximum load is 180 kg, retaining the maximum qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_03ad36bb07d40336016aa455691ad087d0ba79e3f4a44f4866",
+    "usage": {
+      "inputTokens": 1881,
+      "outputTokens": 496,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1878
+    }
+  }
+}

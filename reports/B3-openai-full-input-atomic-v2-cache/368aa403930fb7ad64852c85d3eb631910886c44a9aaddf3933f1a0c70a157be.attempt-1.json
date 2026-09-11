@@ -1,0 +1,82 @@
+{
+  "elapsedMs": 8757.831082999997,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "7d2901a3db9a13b9382a903519c67cbeff668cd02dfd32cedc6a98dbf1bf6a46",
+      "claims": [
+        {
+          "text": "The Juniper 3 scale uses BIA",
+          "start": 0,
+          "end": 28,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:dc324bd36f55cca801dfc4f2dd4b09036cd6640b7c8f7b0fd445d1c405ff7fab",
+            "identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7",
+            "fact:fact_74425d057f0c7543fdce075c8d97f9b9062bfa6b53d4e2116574b4a44b614836"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_f29e09c258",
+              "field": "raw_title",
+              "quote": "JUNIPER 3 SMART SCALE"
+            },
+            {
+              "rowId": "row_f29e09c258",
+              "field": "raw_specs",
+              "quote": "BIA"
+            }
+          ],
+          "reason": "The title establishes the model and product type; the specifications explicitly state BIA."
+        },
+        {
+          "text": "supports app sync",
+          "start": 30,
+          "end": 47,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_fcc0fd8f9cdfec0e8c9bc662ea1acb5dfb850af288aff3e96ba55a5b25af8683"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_f29e09c258",
+              "field": "raw_specs",
+              "quote": "app sync"
+            }
+          ],
+          "reason": "The specifications explicitly list app sync."
+        },
+        {
+          "text": "and has a maximum load of 180 kg",
+          "start": 49,
+          "end": 81,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_a65d76d16b5d95ef6de42339b4af6e13ee046668a608439e8c842bf667a99133"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_f29e09c258",
+              "field": "raw_specs",
+              "quote": "180kg max"
+            }
+          ],
+          "reason": "The stated value, unit, and maximum qualifier match the supplied maximum-load support."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"7d2901a3db9a13b9382a903519c67cbeff668cd02dfd32cedc6a98dbf1bf6a46\",\"claims\":[{\"text\":\"The Juniper 3 scale uses BIA\",\"start\":0,\"end\":28,\"verdict\":\"supported\",\"supportIds\":[\"identity:dc324bd36f55cca801dfc4f2dd4b09036cd6640b7c8f7b0fd445d1c405ff7fab\",\"identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7\",\"fact:fact_74425d057f0c7543fdce075c8d97f9b9062bfa6b53d4e2116574b4a44b614836\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_f29e09c258\",\"field\":\"raw_title\",\"quote\":\"JUNIPER 3 SMART SCALE\"},{\"rowId\":\"row_f29e09c258\",\"field\":\"raw_specs\",\"quote\":\"BIA\"}],\"reason\":\"The title establishes the model and product type; the specifications explicitly state BIA.\"},{\"text\":\"supports app sync\",\"start\":30,\"end\":47,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_fcc0fd8f9cdfec0e8c9bc662ea1acb5dfb850af288aff3e96ba55a5b25af8683\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_f29e09c258\",\"field\":\"raw_specs\",\"quote\":\"app sync\"}],\"reason\":\"The specifications explicitly list app sync.\"},{\"text\":\"and has a maximum load of 180 kg\",\"start\":49,\"end\":81,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_a65d76d16b5d95ef6de42339b4af6e13ee046668a608439e8c842bf667a99133\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_f29e09c258\",\"field\":\"raw_specs\",\"quote\":\"180kg max\"}],\"reason\":\"The stated value, unit, and maximum qualifier match the supplied maximum-load support.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0b8a7042bf39f248016aa45147ebdc87d08c7a0d4029d37c58",
+    "usage": {
+      "inputTokens": 1914,
+      "outputTokens": 512,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1911
+    }
+  }
+}

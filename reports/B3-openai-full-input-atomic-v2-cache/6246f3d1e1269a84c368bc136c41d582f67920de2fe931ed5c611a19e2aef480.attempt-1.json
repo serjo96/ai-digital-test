@@ -1,0 +1,112 @@
+{
+  "elapsedMs": 13980.474624999973,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "68f925982c9824a5607571cfdebe7a346a3717ae7f927b05fe61cc5a0f3b312a",
+      "claims": [
+        {
+          "text": "The LedgerLite Book 14 laptop",
+          "start": 0,
+          "end": 29,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:e18a666ca5783c55a87507243a0f787b7599ca626dec30fd92db753f4bfa5b19",
+            "identity:04c9caa40f99111a4ba883d5a2f2c161465e71950791dfded876b075b5b5bbee"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_87ace126d4",
+              "field": "raw_title",
+              "quote": "LedgerLite Book 14 Laptop"
+            }
+          ],
+          "reason": "The source title establishes the model and laptop type."
+        },
+        {
+          "text": "has a 14 in display",
+          "start": 30,
+          "end": 49,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_6ffa2345ec4c76c1e47e088855941c366d36a5004e0b7e7299b5a09413b408e4"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_87ace126d4",
+              "field": "raw_specs",
+              "quote": "14\" display"
+            }
+          ],
+          "reason": "The source explicitly specifies a 14-inch display."
+        },
+        {
+          "text": "16 GB of RAM",
+          "start": 51,
+          "end": 63,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_008ad0eecc5c8ce908f75e7c13f9f9a9f18ce716ee6b26943e04763a4a6b4435"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_87ace126d4",
+              "field": "raw_specs",
+              "quote": "16 GB memory"
+            }
+          ],
+          "reason": "The supplied RAM support specifies 16 GB of memory."
+        },
+        {
+          "text": "512 GB of storage",
+          "start": 65,
+          "end": 82,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_3205c59a09454966c22d66406e9480ffcbd9b315249c93430e1be8916100569c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_87ace126d4",
+              "field": "raw_specs",
+              "quote": "512 GB storage"
+            }
+          ],
+          "reason": "The source explicitly specifies 512 GB of storage."
+        },
+        {
+          "text": "and a mass of 1300 g",
+          "start": 84,
+          "end": 104,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_fdcc5bb88eae2392d84bdfdc9efa0d2b109c655a1cde8a86dd6d5e1a0cc50aa9"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_92da044aa3",
+              "field": "raw_specs",
+              "quote": "1.3 kg"
+            }
+          ],
+          "reason": "The source mass of 1.3 kg converts to 1300 g."
+        }
+      ]
+    },
+    "raw": "{\n  \"textHash\": \"68f925982c9824a5607571cfdebe7a346a3717ae7f927b05fe61cc5a0f3b312a\",\n  \"claims\": [\n    {\n      \"text\": \"The LedgerLite Book 14 laptop\",\n      \"start\": 0,\n      \"end\": 29,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"identity:e18a666ca5783c55a87507243a0f787b7599ca626dec30fd92db753f4bfa5b19\",\n        \"identity:04c9caa40f99111a4ba883d5a2f2c161465e71950791dfded876b075b5b5bbee\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_87ace126d4\",\n          \"field\": \"raw_title\",\n          \"quote\": \"LedgerLite Book 14 Laptop\"\n        }\n      ],\n      \"reason\": \"The source title establishes the model and laptop type.\"\n    },\n    {\n      \"text\": \"has a 14 in display\",\n      \"start\": 30,\n      \"end\": 49,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_6ffa2345ec4c76c1e47e088855941c366d36a5004e0b7e7299b5a09413b408e4\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_87ace126d4\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"14\\\" display\"\n        }\n      ],\n      \"reason\": \"The source explicitly specifies a 14-inch display.\"\n    },\n    {\n      \"text\": \"16 GB of RAM\",\n      \"start\": 51,\n      \"end\": 63,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_008ad0eecc5c8ce908f75e7c13f9f9a9f18ce716ee6b26943e04763a4a6b4435\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_87ace126d4\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"16 GB memory\"\n        }\n      ],\n      \"reason\": \"The supplied RAM support specifies 16 GB of memory.\"\n    },\n    {\n      \"text\": \"512 GB of storage\",\n      \"start\": 65,\n      \"end\": 82,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_3205c59a09454966c22d66406e9480ffcbd9b315249c93430e1be8916100569c\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_87ace126d4\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"512 GB storage\"\n        }\n      ],\n      \"reason\": \"The source explicitly specifies 512 GB of storage.\"\n    },\n    {\n      \"text\": \"and a mass of 1300 g\",\n      \"start\": 84,\n      \"end\": 104,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_fdcc5bb88eae2392d84bdfdc9efa0d2b109c655a1cde8a86dd6d5e1a0cc50aa9\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_92da044aa3\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"1.3 kg\"\n        }\n      ],\n      \"reason\": \"The source mass of 1.3 kg converts to 1300 g.\"\n    }\n  ]\n}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0cfba2eed7345b4a016aa45137d96887d0985b8947db1c528d",
+    "usage": {
+      "inputTokens": 3087,
+      "outputTokens": 887,
+      "cachedInputTokens": 3084,
+      "cacheWriteTokens": 0
+    }
+  }
+}

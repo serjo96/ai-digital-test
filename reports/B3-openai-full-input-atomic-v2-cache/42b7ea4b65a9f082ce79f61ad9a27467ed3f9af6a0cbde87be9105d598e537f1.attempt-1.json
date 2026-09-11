@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7447.280000000028,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "7fa08945bb7bd8d523ea53d45e3035474977cff31a239c0dba6317b629b4a80e",
+      "claims": [
+        {
+          "text": "The Basalt Pro mouse has 6 buttons",
+          "start": 0,
+          "end": 34,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:e59e231533df056d6a13659805f21b69cddd682e0b728494c0da7390025c3244",
+            "identity:335df722e77165d393567d4144ff04009970552a248aaf23d2e477551aad076c",
+            "fact:fact_d6fc8704f3b7f876158cb873226e0abb5096b61e0eea65b27a2c7537531c9b4b"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_d440c7c5af",
+              "field": "raw_title",
+              "quote": "BASALT PRO WIRELESS MOUSE"
+            },
+            {
+              "rowId": "row_d440c7c5af",
+              "field": "raw_specs",
+              "quote": "6 buttons"
+            }
+          ],
+          "reason": "The supplied title establishes the model and product type, and the specifications explicitly state 6 buttons."
+        },
+        {
+          "text": "and a mass of 70 g",
+          "start": 35,
+          "end": 53,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_f6c3b6dcb1e3b90fa279788d47ff9190a3fd0f0adc22f70bb64813ec6b90a2aa"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_d440c7c5af",
+              "field": "raw_specs",
+              "quote": "70g"
+            }
+          ],
+          "reason": "The supplied mass support and raw specifications state 70 g for this product."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"7fa08945bb7bd8d523ea53d45e3035474977cff31a239c0dba6317b629b4a80e\",\"claims\":[{\"text\":\"The Basalt Pro mouse has 6 buttons\",\"start\":0,\"end\":34,\"verdict\":\"supported\",\"supportIds\":[\"identity:e59e231533df056d6a13659805f21b69cddd682e0b728494c0da7390025c3244\",\"identity:335df722e77165d393567d4144ff04009970552a248aaf23d2e477551aad076c\",\"fact:fact_d6fc8704f3b7f876158cb873226e0abb5096b61e0eea65b27a2c7537531c9b4b\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_d440c7c5af\",\"field\":\"raw_title\",\"quote\":\"BASALT PRO WIRELESS MOUSE\"},{\"rowId\":\"row_d440c7c5af\",\"field\":\"raw_specs\",\"quote\":\"6 buttons\"}],\"reason\":\"The supplied title establishes the model and product type, and the specifications explicitly state 6 buttons.\"},{\"text\":\"and a mass of 70 g\",\"start\":35,\"end\":53,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_f6c3b6dcb1e3b90fa279788d47ff9190a3fd0f0adc22f70bb64813ec6b90a2aa\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_d440c7c5af\",\"field\":\"raw_specs\",\"quote\":\"70g\"}],\"reason\":\"The supplied mass support and raw specifications state 70 g for this product.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_049ec2723ece26bd016aa453b7492087d0b3e65b8f98524737",
+    "usage": {
+      "inputTokens": 1656,
+      "outputTokens": 401,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1653
+    }
+  }
+}

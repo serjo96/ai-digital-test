@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1545.325790999923,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Kestrel lamp features an LED light source and a USB-C connector."
+    },
+    "raw": "{\"text\":\"The Kestrel lamp features an LED light source and a USB-C connector.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0b6724aa831c9d0c016aa4548b65b887d08351ac9d01a77370",
+    "usage": {
+      "inputTokens": 555,
+      "outputTokens": 30,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

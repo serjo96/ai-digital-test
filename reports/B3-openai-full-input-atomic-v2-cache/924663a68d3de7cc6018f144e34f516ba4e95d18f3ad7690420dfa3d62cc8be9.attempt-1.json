@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1596.2541250000068,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Cirrus 2 tablet case has a folio style and supports auto sleep/wake."
+    },
+    "raw": "{\"text\":\"The Cirrus 2 tablet case has a folio style and supports auto sleep/wake.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0ceae923a154d502016aa450f71afc87d08db7c1c5c549bc5d",
+    "usage": {
+      "inputTokens": 572,
+      "outputTokens": 33,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

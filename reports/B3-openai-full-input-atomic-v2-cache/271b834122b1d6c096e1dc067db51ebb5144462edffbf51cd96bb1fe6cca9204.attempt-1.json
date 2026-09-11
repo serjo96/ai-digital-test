@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2015.0102919999918,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "Kestrel wired earbuds feature a 3.5mm connector and an in-line microphone."
+    },
+    "raw": "{\"text\":\"Kestrel wired earbuds feature a 3.5mm connector and an in-line microphone.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_046cf6307fc178ea016aa450d98f9487d085fd60762fa6b80e",
+    "usage": {
+      "inputTokens": 632,
+      "outputTokens": 33,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

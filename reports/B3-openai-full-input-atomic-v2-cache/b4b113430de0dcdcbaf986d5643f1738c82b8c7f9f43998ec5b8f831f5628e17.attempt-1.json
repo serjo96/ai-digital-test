@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2131.9967079999624,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Basalt 2 microSD memory card has 256 GB of storage, a UHS-I bus rating and an A2 application rating. It supports transfer speeds of up to 170 MB/s, with the direction unspecified."
+    },
+    "raw": "{\"text\":\"The Basalt 2 microSD memory card has 256 GB of storage, a UHS-I bus rating and an A2 application rating. It supports transfer speeds of up to 170 MB/s, with the direction unspecified.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_066a5ccebf2f1044016aa452e3a93c87d0b6c4b2b6a76c0a29",
+    "usage": {
+      "inputTokens": 1187,
+      "outputTokens": 60,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1184
+    }
+  }
+}

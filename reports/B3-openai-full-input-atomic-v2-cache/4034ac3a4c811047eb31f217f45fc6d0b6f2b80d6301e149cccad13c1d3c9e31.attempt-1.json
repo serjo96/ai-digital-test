@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7366.960791999998,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "611aaf944c7e32b5f0dcc2877e8e7a51fa82c8213e7082dea37211580bf2e9c8",
+      "claims": [
+        {
+          "text": "The Marlow 2 laptop sleeve is made of neoprene",
+          "start": 0,
+          "end": 46,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:4e6461fe71ebc9882d0cf9096bee13f43d40b62463a8982d7455efa99c9824e6",
+            "identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db",
+            "fact:fact_9fae85fdec9f9e4fe0b038d7e892c448ba14e88cadfdb263fcd337f9ee66e3d4"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_17e27bf495",
+              "field": "raw_title",
+              "quote": "Marlow 2 laptop sleeve"
+            },
+            {
+              "rowId": "row_17e27bf495",
+              "field": "raw_specs",
+              "quote": "neoprene"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and product type, and the material support identifies neoprene."
+        },
+        {
+          "text": "and is compatible with 14 in devices",
+          "start": 47,
+          "end": 83,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_93a84f3b26ccb9bb314e6e830b00cc06a491f768360ff42c2f246fbe761a6d96"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_17e27bf495",
+              "field": "raw_specs",
+              "quote": "14in"
+            }
+          ],
+          "reason": "The supplied size support specifies 14 inches with the compatible_device condition, which the description preserves."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"611aaf944c7e32b5f0dcc2877e8e7a51fa82c8213e7082dea37211580bf2e9c8\",\"claims\":[{\"text\":\"The Marlow 2 laptop sleeve is made of neoprene\",\"start\":0,\"end\":46,\"verdict\":\"supported\",\"supportIds\":[\"identity:4e6461fe71ebc9882d0cf9096bee13f43d40b62463a8982d7455efa99c9824e6\",\"identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db\",\"fact:fact_9fae85fdec9f9e4fe0b038d7e892c448ba14e88cadfdb263fcd337f9ee66e3d4\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_17e27bf495\",\"field\":\"raw_title\",\"quote\":\"Marlow 2 laptop sleeve\"},{\"rowId\":\"row_17e27bf495\",\"field\":\"raw_specs\",\"quote\":\"neoprene\"}],\"reason\":\"The supplied identity supports establish the model and product type, and the material support identifies neoprene.\"},{\"text\":\"and is compatible with 14 in devices\",\"start\":47,\"end\":83,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_93a84f3b26ccb9bb314e6e830b00cc06a491f768360ff42c2f246fbe761a6d96\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_17e27bf495\",\"field\":\"raw_specs\",\"quote\":\"14in\"}],\"reason\":\"The supplied size support specifies 14 inches with the compatible_device condition, which the description preserves.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_045f5e227ef64729016aa451cf130887d08452c7ef6fb2befb",
+    "usage": {
+      "inputTokens": 1814,
+      "outputTokens": 416,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1811
+    }
+  }
+}

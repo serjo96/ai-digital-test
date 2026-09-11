@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 8088.890082999831,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "d6e88909b021728cd9538a5a02f20cead4dc890358dd51e38b3c10a3edda0720",
+      "claims": [
+        {
+          "text": "The Kestrel X mouse weighs 70 g",
+          "start": 0,
+          "end": 31,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:301d870bbf66060feba127bafec84bb7f8ccd5b758ec80438d70dfb6388609fa",
+            "identity:335df722e77165d393567d4144ff04009970552a248aaf23d2e477551aad076c",
+            "fact:fact_0965e8284fee448d7cd37417b8387f9176782525adf02d36c049475606a9c791"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4582fae21d",
+              "field": "raw_title",
+              "quote": "KESTREL X WIRELESS MOUSE"
+            },
+            {
+              "rowId": "row_d2fac2ddba",
+              "field": "raw_title",
+              "quote": "Kestrel X wireless mouse"
+            },
+            {
+              "rowId": "row_4582fae21d",
+              "field": "raw_specs",
+              "quote": "70g"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and product type; the mass support states 70 g without qualifiers."
+        },
+        {
+          "text": "and has 6 buttons",
+          "start": 32,
+          "end": 49,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_b75aa28932e5104869a37cfb3b9f46b78153566258625f2568e33b8a2e52ac8a"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4582fae21d",
+              "field": "raw_specs",
+              "quote": "6 buttons"
+            }
+          ],
+          "reason": "The supplied buttons support explicitly states 6 buttons for this product."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"d6e88909b021728cd9538a5a02f20cead4dc890358dd51e38b3c10a3edda0720\",\"claims\":[{\"text\":\"The Kestrel X mouse weighs 70 g\",\"start\":0,\"end\":31,\"verdict\":\"supported\",\"supportIds\":[\"identity:301d870bbf66060feba127bafec84bb7f8ccd5b758ec80438d70dfb6388609fa\",\"identity:335df722e77165d393567d4144ff04009970552a248aaf23d2e477551aad076c\",\"fact:fact_0965e8284fee448d7cd37417b8387f9176782525adf02d36c049475606a9c791\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4582fae21d\",\"field\":\"raw_title\",\"quote\":\"KESTREL X WIRELESS MOUSE\"},{\"rowId\":\"row_d2fac2ddba\",\"field\":\"raw_title\",\"quote\":\"Kestrel X wireless mouse\"},{\"rowId\":\"row_4582fae21d\",\"field\":\"raw_specs\",\"quote\":\"70g\"}],\"reason\":\"The supplied identity supports establish the model and product type; the mass support states 70 g without qualifiers.\"},{\"text\":\"and has 6 buttons\",\"start\":32,\"end\":49,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_b75aa28932e5104869a37cfb3b9f46b78153566258625f2568e33b8a2e52ac8a\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4582fae21d\",\"field\":\"raw_specs\",\"quote\":\"6 buttons\"}],\"reason\":\"The supplied buttons support explicitly states 6 buttons for this product.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_05679f35797fcd27016aa455b4472487d0a54390ee6ee4522c",
+    "usage": {
+      "inputTokens": 1841,
+      "outputTokens": 417,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1838
+    }
+  }
+}

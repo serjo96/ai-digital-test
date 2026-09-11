@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 7734.5960830000695,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "48fa3de01fe1d1dce0cab18d32f7083416cf07b7c5e357e55c12e98c52665c73",
+      "claims": [
+        {
+          "text": "The Larkspur Lite tablet case has a folio style",
+          "start": 0,
+          "end": 47,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:59db00754e956ac7a299e9c072ce370ddad8c50e825d316a0a73e699c0018051",
+            "identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02",
+            "fact:fact_13d1fa71b9890f3bfea824f8e283832c04c441bec287e13d9877048e030e32d2"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c503f0112e",
+              "field": "raw_title",
+              "quote": "Larkspur Lite tablet case"
+            },
+            {
+              "rowId": "row_c82cd2b2bf",
+              "field": "raw_title",
+              "quote": "Larkspur Lite tablet case"
+            },
+            {
+              "rowId": "row_c503f0112e",
+              "field": "raw_specs",
+              "quote": "folio"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and product type, and the case-style support explicitly specifies folio."
+        },
+        {
+          "text": "and supports auto sleep/wake",
+          "start": 48,
+          "end": 76,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_66cc7be360792fb60b1d204f2feb77d9c258828912bc35372a8ba0a5a19bf624"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c503f0112e",
+              "field": "raw_specs",
+              "quote": "auto sleep/wake"
+            }
+          ],
+          "reason": "The supplied feature support and raw specifications explicitly state auto sleep/wake."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"48fa3de01fe1d1dce0cab18d32f7083416cf07b7c5e357e55c12e98c52665c73\",\"claims\":[{\"text\":\"The Larkspur Lite tablet case has a folio style\",\"start\":0,\"end\":47,\"verdict\":\"supported\",\"supportIds\":[\"identity:59db00754e956ac7a299e9c072ce370ddad8c50e825d316a0a73e699c0018051\",\"identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02\",\"fact:fact_13d1fa71b9890f3bfea824f8e283832c04c441bec287e13d9877048e030e32d2\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c503f0112e\",\"field\":\"raw_title\",\"quote\":\"Larkspur Lite tablet case\"},{\"rowId\":\"row_c82cd2b2bf\",\"field\":\"raw_title\",\"quote\":\"Larkspur Lite tablet case\"},{\"rowId\":\"row_c503f0112e\",\"field\":\"raw_specs\",\"quote\":\"folio\"}],\"reason\":\"The supplied identity supports establish the model and product type, and the case-style support explicitly specifies folio.\"},{\"text\":\"and supports auto sleep/wake\",\"start\":48,\"end\":76,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_66cc7be360792fb60b1d204f2feb77d9c258828912bc35372a8ba0a5a19bf624\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c503f0112e\",\"field\":\"raw_specs\",\"quote\":\"auto sleep/wake\"}],\"reason\":\"The supplied feature support and raw specifications explicitly state auto sleep/wake.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_079d0a6f48d7dbfa016aa456c05b2087d0ae5b05861654871d",
+    "usage": {
+      "inputTokens": 1876,
+      "outputTokens": 429,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1873
+    }
+  }
+}

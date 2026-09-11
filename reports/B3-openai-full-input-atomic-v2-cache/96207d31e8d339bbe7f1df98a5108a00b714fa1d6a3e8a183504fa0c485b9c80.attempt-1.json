@@ -1,0 +1,92 @@
+{
+  "elapsedMs": 10522.259374999907,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "86758faba8e87a363d25bc4c095a5062c344003b8b6229a279ec18b9fdbf747f",
+      "claims": [
+        {
+          "text": "The Harbor scale uses BIA",
+          "start": 0,
+          "end": 25,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7",
+            "identity:68a4920511a0855849ce137ee577bf966725ec1bfeff80c08fb6fb667ba42702",
+            "fact:fact_65b4fbb9cf1126f5ea73a6b3982a3e03db84d573541505ce9640335efe9e070e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_24e49bc1eb",
+              "field": "raw_title",
+              "quote": "HARBOR SMART SCALE"
+            },
+            {
+              "rowId": "row_293cd70b33",
+              "field": "raw_title",
+              "quote": "Harbor smart scale"
+            },
+            {
+              "rowId": "row_71fb9c3128",
+              "field": "raw_title",
+              "quote": "Harbor smart scale"
+            },
+            {
+              "rowId": "row_24e49bc1eb",
+              "field": "raw_specs",
+              "quote": "BIA"
+            }
+          ],
+          "reason": "The supplied identity supports identify the Harbor scale, and its specifications explicitly state BIA. The missing-specifications review does not contradict this evidence."
+        },
+        {
+          "text": "supports app sync",
+          "start": 27,
+          "end": 44,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_76b2723603b592db70fd65a3cc1134eb97882b30cedaa5a1be35c5bf7c526964"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_24e49bc1eb",
+              "field": "raw_specs",
+              "quote": "app sync"
+            }
+          ],
+          "reason": "App sync is explicitly listed in the supplied specifications."
+        },
+        {
+          "text": "and has a maximum load of 180 kg",
+          "start": 46,
+          "end": 78,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_a1c84d577f04c47d0c81bbdac1db658d2d05311bea4de0a4f3a0d8518f9883ef"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_24e49bc1eb",
+              "field": "raw_specs",
+              "quote": "180kg max"
+            }
+          ],
+          "reason": "The claim preserves the stated 180 kg value and maximum-load qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"86758faba8e87a363d25bc4c095a5062c344003b8b6229a279ec18b9fdbf747f\",\"claims\":[{\"text\":\"The Harbor scale uses BIA\",\"start\":0,\"end\":25,\"verdict\":\"supported\",\"supportIds\":[\"identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7\",\"identity:68a4920511a0855849ce137ee577bf966725ec1bfeff80c08fb6fb667ba42702\",\"fact:fact_65b4fbb9cf1126f5ea73a6b3982a3e03db84d573541505ce9640335efe9e070e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_24e49bc1eb\",\"field\":\"raw_title\",\"quote\":\"HARBOR SMART SCALE\"},{\"rowId\":\"row_293cd70b33\",\"field\":\"raw_title\",\"quote\":\"Harbor smart scale\"},{\"rowId\":\"row_71fb9c3128\",\"field\":\"raw_title\",\"quote\":\"Harbor smart scale\"},{\"rowId\":\"row_24e49bc1eb\",\"field\":\"raw_specs\",\"quote\":\"BIA\"}],\"reason\":\"The supplied identity supports identify the Harbor scale, and its specifications explicitly state BIA. The missing-specifications review does not contradict this evidence.\"},{\"text\":\"supports app sync\",\"start\":27,\"end\":44,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_76b2723603b592db70fd65a3cc1134eb97882b30cedaa5a1be35c5bf7c526964\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_24e49bc1eb\",\"field\":\"raw_specs\",\"quote\":\"app sync\"}],\"reason\":\"App sync is explicitly listed in the supplied specifications.\"},{\"text\":\"and has a maximum load of 180 kg\",\"start\":46,\"end\":78,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_a1c84d577f04c47d0c81bbdac1db658d2d05311bea4de0a4f3a0d8518f9883ef\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_24e49bc1eb\",\"field\":\"raw_specs\",\"quote\":\"180kg max\"}],\"reason\":\"The claim preserves the stated 180 kg value and maximum-load qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0184496697de5a7d016aa4557da6f887d0bc5ad68a69cc4b5e",
+    "usage": {
+      "inputTokens": 2190,
+      "outputTokens": 561,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2187
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2239.875875000027,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Larkspur X is a pair of passive speakers with 4-ohm impedance and 40 W of power for an unspecified purpose."
+    },
+    "raw": "{\"text\":\"The Larkspur X is a pair of passive speakers with 4-ohm impedance and 40 W of power for an unspecified purpose.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0e7e5370a94bd8ae016aa453d7619c87d092c751d177051bdf",
+    "usage": {
+      "inputTokens": 782,
+      "outputTokens": 42,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

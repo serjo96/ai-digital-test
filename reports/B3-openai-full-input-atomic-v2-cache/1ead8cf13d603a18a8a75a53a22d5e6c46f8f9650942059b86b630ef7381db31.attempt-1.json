@@ -1,0 +1,82 @@
+{
+  "elapsedMs": 9109.176041999832,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "50012a20ff0f0491b7a8599a8cfe9104b15fd06cafadb5da14ef4b4ddbe04a60",
+      "claims": [
+        {
+          "text": "The Cirrus Pro scale uses BIA",
+          "start": 0,
+          "end": 29,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:e2a4f1e1ff23f71ed9d6384055604580a5a47f6114b8977f6e75383acf891bb5",
+            "identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7",
+            "fact:fact_775f93f18b510eb7d56cdd011d9d0081907639ac481fd83696da5bbaaa74bd83"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_59fb8196e6",
+              "field": "raw_title",
+              "quote": "CIRRUS PRO SMART SCALE"
+            },
+            {
+              "rowId": "row_59fb8196e6",
+              "field": "raw_specs",
+              "quote": "BIA"
+            }
+          ],
+          "reason": "The title establishes the model and product type, and the specifications explicitly list BIA."
+        },
+        {
+          "text": "supports app sync",
+          "start": 31,
+          "end": 48,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_b277a244bf20c08c415750b8099f2f181d799e326e865d37f41c8d1e538b834a"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_59fb8196e6",
+              "field": "raw_specs",
+              "quote": "app sync"
+            }
+          ],
+          "reason": "App sync is explicitly listed in the specifications."
+        },
+        {
+          "text": "and has a maximum load of 180 kg",
+          "start": 50,
+          "end": 82,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_ae8b67cf7ee3d860ad0765d3f8715bcf20fa9ea4b5daed6ffab58506d3e7213f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_59fb8196e6",
+              "field": "raw_specs",
+              "quote": "180kg max"
+            }
+          ],
+          "reason": "The specifications give a 180 kg maximum, preserving the claimed load value and maximum qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"50012a20ff0f0491b7a8599a8cfe9104b15fd06cafadb5da14ef4b4ddbe04a60\",\"claims\":[{\"text\":\"The Cirrus Pro scale uses BIA\",\"start\":0,\"end\":29,\"verdict\":\"supported\",\"supportIds\":[\"identity:e2a4f1e1ff23f71ed9d6384055604580a5a47f6114b8977f6e75383acf891bb5\",\"identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7\",\"fact:fact_775f93f18b510eb7d56cdd011d9d0081907639ac481fd83696da5bbaaa74bd83\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_59fb8196e6\",\"field\":\"raw_title\",\"quote\":\"CIRRUS PRO SMART SCALE\"},{\"rowId\":\"row_59fb8196e6\",\"field\":\"raw_specs\",\"quote\":\"BIA\"}],\"reason\":\"The title establishes the model and product type, and the specifications explicitly list BIA.\"},{\"text\":\"supports app sync\",\"start\":31,\"end\":48,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_b277a244bf20c08c415750b8099f2f181d799e326e865d37f41c8d1e538b834a\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_59fb8196e6\",\"field\":\"raw_specs\",\"quote\":\"app sync\"}],\"reason\":\"App sync is explicitly listed in the specifications.\"},{\"text\":\"and has a maximum load of 180 kg\",\"start\":50,\"end\":82,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_ae8b67cf7ee3d860ad0765d3f8715bcf20fa9ea4b5daed6ffab58506d3e7213f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_59fb8196e6\",\"field\":\"raw_specs\",\"quote\":\"180kg max\"}],\"reason\":\"The specifications give a 180 kg maximum, preserving the claimed load value and maximum qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_07ffee218020e554016aa454b8ac6887d0beec93f443c5f659",
+    "usage": {
+      "inputTokens": 1913,
+      "outputTokens": 516,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1910
+    }
+  }
+}

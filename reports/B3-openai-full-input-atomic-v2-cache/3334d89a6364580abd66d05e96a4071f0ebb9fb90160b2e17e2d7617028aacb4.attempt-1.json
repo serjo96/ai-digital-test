@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2348.329708999998,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Pivot 2 lamp features an LED light source and a USB-C connector."
+    },
+    "raw": "{\"text\":\"The Pivot 2 lamp features an LED light source and a USB-C connector.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0e248a2153a762ca016aa450937b3087d0b6c74d2ea34d6c38",
+    "usage": {
+      "inputTokens": 562,
+      "outputTokens": 30,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

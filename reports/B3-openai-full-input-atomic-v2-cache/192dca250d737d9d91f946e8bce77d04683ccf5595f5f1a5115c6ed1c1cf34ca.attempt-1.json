@@ -1,0 +1,118 @@
+{
+  "elapsedMs": 12616.208208999946,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "3b0a2975cd47414352ef7b69d894035cb1b3b85b755d0f36f2c90ca267640ea6",
+      "claims": [
+        {
+          "text": "The Torrent 2 memory card has 256 GB of storage",
+          "start": 0,
+          "end": 47,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:f0b71322f47aa611ae24c085eabb5cdd29404d5164a02e2515b160c83f1c718f",
+            "identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa",
+            "fact:fact_32bb90764bfa1100dc6c6e97286ae6bd9d0fa5881aaf7af2b48d432fc9edab51"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_fd1f97e32c",
+              "field": "raw_title",
+              "quote": "256GB"
+            },
+            {
+              "rowId": "row_fd1f97e32c",
+              "field": "raw_title",
+              "quote": "TORRENT 2 MICROSD CARD 256GB"
+            }
+          ],
+          "reason": "The title supports the model, memory-card identity and 256 GB capacity."
+        },
+        {
+          "text": "a UHS-I bus rating",
+          "start": 49,
+          "end": 67,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_2f64a83ba60b07515767257d5ded01d42d5659e263454f5a40fd33e88dfe7606"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_fd1f97e32c",
+              "field": "raw_specs",
+              "quote": "UHS-I"
+            }
+          ],
+          "reason": "The supplied bus rating is UHS-I."
+        },
+        {
+          "text": "and an A2 application rating",
+          "start": 68,
+          "end": 96,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_027965690c88affab6262d5cf5cb06bf900e082f9bcbecb5c85ed632430cb0bf"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_fd1f97e32c",
+              "field": "raw_specs",
+              "quote": "A2"
+            }
+          ],
+          "reason": "The supplied application rating is A2."
+        },
+        {
+          "text": "Its transfer speed is up to 170 MB/s",
+          "start": 98,
+          "end": 134,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_3db0116bda7f9316e4e2782710b243c145c85c069b2d5ef6712a5597cf452a32"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_fd1f97e32c",
+              "field": "raw_specs",
+              "quote": "up to 170MB/s"
+            }
+          ],
+          "reason": "The transfer-speed value and up-to qualifier match the source without asserting a read or write direction."
+        },
+        {
+          "text": "with direction unspecified",
+          "start": 136,
+          "end": 162,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_3db0116bda7f9316e4e2782710b243c145c85c069b2d5ef6712a5597cf452a32"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_fd1f97e32c",
+              "field": "raw_specs",
+              "quote": "up to 170MB/s"
+            }
+          ],
+          "reason": "The source does not specify a transfer direction, matching the support's direction_unspecified condition."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"3b0a2975cd47414352ef7b69d894035cb1b3b85b755d0f36f2c90ca267640ea6\",\"claims\":[{\"text\":\"The Torrent 2 memory card has 256 GB of storage\",\"start\":0,\"end\":47,\"verdict\":\"supported\",\"supportIds\":[\"identity:f0b71322f47aa611ae24c085eabb5cdd29404d5164a02e2515b160c83f1c718f\",\"identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa\",\"fact:fact_32bb90764bfa1100dc6c6e97286ae6bd9d0fa5881aaf7af2b48d432fc9edab51\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_fd1f97e32c\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_fd1f97e32c\",\"field\":\"raw_title\",\"quote\":\"TORRENT 2 MICROSD CARD 256GB\"}],\"reason\":\"The title supports the model, memory-card identity and 256 GB capacity.\"},{\"text\":\"a UHS-I bus rating\",\"start\":49,\"end\":67,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_2f64a83ba60b07515767257d5ded01d42d5659e263454f5a40fd33e88dfe7606\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_fd1f97e32c\",\"field\":\"raw_specs\",\"quote\":\"UHS-I\"}],\"reason\":\"The supplied bus rating is UHS-I.\"},{\"text\":\"and an A2 application rating\",\"start\":68,\"end\":96,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_027965690c88affab6262d5cf5cb06bf900e082f9bcbecb5c85ed632430cb0bf\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_fd1f97e32c\",\"field\":\"raw_specs\",\"quote\":\"A2\"}],\"reason\":\"The supplied application rating is A2.\"},{\"text\":\"Its transfer speed is up to 170 MB/s\",\"start\":98,\"end\":134,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_3db0116bda7f9316e4e2782710b243c145c85c069b2d5ef6712a5597cf452a32\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_fd1f97e32c\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"The transfer-speed value and up-to qualifier match the source without asserting a read or write direction.\"},{\"text\":\"with direction unspecified\",\"start\":136,\"end\":162,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_3db0116bda7f9316e4e2782710b243c145c85c069b2d5ef6712a5597cf452a32\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_fd1f97e32c\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"The source does not specify a transfer direction, matching the support's direction_unspecified condition.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_06fce7381676f982016aa452acf1fc87d0995ea9117ad3dc3f",
+    "usage": {
+      "inputTokens": 2889,
+      "outputTokens": 758,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2886
+    }
+  }
+}

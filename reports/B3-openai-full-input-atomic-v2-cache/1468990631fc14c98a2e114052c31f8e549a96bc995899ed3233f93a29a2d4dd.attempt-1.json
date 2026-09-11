@@ -1,0 +1,100 @@
+{
+  "elapsedMs": 11299.939165999996,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "50371f5c0b1e10b6a7935171342e46eaf7e1c8687771eb7ebf70c0847d6dd346",
+      "claims": [
+        {
+          "text": "The Vault SSD has 2 TB of storage",
+          "start": 0,
+          "end": 33,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:50d0b88cd18fbcc0baa2b10e2f97aae68b7f2abfcd30043a7ac543ecb80e59aa",
+            "identity:afbb21a9752e2083964fc858ccd6ed38af6cde5ec7fbaf8c9c8ee9e78c23e495",
+            "fact:fact_99de9505d091a483309f863fcc37300a83581290ee99acc9663d2b919dfc8d12"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_fbe753d7cc",
+              "field": "raw_title",
+              "quote": "Vault Portable SSD 2TB"
+            },
+            {
+              "rowId": "row_22e59912ad",
+              "field": "raw_title",
+              "quote": "2TB SSD"
+            }
+          ],
+          "reason": "The titles identify the Vault SSD and explicitly specify 2 TB storage."
+        },
+        {
+          "text": "USB 3.2 Gen2",
+          "start": 35,
+          "end": 47,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_d29ee01e86c4bb8c72eaa1b500c1dfbea874791c5f8c1a600c67377924c80c79"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_fbe753d7cc",
+              "field": "raw_specs",
+              "quote": "USB 3.2 Gen2"
+            }
+          ],
+          "reason": "The USB version matches the supplied specification."
+        },
+        {
+          "text": "and a USB-C connector",
+          "start": 49,
+          "end": 70,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_3538c7073340db752d83a771ead5498ed79649076ab9c20e0b12e99a2a726aa3"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_22e59912ad",
+              "field": "raw_specs",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The connector is explicitly supported by the supplied connector fact and specification."
+        },
+        {
+          "text": "It supports read speeds of up to 1050 MB/s",
+          "start": 72,
+          "end": 114,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_00d57d2c75803fd7bf08f253fa76b641bd2883fe3f1368e596ddde04fb8e4fb1"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_fbe753d7cc",
+              "field": "raw_specs",
+              "quote": "up to 1050MB/s read"
+            }
+          ],
+          "reason": "The speed, unit, read scope, and up-to qualifier match the source."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"50371f5c0b1e10b6a7935171342e46eaf7e1c8687771eb7ebf70c0847d6dd346\",\"claims\":[{\"text\":\"The Vault SSD has 2 TB of storage\",\"start\":0,\"end\":33,\"verdict\":\"supported\",\"supportIds\":[\"identity:50d0b88cd18fbcc0baa2b10e2f97aae68b7f2abfcd30043a7ac543ecb80e59aa\",\"identity:afbb21a9752e2083964fc858ccd6ed38af6cde5ec7fbaf8c9c8ee9e78c23e495\",\"fact:fact_99de9505d091a483309f863fcc37300a83581290ee99acc9663d2b919dfc8d12\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_fbe753d7cc\",\"field\":\"raw_title\",\"quote\":\"Vault Portable SSD 2TB\"},{\"rowId\":\"row_22e59912ad\",\"field\":\"raw_title\",\"quote\":\"2TB SSD\"}],\"reason\":\"The titles identify the Vault SSD and explicitly specify 2 TB storage.\"},{\"text\":\"USB 3.2 Gen2\",\"start\":35,\"end\":47,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_d29ee01e86c4bb8c72eaa1b500c1dfbea874791c5f8c1a600c67377924c80c79\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_fbe753d7cc\",\"field\":\"raw_specs\",\"quote\":\"USB 3.2 Gen2\"}],\"reason\":\"The USB version matches the supplied specification.\"},{\"text\":\"and a USB-C connector\",\"start\":49,\"end\":70,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_3538c7073340db752d83a771ead5498ed79649076ab9c20e0b12e99a2a726aa3\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_22e59912ad\",\"field\":\"raw_specs\",\"quote\":\"USB-C\"}],\"reason\":\"The connector is explicitly supported by the supplied connector fact and specification.\"},{\"text\":\"It supports read speeds of up to 1050 MB/s\",\"start\":72,\"end\":114,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_00d57d2c75803fd7bf08f253fa76b641bd2883fe3f1368e596ddde04fb8e4fb1\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_fbe753d7cc\",\"field\":\"raw_specs\",\"quote\":\"up to 1050MB/s read\"}],\"reason\":\"The speed, unit, read scope, and up-to qualifier match the source.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0b20b399497189a0016aa452457f0c87d0a75b232945e1e8d2",
+    "usage": {
+      "inputTokens": 2920,
+      "outputTokens": 638,
+      "cachedInputTokens": 2917,
+      "cacheWriteTokens": 0
+    }
+  }
+}

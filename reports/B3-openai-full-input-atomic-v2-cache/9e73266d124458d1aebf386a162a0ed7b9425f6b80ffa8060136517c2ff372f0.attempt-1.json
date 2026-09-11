@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2088.765625,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Cobalt X mouse has 6 buttons and a mass of 70 g."
+    },
+    "raw": "{\"text\":\"The Cobalt X mouse has 6 buttons and a mass of 70 g.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0491120ba2443403016aa452fc01a087d0bdbb49137a3572d2",
+    "usage": {
+      "inputTokens": 558,
+      "outputTokens": 31,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

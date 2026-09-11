@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 3291.2107499999693,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Tundra laptop sleeve is made of neoprene and fits compatible 14 in devices."
+    },
+    "raw": "{\"text\":\"The Tundra laptop sleeve is made of neoprene and fits compatible 14 in devices.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_03539e04a6827261016aa4531acb0887d09562645a3efc0691",
+    "usage": {
+      "inputTokens": 565,
+      "outputTokens": 33,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

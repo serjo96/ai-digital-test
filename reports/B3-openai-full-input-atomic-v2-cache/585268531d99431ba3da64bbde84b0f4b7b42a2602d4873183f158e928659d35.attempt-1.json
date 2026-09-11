@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2793.84283400001,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Orbit 7 phone has a 128GB capacity, a 6.4-inch display and a 50MP sensor."
+    },
+    "raw": "{\"text\":\"The Orbit 7 phone has a 128GB capacity, a 6.4-inch display and a 50MP sensor.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0c10575adf951f4c016aa45424441887d095bd93951878c2ce",
+    "usage": {
+      "inputTokens": 764,
+      "outputTokens": 40,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2008.0919170000125,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The FreshCrate Blend One Countertop Blender has a specified power of 800 W, with the purpose unspecified."
+    },
+    "raw": "{\"text\":\"The FreshCrate Blend One Countertop Blender has a specified power of 800 W, with the purpose unspecified.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_072babb5d1d7098c016aa455882c8887d0acbeff70cd5c66b2",
+    "usage": {
+      "inputTokens": 373,
+      "outputTokens": 37,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

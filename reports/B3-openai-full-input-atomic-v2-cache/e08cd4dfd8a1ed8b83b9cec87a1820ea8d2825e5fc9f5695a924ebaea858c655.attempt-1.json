@@ -1,0 +1,88 @@
+{
+  "elapsedMs": 9618.28966699983,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "ec79a9ce5374724203e66758eb752a9700c879978223417d694cedc795f4a066",
+      "claims": [
+        {
+          "text": "The Sable Lite is a 7-in-1 USB-C hub",
+          "start": 0,
+          "end": 36,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:152630490253ae35ac2cc550f63d425bfc37bbb232045a7b5e5c71a42b5f617a",
+            "identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4",
+            "fact:fact_c3e200a61381af86d84a72cdb16555ebcaab2139a09be4248bc8a4baab208dde",
+            "fact:fact_980c3941931fa75f33a994c434715e6df20e17528501a1d0ff0d2b3ec90ad82c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_9a32000da2",
+              "field": "raw_title",
+              "quote": "SABLE LITE USB-C HUB"
+            },
+            {
+              "rowId": "row_9a32000da2",
+              "field": "raw_specs",
+              "quote": "7-in-1"
+            },
+            {
+              "rowId": "row_9a32000da2",
+              "field": "raw_title",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The supplied identity and feature supports establish the model, hub type, connector and multifunction count."
+        },
+        {
+          "text": "supporting 4K at 30 fps video output",
+          "start": 37,
+          "end": 73,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_5ceacec1e4a8e4a728bd6461c8f879cc5b64110b31eda3a7ae7e6da828de352e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_9a32000da2",
+              "field": "raw_specs",
+              "quote": "4K30"
+            }
+          ],
+          "reason": "The supplied video-output support interprets the source's 4K30 as 4K at 30 fps."
+        },
+        {
+          "text": "and 100 W power with PD passthrough",
+          "start": 74,
+          "end": 109,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_e10b8430cf959a312dd53e8951dff7949ad53d56a70aff7f53d193c26bbeb504"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_9a32000da2",
+              "field": "raw_specs",
+              "quote": "100W PD passthrough"
+            }
+          ],
+          "reason": "The power value matches the source and retains the PD passthrough condition."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"ec79a9ce5374724203e66758eb752a9700c879978223417d694cedc795f4a066\",\"claims\":[{\"text\":\"The Sable Lite is a 7-in-1 USB-C hub\",\"start\":0,\"end\":36,\"verdict\":\"supported\",\"supportIds\":[\"identity:152630490253ae35ac2cc550f63d425bfc37bbb232045a7b5e5c71a42b5f617a\",\"identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4\",\"fact:fact_c3e200a61381af86d84a72cdb16555ebcaab2139a09be4248bc8a4baab208dde\",\"fact:fact_980c3941931fa75f33a994c434715e6df20e17528501a1d0ff0d2b3ec90ad82c\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_9a32000da2\",\"field\":\"raw_title\",\"quote\":\"SABLE LITE USB-C HUB\"},{\"rowId\":\"row_9a32000da2\",\"field\":\"raw_specs\",\"quote\":\"7-in-1\"},{\"rowId\":\"row_9a32000da2\",\"field\":\"raw_title\",\"quote\":\"USB-C\"}],\"reason\":\"The supplied identity and feature supports establish the model, hub type, connector and multifunction count.\"},{\"text\":\"supporting 4K at 30 fps video output\",\"start\":37,\"end\":73,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_5ceacec1e4a8e4a728bd6461c8f879cc5b64110b31eda3a7ae7e6da828de352e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_9a32000da2\",\"field\":\"raw_specs\",\"quote\":\"4K30\"}],\"reason\":\"The supplied video-output support interprets the source's 4K30 as 4K at 30 fps.\"},{\"text\":\"and 100 W power with PD passthrough\",\"start\":74,\"end\":109,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_e10b8430cf959a312dd53e8951dff7949ad53d56a70aff7f53d193c26bbeb504\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_9a32000da2\",\"field\":\"raw_specs\",\"quote\":\"100W PD passthrough\"}],\"reason\":\"The power value matches the source and retains the PD passthrough condition.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_01f63ed2e0d0947e016aa456eda03487d09b23785375bf06f2",
+    "usage": {
+      "inputTokens": 2257,
+      "outputTokens": 605,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2254
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1694.998707999941,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "Torrent Lite wired earbuds feature a 3.5mm connector and an in-line microphone."
+    },
+    "raw": "{\"text\":\"Torrent Lite wired earbuds feature a 3.5mm connector and an in-line microphone.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_03cc2f33cc6512a0016aa45379386c87d0b5606d70f336ef8e",
+    "usage": {
+      "inputTokens": 573,
+      "outputTokens": 32,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

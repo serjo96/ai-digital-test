@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 8475.544209,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "263969d8f5762b4089f79a5af2d1980c9abfe22a8c4c4ca0903528e32fa795d2",
+      "claims": [
+        {
+          "text": "The Kestrel mouse has 6 buttons",
+          "start": 0,
+          "end": 31,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:8134027d8a7b79f5ad1be2571df423b6cc3350a5b41c089d43da80ae4f872b0e",
+            "identity:335df722e77165d393567d4144ff04009970552a248aaf23d2e477551aad076c",
+            "fact:fact_2f01a9e2cec232ae9f75df82d92dc5f9f92c7af0c779d82a4d395ce0ef80d1c4"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_5029b0e40e",
+              "field": "raw_title",
+              "quote": "Kestrel wireless mouse"
+            },
+            {
+              "rowId": "row_6f0c3aa377",
+              "field": "raw_title",
+              "quote": "Kestrel wireless mouse"
+            },
+            {
+              "rowId": "row_5029b0e40e",
+              "field": "raw_specs",
+              "quote": "6 buttons"
+            }
+          ],
+          "reason": "The supplied identity evidence establishes the model and product type, and the button support explicitly states 6 buttons."
+        },
+        {
+          "text": "and a mass of 70 g",
+          "start": 32,
+          "end": 50,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_4568b62982d299c5e7c8e01bba981546f01d7221caddd7ec97186a6dc054fee0"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_5029b0e40e",
+              "field": "raw_specs",
+              "quote": "70g"
+            }
+          ],
+          "reason": "The supplied mass support explicitly states 70 g without conditions."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"263969d8f5762b4089f79a5af2d1980c9abfe22a8c4c4ca0903528e32fa795d2\",\"claims\":[{\"text\":\"The Kestrel mouse has 6 buttons\",\"start\":0,\"end\":31,\"verdict\":\"supported\",\"supportIds\":[\"identity:8134027d8a7b79f5ad1be2571df423b6cc3350a5b41c089d43da80ae4f872b0e\",\"identity:335df722e77165d393567d4144ff04009970552a248aaf23d2e477551aad076c\",\"fact:fact_2f01a9e2cec232ae9f75df82d92dc5f9f92c7af0c779d82a4d395ce0ef80d1c4\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_5029b0e40e\",\"field\":\"raw_title\",\"quote\":\"Kestrel wireless mouse\"},{\"rowId\":\"row_6f0c3aa377\",\"field\":\"raw_title\",\"quote\":\"Kestrel wireless mouse\"},{\"rowId\":\"row_5029b0e40e\",\"field\":\"raw_specs\",\"quote\":\"6 buttons\"}],\"reason\":\"The supplied identity evidence establishes the model and product type, and the button support explicitly states 6 buttons.\"},{\"text\":\"and a mass of 70 g\",\"start\":32,\"end\":50,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_4568b62982d299c5e7c8e01bba981546f01d7221caddd7ec97186a6dc054fee0\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_5029b0e40e\",\"field\":\"raw_specs\",\"quote\":\"70g\"}],\"reason\":\"The supplied mass support explicitly states 70 g without conditions.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_094db6c3f44bdef1016aa4509ef7ec87d08b876b39b82d553b",
+    "usage": {
+      "inputTokens": 1860,
+      "outputTokens": 437,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1857
+    }
+  }
+}

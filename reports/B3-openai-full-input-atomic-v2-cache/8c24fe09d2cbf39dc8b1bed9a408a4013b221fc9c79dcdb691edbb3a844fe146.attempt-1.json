@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2868.2107500000857,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Sable Pro camera supports 4K video recording at 60 fps and is waterproof to a depth of up to 10 m."
+    },
+    "raw": "{\"text\":\"The Sable Pro camera supports 4K video recording at 60 fps and is waterproof to a depth of up to 10 m.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0f5b34a23788e0bb016aa4569cb3f887d0b437d9603c5f4c44",
+    "usage": {
+      "inputTokens": 565,
+      "outputTokens": 42,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

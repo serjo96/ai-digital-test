@@ -1,12 +1,12 @@
 # Этап 4 — генерация, claims и B3
 
-Обновлено: 2026-09-12. Статус: контракт и development-прогон B3 реализованы; human review и P0.2 development safety gate приняты. Пользователь подтвердил все 12 controlled cases и завершил generated выборку 20/20. Verifier-only live устранил четыре non-atomic spans без повторной генерации, а [human-gate replay](../reports/B3-openai-development-verifier-only-v2-human-gate-replay/report.md) воспроизвёл решения и публикацию без сетевых вызовов. Full-input B3 не запускался и требует отдельного разрешения.
+Обновлено: 2026-09-12. Статус: этап 4 завершён. Human review и P0.2 development safety gate приняты; full-input B3 выполнен после отдельного разрешения и воспроизводится offline. Holdout не запускался.
 
 ## Фактическая исходная точка
 
 - Product baseline остался B1-v2: 220/220 строк учтены, 156 товаров, 4 не-товара, TP/FP/FN 17/0/0.
 - `decisionsHash` до и после публикационного pipeline: `749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e`.
-- Node 24.14.1; после P0.2 проходят 71 backend- и 13 web-тестов, typecheck/build.
+- Node 24.14.1; после full-input status fix проходят 72 backend- и 13 web-тестов, typecheck/build.
 - OpenAI подключён через Responses API и Structured Outputs. Генератор — `gpt-5.6-sol`, verifier — отдельный `gpt-6-astra`, reasoning `low`.
 - Секрет загружается из локального `.env` через `AppConfig`, в отчёты, cache keys и prompts не записывается.
 
@@ -76,6 +76,14 @@ Verifier переведён на schema name `publication_verification_v2`. Prom
 
 Миграция нового review сначала использует точный ключ `productId + attempt + claimId`. При неизменном опубликованном тексте она также переносит только `reviewed + supported` решения, когда новый claim полностью покрыт прежними reviewed spans без буквенно-цифровых пробелов. Если единственной старой проблемой был `non_atomic_claim`, новый span снимает этот флаг только после прохождения atomic-v2 validator; прочие issue-флаги сохраняются. Новый канонический [generated-review-fdca0138d88f.json](../eval/generated-review-fdca0138d88f.json) имеет `human_verified`: 76/99 reviewed claims, 28/37 products, sample 20/20, factual errors 0, non-atomic 0, unclear-copy 2. Остальные 23 pending claims находятся вне обязательной выборки.
 
-[Human-gate replay](../reports/B3-openai-development-verifier-only-v2-human-gate-replay/report.md) дал 49 cache hits и 0 calls, сохранил `decisionsHash=749beaa9...` и `publicationHash=fdca0138...`. [Live→human-gate comparison](../reports/comparisons/B3-openai-development-verifier-only-v2-live-to-human-gate-replay/comparison.md) имеет `decisionsEqual=true`, `publicationEqual=true`, пустые changed row IDs и violations. Development gate принят; full-input и holdout не запускались.
+[Human-gate replay](../reports/B3-openai-development-verifier-only-v2-human-gate-replay/report.md) дал 49 cache hits и 0 calls, сохранил `decisionsHash=749beaa9...` и `publicationHash=fdca0138...`. [Live→human-gate comparison](../reports/comparisons/B3-openai-development-verifier-only-v2-live-to-human-gate-replay/comparison.md) имеет `decisionsEqual=true`, `publicationEqual=true`, пустые changed row IDs и violations. Development gate принят; на этой точке full-input и holdout ещё не запускались.
+
+## Full-input B3 — 2026-09-12
+
+После отдельного разрешения выполнен [full-input live](../reports/B3-openai-full-input-atomic-v2-live/report.md): 156 товаров, 154 drafts/ready, 2 identity review, 0 withheld, 213 строк покрыты ready listings. Получено 390 опубликованных claims, запрещённых atomicity-паттернов нет. Controlled suite снова прошла 12/12.
+
+Live сделал 322 calls: 12 controlled verification, 154 generation, 155 verification и 1 repair; 442677/83772 input/output tokens, всего 526449, стоимость $8.110955, transport retries 0. У Vertex Plus первый verifier response исказил один support ID; локальная semantic validation fail-closed отклонила его, после чего единственный разрешённый repair и полная повторная verification завершились успешно. Итоговая карточка `ready`, factual утверждения не были допущены по невалидному ответу.
+
+Первоначальный live-report имеет `status=partial`, потому что прежний bookkeeping считал любую промежуточную ошибку незавершённым run даже после безопасного terminal repair. Контракт статуса исправлен узко: B3 может считать такую ошибку восстановленной только при отсутствии controlled errors и withheld listings; для B2 и невосстановленных B3 ошибок fail-closed поведение сохранено. [Offline replay](../reports/B3-openai-full-input-atomic-v2-replay/report.md) повторно провалидировал тот же cache без сети и имеет `status=success`, 154/156 ready и те же `decisionsHash=749beaa9...`/`publicationHash=7de47155...`. [Сравнение](../reports/comparisons/B3-openai-full-input-atomic-v2-live-to-replay/comparison.md) имеет `decisionsEqual=true`, `publicationEqual=true`, пустые changed row IDs и violations.
 
 После основного этапа 4 отдельным разрешённым заданием добавлен human-review UI. `web:prepare` принимает сохранённый schema 4/B3, проверяет `decisionsHash`, `publicationHash`, generated review, controlled suite и сохранённые verifier records. Вкладки Generated/Controlled показывают точные ranges, verdict, причины и evidence; generated-разметка сохраняется локально и экспортируется без автоматической записи в репозиторий. Опции `--generated-source-run` и `--generated-review-out` позволяют подготовить coverage migration и отдельный канонический review, не переписывая run. Это не закрывает этап 5: holdout, full-input B3, финальная оценка, deployment, commit и push не выполнялись.

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1955.3712090000045,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "Sable Pro earbuds feature a 3.5mm connector and an in-line microphone."
+    },
+    "raw": "{\"text\":\"Sable Pro earbuds feature a 3.5mm connector and an in-line microphone.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_00e136aaf8efd459016aa4518e533887d099fee9e93874b601",
+    "usage": {
+      "inputTokens": 565,
+      "outputTokens": 32,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

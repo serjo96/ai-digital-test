@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1898.2873750000144,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Larkspur Plus laptop sleeve is made of neoprene and is compatible with devices with a 14 in display size."
+    },
+    "raw": "{\"text\":\"The Larkspur Plus laptop sleeve is made of neoprene and is compatible with devices with a 14 in display size.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0bec7b67f9108713016aa451850be087d0b63becf1acb30890",
+    "usage": {
+      "inputTokens": 571,
+      "outputTokens": 39,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

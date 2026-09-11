@@ -1,6 +1,6 @@
 # Этап 5 — доступная часть на B1 выполнена
 
-Дата исходной реализации: 2026-09-10 (Asia/Bangkok); дополнено 2026-09-12. **Этап 5 целиком не завершён:** B1-каталог и B3 human-review UI готовы, development safety gate принят; full-input artifact, holdout, human-verified matching labels и финальная передача остаются открыты. Принятым product baseline остаётся B1-v2; holdout не оценивался.
+Дата исходной реализации: 2026-09-10 (Asia/Bangkok); дополнено 2026-09-12. **Этап 5 целиком не завершён:** B1-каталог, B3 human-review UI и full-input artifact готовы; holdout, human-verified matching labels и финальная передача остаются открыты. Принятым product baseline остаётся B1-v2; holdout не оценивался.
 
 ## Фактическая основа и изменения
 
@@ -118,7 +118,7 @@ Development: 37/39 ready, 2 identity review, 0 withheld; controlled verifier hum
 
 По отдельному заданию подключено только отображение и человеческая разметка сохранённого B3. `web:prepare` теперь собирает проверенный B3 review bundle; существующий экран получил переключатель Catalog / Claim review. Generated view группирует 158 claims по 37 опубликованным товарам, подсвечивает точные диапазоны и показывает verifier reason, supports и исходные evidence. Controlled view показывает 12 фиксированных случаев, expected verdict и фактические атомарные claims.
 
-Черновик generated verdict/rationale хранится только в `localStorage` с привязкой к `publicationHash`; исходный run не изменяется, модели и сеть из UI не вызываются. Проверены реальный development bundle, обе вкладки и восстановление черновика после reload. Все 12 controlled cases пользователь подтвердил; generated human gate позднее завершён в P0.1. Full-input B3, holdout, финальная оценка и deployment не выполнялись.
+Черновик generated verdict/rationale хранится только в `localStorage` с привязкой к `publicationHash`; исходный run не изменяется, модели и сеть из UI не вызываются. Проверены реальный development bundle, обе вкладки и восстановление черновика после reload. Все 12 controlled cases пользователь подтвердил; generated human gate позднее завершён в P0.1. На момент этого исторического дополнения full-input B3, holdout, финальная оценка и deployment ещё не выполнялись.
 
 После пользовательской проверки терминология уточнена: экран называется **Check listing text** и явно ограничивает задачу fidelity-review. Generated wording показывается рядом с supplier statement; supplier specs обозначены как непроверенный input feed, а external truth — как недоступный без authoritative manufacturer URL. Verdict-кнопки описывают совпадение с supplied data, а 12 QA fixtures вынесены в пояснённый экран **Verifier test cases** и не требуют человеческой разметки.
 
@@ -134,4 +134,6 @@ Review UI переведён на `stage4-generated-review-v2`: автомати
 
 Verifier prompt v2 и локальный fail-closed валидатор запрещают оборванные `is a`/`has a` и значения без измеряемого атрибута. После диагностического full development live выполнен verifier-only run по замороженным human-reviewed текстам: generator не вызывался, 49 verifier calls, 125333 tokens, $2.390245, controlled 12/12, 37/39 ready и 0 запрещённых spans. Все 37 опубликованных текстов побитово совпадают с исходным human-reviewed artifact.
 
-Новый канонический `eval/generated-review-fdca0138d88f.json` имеет статус `human_verified`: claims 76/99, products 28/37, sample 20/20, factual errors 0, non-atomic 0, unclear-copy 2. Оставшиеся 23 pending claims находятся вне обязательной выборки и gate не блокируют. Offline replay дал 49 cache hits, 0 calls и те же `decisionsHash`/`publicationHash`; development gate принят. Full-input, holdout, deployment, commit и push не выполнялись.
+Новый канонический `eval/generated-review-fdca0138d88f.json` имеет статус `human_verified`: claims 76/99, products 28/37, sample 20/20, factual errors 0, non-atomic 0, unclear-copy 2. Оставшиеся 23 pending claims находятся вне обязательной выборки и gate не блокируют. Offline replay дал 49 cache hits, 0 calls и те же `decisionsHash`/`publicationHash`; development gate принят.
+
+После отдельного разрешения выполнен full-input B3: 154/156 ready, 2 identity review, 0 withheld, 213 покрытых строк и 390 atomic claims. Live сделал 322 calls, 526449 tokens, $8.110955; один невалидный verifier response был отклонён и восстановлен единственным repair. Offline replay без сети воспроизводит hashes и имеет `success`. Full-input replay подготовлен как текущий UI bundle. Holdout, deployment, commit и push не выполнялись.

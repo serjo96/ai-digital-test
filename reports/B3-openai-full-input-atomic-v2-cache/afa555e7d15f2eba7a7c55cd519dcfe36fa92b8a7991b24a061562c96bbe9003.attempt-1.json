@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 7745.363749999902,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "32db1cb73635864d1bc73448e0d203a1f2dadcb7c07319d61e90c41c1b2b9fdc",
+      "claims": [
+        {
+          "text": "The Alto 2 camera records 4K video at 60 fps",
+          "start": 0,
+          "end": 44,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:d554b009772764b08cb6235798a274d70a11045266479c91dd64d85a39d45ebc",
+            "identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e",
+            "fact:fact_b0819808a90b95a5916e77bc680cf194ab107a1c2ffe519523a519f1e7bed29d"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4c297d9293",
+              "field": "raw_title",
+              "quote": "ALTO 2 ACTION CAMERA"
+            },
+            {
+              "rowId": "row_79480ac1f8",
+              "field": "raw_title",
+              "quote": "Alto 2 action camera"
+            },
+            {
+              "rowId": "row_4c297d9293",
+              "field": "raw_specs",
+              "quote": "4K60"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and camera type; the video support explicitly interprets 4K60 as 4K at 60 fps."
+        },
+        {
+          "text": "and is waterproof up to a depth of 10 m",
+          "start": 45,
+          "end": 84,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_3b9f3d5c75614d2cb8a0bc7987e46e2d2e6f8c9ff75caf5b5310d18fc954e5ff"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4c297d9293",
+              "field": "raw_specs",
+              "quote": "waterproof to 10m"
+            }
+          ],
+          "reason": "The source specifies waterproofing to 10 m, and the claim preserves the supplied up-to qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"32db1cb73635864d1bc73448e0d203a1f2dadcb7c07319d61e90c41c1b2b9fdc\",\"claims\":[{\"text\":\"The Alto 2 camera records 4K video at 60 fps\",\"start\":0,\"end\":44,\"verdict\":\"supported\",\"supportIds\":[\"identity:d554b009772764b08cb6235798a274d70a11045266479c91dd64d85a39d45ebc\",\"identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e\",\"fact:fact_b0819808a90b95a5916e77bc680cf194ab107a1c2ffe519523a519f1e7bed29d\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4c297d9293\",\"field\":\"raw_title\",\"quote\":\"ALTO 2 ACTION CAMERA\"},{\"rowId\":\"row_79480ac1f8\",\"field\":\"raw_title\",\"quote\":\"Alto 2 action camera\"},{\"rowId\":\"row_4c297d9293\",\"field\":\"raw_specs\",\"quote\":\"4K60\"}],\"reason\":\"The supplied identity supports establish the model and camera type; the video support explicitly interprets 4K60 as 4K at 60 fps.\"},{\"text\":\"and is waterproof up to a depth of 10 m\",\"start\":45,\"end\":84,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_3b9f3d5c75614d2cb8a0bc7987e46e2d2e6f8c9ff75caf5b5310d18fc954e5ff\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4c297d9293\",\"field\":\"raw_specs\",\"quote\":\"waterproof to 10m\"}],\"reason\":\"The source specifies waterproofing to 10 m, and the claim preserves the supplied up-to qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0fa353d446d28c5b016aa45312f79887d0a19a2588bb5ff578",
+    "usage": {
+      "inputTokens": 1969,
+      "outputTokens": 461,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1966
+    }
+  }
+}

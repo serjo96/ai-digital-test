@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2039.5819590000901,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Kestrel X mouse weighs 70 g and has 6 buttons."
+    },
+    "raw": "{\"text\":\"The Kestrel X mouse weighs 70 g and has 6 buttons.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0d0d63a2baf8bc87016aa455b2393487d0828969c1f1507768",
+    "usage": {
+      "inputTokens": 617,
+      "outputTokens": 30,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

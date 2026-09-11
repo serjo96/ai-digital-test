@@ -1,0 +1,100 @@
+{
+  "elapsedMs": 13285.44312499999,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "f5f49171b79468cee0f982c22c90b394c32d61d5ab0ba89aed7895d6f8a09285",
+      "claims": [
+        {
+          "text": "The Sable X microSD memory card has 256 GB of storage",
+          "start": 0,
+          "end": 53,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:ad4e0339cdb6cf1fb20a0d5c91ce834ef78ba253d4e1c45af58bdeaeb6944f68",
+            "identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa",
+            "fact:fact_3f5a5da736a4fd1ba55ed4f38f0b7aae3c54e2cb58cfe3014f3f321c9eb18269"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_d5d5379960",
+              "field": "raw_title",
+              "quote": "256GB"
+            },
+            {
+              "rowId": "row_d5d5379960",
+              "field": "raw_title",
+              "quote": "Sable X microSD card 256GB"
+            }
+          ],
+          "reason": "The title supports the model, microSD memory-card identity and 256 GB capacity."
+        },
+        {
+          "text": "a UHS-I bus rating",
+          "start": 55,
+          "end": 73,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_48fbef6287e26ed89d69abfadf7e864c8a2b08f2c97709e854239cdb5801a4d9"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_d5d5379960",
+              "field": "raw_specs",
+              "quote": "UHS-I"
+            }
+          ],
+          "reason": "The supplied bus-rating fact matches the specifications."
+        },
+        {
+          "text": "and an A2 application rating",
+          "start": 75,
+          "end": 103,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_6069c2aaf2d2bb6365dba55d7144dded6943a0d7c02dbefdba4903f06b5db701"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_d5d5379960",
+              "field": "raw_specs",
+              "quote": "A2"
+            }
+          ],
+          "reason": "The supplied application-rating fact matches the specifications."
+        },
+        {
+          "text": "It supports transfer speeds of up to 170 MB/s, with the direction unspecified",
+          "start": 105,
+          "end": 182,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_afe99e7a8bf2eef197d2191a66d16bf9bafaf4cf3d87a4d5f557eeaa007fec88"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_d5d5379960",
+              "field": "raw_specs",
+              "quote": "up to 170MB/s"
+            }
+          ],
+          "reason": "The speed matches the source and retains both the upper-bound qualifier and unspecified transfer direction."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"f5f49171b79468cee0f982c22c90b394c32d61d5ab0ba89aed7895d6f8a09285\",\"claims\":[{\"text\":\"The Sable X microSD memory card has 256 GB of storage\",\"start\":0,\"end\":53,\"verdict\":\"supported\",\"supportIds\":[\"identity:ad4e0339cdb6cf1fb20a0d5c91ce834ef78ba253d4e1c45af58bdeaeb6944f68\",\"identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa\",\"fact:fact_3f5a5da736a4fd1ba55ed4f38f0b7aae3c54e2cb58cfe3014f3f321c9eb18269\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_d5d5379960\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_d5d5379960\",\"field\":\"raw_title\",\"quote\":\"Sable X microSD card 256GB\"}],\"reason\":\"The title supports the model, microSD memory-card identity and 256 GB capacity.\"},{\"text\":\"a UHS-I bus rating\",\"start\":55,\"end\":73,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_48fbef6287e26ed89d69abfadf7e864c8a2b08f2c97709e854239cdb5801a4d9\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_d5d5379960\",\"field\":\"raw_specs\",\"quote\":\"UHS-I\"}],\"reason\":\"The supplied bus-rating fact matches the specifications.\"},{\"text\":\"and an A2 application rating\",\"start\":75,\"end\":103,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_6069c2aaf2d2bb6365dba55d7144dded6943a0d7c02dbefdba4903f06b5db701\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_d5d5379960\",\"field\":\"raw_specs\",\"quote\":\"A2\"}],\"reason\":\"The supplied application-rating fact matches the specifications.\"},{\"text\":\"It supports transfer speeds of up to 170 MB/s, with the direction unspecified\",\"start\":105,\"end\":182,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_afe99e7a8bf2eef197d2191a66d16bf9bafaf4cf3d87a4d5f557eeaa007fec88\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_d5d5379960\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"The speed matches the source and retains both the upper-bound qualifier and unspecified transfer direction.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0758f94b403b1b0a016aa45252b8ac87d0b216166b5b0c9368",
+    "usage": {
+      "inputTokens": 3049,
+      "outputTokens": 653,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 3046
+    }
+  }
+}

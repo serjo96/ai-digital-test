@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2143.61708299999,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Cirrus is a 7-in-1 USB-C hub with 4K@30fps video output and 100 W power with PD passthrough."
+    },
+    "raw": "{\"text\":\"The Cirrus is a 7-in-1 USB-C hub with 4K@30fps video output and 100 W power with PD passthrough.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_009ebd4a5327d151016aa450ffb65087d08600c0ba87361ace",
+    "usage": {
+      "inputTokens": 844,
+      "outputTokens": 47,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

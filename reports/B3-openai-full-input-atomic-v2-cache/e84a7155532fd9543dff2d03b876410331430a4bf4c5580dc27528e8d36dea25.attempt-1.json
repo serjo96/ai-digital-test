@@ -1,0 +1,93 @@
+{
+  "elapsedMs": 13619.558124999981,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "0a3e59fad3aaddb9f4bf6b3356ea452963ddff1a0633aae60d617a7d4c3d1783",
+      "claims": [
+        {
+          "text": "The Basalt is a 7-in-1 USB-C hub",
+          "start": 0,
+          "end": 32,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:7aa6744ee263aae6e59e9b8018632e790ff2ab9e470e7a8d5bf8fb3a5439c5e7",
+            "identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4",
+            "fact:fact_befcae0b7a2832af5b77fe7d3a7970f6becfdd851b3acb2da1c97b4e897de848",
+            "fact:fact_1a86fea3c9a8db75f67fa77f85352dfa1d3a1b4d69e169b8d86d045507e94fc2"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_6fff6aa632",
+              "field": "raw_title",
+              "quote": "BASALT USB-C HUB"
+            },
+            {
+              "rowId": "row_a453c69dab",
+              "field": "raw_title",
+              "quote": "Basalt USB-C hub"
+            },
+            {
+              "rowId": "row_6fff6aa632",
+              "field": "raw_specs",
+              "quote": "7-in-1"
+            },
+            {
+              "rowId": "row_6fff6aa632",
+              "field": "raw_title",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The supplied identity and specification supports establish the model, hub type, USB-C connector and seven-in-one functionality."
+        },
+        {
+          "text": "with 4K@30fps video output",
+          "start": 33,
+          "end": 59,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_106d4725e3f41f3c4f31e5f3f74b0720ad7e5b20f96c7d306af5eabe8145da7b"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_6fff6aa632",
+              "field": "raw_specs",
+              "quote": "4K30"
+            }
+          ],
+          "reason": "The supplied video-output support normalizes the source's HDMI 4K30 specification to 4K@30fps."
+        },
+        {
+          "text": "and 100 W power with PD passthrough",
+          "start": 60,
+          "end": 95,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_c394cad27169fadcfb5f51ffa5e3e4ff29683bdb94aead6b5105340ea084feb1"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_6fff6aa632",
+              "field": "raw_specs",
+              "quote": "100W PD passthrough"
+            }
+          ],
+          "reason": "The power value matches the source and retains its PD-passthrough qualification."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"0a3e59fad3aaddb9f4bf6b3356ea452963ddff1a0633aae60d617a7d4c3d1783\",\"claims\":[{\"text\":\"The Basalt is a 7-in-1 USB-C hub\",\"start\":0,\"end\":32,\"verdict\":\"supported\",\"supportIds\":[\"identity:7aa6744ee263aae6e59e9b8018632e790ff2ab9e470e7a8d5bf8fb3a5439c5e7\",\"identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4\",\"fact:fact_befcae0b7a2832af5b77fe7d3a7970f6becfdd851b3acb2da1c97b4e897de848\",\"fact:fact_1a86fea3c9a8db75f67fa77f85352dfa1d3a1b4d69e169b8d86d045507e94fc2\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_6fff6aa632\",\"field\":\"raw_title\",\"quote\":\"BASALT USB-C HUB\"},{\"rowId\":\"row_a453c69dab\",\"field\":\"raw_title\",\"quote\":\"Basalt USB-C hub\"},{\"rowId\":\"row_6fff6aa632\",\"field\":\"raw_specs\",\"quote\":\"7-in-1\"},{\"rowId\":\"row_6fff6aa632\",\"field\":\"raw_title\",\"quote\":\"USB-C\"}],\"reason\":\"The supplied identity and specification supports establish the model, hub type, USB-C connector and seven-in-one functionality.\"},{\"text\":\"with 4K@30fps video output\",\"start\":33,\"end\":59,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_106d4725e3f41f3c4f31e5f3f74b0720ad7e5b20f96c7d306af5eabe8145da7b\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_6fff6aa632\",\"field\":\"raw_specs\",\"quote\":\"4K30\"}],\"reason\":\"The supplied video-output support normalizes the source's HDMI 4K30 specification to 4K@30fps.\"},{\"text\":\"and 100 W power with PD passthrough\",\"start\":60,\"end\":95,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_c394cad27169fadcfb5f51ffa5e3e4ff29683bdb94aead6b5105340ea084feb1\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_6fff6aa632\",\"field\":\"raw_specs\",\"quote\":\"100W PD passthrough\"}],\"reason\":\"The power value matches the source and retains its PD-passthrough qualification.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0f88d3ec109eb8e1016aa4566cca2c87d081dfbc6e4fa059d2",
+    "usage": {
+      "inputTokens": 2286,
+      "outputTokens": 654,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2283
+    }
+  }
+}

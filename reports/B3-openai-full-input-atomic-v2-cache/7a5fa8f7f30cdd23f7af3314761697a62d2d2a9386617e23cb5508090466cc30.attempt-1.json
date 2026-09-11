@@ -1,0 +1,88 @@
+{
+  "elapsedMs": 11310.825624999998,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "48d0628cdaf3a4a4d335451cafc9eb9f11b5bbf5bbdbcfd514b0af746b5376da",
+      "claims": [
+        {
+          "text": "The Mesa 3 is a 7-in-1 USB-C hub",
+          "start": 0,
+          "end": 32,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:461c0b038b01aff6c0d69f3002fa131db5e5b1a62935669d09b2c958c01e93e7",
+            "identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4",
+            "fact:fact_03ec2f6a197f71904103dd7f49346b82a9e7f146f7060c95bd4424bf95da454e",
+            "fact:fact_113dcc5ec792ff2235518a6660da0a8986a7f27429e30c6cd382b36a24b12c1d"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_ef93481968",
+              "field": "raw_title",
+              "quote": "MESA 3 USB-C HUB"
+            },
+            {
+              "rowId": "row_ef93481968",
+              "field": "raw_specs",
+              "quote": "7-in-1"
+            },
+            {
+              "rowId": "row_ef93481968",
+              "field": "raw_title",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The supplied identity and facts establish the model, hub type, connector and multifunction count."
+        },
+        {
+          "text": "with 4K@30fps video output",
+          "start": 33,
+          "end": 59,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_6339a0998953d8be45ed1deb854f35570e2ad3160cc1c02021b1876a0ac8acf0"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_ef93481968",
+              "field": "raw_specs",
+              "quote": "4K30"
+            }
+          ],
+          "reason": "The supplied video-output fact explicitly normalizes the source's 4K30 to 4K@30fps."
+        },
+        {
+          "text": "and 100 W power with PD passthrough",
+          "start": 60,
+          "end": 95,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_a0fc98fc9c243aab8c293d4b7cf64a79ad0c76026e289a31a6ed130f8bd02f9c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_ef93481968",
+              "field": "raw_specs",
+              "quote": "100W PD passthrough"
+            }
+          ],
+          "reason": "The claimed power matches the supplied 100 W fact and retains its PD-passthrough qualification."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"48d0628cdaf3a4a4d335451cafc9eb9f11b5bbf5bbdbcfd514b0af746b5376da\",\"claims\":[{\"text\":\"The Mesa 3 is a 7-in-1 USB-C hub\",\"start\":0,\"end\":32,\"verdict\":\"supported\",\"supportIds\":[\"identity:461c0b038b01aff6c0d69f3002fa131db5e5b1a62935669d09b2c958c01e93e7\",\"identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4\",\"fact:fact_03ec2f6a197f71904103dd7f49346b82a9e7f146f7060c95bd4424bf95da454e\",\"fact:fact_113dcc5ec792ff2235518a6660da0a8986a7f27429e30c6cd382b36a24b12c1d\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_ef93481968\",\"field\":\"raw_title\",\"quote\":\"MESA 3 USB-C HUB\"},{\"rowId\":\"row_ef93481968\",\"field\":\"raw_specs\",\"quote\":\"7-in-1\"},{\"rowId\":\"row_ef93481968\",\"field\":\"raw_title\",\"quote\":\"USB-C\"}],\"reason\":\"The supplied identity and facts establish the model, hub type, connector and multifunction count.\"},{\"text\":\"with 4K@30fps video output\",\"start\":33,\"end\":59,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_6339a0998953d8be45ed1deb854f35570e2ad3160cc1c02021b1876a0ac8acf0\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_ef93481968\",\"field\":\"raw_specs\",\"quote\":\"4K30\"}],\"reason\":\"The supplied video-output fact explicitly normalizes the source's 4K30 to 4K@30fps.\"},{\"text\":\"and 100 W power with PD passthrough\",\"start\":60,\"end\":95,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_a0fc98fc9c243aab8c293d4b7cf64a79ad0c76026e289a31a6ed130f8bd02f9c\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_ef93481968\",\"field\":\"raw_specs\",\"quote\":\"100W PD passthrough\"}],\"reason\":\"The claimed power matches the supplied 100 W fact and retains its PD-passthrough qualification.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_079a125b5c0aea96016aa451a17cb887d08d2b2b7c5b77f40f",
+    "usage": {
+      "inputTokens": 2145,
+      "outputTokens": 614,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2142
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "elapsedMs": 10546.366333999904,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "528286df881d944f844afcc4d44146881a1a3ae71c24a53b9cb6ffed9817d5c7",
+      "claims": [
+        {
+          "text": "The Alto scale uses BIA",
+          "start": 0,
+          "end": 23,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7",
+            "identity:6740296c0f744e843f4d4c8e3649d349caffcce1462e2bdda0003b7c72b6cb41",
+            "fact:fact_30094a85acc1547e88be251669472970dc53bf943fbb49a6bf1965af214de949"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4c2be4913a",
+              "field": "raw_title",
+              "quote": "Alto smart scale"
+            },
+            {
+              "rowId": "row_4c2be4913a",
+              "field": "raw_specs",
+              "quote": "BIA"
+            }
+          ],
+          "reason": "The title identifies the Alto scale, and the specifications state BIA."
+        },
+        {
+          "text": "supports app sync",
+          "start": 25,
+          "end": 42,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_c9697f6ce8650f4d0991f94a06aea2a4689a302ed0783eaabb10b7d001360f27"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4c2be4913a",
+              "field": "raw_specs",
+              "quote": "app sync"
+            }
+          ],
+          "reason": "App sync is explicitly listed in the specifications."
+        },
+        {
+          "text": "and has a maximum load of 180 kg",
+          "start": 44,
+          "end": 76,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_8b989ec6dfa9487ba26687ae201b39392f90979c3e9fe5222f6cd1301469e2de"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4c2be4913a",
+              "field": "raw_specs",
+              "quote": "180kg max"
+            }
+          ],
+          "reason": "The stated load matches the supplied value and preserves its maximum qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"528286df881d944f844afcc4d44146881a1a3ae71c24a53b9cb6ffed9817d5c7\",\"claims\":[{\"text\":\"The Alto scale uses BIA\",\"start\":0,\"end\":23,\"verdict\":\"supported\",\"supportIds\":[\"identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7\",\"identity:6740296c0f744e843f4d4c8e3649d349caffcce1462e2bdda0003b7c72b6cb41\",\"fact:fact_30094a85acc1547e88be251669472970dc53bf943fbb49a6bf1965af214de949\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4c2be4913a\",\"field\":\"raw_title\",\"quote\":\"Alto smart scale\"},{\"rowId\":\"row_4c2be4913a\",\"field\":\"raw_specs\",\"quote\":\"BIA\"}],\"reason\":\"The title identifies the Alto scale, and the specifications state BIA.\"},{\"text\":\"supports app sync\",\"start\":25,\"end\":42,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_c9697f6ce8650f4d0991f94a06aea2a4689a302ed0783eaabb10b7d001360f27\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4c2be4913a\",\"field\":\"raw_specs\",\"quote\":\"app sync\"}],\"reason\":\"App sync is explicitly listed in the specifications.\"},{\"text\":\"and has a maximum load of 180 kg\",\"start\":44,\"end\":76,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_8b989ec6dfa9487ba26687ae201b39392f90979c3e9fe5222f6cd1301469e2de\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4c2be4913a\",\"field\":\"raw_specs\",\"quote\":\"180kg max\"}],\"reason\":\"The stated load matches the supplied value and preserves its maximum qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_096d942a6f0a91d3016aa45656644487d0b9e2f8b6ba641374",
+    "usage": {
+      "inputTokens": 1847,
+      "outputTokens": 499,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1844
+    }
+  }
+}

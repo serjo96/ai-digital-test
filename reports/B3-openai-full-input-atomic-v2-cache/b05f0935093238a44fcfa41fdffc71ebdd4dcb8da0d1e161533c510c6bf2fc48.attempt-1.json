@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 6512.083250000025,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "bccd83e08e7a141b3af036f209e2d57ad582fe0401dfc0437478dad83368ed96",
+      "claims": [
+        {
+          "text": "The Vertex Lite lamp features an LED light source",
+          "start": 0,
+          "end": 49,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:0d7b7de521a187aeb51fb3faf2edff931f0875bf817873d31dae0d327c04d27d",
+            "identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d",
+            "fact:fact_5a2c1f1ab2a72f13519902cd0480598ec979beab4462874a0e33c7e1ab08e497"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_da6585ad9f",
+              "field": "raw_title",
+              "quote": "Vertex Lite desk lamp"
+            },
+            {
+              "rowId": "row_da6585ad9f",
+              "field": "raw_specs",
+              "quote": "LED"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and lamp type; the light-source support explicitly identifies LED."
+        },
+        {
+          "text": "and a USB-C connector",
+          "start": 50,
+          "end": 71,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_1f7af030bb2149131f5a84b659d60ba7d7951fdc11d8eef8279465e16d30608f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_da6585ad9f",
+              "field": "raw_specs",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The connector support explicitly identifies USB-C for this lamp."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"bccd83e08e7a141b3af036f209e2d57ad582fe0401dfc0437478dad83368ed96\",\"claims\":[{\"text\":\"The Vertex Lite lamp features an LED light source\",\"start\":0,\"end\":49,\"verdict\":\"supported\",\"supportIds\":[\"identity:0d7b7de521a187aeb51fb3faf2edff931f0875bf817873d31dae0d327c04d27d\",\"identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d\",\"fact:fact_5a2c1f1ab2a72f13519902cd0480598ec979beab4462874a0e33c7e1ab08e497\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_da6585ad9f\",\"field\":\"raw_title\",\"quote\":\"Vertex Lite desk lamp\"},{\"rowId\":\"row_da6585ad9f\",\"field\":\"raw_specs\",\"quote\":\"LED\"}],\"reason\":\"The supplied identity supports establish the model and lamp type; the light-source support explicitly identifies LED.\"},{\"text\":\"and a USB-C connector\",\"start\":50,\"end\":71,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_1f7af030bb2149131f5a84b659d60ba7d7951fdc11d8eef8279465e16d30608f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_da6585ad9f\",\"field\":\"raw_specs\",\"quote\":\"USB-C\"}],\"reason\":\"The connector support explicitly identifies USB-C for this lamp.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0591b1cc823fd79f016aa4534ca15087d0ad22d135b1bae578",
+    "usage": {
+      "inputTokens": 1775,
+      "outputTokens": 389,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1772
+    }
+  }
+}

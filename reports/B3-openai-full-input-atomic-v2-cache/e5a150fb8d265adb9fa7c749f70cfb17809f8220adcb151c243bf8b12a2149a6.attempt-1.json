@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 8629.765083000064,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "d9d0f3c50f0a4708bb3f931637fa31e835886cad3238a95c5103c1cb58e3b405",
+      "claims": [
+        {
+          "text": "Pivot Plus earbuds feature a 3.5mm connector",
+          "start": 0,
+          "end": 44,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:210153d103beb322b1634b7a5fa18abe9fdd0e57744c6c4eccd678ecf658d54c",
+            "identity:47c7023f12a8692fc7cdd6ece0fa14e4cba01d6fee75210a9a409669472b8445",
+            "fact:fact_7318d8024ec45f998ebb4663db4da6ee04087390cc947dff36b1c93ba9182f5e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_17bb73bd1c",
+              "field": "raw_title",
+              "quote": "Pivot Plus wired earbuds"
+            },
+            {
+              "rowId": "row_7eabdad0f0",
+              "field": "raw_title",
+              "quote": "PIVOT PLUS WIRED EARBUDS"
+            },
+            {
+              "rowId": "row_17bb73bd1c",
+              "field": "raw_specs",
+              "quote": "3.5mm"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and product type, and the connector support specifies 3.5mm."
+        },
+        {
+          "text": "and an in-line microphone",
+          "start": 45,
+          "end": 70,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_00469b8be8265e020c126c7b1cbbc4f8cf92f18616a0ff1fac24ba50bc147eab"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_17bb73bd1c",
+              "field": "raw_specs",
+              "quote": "in-line mic"
+            }
+          ],
+          "reason": "The supplied support explicitly identifies an in-line microphone for these earbuds."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"d9d0f3c50f0a4708bb3f931637fa31e835886cad3238a95c5103c1cb58e3b405\",\"claims\":[{\"text\":\"Pivot Plus earbuds feature a 3.5mm connector\",\"start\":0,\"end\":44,\"verdict\":\"supported\",\"supportIds\":[\"identity:210153d103beb322b1634b7a5fa18abe9fdd0e57744c6c4eccd678ecf658d54c\",\"identity:47c7023f12a8692fc7cdd6ece0fa14e4cba01d6fee75210a9a409669472b8445\",\"fact:fact_7318d8024ec45f998ebb4663db4da6ee04087390cc947dff36b1c93ba9182f5e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_17bb73bd1c\",\"field\":\"raw_title\",\"quote\":\"Pivot Plus wired earbuds\"},{\"rowId\":\"row_7eabdad0f0\",\"field\":\"raw_title\",\"quote\":\"PIVOT PLUS WIRED EARBUDS\"},{\"rowId\":\"row_17bb73bd1c\",\"field\":\"raw_specs\",\"quote\":\"3.5mm\"}],\"reason\":\"The supplied identity supports establish the model and product type, and the connector support specifies 3.5mm.\"},{\"text\":\"and an in-line microphone\",\"start\":45,\"end\":70,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_00469b8be8265e020c126c7b1cbbc4f8cf92f18616a0ff1fac24ba50bc147eab\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_17bb73bd1c\",\"field\":\"raw_specs\",\"quote\":\"in-line mic\"}],\"reason\":\"The supplied support explicitly identifies an in-line microphone for these earbuds.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_098926c615ec738f016aa453669fbc87d09ac54cf3a277a34d",
+    "usage": {
+      "inputTokens": 1845,
+      "outputTokens": 437,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1842
+    }
+  }
+}

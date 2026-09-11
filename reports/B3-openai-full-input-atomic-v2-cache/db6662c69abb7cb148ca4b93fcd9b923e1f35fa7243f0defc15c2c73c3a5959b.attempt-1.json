@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7524.0774170000805,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "ce7d266c0b470150c3dea55d4e16b1e09ef8288bc26f0716d12f150300da5df9",
+      "claims": [
+        {
+          "text": "The Pivot Lite mouse has 6 buttons",
+          "start": 0,
+          "end": 34,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:39fd3654b29adfe437558ec96a9b115ddb4903860883296449ea1876ce5e8f68",
+            "identity:335df722e77165d393567d4144ff04009970552a248aaf23d2e477551aad076c",
+            "fact:fact_30517398557f91772837ae4af1d970932a36c3cdfc10b436ac6cd4ce08c18e54"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c0c4b370e4",
+              "field": "raw_title",
+              "quote": "Pivot Lite wireless mouse"
+            },
+            {
+              "rowId": "row_c0c4b370e4",
+              "field": "raw_specs",
+              "quote": "6 buttons"
+            }
+          ],
+          "reason": "The title establishes the model and product type, and the specifications explicitly state 6 buttons."
+        },
+        {
+          "text": "and a mass of 70 g",
+          "start": 35,
+          "end": 53,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_e53958ce9c797977b75ced3ace845deefbd230f9dda126e2d2e892a177f12f15"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c0c4b370e4",
+              "field": "raw_specs",
+              "quote": "70g"
+            }
+          ],
+          "reason": "The supplied mass fact and raw specifications support a mass of 70 g for the same mouse."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"ce7d266c0b470150c3dea55d4e16b1e09ef8288bc26f0716d12f150300da5df9\",\"claims\":[{\"text\":\"The Pivot Lite mouse has 6 buttons\",\"start\":0,\"end\":34,\"verdict\":\"supported\",\"supportIds\":[\"identity:39fd3654b29adfe437558ec96a9b115ddb4903860883296449ea1876ce5e8f68\",\"identity:335df722e77165d393567d4144ff04009970552a248aaf23d2e477551aad076c\",\"fact:fact_30517398557f91772837ae4af1d970932a36c3cdfc10b436ac6cd4ce08c18e54\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c0c4b370e4\",\"field\":\"raw_title\",\"quote\":\"Pivot Lite wireless mouse\"},{\"rowId\":\"row_c0c4b370e4\",\"field\":\"raw_specs\",\"quote\":\"6 buttons\"}],\"reason\":\"The title establishes the model and product type, and the specifications explicitly state 6 buttons.\"},{\"text\":\"and a mass of 70 g\",\"start\":35,\"end\":53,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_e53958ce9c797977b75ced3ace845deefbd230f9dda126e2d2e892a177f12f15\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c0c4b370e4\",\"field\":\"raw_specs\",\"quote\":\"70g\"}],\"reason\":\"The supplied mass fact and raw specifications support a mass of 70 g for the same mouse.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_028cf1dd06e1ec4d016aa452bb0be087d0a1e26294bf1375b5",
+    "usage": {
+      "inputTokens": 1638,
+      "outputTokens": 390,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1635
+    }
+  }
+}

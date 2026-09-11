@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2241.5579160000198,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Sable 2 tablet case has a folio style and supports auto sleep/wake."
+    },
+    "raw": "{\"text\":\"The Sable 2 tablet case has a folio style and supports auto sleep/wake.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0e40378fe7dc75be016aa45692389487d0a839176f6b5a2751",
+    "usage": {
+      "inputTokens": 635,
+      "outputTokens": 33,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "elapsedMs": 11281.559249999991,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "b82c0c4bc1a9f542d68e6d3f2fb10b254b31f2a7c0083796b92ffeacc9e9dd81",
+      "claims": [
+        {
+          "text": "The Juniper 2 microSD memory card has 256 GB of storage",
+          "start": 0,
+          "end": 55,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:9ed142ffb92c69f1800cdef21cd3418a40a3602a72dec989ba1a3fd80554dc28",
+            "identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa",
+            "fact:fact_647f47529a435f30a7f5a4869af6dc670e51b61ed70037825f443fc469d4f610"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_2bbf2cbc15",
+              "field": "raw_title",
+              "quote": "JUNIPER 2 MICROSD CARD 256GB"
+            },
+            {
+              "rowId": "row_2bbf2cbc15",
+              "field": "raw_title",
+              "quote": "256GB"
+            },
+            {
+              "rowId": "row_88659ce11a",
+              "field": "raw_title",
+              "quote": "Juniper 2 microSD card 256GB"
+            },
+            {
+              "rowId": "row_88659ce11a",
+              "field": "raw_title",
+              "quote": "256GB"
+            }
+          ],
+          "reason": "The supplied identity evidence establishes the model and microSD memory-card type; the storage fact specifies 256 GB."
+        },
+        {
+          "text": "a UHS-I bus rating",
+          "start": 57,
+          "end": 75,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_c79904a3c3c358dcc0b80fac2fd9026e0df11a9f050e56a56c9f4b43ed1e82f9"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_2bbf2cbc15",
+              "field": "raw_specs",
+              "quote": "UHS-I"
+            }
+          ],
+          "reason": "The bus-rating fact explicitly specifies UHS-I."
+        },
+        {
+          "text": "and an A2 application rating",
+          "start": 76,
+          "end": 104,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_cee1454f0166d7113af731cd3afb84037fd831e67ecb5704a1a33f237518ced6"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_2bbf2cbc15",
+              "field": "raw_specs",
+              "quote": "A2"
+            }
+          ],
+          "reason": "The application-rating fact explicitly specifies A2."
+        },
+        {
+          "text": "It supports transfer speeds of up to 170 MB/s, with direction unspecified",
+          "start": 106,
+          "end": 179,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_998242a56d1f59bf46878bf63745ab395ffe9e11fa0129649f7198e3e79ccd01"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_2bbf2cbc15",
+              "field": "raw_specs",
+              "quote": "up to 170MB/s"
+            }
+          ],
+          "reason": "The transfer-speed fact specifies 170 MB/s with both up_to and direction_unspecified conditions, which the description preserves."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"b82c0c4bc1a9f542d68e6d3f2fb10b254b31f2a7c0083796b92ffeacc9e9dd81\",\"claims\":[{\"text\":\"The Juniper 2 microSD memory card has 256 GB of storage\",\"start\":0,\"end\":55,\"verdict\":\"supported\",\"supportIds\":[\"identity:9ed142ffb92c69f1800cdef21cd3418a40a3602a72dec989ba1a3fd80554dc28\",\"identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa\",\"fact:fact_647f47529a435f30a7f5a4869af6dc670e51b61ed70037825f443fc469d4f610\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_2bbf2cbc15\",\"field\":\"raw_title\",\"quote\":\"JUNIPER 2 MICROSD CARD 256GB\"},{\"rowId\":\"row_2bbf2cbc15\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_88659ce11a\",\"field\":\"raw_title\",\"quote\":\"Juniper 2 microSD card 256GB\"},{\"rowId\":\"row_88659ce11a\",\"field\":\"raw_title\",\"quote\":\"256GB\"}],\"reason\":\"The supplied identity evidence establishes the model and microSD memory-card type; the storage fact specifies 256 GB.\"},{\"text\":\"a UHS-I bus rating\",\"start\":57,\"end\":75,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_c79904a3c3c358dcc0b80fac2fd9026e0df11a9f050e56a56c9f4b43ed1e82f9\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_2bbf2cbc15\",\"field\":\"raw_specs\",\"quote\":\"UHS-I\"}],\"reason\":\"The bus-rating fact explicitly specifies UHS-I.\"},{\"text\":\"and an A2 application rating\",\"start\":76,\"end\":104,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_cee1454f0166d7113af731cd3afb84037fd831e67ecb5704a1a33f237518ced6\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_2bbf2cbc15\",\"field\":\"raw_specs\",\"quote\":\"A2\"}],\"reason\":\"The application-rating fact explicitly specifies A2.\"},{\"text\":\"It supports transfer speeds of up to 170 MB/s, with direction unspecified\",\"start\":106,\"end\":179,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_998242a56d1f59bf46878bf63745ab395ffe9e11fa0129649f7198e3e79ccd01\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_2bbf2cbc15\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"The transfer-speed fact specifies 170 MB/s with both up_to and direction_unspecified conditions, which the description preserves.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0fbfa653c4a5cc2b016aa4516ef34c87d0ba4d18487a3cc53f",
+    "usage": {
+      "inputTokens": 3302,
+      "outputTokens": 709,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 3299
+    }
+  }
+}

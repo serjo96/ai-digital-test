@@ -1,0 +1,100 @@
+{
+  "elapsedMs": 11773.56008299999,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "7c008df9fd46f8e91d316ed8e7ff5aef305af451d524086b8076406072aa5494",
+      "claims": [
+        {
+          "text": "The Alto 3 memory card has 256 GB of storage",
+          "start": 0,
+          "end": 44,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:e5cca6e56a2e78945bc8c192c33ea3628a027ce7e7db33fd998df5a2af1e1318",
+            "identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa",
+            "fact:fact_5a55bebbcf5d9268ceed9ecadf13b43067159461d2b751f7b552ae27f7a0da49"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_6d481c7e2b",
+              "field": "raw_title",
+              "quote": "Alto 3 microSD card 256GB"
+            },
+            {
+              "rowId": "row_6d481c7e2b",
+              "field": "raw_title",
+              "quote": "256GB"
+            }
+          ],
+          "reason": "The title establishes the model, memory-card type and 256 GB capacity."
+        },
+        {
+          "text": "a UHS-I bus rating",
+          "start": 46,
+          "end": 64,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_ed24ecb1c770e9e65a152c0b5a03ec58d7302528bb041fd53c13bf26fe9f32e7"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c372f682ee",
+              "field": "raw_specs",
+              "quote": "UHS-I"
+            }
+          ],
+          "reason": "The supplied bus-rating fact matches the specification."
+        },
+        {
+          "text": "and an A2 application rating",
+          "start": 65,
+          "end": 93,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_e84ba9294238f02142843bb330920354ecd818931b392a34845ba4ec4a9a021b"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c372f682ee",
+              "field": "raw_specs",
+              "quote": "A2"
+            }
+          ],
+          "reason": "The supplied application-rating fact matches the specification."
+        },
+        {
+          "text": "It supports transfer speeds up to 170 MB/s, with direction unspecified",
+          "start": 95,
+          "end": 165,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_a04a8bddcf9c0816652317b82da95788dbf78681307c2fe2d08661b8d52b312c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c372f682ee",
+              "field": "raw_specs",
+              "quote": "up to 170MB/s"
+            }
+          ],
+          "reason": "The speed and both supplied qualifiers, up to and direction unspecified, are preserved. The other row's missing specifications do not contradict this evidence."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"7c008df9fd46f8e91d316ed8e7ff5aef305af451d524086b8076406072aa5494\",\"claims\":[{\"text\":\"The Alto 3 memory card has 256 GB of storage\",\"start\":0,\"end\":44,\"verdict\":\"supported\",\"supportIds\":[\"identity:e5cca6e56a2e78945bc8c192c33ea3628a027ce7e7db33fd998df5a2af1e1318\",\"identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa\",\"fact:fact_5a55bebbcf5d9268ceed9ecadf13b43067159461d2b751f7b552ae27f7a0da49\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_6d481c7e2b\",\"field\":\"raw_title\",\"quote\":\"Alto 3 microSD card 256GB\"},{\"rowId\":\"row_6d481c7e2b\",\"field\":\"raw_title\",\"quote\":\"256GB\"}],\"reason\":\"The title establishes the model, memory-card type and 256 GB capacity.\"},{\"text\":\"a UHS-I bus rating\",\"start\":46,\"end\":64,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_ed24ecb1c770e9e65a152c0b5a03ec58d7302528bb041fd53c13bf26fe9f32e7\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c372f682ee\",\"field\":\"raw_specs\",\"quote\":\"UHS-I\"}],\"reason\":\"The supplied bus-rating fact matches the specification.\"},{\"text\":\"and an A2 application rating\",\"start\":65,\"end\":93,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_e84ba9294238f02142843bb330920354ecd818931b392a34845ba4ec4a9a021b\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c372f682ee\",\"field\":\"raw_specs\",\"quote\":\"A2\"}],\"reason\":\"The supplied application-rating fact matches the specification.\"},{\"text\":\"It supports transfer speeds up to 170 MB/s, with direction unspecified\",\"start\":95,\"end\":165,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_a04a8bddcf9c0816652317b82da95788dbf78681307c2fe2d08661b8d52b312c\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c372f682ee\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"The speed and both supplied qualifiers, up to and direction unspecified, are preserved. The other row's missing specifications do not contradict this evidence.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0774626d337fc6f5016aa4533f21b087d0ad78a9334551f58d",
+    "usage": {
+      "inputTokens": 3241,
+      "outputTokens": 640,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 3238
+    }
+  }
+}

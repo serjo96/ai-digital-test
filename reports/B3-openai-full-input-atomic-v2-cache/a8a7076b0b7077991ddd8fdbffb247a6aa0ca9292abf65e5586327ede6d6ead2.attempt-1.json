@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 7723.079874999996,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "5257bdacf55cf5f150f435984860963dea0ef678ded2a5e73dd23e3400012d09",
+      "claims": [
+        {
+          "text": "The Ember 2 mouse has 6 buttons",
+          "start": 0,
+          "end": 31,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:9ebd9c490e78ab38ca9b603783f85ea5027500d4ac3799d4c19faee40e6bc385",
+            "identity:335df722e77165d393567d4144ff04009970552a248aaf23d2e477551aad076c",
+            "fact:fact_3ab92c5a819fe4cbc5e9edd6cc6e92e8673753b7a0c1a73abbcafc6df3bb67c1"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_81030c14d9",
+              "field": "raw_title",
+              "quote": "EMBER 2 WIRELESS MOUSE"
+            },
+            {
+              "rowId": "row_ac52a0bb36",
+              "field": "raw_title",
+              "quote": "EMBER 2 WIRELESS MOUSE"
+            },
+            {
+              "rowId": "row_81030c14d9",
+              "field": "raw_specs",
+              "quote": "6 buttons"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and product type; the button support explicitly states 6 buttons."
+        },
+        {
+          "text": "and a mass of 70 g",
+          "start": 32,
+          "end": 50,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_28969d5320b38e31a4f1dc9c356222ad5d57cdd14ee3cd99c5315b50838a8220"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_81030c14d9",
+              "field": "raw_specs",
+              "quote": "70g"
+            }
+          ],
+          "reason": "The supplied mass support states 70 g without qualifiers or conflicting decisions."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"5257bdacf55cf5f150f435984860963dea0ef678ded2a5e73dd23e3400012d09\",\"claims\":[{\"text\":\"The Ember 2 mouse has 6 buttons\",\"start\":0,\"end\":31,\"verdict\":\"supported\",\"supportIds\":[\"identity:9ebd9c490e78ab38ca9b603783f85ea5027500d4ac3799d4c19faee40e6bc385\",\"identity:335df722e77165d393567d4144ff04009970552a248aaf23d2e477551aad076c\",\"fact:fact_3ab92c5a819fe4cbc5e9edd6cc6e92e8673753b7a0c1a73abbcafc6df3bb67c1\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_81030c14d9\",\"field\":\"raw_title\",\"quote\":\"EMBER 2 WIRELESS MOUSE\"},{\"rowId\":\"row_ac52a0bb36\",\"field\":\"raw_title\",\"quote\":\"EMBER 2 WIRELESS MOUSE\"},{\"rowId\":\"row_81030c14d9\",\"field\":\"raw_specs\",\"quote\":\"6 buttons\"}],\"reason\":\"The supplied identity supports establish the model and product type; the button support explicitly states 6 buttons.\"},{\"text\":\"and a mass of 70 g\",\"start\":32,\"end\":50,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_28969d5320b38e31a4f1dc9c356222ad5d57cdd14ee3cd99c5315b50838a8220\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_81030c14d9\",\"field\":\"raw_specs\",\"quote\":\"70g\"}],\"reason\":\"The supplied mass support states 70 g without qualifiers or conflicting decisions.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_00af0d2d8e0f42a2016aa4516534a487d0bd5a22f1e58a125b",
+    "usage": {
+      "inputTokens": 1853,
+      "outputTokens": 427,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1850
+    }
+  }
+}

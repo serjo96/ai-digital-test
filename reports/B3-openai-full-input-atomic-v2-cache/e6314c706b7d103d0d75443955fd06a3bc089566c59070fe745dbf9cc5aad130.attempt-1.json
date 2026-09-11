@@ -1,0 +1,88 @@
+{
+  "elapsedMs": 11769.725125000114,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "fea35ce944d50db7d2879ebed97248c38b2b60cec7cfa2eae38ca7a372c6bb8a",
+      "claims": [
+        {
+          "text": "The Vertex Plus is a 7-in-1 USB-C hub",
+          "start": 0,
+          "end": 37,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_1c55840f0703227669b8785834d358ca38ab69b8dc6d9a0440de893e03ddb07b",
+            "fact:fact_d46a16ca77e6a32ae74465808693a40599aa4b8607f17236586071ae9e324fe6",
+            "identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4",
+            "identity:b0032a085637daacddc4f3901c807855d25db76fe34569147b646cd30695a197"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_d097195181",
+              "field": "raw_specs",
+              "quote": "7-in-1"
+            },
+            {
+              "rowId": "row_d097195181",
+              "field": "raw_title",
+              "quote": "USB-C"
+            },
+            {
+              "rowId": "row_d097195181",
+              "field": "raw_title",
+              "quote": "Vertex Plus USB-C hub"
+            }
+          ],
+          "reason": "The supplied identity and facts establish the model, hub type, USB-C connector and 7-in-1 count."
+        },
+        {
+          "text": "with 4K@30fps video output",
+          "start": 38,
+          "end": 64,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_50eb8f5d51d33931a63b4f1b9cee9fc16511002368bc6e0f69cabc25b636c7fe"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_d097195181",
+              "field": "raw_specs",
+              "quote": "4K30"
+            }
+          ],
+          "reason": "The supplied video-output fact normalizes the raw HDMI 4K30 specification to 4K@30fps."
+        },
+        {
+          "text": "and 100 W PD passthrough",
+          "start": 65,
+          "end": 89,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_2d1c633c6cdc68a8f4b03db85a5fb8ac2a2a7b1b42199a90425dedb9d09c1fa6"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_d097195181",
+              "field": "raw_specs",
+              "quote": "100W PD passthrough"
+            }
+          ],
+          "reason": "The stated wattage and PD passthrough qualification match the raw specification."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"fea35ce944d50db7d2879ebed97248c38b2b60cec7cfa2eae38ca7a372c6bb8a\",\"claims\":[{\"text\":\"The Vertex Plus is a 7-in-1 USB-C hub\",\"start\":0,\"end\":37,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_1c55840f0703227669b8785834d358ca38ab69b8dc6d9a0440de893e03ddb07b\",\"fact:fact_d46a16ca77e6a32ae74465808693a40599aa4b8607f17236586071ae9e324fe6\",\"identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4\",\"identity:b0032a085637daacddc4f3901c807855d25db76fe34569147b646cd30695a197\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_d097195181\",\"field\":\"raw_specs\",\"quote\":\"7-in-1\"},{\"rowId\":\"row_d097195181\",\"field\":\"raw_title\",\"quote\":\"USB-C\"},{\"rowId\":\"row_d097195181\",\"field\":\"raw_title\",\"quote\":\"Vertex Plus USB-C hub\"}],\"reason\":\"The supplied identity and facts establish the model, hub type, USB-C connector and 7-in-1 count.\"},{\"text\":\"with 4K@30fps video output\",\"start\":38,\"end\":64,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_50eb8f5d51d33931a63b4f1b9cee9fc16511002368bc6e0f69cabc25b636c7fe\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_d097195181\",\"field\":\"raw_specs\",\"quote\":\"4K30\"}],\"reason\":\"The supplied video-output fact normalizes the raw HDMI 4K30 specification to 4K@30fps.\"},{\"text\":\"and 100 W PD passthrough\",\"start\":65,\"end\":89,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_2d1c633c6cdc68a8f4b03db85a5fb8ac2a2a7b1b42199a90425dedb9d09c1fa6\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_d097195181\",\"field\":\"raw_specs\",\"quote\":\"100W PD passthrough\"}],\"reason\":\"The stated wattage and PD passthrough qualification match the raw specification.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0f389fc07a034f63016aa456110c6087d08ba9b4bd8f0e07bc",
+    "usage": {
+      "inputTokens": 2067,
+      "outputTokens": 597,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2064
+    }
+  }
+}

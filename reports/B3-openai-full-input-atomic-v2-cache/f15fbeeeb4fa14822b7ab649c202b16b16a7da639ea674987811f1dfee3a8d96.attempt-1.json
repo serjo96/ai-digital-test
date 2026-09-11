@@ -1,0 +1,81 @@
+{
+  "elapsedMs": 7545.493000000017,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "db3f5a9fbabdc884e03154eb20f24186cac235c9cdec0c0037287a28a246c0d0",
+      "claims": [
+        {
+          "text": "Kestrel wired earbuds",
+          "start": 0,
+          "end": 21,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:47c7023f12a8692fc7cdd6ece0fa14e4cba01d6fee75210a9a409669472b8445",
+            "identity:8134027d8a7b79f5ad1be2571df423b6cc3350a5b41c089d43da80ae4f872b0e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_648ed14543",
+              "field": "raw_title",
+              "quote": "KESTREL WIRED EARBUDS"
+            },
+            {
+              "rowId": "row_e0a6cb6b3f",
+              "field": "raw_title",
+              "quote": "Kestrel wired earbuds"
+            }
+          ],
+          "reason": "Both supplied titles identify Kestrel wired earbuds."
+        },
+        {
+          "text": "feature a 3.5mm connector",
+          "start": 22,
+          "end": 47,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_417501257d9ba54739bb1698d2ca986d37881643b52e5b842deca1d7ef50f43a"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_648ed14543",
+              "field": "raw_specs",
+              "quote": "3.5mm"
+            }
+          ],
+          "reason": "The supplied connector fact and its raw evidence specify 3.5mm."
+        },
+        {
+          "text": "and an in-line microphone",
+          "start": 48,
+          "end": 73,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_7bb08ac630f3d91a5ea005e6742e98055e784746711b012b192eb5ee67cd9714"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_648ed14543",
+              "field": "raw_specs",
+              "quote": "in-line mic"
+            }
+          ],
+          "reason": "The raw specifications explicitly list an in-line mic, supporting the microphone feature."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"db3f5a9fbabdc884e03154eb20f24186cac235c9cdec0c0037287a28a246c0d0\",\"claims\":[{\"text\":\"Kestrel wired earbuds\",\"start\":0,\"end\":21,\"verdict\":\"supported\",\"supportIds\":[\"identity:47c7023f12a8692fc7cdd6ece0fa14e4cba01d6fee75210a9a409669472b8445\",\"identity:8134027d8a7b79f5ad1be2571df423b6cc3350a5b41c089d43da80ae4f872b0e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_648ed14543\",\"field\":\"raw_title\",\"quote\":\"KESTREL WIRED EARBUDS\"},{\"rowId\":\"row_e0a6cb6b3f\",\"field\":\"raw_title\",\"quote\":\"Kestrel wired earbuds\"}],\"reason\":\"Both supplied titles identify Kestrel wired earbuds.\"},{\"text\":\"feature a 3.5mm connector\",\"start\":22,\"end\":47,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_417501257d9ba54739bb1698d2ca986d37881643b52e5b842deca1d7ef50f43a\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_648ed14543\",\"field\":\"raw_specs\",\"quote\":\"3.5mm\"}],\"reason\":\"The supplied connector fact and its raw evidence specify 3.5mm.\"},{\"text\":\"and an in-line microphone\",\"start\":48,\"end\":73,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_7bb08ac630f3d91a5ea005e6742e98055e784746711b012b192eb5ee67cd9714\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_648ed14543\",\"field\":\"raw_specs\",\"quote\":\"in-line mic\"}],\"reason\":\"The raw specifications explicitly list an in-line mic, supporting the microphone feature.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0d716f8ba9670cd1016aa450db93f087d0a026515c218492e1",
+    "usage": {
+      "inputTokens": 1863,
+      "outputTokens": 470,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1860
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "elapsedMs": 8385.736749999982,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "e717a2a0099e1d62be82dfa28606498eee886de1dfa22ac3db5075414e93e5dc",
+      "claims": [
+        {
+          "text": "The Tundra 3 scale uses BIA",
+          "start": 0,
+          "end": 27,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:84a76943bdda57f3e3c8bc2899e529b2299d7bcf48eb6df9d9db6658124d8111",
+            "identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7",
+            "fact:fact_c0475e867f37c28b76ffc4943a5b6aef1baa502daf937f788c59a290bdec3306"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_89c864b342",
+              "field": "raw_title",
+              "quote": "Tundra 3 smart scale"
+            },
+            {
+              "rowId": "row_89c864b342",
+              "field": "raw_specs",
+              "quote": "BIA"
+            }
+          ],
+          "reason": "The title identifies the Tundra 3 scale, and its specifications explicitly list BIA."
+        },
+        {
+          "text": "supports app sync",
+          "start": 29,
+          "end": 46,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_3a4da4beea123b602c3321c6b5eef5b34f3fcce86d34b691179a84cd2017e686"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_89c864b342",
+              "field": "raw_specs",
+              "quote": "app sync"
+            }
+          ],
+          "reason": "The specifications explicitly list app sync."
+        },
+        {
+          "text": "and has a maximum load of 180 kg",
+          "start": 48,
+          "end": 80,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_07c1461e492223896956cfca551a4b3dbe7e71fb1c16010aa9d6f9cad2d1c9dc"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_89c864b342",
+              "field": "raw_specs",
+              "quote": "180kg max"
+            }
+          ],
+          "reason": "The specifications state 180kg max, preserving both the value and maximum qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"e717a2a0099e1d62be82dfa28606498eee886de1dfa22ac3db5075414e93e5dc\",\"claims\":[{\"text\":\"The Tundra 3 scale uses BIA\",\"start\":0,\"end\":27,\"verdict\":\"supported\",\"supportIds\":[\"identity:84a76943bdda57f3e3c8bc2899e529b2299d7bcf48eb6df9d9db6658124d8111\",\"identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7\",\"fact:fact_c0475e867f37c28b76ffc4943a5b6aef1baa502daf937f788c59a290bdec3306\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_89c864b342\",\"field\":\"raw_title\",\"quote\":\"Tundra 3 smart scale\"},{\"rowId\":\"row_89c864b342\",\"field\":\"raw_specs\",\"quote\":\"BIA\"}],\"reason\":\"The title identifies the Tundra 3 scale, and its specifications explicitly list BIA.\"},{\"text\":\"supports app sync\",\"start\":29,\"end\":46,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_3a4da4beea123b602c3321c6b5eef5b34f3fcce86d34b691179a84cd2017e686\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_89c864b342\",\"field\":\"raw_specs\",\"quote\":\"app sync\"}],\"reason\":\"The specifications explicitly list app sync.\"},{\"text\":\"and has a maximum load of 180 kg\",\"start\":48,\"end\":80,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_07c1461e492223896956cfca551a4b3dbe7e71fb1c16010aa9d6f9cad2d1c9dc\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_89c864b342\",\"field\":\"raw_specs\",\"quote\":\"180kg max\"}],\"reason\":\"The specifications state 180kg max, preserving both the value and maximum qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_060368c55f7dd16b016aa4515292a887d0b3ee8a25fc26836d",
+    "usage": {
+      "inputTokens": 1891,
+      "outputTokens": 510,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1888
+    }
+  }
+}

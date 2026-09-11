@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 9153.506209000014,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "b8b6cdd3c8bb4ae0056e206a65f9a9b855746664fb6aea85d6c570a8e1cff38e",
+      "claims": [
+        {
+          "text": "The Larkspur lamp features an LED light source",
+          "start": 0,
+          "end": 46,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d",
+            "identity:8a1564cbb33e205bd41f07605529fad975599327b90eaa882ec806a7c3c4f169",
+            "fact:fact_bc569319f4c45d5927c3eb808545934443e89102e69ef893ccfc7809d1fb9c4e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_5bc3e64dcb",
+              "field": "raw_title",
+              "quote": "Larkspur desk lamp"
+            },
+            {
+              "rowId": "row_e51140ad9b",
+              "field": "raw_title",
+              "quote": "LARKSPUR DESK LAMP"
+            },
+            {
+              "rowId": "row_5bc3e64dcb",
+              "field": "raw_specs",
+              "quote": "LED"
+            }
+          ],
+          "reason": "The identity supports establish the Larkspur lamp, and the light-source support specifies LED."
+        },
+        {
+          "text": "and a USB-C connector",
+          "start": 47,
+          "end": 68,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_b9906abfb51cbfdcd7743da190c5b442d696f581030bbddf0da8ae735f535cac"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_5bc3e64dcb",
+              "field": "raw_specs",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The connector support explicitly specifies USB-C for this product."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"b8b6cdd3c8bb4ae0056e206a65f9a9b855746664fb6aea85d6c570a8e1cff38e\",\"claims\":[{\"text\":\"The Larkspur lamp features an LED light source\",\"start\":0,\"end\":46,\"verdict\":\"supported\",\"supportIds\":[\"identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d\",\"identity:8a1564cbb33e205bd41f07605529fad975599327b90eaa882ec806a7c3c4f169\",\"fact:fact_bc569319f4c45d5927c3eb808545934443e89102e69ef893ccfc7809d1fb9c4e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_5bc3e64dcb\",\"field\":\"raw_title\",\"quote\":\"Larkspur desk lamp\"},{\"rowId\":\"row_e51140ad9b\",\"field\":\"raw_title\",\"quote\":\"LARKSPUR DESK LAMP\"},{\"rowId\":\"row_5bc3e64dcb\",\"field\":\"raw_specs\",\"quote\":\"LED\"}],\"reason\":\"The identity supports establish the Larkspur lamp, and the light-source support specifies LED.\"},{\"text\":\"and a USB-C connector\",\"start\":47,\"end\":68,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_b9906abfb51cbfdcd7743da190c5b442d696f581030bbddf0da8ae735f535cac\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_5bc3e64dcb\",\"field\":\"raw_specs\",\"quote\":\"USB-C\"}],\"reason\":\"The connector support explicitly specifies USB-C for this product.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0fa8a62dfae10d0e016aa455a90f5087d099b5ef9364ef7213",
+    "usage": {
+      "inputTokens": 1985,
+      "outputTokens": 419,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1982
+    }
+  }
+}

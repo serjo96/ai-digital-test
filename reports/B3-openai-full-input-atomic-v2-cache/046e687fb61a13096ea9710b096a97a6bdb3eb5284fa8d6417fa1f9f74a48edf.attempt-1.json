@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 8871.062124999939,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "1686311c89324198fe3dfe00705ceefa78ea1d2536d033b0fd0c6ced2f359faa",
+      "claims": [
+        {
+          "text": "The Torrent Lite laptop sleeve is made of neoprene",
+          "start": 0,
+          "end": 50,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:5aab3cededa3980d2bc9c19a3c446b03251c276d223dad01a87a96759b1e3224",
+            "identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db",
+            "fact:fact_d880e43dfd52eabc980c77ea9c5b836c1ff968e0142641ca01205384225b94ab"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_8dfa59e7c2",
+              "field": "raw_title",
+              "quote": "Torrent Lite laptop sleeve"
+            },
+            {
+              "rowId": "row_aef34b7f58",
+              "field": "raw_title",
+              "quote": "TORRENT LITE LAPTOP SLEEVE"
+            },
+            {
+              "rowId": "row_8dfa59e7c2",
+              "field": "raw_specs",
+              "quote": "neoprene"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and product type; the material support specifies neoprene."
+        },
+        {
+          "text": "and is compatible with 14 in devices",
+          "start": 51,
+          "end": 87,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_23f6e9a93d8d392af68c9d82a5bd9a708e96cf337c740aef9fc2aaab2fbf3838"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_8dfa59e7c2",
+              "field": "raw_specs",
+              "quote": "14in"
+            }
+          ],
+          "reason": "The supplied 14 in display-size support is explicitly conditioned on compatible devices, preserving the compatibility scope rather than asserting sleeve dimensions."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"1686311c89324198fe3dfe00705ceefa78ea1d2536d033b0fd0c6ced2f359faa\",\"claims\":[{\"text\":\"The Torrent Lite laptop sleeve is made of neoprene\",\"start\":0,\"end\":50,\"verdict\":\"supported\",\"supportIds\":[\"identity:5aab3cededa3980d2bc9c19a3c446b03251c276d223dad01a87a96759b1e3224\",\"identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db\",\"fact:fact_d880e43dfd52eabc980c77ea9c5b836c1ff968e0142641ca01205384225b94ab\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_8dfa59e7c2\",\"field\":\"raw_title\",\"quote\":\"Torrent Lite laptop sleeve\"},{\"rowId\":\"row_aef34b7f58\",\"field\":\"raw_title\",\"quote\":\"TORRENT LITE LAPTOP SLEEVE\"},{\"rowId\":\"row_8dfa59e7c2\",\"field\":\"raw_specs\",\"quote\":\"neoprene\"}],\"reason\":\"The supplied identity supports establish the model and product type; the material support specifies neoprene.\"},{\"text\":\"and is compatible with 14 in devices\",\"start\":51,\"end\":87,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_23f6e9a93d8d392af68c9d82a5bd9a708e96cf337c740aef9fc2aaab2fbf3838\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_8dfa59e7c2\",\"field\":\"raw_specs\",\"quote\":\"14in\"}],\"reason\":\"The supplied 14 in display-size support is explicitly conditioned on compatible devices, preserving the compatibility scope rather than asserting sleeve dimensions.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_03dfdc05081b03b1016aa4555ecac887d098e8e6d1a456641a",
+    "usage": {
+      "inputTokens": 1975,
+      "outputTokens": 445,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1972
+    }
+  }
+}

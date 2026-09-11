@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 4016.562916000141,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Vertex Pro microSD memory card has 256 GB of storage, a UHS-I bus rating and an A2 application rating. It supports transfer speeds of up to 170 MB/s, with the direction unspecified."
+    },
+    "raw": "{\"text\":\"The Vertex Pro microSD memory card has 256 GB of storage, a UHS-I bus rating and an A2 application rating. It supports transfer speeds of up to 170 MB/s, with the direction unspecified.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_01563435412674f9016aa456281a4087d0ba53da8fb32369b1",
+    "usage": {
+      "inputTokens": 955,
+      "outputTokens": 58,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2000.0283330001403,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Vertex Plus is a 7-in-1 USB-C hub with 4K@30fps video output and 100 W PD passthrough."
+    },
+    "raw": "{\"text\":\"The Vertex Plus is a 7-in-1 USB-C hub with 4K@30fps video output and 100 W PD passthrough.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_057966822d4454a7016aa4560f0a7887d0873911df989d4e69",
+    "usage": {
+      "inputTokens": 776,
+      "outputTokens": 46,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7761.015332999872,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "c3e6a2888382722b75bf1d20472880e9b43eef172c754527b1d724ab21c92491",
+      "claims": [
+        {
+          "text": "The Kestrel lamp features an LED light source",
+          "start": 0,
+          "end": 45,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:8134027d8a7b79f5ad1be2571df423b6cc3350a5b41c089d43da80ae4f872b0e",
+            "identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d",
+            "fact:fact_8d1502c1604f63ee18485caa46ccf1a22e6ba6f8c0cf082348100cb3db6e462f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_522195dac7",
+              "field": "raw_title",
+              "quote": "Kestrel desk lamp"
+            },
+            {
+              "rowId": "row_522195dac7",
+              "field": "raw_specs",
+              "quote": "LED"
+            }
+          ],
+          "reason": "The title identifies the Kestrel lamp, and the specifications support its LED light source."
+        },
+        {
+          "text": "and a USB-C connector",
+          "start": 46,
+          "end": 67,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_11b87a1fe3d24f8de85805c0f4fc44c44b2a03b0042c10efbebc0696cc0bfbbf"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_522195dac7",
+              "field": "raw_specs",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The supplied connector support and raw specifications establish USB-C for this lamp."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"c3e6a2888382722b75bf1d20472880e9b43eef172c754527b1d724ab21c92491\",\"claims\":[{\"text\":\"The Kestrel lamp features an LED light source\",\"start\":0,\"end\":45,\"verdict\":\"supported\",\"supportIds\":[\"identity:8134027d8a7b79f5ad1be2571df423b6cc3350a5b41c089d43da80ae4f872b0e\",\"identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d\",\"fact:fact_8d1502c1604f63ee18485caa46ccf1a22e6ba6f8c0cf082348100cb3db6e462f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_522195dac7\",\"field\":\"raw_title\",\"quote\":\"Kestrel desk lamp\"},{\"rowId\":\"row_522195dac7\",\"field\":\"raw_specs\",\"quote\":\"LED\"}],\"reason\":\"The title identifies the Kestrel lamp, and the specifications support its LED light source.\"},{\"text\":\"and a USB-C connector\",\"start\":46,\"end\":67,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_11b87a1fe3d24f8de85805c0f4fc44c44b2a03b0042c10efbebc0696cc0bfbbf\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_522195dac7\",\"field\":\"raw_specs\",\"quote\":\"USB-C\"}],\"reason\":\"The supplied connector support and raw specifications establish USB-C for this lamp.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0f04c52892630c2a016aa4548cf4c887d0a5fcf52b93895f9e",
+    "usage": {
+      "inputTokens": 1756,
+      "outputTokens": 400,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1753
+    }
+  }
+}

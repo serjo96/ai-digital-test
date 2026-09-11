@@ -1,0 +1,82 @@
+{
+  "elapsedMs": 8611.490708999801,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "3bf44a5ce73ff68a1bb908eff390fede57ff33f99f862d15cbbe42bd507fc9e9",
+      "claims": [
+        {
+          "text": "The Basalt scale uses BIA",
+          "start": 0,
+          "end": 25,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:7aa6744ee263aae6e59e9b8018632e790ff2ab9e470e7a8d5bf8fb3a5439c5e7",
+            "identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7",
+            "fact:fact_1efd08ed0d0f4b786428eb1d5f1198c494e6d573e9f2b28cce8f2b5d30b8ba7c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_e1124c3b3f",
+              "field": "raw_title",
+              "quote": "Basalt smart scale"
+            },
+            {
+              "rowId": "row_e1124c3b3f",
+              "field": "raw_specs",
+              "quote": "BIA"
+            }
+          ],
+          "reason": "The title establishes the Basalt scale identity, and the specifications explicitly list BIA."
+        },
+        {
+          "text": "and supports app sync",
+          "start": 26,
+          "end": 47,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_b29aa42e9257c99716a9046c32295c35bafa8425a26647aa54cf9146f0f24cef"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_e1124c3b3f",
+              "field": "raw_specs",
+              "quote": "app sync"
+            }
+          ],
+          "reason": "The specifications explicitly state app sync."
+        },
+        {
+          "text": "Its maximum load is 180 kg",
+          "start": 49,
+          "end": 75,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_1a2f9d522e9b0252d380b65a57594fa8d8dcdce24e82ada9dff475940821dd4a"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_e1124c3b3f",
+              "field": "raw_specs",
+              "quote": "180kg max"
+            }
+          ],
+          "reason": "The stated load matches the supplied value and preserves its maximum qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"3bf44a5ce73ff68a1bb908eff390fede57ff33f99f862d15cbbe42bd507fc9e9\",\"claims\":[{\"text\":\"The Basalt scale uses BIA\",\"start\":0,\"end\":25,\"verdict\":\"supported\",\"supportIds\":[\"identity:7aa6744ee263aae6e59e9b8018632e790ff2ab9e470e7a8d5bf8fb3a5439c5e7\",\"identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7\",\"fact:fact_1efd08ed0d0f4b786428eb1d5f1198c494e6d573e9f2b28cce8f2b5d30b8ba7c\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_e1124c3b3f\",\"field\":\"raw_title\",\"quote\":\"Basalt smart scale\"},{\"rowId\":\"row_e1124c3b3f\",\"field\":\"raw_specs\",\"quote\":\"BIA\"}],\"reason\":\"The title establishes the Basalt scale identity, and the specifications explicitly list BIA.\"},{\"text\":\"and supports app sync\",\"start\":26,\"end\":47,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_b29aa42e9257c99716a9046c32295c35bafa8425a26647aa54cf9146f0f24cef\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_e1124c3b3f\",\"field\":\"raw_specs\",\"quote\":\"app sync\"}],\"reason\":\"The specifications explicitly state app sync.\"},{\"text\":\"Its maximum load is 180 kg\",\"start\":49,\"end\":75,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_1a2f9d522e9b0252d380b65a57594fa8d8dcdce24e82ada9dff475940821dd4a\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_e1124c3b3f\",\"field\":\"raw_specs\",\"quote\":\"180kg max\"}],\"reason\":\"The stated load matches the supplied value and preserves its maximum qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_071367645915f16d016aa45535150087d0a3d5705f5ed8243e",
+    "usage": {
+      "inputTokens": 1860,
+      "outputTokens": 516,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1857
+    }
+  }
+}

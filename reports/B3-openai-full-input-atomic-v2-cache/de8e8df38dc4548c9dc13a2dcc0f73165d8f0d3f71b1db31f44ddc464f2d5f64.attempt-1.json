@@ -1,0 +1,100 @@
+{
+  "elapsedMs": 17208.826708000037,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "bb79081197b6c65f1ee0fe681dbec3ed5d82f885b32d823d3ac79117a40c7cab",
+      "claims": [
+        {
+          "text": "The Juniper Pro memory card has 256GB of storage",
+          "start": 0,
+          "end": 48,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:f64e41f7c32afbc6b982bd3f8a1c5aebe3432cdcbb4ae424887bfca1de86901b",
+            "identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa",
+            "fact:fact_82398337715bdcfbf9c65f8bbb2e0e8e8b5a5696489aa718e322b034357b307c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_7074cbc3ad",
+              "field": "raw_title",
+              "quote": "JUNIPER PRO MICROSD CARD 256GB"
+            },
+            {
+              "rowId": "row_7074cbc3ad",
+              "field": "raw_title",
+              "quote": "256GB"
+            }
+          ],
+          "reason": "The source title establishes the model, memory-card type and 256GB capacity."
+        },
+        {
+          "text": "a UHS-I bus rating",
+          "start": 50,
+          "end": 68,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_b7c19a4f57f636cc56b6fb4ffad2c495ee0fb630ed802913a5984da0e2a5b97c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_7074cbc3ad",
+              "field": "raw_specs",
+              "quote": "UHS-I"
+            }
+          ],
+          "reason": "The supplied bus-rating fact and raw specifications agree."
+        },
+        {
+          "text": "and an A2 application rating",
+          "start": 69,
+          "end": 97,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_b2b4b05fdb0f68eab47995543cfbc5e95b34e0e68a034300a25c73dae3a1fd8e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_7074cbc3ad",
+              "field": "raw_specs",
+              "quote": "A2"
+            }
+          ],
+          "reason": "The supplied application-rating fact and raw specifications agree."
+        },
+        {
+          "text": "It supports transfer speeds of up to 170MB/s, with the direction unspecified",
+          "start": 99,
+          "end": 175,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_151242a9516659a001274816bd56ffbef9b0f5819d0c491b2169d4232153f4fd"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_7074cbc3ad",
+              "field": "raw_specs",
+              "quote": "up to 170MB/s"
+            }
+          ],
+          "reason": "The speed matches the source and preserves both the up-to qualifier and the unspecified transfer direction."
+        }
+      ]
+    },
+    "raw": "{\n  \"textHash\": \"bb79081197b6c65f1ee0fe681dbec3ed5d82f885b32d823d3ac79117a40c7cab\",\n  \"claims\": [\n    {\n      \"text\": \"The Juniper Pro memory card has 256GB of storage\",\n      \"start\": 0,\n      \"end\": 48,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"identity:f64e41f7c32afbc6b982bd3f8a1c5aebe3432cdcbb4ae424887bfca1de86901b\",\n        \"identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa\",\n        \"fact:fact_82398337715bdcfbf9c65f8bbb2e0e8e8b5a5696489aa718e322b034357b307c\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_7074cbc3ad\",\n          \"field\": \"raw_title\",\n          \"quote\": \"JUNIPER PRO MICROSD CARD 256GB\"\n        },\n        {\n          \"rowId\": \"row_7074cbc3ad\",\n          \"field\": \"raw_title\",\n          \"quote\": \"256GB\"\n        }\n      ],\n      \"reason\": \"The source title establishes the model, memory-card type and 256GB capacity.\"\n    },\n    {\n      \"text\": \"a UHS-I bus rating\",\n      \"start\": 50,\n      \"end\": 68,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_b7c19a4f57f636cc56b6fb4ffad2c495ee0fb630ed802913a5984da0e2a5b97c\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_7074cbc3ad\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"UHS-I\"\n        }\n      ],\n      \"reason\": \"The supplied bus-rating fact and raw specifications agree.\"\n    },\n    {\n      \"text\": \"and an A2 application rating\",\n      \"start\": 69,\n      \"end\": 97,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_b2b4b05fdb0f68eab47995543cfbc5e95b34e0e68a034300a25c73dae3a1fd8e\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_7074cbc3ad\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"A2\"\n        }\n      ],\n      \"reason\": \"The supplied application-rating fact and raw specifications agree.\"\n    },\n    {\n      \"text\": \"It supports transfer speeds of up to 170MB/s, with the direction unspecified\",\n      \"start\": 99,\n      \"end\": 175,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_151242a9516659a001274816bd56ffbef9b0f5819d0c491b2169d4232153f4fd\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_7074cbc3ad\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"up to 170MB/s\"\n        }\n      ],\n      \"reason\": \"The speed matches the source and preserves both the up-to qualifier and the unspecified transfer direction.\"\n    }\n  ]\n}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_080844ec9f714f57016aa453854b2087d0a3760c78a3bed44d",
+    "usage": {
+      "inputTokens": 2989,
+      "outputTokens": 835,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2986
+    }
+  }
+}

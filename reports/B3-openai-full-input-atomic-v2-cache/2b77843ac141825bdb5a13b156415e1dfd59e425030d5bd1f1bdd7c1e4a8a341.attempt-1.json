@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 3131.7142090001144,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Kestrel Lite tablet case has a folio style and supports auto sleep/wake."
+    },
+    "raw": "{\"text\":\"The Kestrel Lite tablet case has a folio style and supports auto sleep/wake.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0198435c95cbd01c016aa4549e4d5087d0b4e9a3401a16f8b6",
+    "usage": {
+      "inputTokens": 550,
+      "outputTokens": 33,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

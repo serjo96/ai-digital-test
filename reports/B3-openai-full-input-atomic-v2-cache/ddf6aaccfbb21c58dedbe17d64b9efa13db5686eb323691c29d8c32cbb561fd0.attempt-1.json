@@ -1,0 +1,118 @@
+{
+  "elapsedMs": 12120.420292000053,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "d456f1c07a3ceae1f979bb01c57bced725ad6fbefaa7228fd0adf97573f00527",
+      "claims": [
+        {
+          "text": "The Larkspur Plus microSD memory card has 256 GB of storage",
+          "start": 0,
+          "end": 59,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:a7fee0aa4375b4adcb68996f41a90bb21332a6214ab1cecf13a7003ee384bf1c",
+            "identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa",
+            "fact:fact_541d075a3173abbe2dab954536c499b329244d2f0ceed464a31ff49c2d66e607"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c8617509f8",
+              "field": "raw_title",
+              "quote": "Larkspur Plus microSD card 256GB"
+            },
+            {
+              "rowId": "row_c8617509f8",
+              "field": "raw_title",
+              "quote": "256GB"
+            }
+          ],
+          "reason": "The title supports the model, microSD memory-card type and 256 GB capacity."
+        },
+        {
+          "text": "a UHS-I bus rating",
+          "start": 61,
+          "end": 79,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_49ac7a067b52f9af91ced46b307aa52643ecd13ad098598ab4deb98832f03945"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c8617509f8",
+              "field": "raw_specs",
+              "quote": "UHS-I"
+            }
+          ],
+          "reason": "The supplied bus-rating fact explicitly identifies UHS-I."
+        },
+        {
+          "text": "and an A2 application rating",
+          "start": 80,
+          "end": 108,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_af6c8ebfe950bcac30083acc24aed4b2138b12f0ef0c21a94eb3e11393bb60cf"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c8617509f8",
+              "field": "raw_specs",
+              "quote": "A2"
+            }
+          ],
+          "reason": "The supplied application-rating fact explicitly identifies A2."
+        },
+        {
+          "text": "It supports transfer speeds of up to 170 MB/s",
+          "start": 110,
+          "end": 155,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_5afdc9c391603756bc488ab730b8cec1fee388d832c71bc977f1f9a1e334cbb7"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c8617509f8",
+              "field": "raw_specs",
+              "quote": "up to 170MB/s"
+            }
+          ],
+          "reason": "The transfer-speed value and up-to qualifier match the supplied fact without asserting a read or write direction."
+        },
+        {
+          "text": "with the direction unspecified",
+          "start": 157,
+          "end": 187,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_5afdc9c391603756bc488ab730b8cec1fee388d832c71bc977f1f9a1e334cbb7"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c8617509f8",
+              "field": "raw_specs",
+              "quote": "up to 170MB/s"
+            }
+          ],
+          "reason": "The source gives no transfer direction, and the supplied fact explicitly retains the direction_unspecified condition."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"d456f1c07a3ceae1f979bb01c57bced725ad6fbefaa7228fd0adf97573f00527\",\"claims\":[{\"text\":\"The Larkspur Plus microSD memory card has 256 GB of storage\",\"start\":0,\"end\":59,\"verdict\":\"supported\",\"supportIds\":[\"identity:a7fee0aa4375b4adcb68996f41a90bb21332a6214ab1cecf13a7003ee384bf1c\",\"identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa\",\"fact:fact_541d075a3173abbe2dab954536c499b329244d2f0ceed464a31ff49c2d66e607\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c8617509f8\",\"field\":\"raw_title\",\"quote\":\"Larkspur Plus microSD card 256GB\"},{\"rowId\":\"row_c8617509f8\",\"field\":\"raw_title\",\"quote\":\"256GB\"}],\"reason\":\"The title supports the model, microSD memory-card type and 256 GB capacity.\"},{\"text\":\"a UHS-I bus rating\",\"start\":61,\"end\":79,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_49ac7a067b52f9af91ced46b307aa52643ecd13ad098598ab4deb98832f03945\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c8617509f8\",\"field\":\"raw_specs\",\"quote\":\"UHS-I\"}],\"reason\":\"The supplied bus-rating fact explicitly identifies UHS-I.\"},{\"text\":\"and an A2 application rating\",\"start\":80,\"end\":108,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_af6c8ebfe950bcac30083acc24aed4b2138b12f0ef0c21a94eb3e11393bb60cf\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c8617509f8\",\"field\":\"raw_specs\",\"quote\":\"A2\"}],\"reason\":\"The supplied application-rating fact explicitly identifies A2.\"},{\"text\":\"It supports transfer speeds of up to 170 MB/s\",\"start\":110,\"end\":155,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_5afdc9c391603756bc488ab730b8cec1fee388d832c71bc977f1f9a1e334cbb7\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c8617509f8\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"The transfer-speed value and up-to qualifier match the supplied fact without asserting a read or write direction.\"},{\"text\":\"with the direction unspecified\",\"start\":157,\"end\":187,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_5afdc9c391603756bc488ab730b8cec1fee388d832c71bc977f1f9a1e334cbb7\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c8617509f8\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"The source gives no transfer direction, and the supplied fact explicitly retains the direction_unspecified condition.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0fbac645266933b3016aa4532701cc87d09ed7f76aac505b23",
+    "usage": {
+      "inputTokens": 3061,
+      "outputTokens": 746,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 3058
+    }
+  }
+}

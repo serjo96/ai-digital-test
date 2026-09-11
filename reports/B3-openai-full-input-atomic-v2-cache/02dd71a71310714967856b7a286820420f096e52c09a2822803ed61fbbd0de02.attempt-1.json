@@ -1,0 +1,83 @@
+{
+  "elapsedMs": 9566.310000000056,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "b554919512c924d6bd46a30ae9e7515e5a312901c92b8f3e1460267cc8b6bc29",
+      "claims": [
+        {
+          "text": "The Larkspur X is a pair of passive speakers",
+          "start": 0,
+          "end": 44,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:2d4e86b127a2d3a0c4b3c2d99edff22a78b10d1719cf495f352c06084e15e378",
+            "identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704",
+            "identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f",
+            "fact:fact_431ec284e890e6025c3d43bd0a291ee82c48851eacc3d5564684fa8f823f2e51"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_19950873e2",
+              "field": "raw_title",
+              "quote": "LARKSPUR X BOOKSHELF SPEAKER PAIR"
+            },
+            {
+              "rowId": "row_19950873e2",
+              "field": "raw_specs",
+              "quote": "passive"
+            }
+          ],
+          "reason": "The title identifies the model and a speaker pair; the specifications explicitly state passive amplification."
+        },
+        {
+          "text": "with 4-ohm impedance",
+          "start": 45,
+          "end": 65,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_969092cc178ad8901664e995047a2cf1bb61b11292360b85b66bd275e2b9d66c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_19950873e2",
+              "field": "raw_specs",
+              "quote": "4 ohm"
+            }
+          ],
+          "reason": "The impedance matches the supplied source and support."
+        },
+        {
+          "text": "and 40 W of power for an unspecified purpose",
+          "start": 66,
+          "end": 110,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_ec15b1bafdb0603b89f50401f11f49401266502b6b93ae650d3e30bc0b142fa7"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_19950873e2",
+              "field": "raw_specs",
+              "quote": "40W"
+            }
+          ],
+          "reason": "The source states 40W without specifying its purpose; the claim preserves the supplied purpose_unspecified qualification."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"b554919512c924d6bd46a30ae9e7515e5a312901c92b8f3e1460267cc8b6bc29\",\"claims\":[{\"text\":\"The Larkspur X is a pair of passive speakers\",\"start\":0,\"end\":44,\"verdict\":\"supported\",\"supportIds\":[\"identity:2d4e86b127a2d3a0c4b3c2d99edff22a78b10d1719cf495f352c06084e15e378\",\"identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704\",\"identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f\",\"fact:fact_431ec284e890e6025c3d43bd0a291ee82c48851eacc3d5564684fa8f823f2e51\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_19950873e2\",\"field\":\"raw_title\",\"quote\":\"LARKSPUR X BOOKSHELF SPEAKER PAIR\"},{\"rowId\":\"row_19950873e2\",\"field\":\"raw_specs\",\"quote\":\"passive\"}],\"reason\":\"The title identifies the model and a speaker pair; the specifications explicitly state passive amplification.\"},{\"text\":\"with 4-ohm impedance\",\"start\":45,\"end\":65,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_969092cc178ad8901664e995047a2cf1bb61b11292360b85b66bd275e2b9d66c\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_19950873e2\",\"field\":\"raw_specs\",\"quote\":\"4 ohm\"}],\"reason\":\"The impedance matches the supplied source and support.\"},{\"text\":\"and 40 W of power for an unspecified purpose\",\"start\":66,\"end\":110,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_ec15b1bafdb0603b89f50401f11f49401266502b6b93ae650d3e30bc0b142fa7\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_19950873e2\",\"field\":\"raw_specs\",\"quote\":\"40W\"}],\"reason\":\"The source states 40W without specifying its purpose; the claim preserves the supplied purpose_unspecified qualification.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0c0bb6b27cf85e48016aa453d93e0487d0b97476aee904f232",
+    "usage": {
+      "inputTokens": 2262,
+      "outputTokens": 565,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2259
+    }
+  }
+}

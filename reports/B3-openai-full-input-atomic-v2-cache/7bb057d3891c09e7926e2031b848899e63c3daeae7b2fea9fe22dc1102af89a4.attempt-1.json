@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 8295.180208999896,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "a22e3f4f9793bc79bdcde4313f20fdd4bd9da272a4c0bd141c1420b27fb4410e",
+      "claims": [
+        {
+          "text": "The Basalt 2 laptop sleeve is made of neoprene",
+          "start": 0,
+          "end": 46,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db",
+            "identity:eb8fbe9447f5aa6bb2dd8d71626beff578429e851d59682727bd6423da83f986",
+            "fact:fact_baf5368c936f0706c5623effc5f71e3026d7e1fea5f566601f31b9bebd9432f1"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_185aeac60e",
+              "field": "raw_title",
+              "quote": "Basalt 2 laptop sleeve"
+            },
+            {
+              "rowId": "row_894eb0e4a9",
+              "field": "raw_title",
+              "quote": "Basalt 2 laptop sleeve"
+            },
+            {
+              "rowId": "row_185aeac60e",
+              "field": "raw_specs",
+              "quote": "neoprene"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and product type; the material support explicitly identifies neoprene."
+        },
+        {
+          "text": "and is compatible with 14 in devices",
+          "start": 47,
+          "end": 83,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_e4e3d5994a771b24d5ee732cd84773fd3f7a403bc5dbeb8e24ac048db2e47730"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_185aeac60e",
+              "field": "raw_specs",
+              "quote": "14in"
+            }
+          ],
+          "reason": "The supplied 14 in size support is qualified as compatible_device, matching the compatibility claim in the laptop-sleeve context."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"a22e3f4f9793bc79bdcde4313f20fdd4bd9da272a4c0bd141c1420b27fb4410e\",\"claims\":[{\"text\":\"The Basalt 2 laptop sleeve is made of neoprene\",\"start\":0,\"end\":46,\"verdict\":\"supported\",\"supportIds\":[\"identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db\",\"identity:eb8fbe9447f5aa6bb2dd8d71626beff578429e851d59682727bd6423da83f986\",\"fact:fact_baf5368c936f0706c5623effc5f71e3026d7e1fea5f566601f31b9bebd9432f1\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_185aeac60e\",\"field\":\"raw_title\",\"quote\":\"Basalt 2 laptop sleeve\"},{\"rowId\":\"row_894eb0e4a9\",\"field\":\"raw_title\",\"quote\":\"Basalt 2 laptop sleeve\"},{\"rowId\":\"row_185aeac60e\",\"field\":\"raw_specs\",\"quote\":\"neoprene\"}],\"reason\":\"The supplied identity supports establish the model and product type; the material support explicitly identifies neoprene.\"},{\"text\":\"and is compatible with 14 in devices\",\"start\":47,\"end\":83,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_e4e3d5994a771b24d5ee732cd84773fd3f7a403bc5dbeb8e24ac048db2e47730\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_185aeac60e\",\"field\":\"raw_specs\",\"quote\":\"14in\"}],\"reason\":\"The supplied 14 in size support is qualified as compatible_device, matching the compatibility claim in the laptop-sleeve context.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_04bc224a106dc09a016aa45689d49487d08e6b51b3e48d6913",
+    "usage": {
+      "inputTokens": 1941,
+      "outputTokens": 445,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1938
+    }
+  }
+}

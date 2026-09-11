@@ -1,0 +1,40 @@
+{
+  "elapsedMs": 4893.666167000018,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "ace992bdf20475f1ee1d6814548081d8d3f30445dc3ff2a785f507263c43b2b0",
+      "claims": [
+        {
+          "text": "The Kestrel is a tablet case",
+          "start": 0,
+          "end": 28,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02",
+            "identity:8134027d8a7b79f5ad1be2571df423b6cc3350a5b41c089d43da80ae4f872b0e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_bbaad66b9f",
+              "field": "raw_title",
+              "quote": "KESTREL TABLET CASE"
+            }
+          ],
+          "reason": "The supplied title and identity supports establish both the Kestrel model name and the tablet case product type."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"ace992bdf20475f1ee1d6814548081d8d3f30445dc3ff2a785f507263c43b2b0\",\"claims\":[{\"text\":\"The Kestrel is a tablet case\",\"start\":0,\"end\":28,\"verdict\":\"supported\",\"supportIds\":[\"identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02\",\"identity:8134027d8a7b79f5ad1be2571df423b6cc3350a5b41c089d43da80ae4f872b0e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_bbaad66b9f\",\"field\":\"raw_title\",\"quote\":\"KESTREL TABLET CASE\"}],\"reason\":\"The supplied title and identity supports establish both the Kestrel model name and the tablet case product type.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_00c1d7791aff653d016aa45231381887d0922c935a4526c173",
+    "usage": {
+      "inputTokens": 1247,
+      "outputTokens": 227,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1244
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2605.8613749999786,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Vault SSD has 2 TB of storage, USB 3.2 Gen2, and a USB-C connector. It supports read speeds of up to 1050 MB/s."
+    },
+    "raw": "{\"text\":\"The Vault SSD has 2 TB of storage, USB 3.2 Gen2, and a USB-C connector. It supports read speeds of up to 1050 MB/s.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_01fe5268aca8acd3016aa45242dfe887d0aed0586ddde0b3ba",
+    "usage": {
+      "inputTokens": 1246,
+      "outputTokens": 51,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1243
+    }
+  }
+}

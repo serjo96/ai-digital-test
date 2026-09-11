@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1766.8205839998554,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Harbor X is a 7-in-1 USB-C hub with 4K@30fps video output and 100 W PD passthrough."
+    },
+    "raw": "{\"text\":\"The Harbor X is a 7-in-1 USB-C hub with 4K@30fps video output and 100 W PD passthrough.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0fabd33691c22325016aa455445d8c87d098301364b2235ba0",
+    "usage": {
+      "inputTokens": 791,
+      "outputTokens": 45,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

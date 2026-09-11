@@ -1,0 +1,46 @@
+{
+  "elapsedMs": 5861.604917000001,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "defc81b3e348e41f082e36a9f1ad732730113af4d00969203be09f38d3ffea37",
+      "claims": [
+        {
+          "text": "Onyx Lite is a 256 GB microSD card",
+          "start": 0,
+          "end": 34,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_73a80ca467fb4b89161556327cadafad9ec94ac8b64f4c2ea1df1d783890a9a6",
+            "identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f",
+            "identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "256GB"
+            },
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "Onyx Lite microSD card 256GB"
+            }
+          ],
+          "reason": "The supplied title explicitly identifies Onyx Lite as a microSD card with 256GB storage."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"defc81b3e348e41f082e36a9f1ad732730113af4d00969203be09f38d3ffea37\",\"claims\":[{\"text\":\"Onyx Lite is a 256 GB microSD card\",\"start\":0,\"end\":34,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_73a80ca467fb4b89161556327cadafad9ec94ac8b64f4c2ea1df1d783890a9a6\",\"identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f\",\"identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite microSD card 256GB\"}],\"reason\":\"The supplied title explicitly identifies Onyx Lite as a microSD card with 256GB storage.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_096f37f3a1342f05016aa450493c8087d0a0bf4bf58dc60289",
+    "usage": {
+      "inputTokens": 1816,
+      "outputTokens": 286,
+      "cachedInputTokens": 1813,
+      "cacheWriteTokens": 0
+    }
+  }
+}

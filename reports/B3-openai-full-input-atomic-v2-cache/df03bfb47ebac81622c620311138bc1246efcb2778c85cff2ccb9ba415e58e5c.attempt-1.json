@@ -1,0 +1,135 @@
+{
+  "elapsedMs": 12774.016125000082,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "7b02e57e9c0ca2bb00b70830acfb2071e6eeb36db1507de88e642b24a1812d30",
+      "claims": [
+        {
+          "text": "The Vertex Pro microSD memory card",
+          "start": 0,
+          "end": 34,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa",
+            "identity:f1ddf0a729f4abde9da01745356bd08e0162f725f186c188e8f0aed3db3f67f6"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_02ad74e735",
+              "field": "raw_title",
+              "quote": "256GB"
+            },
+            {
+              "rowId": "row_02ad74e735",
+              "field": "raw_title",
+              "quote": "Vertex Pro microSD card 256GB"
+            }
+          ],
+          "reason": "The title identifies the model and microSD memory-card type."
+        },
+        {
+          "text": "has 256 GB of storage",
+          "start": 35,
+          "end": 56,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_1041f19bd4533b5bb4c928470b41bf0bbbf9fcbd41f2f0aa8750cefc1ebb7613"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_02ad74e735",
+              "field": "raw_title",
+              "quote": "256GB"
+            }
+          ],
+          "reason": "The supplied storage fact and title specify 256 GB."
+        },
+        {
+          "text": "a UHS-I bus rating",
+          "start": 58,
+          "end": 76,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_adab62f335627502e960f35defe567cf67eb3148ccc5503cb273d4d8bda44d9e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_02ad74e735",
+              "field": "raw_specs",
+              "quote": "UHS-I"
+            }
+          ],
+          "reason": "The specifications explicitly list UHS-I."
+        },
+        {
+          "text": "and an A2 application rating",
+          "start": 77,
+          "end": 105,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_f7d839908ac1100c7610ee95331661ac865b3c13867b5902107e75df001be352"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_02ad74e735",
+              "field": "raw_specs",
+              "quote": "A2"
+            }
+          ],
+          "reason": "The supplied application-rating fact and specifications identify A2."
+        },
+        {
+          "text": "It supports transfer speeds of up to 170 MB/s",
+          "start": 107,
+          "end": 152,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_a5cf16bdff07a44f9af974b05e8bf38faf0ce78d79d0ca9e71c4fa0454841f2b"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_02ad74e735",
+              "field": "raw_specs",
+              "quote": "up to 170MB/s"
+            }
+          ],
+          "reason": "The transfer-speed claim preserves the source's upper-bound qualifier and does not assign a read or write direction."
+        },
+        {
+          "text": "with the direction unspecified",
+          "start": 154,
+          "end": 184,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_a5cf16bdff07a44f9af974b05e8bf38faf0ce78d79d0ca9e71c4fa0454841f2b"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_02ad74e735",
+              "field": "raw_specs",
+              "quote": "up to 170MB/s"
+            }
+          ],
+          "reason": "The raw specifications omit read/write direction, matching the supplied direction_unspecified condition."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"7b02e57e9c0ca2bb00b70830acfb2071e6eeb36db1507de88e642b24a1812d30\",\"claims\":[{\"text\":\"The Vertex Pro microSD memory card\",\"start\":0,\"end\":34,\"verdict\":\"supported\",\"supportIds\":[\"identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa\",\"identity:f1ddf0a729f4abde9da01745356bd08e0162f725f186c188e8f0aed3db3f67f6\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_02ad74e735\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_02ad74e735\",\"field\":\"raw_title\",\"quote\":\"Vertex Pro microSD card 256GB\"}],\"reason\":\"The title identifies the model and microSD memory-card type.\"},{\"text\":\"has 256 GB of storage\",\"start\":35,\"end\":56,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_1041f19bd4533b5bb4c928470b41bf0bbbf9fcbd41f2f0aa8750cefc1ebb7613\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_02ad74e735\",\"field\":\"raw_title\",\"quote\":\"256GB\"}],\"reason\":\"The supplied storage fact and title specify 256 GB.\"},{\"text\":\"a UHS-I bus rating\",\"start\":58,\"end\":76,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_adab62f335627502e960f35defe567cf67eb3148ccc5503cb273d4d8bda44d9e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_02ad74e735\",\"field\":\"raw_specs\",\"quote\":\"UHS-I\"}],\"reason\":\"The specifications explicitly list UHS-I.\"},{\"text\":\"and an A2 application rating\",\"start\":77,\"end\":105,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_f7d839908ac1100c7610ee95331661ac865b3c13867b5902107e75df001be352\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_02ad74e735\",\"field\":\"raw_specs\",\"quote\":\"A2\"}],\"reason\":\"The supplied application-rating fact and specifications identify A2.\"},{\"text\":\"It supports transfer speeds of up to 170 MB/s\",\"start\":107,\"end\":152,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_a5cf16bdff07a44f9af974b05e8bf38faf0ce78d79d0ca9e71c4fa0454841f2b\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_02ad74e735\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"The transfer-speed claim preserves the source's upper-bound qualifier and does not assign a read or write direction.\"},{\"text\":\"with the direction unspecified\",\"start\":154,\"end\":184,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_a5cf16bdff07a44f9af974b05e8bf38faf0ce78d79d0ca9e71c4fa0454841f2b\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_02ad74e735\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"The raw specifications omit read/write direction, matching the supplied direction_unspecified condition.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_035d26b17ca74731016aa4562c0fa887d0917c1d4c20461d17",
+    "usage": {
+      "inputTokens": 3043,
+      "outputTokens": 813,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 3040
+    }
+  }
+}

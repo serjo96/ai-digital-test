@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2138.0342919999966,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Juniper Pro memory card has 256GB of storage, a UHS-I bus rating and an A2 application rating. It supports transfer speeds of up to 170MB/s, with the direction unspecified."
+    },
+    "raw": "{\"text\":\"The Juniper Pro memory card has 256GB of storage, a UHS-I bus rating and an A2 application rating. It supports transfer speeds of up to 170MB/s, with the direction unspecified.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_09e548fc744c501e016aa4538300f087d0bfb8a9b2437b69b8",
+    "usage": {
+      "inputTokens": 972,
+      "outputTokens": 57,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

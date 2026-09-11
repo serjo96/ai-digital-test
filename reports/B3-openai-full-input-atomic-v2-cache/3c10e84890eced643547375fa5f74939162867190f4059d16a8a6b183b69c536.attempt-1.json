@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1600.1008750000037,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Kestrel Lite scale uses BIA, supports app sync, and has a maximum load of 180 kg."
+    },
+    "raw": "{\"text\":\"The Kestrel Lite scale uses BIA, supports app sync, and has a maximum load of 180 kg.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0735a67fdd1e2092016aa450bb5d6487d0864d609c36c1e162",
+    "usage": {
+      "inputTokens": 666,
+      "outputTokens": 38,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

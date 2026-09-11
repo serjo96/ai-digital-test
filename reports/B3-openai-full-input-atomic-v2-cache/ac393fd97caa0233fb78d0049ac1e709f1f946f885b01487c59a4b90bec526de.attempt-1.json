@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 3982.843499999959,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Torrent Lite laptop sleeve is made of neoprene and is compatible with 14 in devices."
+    },
+    "raw": "{\"text\":\"The Torrent Lite laptop sleeve is made of neoprene and is compatible with 14 in devices.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_05963c3aae66f3d7016aa4555aeae087d09e5c1a274705324a",
+    "usage": {
+      "inputTokens": 641,
+      "outputTokens": 33,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

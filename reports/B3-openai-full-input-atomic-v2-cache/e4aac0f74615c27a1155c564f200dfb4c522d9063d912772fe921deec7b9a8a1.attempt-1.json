@@ -1,0 +1,82 @@
+{
+  "elapsedMs": 10102.656332999992,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "d481a0923b883cad94dd39c52c076c6e581f7e264e064d73f7112a081b07a7d6",
+      "claims": [
+        {
+          "text": "The Kestrel Lite scale uses BIA",
+          "start": 0,
+          "end": 31,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7",
+            "identity:ed813140d3dac6d437f5ce3535d99d3893bfaf3be1b594c42008f431706ae2f1",
+            "fact:fact_d73d83b9bb5de4d8e44a810d89c6c76d55a8231eef8f6c8d5f18fad37c4f1c29"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_a8a0a10cf2",
+              "field": "raw_title",
+              "quote": "Kestrel Lite smart scale"
+            },
+            {
+              "rowId": "row_a8a0a10cf2",
+              "field": "raw_specs",
+              "quote": "BIA"
+            }
+          ],
+          "reason": "The title establishes the scale's model and type; the specifications explicitly state BIA."
+        },
+        {
+          "text": "supports app sync",
+          "start": 33,
+          "end": 50,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_da3945df0ef35e718f7655e85630dd68401ed0ee801e93ae39fc8225aba75535"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_a8a0a10cf2",
+              "field": "raw_specs",
+              "quote": "app sync"
+            }
+          ],
+          "reason": "App synchronization is explicitly listed in the specifications."
+        },
+        {
+          "text": "and has a maximum load of 180 kg",
+          "start": 52,
+          "end": 84,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_338ec3e1dd632efb93eb1e2645321558dae452a0880020c5c632bb4631c43719"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_a8a0a10cf2",
+              "field": "raw_specs",
+              "quote": "180kg max"
+            }
+          ],
+          "reason": "The stated load preserves the supplied value, unit, and maximum qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"d481a0923b883cad94dd39c52c076c6e581f7e264e064d73f7112a081b07a7d6\",\"claims\":[{\"text\":\"The Kestrel Lite scale uses BIA\",\"start\":0,\"end\":31,\"verdict\":\"supported\",\"supportIds\":[\"identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7\",\"identity:ed813140d3dac6d437f5ce3535d99d3893bfaf3be1b594c42008f431706ae2f1\",\"fact:fact_d73d83b9bb5de4d8e44a810d89c6c76d55a8231eef8f6c8d5f18fad37c4f1c29\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_a8a0a10cf2\",\"field\":\"raw_title\",\"quote\":\"Kestrel Lite smart scale\"},{\"rowId\":\"row_a8a0a10cf2\",\"field\":\"raw_specs\",\"quote\":\"BIA\"}],\"reason\":\"The title establishes the scale's model and type; the specifications explicitly state BIA.\"},{\"text\":\"supports app sync\",\"start\":33,\"end\":50,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_da3945df0ef35e718f7655e85630dd68401ed0ee801e93ae39fc8225aba75535\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_a8a0a10cf2\",\"field\":\"raw_specs\",\"quote\":\"app sync\"}],\"reason\":\"App synchronization is explicitly listed in the specifications.\"},{\"text\":\"and has a maximum load of 180 kg\",\"start\":52,\"end\":84,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_338ec3e1dd632efb93eb1e2645321558dae452a0880020c5c632bb4631c43719\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_a8a0a10cf2\",\"field\":\"raw_specs\",\"quote\":\"180kg max\"}],\"reason\":\"The stated load preserves the supplied value, unit, and maximum qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0b6807424225915b016aa450bcf80887d0b8783ed9cb3e5656",
+    "usage": {
+      "inputTokens": 1931,
+      "outputTokens": 512,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1928
+    }
+  }
+}

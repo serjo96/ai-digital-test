@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2520.8309580001514,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Larkspur USB hub features a USB-C connector."
+    },
+    "raw": "{\"text\":\"The Larkspur USB hub features a USB-C connector.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_007be55beb504c1f016aa4546dfffc87d08755a52bf6d93651",
+    "usage": {
+      "inputTokens": 467,
+      "outputTokens": 26,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

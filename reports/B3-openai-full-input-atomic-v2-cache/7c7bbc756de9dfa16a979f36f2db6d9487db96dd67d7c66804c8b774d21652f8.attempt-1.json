@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7402.451917000115,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "b56869f3c1c8ec72e387533e1c1f2116194fc0875e1988f0db53ba6449d62984",
+      "claims": [
+        {
+          "text": "The Basalt 2 mouse has 6 buttons",
+          "start": 0,
+          "end": 32,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:eb8fbe9447f5aa6bb2dd8d71626beff578429e851d59682727bd6423da83f986",
+            "identity:335df722e77165d393567d4144ff04009970552a248aaf23d2e477551aad076c",
+            "fact:fact_2bfc3a53a999de52a104f6d1cbd0c8951952d848ef6bc0f64ae3fb37b75e7ac4"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_24f8ce8414",
+              "field": "raw_title",
+              "quote": "Basalt 2 wireless mouse"
+            },
+            {
+              "rowId": "row_24f8ce8414",
+              "field": "raw_specs",
+              "quote": "6 buttons"
+            }
+          ],
+          "reason": "The supplied title supports the model and product type; the specifications explicitly state 6 buttons."
+        },
+        {
+          "text": "and a mass of 70 g",
+          "start": 33,
+          "end": 51,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_fc9b10349285154f37b15fbbf07275081aaa82ce8c0824df7e25ecb7647e19fc"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_24f8ce8414",
+              "field": "raw_specs",
+              "quote": "70g"
+            }
+          ],
+          "reason": "The supplied mass support and raw specifications state 70 g for this mouse."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"b56869f3c1c8ec72e387533e1c1f2116194fc0875e1988f0db53ba6449d62984\",\"claims\":[{\"text\":\"The Basalt 2 mouse has 6 buttons\",\"start\":0,\"end\":32,\"verdict\":\"supported\",\"supportIds\":[\"identity:eb8fbe9447f5aa6bb2dd8d71626beff578429e851d59682727bd6423da83f986\",\"identity:335df722e77165d393567d4144ff04009970552a248aaf23d2e477551aad076c\",\"fact:fact_2bfc3a53a999de52a104f6d1cbd0c8951952d848ef6bc0f64ae3fb37b75e7ac4\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_24f8ce8414\",\"field\":\"raw_title\",\"quote\":\"Basalt 2 wireless mouse\"},{\"rowId\":\"row_24f8ce8414\",\"field\":\"raw_specs\",\"quote\":\"6 buttons\"}],\"reason\":\"The supplied title supports the model and product type; the specifications explicitly state 6 buttons.\"},{\"text\":\"and a mass of 70 g\",\"start\":33,\"end\":51,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_fc9b10349285154f37b15fbbf07275081aaa82ce8c0824df7e25ecb7647e19fc\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_24f8ce8414\",\"field\":\"raw_specs\",\"quote\":\"70g\"}],\"reason\":\"The supplied mass support and raw specifications state 70 g for this mouse.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_092af029e5f5079b016aa454dd4b2887d08d0eaf11a6fbe4d0",
+    "usage": {
+      "inputTokens": 1635,
+      "outputTokens": 397,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1632
+    }
+  }
+}

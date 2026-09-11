@@ -1,0 +1,46 @@
+{
+  "elapsedMs": 7198.41125,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "60a0457b08a89f3901295a218969693e1bea17397c1def5fa3e972e21efe5b05",
+      "claims": [
+        {
+          "text": "Sony WH-880N offers 30 hours of battery life",
+          "start": 0,
+          "end": 44,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149",
+            "identity:9798b691ab1b90eb9454b76130be07a4a82950d26a0902485f36796bff811be5",
+            "fact:fact_3368d2afb2efa0321ab192f36cb685ddec83d7d9486b5a2b5aa06280ea1c828a"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_1e60b0a9dc",
+              "field": "raw_title",
+              "quote": "SONY WH-880N Wireless Over-Ear"
+            },
+            {
+              "rowId": "row_1e60b0a9dc",
+              "field": "raw_specs",
+              "quote": "30h battery"
+            }
+          ],
+          "reason": "The supplied identity supports establish the brand and model, and the battery support states 30 hours with usage unspecified. The description adds no usage conditions or broader guarantee."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"60a0457b08a89f3901295a218969693e1bea17397c1def5fa3e972e21efe5b05\",\"claims\":[{\"text\":\"Sony WH-880N offers 30 hours of battery life\",\"start\":0,\"end\":44,\"verdict\":\"supported\",\"supportIds\":[\"identity:4e33dca60d6040bf3128e5585c1fe85572112be6a197ff491c5091975a723149\",\"identity:9798b691ab1b90eb9454b76130be07a4a82950d26a0902485f36796bff811be5\",\"fact:fact_3368d2afb2efa0321ab192f36cb685ddec83d7d9486b5a2b5aa06280ea1c828a\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_title\",\"quote\":\"SONY WH-880N Wireless Over-Ear\"},{\"rowId\":\"row_1e60b0a9dc\",\"field\":\"raw_specs\",\"quote\":\"30h battery\"}],\"reason\":\"The supplied identity supports establish the brand and model, and the battery support states 30 hours with usage unspecified. The description adds no usage conditions or broader guarantee.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0fec21837dcdef2b016aa4502f8b9887d0b0d3b7299d4c59b1",
+    "usage": {
+      "inputTokens": 2295,
+      "outputTokens": 305,
+      "cachedInputTokens": 2292,
+      "cacheWriteTokens": 0
+    }
+  }
+}

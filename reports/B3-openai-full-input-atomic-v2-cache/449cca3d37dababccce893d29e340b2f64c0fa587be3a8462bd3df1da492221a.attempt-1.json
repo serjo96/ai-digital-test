@@ -1,0 +1,88 @@
+{
+  "elapsedMs": 9823.495209000073,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "1e6ffeca8c00aba8869f53dab5a1884c43e2ed2308a7b306908eb5b190398573",
+      "claims": [
+        {
+          "text": "The Basalt Pro is a pair of passive speakers",
+          "start": 0,
+          "end": 44,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:e59e231533df056d6a13659805f21b69cddd682e0b728494c0da7390025c3244",
+            "identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704",
+            "identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f",
+            "fact:fact_ca84f1684c0e31236fe1db68be47894e92e4df00faba083152db2ddde1744b50"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_7b5442e7cc",
+              "field": "raw_title",
+              "quote": "Basalt Pro bookshelf speaker pair"
+            },
+            {
+              "rowId": "row_d01593ee00",
+              "field": "raw_title",
+              "quote": "Basalt Pro bookshelf speaker pair"
+            },
+            {
+              "rowId": "row_7b5442e7cc",
+              "field": "raw_specs",
+              "quote": "passive"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model, speaker type and pair bundle; the amplification support establishes passive speakers."
+        },
+        {
+          "text": "with 4-ohm impedance",
+          "start": 45,
+          "end": 65,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_02246a1a77d3165b1976ca9d1eedba74218e6c227430399ebf17c53532639e1b"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_7b5442e7cc",
+              "field": "raw_specs",
+              "quote": "4 ohm"
+            }
+          ],
+          "reason": "The impedance matches the supplied 4-ohm fact."
+        },
+        {
+          "text": "and 40 W power for an unspecified purpose",
+          "start": 66,
+          "end": 107,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_efdbaabd842a82b47ac4a338f57e19b2176295d6b6c1511e781dc7bcd5461b91"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_7b5442e7cc",
+              "field": "raw_specs",
+              "quote": "40W"
+            }
+          ],
+          "reason": "The power value matches the supplied fact and retains its purpose_unspecified qualification."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"1e6ffeca8c00aba8869f53dab5a1884c43e2ed2308a7b306908eb5b190398573\",\"claims\":[{\"text\":\"The Basalt Pro is a pair of passive speakers\",\"start\":0,\"end\":44,\"verdict\":\"supported\",\"supportIds\":[\"identity:e59e231533df056d6a13659805f21b69cddd682e0b728494c0da7390025c3244\",\"identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704\",\"identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f\",\"fact:fact_ca84f1684c0e31236fe1db68be47894e92e4df00faba083152db2ddde1744b50\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_7b5442e7cc\",\"field\":\"raw_title\",\"quote\":\"Basalt Pro bookshelf speaker pair\"},{\"rowId\":\"row_d01593ee00\",\"field\":\"raw_title\",\"quote\":\"Basalt Pro bookshelf speaker pair\"},{\"rowId\":\"row_7b5442e7cc\",\"field\":\"raw_specs\",\"quote\":\"passive\"}],\"reason\":\"The supplied identity supports establish the model, speaker type and pair bundle; the amplification support establishes passive speakers.\"},{\"text\":\"with 4-ohm impedance\",\"start\":45,\"end\":65,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_02246a1a77d3165b1976ca9d1eedba74218e6c227430399ebf17c53532639e1b\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_7b5442e7cc\",\"field\":\"raw_specs\",\"quote\":\"4 ohm\"}],\"reason\":\"The impedance matches the supplied 4-ohm fact.\"},{\"text\":\"and 40 W power for an unspecified purpose\",\"start\":66,\"end\":107,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_efdbaabd842a82b47ac4a338f57e19b2176295d6b6c1511e781dc7bcd5461b91\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_7b5442e7cc\",\"field\":\"raw_specs\",\"quote\":\"40W\"}],\"reason\":\"The power value matches the supplied fact and retains its purpose_unspecified qualification.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_056428b4a039cdcd016aa455f9665c87d0b622890c5ce12564",
+    "usage": {
+      "inputTokens": 2359,
+      "outputTokens": 578,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2356
+    }
+  }
+}

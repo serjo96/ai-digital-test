@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1996.1902500000433,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Juniper 2 microSD memory card has 256 GB of storage, a UHS-I bus rating and an A2 application rating. It supports transfer speeds of up to 170 MB/s, with direction unspecified."
+    },
+    "raw": "{\"text\":\"The Juniper 2 microSD memory card has 256 GB of storage, a UHS-I bus rating and an A2 application rating. It supports transfer speeds of up to 170 MB/s, with direction unspecified.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_017755a8afde29e5016aa4516cea7c87d082ab9ef3ad8633ad",
+    "usage": {
+      "inputTokens": 1175,
+      "outputTokens": 59,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1172
+    }
+  }
+}

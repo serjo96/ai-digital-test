@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2976.1206249999814,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Sable 3 microSD memory card has 256 GB of storage, an A2 application rating, and a UHS-I bus rating. Its transfer speed is up to 170 MB/s, with direction unspecified."
+    },
+    "raw": "{\"text\":\"The Sable 3 microSD memory card has 256 GB of storage, an A2 application rating, and a UHS-I bus rating. Its transfer speed is up to 170 MB/s, with direction unspecified.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_049c71e086ad14cf016aa452c2921887d09b5ed2f1c1732f46",
+    "usage": {
+      "inputTokens": 969,
+      "outputTokens": 59,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

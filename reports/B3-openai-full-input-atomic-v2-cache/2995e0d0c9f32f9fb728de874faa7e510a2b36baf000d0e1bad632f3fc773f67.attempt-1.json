@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7299.750417000032,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "7d091f4b62bbaf528166b90f5bc760daddaea5edcd9dd2047b4aa8edd679ea5e",
+      "claims": [
+        {
+          "text": "Alto Plus earbuds feature a 3.5mm connector",
+          "start": 0,
+          "end": 43,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:88835475d4488e0b412090e356ef482868a1b2f62905876e2512e97e716e612a",
+            "identity:47c7023f12a8692fc7cdd6ece0fa14e4cba01d6fee75210a9a409669472b8445",
+            "fact:fact_55f04688e668e3122fa1f7f70f52eabd2ef565b91540c460650acbb238c2ee91"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_268d404278",
+              "field": "raw_title",
+              "quote": "Alto Plus wired earbuds"
+            },
+            {
+              "rowId": "row_268d404278",
+              "field": "raw_specs",
+              "quote": "3.5mm"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and product type, and the connector support establishes a 3.5mm connector."
+        },
+        {
+          "text": "and an in-line microphone",
+          "start": 44,
+          "end": 69,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_2ded5969c35ed1b6799b4785adcd67a057d72dff90277970b629342bb8993bfa"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_268d404278",
+              "field": "raw_specs",
+              "quote": "in-line mic"
+            }
+          ],
+          "reason": "The raw specifications explicitly state an in-line mic, supporting this additional feature."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"7d091f4b62bbaf528166b90f5bc760daddaea5edcd9dd2047b4aa8edd679ea5e\",\"claims\":[{\"text\":\"Alto Plus earbuds feature a 3.5mm connector\",\"start\":0,\"end\":43,\"verdict\":\"supported\",\"supportIds\":[\"identity:88835475d4488e0b412090e356ef482868a1b2f62905876e2512e97e716e612a\",\"identity:47c7023f12a8692fc7cdd6ece0fa14e4cba01d6fee75210a9a409669472b8445\",\"fact:fact_55f04688e668e3122fa1f7f70f52eabd2ef565b91540c460650acbb238c2ee91\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_268d404278\",\"field\":\"raw_title\",\"quote\":\"Alto Plus wired earbuds\"},{\"rowId\":\"row_268d404278\",\"field\":\"raw_specs\",\"quote\":\"3.5mm\"}],\"reason\":\"The supplied identity supports establish the model and product type, and the connector support establishes a 3.5mm connector.\"},{\"text\":\"and an in-line microphone\",\"start\":44,\"end\":69,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_2ded5969c35ed1b6799b4785adcd67a057d72dff90277970b629342bb8993bfa\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_268d404278\",\"field\":\"raw_specs\",\"quote\":\"in-line mic\"}],\"reason\":\"The raw specifications explicitly state an in-line mic, supporting this additional feature.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0035345ec94afea1016aa4515c84c887d0bc481a2a7ee577d9",
+    "usage": {
+      "inputTokens": 1678,
+      "outputTokens": 398,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1675
+    }
+  }
+}

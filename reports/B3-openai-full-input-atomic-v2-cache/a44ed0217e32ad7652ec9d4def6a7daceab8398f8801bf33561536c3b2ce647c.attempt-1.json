@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7578.4211249999935,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "d1e5e23513f1b50c10e8318d861128b85a77ca211da19023f8074bc4ee623fe4",
+      "claims": [
+        {
+          "text": "The Juniper tablet case has a folio style",
+          "start": 0,
+          "end": 41,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02",
+            "identity:7a3f5f4467b7312165ff75c06aeff5adf8b0593f17d63c24b4f7575803e64129",
+            "fact:fact_7fb387e254018c7a285aa2aad37bd19b6c9af56416546287188f2e283f4248a4"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_9b67e4c70b",
+              "field": "raw_title",
+              "quote": "Juniper tablet case"
+            },
+            {
+              "rowId": "row_9b67e4c70b",
+              "field": "raw_specs",
+              "quote": "folio"
+            }
+          ],
+          "reason": "The supplied title identifies the Juniper tablet case, and its specifications state folio."
+        },
+        {
+          "text": "and supports auto sleep/wake",
+          "start": 42,
+          "end": 70,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_deaa6ca5cd57359e0544d3cbed477a37d15ef93e34690e239841ebe7a04ceaf1"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_9b67e4c70b",
+              "field": "raw_specs",
+              "quote": "auto sleep/wake"
+            }
+          ],
+          "reason": "The supplied specifications explicitly list auto sleep/wake for this case."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"d1e5e23513f1b50c10e8318d861128b85a77ca211da19023f8074bc4ee623fe4\",\"claims\":[{\"text\":\"The Juniper tablet case has a folio style\",\"start\":0,\"end\":41,\"verdict\":\"supported\",\"supportIds\":[\"identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02\",\"identity:7a3f5f4467b7312165ff75c06aeff5adf8b0593f17d63c24b4f7575803e64129\",\"fact:fact_7fb387e254018c7a285aa2aad37bd19b6c9af56416546287188f2e283f4248a4\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_9b67e4c70b\",\"field\":\"raw_title\",\"quote\":\"Juniper tablet case\"},{\"rowId\":\"row_9b67e4c70b\",\"field\":\"raw_specs\",\"quote\":\"folio\"}],\"reason\":\"The supplied title identifies the Juniper tablet case, and its specifications state folio.\"},{\"text\":\"and supports auto sleep/wake\",\"start\":42,\"end\":70,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_deaa6ca5cd57359e0544d3cbed477a37d15ef93e34690e239841ebe7a04ceaf1\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_9b67e4c70b\",\"field\":\"raw_specs\",\"quote\":\"auto sleep/wake\"}],\"reason\":\"The supplied specifications explicitly list auto sleep/wake for this case.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0575a7505064f9c5016aa45412b02487d08f2d87d1d92b86e7",
+    "usage": {
+      "inputTokens": 1709,
+      "outputTokens": 404,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1706
+    }
+  }
+}

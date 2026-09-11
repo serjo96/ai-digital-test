@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1716.607999999891,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "Pivot Plus earbuds feature a 3.5mm connector and an in-line microphone."
+    },
+    "raw": "{\"text\":\"Pivot Plus earbuds feature a 3.5mm connector and an in-line microphone.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_06653310f2bd4bee016aa45364d13087d0867265d3be59f776",
+    "usage": {
+      "inputTokens": 638,
+      "outputTokens": 31,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

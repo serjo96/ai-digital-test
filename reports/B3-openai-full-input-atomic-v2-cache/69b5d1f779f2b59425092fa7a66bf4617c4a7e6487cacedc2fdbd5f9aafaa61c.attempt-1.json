@@ -1,0 +1,88 @@
+{
+  "elapsedMs": 11099.79600000009,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "27cdaf3f158a09c0d224ecb8ad2eb3f3bd48e6425db3fc0ae537a103daf2188d",
+      "claims": [
+        {
+          "text": "The Larkspur Pro speaker pair is passive",
+          "start": 0,
+          "end": 40,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f",
+            "identity:23695b7d68457839f8303bcd3d32682f43bb3a5fc1fd493148989ef336b45cc5",
+            "identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704",
+            "fact:fact_083f6eb2615b03e8a867f0ab1784cd07af4b60116fe86fcf30a2c5564757eb8a"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_6389333c51",
+              "field": "raw_title",
+              "quote": "Larkspur Pro bookshelf speaker pair"
+            },
+            {
+              "rowId": "row_d40a07ffb8",
+              "field": "raw_title",
+              "quote": "LARKSPUR PRO BOOKSHELF SPEAKER PAIR"
+            },
+            {
+              "rowId": "row_6389333c51",
+              "field": "raw_specs",
+              "quote": "passive"
+            }
+          ],
+          "reason": "The titles establish the model, speaker type and pair bundle; the specifications explicitly state passive."
+        },
+        {
+          "text": "with 4 ohm impedance",
+          "start": 42,
+          "end": 62,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_78e238de3eedc894faf7e567f7f3b24de5bc55b382d967b07b158e9690ae1ab8"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_6389333c51",
+              "field": "raw_specs",
+              "quote": "4 ohm"
+            }
+          ],
+          "reason": "The supplied impedance support exactly matches the stated value and unit."
+        },
+        {
+          "text": "and 40 W power for an unspecified purpose",
+          "start": 63,
+          "end": 104,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_8332f38cde580c25368d3b14e2ed0cac6bd1eafa16b13ddf01d52630dc237262"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_6389333c51",
+              "field": "raw_specs",
+              "quote": "40W"
+            }
+          ],
+          "reason": "The source states 40W without a power-purpose designation; the claim preserves the supplied purpose_unspecified qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"27cdaf3f158a09c0d224ecb8ad2eb3f3bd48e6425db3fc0ae537a103daf2188d\",\"claims\":[{\"text\":\"The Larkspur Pro speaker pair is passive\",\"start\":0,\"end\":40,\"verdict\":\"supported\",\"supportIds\":[\"identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f\",\"identity:23695b7d68457839f8303bcd3d32682f43bb3a5fc1fd493148989ef336b45cc5\",\"identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704\",\"fact:fact_083f6eb2615b03e8a867f0ab1784cd07af4b60116fe86fcf30a2c5564757eb8a\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_6389333c51\",\"field\":\"raw_title\",\"quote\":\"Larkspur Pro bookshelf speaker pair\"},{\"rowId\":\"row_d40a07ffb8\",\"field\":\"raw_title\",\"quote\":\"LARKSPUR PRO BOOKSHELF SPEAKER PAIR\"},{\"rowId\":\"row_6389333c51\",\"field\":\"raw_specs\",\"quote\":\"passive\"}],\"reason\":\"The titles establish the model, speaker type and pair bundle; the specifications explicitly state passive.\"},{\"text\":\"with 4 ohm impedance\",\"start\":42,\"end\":62,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_78e238de3eedc894faf7e567f7f3b24de5bc55b382d967b07b158e9690ae1ab8\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_6389333c51\",\"field\":\"raw_specs\",\"quote\":\"4 ohm\"}],\"reason\":\"The supplied impedance support exactly matches the stated value and unit.\"},{\"text\":\"and 40 W power for an unspecified purpose\",\"start\":63,\"end\":104,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_8332f38cde580c25368d3b14e2ed0cac6bd1eafa16b13ddf01d52630dc237262\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_6389333c51\",\"field\":\"raw_specs\",\"quote\":\"40W\"}],\"reason\":\"The source states 40W without a power-purpose designation; the claim preserves the supplied purpose_unspecified qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_08caf0712904f34b016aa455e36a6087d09e26e6ffc70edd16",
+    "usage": {
+      "inputTokens": 2450,
+      "outputTokens": 592,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2447
+    }
+  }
+}

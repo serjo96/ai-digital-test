@@ -1,0 +1,82 @@
+{
+  "elapsedMs": 9274.840499999991,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "c00a54b8120ffdef2399b3ac1cfa78d1ee81901e0fe18b9ffe623d57c079bd2f",
+      "claims": [
+        {
+          "text": "The Tundra Lite scale uses BIA",
+          "start": 0,
+          "end": 30,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:f07abe217bf15071b71d1ad644f6fdda755d14404d0ece573d26918337f31bea",
+            "identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7",
+            "fact:fact_3a0315783e68c3e3beab2444fd045ba47e57a11ee01e80b4882689648bd64a97"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_9bf0c018ab",
+              "field": "raw_title",
+              "quote": "TUNDRA LITE SMART SCALE"
+            },
+            {
+              "rowId": "row_9bf0c018ab",
+              "field": "raw_specs",
+              "quote": "BIA"
+            }
+          ],
+          "reason": "The title establishes the model and product type; the specifications explicitly state BIA."
+        },
+        {
+          "text": "supports app sync",
+          "start": 32,
+          "end": 49,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_44f66cce94a12d4a385d4e838471363d52e7f3cca9daccf58e15be86675bc0f0"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_9bf0c018ab",
+              "field": "raw_specs",
+              "quote": "app sync"
+            }
+          ],
+          "reason": "App synchronization is explicitly listed in the specifications."
+        },
+        {
+          "text": "and has a maximum load of 180 kg",
+          "start": 51,
+          "end": 83,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_0c7c02c14e2e8610762103b7fa47ed13e80d7549f1ad971bbe0fc981d165325d"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_9bf0c018ab",
+              "field": "raw_specs",
+              "quote": "180kg max"
+            }
+          ],
+          "reason": "The stated load matches the supplied maximum of 180 kg and preserves the maximum qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"c00a54b8120ffdef2399b3ac1cfa78d1ee81901e0fe18b9ffe623d57c079bd2f\",\"claims\":[{\"text\":\"The Tundra Lite scale uses BIA\",\"start\":0,\"end\":30,\"verdict\":\"supported\",\"supportIds\":[\"identity:f07abe217bf15071b71d1ad644f6fdda755d14404d0ece573d26918337f31bea\",\"identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7\",\"fact:fact_3a0315783e68c3e3beab2444fd045ba47e57a11ee01e80b4882689648bd64a97\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_9bf0c018ab\",\"field\":\"raw_title\",\"quote\":\"TUNDRA LITE SMART SCALE\"},{\"rowId\":\"row_9bf0c018ab\",\"field\":\"raw_specs\",\"quote\":\"BIA\"}],\"reason\":\"The title establishes the model and product type; the specifications explicitly state BIA.\"},{\"text\":\"supports app sync\",\"start\":32,\"end\":49,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_44f66cce94a12d4a385d4e838471363d52e7f3cca9daccf58e15be86675bc0f0\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_9bf0c018ab\",\"field\":\"raw_specs\",\"quote\":\"app sync\"}],\"reason\":\"App synchronization is explicitly listed in the specifications.\"},{\"text\":\"and has a maximum load of 180 kg\",\"start\":51,\"end\":83,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_0c7c02c14e2e8610762103b7fa47ed13e80d7549f1ad971bbe0fc981d165325d\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_9bf0c018ab\",\"field\":\"raw_specs\",\"quote\":\"180kg max\"}],\"reason\":\"The stated load matches the supplied maximum of 180 kg and preserves the maximum qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0ee783ecdab3e2d9016aa4517bc69887d08c2b9a225b6cc41e",
+    "usage": {
+      "inputTokens": 1921,
+      "outputTokens": 510,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1918
+    }
+  }
+}

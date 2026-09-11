@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1622.3795830000017,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Ember Plus tablet case has a folio style and supports auto sleep/wake."
+    },
+    "raw": "{\"text\":\"The Ember Plus tablet case has a folio style and supports auto sleep/wake.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_03bf1b7f44a24e7a016aa450ee1f4087d094cace2328881cf1",
+    "usage": {
+      "inputTokens": 621,
+      "outputTokens": 31,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

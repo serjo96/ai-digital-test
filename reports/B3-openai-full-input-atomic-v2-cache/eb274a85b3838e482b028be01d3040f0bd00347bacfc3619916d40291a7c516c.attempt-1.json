@@ -1,0 +1,40 @@
+{
+  "elapsedMs": 5015.5039169999945,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "0920194c8de04553d7351c1c0a332320a60eba9d7aea9df5a8737afb9b581604",
+      "claims": [
+        {
+          "text": "The Sable Lite is a scale",
+          "start": 0,
+          "end": 25,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7",
+            "identity:152630490253ae35ac2cc550f63d425bfc37bbb232045a7b5e5c71a42b5f617a"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_2cfdf4fa44",
+              "field": "raw_title",
+              "quote": "SABLE LITE SMART SCALE"
+            }
+          ],
+          "reason": "The raw title explicitly identifies the Sable Lite model as a scale."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"0920194c8de04553d7351c1c0a332320a60eba9d7aea9df5a8737afb9b581604\",\"claims\":[{\"text\":\"The Sable Lite is a scale\",\"start\":0,\"end\":25,\"verdict\":\"supported\",\"supportIds\":[\"identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7\",\"identity:152630490253ae35ac2cc550f63d425bfc37bbb232045a7b5e5c71a42b5f617a\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_2cfdf4fa44\",\"field\":\"raw_title\",\"quote\":\"SABLE LITE SMART SCALE\"}],\"reason\":\"The raw title explicitly identifies the Sable Lite model as a scale.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0f696a11edd21706016aa45117e47087d0af7a3d244391782b",
+    "usage": {
+      "inputTokens": 1204,
+      "outputTokens": 211,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1201
+    }
+  }
+}

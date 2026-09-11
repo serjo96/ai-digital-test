@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7345.20787500008,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "379229468267c01ae4192aa016c4c89b084caf5f30593e176be3f103386e07ea",
+      "claims": [
+        {
+          "text": "The Alto Lite laptop sleeve is made of neoprene",
+          "start": 0,
+          "end": 47,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db",
+            "identity:dc73353075bdce3c112bc62cf143108af23f6eb1c6e02c3e65690d21613bc2bf",
+            "fact:fact_4e07f89b398df63aa11ccbf0fb846e102cd86da575e06f0824bdfc2178df7908"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_57b5aaacc5",
+              "field": "raw_title",
+              "quote": "Alto Lite laptop sleeve"
+            },
+            {
+              "rowId": "row_57b5aaacc5",
+              "field": "raw_specs",
+              "quote": "neoprene"
+            }
+          ],
+          "reason": "The title supports the model and product type, and the material support explicitly identifies neoprene."
+        },
+        {
+          "text": "and is compatible with 14 in devices",
+          "start": 48,
+          "end": 84,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_8966d83ede98298cd34b07899776e2dd8a9c03dd0cc146cd6373157b7ab0a980"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_57b5aaacc5",
+              "field": "raw_specs",
+              "quote": "14in"
+            }
+          ],
+          "reason": "The supplied size support specifies 14 inches with the compatible_device condition, which the description preserves."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"379229468267c01ae4192aa016c4c89b084caf5f30593e176be3f103386e07ea\",\"claims\":[{\"text\":\"The Alto Lite laptop sleeve is made of neoprene\",\"start\":0,\"end\":47,\"verdict\":\"supported\",\"supportIds\":[\"identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db\",\"identity:dc73353075bdce3c112bc62cf143108af23f6eb1c6e02c3e65690d21613bc2bf\",\"fact:fact_4e07f89b398df63aa11ccbf0fb846e102cd86da575e06f0824bdfc2178df7908\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_57b5aaacc5\",\"field\":\"raw_title\",\"quote\":\"Alto Lite laptop sleeve\"},{\"rowId\":\"row_57b5aaacc5\",\"field\":\"raw_specs\",\"quote\":\"neoprene\"}],\"reason\":\"The title supports the model and product type, and the material support explicitly identifies neoprene.\"},{\"text\":\"and is compatible with 14 in devices\",\"start\":48,\"end\":84,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_8966d83ede98298cd34b07899776e2dd8a9c03dd0cc146cd6373157b7ab0a980\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_57b5aaacc5\",\"field\":\"raw_specs\",\"quote\":\"14in\"}],\"reason\":\"The supplied size support specifies 14 inches with the compatible_device condition, which the description preserves.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0b2ed6be8ed2b389016aa456442a0087d098f5c94bef6b3330",
+    "usage": {
+      "inputTokens": 1810,
+      "outputTokens": 399,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1807
+    }
+  }
+}

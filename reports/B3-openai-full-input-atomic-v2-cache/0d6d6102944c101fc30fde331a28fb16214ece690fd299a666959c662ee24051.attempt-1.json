@@ -1,0 +1,95 @@
+{
+  "elapsedMs": 10487.968708000146,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "dbb552fb76806ddeebd766e1589b26851a053dad7206a2860b1fef1db0012503",
+      "claims": [
+        {
+          "text": "The Mesa Pro speaker pair",
+          "start": 0,
+          "end": 25,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f",
+            "identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704",
+            "identity:bb3e8351ed00adda9dab927b48872523eacb0ed70e469b4b949bdd9b60189285"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_8774b9baca",
+              "field": "raw_title",
+              "quote": "Mesa Pro bookshelf speaker pair"
+            }
+          ],
+          "reason": "The title supports the model, product type and pair configuration."
+        },
+        {
+          "text": "features passive amplification",
+          "start": 26,
+          "end": 56,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_7ce794268d313b3434017e8b8781f5d427b10538763fdcf79eb6a54bcab5d913"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_8774b9baca",
+              "field": "raw_specs",
+              "quote": "passive"
+            }
+          ],
+          "reason": "The source explicitly identifies the speakers as passive."
+        },
+        {
+          "text": "and 4-ohm impedance",
+          "start": 57,
+          "end": 76,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_906ec9710c1b1077834b7f2c77615d90f18e648e6d07d64a6116003c710824d3"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_8774b9baca",
+              "field": "raw_specs",
+              "quote": "4 ohm"
+            }
+          ],
+          "reason": "The impedance matches the supplied specification."
+        },
+        {
+          "text": "Power is 40 W, with the purpose unspecified",
+          "start": 78,
+          "end": 121,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_7be92606a6dd1038641e18cbe125141e2623401214cb487bab1bb3a000f0b236"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_8774b9baca",
+              "field": "raw_specs",
+              "quote": "40W"
+            }
+          ],
+          "reason": "The source supplies 40 W without a stated power purpose; the claim retains the support's purpose_unspecified qualification."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"dbb552fb76806ddeebd766e1589b26851a053dad7206a2860b1fef1db0012503\",\"claims\":[{\"text\":\"The Mesa Pro speaker pair\",\"start\":0,\"end\":25,\"verdict\":\"supported\",\"supportIds\":[\"identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f\",\"identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704\",\"identity:bb3e8351ed00adda9dab927b48872523eacb0ed70e469b4b949bdd9b60189285\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_8774b9baca\",\"field\":\"raw_title\",\"quote\":\"Mesa Pro bookshelf speaker pair\"}],\"reason\":\"The title supports the model, product type and pair configuration.\"},{\"text\":\"features passive amplification\",\"start\":26,\"end\":56,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_7ce794268d313b3434017e8b8781f5d427b10538763fdcf79eb6a54bcab5d913\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_8774b9baca\",\"field\":\"raw_specs\",\"quote\":\"passive\"}],\"reason\":\"The source explicitly identifies the speakers as passive.\"},{\"text\":\"and 4-ohm impedance\",\"start\":57,\"end\":76,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_906ec9710c1b1077834b7f2c77615d90f18e648e6d07d64a6116003c710824d3\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_8774b9baca\",\"field\":\"raw_specs\",\"quote\":\"4 ohm\"}],\"reason\":\"The impedance matches the supplied specification.\"},{\"text\":\"Power is 40 W, with the purpose unspecified\",\"start\":78,\"end\":121,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_7be92606a6dd1038641e18cbe125141e2623401214cb487bab1bb3a000f0b236\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_8774b9baca\",\"field\":\"raw_specs\",\"quote\":\"40W\"}],\"reason\":\"The source supplies 40 W without a stated power purpose; the claim retains the support's purpose_unspecified qualification.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_02b60cd34b04c8e3016aa455d4aef487d0b409e5e901cf36ac",
+    "usage": {
+      "inputTokens": 2301,
+      "outputTokens": 580,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2298
+    }
+  }
+}

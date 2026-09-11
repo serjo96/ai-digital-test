@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 6549.565749999834,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Juniper 2 scale uses BIA, supports app sync, and has a maximum load of 180 kg."
+    },
+    "raw": "{\"text\":\"The Juniper 2 scale uses BIA, supports app sync, and has a maximum load of 180 kg.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0884a141450084b0016aa456f743f487d08febc3c307452e32",
+    "usage": {
+      "inputTokens": 655,
+      "outputTokens": 38,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

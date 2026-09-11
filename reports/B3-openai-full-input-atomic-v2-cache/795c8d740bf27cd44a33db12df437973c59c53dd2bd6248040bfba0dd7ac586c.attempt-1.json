@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1999.109332999913,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Harbor scale uses BIA, supports app sync, and has a maximum load of 180 kg."
+    },
+    "raw": "{\"text\":\"The Harbor scale uses BIA, supports app sync, and has a maximum load of 180 kg.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_04be2789df9c8016016aa4557ba6e487d0b7fe82aa5f021494",
+    "usage": {
+      "inputTokens": 784,
+      "outputTokens": 35,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

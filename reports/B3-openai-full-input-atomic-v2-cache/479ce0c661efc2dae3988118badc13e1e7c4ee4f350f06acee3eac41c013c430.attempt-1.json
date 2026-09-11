@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2884.9413749999367,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Torrent X speaker pair features passive amplification and 4 ohm impedance. Power is 40 W for an unspecified purpose."
+    },
+    "raw": "{\"text\":\"The Torrent X speaker pair features passive amplification and 4 ohm impedance. Power is 40 W for an unspecified purpose.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_089c444d874079e5016aa4543a696c87d0aa522de36f37673c",
+    "usage": {
+      "inputTokens": 1064,
+      "outputTokens": 39,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1061
+    }
+  }
+}

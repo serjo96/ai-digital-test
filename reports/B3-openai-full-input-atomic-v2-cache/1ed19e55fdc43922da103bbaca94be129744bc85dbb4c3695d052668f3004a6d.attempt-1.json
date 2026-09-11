@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7372.036625000008,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "1098f41bcdbf0c932d63d958fcca0175247b55997883e685ba4871c524bd1233",
+      "claims": [
+        {
+          "text": "The Larkspur Plus laptop sleeve is made of neoprene",
+          "start": 0,
+          "end": 51,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:a7fee0aa4375b4adcb68996f41a90bb21332a6214ab1cecf13a7003ee384bf1c",
+            "identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db",
+            "fact:fact_0f950a49f7e120b66aec7a796ea8a87f5e0f0527c8c12217273b3bcbb834b5ba"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_53533ce63e",
+              "field": "raw_title",
+              "quote": "Larkspur Plus laptop sleeve"
+            },
+            {
+              "rowId": "row_53533ce63e",
+              "field": "raw_specs",
+              "quote": "neoprene"
+            }
+          ],
+          "reason": "The supplied identity supports identify the model and product type, and the material support specifies neoprene."
+        },
+        {
+          "text": "and is compatible with devices with a 14 in display size",
+          "start": 52,
+          "end": 108,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_f4ad4098476addbb8626d8a587026a0b28721741b6a068482ce9e9551f6d1bd0"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_53533ce63e",
+              "field": "raw_specs",
+              "quote": "14in"
+            }
+          ],
+          "reason": "The display-size support specifies 14 inches with the compatible_device condition, which the description preserves."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"1098f41bcdbf0c932d63d958fcca0175247b55997883e685ba4871c524bd1233\",\"claims\":[{\"text\":\"The Larkspur Plus laptop sleeve is made of neoprene\",\"start\":0,\"end\":51,\"verdict\":\"supported\",\"supportIds\":[\"identity:a7fee0aa4375b4adcb68996f41a90bb21332a6214ab1cecf13a7003ee384bf1c\",\"identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db\",\"fact:fact_0f950a49f7e120b66aec7a796ea8a87f5e0f0527c8c12217273b3bcbb834b5ba\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_53533ce63e\",\"field\":\"raw_title\",\"quote\":\"Larkspur Plus laptop sleeve\"},{\"rowId\":\"row_53533ce63e\",\"field\":\"raw_specs\",\"quote\":\"neoprene\"}],\"reason\":\"The supplied identity supports identify the model and product type, and the material support specifies neoprene.\"},{\"text\":\"and is compatible with devices with a 14 in display size\",\"start\":52,\"end\":108,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_f4ad4098476addbb8626d8a587026a0b28721741b6a068482ce9e9551f6d1bd0\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_53533ce63e\",\"field\":\"raw_specs\",\"quote\":\"14in\"}],\"reason\":\"The display-size support specifies 14 inches with the compatible_device condition, which the description preserves.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_02ae3bba4313cd7a016aa45186f26487d0b51da318cffbf655",
+    "usage": {
+      "inputTokens": 2017,
+      "outputTokens": 411,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2014
+    }
+  }
+}

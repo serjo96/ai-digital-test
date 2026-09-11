@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1786.3948749999981,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Larkspur Lite laptop sleeve is made of neoprene and is compatible with 14 in devices."
+    },
+    "raw": "{\"text\":\"The Larkspur Lite laptop sleeve is made of neoprene and is compatible with 14 in devices.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0233f90a80bd265a016aa4543088e087d0a8c5cf75210f2f6b",
+    "usage": {
+      "inputTokens": 637,
+      "outputTokens": 35,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

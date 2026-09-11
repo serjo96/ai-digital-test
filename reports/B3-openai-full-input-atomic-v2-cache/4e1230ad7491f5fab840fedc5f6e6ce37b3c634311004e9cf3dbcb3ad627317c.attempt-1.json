@@ -1,0 +1,70 @@
+{
+  "elapsedMs": 8491.489499999996,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "314dec11a673b781c16fa8671fed72aa52aaaafb35eabed5333a543ca358757b",
+      "claims": [
+        {
+          "text": "The Volt GaN charger has 3 ports",
+          "start": 0,
+          "end": 32,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:403cc5cf089c8e970d128c910c4769a53b4cc316e17509e305b700190eb14f0e",
+            "identity:f55c343e6fdf78f0422751d103bad05105e4bcf841b43989ba9c707b1a6210c5",
+            "fact:fact_d2287d996625904a6b3f30674e4cbf1863caeb4a3da3524acf608e7a3d946f4c",
+            "fact:fact_e24b60ed290ae1ad7b2e6de4897b1a5ce9e788a9fabd44b30d297006d2c50374"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_1134eb89e7",
+              "field": "raw_title",
+              "quote": "Volt 65W GaN charger 3-port"
+            },
+            {
+              "rowId": "row_1134eb89e7",
+              "field": "raw_title",
+              "quote": "GaN"
+            },
+            {
+              "rowId": "row_1134eb89e7",
+              "field": "raw_title",
+              "quote": "3-port"
+            }
+          ],
+          "reason": "The title supports the Volt charger identity, GaN technology and three ports."
+        },
+        {
+          "text": "and a specified power of 65 W, with the purpose unspecified",
+          "start": 33,
+          "end": 92,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_55bf32b5505588e0d19f3f741833699232b9efedac4056e232813b5c267df4ad"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_1134eb89e7",
+              "field": "raw_title",
+              "quote": "65W"
+            }
+          ],
+          "reason": "The title specifies 65 W without identifying its purpose; the allowed power support explicitly preserves the purpose_unspecified condition."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"314dec11a673b781c16fa8671fed72aa52aaaafb35eabed5333a543ca358757b\",\"claims\":[{\"text\":\"The Volt GaN charger has 3 ports\",\"start\":0,\"end\":32,\"verdict\":\"supported\",\"supportIds\":[\"identity:403cc5cf089c8e970d128c910c4769a53b4cc316e17509e305b700190eb14f0e\",\"identity:f55c343e6fdf78f0422751d103bad05105e4bcf841b43989ba9c707b1a6210c5\",\"fact:fact_d2287d996625904a6b3f30674e4cbf1863caeb4a3da3524acf608e7a3d946f4c\",\"fact:fact_e24b60ed290ae1ad7b2e6de4897b1a5ce9e788a9fabd44b30d297006d2c50374\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1134eb89e7\",\"field\":\"raw_title\",\"quote\":\"Volt 65W GaN charger 3-port\"},{\"rowId\":\"row_1134eb89e7\",\"field\":\"raw_title\",\"quote\":\"GaN\"},{\"rowId\":\"row_1134eb89e7\",\"field\":\"raw_title\",\"quote\":\"3-port\"}],\"reason\":\"The title supports the Volt charger identity, GaN technology and three ports.\"},{\"text\":\"and a specified power of 65 W, with the purpose unspecified\",\"start\":33,\"end\":92,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_55bf32b5505588e0d19f3f741833699232b9efedac4056e232813b5c267df4ad\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1134eb89e7\",\"field\":\"raw_title\",\"quote\":\"65W\"}],\"reason\":\"The title specifies 65 W without identifying its purpose; the allowed power support explicitly preserves the purpose_unspecified condition.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0a1d6149f25eb0ba016aa450b2e0c487d0bb797899c12bebcb",
+    "usage": {
+      "inputTokens": 2189,
+      "outputTokens": 474,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2186
+    }
+  }
+}

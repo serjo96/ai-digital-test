@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7318.74549999999,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "0b264cf5ffc10ca13b4ab43d169f259b0150ab8fbaa09869dd144c3e27020774",
+      "claims": [
+        {
+          "text": "The Larkspur 2 tablet case has a folio style",
+          "start": 0,
+          "end": 44,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:3b445aab849706828715cbea56aedc4d2678cd4ec2f431ce8d1233eff6ef2811",
+            "identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02",
+            "fact:fact_91dcef518e6887f6343eb8344d561e86f6357361c87475848e8cd1a627f15082"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_662a7334a3",
+              "field": "raw_title",
+              "quote": "LARKSPUR 2 TABLET CASE"
+            },
+            {
+              "rowId": "row_662a7334a3",
+              "field": "raw_specs",
+              "quote": "folio"
+            }
+          ],
+          "reason": "The title identifies the model and product type, and the specifications explicitly give the folio style."
+        },
+        {
+          "text": "and supports auto sleep/wake",
+          "start": 45,
+          "end": 73,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_353c0c134df53e1be75bda5e224297e32b17bf21d96781b7f33fa17fa59c6f7e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_662a7334a3",
+              "field": "raw_specs",
+              "quote": "auto sleep/wake"
+            }
+          ],
+          "reason": "The specifications explicitly list auto sleep/wake for this case."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"0b264cf5ffc10ca13b4ab43d169f259b0150ab8fbaa09869dd144c3e27020774\",\"claims\":[{\"text\":\"The Larkspur 2 tablet case has a folio style\",\"start\":0,\"end\":44,\"verdict\":\"supported\",\"supportIds\":[\"identity:3b445aab849706828715cbea56aedc4d2678cd4ec2f431ce8d1233eff6ef2811\",\"identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02\",\"fact:fact_91dcef518e6887f6343eb8344d561e86f6357361c87475848e8cd1a627f15082\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_662a7334a3\",\"field\":\"raw_title\",\"quote\":\"LARKSPUR 2 TABLET CASE\"},{\"rowId\":\"row_662a7334a3\",\"field\":\"raw_specs\",\"quote\":\"folio\"}],\"reason\":\"The title identifies the model and product type, and the specifications explicitly give the folio style.\"},{\"text\":\"and supports auto sleep/wake\",\"start\":45,\"end\":73,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_353c0c134df53e1be75bda5e224297e32b17bf21d96781b7f33fa17fa59c6f7e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_662a7334a3\",\"field\":\"raw_specs\",\"quote\":\"auto sleep/wake\"}],\"reason\":\"The specifications explicitly list auto sleep/wake for this case.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_06fe4cac0e18d377016aa4511f358087d09dfe0ce2e9ce5747",
+    "usage": {
+      "inputTokens": 1732,
+      "outputTokens": 402,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1729
+    }
+  }
+}

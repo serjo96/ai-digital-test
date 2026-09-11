@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2575.420124999946,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Pivot Pro laptop sleeve is made of neoprene and is compatible with devices with a 14 in display."
+    },
+    "raw": "{\"text\":\"The Pivot Pro laptop sleeve is made of neoprene and is compatible with devices with a 14 in display.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0b42c53fc441c454016aa456e12e6887d092cd2cf9dbdb2561",
+    "usage": {
+      "inputTokens": 564,
+      "outputTokens": 36,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2264.325417000102,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Torrent tablet case has a folio style and supports auto sleep/wake."
+    },
+    "raw": "{\"text\":\"The Torrent tablet case has a folio style and supports auto sleep/wake.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_09c1e52820bb0679016aa4570d9ab487d09ce6cb164846c240",
+    "usage": {
+      "inputTokens": 565,
+      "outputTokens": 30,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

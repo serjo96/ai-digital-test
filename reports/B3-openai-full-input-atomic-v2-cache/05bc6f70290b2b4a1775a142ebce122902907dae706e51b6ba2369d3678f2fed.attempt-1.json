@@ -1,0 +1,76 @@
+{
+  "elapsedMs": 8094.992542000022,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "961cb21cfa779fd518583b6e32b028f8453762e48adc4cddec2a3c1a470fa162",
+      "claims": [
+        {
+          "text": "Torrent Lite wired earbuds",
+          "start": 0,
+          "end": 26,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:47c7023f12a8692fc7cdd6ece0fa14e4cba01d6fee75210a9a409669472b8445",
+            "identity:5aab3cededa3980d2bc9c19a3c446b03251c276d223dad01a87a96759b1e3224"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_aa3fa28de4",
+              "field": "raw_title",
+              "quote": "TORRENT LITE WIRED EARBUDS"
+            }
+          ],
+          "reason": "The title explicitly identifies the model as Torrent Lite and the product as wired earbuds."
+        },
+        {
+          "text": "feature a 3.5mm connector",
+          "start": 27,
+          "end": 52,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_12501434b25bfb3ace6d7fd106fb224205116a0d71314c6ca3daa385e1cf91e6"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_aa3fa28de4",
+              "field": "raw_specs",
+              "quote": "3.5mm"
+            }
+          ],
+          "reason": "The supplied connector fact specifies 3.5mm."
+        },
+        {
+          "text": "and an in-line microphone",
+          "start": 53,
+          "end": 78,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_34f4c494aff3a780b1a3f4991f61561ec620fb9192e330c6da3c8a920c544377"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_aa3fa28de4",
+              "field": "raw_specs",
+              "quote": "in-line mic"
+            }
+          ],
+          "reason": "The specifications explicitly list an in-line mic, supporting the coordinated feature claim."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"961cb21cfa779fd518583b6e32b028f8453762e48adc4cddec2a3c1a470fa162\",\"claims\":[{\"text\":\"Torrent Lite wired earbuds\",\"start\":0,\"end\":26,\"verdict\":\"supported\",\"supportIds\":[\"identity:47c7023f12a8692fc7cdd6ece0fa14e4cba01d6fee75210a9a409669472b8445\",\"identity:5aab3cededa3980d2bc9c19a3c446b03251c276d223dad01a87a96759b1e3224\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_aa3fa28de4\",\"field\":\"raw_title\",\"quote\":\"TORRENT LITE WIRED EARBUDS\"}],\"reason\":\"The title explicitly identifies the model as Torrent Lite and the product as wired earbuds.\"},{\"text\":\"feature a 3.5mm connector\",\"start\":27,\"end\":52,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_12501434b25bfb3ace6d7fd106fb224205116a0d71314c6ca3daa385e1cf91e6\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_aa3fa28de4\",\"field\":\"raw_specs\",\"quote\":\"3.5mm\"}],\"reason\":\"The supplied connector fact specifies 3.5mm.\"},{\"text\":\"and an in-line microphone\",\"start\":53,\"end\":78,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_34f4c494aff3a780b1a3f4991f61561ec620fb9192e330c6da3c8a920c544377\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_aa3fa28de4\",\"field\":\"raw_specs\",\"quote\":\"in-line mic\"}],\"reason\":\"The specifications explicitly list an in-line mic, supporting the coordinated feature claim.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0dc1ff49d82b1d7a016aa4537ae71887d0a19659efc3330d23",
+    "usage": {
+      "inputTokens": 1782,
+      "outputTokens": 449,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1779
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1745.479290999996,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "Cobalt Pro earbuds."
+    },
+    "raw": "{\"text\":\"Cobalt Pro earbuds.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0935f765db3fa4ce016aa45126849c87d08dd25b9a496d7e69",
+    "usage": {
+      "inputTokens": 367,
+      "outputTokens": 19,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

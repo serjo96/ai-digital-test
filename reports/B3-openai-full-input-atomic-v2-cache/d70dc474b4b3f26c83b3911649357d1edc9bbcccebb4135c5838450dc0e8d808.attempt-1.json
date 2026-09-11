@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2084.0519159999676,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Torrent lamp features an LED light source and a USB-C connector."
+    },
+    "raw": "{\"text\":\"The Torrent lamp features an LED light source and a USB-C connector.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_076ce138f2eaae79016aa455bc5cd887d0bb554b53fbd887d8",
+    "usage": {
+      "inputTokens": 628,
+      "outputTokens": 28,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

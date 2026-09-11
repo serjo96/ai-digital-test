@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1453.3709170001093,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Marlow is a tablet case."
+    },
+    "raw": "{\"text\":\"The Marlow is a tablet case.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0c198be72a0ce823016aa4570767a887d0b861a8a1450a21e4",
+    "usage": {
+      "inputTokens": 357,
+      "outputTokens": 22,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

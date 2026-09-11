@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1886.8864579999936,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Basalt Lite tablet case has a folio style and supports auto sleep/wake."
+    },
+    "raw": "{\"text\":\"The Basalt Lite tablet case has a folio style and supports auto sleep/wake.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0007f8e55f07f788016aa451accb3087d0b9293a4780eebc60",
+    "usage": {
+      "inputTokens": 632,
+      "outputTokens": 32,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

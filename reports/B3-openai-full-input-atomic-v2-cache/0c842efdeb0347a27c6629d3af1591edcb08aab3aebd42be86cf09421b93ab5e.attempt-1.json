@@ -1,0 +1,82 @@
+{
+  "elapsedMs": 9721.717999999993,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "7d9a5a25c3151c8daa77dae8094226ed3bd3289783f1d22b8225081ffb9cf6c4",
+      "claims": [
+        {
+          "text": "The Marlow scale uses BIA",
+          "start": 0,
+          "end": 25,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:8a18c173205ef9d2722f9930f193786bbb91a5ccb6193bb4ba67f97492d6fb60",
+            "identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7",
+            "fact:fact_21743631e7fbff19019e1de2c2f0afdacd845eb3f6041bc3b8329cf3b7a6575b"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_908ca0635e",
+              "field": "raw_title",
+              "quote": "Marlow smart scale"
+            },
+            {
+              "rowId": "row_908ca0635e",
+              "field": "raw_specs",
+              "quote": "BIA"
+            }
+          ],
+          "reason": "The title establishes the Marlow scale identity, and the specifications explicitly list BIA."
+        },
+        {
+          "text": "supports app sync",
+          "start": 27,
+          "end": 44,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_76f065cf5cdc9f8fb1a9f62b912d78a18023375cd3e7d4b51a0420997af41f3a"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_908ca0635e",
+              "field": "raw_specs",
+              "quote": "app sync"
+            }
+          ],
+          "reason": "App sync is explicitly listed in the specifications."
+        },
+        {
+          "text": "and has a maximum load of 180 kg",
+          "start": 46,
+          "end": 78,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_57e2258cb3906d0d8cbcc157d3d569e9aa7ad8612d442f3e46d081976a25e2a0"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_908ca0635e",
+              "field": "raw_specs",
+              "quote": "180kg max"
+            }
+          ],
+          "reason": "The stated load matches the supplied maximum-load support and preserves its maximum qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"7d9a5a25c3151c8daa77dae8094226ed3bd3289783f1d22b8225081ffb9cf6c4\",\"claims\":[{\"text\":\"The Marlow scale uses BIA\",\"start\":0,\"end\":25,\"verdict\":\"supported\",\"supportIds\":[\"identity:8a18c173205ef9d2722f9930f193786bbb91a5ccb6193bb4ba67f97492d6fb60\",\"identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7\",\"fact:fact_21743631e7fbff19019e1de2c2f0afdacd845eb3f6041bc3b8329cf3b7a6575b\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_908ca0635e\",\"field\":\"raw_title\",\"quote\":\"Marlow smart scale\"},{\"rowId\":\"row_908ca0635e\",\"field\":\"raw_specs\",\"quote\":\"BIA\"}],\"reason\":\"The title establishes the Marlow scale identity, and the specifications explicitly list BIA.\"},{\"text\":\"supports app sync\",\"start\":27,\"end\":44,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_76f065cf5cdc9f8fb1a9f62b912d78a18023375cd3e7d4b51a0420997af41f3a\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_908ca0635e\",\"field\":\"raw_specs\",\"quote\":\"app sync\"}],\"reason\":\"App sync is explicitly listed in the specifications.\"},{\"text\":\"and has a maximum load of 180 kg\",\"start\":46,\"end\":78,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_57e2258cb3906d0d8cbcc157d3d569e9aa7ad8612d442f3e46d081976a25e2a0\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_908ca0635e\",\"field\":\"raw_specs\",\"quote\":\"180kg max\"}],\"reason\":\"The stated load matches the supplied maximum-load support and preserves its maximum qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_027eb3233eb0db36016aa453c093a087d09cac8f0d401e373c",
+    "usage": {
+      "inputTokens": 1877,
+      "outputTokens": 511,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1874
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2230.116791999957,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "AeroBuds Pro S/M/L ear tips made of silicone."
+    },
+    "raw": "{\"text\":\"AeroBuds Pro S/M/L ear tips made of silicone.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0f4f0eb370e24e31016aa4512d1b5087d0b727909531eb232f",
+    "usage": {
+      "inputTokens": 475,
+      "outputTokens": 28,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

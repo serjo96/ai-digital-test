@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1360.6377080000238,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Sable X mouse has 6 buttons and a mass of 70 g."
+    },
+    "raw": "{\"text\":\"The Sable X mouse has 6 buttons and a mass of 70 g.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0d690b52d4d0b346016aa453ca461487d0ae67dfc76774262f",
+    "usage": {
+      "inputTokens": 560,
+      "outputTokens": 31,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

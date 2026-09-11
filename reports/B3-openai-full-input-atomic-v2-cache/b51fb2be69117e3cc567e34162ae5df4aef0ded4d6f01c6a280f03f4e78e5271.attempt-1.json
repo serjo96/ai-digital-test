@@ -1,0 +1,40 @@
+{
+  "elapsedMs": 4705.323208000045,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "4f4b780f89aaab39ff9096756b834dbaf275f5c0bf80d2ec7c0caeacb570e3de",
+      "claims": [
+        {
+          "text": "The Marlow is a tablet case",
+          "start": 0,
+          "end": 27,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02",
+            "identity:8a18c173205ef9d2722f9930f193786bbb91a5ccb6193bb4ba67f97492d6fb60"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_51ad7a4367",
+              "field": "raw_title",
+              "quote": "Marlow tablet case"
+            }
+          ],
+          "reason": "The raw title and supplied identity supports establish both the Marlow model name and tablet case product type."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"4f4b780f89aaab39ff9096756b834dbaf275f5c0bf80d2ec7c0caeacb570e3de\",\"claims\":[{\"text\":\"The Marlow is a tablet case\",\"start\":0,\"end\":27,\"verdict\":\"supported\",\"supportIds\":[\"identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02\",\"identity:8a18c173205ef9d2722f9930f193786bbb91a5ccb6193bb4ba67f97492d6fb60\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_51ad7a4367\",\"field\":\"raw_title\",\"quote\":\"Marlow tablet case\"}],\"reason\":\"The raw title and supplied identity supports establish both the Marlow model name and tablet case product type.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0014de8f9dce0a0c016aa45708de9c87d09d7b844b14f05738",
+    "usage": {
+      "inputTokens": 1220,
+      "outputTokens": 220,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1217
+    }
+  }
+}

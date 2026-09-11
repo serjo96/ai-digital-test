@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7184.875833999831,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "e7e24247b155260c4be0488dca7ef9a3a7f7e6ef7cec266f1ed23ed8acdc20e3",
+      "claims": [
+        {
+          "text": "The Torrent tablet case has a folio style",
+          "start": 0,
+          "end": 41,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02",
+            "identity:a3e233b08a9631819eaf4dbbafdba797e2bad10e7dd2d6b706d5b3f0890b2494",
+            "fact:fact_d979bfc014bb22adabb438c2b36b89992d37d8a2da6867ac2c62c4bce1f14c1e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_5609f5b65d",
+              "field": "raw_title",
+              "quote": "Torrent tablet case"
+            },
+            {
+              "rowId": "row_5609f5b65d",
+              "field": "raw_specs",
+              "quote": "folio"
+            }
+          ],
+          "reason": "The supplied title establishes the model and product type, and the specifications explicitly identify folio style."
+        },
+        {
+          "text": "and supports auto sleep/wake",
+          "start": 42,
+          "end": 70,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_a83abb8bd14783fd4b7a02aed77a9f0088246d8dbe386e46c0d0fe093d40d4ef"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_5609f5b65d",
+              "field": "raw_specs",
+              "quote": "auto sleep/wake"
+            }
+          ],
+          "reason": "The specifications explicitly list auto sleep/wake for this case."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"e7e24247b155260c4be0488dca7ef9a3a7f7e6ef7cec266f1ed23ed8acdc20e3\",\"claims\":[{\"text\":\"The Torrent tablet case has a folio style\",\"start\":0,\"end\":41,\"verdict\":\"supported\",\"supportIds\":[\"identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02\",\"identity:a3e233b08a9631819eaf4dbbafdba797e2bad10e7dd2d6b706d5b3f0890b2494\",\"fact:fact_d979bfc014bb22adabb438c2b36b89992d37d8a2da6867ac2c62c4bce1f14c1e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_5609f5b65d\",\"field\":\"raw_title\",\"quote\":\"Torrent tablet case\"},{\"rowId\":\"row_5609f5b65d\",\"field\":\"raw_specs\",\"quote\":\"folio\"}],\"reason\":\"The supplied title establishes the model and product type, and the specifications explicitly identify folio style.\"},{\"text\":\"and supports auto sleep/wake\",\"start\":42,\"end\":70,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_a83abb8bd14783fd4b7a02aed77a9f0088246d8dbe386e46c0d0fe093d40d4ef\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_5609f5b65d\",\"field\":\"raw_specs\",\"quote\":\"auto sleep/wake\"}],\"reason\":\"The specifications explicitly list auto sleep/wake for this case.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0a9becaa6baab7c1016aa4570fd7c087d0a1947bd888f53078",
+    "usage": {
+      "inputTokens": 1705,
+      "outputTokens": 411,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1702
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1899.1222080000443,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Nimbus 2 speaker has an IP67 rating and a mass of 1,200 g. Its battery runtime is 14 hours with usage unspecified."
+    },
+    "raw": "{\"text\":\"The Nimbus 2 speaker has an IP67 rating and a mass of 1,200 g. Its battery runtime is 14 hours with usage unspecified.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0df6753b482559ec016aa4520a449887d08ef6bd16616d2f50",
+    "usage": {
+      "inputTokens": 720,
+      "outputTokens": 45,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

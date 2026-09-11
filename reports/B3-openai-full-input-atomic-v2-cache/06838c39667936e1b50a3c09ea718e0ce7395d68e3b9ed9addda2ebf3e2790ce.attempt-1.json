@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1803.9758330001496,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Basalt 2 mouse has 6 buttons and a mass of 70 g."
+    },
+    "raw": "{\"text\":\"The Basalt 2 mouse has 6 buttons and a mass of 70 g.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_003bbc0c88979b3c016aa454db83d487d0a469522f458a4d3b",
+    "usage": {
+      "inputTokens": 551,
+      "outputTokens": 32,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

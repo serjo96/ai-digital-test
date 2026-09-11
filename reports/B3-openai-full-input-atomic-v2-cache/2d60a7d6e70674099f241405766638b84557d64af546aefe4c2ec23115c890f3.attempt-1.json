@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 7749.513708000013,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "9044bd25ee0bd96ff26203dc910c6198563a5ecd41003fd803f752e0ef40d0aa",
+      "claims": [
+        {
+          "text": "The Basalt Lite tablet case has a folio style",
+          "start": 0,
+          "end": 45,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02",
+            "identity:e1fbe230a2c20a21d97f513cbfd06063975138e8046cd5c5ca5581152e4ed4ee",
+            "fact:fact_8129eea43cab2ea8cfa3c3d36a5cabf6be880fe5499a2fdf3756d36133c25f18"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_07d0ec92f5",
+              "field": "raw_title",
+              "quote": "BASALT LITE TABLET CASE"
+            },
+            {
+              "rowId": "row_48143816e9",
+              "field": "raw_title",
+              "quote": "Basalt Lite tablet case"
+            },
+            {
+              "rowId": "row_07d0ec92f5",
+              "field": "raw_specs",
+              "quote": "folio"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and product type, and the case-style support explicitly specifies folio."
+        },
+        {
+          "text": "and supports auto sleep/wake",
+          "start": 46,
+          "end": 74,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_44f01566fef05c76ec1308ec99190618e4d5606db92ecd0c52bd16dcf78457c1"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_07d0ec92f5",
+              "field": "raw_specs",
+              "quote": "auto sleep/wake"
+            }
+          ],
+          "reason": "The supplied feature support explicitly establishes auto sleep/wake for the case."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"9044bd25ee0bd96ff26203dc910c6198563a5ecd41003fd803f752e0ef40d0aa\",\"claims\":[{\"text\":\"The Basalt Lite tablet case has a folio style\",\"start\":0,\"end\":45,\"verdict\":\"supported\",\"supportIds\":[\"identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02\",\"identity:e1fbe230a2c20a21d97f513cbfd06063975138e8046cd5c5ca5581152e4ed4ee\",\"fact:fact_8129eea43cab2ea8cfa3c3d36a5cabf6be880fe5499a2fdf3756d36133c25f18\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_07d0ec92f5\",\"field\":\"raw_title\",\"quote\":\"BASALT LITE TABLET CASE\"},{\"rowId\":\"row_48143816e9\",\"field\":\"raw_title\",\"quote\":\"Basalt Lite tablet case\"},{\"rowId\":\"row_07d0ec92f5\",\"field\":\"raw_specs\",\"quote\":\"folio\"}],\"reason\":\"The supplied identity supports establish the model and product type, and the case-style support explicitly specifies folio.\"},{\"text\":\"and supports auto sleep/wake\",\"start\":46,\"end\":74,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_44f01566fef05c76ec1308ec99190618e4d5606db92ecd0c52bd16dcf78457c1\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_07d0ec92f5\",\"field\":\"raw_specs\",\"quote\":\"auto sleep/wake\"}],\"reason\":\"The supplied feature support explicitly establishes auto sleep/wake for the case.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0260f2557b514e83016aa451aeac7087d0b5538289afeee1b6",
+    "usage": {
+      "inputTokens": 1860,
+      "outputTokens": 432,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1857
+    }
+  }
+}

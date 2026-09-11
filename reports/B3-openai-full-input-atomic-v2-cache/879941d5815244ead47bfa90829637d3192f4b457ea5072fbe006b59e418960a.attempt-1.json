@@ -1,0 +1,88 @@
+{
+  "elapsedMs": 9938.334416000056,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "f163c8d62c9c91476ef849b50ef1badd9719d60f8bb1d946f42d2419e7f9ad04",
+      "claims": [
+        {
+          "text": "The Cirrus Pro speaker pair features passive amplification",
+          "start": 0,
+          "end": 58,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:e2a4f1e1ff23f71ed9d6384055604580a5a47f6114b8977f6e75383acf891bb5",
+            "identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f",
+            "identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704",
+            "fact:fact_699a82af97497bd58cac25a3f599a2ec45577f58d8be7bf9e126b56deabac917"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_302c214bfa",
+              "field": "raw_title",
+              "quote": "Cirrus Pro bookshelf speaker pair"
+            },
+            {
+              "rowId": "row_c3501c6da1",
+              "field": "raw_title",
+              "quote": "CIRRUS PRO BOOKSHELF SPEAKER PAIR"
+            },
+            {
+              "rowId": "row_302c214bfa",
+              "field": "raw_specs",
+              "quote": "passive"
+            }
+          ],
+          "reason": "The titles establish the model, speaker type and pair bundle; the specifications and allowed support establish passive amplification."
+        },
+        {
+          "text": "and 4-ohm impedance",
+          "start": 59,
+          "end": 78,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_e362772b68a936280abae6292dcdc45647e353c774d6070c98b37dd1ef9c538f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_302c214bfa",
+              "field": "raw_specs",
+              "quote": "4 ohm"
+            }
+          ],
+          "reason": "The stated impedance matches the supplied specification."
+        },
+        {
+          "text": "Power is 40 W for an unspecified purpose",
+          "start": 80,
+          "end": 120,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_8a288b04a27d29e7b7e9379ccc0103b0bf8647e81af17c1cb7cde3c8a1df1b49"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_302c214bfa",
+              "field": "raw_specs",
+              "quote": "40W"
+            }
+          ],
+          "reason": "The power value matches the source and preserves the allowed support's purpose_unspecified qualification without assigning a power-rating purpose."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"f163c8d62c9c91476ef849b50ef1badd9719d60f8bb1d946f42d2419e7f9ad04\",\"claims\":[{\"text\":\"The Cirrus Pro speaker pair features passive amplification\",\"start\":0,\"end\":58,\"verdict\":\"supported\",\"supportIds\":[\"identity:e2a4f1e1ff23f71ed9d6384055604580a5a47f6114b8977f6e75383acf891bb5\",\"identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f\",\"identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704\",\"fact:fact_699a82af97497bd58cac25a3f599a2ec45577f58d8be7bf9e126b56deabac917\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_302c214bfa\",\"field\":\"raw_title\",\"quote\":\"Cirrus Pro bookshelf speaker pair\"},{\"rowId\":\"row_c3501c6da1\",\"field\":\"raw_title\",\"quote\":\"CIRRUS PRO BOOKSHELF SPEAKER PAIR\"},{\"rowId\":\"row_302c214bfa\",\"field\":\"raw_specs\",\"quote\":\"passive\"}],\"reason\":\"The titles establish the model, speaker type and pair bundle; the specifications and allowed support establish passive amplification.\"},{\"text\":\"and 4-ohm impedance\",\"start\":59,\"end\":78,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_e362772b68a936280abae6292dcdc45647e353c774d6070c98b37dd1ef9c538f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_302c214bfa\",\"field\":\"raw_specs\",\"quote\":\"4 ohm\"}],\"reason\":\"The stated impedance matches the supplied specification.\"},{\"text\":\"Power is 40 W for an unspecified purpose\",\"start\":80,\"end\":120,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_8a288b04a27d29e7b7e9379ccc0103b0bf8647e81af17c1cb7cde3c8a1df1b49\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_302c214bfa\",\"field\":\"raw_specs\",\"quote\":\"40W\"}],\"reason\":\"The power value matches the source and preserves the allowed support's purpose_unspecified qualification without assigning a power-rating purpose.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_023e1751f92c9569016aa4526b0ba887d0a12e07e97b393415",
+    "usage": {
+      "inputTokens": 2505,
+      "outputTokens": 596,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2502
+    }
+  }
+}

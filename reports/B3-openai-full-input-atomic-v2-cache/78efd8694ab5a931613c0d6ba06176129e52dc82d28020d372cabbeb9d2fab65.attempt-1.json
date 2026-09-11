@@ -1,0 +1,105 @@
+{
+  "elapsedMs": 11474.674250000156,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "0fccb9276e824fbb4bf6fcd3ba2615be4a2dc0998e04e260d44b321711285c4e",
+      "claims": [
+        {
+          "text": "The Lumen X20 camera has a 20 MP sensor",
+          "start": 0,
+          "end": 39,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:30aeb67b38f4fc08b898fdd8ccd1f792b3f89867110a5ad5ebac34340de0d77e",
+            "identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e",
+            "fact:fact_f98ffb933341409f39c78a31fbb1968d9e843f10117bed9805f0e4f793d0a626"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_1d1bdffe92",
+              "field": "raw_title",
+              "quote": "Lumen X20 Compact Digital Camera"
+            },
+            {
+              "rowId": "row_83da10f114",
+              "field": "raw_title",
+              "quote": "Lumen X20 Kompaktkamera"
+            },
+            {
+              "rowId": "row_1d1bdffe92",
+              "field": "raw_specs",
+              "quote": "20MP sensor"
+            }
+          ],
+          "reason": "The supplied identity evidence identifies the camera, and its specifications explicitly state a 20 MP sensor."
+        },
+        {
+          "text": "5x optical zoom",
+          "start": 41,
+          "end": 56,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_b577fbd8dd85b533d75ae1a6d24b3ea13280cbcf091532015bad45a650372ceb"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_1d1bdffe92",
+              "field": "raw_specs",
+              "quote": "5x optical zoom"
+            }
+          ],
+          "reason": "The optical zoom attribute and value are explicitly stated."
+        },
+        {
+          "text": "and 4K video recording at 30 fps",
+          "start": 58,
+          "end": 90,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_d4e5299e0d696ee63e39998a456509eb02818d7090ebcbf139edcd4197638e10"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_1d1bdffe92",
+              "field": "raw_specs",
+              "quote": "4K video at 30fps"
+            }
+          ],
+          "reason": "The supplied video recording support specifies 4K at 30 fps."
+        },
+        {
+          "text": "It uses SD memory cards",
+          "start": 92,
+          "end": 115,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_d0fbb5a9ce5c7a18b223d70d342e992865305af94861fb547eaf56b20e7b5aad"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_83da10f114",
+              "field": "raw_specs",
+              "quote": "SD-Karte"
+            }
+          ],
+          "reason": "The supplied memory card format support and German source specify SD cards."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"0fccb9276e824fbb4bf6fcd3ba2615be4a2dc0998e04e260d44b321711285c4e\",\"claims\":[{\"text\":\"The Lumen X20 camera has a 20 MP sensor\",\"start\":0,\"end\":39,\"verdict\":\"supported\",\"supportIds\":[\"identity:30aeb67b38f4fc08b898fdd8ccd1f792b3f89867110a5ad5ebac34340de0d77e\",\"identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e\",\"fact:fact_f98ffb933341409f39c78a31fbb1968d9e843f10117bed9805f0e4f793d0a626\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1d1bdffe92\",\"field\":\"raw_title\",\"quote\":\"Lumen X20 Compact Digital Camera\"},{\"rowId\":\"row_83da10f114\",\"field\":\"raw_title\",\"quote\":\"Lumen X20 Kompaktkamera\"},{\"rowId\":\"row_1d1bdffe92\",\"field\":\"raw_specs\",\"quote\":\"20MP sensor\"}],\"reason\":\"The supplied identity evidence identifies the camera, and its specifications explicitly state a 20 MP sensor.\"},{\"text\":\"5x optical zoom\",\"start\":41,\"end\":56,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_b577fbd8dd85b533d75ae1a6d24b3ea13280cbcf091532015bad45a650372ceb\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1d1bdffe92\",\"field\":\"raw_specs\",\"quote\":\"5x optical zoom\"}],\"reason\":\"The optical zoom attribute and value are explicitly stated.\"},{\"text\":\"and 4K video recording at 30 fps\",\"start\":58,\"end\":90,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_d4e5299e0d696ee63e39998a456509eb02818d7090ebcbf139edcd4197638e10\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1d1bdffe92\",\"field\":\"raw_specs\",\"quote\":\"4K video at 30fps\"}],\"reason\":\"The supplied video recording support specifies 4K at 30 fps.\"},{\"text\":\"It uses SD memory cards\",\"start\":92,\"end\":115,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_d0fbb5a9ce5c7a18b223d70d342e992865305af94861fb547eaf56b20e7b5aad\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_83da10f114\",\"field\":\"raw_specs\",\"quote\":\"SD-Karte\"}],\"reason\":\"The supplied memory card format support and German source specify SD cards.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0da4117dbee160d6016aa454ab7e5887d0846768ab849c213c",
+    "usage": {
+      "inputTokens": 2441,
+      "outputTokens": 658,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2438
+    }
+  }
+}

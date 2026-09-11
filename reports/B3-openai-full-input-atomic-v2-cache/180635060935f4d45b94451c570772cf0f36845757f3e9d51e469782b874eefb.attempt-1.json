@@ -1,0 +1,83 @@
+{
+  "elapsedMs": 10743.179082999937,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "fbc4c11b50111d1bf29fa792615a1dd4acbd3736380b603a96325f3593f83876",
+      "claims": [
+        {
+          "text": "The Alto Lite is a pair of passive speakers",
+          "start": 0,
+          "end": 43,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:dc73353075bdce3c112bc62cf143108af23f6eb1c6e02c3e65690d21613bc2bf",
+            "identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704",
+            "identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f",
+            "fact:fact_dbe8484288020942c23976dbc8d5eb774dfa18daf541163462a773c5ede9e42d"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_9604d0373a",
+              "field": "raw_title",
+              "quote": "Alto Lite bookshelf speaker pair"
+            },
+            {
+              "rowId": "row_9604d0373a",
+              "field": "raw_specs",
+              "quote": "passive"
+            }
+          ],
+          "reason": "The title establishes the model, speaker type and pair bundle; the specifications state passive amplification."
+        },
+        {
+          "text": "with 4-ohm impedance",
+          "start": 44,
+          "end": 64,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_917ddc595daba2fe90031fefb7d34554421dee1dfbf8b8af92d68c21fa355876"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_9604d0373a",
+              "field": "raw_specs",
+              "quote": "4 ohm"
+            }
+          ],
+          "reason": "The supplied impedance fact and raw specifications establish 4 ohms."
+        },
+        {
+          "text": "and 40 W power for an unspecified purpose",
+          "start": 65,
+          "end": 106,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_3abea9b27b58136c9c73b29eb8eadf0a47053ee14e82e8361cb0d82cc9824a5e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_9604d0373a",
+              "field": "raw_specs",
+              "quote": "40W"
+            }
+          ],
+          "reason": "The power matches the supplied 40 W fact and retains its purpose_unspecified qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"fbc4c11b50111d1bf29fa792615a1dd4acbd3736380b603a96325f3593f83876\",\"claims\":[{\"text\":\"The Alto Lite is a pair of passive speakers\",\"start\":0,\"end\":43,\"verdict\":\"supported\",\"supportIds\":[\"identity:dc73353075bdce3c112bc62cf143108af23f6eb1c6e02c3e65690d21613bc2bf\",\"identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704\",\"identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f\",\"fact:fact_dbe8484288020942c23976dbc8d5eb774dfa18daf541163462a773c5ede9e42d\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_9604d0373a\",\"field\":\"raw_title\",\"quote\":\"Alto Lite bookshelf speaker pair\"},{\"rowId\":\"row_9604d0373a\",\"field\":\"raw_specs\",\"quote\":\"passive\"}],\"reason\":\"The title establishes the model, speaker type and pair bundle; the specifications state passive amplification.\"},{\"text\":\"with 4-ohm impedance\",\"start\":44,\"end\":64,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_917ddc595daba2fe90031fefb7d34554421dee1dfbf8b8af92d68c21fa355876\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_9604d0373a\",\"field\":\"raw_specs\",\"quote\":\"4 ohm\"}],\"reason\":\"The supplied impedance fact and raw specifications establish 4 ohms.\"},{\"text\":\"and 40 W power for an unspecified purpose\",\"start\":65,\"end\":106,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_3abea9b27b58136c9c73b29eb8eadf0a47053ee14e82e8361cb0d82cc9824a5e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_9604d0373a\",\"field\":\"raw_specs\",\"quote\":\"40W\"}],\"reason\":\"The power matches the supplied 40 W fact and retains its purpose_unspecified qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_09eb511a0ee42176016aa45306c06c87d0b301f35bc3fbe34c",
+    "usage": {
+      "inputTokens": 2188,
+      "outputTokens": 548,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2185
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "elapsedMs": 9674.041332999943,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "d7494a79dabe63842cf70de269dc408a48c1215bb5c10aa8f49d581fc843940d",
+      "claims": [
+        {
+          "text": "The Cirrus 3 scale uses BIA",
+          "start": 0,
+          "end": 27,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:6a5c0bfd72b125a6bb6c5a3bfdce210a251485632d4d7fe7621e11ff3a773f4f",
+            "identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7",
+            "fact:fact_4edc9a3e142e57b6326e641241a3544c45a5135a7d6e8c7317baaf59f82ea888"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_190a9264bb",
+              "field": "raw_title",
+              "quote": "CIRRUS 3 SMART SCALE"
+            },
+            {
+              "rowId": "row_2862086d0f",
+              "field": "raw_title",
+              "quote": "Cirrus 3 smart scale"
+            },
+            {
+              "rowId": "row_190a9264bb",
+              "field": "raw_specs",
+              "quote": "BIA"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and product type; the method support explicitly establishes BIA."
+        },
+        {
+          "text": "and supports app sync",
+          "start": 28,
+          "end": 49,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_ea66898c7782b15ab99d7a4e91fd1cb57a63a58453b8c993def7c1080765a4a3"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_190a9264bb",
+              "field": "raw_specs",
+              "quote": "app sync"
+            }
+          ],
+          "reason": "App synchronization is explicitly supported by the supplied specification."
+        },
+        {
+          "text": "Its maximum load is 180 kg",
+          "start": 51,
+          "end": 77,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_0126b3060b790d3e947ccfdae744a92076bb8041dd55b23f49437788f5a578ca"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_190a9264bb",
+              "field": "raw_specs",
+              "quote": "180kg max"
+            }
+          ],
+          "reason": "The specification explicitly states 180 kg maximum, preserving the maximum qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"d7494a79dabe63842cf70de269dc408a48c1215bb5c10aa8f49d581fc843940d\",\"claims\":[{\"text\":\"The Cirrus 3 scale uses BIA\",\"start\":0,\"end\":27,\"verdict\":\"supported\",\"supportIds\":[\"identity:6a5c0bfd72b125a6bb6c5a3bfdce210a251485632d4d7fe7621e11ff3a773f4f\",\"identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7\",\"fact:fact_4edc9a3e142e57b6326e641241a3544c45a5135a7d6e8c7317baaf59f82ea888\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_190a9264bb\",\"field\":\"raw_title\",\"quote\":\"CIRRUS 3 SMART SCALE\"},{\"rowId\":\"row_2862086d0f\",\"field\":\"raw_title\",\"quote\":\"Cirrus 3 smart scale\"},{\"rowId\":\"row_190a9264bb\",\"field\":\"raw_specs\",\"quote\":\"BIA\"}],\"reason\":\"The supplied identity supports establish the model and product type; the method support explicitly establishes BIA.\"},{\"text\":\"and supports app sync\",\"start\":28,\"end\":49,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_ea66898c7782b15ab99d7a4e91fd1cb57a63a58453b8c993def7c1080765a4a3\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_190a9264bb\",\"field\":\"raw_specs\",\"quote\":\"app sync\"}],\"reason\":\"App synchronization is explicitly supported by the supplied specification.\"},{\"text\":\"Its maximum load is 180 kg\",\"start\":51,\"end\":77,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_0126b3060b790d3e947ccfdae744a92076bb8041dd55b23f49437788f5a578ca\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_190a9264bb\",\"field\":\"raw_specs\",\"quote\":\"180kg max\"}],\"reason\":\"The specification explicitly states 180 kg maximum, preserving the maximum qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_041a2af8a101867f016aa452807f3887d0af3e342bb049562e",
+    "usage": {
+      "inputTokens": 1999,
+      "outputTokens": 539,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1996
+    }
+  }
+}

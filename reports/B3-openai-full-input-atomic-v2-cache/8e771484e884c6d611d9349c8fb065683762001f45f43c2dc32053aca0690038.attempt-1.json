@@ -1,0 +1,88 @@
+{
+  "elapsedMs": 10722.08133299998,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "db2f52b0f4f2f812ac4bf72f1e879e0c878e30984f4de8584c8337db00cdcfdc",
+      "claims": [
+        {
+          "text": "The Juniper X is a pair of passive speakers",
+          "start": 0,
+          "end": 43,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:8c0bab79f3ce9398f066ef0ab344daaccc7314e4de909a38220949ec2a433ea3",
+            "identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704",
+            "identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f",
+            "fact:fact_5778ada901507dea50d00100220813b7ae80941af51cd1ad37e220ae71fc3685"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_259242eb11",
+              "field": "raw_title",
+              "quote": "Juniper X bookshelf speaker pair"
+            },
+            {
+              "rowId": "row_77ce3dea5e",
+              "field": "raw_title",
+              "quote": "Juniper X bookshelf speaker pair"
+            },
+            {
+              "rowId": "row_259242eb11",
+              "field": "raw_specs",
+              "quote": "passive"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model, speaker type and pair bundle; the amplification support establishes passive speakers."
+        },
+        {
+          "text": "with 4-ohm impedance",
+          "start": 44,
+          "end": 64,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_1016c6f1e2756617b867007f57857f67a68c6fbc027e95246cbc0147e9346904"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_259242eb11",
+              "field": "raw_specs",
+              "quote": "4 ohm"
+            }
+          ],
+          "reason": "The impedance and unit match the supplied fact."
+        },
+        {
+          "text": "and 40 W of power for an unspecified purpose",
+          "start": 65,
+          "end": 109,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_b89908882f39d03341785e56aae404932aef356b534097b58835af7a9a97cd8c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_259242eb11",
+              "field": "raw_specs",
+              "quote": "40W"
+            }
+          ],
+          "reason": "The power matches the supplied fact and retains its purpose_unspecified qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"db2f52b0f4f2f812ac4bf72f1e879e0c878e30984f4de8584c8337db00cdcfdc\",\"claims\":[{\"text\":\"The Juniper X is a pair of passive speakers\",\"start\":0,\"end\":43,\"verdict\":\"supported\",\"supportIds\":[\"identity:8c0bab79f3ce9398f066ef0ab344daaccc7314e4de909a38220949ec2a433ea3\",\"identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704\",\"identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f\",\"fact:fact_5778ada901507dea50d00100220813b7ae80941af51cd1ad37e220ae71fc3685\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_259242eb11\",\"field\":\"raw_title\",\"quote\":\"Juniper X bookshelf speaker pair\"},{\"rowId\":\"row_77ce3dea5e\",\"field\":\"raw_title\",\"quote\":\"Juniper X bookshelf speaker pair\"},{\"rowId\":\"row_259242eb11\",\"field\":\"raw_specs\",\"quote\":\"passive\"}],\"reason\":\"The supplied identity supports establish the model, speaker type and pair bundle; the amplification support establishes passive speakers.\"},{\"text\":\"with 4-ohm impedance\",\"start\":44,\"end\":64,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_1016c6f1e2756617b867007f57857f67a68c6fbc027e95246cbc0147e9346904\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_259242eb11\",\"field\":\"raw_specs\",\"quote\":\"4 ohm\"}],\"reason\":\"The impedance and unit match the supplied fact.\"},{\"text\":\"and 40 W of power for an unspecified purpose\",\"start\":65,\"end\":109,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_b89908882f39d03341785e56aae404932aef356b534097b58835af7a9a97cd8c\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_259242eb11\",\"field\":\"raw_specs\",\"quote\":\"40W\"}],\"reason\":\"The power matches the supplied fact and retains its purpose_unspecified qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0460a6b1ab66da61016aa454c3732087d085778ecf65f8e8cb",
+    "usage": {
+      "inputTokens": 2369,
+      "outputTokens": 562,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2366
+    }
+  }
+}

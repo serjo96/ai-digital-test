@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7527.981,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "1b45c47875d786337d619488bc2589989401d62517d361f09443185ed9220929",
+      "claims": [
+        {
+          "text": "The Cirrus Lite camera records video at 4K@60fps",
+          "start": 0,
+          "end": 48,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:06316e3c5a88f9d4b6ba031712edf275f190b8701cfd5f3e96d15c4ed1325990",
+            "identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e",
+            "fact:fact_ea6fe3ecf8b2a1184b05937cfa8fa2a7e0d558d1ff88b332d908d171c1cfcb7e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_127d44f74c",
+              "field": "raw_title",
+              "quote": "CIRRUS LITE ACTION CAMERA"
+            },
+            {
+              "rowId": "row_127d44f74c",
+              "field": "raw_specs",
+              "quote": "4K60"
+            }
+          ],
+          "reason": "The title supports the model and camera type; the supplied video-recording support maps 4K60 to 4K@60fps."
+        },
+        {
+          "text": "and is waterproof up to 10 m",
+          "start": 49,
+          "end": 77,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_661065336b62d8385dfc89d1f3331c4f59eb819f0f9c2b6a3507ae415b41c244"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_127d44f74c",
+              "field": "raw_specs",
+              "quote": "waterproof to 10m"
+            }
+          ],
+          "reason": "The source explicitly supports waterproofing to 10 m, retaining the supplied up-to qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"1b45c47875d786337d619488bc2589989401d62517d361f09443185ed9220929\",\"claims\":[{\"text\":\"The Cirrus Lite camera records video at 4K@60fps\",\"start\":0,\"end\":48,\"verdict\":\"supported\",\"supportIds\":[\"identity:06316e3c5a88f9d4b6ba031712edf275f190b8701cfd5f3e96d15c4ed1325990\",\"identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e\",\"fact:fact_ea6fe3ecf8b2a1184b05937cfa8fa2a7e0d558d1ff88b332d908d171c1cfcb7e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_127d44f74c\",\"field\":\"raw_title\",\"quote\":\"CIRRUS LITE ACTION CAMERA\"},{\"rowId\":\"row_127d44f74c\",\"field\":\"raw_specs\",\"quote\":\"4K60\"}],\"reason\":\"The title supports the model and camera type; the supplied video-recording support maps 4K60 to 4K@60fps.\"},{\"text\":\"and is waterproof up to 10 m\",\"start\":49,\"end\":77,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_661065336b62d8385dfc89d1f3331c4f59eb819f0f9c2b6a3507ae415b41c244\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_127d44f74c\",\"field\":\"raw_specs\",\"quote\":\"waterproof to 10m\"}],\"reason\":\"The source explicitly supports waterproofing to 10 m, retaining the supplied up-to qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0e8715f1ddbfb4ad016aa450e6962c87d085aefc7f53179459",
+    "usage": {
+      "inputTokens": 1778,
+      "outputTokens": 429,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1775
+    }
+  }
+}

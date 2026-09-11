@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1497.7759170000209,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Pivot Lite mouse has 6 buttons and a mass of 70 g."
+    },
+    "raw": "{\"text\":\"The Pivot Lite mouse has 6 buttons and a mass of 70 g.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0d5cc49b2380401d016aa452b988d087d0bb9581e02b5ecb4f",
+    "usage": {
+      "inputTokens": 537,
+      "outputTokens": 30,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "elapsedMs": 9872.11725000001,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "5559632c4b61af12446bd2234fb1e5b0ff549beb207409cb3450a70eb041173b",
+      "claims": [
+        {
+          "text": "The Cirrus is a 7-in-1 USB-C hub",
+          "start": 0,
+          "end": 32,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:ca20303833ceb3367506df75db4d2ce71e21f201613467b2ada01ea431050724",
+            "identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4",
+            "fact:fact_d69e0c6157a66175fb226bd643af51b90af6cb74da472708b8c13fe0578fd625",
+            "fact:fact_cafbad87a7e21f82f8a428a2f9a8506d95d87089af3a39b2561c8122add5b877"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_38ed2ce97a",
+              "field": "raw_title",
+              "quote": "Cirrus USB-C hub"
+            },
+            {
+              "rowId": "row_5f0a46c6ee",
+              "field": "raw_title",
+              "quote": "Cirrus USB-C hub"
+            },
+            {
+              "rowId": "row_38ed2ce97a",
+              "field": "raw_specs",
+              "quote": "7-in-1"
+            },
+            {
+              "rowId": "row_38ed2ce97a",
+              "field": "raw_title",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "Supplied identity and feature supports establish the model, hub type, connector, and multifunction count."
+        },
+        {
+          "text": "with 4K@30fps video output",
+          "start": 33,
+          "end": 59,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_0fa71e3fcd8ccb271296834ce0ba2f99d823c0a1cb084a9e9737a32adc7accd3"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_38ed2ce97a",
+              "field": "raw_specs",
+              "quote": "4K30"
+            }
+          ],
+          "reason": "The supplied video-output support interprets the raw HDMI 4K30 specification as 4K@30fps."
+        },
+        {
+          "text": "and 100 W power with PD passthrough",
+          "start": 60,
+          "end": 95,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_e6f8bbd041eb71db0ecc53d22c3f3cd5d9e6d3332916983d0b9d121cc4ec30cc"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_38ed2ce97a",
+              "field": "raw_specs",
+              "quote": "100W PD passthrough"
+            }
+          ],
+          "reason": "The stated power matches the source and retains the PD passthrough qualification."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"5559632c4b61af12446bd2234fb1e5b0ff549beb207409cb3450a70eb041173b\",\"claims\":[{\"text\":\"The Cirrus is a 7-in-1 USB-C hub\",\"start\":0,\"end\":32,\"verdict\":\"supported\",\"supportIds\":[\"identity:ca20303833ceb3367506df75db4d2ce71e21f201613467b2ada01ea431050724\",\"identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4\",\"fact:fact_d69e0c6157a66175fb226bd643af51b90af6cb74da472708b8c13fe0578fd625\",\"fact:fact_cafbad87a7e21f82f8a428a2f9a8506d95d87089af3a39b2561c8122add5b877\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_38ed2ce97a\",\"field\":\"raw_title\",\"quote\":\"Cirrus USB-C hub\"},{\"rowId\":\"row_5f0a46c6ee\",\"field\":\"raw_title\",\"quote\":\"Cirrus USB-C hub\"},{\"rowId\":\"row_38ed2ce97a\",\"field\":\"raw_specs\",\"quote\":\"7-in-1\"},{\"rowId\":\"row_38ed2ce97a\",\"field\":\"raw_title\",\"quote\":\"USB-C\"}],\"reason\":\"Supplied identity and feature supports establish the model, hub type, connector, and multifunction count.\"},{\"text\":\"with 4K@30fps video output\",\"start\":33,\"end\":59,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_0fa71e3fcd8ccb271296834ce0ba2f99d823c0a1cb084a9e9737a32adc7accd3\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_38ed2ce97a\",\"field\":\"raw_specs\",\"quote\":\"4K30\"}],\"reason\":\"The supplied video-output support interprets the raw HDMI 4K30 specification as 4K@30fps.\"},{\"text\":\"and 100 W power with PD passthrough\",\"start\":60,\"end\":95,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_e6f8bbd041eb71db0ecc53d22c3f3cd5d9e6d3332916983d0b9d121cc4ec30cc\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_38ed2ce97a\",\"field\":\"raw_specs\",\"quote\":\"100W PD passthrough\"}],\"reason\":\"The stated power matches the source and retains the PD passthrough qualification.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0c7f425ae3d2c0ae016aa45101dfa487d093926063252f5a2f",
+    "usage": {
+      "inputTokens": 2278,
+      "outputTokens": 630,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2275
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2093.1289579999866,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "Cirrus Plus earbuds feature a 3.5mm connector and an in-line microphone."
+    },
+    "raw": "{\"text\":\"Cirrus Plus earbuds feature a 3.5mm connector and an in-line microphone.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0d241fde0c1ced28016aa4510bc16487d0ba20e1d9cdaa1d98",
+    "usage": {
+      "inputTokens": 569,
+      "outputTokens": 32,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

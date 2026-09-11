@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 8068.071250000037,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "f10991113d2aaf78614e5ff511af823bca18090dbcde2824e53dfe0c64214f74",
+      "claims": [
+        {
+          "text": "The Mesa laptop sleeve is made of neoprene",
+          "start": 0,
+          "end": 42,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:b2fdf1d644efb05faf61227cd3029f4f1a8f90ae4876eec99838f959c3838c9e",
+            "identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db",
+            "fact:fact_c6ab179d86713ec9cf00115da98ac9b44980a0bbd274f71112b5a39a5b6d04b5"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_7f9b60153c",
+              "field": "raw_title",
+              "quote": "Mesa laptop sleeve"
+            },
+            {
+              "rowId": "row_e6bcf83e77",
+              "field": "raw_title",
+              "quote": "Mesa laptop sleeve"
+            },
+            {
+              "rowId": "row_e6bcf83e77",
+              "field": "raw_specs",
+              "quote": "neoprene"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and product type, and the material support explicitly identifies neoprene. The other row's missing specifications do not contradict this."
+        },
+        {
+          "text": "and is compatible with 14 in devices",
+          "start": 43,
+          "end": 79,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_38ed849e0e875d19e20f3206f64beb828a74676d15a1652c65ce0d1f2c1cbdd6"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_e6bcf83e77",
+              "field": "raw_specs",
+              "quote": "14in"
+            }
+          ],
+          "reason": "The supplied 14 in size support is explicitly conditioned on compatible_device, matching the description's compatibility claim rather than attributing a display to the sleeve."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"f10991113d2aaf78614e5ff511af823bca18090dbcde2824e53dfe0c64214f74\",\"claims\":[{\"text\":\"The Mesa laptop sleeve is made of neoprene\",\"start\":0,\"end\":42,\"verdict\":\"supported\",\"supportIds\":[\"identity:b2fdf1d644efb05faf61227cd3029f4f1a8f90ae4876eec99838f959c3838c9e\",\"identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db\",\"fact:fact_c6ab179d86713ec9cf00115da98ac9b44980a0bbd274f71112b5a39a5b6d04b5\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_7f9b60153c\",\"field\":\"raw_title\",\"quote\":\"Mesa laptop sleeve\"},{\"rowId\":\"row_e6bcf83e77\",\"field\":\"raw_title\",\"quote\":\"Mesa laptop sleeve\"},{\"rowId\":\"row_e6bcf83e77\",\"field\":\"raw_specs\",\"quote\":\"neoprene\"}],\"reason\":\"The supplied identity supports establish the model and product type, and the material support explicitly identifies neoprene. The other row's missing specifications do not contradict this.\"},{\"text\":\"and is compatible with 14 in devices\",\"start\":43,\"end\":79,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_38ed849e0e875d19e20f3206f64beb828a74676d15a1652c65ce0d1f2c1cbdd6\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_e6bcf83e77\",\"field\":\"raw_specs\",\"quote\":\"14in\"}],\"reason\":\"The supplied 14 in size support is explicitly conditioned on compatible_device, matching the description's compatibility claim rather than attributing a display to the sleeve.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_04c5c0181262370c016aa454965ec487d08624d7199ebe5be3",
+    "usage": {
+      "inputTokens": 1973,
+      "outputTokens": 456,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1970
+    }
+  }
+}

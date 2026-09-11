@@ -1,0 +1,82 @@
+{
+  "elapsedMs": 10163.49558300001,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "e3a839058bc21a3b80e8f073d59c49027c89e09ffdfadd0fcf1ebfa6cfd04fe7",
+      "claims": [
+        {
+          "text": "The Pivot Lite scale uses BIA",
+          "start": 0,
+          "end": 29,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:39fd3654b29adfe437558ec96a9b115ddb4903860883296449ea1876ce5e8f68",
+            "identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7",
+            "fact:fact_9b3edcbc169caedcbe17c5a66fcf22f397bbc02ce99cb54d90a92b420768efcc"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c53344afdc",
+              "field": "raw_title",
+              "quote": "Pivot Lite smart scale"
+            },
+            {
+              "rowId": "row_c53344afdc",
+              "field": "raw_specs",
+              "quote": "BIA"
+            }
+          ],
+          "reason": "The title identifies the model and product type; the specifications state BIA."
+        },
+        {
+          "text": "supports app sync",
+          "start": 31,
+          "end": 48,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_b1f8ac6a586bb52b4ae2d17faa2cd0ab5af9c46606d033ef8549a47972759c46"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c53344afdc",
+              "field": "raw_specs",
+              "quote": "app sync"
+            }
+          ],
+          "reason": "The specifications explicitly list app sync."
+        },
+        {
+          "text": "and has a maximum load of 180 kg",
+          "start": 50,
+          "end": 82,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_20cbb582f9061380f3683d58ed525b35cc03ae4e3c31a4526fbb978ade1cd6c4"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c53344afdc",
+              "field": "raw_specs",
+              "quote": "180kg max"
+            }
+          ],
+          "reason": "The stated load matches the supported value and preserves the maximum qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"e3a839058bc21a3b80e8f073d59c49027c89e09ffdfadd0fcf1ebfa6cfd04fe7\",\"claims\":[{\"text\":\"The Pivot Lite scale uses BIA\",\"start\":0,\"end\":29,\"verdict\":\"supported\",\"supportIds\":[\"identity:39fd3654b29adfe437558ec96a9b115ddb4903860883296449ea1876ce5e8f68\",\"identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7\",\"fact:fact_9b3edcbc169caedcbe17c5a66fcf22f397bbc02ce99cb54d90a92b420768efcc\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c53344afdc\",\"field\":\"raw_title\",\"quote\":\"Pivot Lite smart scale\"},{\"rowId\":\"row_c53344afdc\",\"field\":\"raw_specs\",\"quote\":\"BIA\"}],\"reason\":\"The title identifies the model and product type; the specifications state BIA.\"},{\"text\":\"supports app sync\",\"start\":31,\"end\":48,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_b1f8ac6a586bb52b4ae2d17faa2cd0ab5af9c46606d033ef8549a47972759c46\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c53344afdc\",\"field\":\"raw_specs\",\"quote\":\"app sync\"}],\"reason\":\"The specifications explicitly list app sync.\"},{\"text\":\"and has a maximum load of 180 kg\",\"start\":50,\"end\":82,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_20cbb582f9061380f3683d58ed525b35cc03ae4e3c31a4526fbb978ade1cd6c4\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c53344afdc\",\"field\":\"raw_specs\",\"quote\":\"180kg max\"}],\"reason\":\"The stated load matches the supported value and preserves the maximum qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_03f7756d18a5c8fa016aa45406915087d090fec7189fba40e0",
+    "usage": {
+      "inputTokens": 1888,
+      "outputTokens": 489,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1885
+    }
+  }
+}

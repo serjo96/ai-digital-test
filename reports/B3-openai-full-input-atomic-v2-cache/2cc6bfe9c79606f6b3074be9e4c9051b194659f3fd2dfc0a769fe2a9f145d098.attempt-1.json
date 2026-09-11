@@ -1,0 +1,58 @@
+{
+  "elapsedMs": 6665.688584000105,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "68ec15caf6cc990ada42d092609159082ac9cba9fde51b7dbe7b4b4c3f3a34af",
+      "claims": [
+        {
+          "text": "The Larkspur USB hub",
+          "start": 0,
+          "end": 20,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4",
+            "identity:8a1564cbb33e205bd41f07605529fad975599327b90eaa882ec806a7c3c4f169"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_0fd5e416e8",
+              "field": "raw_title",
+              "quote": "Larkspur USB-C hub"
+            }
+          ],
+          "reason": "The title supports the Larkspur model identity and USB hub type."
+        },
+        {
+          "text": "features a USB-C connector",
+          "start": 21,
+          "end": 47,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_dd871422d996402c3e62fb8c9102fba9d3c2e3c1765f8c54e1c74b15e3253dd2"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_0fd5e416e8",
+              "field": "raw_title",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The supplied connector fact and title support USB-C; missing specifications do not contradict this title-supported fact."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"68ec15caf6cc990ada42d092609159082ac9cba9fde51b7dbe7b4b4c3f3a34af\",\"claims\":[{\"text\":\"The Larkspur USB hub\",\"start\":0,\"end\":20,\"verdict\":\"supported\",\"supportIds\":[\"identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4\",\"identity:8a1564cbb33e205bd41f07605529fad975599327b90eaa882ec806a7c3c4f169\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_0fd5e416e8\",\"field\":\"raw_title\",\"quote\":\"Larkspur USB-C hub\"}],\"reason\":\"The title supports the Larkspur model identity and USB hub type.\"},{\"text\":\"features a USB-C connector\",\"start\":21,\"end\":47,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_dd871422d996402c3e62fb8c9102fba9d3c2e3c1765f8c54e1c74b15e3253dd2\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_0fd5e416e8\",\"field\":\"raw_title\",\"quote\":\"USB-C\"}],\"reason\":\"The supplied connector fact and title support USB-C; missing specifications do not contradict this title-supported fact.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_04dcf7259584a009016aa45470761087d0b20985a9274d18e7",
+    "usage": {
+      "inputTokens": 1505,
+      "outputTokens": 341,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1502
+    }
+  }
+}

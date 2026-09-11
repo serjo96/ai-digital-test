@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 8329.171542000026,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "875fd3dc47f3f6c6fed25e3581f215b41d0769c6b10808e67c9fe22a8988df28",
+      "claims": [
+        {
+          "text": "The Sable 2 tablet case has a folio style",
+          "start": 0,
+          "end": 41,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:e9a33c61effd7cf373a233fefc780ea6a55009e42d538bbda9660f4caed6563b",
+            "identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02",
+            "fact:fact_092fb2f0d3ad4f6cd4ca6d52d2f6602d76ab0f3109b250d0e7c316ff29e04105"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_728bc009b0",
+              "field": "raw_title",
+              "quote": "SABLE 2 TABLET CASE"
+            },
+            {
+              "rowId": "row_bcbe8b38fe",
+              "field": "raw_title",
+              "quote": "SABLE 2 TABLET CASE"
+            },
+            {
+              "rowId": "row_728bc009b0",
+              "field": "raw_specs",
+              "quote": "folio"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and product type, and the case-style support explicitly specifies folio."
+        },
+        {
+          "text": "and supports auto sleep/wake",
+          "start": 42,
+          "end": 70,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_a6486bdb7f0708cde829abd1a6f94773ecd5fe20f95e2ea6a775cb4e4d6596b6"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_728bc009b0",
+              "field": "raw_specs",
+              "quote": "auto sleep/wake"
+            }
+          ],
+          "reason": "The supplied feature support explicitly establishes auto sleep/wake for this case."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"875fd3dc47f3f6c6fed25e3581f215b41d0769c6b10808e67c9fe22a8988df28\",\"claims\":[{\"text\":\"The Sable 2 tablet case has a folio style\",\"start\":0,\"end\":41,\"verdict\":\"supported\",\"supportIds\":[\"identity:e9a33c61effd7cf373a233fefc780ea6a55009e42d538bbda9660f4caed6563b\",\"identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02\",\"fact:fact_092fb2f0d3ad4f6cd4ca6d52d2f6602d76ab0f3109b250d0e7c316ff29e04105\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_728bc009b0\",\"field\":\"raw_title\",\"quote\":\"SABLE 2 TABLET CASE\"},{\"rowId\":\"row_bcbe8b38fe\",\"field\":\"raw_title\",\"quote\":\"SABLE 2 TABLET CASE\"},{\"rowId\":\"row_728bc009b0\",\"field\":\"raw_specs\",\"quote\":\"folio\"}],\"reason\":\"The supplied identity supports establish the model and product type, and the case-style support explicitly specifies folio.\"},{\"text\":\"and supports auto sleep/wake\",\"start\":42,\"end\":70,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_a6486bdb7f0708cde829abd1a6f94773ecd5fe20f95e2ea6a775cb4e4d6596b6\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_728bc009b0\",\"field\":\"raw_specs\",\"quote\":\"auto sleep/wake\"}],\"reason\":\"The supplied feature support explicitly establishes auto sleep/wake for this case.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_06391a91d5e106f8016aa45694634487d098d224355a5f86a3",
+    "usage": {
+      "inputTokens": 1837,
+      "outputTokens": 441,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1834
+    }
+  }
+}

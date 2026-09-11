@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2279.6052909999853,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "Cirrus 3 earbuds feature a 3.5mm connector and an in-line microphone."
+    },
+    "raw": "{\"text\":\"Cirrus 3 earbuds feature a 3.5mm connector and an in-line microphone.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0a0edaddfd54cec2016aa4529ff9b087d0bc909c8ab565348d",
+    "usage": {
+      "inputTokens": 565,
+      "outputTokens": 33,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

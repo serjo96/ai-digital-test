@@ -1,0 +1,106 @@
+{
+  "elapsedMs": 14580.429999999935,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "90a6ad7d56cc66bb1fb86e8b13bbe6181696214f49653c754fe2e044f618f179",
+      "claims": [
+        {
+          "text": "The TaskFlow K2 is a TKL keyboard",
+          "start": 0,
+          "end": 33,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:65b54d9a0a6996544dee0527d651d6ddbb4589df4749ca0c8c70fa06e0c57f82",
+            "identity:c5b3ffa14216a45627966f254d05745076499ab48409fda17ed0cc166837807c",
+            "fact:fact_08fb0a8fd89d6a12f04f227e78074d157aca55f046dbb50d97b5b2c403b86edd"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_64543589fc",
+              "field": "raw_title",
+              "quote": "TaskFlow K2 Mechanical Keyboard (brown switch)"
+            },
+            {
+              "rowId": "row_64543589fc",
+              "field": "raw_specs",
+              "quote": "TKL"
+            }
+          ],
+          "reason": "The supplied title identifies the model and product type, and the specifications state the TKL layout."
+        },
+        {
+          "text": "with hot-swappable brown tactile switches",
+          "start": 34,
+          "end": 75,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_dddf9982b1beb4a84f60ce3b35a5eaa2456c16d035cc7e4f90f68a70d9c8899c",
+            "fact:fact_02e83e74faf3fe5e990cfc6adabbaca57d6f0fed00ead2fb0972fb2c5705d432"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_64543589fc",
+              "field": "raw_specs",
+              "quote": "hot-swap"
+            },
+            {
+              "rowId": "row_64543589fc",
+              "field": "raw_specs",
+              "quote": "brown tactile switches"
+            }
+          ],
+          "reason": "The specifications explicitly support hot-swappability and brown tactile switches."
+        },
+        {
+          "text": "RGB backlighting",
+          "start": 77,
+          "end": 93,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_e8298bd23785ca6d9b56ca6bb2db426363cd867475c86eaf54a9eda7aa8a229e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_64543589fc",
+              "field": "raw_specs",
+              "quote": "RGB"
+            }
+          ],
+          "reason": "The allowed backlight support specifies RGB; the other raw row also explicitly states RGB backlight."
+        },
+        {
+          "text": "and a USB-C connector",
+          "start": 95,
+          "end": 116,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_87455c8ecac168a558fdd1b770dfc9849acdf2e4d13d9866af4a4e80d700e6eb"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_64543589fc",
+              "field": "raw_specs",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The supplied connector support and raw specifications identify USB-C."
+        }
+      ]
+    },
+    "raw": "{\n  \"textHash\": \"90a6ad7d56cc66bb1fb86e8b13bbe6181696214f49653c754fe2e044f618f179\",\n  \"claims\": [\n    {\n      \"text\": \"The TaskFlow K2 is a TKL keyboard\",\n      \"start\": 0,\n      \"end\": 33,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"identity:65b54d9a0a6996544dee0527d651d6ddbb4589df4749ca0c8c70fa06e0c57f82\",\n        \"identity:c5b3ffa14216a45627966f254d05745076499ab48409fda17ed0cc166837807c\",\n        \"fact:fact_08fb0a8fd89d6a12f04f227e78074d157aca55f046dbb50d97b5b2c403b86edd\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_64543589fc\",\n          \"field\": \"raw_title\",\n          \"quote\": \"TaskFlow K2 Mechanical Keyboard (brown switch)\"\n        },\n        {\n          \"rowId\": \"row_64543589fc\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"TKL\"\n        }\n      ],\n      \"reason\": \"The supplied title identifies the model and product type, and the specifications state the TKL layout.\"\n    },\n    {\n      \"text\": \"with hot-swappable brown tactile switches\",\n      \"start\": 34,\n      \"end\": 75,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_dddf9982b1beb4a84f60ce3b35a5eaa2456c16d035cc7e4f90f68a70d9c8899c\",\n        \"fact:fact_02e83e74faf3fe5e990cfc6adabbaca57d6f0fed00ead2fb0972fb2c5705d432\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_64543589fc\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"hot-swap\"\n        },\n        {\n          \"rowId\": \"row_64543589fc\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"brown tactile switches\"\n        }\n      ],\n      \"reason\": \"The specifications explicitly support hot-swappability and brown tactile switches.\"\n    },\n    {\n      \"text\": \"RGB backlighting\",\n      \"start\": 77,\n      \"end\": 93,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_e8298bd23785ca6d9b56ca6bb2db426363cd867475c86eaf54a9eda7aa8a229e\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_64543589fc\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"RGB\"\n        }\n      ],\n      \"reason\": \"The allowed backlight support specifies RGB; the other raw row also explicitly states RGB backlight.\"\n    },\n    {\n      \"text\": \"and a USB-C connector\",\n      \"start\": 95,\n      \"end\": 116,\n      \"verdict\": \"supported\",\n      \"supportIds\": [\n        \"fact:fact_87455c8ecac168a558fdd1b770dfc9849acdf2e4d13d9866af4a4e80d700e6eb\"\n      ],\n      \"decisionIds\": [],\n      \"evidence\": [\n        {\n          \"rowId\": \"row_64543589fc\",\n          \"field\": \"raw_specs\",\n          \"quote\": \"USB-C\"\n        }\n      ],\n      \"reason\": \"The supplied connector support and raw specifications identify USB-C.\"\n    }\n  ]\n}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_069b4e4a85778338016aa454ffaef487d0ad85b09868c5ea29",
+    "usage": {
+      "inputTokens": 3592,
+      "outputTokens": 894,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 3589
+    }
+  }
+}

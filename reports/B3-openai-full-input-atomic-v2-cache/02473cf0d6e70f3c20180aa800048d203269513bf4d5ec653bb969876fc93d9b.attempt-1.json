@@ -1,0 +1,100 @@
+{
+  "elapsedMs": 10934.507375000045,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "775bb5d7b88777d8177272675f20596a8fe3bbf43bece8a08c9d2858b97c6d15",
+      "claims": [
+        {
+          "text": "The Basalt 2 microSD memory card has 256 GB of storage",
+          "start": 0,
+          "end": 54,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:eb8fbe9447f5aa6bb2dd8d71626beff578429e851d59682727bd6423da83f986",
+            "identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa",
+            "fact:fact_4dc093f8ca327bfadf2869ad8782951748ab1369a87d9b7f3c382ded99e3104b"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_35c28ff0d0",
+              "field": "raw_title",
+              "quote": "BASALT 2 MICROSD CARD 256GB"
+            },
+            {
+              "rowId": "row_35c28ff0d0",
+              "field": "raw_title",
+              "quote": "256GB"
+            }
+          ],
+          "reason": "The source title establishes the model, microSD memory-card type and 256 GB capacity."
+        },
+        {
+          "text": "a UHS-I bus rating",
+          "start": 56,
+          "end": 74,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_aef7546d5e8554c248bd31bd9d35de64d562b6b329eb604209e3068b20890e48"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_35c28ff0d0",
+              "field": "raw_specs",
+              "quote": "UHS-I"
+            }
+          ],
+          "reason": "The bus rating is explicitly supplied; this phrase continues the preceding 'has'."
+        },
+        {
+          "text": "and an A2 application rating",
+          "start": 75,
+          "end": 103,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_46f99ad4d277c0f776183d30443cbf0ed5a85704c69cef1350a33bba30411f5f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_35c28ff0d0",
+              "field": "raw_specs",
+              "quote": "A2"
+            }
+          ],
+          "reason": "The supplied application rating is A2."
+        },
+        {
+          "text": "It supports transfer speeds of up to 170 MB/s, with the direction unspecified",
+          "start": 105,
+          "end": 182,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_40247308b9d1f36ac95ef28a2584a3588514a5c13c1b4324ca6e2394454a5aa3"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_35c28ff0d0",
+              "field": "raw_specs",
+              "quote": "up to 170MB/s"
+            }
+          ],
+          "reason": "The speed matches the supplied value and retains both the up-to qualifier and unspecified transfer direction."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"775bb5d7b88777d8177272675f20596a8fe3bbf43bece8a08c9d2858b97c6d15\",\"claims\":[{\"text\":\"The Basalt 2 microSD memory card has 256 GB of storage\",\"start\":0,\"end\":54,\"verdict\":\"supported\",\"supportIds\":[\"identity:eb8fbe9447f5aa6bb2dd8d71626beff578429e851d59682727bd6423da83f986\",\"identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa\",\"fact:fact_4dc093f8ca327bfadf2869ad8782951748ab1369a87d9b7f3c382ded99e3104b\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_35c28ff0d0\",\"field\":\"raw_title\",\"quote\":\"BASALT 2 MICROSD CARD 256GB\"},{\"rowId\":\"row_35c28ff0d0\",\"field\":\"raw_title\",\"quote\":\"256GB\"}],\"reason\":\"The source title establishes the model, microSD memory-card type and 256 GB capacity.\"},{\"text\":\"a UHS-I bus rating\",\"start\":56,\"end\":74,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_aef7546d5e8554c248bd31bd9d35de64d562b6b329eb604209e3068b20890e48\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_35c28ff0d0\",\"field\":\"raw_specs\",\"quote\":\"UHS-I\"}],\"reason\":\"The bus rating is explicitly supplied; this phrase continues the preceding 'has'.\"},{\"text\":\"and an A2 application rating\",\"start\":75,\"end\":103,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_46f99ad4d277c0f776183d30443cbf0ed5a85704c69cef1350a33bba30411f5f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_35c28ff0d0\",\"field\":\"raw_specs\",\"quote\":\"A2\"}],\"reason\":\"The supplied application rating is A2.\"},{\"text\":\"It supports transfer speeds of up to 170 MB/s, with the direction unspecified\",\"start\":105,\"end\":182,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_40247308b9d1f36ac95ef28a2584a3588514a5c13c1b4324ca6e2394454a5aa3\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_35c28ff0d0\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"The speed matches the supplied value and retains both the up-to qualifier and unspecified transfer direction.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_097e4cafb7e00b4e016aa452e5ce8887d0b69f44a85e577a72",
+    "usage": {
+      "inputTokens": 3334,
+      "outputTokens": 659,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 3331
+    }
+  }
+}

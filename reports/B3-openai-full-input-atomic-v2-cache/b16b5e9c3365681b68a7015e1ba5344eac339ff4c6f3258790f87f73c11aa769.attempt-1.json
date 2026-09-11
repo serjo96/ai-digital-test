@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 7769.314584000036,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "fb1a1c86cc23c2752377321018277ea09dff2c7b32853bcc934d94e18f603724",
+      "claims": [
+        {
+          "text": "The Mesa X mouse has 6 buttons",
+          "start": 0,
+          "end": 30,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:2deeccfc713c767b82a105a7e1f3dc07c2f2e08c3c663e657417601bb1ebe4db",
+            "identity:335df722e77165d393567d4144ff04009970552a248aaf23d2e477551aad076c",
+            "fact:fact_d2648276c84b086b82f62c51b2248d4a5735ba20518c3306ef90e6beb89d3673"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_6eea41ae9b",
+              "field": "raw_title",
+              "quote": "Mesa X wireless mouse"
+            },
+            {
+              "rowId": "row_a702f5474f",
+              "field": "raw_title",
+              "quote": "Mesa X wireless mouse"
+            },
+            {
+              "rowId": "row_6eea41ae9b",
+              "field": "raw_specs",
+              "quote": "6 buttons"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and product type, and the button-count support explicitly states 6 buttons."
+        },
+        {
+          "text": "and a mass of 70 g",
+          "start": 31,
+          "end": 49,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_b56e2cbb2cd5f7c6dfbcdd34a4ad6ee32b0e42bd0c926a7221da84de9911c1cf"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_6eea41ae9b",
+              "field": "raw_specs",
+              "quote": "70g"
+            }
+          ],
+          "reason": "The supplied mass support explicitly gives 70 g for this product."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"fb1a1c86cc23c2752377321018277ea09dff2c7b32853bcc934d94e18f603724\",\"claims\":[{\"text\":\"The Mesa X mouse has 6 buttons\",\"start\":0,\"end\":30,\"verdict\":\"supported\",\"supportIds\":[\"identity:2deeccfc713c767b82a105a7e1f3dc07c2f2e08c3c663e657417601bb1ebe4db\",\"identity:335df722e77165d393567d4144ff04009970552a248aaf23d2e477551aad076c\",\"fact:fact_d2648276c84b086b82f62c51b2248d4a5735ba20518c3306ef90e6beb89d3673\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_6eea41ae9b\",\"field\":\"raw_title\",\"quote\":\"Mesa X wireless mouse\"},{\"rowId\":\"row_a702f5474f\",\"field\":\"raw_title\",\"quote\":\"Mesa X wireless mouse\"},{\"rowId\":\"row_6eea41ae9b\",\"field\":\"raw_specs\",\"quote\":\"6 buttons\"}],\"reason\":\"The supplied identity supports establish the model and product type, and the button-count support explicitly states 6 buttons.\"},{\"text\":\"and a mass of 70 g\",\"start\":31,\"end\":49,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_b56e2cbb2cd5f7c6dfbcdd34a4ad6ee32b0e42bd0c926a7221da84de9911c1cf\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_6eea41ae9b\",\"field\":\"raw_specs\",\"quote\":\"70g\"}],\"reason\":\"The supplied mass support explicitly gives 70 g for this product.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_03451fa038b2cab1016aa452616a6887d08e968281973053f7",
+    "usage": {
+      "inputTokens": 1830,
+      "outputTokens": 423,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1827
+    }
+  }
+}

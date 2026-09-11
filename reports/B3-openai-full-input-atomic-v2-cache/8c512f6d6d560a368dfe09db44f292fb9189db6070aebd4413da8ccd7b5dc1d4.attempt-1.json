@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 3459.835916000011,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Cirrus Lite camera records video at 4K@60fps and is waterproof up to 10 m."
+    },
+    "raw": "{\"text\":\"The Cirrus Lite camera records video at 4K@60fps and is waterproof up to 10 m.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_00329496590663d8016aa450e3201087d0b5a3bf17e9848c50",
+    "usage": {
+      "inputTokens": 579,
+      "outputTokens": 37,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7376.0459170000395,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "0c9ec6f351dc019d65a9d664494a4def83bfb683b144e06ec6f1e80fe256a764",
+      "claims": [
+        {
+          "text": "The Onyx 3 laptop sleeve is made of neoprene",
+          "start": 0,
+          "end": 44,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:3ff90cbbb23f570707d3ce3f633a5088fe151fd9f4c44b1cde3d468eb08aeb58",
+            "identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db",
+            "fact:fact_fe6af0a78e11fb1346945830722d38a4283c0cc95f1d8848df9dbc3b3c7cd909"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_5824054a52",
+              "field": "raw_title",
+              "quote": "ONYX 3 LAPTOP SLEEVE"
+            },
+            {
+              "rowId": "row_5824054a52",
+              "field": "raw_specs",
+              "quote": "neoprene"
+            }
+          ],
+          "reason": "The supplied identity supports identify the model and product type, and the material support specifies neoprene."
+        },
+        {
+          "text": "and is compatible with devices with a 14 in display",
+          "start": 45,
+          "end": 96,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_2a85b8213bad78a62f21e68c2065337e5fdd524beaacea2a96614d7d21d07bc9"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_5824054a52",
+              "field": "raw_specs",
+              "quote": "14in"
+            }
+          ],
+          "reason": "The supplied display-size support specifies 14 inches with the compatible_device condition, which the description preserves."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"0c9ec6f351dc019d65a9d664494a4def83bfb683b144e06ec6f1e80fe256a764\",\"claims\":[{\"text\":\"The Onyx 3 laptop sleeve is made of neoprene\",\"start\":0,\"end\":44,\"verdict\":\"supported\",\"supportIds\":[\"identity:3ff90cbbb23f570707d3ce3f633a5088fe151fd9f4c44b1cde3d468eb08aeb58\",\"identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db\",\"fact:fact_fe6af0a78e11fb1346945830722d38a4283c0cc95f1d8848df9dbc3b3c7cd909\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_5824054a52\",\"field\":\"raw_title\",\"quote\":\"ONYX 3 LAPTOP SLEEVE\"},{\"rowId\":\"row_5824054a52\",\"field\":\"raw_specs\",\"quote\":\"neoprene\"}],\"reason\":\"The supplied identity supports identify the model and product type, and the material support specifies neoprene.\"},{\"text\":\"and is compatible with devices with a 14 in display\",\"start\":45,\"end\":96,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_2a85b8213bad78a62f21e68c2065337e5fdd524beaacea2a96614d7d21d07bc9\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_5824054a52\",\"field\":\"raw_specs\",\"quote\":\"14in\"}],\"reason\":\"The supplied display-size support specifies 14 inches with the compatible_device condition, which the description preserves.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_00ba6f41eca285c8016aa453a2c40087d091cf5bea1aee7847",
+    "usage": {
+      "inputTokens": 1929,
+      "outputTokens": 419,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1926
+    }
+  }
+}

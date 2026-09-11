@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1940.8136249999516,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Tundra X scale uses BIA, supports app sync, and has a maximum load of 180 kg."
+    },
+    "raw": "{\"text\":\"The Tundra X scale uses BIA, supports app sync, and has a maximum load of 180 kg.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_005d5430e44b1baa016aa4561cc5ac87d092d61f2027a9fc4f",
+    "usage": {
+      "inputTokens": 729,
+      "outputTokens": 38,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

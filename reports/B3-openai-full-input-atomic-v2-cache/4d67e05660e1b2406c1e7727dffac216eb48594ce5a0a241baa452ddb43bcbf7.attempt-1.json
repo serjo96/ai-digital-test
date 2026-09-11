@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 7837.444707999937,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "0e33c2102e021a443fa9722c4596b574a41676e175abf93f4af0167f311e84f7",
+      "claims": [
+        {
+          "text": "The Harbor lamp features an LED light source",
+          "start": 0,
+          "end": 44,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d",
+            "identity:68a4920511a0855849ce137ee577bf966725ec1bfeff80c08fb6fb667ba42702",
+            "fact:fact_216ad1ff7043b6a9c0457c566e7fdc2d080b08660908defe521fc02b36735133"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4f178f2cd1",
+              "field": "raw_title",
+              "quote": "Harbor desk lamp"
+            },
+            {
+              "rowId": "row_fcc5f20edc",
+              "field": "raw_title",
+              "quote": "HARBOR DESK LAMP"
+            },
+            {
+              "rowId": "row_4f178f2cd1",
+              "field": "raw_specs",
+              "quote": "LED"
+            }
+          ],
+          "reason": "The supplied identity supports identify the Harbor lamp, and the light-source support specifies LED."
+        },
+        {
+          "text": "and a USB-C connector",
+          "start": 45,
+          "end": 66,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_e461db4b7361ddcd16c887d6a1d3bfabaca14e8e127d4945a07c1efc93378881"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4f178f2cd1",
+              "field": "raw_specs",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The supplied connector support specifies USB-C for this lamp."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"0e33c2102e021a443fa9722c4596b574a41676e175abf93f4af0167f311e84f7\",\"claims\":[{\"text\":\"The Harbor lamp features an LED light source\",\"start\":0,\"end\":44,\"verdict\":\"supported\",\"supportIds\":[\"identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d\",\"identity:68a4920511a0855849ce137ee577bf966725ec1bfeff80c08fb6fb667ba42702\",\"fact:fact_216ad1ff7043b6a9c0457c566e7fdc2d080b08660908defe521fc02b36735133\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4f178f2cd1\",\"field\":\"raw_title\",\"quote\":\"Harbor desk lamp\"},{\"rowId\":\"row_fcc5f20edc\",\"field\":\"raw_title\",\"quote\":\"HARBOR DESK LAMP\"},{\"rowId\":\"row_4f178f2cd1\",\"field\":\"raw_specs\",\"quote\":\"LED\"}],\"reason\":\"The supplied identity supports identify the Harbor lamp, and the light-source support specifies LED.\"},{\"text\":\"and a USB-C connector\",\"start\":45,\"end\":66,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_e461db4b7361ddcd16c887d6a1d3bfabaca14e8e127d4945a07c1efc93378881\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4f178f2cd1\",\"field\":\"raw_specs\",\"quote\":\"USB-C\"}],\"reason\":\"The supplied connector support specifies USB-C for this lamp.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_048cf1ae2a155d2c016aa45276c01c87d084f28fd1779d4296",
+    "usage": {
+      "inputTokens": 1958,
+      "outputTokens": 414,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1955
+    }
+  }
+}

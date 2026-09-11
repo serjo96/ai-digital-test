@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1626.058166999952,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Quill Plus tablet case has a folio style and supports auto sleep/wake."
+    },
+    "raw": "{\"text\":\"The Quill Plus tablet case has a folio style and supports auto sleep/wake.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0284aa5bcd32fa83016aa4541a414087d0befa579d05937cc9",
+    "usage": {
+      "inputTokens": 630,
+      "outputTokens": 32,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

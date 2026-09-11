@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 7371.0719589999935,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "e451102b819de8ca3465b274c3023ea27f56a6bce9c5aa4acd339ff9ef4600b5",
+      "claims": [
+        {
+          "text": "The Ember Plus tablet case has a folio style",
+          "start": 0,
+          "end": 44,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:5a6443fc0d9f700843d9d626fef3961b1482cd6fa29d3e5ef93abde1c9d32503",
+            "identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02",
+            "fact:fact_af5d95896dbbc1c3112519f536449e2a12547f081cebfe81b16a26c53d01bb3d"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_17bac50146",
+              "field": "raw_title",
+              "quote": "Ember Plus tablet case"
+            },
+            {
+              "rowId": "row_9d0de73f86",
+              "field": "raw_title",
+              "quote": "Ember Plus tablet case"
+            },
+            {
+              "rowId": "row_17bac50146",
+              "field": "raw_specs",
+              "quote": "folio"
+            }
+          ],
+          "reason": "The supplied identity evidence establishes the model and product type, and the case-style support explicitly states folio."
+        },
+        {
+          "text": "and supports auto sleep/wake",
+          "start": 45,
+          "end": 73,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_b1849a791155cf72d4e60ef73fcbe3299f4890df75b3b1d6f648d8d030abc674"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_17bac50146",
+              "field": "raw_specs",
+              "quote": "auto sleep/wake"
+            }
+          ],
+          "reason": "The supplied feature support explicitly confirms auto sleep/wake for the same tablet case."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"e451102b819de8ca3465b274c3023ea27f56a6bce9c5aa4acd339ff9ef4600b5\",\"claims\":[{\"text\":\"The Ember Plus tablet case has a folio style\",\"start\":0,\"end\":44,\"verdict\":\"supported\",\"supportIds\":[\"identity:5a6443fc0d9f700843d9d626fef3961b1482cd6fa29d3e5ef93abde1c9d32503\",\"identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02\",\"fact:fact_af5d95896dbbc1c3112519f536449e2a12547f081cebfe81b16a26c53d01bb3d\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_17bac50146\",\"field\":\"raw_title\",\"quote\":\"Ember Plus tablet case\"},{\"rowId\":\"row_9d0de73f86\",\"field\":\"raw_title\",\"quote\":\"Ember Plus tablet case\"},{\"rowId\":\"row_17bac50146\",\"field\":\"raw_specs\",\"quote\":\"folio\"}],\"reason\":\"The supplied identity evidence establishes the model and product type, and the case-style support explicitly states folio.\"},{\"text\":\"and supports auto sleep/wake\",\"start\":45,\"end\":73,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_b1849a791155cf72d4e60ef73fcbe3299f4890df75b3b1d6f648d8d030abc674\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_17bac50146\",\"field\":\"raw_specs\",\"quote\":\"auto sleep/wake\"}],\"reason\":\"The supplied feature support explicitly confirms auto sleep/wake for the same tablet case.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0537c4cd95bb644a016aa450efc43887d09cdcb6363e7d2afd",
+    "usage": {
+      "inputTokens": 1840,
+      "outputTokens": 428,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1837
+    }
+  }
+}

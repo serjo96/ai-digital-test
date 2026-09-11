@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1725.0851669999975,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Marlow 3 lamp features an LED light source and a USB-C connector."
+    },
+    "raw": "{\"text\":\"The Marlow 3 lamp features an LED light source and a USB-C connector.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_04b70c41d2630a28016aa45074967887d0a0bfb447e96daef3",
+    "usage": {
+      "inputTokens": 561,
+      "outputTokens": 31,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

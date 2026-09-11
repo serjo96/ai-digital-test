@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1700.4718750000466,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "Mesa earbuds feature a 3.5mm connector and an in-line microphone."
+    },
+    "raw": "{\"text\":\"Mesa earbuds feature a 3.5mm connector and an in-line microphone.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_05a0cefa552a58d6016aa453e2e52087d09a95bc6af3c09f44",
+    "usage": {
+      "inputTokens": 560,
+      "outputTokens": 30,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

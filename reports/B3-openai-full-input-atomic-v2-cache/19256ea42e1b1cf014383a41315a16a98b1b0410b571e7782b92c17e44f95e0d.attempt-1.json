@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1875.7078340000007,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Tundra 3 scale uses BIA, supports app sync, and has a maximum load of 180 kg."
+    },
+    "raw": "{\"text\":\"The Tundra 3 scale uses BIA, supports app sync, and has a maximum load of 180 kg.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_04234c77e880998d016aa45150c0dc87d0aeccfefc311a83c6",
+    "usage": {
+      "inputTokens": 663,
+      "outputTokens": 39,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1637.5187499999302,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Mesa X tablet case has a folio style and supports auto sleep/wake."
+    },
+    "raw": "{\"text\":\"The Mesa X tablet case has a folio style and supports auto sleep/wake.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0251ccfc6539ba21016aa4535c305487d0a2ab0ecb9aee8084",
+    "usage": {
+      "inputTokens": 558,
+      "outputTokens": 31,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

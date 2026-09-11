@@ -12,7 +12,7 @@ import { hash } from '../src/baseline.js';
 import type { Stage4Config } from '../src/publication-config.js';
 import type { SourceRow, Labels } from '../src/types.js';
 import { evaluateControlled, evaluateGenerated, generatedReviewGatePassed, generatedReviewTemplate, migrateGeneratedReview, rebaseGeneratedReview, validateClaimSuite } from '../src/publication-evaluation.js';
-import { PipelineService } from '../src/app.js';
+import { hasUnrecoveredAiErrors, PipelineService } from '../src/app.js';
 import { readRun } from '../src/benchmark.js';
 import { compareReports } from '../src/reports.js';
 import { prepareWeb } from '../src/prepare-web.js';
@@ -100,6 +100,14 @@ test('one blocked verification gets one repair, and a second block withholds wit
   assert.equal(blocked.result.listings[0]!.status, 'withheld'); assert.equal(blocked.result.listings[0]!.publishedText, null); assert.equal(blocked.result.listings[0]!.attempts.length, 2);
   assert.equal(blockedProvider.calls, 4);
 }));
+
+test('B3 treats a failed first verification as recovered only after a safe terminal repair', () => {
+  const records = [{ status: 'error' as const }, { status: 'success' as const }];
+  assert.equal(hasUnrecoveredAiErrors('b3', records, 0, 0), false);
+  assert.equal(hasUnrecoveredAiErrors('b3', records, 1, 0), true);
+  assert.equal(hasUnrecoveredAiErrors('b3', records, 0, 1), true);
+  assert.equal(hasUnrecoveredAiErrors('b2', records, 0, 0), true);
+});
 
 test('claim suites reject holdout and fake verification metadata, and generated review is hash-bound', () => {
   const result = b1(); const decisionsHash = hash(JSON.stringify(result));

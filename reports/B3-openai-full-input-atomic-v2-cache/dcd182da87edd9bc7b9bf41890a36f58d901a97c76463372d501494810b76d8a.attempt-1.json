@@ -1,0 +1,37 @@
+{
+  "elapsedMs": 4129.493291000006,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "b53ac47c6ea398480a6ce2f2ffb083a760ac1cb8c9346b152d3c050b845b1d0d",
+      "claims": [
+        {
+          "text": "Onyx Lite supports transfer speeds up to 180 MB/s",
+          "start": 0,
+          "end": 49,
+          "verdict": "unsupported",
+          "supportIds": [],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_specs",
+              "quote": "up to 170MB/s"
+            }
+          ],
+          "reason": "The source specifies transfer speeds up to 170 MB/s, not 180 MB/s. No supplied support entails the changed value."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"b53ac47c6ea398480a6ce2f2ffb083a760ac1cb8c9346b152d3c050b845b1d0d\",\"claims\":[{\"text\":\"Onyx Lite supports transfer speeds up to 180 MB/s\",\"start\":0,\"end\":49,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"The source specifies transfer speeds up to 170 MB/s, not 180 MB/s. No supplied support entails the changed value.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_00a5734e7945dd5a016aa45054e63087d083dc1fde8d7dfa33",
+    "usage": {
+      "inputTokens": 1941,
+      "outputTokens": 155,
+      "cachedInputTokens": 1938,
+      "cacheWriteTokens": 0
+    }
+  }
+}

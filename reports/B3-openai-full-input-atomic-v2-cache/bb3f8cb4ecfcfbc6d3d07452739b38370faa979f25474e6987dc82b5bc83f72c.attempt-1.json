@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 6979.714707999956,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "070668f818d2f5b8bef8098e0010c06e2544bf42da8bca334a11c9ebf2590b83",
+      "claims": [
+        {
+          "text": "The Mesa X tablet case has a folio style",
+          "start": 0,
+          "end": 40,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:2deeccfc713c767b82a105a7e1f3dc07c2f2e08c3c663e657417601bb1ebe4db",
+            "identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02",
+            "fact:fact_c87d7f75591f3fb7e4256c650019014c5d9ccbf3b6fdbcb150fd1d39561d64fe"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_3196ddf429",
+              "field": "raw_title",
+              "quote": "MESA X TABLET CASE"
+            },
+            {
+              "rowId": "row_3196ddf429",
+              "field": "raw_specs",
+              "quote": "folio"
+            }
+          ],
+          "reason": "The supplied title identifies the Mesa X tablet case, and its specifications explicitly state folio."
+        },
+        {
+          "text": "and supports auto sleep/wake",
+          "start": 41,
+          "end": 69,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_de0595c0af0e775e9f112e063c398d4ca6cef54d46d81b011934a0933018735f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_3196ddf429",
+              "field": "raw_specs",
+              "quote": "auto sleep/wake"
+            }
+          ],
+          "reason": "The same product's specifications explicitly list auto sleep/wake."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"070668f818d2f5b8bef8098e0010c06e2544bf42da8bca334a11c9ebf2590b83\",\"claims\":[{\"text\":\"The Mesa X tablet case has a folio style\",\"start\":0,\"end\":40,\"verdict\":\"supported\",\"supportIds\":[\"identity:2deeccfc713c767b82a105a7e1f3dc07c2f2e08c3c663e657417601bb1ebe4db\",\"identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02\",\"fact:fact_c87d7f75591f3fb7e4256c650019014c5d9ccbf3b6fdbcb150fd1d39561d64fe\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_3196ddf429\",\"field\":\"raw_title\",\"quote\":\"MESA X TABLET CASE\"},{\"rowId\":\"row_3196ddf429\",\"field\":\"raw_specs\",\"quote\":\"folio\"}],\"reason\":\"The supplied title identifies the Mesa X tablet case, and its specifications explicitly state folio.\"},{\"text\":\"and supports auto sleep/wake\",\"start\":41,\"end\":69,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_de0595c0af0e775e9f112e063c398d4ca6cef54d46d81b011934a0933018735f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_3196ddf429\",\"field\":\"raw_specs\",\"quote\":\"auto sleep/wake\"}],\"reason\":\"The same product's specifications explicitly list auto sleep/wake.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0b4bb3845b4b674f016aa4535dd5c087d089e558f4bd51e249",
+    "usage": {
+      "inputTokens": 1690,
+      "outputTokens": 400,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1687
+    }
+  }
+}

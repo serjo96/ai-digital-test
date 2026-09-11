@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 7419.060917000053,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "567a473e91be6acc51b51394d95373e3e6f0884fe53da5ea6db58f0cc89f9eb3",
+      "claims": [
+        {
+          "text": "The Torrent lamp features an LED light source",
+          "start": 0,
+          "end": 45,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d",
+            "identity:a3e233b08a9631819eaf4dbbafdba797e2bad10e7dd2d6b706d5b3f0890b2494",
+            "fact:fact_8c41f8ae60de04fc52bacf078fca5fd76c0b5368231b74a328bd9d85c148a797"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4a8b5dc2b1",
+              "field": "raw_title",
+              "quote": "Torrent desk lamp"
+            },
+            {
+              "rowId": "row_a4c85dc257",
+              "field": "raw_title",
+              "quote": "Torrent desk lamp"
+            },
+            {
+              "rowId": "row_4a8b5dc2b1",
+              "field": "raw_specs",
+              "quote": "LED"
+            }
+          ],
+          "reason": "The supplied identity supports establish the Torrent lamp, and the light-source support explicitly identifies LED."
+        },
+        {
+          "text": "and a USB-C connector",
+          "start": 46,
+          "end": 67,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_0cf385bc5e6e2a539b8632fad8ea77bb8665b712dd05ae977f0894d75631e8b7"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4a8b5dc2b1",
+              "field": "raw_specs",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The connector support explicitly identifies USB-C for this product."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"567a473e91be6acc51b51394d95373e3e6f0884fe53da5ea6db58f0cc89f9eb3\",\"claims\":[{\"text\":\"The Torrent lamp features an LED light source\",\"start\":0,\"end\":45,\"verdict\":\"supported\",\"supportIds\":[\"identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d\",\"identity:a3e233b08a9631819eaf4dbbafdba797e2bad10e7dd2d6b706d5b3f0890b2494\",\"fact:fact_8c41f8ae60de04fc52bacf078fca5fd76c0b5368231b74a328bd9d85c148a797\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4a8b5dc2b1\",\"field\":\"raw_title\",\"quote\":\"Torrent desk lamp\"},{\"rowId\":\"row_a4c85dc257\",\"field\":\"raw_title\",\"quote\":\"Torrent desk lamp\"},{\"rowId\":\"row_4a8b5dc2b1\",\"field\":\"raw_specs\",\"quote\":\"LED\"}],\"reason\":\"The supplied identity supports establish the Torrent lamp, and the light-source support explicitly identifies LED.\"},{\"text\":\"and a USB-C connector\",\"start\":46,\"end\":67,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_0cf385bc5e6e2a539b8632fad8ea77bb8665b712dd05ae977f0894d75631e8b7\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4a8b5dc2b1\",\"field\":\"raw_specs\",\"quote\":\"USB-C\"}],\"reason\":\"The connector support explicitly identifies USB-C for this product.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0d7c6868852ae631016aa455be6de887d0a6c3d2101a76d6cd",
+    "usage": {
+      "inputTokens": 1975,
+      "outputTokens": 426,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1972
+    }
+  }
+}

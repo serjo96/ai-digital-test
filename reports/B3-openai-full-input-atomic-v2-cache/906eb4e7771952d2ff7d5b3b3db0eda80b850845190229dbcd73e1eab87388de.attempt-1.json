@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1673.6304579999996,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Alto X laptop sleeve is made of neoprene and is compatible with 14 in devices."
+    },
+    "raw": "{\"text\":\"The Alto X laptop sleeve is made of neoprene and is compatible with 14 in devices.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0629fc6f2452b9e9016aa450a74f6887d097e744f254b8e389",
+    "usage": {
+      "inputTokens": 580,
+      "outputTokens": 33,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

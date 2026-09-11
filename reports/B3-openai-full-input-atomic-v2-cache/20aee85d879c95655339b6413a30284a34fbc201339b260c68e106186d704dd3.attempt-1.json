@@ -1,0 +1,58 @@
+{
+  "elapsedMs": 6023.84591699997,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "273a715363d860abd3608f454b2e1dbb643de5036b8406202cbc400632669280",
+      "claims": [
+        {
+          "text": "The Mesa Pro is a USB hub",
+          "start": 0,
+          "end": 25,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4",
+            "identity:bb3e8351ed00adda9dab927b48872523eacb0ed70e469b4b949bdd9b60189285"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_0952d61e2d",
+              "field": "raw_title",
+              "quote": "MESA PRO USB-C HUB"
+            }
+          ],
+          "reason": "The supplied title and identity supports establish the model and product type."
+        },
+        {
+          "text": "with a USB-C connector",
+          "start": 26,
+          "end": 48,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_9aead126b2e38ca4cde5fc5ea5aaf7d72d012ea8243bd742beefbf7fe21ad1aa"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_0952d61e2d",
+              "field": "raw_title",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The supplied connector support identifies USB-C, matching the raw title."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"273a715363d860abd3608f454b2e1dbb643de5036b8406202cbc400632669280\",\"claims\":[{\"text\":\"The Mesa Pro is a USB hub\",\"start\":0,\"end\":25,\"verdict\":\"supported\",\"supportIds\":[\"identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4\",\"identity:bb3e8351ed00adda9dab927b48872523eacb0ed70e469b4b949bdd9b60189285\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_0952d61e2d\",\"field\":\"raw_title\",\"quote\":\"MESA PRO USB-C HUB\"}],\"reason\":\"The supplied title and identity supports establish the model and product type.\"},{\"text\":\"with a USB-C connector\",\"start\":26,\"end\":48,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_9aead126b2e38ca4cde5fc5ea5aaf7d72d012ea8243bd742beefbf7fe21ad1aa\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_0952d61e2d\",\"field\":\"raw_title\",\"quote\":\"USB-C\"}],\"reason\":\"The supplied connector support identifies USB-C, matching the raw title.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_01907aaead38e496016aa451ef5c5487d0a3d6cede69ca9530",
+    "usage": {
+      "inputTokens": 1498,
+      "outputTokens": 323,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1495
+    }
+  }
+}

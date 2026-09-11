@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1607.3412089999765,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Alto 2 camera records 4K video at 60 fps and is waterproof up to a depth of 10 m."
+    },
+    "raw": "{\"text\":\"The Alto 2 camera records 4K video at 60 fps and is waterproof up to a depth of 10 m.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_08da07be4c6b0fc7016aa453115e5c87d09c9dc76351164971",
+    "usage": {
+      "inputTokens": 641,
+      "outputTokens": 40,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 9123.92712499993,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "1b7bd15a1dc5a4a7b8e876ea07dd616e630533c1b698616c7d2e50728cd0d93b",
+      "claims": [
+        {
+          "text": "The Juniper X lamp features an LED light source",
+          "start": 0,
+          "end": 47,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d",
+            "identity:8c0bab79f3ce9398f066ef0ab344daaccc7314e4de909a38220949ec2a433ea3",
+            "fact:fact_4c54927e541ad073fbae1f3994f27f8a681dd259996e9f94dc3e220c5c25316f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_a8a4a1acea",
+              "field": "raw_title",
+              "quote": "JUNIPER X DESK LAMP"
+            },
+            {
+              "rowId": "row_b797ec3e0c",
+              "field": "raw_title",
+              "quote": "Juniper X desk lamp"
+            },
+            {
+              "rowId": "row_a8a4a1acea",
+              "field": "raw_specs",
+              "quote": "LED"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and lamp type; the light-source support establishes LED."
+        },
+        {
+          "text": "and a USB-C connector",
+          "start": 48,
+          "end": 69,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_3f6a8f8b1edb8b7e13b9dbda2eecf6ffa4c75cdc8cc497bcbeb1370f3304a9f3"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_a8a4a1acea",
+              "field": "raw_specs",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "The supplied connector support explicitly identifies USB-C for this lamp."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"1b7bd15a1dc5a4a7b8e876ea07dd616e630533c1b698616c7d2e50728cd0d93b\",\"claims\":[{\"text\":\"The Juniper X lamp features an LED light source\",\"start\":0,\"end\":47,\"verdict\":\"supported\",\"supportIds\":[\"identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d\",\"identity:8c0bab79f3ce9398f066ef0ab344daaccc7314e4de909a38220949ec2a433ea3\",\"fact:fact_4c54927e541ad073fbae1f3994f27f8a681dd259996e9f94dc3e220c5c25316f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_a8a4a1acea\",\"field\":\"raw_title\",\"quote\":\"JUNIPER X DESK LAMP\"},{\"rowId\":\"row_b797ec3e0c\",\"field\":\"raw_title\",\"quote\":\"Juniper X desk lamp\"},{\"rowId\":\"row_a8a4a1acea\",\"field\":\"raw_specs\",\"quote\":\"LED\"}],\"reason\":\"The supplied identity supports establish the model and lamp type; the light-source support establishes LED.\"},{\"text\":\"and a USB-C connector\",\"start\":48,\"end\":69,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_3f6a8f8b1edb8b7e13b9dbda2eecf6ffa4c75cdc8cc497bcbeb1370f3304a9f3\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_a8a4a1acea\",\"field\":\"raw_specs\",\"quote\":\"USB-C\"}],\"reason\":\"The supplied connector support explicitly identifies USB-C for this lamp.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_07f247bee27fbbf0016aa454e67b0487d0879883b0751823dd",
+    "usage": {
+      "inputTokens": 2016,
+      "outputTokens": 436,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2013
+    }
+  }
+}

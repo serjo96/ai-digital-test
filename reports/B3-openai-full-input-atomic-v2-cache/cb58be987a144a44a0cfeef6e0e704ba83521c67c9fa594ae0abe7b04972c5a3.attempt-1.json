@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2207.837583000073,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Alto 3 memory card has 256 GB of storage, a UHS-I bus rating and an A2 application rating. It supports transfer speeds up to 170 MB/s, with direction unspecified."
+    },
+    "raw": "{\"text\":\"The Alto 3 memory card has 256 GB of storage, a UHS-I bus rating and an A2 application rating. It supports transfer speeds up to 170 MB/s, with direction unspecified.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_09a2d19c7a6f05cd016aa4533ced8c87d0b8ab9d0561dd0fc7",
+    "usage": {
+      "inputTokens": 1163,
+      "outputTokens": 55,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1160
+    }
+  }
+}

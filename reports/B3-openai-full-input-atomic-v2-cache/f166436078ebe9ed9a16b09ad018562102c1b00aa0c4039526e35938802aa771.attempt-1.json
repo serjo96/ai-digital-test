@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7514.362458000192,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "9bde9bcba62861926a351d9603758712bafac49ba40b48ae574d5ff85e4c0c35",
+      "claims": [
+        {
+          "text": "The Mesa 2 camera records video at 4K@60fps",
+          "start": 0,
+          "end": 43,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:c829e406d6898d407feed445d16bd735c999eafe9d4acb7af6ffde9e5e353e3f",
+            "identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e",
+            "fact:fact_009172b3abd89fc85d5e013dcd023559f3bec17cf40a2d3b92a0f220c0fd1ca9"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_de5e00a8f3",
+              "field": "raw_title",
+              "quote": "Mesa 2 action camera"
+            },
+            {
+              "rowId": "row_de5e00a8f3",
+              "field": "raw_specs",
+              "quote": "4K60"
+            }
+          ],
+          "reason": "The source identifies the Mesa 2 camera and supplies 4K60 recording, normalized by the allowed support as 4K@60fps."
+        },
+        {
+          "text": "and is waterproof up to 10 m",
+          "start": 44,
+          "end": 72,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_1a28712cff88819e152f530d8baebe6a006c27d3159e676a386a637211db0374"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_de5e00a8f3",
+              "field": "raw_specs",
+              "quote": "waterproof to 10m"
+            }
+          ],
+          "reason": "The source supports waterproofing to 10 m, and the claim preserves the supplied up-to qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"9bde9bcba62861926a351d9603758712bafac49ba40b48ae574d5ff85e4c0c35\",\"claims\":[{\"text\":\"The Mesa 2 camera records video at 4K@60fps\",\"start\":0,\"end\":43,\"verdict\":\"supported\",\"supportIds\":[\"identity:c829e406d6898d407feed445d16bd735c999eafe9d4acb7af6ffde9e5e353e3f\",\"identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e\",\"fact:fact_009172b3abd89fc85d5e013dcd023559f3bec17cf40a2d3b92a0f220c0fd1ca9\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_de5e00a8f3\",\"field\":\"raw_title\",\"quote\":\"Mesa 2 action camera\"},{\"rowId\":\"row_de5e00a8f3\",\"field\":\"raw_specs\",\"quote\":\"4K60\"}],\"reason\":\"The source identifies the Mesa 2 camera and supplies 4K60 recording, normalized by the allowed support as 4K@60fps.\"},{\"text\":\"and is waterproof up to 10 m\",\"start\":44,\"end\":72,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_1a28712cff88819e152f530d8baebe6a006c27d3159e676a386a637211db0374\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_de5e00a8f3\",\"field\":\"raw_specs\",\"quote\":\"waterproof to 10m\"}],\"reason\":\"The source supports waterproofing to 10 m, and the claim preserves the supplied up-to qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0c20e7de6899abc8016aa4567d443c87d099ae0c936d234024",
+    "usage": {
+      "inputTokens": 1731,
+      "outputTokens": 425,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1728
+    }
+  }
+}

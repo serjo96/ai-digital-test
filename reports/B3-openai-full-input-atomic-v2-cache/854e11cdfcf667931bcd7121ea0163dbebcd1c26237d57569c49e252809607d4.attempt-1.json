@@ -1,0 +1,69 @@
+{
+  "elapsedMs": 8006.2964999999385,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "ef9756f14f763258966f34ea551c2b7df2b12c2e0c4b758aefd9c807113151d3",
+      "claims": [
+        {
+          "text": "The Larkspur Lite laptop sleeve is made of neoprene",
+          "start": 0,
+          "end": 51,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:59db00754e956ac7a299e9c072ce370ddad8c50e825d316a0a73e699c0018051",
+            "identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db",
+            "fact:fact_c7c0adf9132fd3332694500200ac1e2e392a6b2e8605fb4a1348f7d02e11de81"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_0ba9edac39",
+              "field": "raw_title",
+              "quote": "Larkspur Lite laptop sleeve"
+            },
+            {
+              "rowId": "row_6504d4facd",
+              "field": "raw_title",
+              "quote": "Larkspur Lite laptop sleeve"
+            },
+            {
+              "rowId": "row_0ba9edac39",
+              "field": "raw_specs",
+              "quote": "neoprene"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and product type, and the material support explicitly identifies neoprene."
+        },
+        {
+          "text": "and is compatible with 14 in devices",
+          "start": 52,
+          "end": 88,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_00d833b172114232ad2ee32120bfa1e374bb714453e8fcabbcd89e304d11532c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_0ba9edac39",
+              "field": "raw_specs",
+              "quote": "14in"
+            }
+          ],
+          "reason": "The supplied size support specifies 14 inches with the compatible_device condition, which the description preserves as device compatibility rather than a sleeve dimension."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"ef9756f14f763258966f34ea551c2b7df2b12c2e0c4b758aefd9c807113151d3\",\"claims\":[{\"text\":\"The Larkspur Lite laptop sleeve is made of neoprene\",\"start\":0,\"end\":51,\"verdict\":\"supported\",\"supportIds\":[\"identity:59db00754e956ac7a299e9c072ce370ddad8c50e825d316a0a73e699c0018051\",\"identity:c5ad5493b7f489c9e237c401c4478150f0363553aa0e7cfd408e5554f732f9db\",\"fact:fact_c7c0adf9132fd3332694500200ac1e2e392a6b2e8605fb4a1348f7d02e11de81\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_0ba9edac39\",\"field\":\"raw_title\",\"quote\":\"Larkspur Lite laptop sleeve\"},{\"rowId\":\"row_6504d4facd\",\"field\":\"raw_title\",\"quote\":\"Larkspur Lite laptop sleeve\"},{\"rowId\":\"row_0ba9edac39\",\"field\":\"raw_specs\",\"quote\":\"neoprene\"}],\"reason\":\"The supplied identity supports establish the model and product type, and the material support explicitly identifies neoprene.\"},{\"text\":\"and is compatible with 14 in devices\",\"start\":52,\"end\":88,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_00d833b172114232ad2ee32120bfa1e374bb714453e8fcabbcd89e304d11532c\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_0ba9edac39\",\"field\":\"raw_specs\",\"quote\":\"14in\"}],\"reason\":\"The supplied size support specifies 14 inches with the compatible_device condition, which the description preserves as device compatibility rather than a sleeve dimension.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0a80ea94a5508ff1016aa45432548c87d0baecea5b326a273c",
+    "usage": {
+      "inputTokens": 1982,
+      "outputTokens": 445,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1979
+    }
+  }
+}

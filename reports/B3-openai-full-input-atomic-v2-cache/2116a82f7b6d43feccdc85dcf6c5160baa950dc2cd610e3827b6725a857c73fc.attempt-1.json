@@ -1,0 +1,50 @@
+{
+  "elapsedMs": 5988.080750000001,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "f85fe87839b99df2c96f945630f52171c2b494eb581cc2c4daa078dab0211d03",
+      "claims": [
+        {
+          "text": "Nimbus 2 weighs 1.2 kg",
+          "start": 0,
+          "end": 22,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_9ddf5078be168242ceacdc32b5941c82b93f31a8faa78766e7ce54190f882673",
+            "identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_f3873a8816",
+              "field": "raw_specs",
+              "quote": "weight 1.2kg"
+            },
+            {
+              "rowId": "row_c2467f5304",
+              "field": "raw_title",
+              "quote": "NIMBUS 2 speaker - waterproof"
+            },
+            {
+              "rowId": "row_f3873a8816",
+              "field": "raw_title",
+              "quote": "Nimbus 2 Portable Bluetooth Speaker"
+            }
+          ],
+          "reason": "The supplied mass support records 1200 g, equivalent to 1.2 kg, and its raw source explicitly states weight 1.2kg for Nimbus 2. The supplied incomparable decision concerns power, not mass."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"f85fe87839b99df2c96f945630f52171c2b494eb581cc2c4daa078dab0211d03\",\"claims\":[{\"text\":\"Nimbus 2 weighs 1.2 kg\",\"start\":0,\"end\":22,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_9ddf5078be168242ceacdc32b5941c82b93f31a8faa78766e7ce54190f882673\",\"identity:b417ded8d1844279eea05dc901fc991fd6d4550ea2e9f67e167b729c6f91a37b\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_specs\",\"quote\":\"weight 1.2kg\"},{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_title\",\"quote\":\"NIMBUS 2 speaker - waterproof\"},{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_title\",\"quote\":\"Nimbus 2 Portable Bluetooth Speaker\"}],\"reason\":\"The supplied mass support records 1200 g, equivalent to 1.2 kg, and its raw source explicitly states weight 1.2kg for Nimbus 2. The supplied incomparable decision concerns power, not mass.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_04acf88440f3437c016aa4503cf4ec87d0b15d913039be5607",
+    "usage": {
+      "inputTokens": 1907,
+      "outputTokens": 295,
+      "cachedInputTokens": 1904,
+      "cacheWriteTokens": 0
+    }
+  }
+}

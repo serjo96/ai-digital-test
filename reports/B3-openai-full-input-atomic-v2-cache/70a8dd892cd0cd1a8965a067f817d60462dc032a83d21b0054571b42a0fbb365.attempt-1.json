@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2670.3452079999843,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Kestrel 2 is a pair of passive speakers with 4-ohm impedance and 40 W of power for an unspecified purpose."
+    },
+    "raw": "{\"text\":\"The Kestrel 2 is a pair of passive speakers with 4-ohm impedance and 40 W of power for an unspecified purpose.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_03e0ed98f67f9e4a016aa45222c62c87d0a0d1d15d287bce6b",
+    "usage": {
+      "inputTokens": 883,
+      "outputTokens": 43,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

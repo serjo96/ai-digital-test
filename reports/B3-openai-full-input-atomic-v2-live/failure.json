@@ -1,0 +1,21 @@
+{
+  "status": "failed",
+  "baseline": "b3",
+  "runId": "B3-openai-full-input-atomic-v2-live",
+  "createdAt": "2026-09-11T19:31:34.875Z",
+  "wallTimeMs": 1773694.7384580001,
+  "api": {
+    "calls": 322,
+    "errors": 1,
+    "retries": 0,
+    "cacheHits": 0,
+    "inputTokens": 442677,
+    "outputTokens": 83772,
+    "tokens": 526449,
+    "cost": 8.110955000000006
+  },
+  "mode": "live",
+  "errors": [
+    "Incomplete AI run; inspect report.json and ai.json"
+  ]
+}

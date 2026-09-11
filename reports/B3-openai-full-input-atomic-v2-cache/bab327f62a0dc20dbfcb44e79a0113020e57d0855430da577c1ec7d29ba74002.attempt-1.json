@@ -1,0 +1,87 @@
+{
+  "elapsedMs": 9236.005833000178,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "9d93655c54d7f9d3756a9c2c2f5418bcec61b16d1d600ef5eff38eb442641010",
+      "claims": [
+        {
+          "text": "The Tundra X scale uses BIA",
+          "start": 0,
+          "end": 27,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:9b628a0deebe6f40f932ffe9b49aa3fe6e062c3901907aeb52f0627ee4974b55",
+            "identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7",
+            "fact:fact_466d63dcf532ddec689861235d1f3874c92963f32a4ee29dfabe0f630d64b5c2"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_0a5452008a",
+              "field": "raw_title",
+              "quote": "TUNDRA X SMART SCALE"
+            },
+            {
+              "rowId": "row_98dbb1901d",
+              "field": "raw_title",
+              "quote": "Tundra X smart scale"
+            },
+            {
+              "rowId": "row_0a5452008a",
+              "field": "raw_specs",
+              "quote": "BIA"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and product type, and the specifications explicitly state BIA."
+        },
+        {
+          "text": "supports app sync",
+          "start": 29,
+          "end": 46,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_0ec3b34293828f45507bcf50a55749628e0204d1f8476b43dd6044f680cf6ed5"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_0a5452008a",
+              "field": "raw_specs",
+              "quote": "app sync"
+            }
+          ],
+          "reason": "App synchronization is explicitly stated in the specifications."
+        },
+        {
+          "text": "and has a maximum load of 180 kg",
+          "start": 48,
+          "end": 80,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_2b45470a38439225a07689133fcd064d79af62269e138c0dba50e5ce6a799b28"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_0a5452008a",
+              "field": "raw_specs",
+              "quote": "180kg max"
+            }
+          ],
+          "reason": "The stated load matches the supplied value and unit and preserves the maximum qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"9d93655c54d7f9d3756a9c2c2f5418bcec61b16d1d600ef5eff38eb442641010\",\"claims\":[{\"text\":\"The Tundra X scale uses BIA\",\"start\":0,\"end\":27,\"verdict\":\"supported\",\"supportIds\":[\"identity:9b628a0deebe6f40f932ffe9b49aa3fe6e062c3901907aeb52f0627ee4974b55\",\"identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7\",\"fact:fact_466d63dcf532ddec689861235d1f3874c92963f32a4ee29dfabe0f630d64b5c2\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_0a5452008a\",\"field\":\"raw_title\",\"quote\":\"TUNDRA X SMART SCALE\"},{\"rowId\":\"row_98dbb1901d\",\"field\":\"raw_title\",\"quote\":\"Tundra X smart scale\"},{\"rowId\":\"row_0a5452008a\",\"field\":\"raw_specs\",\"quote\":\"BIA\"}],\"reason\":\"The supplied identity supports establish the model and product type, and the specifications explicitly state BIA.\"},{\"text\":\"supports app sync\",\"start\":29,\"end\":46,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_0ec3b34293828f45507bcf50a55749628e0204d1f8476b43dd6044f680cf6ed5\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_0a5452008a\",\"field\":\"raw_specs\",\"quote\":\"app sync\"}],\"reason\":\"App synchronization is explicitly stated in the specifications.\"},{\"text\":\"and has a maximum load of 180 kg\",\"start\":48,\"end\":80,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_2b45470a38439225a07689133fcd064d79af62269e138c0dba50e5ce6a799b28\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_0a5452008a\",\"field\":\"raw_specs\",\"quote\":\"180kg max\"}],\"reason\":\"The stated load matches the supplied value and unit and preserves the maximum qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_04dfcd2fbd995c57016aa4561ec0bc87d09e258f4d704d44d4",
+    "usage": {
+      "inputTokens": 2024,
+      "outputTokens": 538,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2021
+    }
+  }
+}

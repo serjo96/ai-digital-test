@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1749.2582500000717,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Marlow speaker pair is passive, with 4 ohm impedance and 40 W power for an unspecified purpose."
+    },
+    "raw": "{\"text\":\"The Marlow speaker pair is passive, with 4 ohm impedance and 40 W power for an unspecified purpose.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_062d8f999fce3377016aa452361c6487d0b5d993396fc30f1c",
+    "usage": {
+      "inputTokens": 841,
+      "outputTokens": 38,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

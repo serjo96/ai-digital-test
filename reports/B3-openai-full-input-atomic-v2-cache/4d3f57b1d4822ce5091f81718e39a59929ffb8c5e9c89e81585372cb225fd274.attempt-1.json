@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2842.159042000072,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Mesa 2 camera records video at 4K@60fps and is waterproof up to 10 m."
+    },
+    "raw": "{\"text\":\"The Mesa 2 camera records video at 4K@60fps and is waterproof up to 10 m.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_047164a528a7363a016aa4567a679487d092f5b33a934c4035",
+    "usage": {
+      "inputTokens": 567,
+      "outputTokens": 37,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

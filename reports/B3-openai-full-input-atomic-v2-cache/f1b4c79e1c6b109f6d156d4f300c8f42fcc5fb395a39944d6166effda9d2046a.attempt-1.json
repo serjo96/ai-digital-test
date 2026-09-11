@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2306.1369580000173,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Mesa Pro speaker pair features passive amplification and 4-ohm impedance. Power is 40 W, with the purpose unspecified."
+    },
+    "raw": "{\"text\":\"The Mesa Pro speaker pair features passive amplification and 4-ohm impedance. Power is 40 W, with the purpose unspecified.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_036b7834c70f5489016aa455d26c7087d0a364947f2609543d",
+    "usage": {
+      "inputTokens": 746,
+      "outputTokens": 40,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

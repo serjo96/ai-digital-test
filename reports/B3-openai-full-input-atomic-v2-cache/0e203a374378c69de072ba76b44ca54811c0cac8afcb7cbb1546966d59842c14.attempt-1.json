@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2043.6033749999478,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Larkspur tablet case has a folio style and supports auto sleep/wake."
+    },
+    "raw": "{\"text\":\"The Larkspur tablet case has a folio style and supports auto sleep/wake.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0f023b644b23e44d016aa456b4ef4087d099b5c5c5ca231de1",
+    "usage": {
+      "inputTokens": 558,
+      "outputTokens": 32,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

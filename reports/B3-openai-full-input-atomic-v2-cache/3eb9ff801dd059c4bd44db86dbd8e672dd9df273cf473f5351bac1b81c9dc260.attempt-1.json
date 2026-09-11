@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2404.050833999994,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Juniper Plus microSD memory card has 256 GB of storage."
+    },
+    "raw": "{\"text\":\"The Juniper Plus microSD memory card has 256 GB of storage.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0f8f4c9ed894a3c0016aa451f55eb087d0ac3715ba19d0355f",
+    "usage": {
+      "inputTokens": 654,
+      "outputTokens": 29,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

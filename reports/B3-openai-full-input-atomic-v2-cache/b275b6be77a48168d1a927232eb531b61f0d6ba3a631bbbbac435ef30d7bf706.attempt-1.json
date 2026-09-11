@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1527.5075420000358,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Cirrus Lite scale uses BIA, supports app sync, and has a maximum load of 180 kg."
+    },
+    "raw": "{\"text\":\"The Cirrus Lite scale uses BIA, supports app sync, and has a maximum load of 180 kg.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_04ab84ccaa24502a016aa453aa1f2087d091b590d1cd89b5bc",
+    "usage": {
+      "inputTokens": 653,
+      "outputTokens": 37,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7184.584208,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "d4b39d0e833e47f6e8446708243865b9947b3ff8e806ed4811c88d92d9574979",
+      "claims": [
+        {
+          "text": "The Marlow 3 lamp features an LED light source",
+          "start": 0,
+          "end": 46,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:4782d7aeaa868cf843b61d97e6a92fdd4796e1c25338c0fccb99ab3a1f137958",
+            "identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d",
+            "fact:fact_881ab4b82259fc88b58aa3186d9e089d52f6e51e3c537e323136dc6a7a064d6f"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_b97f53ab30",
+              "field": "raw_title",
+              "quote": "Marlow 3 desk lamp"
+            },
+            {
+              "rowId": "row_b97f53ab30",
+              "field": "raw_specs",
+              "quote": "LED"
+            }
+          ],
+          "reason": "The supplied identity supports establish the model and lamp type, and the light-source support establishes LED."
+        },
+        {
+          "text": "and a USB-C connector",
+          "start": 47,
+          "end": 68,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_04551a6c7543e3903f0fad67d90d85725f3b89e725783230336e2ae719e797c5"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_b97f53ab30",
+              "field": "raw_specs",
+              "quote": "USB-C"
+            }
+          ],
+          "reason": "In context, this states that the lamp features a USB-C connector, exactly as established by the supplied connector support."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"d4b39d0e833e47f6e8446708243865b9947b3ff8e806ed4811c88d92d9574979\",\"claims\":[{\"text\":\"The Marlow 3 lamp features an LED light source\",\"start\":0,\"end\":46,\"verdict\":\"supported\",\"supportIds\":[\"identity:4782d7aeaa868cf843b61d97e6a92fdd4796e1c25338c0fccb99ab3a1f137958\",\"identity:33b14c2a7f5b50c46443abc9439529645b387141ed31b537e51f9a06578a164d\",\"fact:fact_881ab4b82259fc88b58aa3186d9e089d52f6e51e3c537e323136dc6a7a064d6f\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_b97f53ab30\",\"field\":\"raw_title\",\"quote\":\"Marlow 3 desk lamp\"},{\"rowId\":\"row_b97f53ab30\",\"field\":\"raw_specs\",\"quote\":\"LED\"}],\"reason\":\"The supplied identity supports establish the model and lamp type, and the light-source support establishes LED.\"},{\"text\":\"and a USB-C connector\",\"start\":47,\"end\":68,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_04551a6c7543e3903f0fad67d90d85725f3b89e725783230336e2ae719e797c5\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_b97f53ab30\",\"field\":\"raw_specs\",\"quote\":\"USB-C\"}],\"reason\":\"In context, this states that the lamp features a USB-C connector, exactly as established by the supplied connector support.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0eb677f1bb664315016aa4507652e887d08526a00b58518d15",
+    "usage": {
+      "inputTokens": 1773,
+      "outputTokens": 411,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1770
+    }
+  }
+}

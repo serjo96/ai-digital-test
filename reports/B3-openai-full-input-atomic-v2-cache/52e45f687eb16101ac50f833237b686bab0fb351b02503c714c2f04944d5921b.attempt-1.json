@@ -1,0 +1,40 @@
+{
+  "elapsedMs": 4485.756541999988,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "eff5b6f9a86acaace0a28c3d91141645fe196124853321f79410619a346cea5f",
+      "claims": [
+        {
+          "text": "The Harbor Plus is a scale",
+          "start": 0,
+          "end": 26,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7",
+            "identity:1555e678cbd47ab868fbf7c8f22e38af71cd1946f7657782a723ecbad63cfc6e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_8d784b2c07",
+              "field": "raw_title",
+              "quote": "Harbor Plus smart scale"
+            }
+          ],
+          "reason": "The raw title supports both the Harbor Plus model identity and its classification as a scale."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"eff5b6f9a86acaace0a28c3d91141645fe196124853321f79410619a346cea5f\",\"claims\":[{\"text\":\"The Harbor Plus is a scale\",\"start\":0,\"end\":26,\"verdict\":\"supported\",\"supportIds\":[\"identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7\",\"identity:1555e678cbd47ab868fbf7c8f22e38af71cd1946f7657782a723ecbad63cfc6e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_8d784b2c07\",\"field\":\"raw_title\",\"quote\":\"Harbor Plus smart scale\"}],\"reason\":\"The raw title supports both the Harbor Plus model identity and its classification as a scale.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_085aa100dfa6a6ef016aa4519b658c87d098744575f13c85e7",
+    "usage": {
+      "inputTokens": 1206,
+      "outputTokens": 211,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1203
+    }
+  }
+}

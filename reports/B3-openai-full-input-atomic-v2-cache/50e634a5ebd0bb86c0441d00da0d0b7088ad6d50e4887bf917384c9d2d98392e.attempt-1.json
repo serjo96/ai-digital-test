@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1810.9270000000251,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Marlow scale uses BIA, supports app sync, and has a maximum load of 180 kg."
+    },
+    "raw": "{\"text\":\"The Marlow scale uses BIA, supports app sync, and has a maximum load of 180 kg.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0d48a9d58cf2046e016aa453bebab087d0bacfd489d881a458",
+    "usage": {
+      "inputTokens": 665,
+      "outputTokens": 36,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

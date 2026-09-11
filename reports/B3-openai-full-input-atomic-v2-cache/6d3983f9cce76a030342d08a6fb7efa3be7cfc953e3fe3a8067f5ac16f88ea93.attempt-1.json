@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2164.1676669999724,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Basalt Pro mouse has 6 buttons and a mass of 70 g."
+    },
+    "raw": "{\"text\":\"The Basalt Pro mouse has 6 buttons and a mass of 70 g.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0d7932e014f5b9b4016aa453b51a5087d0bc241fdb597f83c9",
+    "usage": {
+      "inputTokens": 554,
+      "outputTokens": 31,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

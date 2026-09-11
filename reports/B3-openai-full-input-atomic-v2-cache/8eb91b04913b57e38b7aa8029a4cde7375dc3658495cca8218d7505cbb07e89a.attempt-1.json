@@ -1,0 +1,58 @@
+{
+  "elapsedMs": 6444.833000000042,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "a17c6ddcad1cce7361be2e83e7d3764feb5e74d7c1463eb70e73182808e22430",
+      "claims": [
+        {
+          "text": "AeroBuds Pro S/M/L ear tips",
+          "start": 0,
+          "end": 27,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:a252b0f02cb5d2f236ae37a5c50729bc24ce403337b3bb0eb2c51739a7d67093",
+            "identity:e559f76edd417252ff095bbf8f508c219fdc1e3f2df3273d248d69fc5983d0b7"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_fe3ff4b356",
+              "field": "raw_title",
+              "quote": "AeroBuds Pro replacement ear tips (S/M/L)"
+            }
+          ],
+          "reason": "The title identifies replacement ear tips for AeroBuds Pro in S/M/L sizes."
+        },
+        {
+          "text": "made of silicone",
+          "start": 28,
+          "end": 44,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_43fb367aa489e8f9c8eaacd719788c63cc70c03c5d586dd73526a11587d39ef9"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_fe3ff4b356",
+              "field": "raw_specs",
+              "quote": "Silicone"
+            }
+          ],
+          "reason": "The supplied material fact and raw specifications explicitly identify silicone."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"a17c6ddcad1cce7361be2e83e7d3764feb5e74d7c1463eb70e73182808e22430\",\"claims\":[{\"text\":\"AeroBuds Pro S/M/L ear tips\",\"start\":0,\"end\":27,\"verdict\":\"supported\",\"supportIds\":[\"identity:a252b0f02cb5d2f236ae37a5c50729bc24ce403337b3bb0eb2c51739a7d67093\",\"identity:e559f76edd417252ff095bbf8f508c219fdc1e3f2df3273d248d69fc5983d0b7\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_fe3ff4b356\",\"field\":\"raw_title\",\"quote\":\"AeroBuds Pro replacement ear tips (S/M/L)\"}],\"reason\":\"The title identifies replacement ear tips for AeroBuds Pro in S/M/L sizes.\"},{\"text\":\"made of silicone\",\"start\":28,\"end\":44,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_43fb367aa489e8f9c8eaacd719788c63cc70c03c5d586dd73526a11587d39ef9\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_fe3ff4b356\",\"field\":\"raw_specs\",\"quote\":\"Silicone\"}],\"reason\":\"The supplied material fact and raw specifications explicitly identify silicone.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_096e7521913ebf00016aa4512f428487d09628a8a773ec49ac",
+    "usage": {
+      "inputTokens": 1530,
+      "outputTokens": 335,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1527
+    }
+  }
+}

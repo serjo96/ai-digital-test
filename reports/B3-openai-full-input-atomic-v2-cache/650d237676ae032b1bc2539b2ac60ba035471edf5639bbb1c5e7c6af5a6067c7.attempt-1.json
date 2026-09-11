@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 8079.318833000027,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "3b8c24c6f0966d1f4904b702a446d5556d8e9b2ca9d06e68bf4affdcea5529b6",
+      "claims": [
+        {
+          "text": "The Basalt 2 tablet case has a folio style",
+          "start": 0,
+          "end": 42,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02",
+            "identity:eb8fbe9447f5aa6bb2dd8d71626beff578429e851d59682727bd6423da83f986",
+            "fact:fact_4087612fc9bacfee08e7e1735cdd436b3ffcd5c96f6356cbbe32e10ad05d65af"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_a661bdf24e",
+              "field": "raw_title",
+              "quote": "Basalt 2 tablet case"
+            },
+            {
+              "rowId": "row_a661bdf24e",
+              "field": "raw_specs",
+              "quote": "folio"
+            }
+          ],
+          "reason": "The supplied identity and case-style supports establish the model, product type, and folio style."
+        },
+        {
+          "text": "and supports auto sleep/wake",
+          "start": 43,
+          "end": 71,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_6e46e49ad789a9741d7a18f587803cecb338a5c6e94a2b05b21f3424378ab4d5"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_a661bdf24e",
+              "field": "raw_specs",
+              "quote": "auto sleep/wake"
+            }
+          ],
+          "reason": "The supplied feature support explicitly establishes auto sleep/wake for this case."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"3b8c24c6f0966d1f4904b702a446d5556d8e9b2ca9d06e68bf4affdcea5529b6\",\"claims\":[{\"text\":\"The Basalt 2 tablet case has a folio style\",\"start\":0,\"end\":42,\"verdict\":\"supported\",\"supportIds\":[\"identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02\",\"identity:eb8fbe9447f5aa6bb2dd8d71626beff578429e851d59682727bd6423da83f986\",\"fact:fact_4087612fc9bacfee08e7e1735cdd436b3ffcd5c96f6356cbbe32e10ad05d65af\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_a661bdf24e\",\"field\":\"raw_title\",\"quote\":\"Basalt 2 tablet case\"},{\"rowId\":\"row_a661bdf24e\",\"field\":\"raw_specs\",\"quote\":\"folio\"}],\"reason\":\"The supplied identity and case-style supports establish the model, product type, and folio style.\"},{\"text\":\"and supports auto sleep/wake\",\"start\":43,\"end\":71,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_6e46e49ad789a9741d7a18f587803cecb338a5c6e94a2b05b21f3424378ab4d5\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_a661bdf24e\",\"field\":\"raw_specs\",\"quote\":\"auto sleep/wake\"}],\"reason\":\"The supplied feature support explicitly establishes auto sleep/wake for this case.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_04e12f6e0d6c18ab016aa4563a577487d0adf6a9c74618a26f",
+    "usage": {
+      "inputTokens": 1716,
+      "outputTokens": 409,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1713
+    }
+  }
+}

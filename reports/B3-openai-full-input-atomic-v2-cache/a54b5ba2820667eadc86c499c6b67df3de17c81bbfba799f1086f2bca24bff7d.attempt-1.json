@@ -1,0 +1,88 @@
+{
+  "elapsedMs": 10312.481542000081,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "4214dbf57fadcb1efdc23e7018ac3835c96b165995f26dbaa8f7018a34290da3",
+      "claims": [
+        {
+          "text": "The Harbor X is a 7-in-1 USB-C hub",
+          "start": 0,
+          "end": 34,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:47a7efb45a0e020e380a8f2543419c7a62fcc34c4c3db716c13ad6367b5167b3",
+            "identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4",
+            "fact:fact_78b8e8f4e8366037384f36993c8bb7b05fa55db82c8dee550ad38c0170d6fe82",
+            "fact:fact_c958fb70d78da9e46b931646006e045eb31e67c040ec02aca92555d50a909f3e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_52a24f8b1b",
+              "field": "raw_title",
+              "quote": "Harbor X USB-C hub"
+            },
+            {
+              "rowId": "row_52a24f8b1b",
+              "field": "raw_title",
+              "quote": "USB-C"
+            },
+            {
+              "rowId": "row_52a24f8b1b",
+              "field": "raw_specs",
+              "quote": "7-in-1"
+            }
+          ],
+          "reason": "The supplied identity and facts establish the model, hub type, USB-C connector and 7-in-1 functionality."
+        },
+        {
+          "text": "with 4K@30fps video output",
+          "start": 35,
+          "end": 61,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_6326d447a2fd3cb0cb03bbe885f6553fb942cbc978caea4fd482ed94cf4e2171"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_52a24f8b1b",
+              "field": "raw_specs",
+              "quote": "4K30"
+            }
+          ],
+          "reason": "The supplied video-output support normalizes the source's HDMI 4K30 specification to 4K@30fps."
+        },
+        {
+          "text": "and 100 W PD passthrough",
+          "start": 62,
+          "end": 86,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_15bebca5eb145848d1e4dac4bcd7654f070f447e7fa768b2fdb80a5b3b1c712c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_52a24f8b1b",
+              "field": "raw_specs",
+              "quote": "100W PD passthrough"
+            }
+          ],
+          "reason": "The source explicitly specifies 100W PD passthrough, and the claim preserves that condition."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"4214dbf57fadcb1efdc23e7018ac3835c96b165995f26dbaa8f7018a34290da3\",\"claims\":[{\"text\":\"The Harbor X is a 7-in-1 USB-C hub\",\"start\":0,\"end\":34,\"verdict\":\"supported\",\"supportIds\":[\"identity:47a7efb45a0e020e380a8f2543419c7a62fcc34c4c3db716c13ad6367b5167b3\",\"identity:16c7ee005180fb2c2db8a03e41463edcdd389fd3619fba9a6ab0a3882a2168e4\",\"fact:fact_78b8e8f4e8366037384f36993c8bb7b05fa55db82c8dee550ad38c0170d6fe82\",\"fact:fact_c958fb70d78da9e46b931646006e045eb31e67c040ec02aca92555d50a909f3e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_52a24f8b1b\",\"field\":\"raw_title\",\"quote\":\"Harbor X USB-C hub\"},{\"rowId\":\"row_52a24f8b1b\",\"field\":\"raw_title\",\"quote\":\"USB-C\"},{\"rowId\":\"row_52a24f8b1b\",\"field\":\"raw_specs\",\"quote\":\"7-in-1\"}],\"reason\":\"The supplied identity and facts establish the model, hub type, USB-C connector and 7-in-1 functionality.\"},{\"text\":\"with 4K@30fps video output\",\"start\":35,\"end\":61,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_6326d447a2fd3cb0cb03bbe885f6553fb942cbc978caea4fd482ed94cf4e2171\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_52a24f8b1b\",\"field\":\"raw_specs\",\"quote\":\"4K30\"}],\"reason\":\"The supplied video-output support normalizes the source's HDMI 4K30 specification to 4K@30fps.\"},{\"text\":\"and 100 W PD passthrough\",\"start\":62,\"end\":86,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_15bebca5eb145848d1e4dac4bcd7654f070f447e7fa768b2fdb80a5b3b1c712c\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_52a24f8b1b\",\"field\":\"raw_specs\",\"quote\":\"100W PD passthrough\"}],\"reason\":\"The source explicitly specifies 100W PD passthrough, and the claim preserves that condition.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0c89220afdbaa4e4016aa4554618b887d09c9f6afd4e68f69c",
+    "usage": {
+      "inputTokens": 2084,
+      "outputTokens": 626,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2081
+    }
+  }
+}

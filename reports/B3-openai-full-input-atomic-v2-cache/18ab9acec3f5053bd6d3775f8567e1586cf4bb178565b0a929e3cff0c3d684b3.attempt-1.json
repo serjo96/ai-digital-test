@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7885.986291000154,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "96e40cbe303e0662233017549504b416610e13a43f1c09f7d0e1120fc2cc8c93",
+      "claims": [
+        {
+          "text": "The Marlow 2 camera records video at 4K@60fps",
+          "start": 0,
+          "end": 45,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:4e6461fe71ebc9882d0cf9096bee13f43d40b62463a8982d7455efa99c9824e6",
+            "identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e",
+            "fact:fact_5a56d7bf962d7d92e2a8d75d9ec6b9b5e8b118f879e71584e531524bf24d98b9"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c5d74e7abd",
+              "field": "raw_title",
+              "quote": "Marlow 2 action camera"
+            },
+            {
+              "rowId": "row_c5d74e7abd",
+              "field": "raw_specs",
+              "quote": "4K60"
+            }
+          ],
+          "reason": "The supplied identity supports identify the Marlow 2 camera, and the video recording support maps the source's 4K60 specification to 4K@60fps."
+        },
+        {
+          "text": "and is waterproof up to 10 m",
+          "start": 46,
+          "end": 74,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_5621f5072cce4efb50674bfdfc8b4ab35b64e15c096258bd548f415bab903ac6"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c5d74e7abd",
+              "field": "raw_specs",
+              "quote": "waterproof to 10m"
+            }
+          ],
+          "reason": "The source states waterproof to 10m; the claim preserves the supported depth and up-to qualification."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"96e40cbe303e0662233017549504b416610e13a43f1c09f7d0e1120fc2cc8c93\",\"claims\":[{\"text\":\"The Marlow 2 camera records video at 4K@60fps\",\"start\":0,\"end\":45,\"verdict\":\"supported\",\"supportIds\":[\"identity:4e6461fe71ebc9882d0cf9096bee13f43d40b62463a8982d7455efa99c9824e6\",\"identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e\",\"fact:fact_5a56d7bf962d7d92e2a8d75d9ec6b9b5e8b118f879e71584e531524bf24d98b9\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c5d74e7abd\",\"field\":\"raw_title\",\"quote\":\"Marlow 2 action camera\"},{\"rowId\":\"row_c5d74e7abd\",\"field\":\"raw_specs\",\"quote\":\"4K60\"}],\"reason\":\"The supplied identity supports identify the Marlow 2 camera, and the video recording support maps the source's 4K60 specification to 4K@60fps.\"},{\"text\":\"and is waterproof up to 10 m\",\"start\":46,\"end\":74,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_5621f5072cce4efb50674bfdfc8b4ab35b64e15c096258bd548f415bab903ac6\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c5d74e7abd\",\"field\":\"raw_specs\",\"quote\":\"waterproof to 10m\"}],\"reason\":\"The source states waterproof to 10m; the claim preserves the supported depth and up-to qualification.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_07e233869b401778016aa4559484f487d0ba0b7512967a0d40",
+    "usage": {
+      "inputTokens": 1754,
+      "outputTokens": 438,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1751
+    }
+  }
+}

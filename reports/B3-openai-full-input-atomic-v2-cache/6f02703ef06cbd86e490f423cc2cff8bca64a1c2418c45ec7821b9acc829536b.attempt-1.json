@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 8829.35412500007,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "1ce94e329e2582b743a91827f860f9d9e00d1dff851ed9037c3d2c32e40f145c",
+      "claims": [
+        {
+          "text": "The Sable Pro camera supports 4K video recording at 60 fps",
+          "start": 0,
+          "end": 58,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:c1de7b9040a0675ce6730b5a84b50a7dbea5fb9a0b62cd1fe55c742731ca9714",
+            "identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e",
+            "fact:fact_1128a7246bf8491fbf6c95f0a12959274eb4f4443b8ccdb1c126b278d4161e5c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_d98f99472c",
+              "field": "raw_title",
+              "quote": "Sable Pro action camera"
+            },
+            {
+              "rowId": "row_d98f99472c",
+              "field": "raw_specs",
+              "quote": "4K60"
+            }
+          ],
+          "reason": "The title establishes the camera model and type; the supplied recording support interprets 4K60 as 4K at 60 fps."
+        },
+        {
+          "text": "and is waterproof to a depth of up to 10 m",
+          "start": 59,
+          "end": 101,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_b9e7237ff300347221c2f9c992b111583b1dc6b81fd6f0903aa4be23493fc917"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_d98f99472c",
+              "field": "raw_specs",
+              "quote": "waterproof to 10m"
+            }
+          ],
+          "reason": "The source specifies waterproofing to 10 m, and the claim preserves the supplied up-to qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"1ce94e329e2582b743a91827f860f9d9e00d1dff851ed9037c3d2c32e40f145c\",\"claims\":[{\"text\":\"The Sable Pro camera supports 4K video recording at 60 fps\",\"start\":0,\"end\":58,\"verdict\":\"supported\",\"supportIds\":[\"identity:c1de7b9040a0675ce6730b5a84b50a7dbea5fb9a0b62cd1fe55c742731ca9714\",\"identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e\",\"fact:fact_1128a7246bf8491fbf6c95f0a12959274eb4f4443b8ccdb1c126b278d4161e5c\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_d98f99472c\",\"field\":\"raw_title\",\"quote\":\"Sable Pro action camera\"},{\"rowId\":\"row_d98f99472c\",\"field\":\"raw_specs\",\"quote\":\"4K60\"}],\"reason\":\"The title establishes the camera model and type; the supplied recording support interprets 4K60 as 4K at 60 fps.\"},{\"text\":\"and is waterproof to a depth of up to 10 m\",\"start\":59,\"end\":101,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_b9e7237ff300347221c2f9c992b111583b1dc6b81fd6f0903aa4be23493fc917\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_d98f99472c\",\"field\":\"raw_specs\",\"quote\":\"waterproof to 10m\"}],\"reason\":\"The source specifies waterproofing to 10 m, and the claim preserves the supplied up-to qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_02e4e59b715adcef016aa4569f955887d08db6eac1462f29ca",
+    "usage": {
+      "inputTokens": 1968,
+      "outputTokens": 433,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1965
+    }
+  }
+}

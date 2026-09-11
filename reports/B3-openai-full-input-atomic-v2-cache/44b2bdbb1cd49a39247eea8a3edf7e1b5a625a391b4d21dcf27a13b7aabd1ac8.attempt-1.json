@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 11360.75233300007,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "afeac502049b256c174083068bb1c7aaab5bffde7f7cac89e4ac5985e88d284e",
+      "claims": [
+        {
+          "text": "The Sable X mouse has 6 buttons",
+          "start": 0,
+          "end": 31,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:ad4e0339cdb6cf1fb20a0d5c91ce834ef78ba253d4e1c45af58bdeaeb6944f68",
+            "identity:335df722e77165d393567d4144ff04009970552a248aaf23d2e477551aad076c",
+            "fact:fact_82d1ad2a0aee30bafeadd79f0251c043934181bf4d9b21e3849609fea64d9014"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c7628d7c8b",
+              "field": "raw_title",
+              "quote": "SABLE X WIRELESS MOUSE"
+            },
+            {
+              "rowId": "row_c7628d7c8b",
+              "field": "raw_specs",
+              "quote": "6 buttons"
+            }
+          ],
+          "reason": "The supplied title establishes the model and product type, and the specifications explicitly state 6 buttons."
+        },
+        {
+          "text": "and a mass of 70 g",
+          "start": 32,
+          "end": 50,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_cb3be2156560950f608d98848f87a23fbcc8adc4c8118a0859545a76440d9232"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_c7628d7c8b",
+              "field": "raw_specs",
+              "quote": "70g"
+            }
+          ],
+          "reason": "The supplied mass fact and raw specifications support a mass of 70 g."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"afeac502049b256c174083068bb1c7aaab5bffde7f7cac89e4ac5985e88d284e\",\"claims\":[{\"text\":\"The Sable X mouse has 6 buttons\",\"start\":0,\"end\":31,\"verdict\":\"supported\",\"supportIds\":[\"identity:ad4e0339cdb6cf1fb20a0d5c91ce834ef78ba253d4e1c45af58bdeaeb6944f68\",\"identity:335df722e77165d393567d4144ff04009970552a248aaf23d2e477551aad076c\",\"fact:fact_82d1ad2a0aee30bafeadd79f0251c043934181bf4d9b21e3849609fea64d9014\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c7628d7c8b\",\"field\":\"raw_title\",\"quote\":\"SABLE X WIRELESS MOUSE\"},{\"rowId\":\"row_c7628d7c8b\",\"field\":\"raw_specs\",\"quote\":\"6 buttons\"}],\"reason\":\"The supplied title establishes the model and product type, and the specifications explicitly state 6 buttons.\"},{\"text\":\"and a mass of 70 g\",\"start\":32,\"end\":50,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_cb3be2156560950f608d98848f87a23fbcc8adc4c8118a0859545a76440d9232\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_c7628d7c8b\",\"field\":\"raw_specs\",\"quote\":\"70g\"}],\"reason\":\"The supplied mass fact and raw specifications support a mass of 70 g.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_02d5946993b81742016aa453cba42487d0933597e315cf036a",
+    "usage": {
+      "inputTokens": 1644,
+      "outputTokens": 527,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1641
+    }
+  }
+}

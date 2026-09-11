@@ -1,0 +1,63 @@
+{
+  "elapsedMs": 7212.081333999988,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "291111810e181132c24e3f65fb128ea1f4eac1cf9bbbc4365860e6f0942788e4",
+      "claims": [
+        {
+          "text": "The FreshCrate Blend One Countertop Blender has a specified power of 800 W",
+          "start": 0,
+          "end": 74,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:2f4c83b3174156e23c824825a684c6bc5f4e9e9f52b24470266a1a3b895b3b89",
+            "fact:fact_5cd78281301e248d503ee1e1560bc488b50ea783ac7f4aef8f9e713aeda1742b"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_cfc9d66ae8",
+              "field": "raw_title",
+              "quote": "FreshCrate Blend One Countertop Blender"
+            },
+            {
+              "rowId": "row_cfc9d66ae8",
+              "field": "raw_specs",
+              "quote": "800W"
+            }
+          ],
+          "reason": "The title establishes the named product, and the specifications state 800W without assigning a power purpose."
+        },
+        {
+          "text": "with the purpose unspecified",
+          "start": 76,
+          "end": 104,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_5cd78281301e248d503ee1e1560bc488b50ea783ac7f4aef8f9e713aeda1742b"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_cfc9d66ae8",
+              "field": "raw_specs",
+              "quote": "800W"
+            }
+          ],
+          "reason": "The power support explicitly carries the purpose_unspecified condition; the description preserves that qualification."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"291111810e181132c24e3f65fb128ea1f4eac1cf9bbbc4365860e6f0942788e4\",\"claims\":[{\"text\":\"The FreshCrate Blend One Countertop Blender has a specified power of 800 W\",\"start\":0,\"end\":74,\"verdict\":\"supported\",\"supportIds\":[\"identity:2f4c83b3174156e23c824825a684c6bc5f4e9e9f52b24470266a1a3b895b3b89\",\"fact:fact_5cd78281301e248d503ee1e1560bc488b50ea783ac7f4aef8f9e713aeda1742b\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_cfc9d66ae8\",\"field\":\"raw_title\",\"quote\":\"FreshCrate Blend One Countertop Blender\"},{\"rowId\":\"row_cfc9d66ae8\",\"field\":\"raw_specs\",\"quote\":\"800W\"}],\"reason\":\"The title establishes the named product, and the specifications state 800W without assigning a power purpose.\"},{\"text\":\"with the purpose unspecified\",\"start\":76,\"end\":104,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_5cd78281301e248d503ee1e1560bc488b50ea783ac7f4aef8f9e713aeda1742b\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_cfc9d66ae8\",\"field\":\"raw_specs\",\"quote\":\"800W\"}],\"reason\":\"The power support explicitly carries the purpose_unspecified condition; the description preserves that qualification.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0ff5df419459fcf0016aa4558a2bf087d0a261c1f9a6b4e78e",
+    "usage": {
+      "inputTokens": 2047,
+      "outputTokens": 377,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2044
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "elapsedMs": 6766.152916999999,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "3cbc80a6b33e62d8c7d1d25c17c6f99749f048617b016da1bbb2c4019df5fd37",
+      "claims": [
+        {
+          "text": "The Juniper Plus microSD memory card",
+          "start": 0,
+          "end": 36,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:1abf46ec7eae52b617f26f026447b44511e8501f2beb96531376a661c30846f8",
+            "identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_67a1a789da",
+              "field": "raw_title",
+              "quote": "Juniper Plus microSD card 256GB"
+            },
+            {
+              "rowId": "row_67a1a789da",
+              "field": "raw_title",
+              "quote": "256GB"
+            }
+          ],
+          "reason": "The supplied title and identity supports identify the model and microSD memory-card type."
+        },
+        {
+          "text": "has 256 GB of storage",
+          "start": 37,
+          "end": 58,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_44993b2cdce08bf8929094c16423686f6f067834120292cbb888edf8e5b3ee61"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_67a1a789da",
+              "field": "raw_title",
+              "quote": "256GB"
+            }
+          ],
+          "reason": "The title explicitly supplies 256GB, matching the allowed storage fact without changing its value or scope."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"3cbc80a6b33e62d8c7d1d25c17c6f99749f048617b016da1bbb2c4019df5fd37\",\"claims\":[{\"text\":\"The Juniper Plus microSD memory card\",\"start\":0,\"end\":36,\"verdict\":\"supported\",\"supportIds\":[\"identity:1abf46ec7eae52b617f26f026447b44511e8501f2beb96531376a661c30846f8\",\"identity:d8d4698f3ace637341cd1d66fd232c11dc480f1168de53854dc1be37375dc8fa\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_67a1a789da\",\"field\":\"raw_title\",\"quote\":\"Juniper Plus microSD card 256GB\"},{\"rowId\":\"row_67a1a789da\",\"field\":\"raw_title\",\"quote\":\"256GB\"}],\"reason\":\"The supplied title and identity supports identify the model and microSD memory-card type.\"},{\"text\":\"has 256 GB of storage\",\"start\":37,\"end\":58,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_44993b2cdce08bf8929094c16423686f6f067834120292cbb888edf8e5b3ee61\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_67a1a789da\",\"field\":\"raw_title\",\"quote\":\"256GB\"}],\"reason\":\"The title explicitly supplies 256GB, matching the allowed storage fact without changing its value or scope.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0e61ca03750dd0f9016aa451f7c7ec87d0b85e16b493a97e8e",
+    "usage": {
+      "inputTokens": 1782,
+      "outputTokens": 359,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1779
+    }
+  }
+}

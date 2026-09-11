@@ -1,0 +1,76 @@
+{
+  "elapsedMs": 8347.37587499991,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "aaef11a71952decb41e82aa2278e5399d1503a7e97b9ff90cca443de747438e7",
+      "claims": [
+        {
+          "text": "The Basalt 2 is a camera",
+          "start": 0,
+          "end": 24,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:eb8fbe9447f5aa6bb2dd8d71626beff578429e851d59682727bd6423da83f986",
+            "identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_3a68411ed8",
+              "field": "raw_title",
+              "quote": "Basalt 2 action camera"
+            }
+          ],
+          "reason": "The supplied title establishes the model and camera type."
+        },
+        {
+          "text": "that records 4K video at 60 fps",
+          "start": 25,
+          "end": 56,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_f8d9f0ebf75bb88e8844907b16d012ad9344bb46eb8ce0775b7fced1b7de1185"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_3a68411ed8",
+              "field": "raw_specs",
+              "quote": "4K60"
+            }
+          ],
+          "reason": "The supplied recording support interprets 4K60 as 4K video at 60 fps."
+        },
+        {
+          "text": "and is waterproof up to 10 m",
+          "start": 57,
+          "end": 85,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_66055d8ea095c90384c341918cfb8f61788d2645361f3a5d0736310ae96bac6c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_3a68411ed8",
+              "field": "raw_specs",
+              "quote": "waterproof to 10m"
+            }
+          ],
+          "reason": "The source specifies waterproofing to 10 m, preserving the supplied up-to qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"aaef11a71952decb41e82aa2278e5399d1503a7e97b9ff90cca443de747438e7\",\"claims\":[{\"text\":\"The Basalt 2 is a camera\",\"start\":0,\"end\":24,\"verdict\":\"supported\",\"supportIds\":[\"identity:eb8fbe9447f5aa6bb2dd8d71626beff578429e851d59682727bd6423da83f986\",\"identity:7fe6d03c245a892792111cb63141b56e93aa22eaca3f32552628cd4eb42b078e\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_3a68411ed8\",\"field\":\"raw_title\",\"quote\":\"Basalt 2 action camera\"}],\"reason\":\"The supplied title establishes the model and camera type.\"},{\"text\":\"that records 4K video at 60 fps\",\"start\":25,\"end\":56,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_f8d9f0ebf75bb88e8844907b16d012ad9344bb46eb8ce0775b7fced1b7de1185\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_3a68411ed8\",\"field\":\"raw_specs\",\"quote\":\"4K60\"}],\"reason\":\"The supplied recording support interprets 4K60 as 4K video at 60 fps.\"},{\"text\":\"and is waterproof up to 10 m\",\"start\":57,\"end\":85,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_66055d8ea095c90384c341918cfb8f61788d2645361f3a5d0736310ae96bac6c\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_3a68411ed8\",\"field\":\"raw_specs\",\"quote\":\"waterproof to 10m\"}],\"reason\":\"The source specifies waterproofing to 10 m, preserving the supplied up-to qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_01bfac6f825a2392016aa4559e8b4c87d0bf2b2648f5779d55",
+    "usage": {
+      "inputTokens": 1835,
+      "outputTokens": 456,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1832
+    }
+  }
+}

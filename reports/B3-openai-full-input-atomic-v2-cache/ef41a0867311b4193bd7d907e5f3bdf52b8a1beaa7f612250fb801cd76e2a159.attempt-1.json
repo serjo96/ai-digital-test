@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1943.936541999923,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Juniper tablet case has a folio style and supports auto sleep/wake."
+    },
+    "raw": "{\"text\":\"The Juniper tablet case has a folio style and supports auto sleep/wake.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_06bec7c23f4313cc016aa45410b51487d0992279269b726210",
+    "usage": {
+      "inputTokens": 570,
+      "outputTokens": 31,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}
