@@ -1,0 +1,64 @@
+{
+  "elapsedMs": 7350.271790999977,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "5265b2e6296092a5e58c22e9aae8ede45a876bfba9704a8e77e14f32bb3da3c5",
+      "claims": [
+        {
+          "text": "The Onyx Pro tablet case has a folio style",
+          "start": 0,
+          "end": 42,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:3beaba0226187ae8f341d1840bc90913a2526cdaa0e0d404c8fc35c44d7f9661",
+            "identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02",
+            "fact:fact_dfc5f6299c59a9c4f5b1766a810acb94334de96d0380c2c89cf6f06a53e0c9e9"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_56f937bd9e",
+              "field": "raw_title",
+              "quote": "ONYX PRO TABLET CASE"
+            },
+            {
+              "rowId": "row_56f937bd9e",
+              "field": "raw_specs",
+              "quote": "folio"
+            }
+          ],
+          "reason": "The supplied identity supports identify the Onyx Pro tablet case, and its specifications explicitly state folio."
+        },
+        {
+          "text": "and supports auto sleep/wake",
+          "start": 43,
+          "end": 71,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_651a9fc92c1448713bf286c0f1fcde06e7c96fe84339e5aed25c986dbeead247"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_56f937bd9e",
+              "field": "raw_specs",
+              "quote": "auto sleep/wake"
+            }
+          ],
+          "reason": "The same product's specifications explicitly list auto sleep/wake."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"5265b2e6296092a5e58c22e9aae8ede45a876bfba9704a8e77e14f32bb3da3c5\",\"claims\":[{\"text\":\"The Onyx Pro tablet case has a folio style\",\"start\":0,\"end\":42,\"verdict\":\"supported\",\"supportIds\":[\"identity:3beaba0226187ae8f341d1840bc90913a2526cdaa0e0d404c8fc35c44d7f9661\",\"identity:5bfae384e64ff6d40e437dc60edd59791b8145f4fb1ebac9199eeb1e31429d02\",\"fact:fact_dfc5f6299c59a9c4f5b1766a810acb94334de96d0380c2c89cf6f06a53e0c9e9\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_56f937bd9e\",\"field\":\"raw_title\",\"quote\":\"ONYX PRO TABLET CASE\"},{\"rowId\":\"row_56f937bd9e\",\"field\":\"raw_specs\",\"quote\":\"folio\"}],\"reason\":\"The supplied identity supports identify the Onyx Pro tablet case, and its specifications explicitly state folio.\"},{\"text\":\"and supports auto sleep/wake\",\"start\":43,\"end\":71,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_651a9fc92c1448713bf286c0f1fcde06e7c96fe84339e5aed25c986dbeead247\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_56f937bd9e\",\"field\":\"raw_specs\",\"quote\":\"auto sleep/wake\"}],\"reason\":\"The same product's specifications explicitly list auto sleep/wake.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0129f50df4c4fe27016aa4359109ac87d0986895046e958211",
+    "usage": {
+      "inputTokens": 1720,
+      "outputTokens": 412,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1717
+    }
+  }
+}

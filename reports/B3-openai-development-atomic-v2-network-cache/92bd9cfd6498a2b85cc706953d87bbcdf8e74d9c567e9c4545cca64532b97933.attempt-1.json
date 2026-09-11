@@ -1,0 +1,41 @@
+{
+  "elapsedMs": 4930.2784159999865,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "b0aab124f3895b414db95d9be942e14a3ffeaa4fd6bc24964a784fdf59ffbace",
+      "claims": [
+        {
+          "text": "The Onyx 2 speakers come as a pair",
+          "start": 0,
+          "end": 34,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f",
+            "identity:20838059deddca079bfd22dae215b0a64ffb74b0e4ddb9db4a225fb265bcf2dd",
+            "identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_17f5e3070f",
+              "field": "raw_title",
+              "quote": "Onyx 2 bookshelf speaker pair"
+            }
+          ],
+          "reason": "The raw title explicitly identifies Onyx 2 speakers as a pair, matching the supplied model, type, and bundle supports."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"b0aab124f3895b414db95d9be942e14a3ffeaa4fd6bc24964a784fdf59ffbace\",\"claims\":[{\"text\":\"The Onyx 2 speakers come as a pair\",\"start\":0,\"end\":34,\"verdict\":\"supported\",\"supportIds\":[\"identity:1765c1191dc3e8d8f4355894f806beec58fee24c2e2181933f0b2164fd865e4f\",\"identity:20838059deddca079bfd22dae215b0a64ffb74b0e4ddb9db4a225fb265bcf2dd\",\"identity:b68ed9f986d5680332081ebe5614b126cf95faeef793a040a6136a206f10e704\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_17f5e3070f\",\"field\":\"raw_title\",\"quote\":\"Onyx 2 bookshelf speaker pair\"}],\"reason\":\"The raw title explicitly identifies Onyx 2 speakers as a pair, matching the supplied model, type, and bundle supports.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0fbc2dc29a7c1c54016aa4352c5a1887d0af3c025920a7448e",
+    "usage": {
+      "inputTokens": 1397,
+      "outputTokens": 263,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1394
+    }
+  }
+}

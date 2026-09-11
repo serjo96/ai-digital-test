@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1465.303917000012,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Onyx tablet case has a folio style and supports auto sleep/wake."
+    },
+    "raw": "{\"text\":\"The Onyx tablet case has a folio style and supports auto sleep/wake.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0e69769139eba9f9016aa435f6964c87d098c895107219080b",
+    "usage": {
+      "inputTokens": 538,
+      "outputTokens": 31,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

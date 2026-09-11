@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1444.6157079999684,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Cobalt Lite is a 7-in-1 USB-C hub with 4K@30fps video output and 100 W PD passthrough."
+    },
+    "raw": "{\"text\":\"The Cobalt Lite is a 7-in-1 USB-C hub with 4K@30fps video output and 100 W PD passthrough.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0b483adebcb61712016aa4365cad4487d09892fe67bfed325e",
+    "usage": {
+      "inputTokens": 784,
+      "outputTokens": 46,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

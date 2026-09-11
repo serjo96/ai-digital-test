@@ -37,13 +37,15 @@ P0.1 завершён, дополнительная ручная разметк�
 
 Human-review часть закрыта: replay получил `human_verified` для controlled и generated review. Офлайн-исправление подготовлено: verifier prompt v2 требует законченные смысловые spans, а локальный fail-closed валидатор отклоняет оборванные `is a`/`has a` и голые измерения. Помимо четырёх human-flagged claims аудит нашёл тот же паттерн в двух pending published claims и двух controlled spans; человеческие флаги задним числом не добавлялись. При новом publication hash `web:prepare --generated-checks` переносит только reviewed-решения с неизменившимися стабильными ключами, оставляя новые claims pending.
 
-Следующее действие требует отдельного разрешения: новый development live с пустым cache и verifier schema `publication_verification_v2`. Ожидается 86 базовых запросов и стоимость примерно уровня предыдущего development live ($2.65, немного выше из-за расширенного prompt); repair может увеличить объём. После него нужно открыть UI с rebased review, проверить только новые claims в обязательных Quill/Pulse карточках, экспортировать новый review и выполнить offline replay. Только при нуле non-atomic issues можно переходить к full-input live/replay.
+Development live разрешён и выполнен 2026-09-12: [B3-openai-development-atomic-v2-live-network](../reports/B3-openai-development-atomic-v2-live-network/report.md). Получено 88 calls, 158417 tokens, $2.619013, 0 errors/retries; один repair исправил лишний qualifier Nimbus. Controlled suite прошла 12/12, результат сохранил B1 `decisionsHash`, дал 37/39 ready и 0 запрещённых atomicity-паттернов среди 102 опубликованных claims. [Offline replay](../reports/B3-openai-development-atomic-v2-replay/report.md) дал 88 cache hits, 0 calls и тот же `publicationHash`; [сравнение](../reports/comparisons/B3-openai-development-atomic-v2-live-to-replay/comparison.md) подтверждает `decisionsEqual=true`, `publicationEqual=true` и отсутствие нарушений.
 
-Подготовленная, но не выполненная команда:
+Открытый блокер — повторная human-проверка новой публикации. Новый live переформулировал 17/37 descriptions и пересегментировал claims с 158 до 102. Строгий перенос по неизменившимся `productId + attempt + claimId` сохранил лишь 3 reviewed decisions; в фиксированной выборке остаются pending 55/55 claims. Автоматически объявлять новые формулировки проверенными нельзя. Рекомендуемый следующий технический вариант — добавить verifier-only development rerun поверх замороженных старых draft texts, чтобы изолировать atomicity fix от повторной генерации; этот код и новый AI-запуск требуют отдельного решения пользователя. Альтернатива — вручную проверить 55 claims текущего live в UI.
+
+Выполненная development live-команда:
 
 ```sh
 npm run build
-node dist/src/cli.js pipeline --baseline b3 --ai-mode live --ai-cache reports/B3-openai-development-atomic-v2-cache --ai-config config/stage4.openai.json --ai-cohort development --claim-checks eval/stage4-claims.json --out reports --run-id B3-openai-development-atomic-v2-live
+node dist/src/cli.js pipeline --baseline b3 --ai-mode live --ai-cache reports/B3-openai-development-atomic-v2-network-cache --ai-config config/stage4.openai.json --ai-cohort development --claim-checks eval/stage4-claims.json --out reports --run-id B3-openai-development-atomic-v2-live-network
 ```
 
 ### P0.3. Закрыть этап 5
@@ -71,4 +73,4 @@ node dist/src/cli.js pipeline --baseline b3 --ai-mode live --ai-cache reports/B3
 
 ## Стартовый запрос для нового чата
 
-> Прочитай `docs/NEXT_STEPS.md` и, после моего явного разрешения, запусти только подготовленный P0.2 development live. Не запускай full-input или holdout. После live перенеси стабильные human decisions через `web:prepare --generated-checks`, покажи мне только новые claims обязательной выборки и не объявляй gate пройденным до нового экспорта и offline replay.
+> Прочитай `docs/NEXT_STEPS.md`. Development atomic-v2 live/replay уже успешны, но новый generation оставил 55 pending claims обязательной выборки. Предложи и реализуй только выбранный мной путь: (а) verifier-only rerun поверх замороженных старых draft texts с отдельным разрешением на AI или (б) подготовка UI для ручной проверки текущих 55 claims. Full-input и holdout не запускать.

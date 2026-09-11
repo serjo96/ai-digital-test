@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1567.9804579999764,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Onyx 3 lamp features an LED light source and a USB-C connector."
+    },
+    "raw": "{\"text\":\"The Onyx 3 lamp features an LED light source and a USB-C connector.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_03e378b9390c4160016aa43640d24887d0a1cd1c88a90697c5",
+    "usage": {
+      "inputTokens": 561,
+      "outputTokens": 31,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

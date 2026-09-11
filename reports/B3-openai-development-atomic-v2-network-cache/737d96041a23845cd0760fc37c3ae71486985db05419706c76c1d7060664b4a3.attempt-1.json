@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2815.9035419999855,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Lumen X20 camera has a 20 MP sensor, 5x optical zoom, and 4K video recording at 30 fps. It uses SD memory cards."
+    },
+    "raw": "{\"text\":\"The Lumen X20 camera has a 20 MP sensor, 5x optical zoom, and 4K video recording at 30 fps. It uses SD memory cards.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0ec796ea08c72a57016aa435fe251487d09b0438581546e63b",
+    "usage": {
+      "inputTokens": 835,
+      "outputTokens": 50,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

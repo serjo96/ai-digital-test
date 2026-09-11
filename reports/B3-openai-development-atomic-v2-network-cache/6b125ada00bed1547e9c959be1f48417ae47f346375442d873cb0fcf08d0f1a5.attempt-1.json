@@ -1,0 +1,82 @@
+{
+  "elapsedMs": 8709.893582999997,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "9dfa9de1e2c2ca29871250c8ef32bc6009de7373206a383c964f72bfef7a03df",
+      "claims": [
+        {
+          "text": "The Volt GaN charger",
+          "start": 0,
+          "end": 20,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:403cc5cf089c8e970d128c910c4769a53b4cc316e17509e305b700190eb14f0e",
+            "identity:f55c343e6fdf78f0422751d103bad05105e4bcf841b43989ba9c707b1a6210c5",
+            "fact:fact_d2287d996625904a6b3f30674e4cbf1863caeb4a3da3524acf608e7a3d946f4c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_1134eb89e7",
+              "field": "raw_title",
+              "quote": "Volt 65W GaN charger 3-port"
+            },
+            {
+              "rowId": "row_1134eb89e7",
+              "field": "raw_title",
+              "quote": "GaN"
+            }
+          ],
+          "reason": "The title identifies the Volt charger and its GaN technology."
+        },
+        {
+          "text": "has 3 ports",
+          "start": 21,
+          "end": 32,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_e24b60ed290ae1ad7b2e6de4897b1a5ce9e788a9fabd44b30d297006d2c50374"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_1134eb89e7",
+              "field": "raw_title",
+              "quote": "3-port"
+            }
+          ],
+          "reason": "The title explicitly states three ports."
+        },
+        {
+          "text": "and a stated power of 65 W for an unspecified purpose",
+          "start": 33,
+          "end": 86,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_55bf32b5505588e0d19f3f741833699232b9efedac4056e232813b5c267df4ad"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_1134eb89e7",
+              "field": "raw_title",
+              "quote": "65W"
+            }
+          ],
+          "reason": "The title states 65W without specifying its purpose; the claim preserves the support's purpose_unspecified qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"9dfa9de1e2c2ca29871250c8ef32bc6009de7373206a383c964f72bfef7a03df\",\"claims\":[{\"text\":\"The Volt GaN charger\",\"start\":0,\"end\":20,\"verdict\":\"supported\",\"supportIds\":[\"identity:403cc5cf089c8e970d128c910c4769a53b4cc316e17509e305b700190eb14f0e\",\"identity:f55c343e6fdf78f0422751d103bad05105e4bcf841b43989ba9c707b1a6210c5\",\"fact:fact_d2287d996625904a6b3f30674e4cbf1863caeb4a3da3524acf608e7a3d946f4c\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1134eb89e7\",\"field\":\"raw_title\",\"quote\":\"Volt 65W GaN charger 3-port\"},{\"rowId\":\"row_1134eb89e7\",\"field\":\"raw_title\",\"quote\":\"GaN\"}],\"reason\":\"The title identifies the Volt charger and its GaN technology.\"},{\"text\":\"has 3 ports\",\"start\":21,\"end\":32,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_e24b60ed290ae1ad7b2e6de4897b1a5ce9e788a9fabd44b30d297006d2c50374\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1134eb89e7\",\"field\":\"raw_title\",\"quote\":\"3-port\"}],\"reason\":\"The title explicitly states three ports.\"},{\"text\":\"and a stated power of 65 W for an unspecified purpose\",\"start\":33,\"end\":86,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_55bf32b5505588e0d19f3f741833699232b9efedac4056e232813b5c267df4ad\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_1134eb89e7\",\"field\":\"raw_title\",\"quote\":\"65W\"}],\"reason\":\"The title states 65W without specifying its purpose; the claim preserves the support's purpose_unspecified qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_09edd8ab61d78388016aa434df0dcc87d091880e5efef90484",
+    "usage": {
+      "inputTokens": 2146,
+      "outputTokens": 514,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2143
+    }
+  }
+}

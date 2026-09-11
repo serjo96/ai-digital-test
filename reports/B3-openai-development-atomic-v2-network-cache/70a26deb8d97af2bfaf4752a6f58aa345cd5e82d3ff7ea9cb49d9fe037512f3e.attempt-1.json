@@ -1,0 +1,82 @@
+{
+  "elapsedMs": 8217.226250000007,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "f69720ee174c0a3b43a23002cac28be38e1d368c19105b1a543e4bebb1dd93c2",
+      "claims": [
+        {
+          "text": "The Cobalt 3 scale uses BIA",
+          "start": 0,
+          "end": 27,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:bd84167f97aa2cd9060ff648439b535b8940338bf14e1d69fd975e1b87226b53",
+            "identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7",
+            "fact:fact_5488308e9afc1cafa6bcc4da3c1160aafdc16b863e2424c7951b770ff105c463"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_71847a9c05",
+              "field": "raw_title",
+              "quote": "COBALT 3 SMART SCALE"
+            },
+            {
+              "rowId": "row_71847a9c05",
+              "field": "raw_specs",
+              "quote": "BIA"
+            }
+          ],
+          "reason": "The title identifies the model and product type; the specifications explicitly list BIA."
+        },
+        {
+          "text": "supports app sync",
+          "start": 29,
+          "end": 46,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_c800a8a100c7650a3750060785d41a9ef967dd3959bd8f6fbf9d524a30c12f6c"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_71847a9c05",
+              "field": "raw_specs",
+              "quote": "app sync"
+            }
+          ],
+          "reason": "App synchronization is explicitly listed in the specifications."
+        },
+        {
+          "text": "and has a maximum load of 180 kg",
+          "start": 48,
+          "end": 80,
+          "verdict": "supported",
+          "supportIds": [
+            "fact:fact_5f300d140b0014e3217226171d9e75a79aee5c3385ae21d9f8eb106845a647fc"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_71847a9c05",
+              "field": "raw_specs",
+              "quote": "180kg max"
+            }
+          ],
+          "reason": "The stated load matches the supplied value and preserves the maximum qualifier."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"f69720ee174c0a3b43a23002cac28be38e1d368c19105b1a543e4bebb1dd93c2\",\"claims\":[{\"text\":\"The Cobalt 3 scale uses BIA\",\"start\":0,\"end\":27,\"verdict\":\"supported\",\"supportIds\":[\"identity:bd84167f97aa2cd9060ff648439b535b8940338bf14e1d69fd975e1b87226b53\",\"identity:0dd156088853c7a555beee1394b1febcfb3792fa63b192e5f11213e328a589c7\",\"fact:fact_5488308e9afc1cafa6bcc4da3c1160aafdc16b863e2424c7951b770ff105c463\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_71847a9c05\",\"field\":\"raw_title\",\"quote\":\"COBALT 3 SMART SCALE\"},{\"rowId\":\"row_71847a9c05\",\"field\":\"raw_specs\",\"quote\":\"BIA\"}],\"reason\":\"The title identifies the model and product type; the specifications explicitly list BIA.\"},{\"text\":\"supports app sync\",\"start\":29,\"end\":46,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_c800a8a100c7650a3750060785d41a9ef967dd3959bd8f6fbf9d524a30c12f6c\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_71847a9c05\",\"field\":\"raw_specs\",\"quote\":\"app sync\"}],\"reason\":\"App synchronization is explicitly listed in the specifications.\"},{\"text\":\"and has a maximum load of 180 kg\",\"start\":48,\"end\":80,\"verdict\":\"supported\",\"supportIds\":[\"fact:fact_5f300d140b0014e3217226171d9e75a79aee5c3385ae21d9f8eb106845a647fc\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_71847a9c05\",\"field\":\"raw_specs\",\"quote\":\"180kg max\"}],\"reason\":\"The stated load matches the supplied value and preserves the maximum qualifier.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0719ae095454fd1c016aa434d0d1ac87d0a622fd747aed77f2",
+    "usage": {
+      "inputTokens": 1891,
+      "outputTokens": 508,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1888
+    }
+  }
+}

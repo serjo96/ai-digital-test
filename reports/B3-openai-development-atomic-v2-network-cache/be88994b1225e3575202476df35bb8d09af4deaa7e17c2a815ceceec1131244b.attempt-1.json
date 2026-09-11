@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1939.510083000001,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Cobalt 2 scale uses BIA, supports app sync, and has a maximum load of 180 kg."
+    },
+    "raw": "{\"text\":\"The Cobalt 2 scale uses BIA, supports app sync, and has a maximum load of 180 kg.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_00a3a50de57ae575016aa43635799087d08d4dae7f1c170efa",
+    "usage": {
+      "inputTokens": 653,
+      "outputTokens": 38,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

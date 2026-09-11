@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 5671.106041999999,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Volt GaN charger has 3 ports and a stated power of 65 W for an unspecified purpose."
+    },
+    "raw": "{\"text\":\"The Volt GaN charger has 3 ports and a stated power of 65 W for an unspecified purpose.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_074c3bd7c07fc8c9016aa434da0bac87d08c0b64cb903c85cf",
+    "usage": {
+      "inputTokens": 875,
+      "outputTokens": 36,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

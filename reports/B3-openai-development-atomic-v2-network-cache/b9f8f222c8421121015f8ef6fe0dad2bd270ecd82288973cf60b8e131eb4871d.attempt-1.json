@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2244.534249999968,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Onyx Lite mouse has 6 buttons and a mass of 70 g."
+    },
+    "raw": "{\"text\":\"The Onyx Lite mouse has 6 buttons and a mass of 70 g.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_09786cde4eebaf5a016aa435d75a8487d08144adb63198ddfa",
+    "usage": {
+      "inputTokens": 623,
+      "outputTokens": 31,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

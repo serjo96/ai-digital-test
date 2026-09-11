@@ -1,0 +1,3600 @@
+{
+  "version": "ai-trace-v1",
+  "config": {
+    "version": "B3-config-v1",
+    "generation": {
+      "provider": "openai",
+      "model": "gpt-5.6-sol",
+      "reasoning": "low",
+      "maxOutputTokens": 1024
+    },
+    "verifier": {
+      "provider": "openai",
+      "model": "gpt-6-astra",
+      "reasoning": "low",
+      "maxOutputTokens": 4096
+    },
+    "timeoutMs": 60000,
+    "maxRetries": 2,
+    "prices": [
+      {
+        "provider": "openai",
+        "model": "gpt-5.6-sol",
+        "inputPerMillion": 4,
+        "cachedInputPerMillion": 0.4,
+        "cacheWritePerMillion": 5,
+        "outputPerMillion": 20,
+        "maxInputTokens": 272000,
+        "source": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+        "checkedAt": "2026-09-10"
+      },
+      {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "inputPerMillion": 10,
+        "cachedInputPerMillion": 1,
+        "cacheWritePerMillion": 12.5,
+        "outputPerMillion": 50,
+        "maxInputTokens": 272000,
+        "source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+        "checkedAt": "2026-09-10"
+      }
+    ]
+  },
+  "records": [
+    {
+      "key": "4eef526b41888bbc4cbf0fdacb52989d194cd3dc89df56867e4359f0b636d44a",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_05e5d126cb",
+        "row_1e60b0a9dc",
+        "row_7f3f1b14c3"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3049.6031660000003,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 20.19904200000002,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 10.331625000000031,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 8.818207999999686,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "2689004a4645f5c95c93278c52d8f2531178065d570dad99dfedbfa0c3a33569",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_05e5d126cb",
+        "row_1e60b0a9dc",
+        "row_7f3f1b14c3"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3025.501833,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 3.709292000000005,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 8.27862499999992,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 5.655792000000474,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "c639ae9d57c36196036218d94ba0f0fceaeae87270d560338833a5eafbf09566",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_11bb99b2fa",
+        "row_bdbc045131"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3026.313082999999,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 1.753125000000182,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 8.735999999999876,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 8.21033399999942,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "2116a82f7b6d43feccdc85dcf6c5160baa950dc2cd610e3827b6725a857c73fc",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_c2467f5304",
+        "row_f3873a8816"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3019.325125000001,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 3.6754579999997077,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 5.252707999999984,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 3.980083000000377,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "957494058092e813df15114e3478c7ecc442dc25aa4ec6cb011b39ad19bb17a1",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_c2467f5304",
+        "row_f3873a8816"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3019.567583,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 1.5361250000005384,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.91308299999946,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 4.075082999999722,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "72d8dd2b48a55facdcf9a376719806fc7e043e461adab5ef7b86d8782fb2b0a2",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_4730fd8686"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3022.1103330000024,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 1.5190829999992275,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 5.621917000000394,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 6.775375000001077,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "092c37a2fa18113ab9c0b6c8cecaa84aa6ce5641faebf1ad1c2c89d7e4a92833",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_4730fd8686"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3031.9008749999994,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 3.2210830000003625,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.5795839999991586,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 5.898124999999709,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "dcd182da87edd9bc7b9bf41890a36f58d901a97c76463372d501494810b76d8a",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_4730fd8686"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3024.0922919999975,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 4.0790410000008706,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 4.1666670000013255,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.875166000001627,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "43b040362ab411671b2d9367008f91351a22c6cf0e7c87474ca99894d5ae7c50",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_11bb99b2fa",
+        "row_bdbc045131"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3020.8802910000013,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 3.0484159999978147,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 4.218250000001717,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.205500000000029,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "b986f618591baf7df4d3a3932f45ae87ae3266ee0c5e726dd7961bed563e7de5",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_4730fd8686"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3024.4598750000005,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 3.14429200000086,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.203542000002926,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.458208000000013,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "2e46b768e8500c14fe73ce8a1f8ef2b81e2cef1fa7f06e2997a5e99efa35d0ae",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_05e5d126cb",
+        "row_1e60b0a9dc",
+        "row_7f3f1b14c3"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3028.5053339999977,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 3.205083000000741,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 8.241500000000087,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 8.024582999998529,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "ee7e68d9d910600c42348c69f06d55136ad54b7a2f82b8ece883e8d733c136e4",
+      "role": "controlled_verification",
+      "rowIds": [
+        "row_c2467f5304",
+        "row_f3873a8816"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-6-astra",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3028.654499999997,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 3.129291999997804,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.769291999997222,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.0465840000033495,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "835aae2934284d01a9d9a5479cb76c86c4f0ac45e3d584852e0cd1dadb4d2856",
+      "role": "generation",
+      "rowIds": [
+        "row_71847a9c05"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3028.930124999999,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 3.0918749999982538,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 5.135833000000275,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 9.318209000004572,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "d3e7bccc35f121bc91142e6d30052c7f0029cab0fb6863144cb70cbec391e330",
+      "role": "generation",
+      "rowIds": [
+        "row_1134eb89e7"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3029.695792000006,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 3.366374999997788,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 5.862791999999899,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.22020799999882,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "51655741c261caa021f326720ef0baf72d39eff5b063d357911a88df0a35b782",
+      "role": "generation",
+      "rowIds": [
+        "row_11462769c5"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3024.7948749999996,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.5600000000049477,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.004999999997381,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 9.575749999996333,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "6820820ced0cb912ca3606f04a2378d23e2916a50308c0edea0152411d039a4a",
+      "role": "generation",
+      "rowIds": [
+        "row_833c7feebb"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3025.512791000001,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 3.0752079999947455,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.450708000003942,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.366500000003725,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "8941b45e3cf0cbed9276bd14970e4c4b6f1a3619560a9696520d6b9fb5de25ff",
+      "role": "generation",
+      "rowIds": [
+        "row_fe3ff4b356"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3025.107250000001,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.838458999998693,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.526625000005879,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.015124999998079,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "23084203afc176b05c5ba6f425a0d5be2d4038b40eac723ebbf14796f1c1dad9",
+      "role": "generation",
+      "rowIds": [
+        "row_87ace126d4",
+        "row_92da044aa3"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3024.4329170000055,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 3.1395420000044396,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 8.282208000004175,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.74041600000055,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "2c0dfcfb3d2e0b4a08b47ce118634fe25c1140bab5d0dce2ff7a50c995292b9d",
+      "role": "generation",
+      "rowIds": [
+        "row_cdf75e46ea"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3024.4510420000006,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.929666999996698,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 6.876499999998487,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 5.4965420000007725,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "fc69b32c8b222b524fe05b0444f11e9c7cfded9b600ca2506acf4e4bba26e135",
+      "role": "generation",
+      "rowIds": [
+        "row_17f5e3070f"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3025.0188750000016,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 3.0450000000055297,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.012750000001688,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 6.833540999999968,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "1afdc7e765aa6a15b33ed317643a80f028c2bb3ec9872dac08a713969ad4ed53",
+      "role": "generation",
+      "rowIds": [
+        "row_654f1fb60f"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3017.2883749999964,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.889541000004101,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 5.629416000003403,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 1.8881669999973383,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "149454176eed0c31e3a1e6e6074aa4ed157f0ef510a87d37cc5ab04050a24d7c",
+      "role": "generation",
+      "rowIds": [
+        "row_a8a875a60c"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3019.9644999999946,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 1.643458999998984,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 6.805375000003551,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 3.925583000003826,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "add82151bad23b95a5b9be8b82e453a7445ea1caf2e5012a6c8853725bc42b36",
+      "role": "generation",
+      "rowIds": [
+        "row_c2467f5304",
+        "row_f3873a8816"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3030.290875000006,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.529540999996243,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.994791000004625,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 8.821875000008731,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "673fe4e87fdcf2b40bb7b2397059749315fe4cd841442841be4f0ba4cdc16671",
+      "role": "generation",
+      "rowIds": [
+        "row_4730fd8686"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3030.908958,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 3.948374999992666,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 8.917832999999519,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.838374999992084,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "30a8919fd34e63fd524787a13093f21d39036bca6798e3cd23e57dac19259a60",
+      "role": "generation",
+      "rowIds": [
+        "row_22e59912ad",
+        "row_fbe753d7cc"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3016.834124999994,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.6563749999913853,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 3.8662079999921843,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 4.4377499999973224,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "913b6fa64c08336324a592919521b9ac15ea647cf0e194052a557f5e6e8275b5",
+      "role": "generation",
+      "rowIds": [
+        "row_b82f7fcc2a"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3022.9796669999923,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 1.2440420000057202,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.400666999994428,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.867000000012922,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "9e73266d124458d1aebf386a162a0ed7b9425f6b80ffa8060136517c2ff372f0",
+      "role": "generation",
+      "rowIds": [
+        "row_bb6d2613d4"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3025.8670420000126,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.501957999993465,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.1965000000054715,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 9.627917000005255,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "1572e230a57772a875de44d582d66b3d22da944d66b6c5a1cb0095609798a0d8",
+      "role": "generation",
+      "rowIds": [
+        "row_b2475a3df6"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3023.774709000005,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 3.41425000000163,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.242874999996275,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 4.869458000001032,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "e34938042e51b0b5b05034a474865a2c6ef5d996e91ee938dbef93959dc09afb",
+      "role": "generation",
+      "rowIds": [
+        "row_56f937bd9e"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3024.963957999993,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.5271250000078,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 6.997457999998005,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.608250000004773,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "c5462653638add391e6a8fec6a5836e90c083cc0dd45743cf996db5bddeb5504",
+      "role": "generation",
+      "rowIds": [
+        "row_6f66c4cb9e"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3021.9131250000064,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.3039169999974547,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.5801659999997355,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 6.343624999994063,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "2864634da9d23af59a49d39bd6e4c2d8ec2f628340cdbcfec675a9b0ad3af43b",
+      "role": "generation",
+      "rowIds": [
+        "row_b40060c12f"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3027.103541999997,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 3.311834000007366,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 6.010583000010229,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.709124999993946,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "2e3ae5c4edb37e50e86659d0a18538e9ccd3bee14c2ef650bc9158416638d268",
+      "role": "generation",
+      "rowIds": [
+        "row_5824054a52"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3025.741000000009,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.679708000010578,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 8.16508399999293,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.056375000000116,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "a47779388349147461e5146e12eabb79a9c370450065554ec6726edc336d4a98",
+      "role": "generation",
+      "rowIds": [
+        "row_641c690d68",
+        "row_73d3ec91bb"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3021.1085420000018,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.6711250000080327,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.5627909999893745,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 4.171875,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "aec435ce6094146a2f2ec6a5367860f7f9b7f206c4559cab1338e631f9e28395",
+      "role": "generation",
+      "rowIds": [
+        "row_6eddbd5517",
+        "row_f0ad473862"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3025.672292000003,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 1.7547079999931157,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 9.365709000005154,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.603416000012658,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "31d2c588c8d195a074142349bf44f10282ed77e497633bb3438c565d3f9f90ac",
+      "role": "generation",
+      "rowIds": [
+        "row_a60219abb1",
+        "row_bddc33a831"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3025.789917000002,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 3.173416999998153,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 5.787958000000799,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.095042000000831,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "b9f8f222c8421121015f8ef6fe0dad2bd270ecd82288973cf60b8e131eb4871d",
+      "role": "generation",
+      "rowIds": [
+        "row_55a8c9b86d",
+        "row_74b8f7797a"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3028.771166999999,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.6909170000144513,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 9.140750000005937,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.790832999991835,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "0bf627eaba33440dd8975c550713b94f842822c4d3e6b2138dd62ed7a8452b26",
+      "role": "generation",
+      "rowIds": [
+        "row_76b28cdc31"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3025.9784999999974,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.51054099999601,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.838041999988491,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 8.176041999991867,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "d6a20198ceaf18d2a3a220c7aa3202822dd89918905d0181ff796eb8661170d9",
+      "role": "generation",
+      "rowIds": [
+        "row_3e2dd6416e",
+        "row_94d9860adf"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3028.438292000006,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.7834159999911208,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 9.949666999993497,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.0783749999973224,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "f0e9478b2ab407c41dded82451754ee29b51c9713032070e496ad53d78ab6646",
+      "role": "generation",
+      "rowIds": [
+        "row_e571323780"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3019.6170420000126,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.853583999996772,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 6.37691600000835,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 3.5250410000007832,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "737d96041a23845cd0760fc37c3ae71486985db05419706c76c1d7060664b4a3",
+      "role": "generation",
+      "rowIds": [
+        "row_1d1bdffe92",
+        "row_83da10f114"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3020.9060829999944,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 1.7513750000071013,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.12545800000953,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 4.610375000003842,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "e7768a819a883237849c1de81a240ef766616561019e1ffabd9a82edb48cab93",
+      "role": "generation",
+      "rowIds": [
+        "row_05e5d126cb",
+        "row_1e60b0a9dc",
+        "row_7f3f1b14c3"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3025.749125000002,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.38554099999601,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 8.31600000000617,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.361791999996058,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "65d6c9b7db8c1b483a2cd2400f6265736dd4e2298f13e28390ff65a74baf012b",
+      "role": "generation",
+      "rowIds": [
+        "row_64543589fc",
+        "row_a386736693"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3017.640374999988,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 3.032208000004175,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 3.561374999990221,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 4.63758300000336,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "e2dc6e73c0acfbdbd9359297ea24965503971873f7b22e78e19bfe8a29b94ea3",
+      "role": "generation",
+      "rowIds": [
+        "row_68d860d397",
+        "row_78b4c42770"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3027.3898749999935,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 1.9479580000042915,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.759208000003127,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 9.27491700000246,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "a5fa666136ad02dfe2d6d37557ba0aec0c6b0170b8e007012447ab0348a5feea",
+      "role": "generation",
+      "rowIds": [
+        "row_06dc75e525",
+        "row_3f77cefacd"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3025.5495840000076,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.8212920000078157,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.407791999983601,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.30387500001234,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "be88994b1225e3575202476df35bb8d09af4deaa7e17c2a815ceceec1131244b",
+      "role": "generation",
+      "rowIds": [
+        "row_e67082ee31"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3026.427667000011,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.4556659999943804,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.080291999998735,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.338374999992084,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "5f5a081085a5382ce70e1f5db1093ce3270e5a89fb7d3f1a3d65ec6b308281b4",
+      "role": "generation",
+      "rowIds": [
+        "row_a1bb1ad2e9"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3027.8210000000254,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.5819159999955446,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.471040999982506,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 9.102791999990586,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "370cecaecbe1685254c9096987a727dd4cfe41fe33743fb44e1b9a6462c9de2d",
+      "role": "generation",
+      "rowIds": [
+        "row_bb41623d6c"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3027.850166999997,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.889374999998836,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 6.312833000003593,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 9.834166999993613,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "aa789258dad3bc83957bda55d7f4245b811e789914fa887e641f29b5de691db8",
+      "role": "generation",
+      "rowIds": [
+        "row_4d609c9ff9",
+        "row_6668f30f9e"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3026.5792920000094,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.7186670000082813,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 6.934166999999434,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.600541000021622,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    },
+    {
+      "key": "a9795e0d46e7ba666321fdc19ef8643a2be381b86dc7a6622a9d0c7c157acff4",
+      "role": "generation",
+      "rowIds": [
+        "row_3fdcec64b2"
+      ],
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-5.6-sol",
+      "mode": "live",
+      "origin": "real",
+      "attempts": 3,
+      "errors": 3,
+      "elapsedMs": 3024.4273749999993,
+      "status": "error",
+      "error": "network",
+      "response": null,
+      "attemptUsage": [
+        null,
+        null,
+        null
+      ],
+      "attemptsLog": [
+        {
+          "elapsedMs": 2.8897090000100434,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 7.7005409999983385,
+          "error": "network",
+          "response": null
+        },
+        {
+          "elapsedMs": 6.992500000022119,
+          "error": "network",
+          "response": null
+        }
+      ],
+      "diagnostics": {
+        "transport": {
+          "checked": true,
+          "passed": false,
+          "reason": "network"
+        },
+        "completion": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "json": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "schema": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "citations": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        },
+        "semantic": {
+          "checked": false,
+          "passed": false,
+          "reason": null
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1672.7139169999864,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Onyx 2 camera supports 4K video recording at 60 fps and is waterproof up to 10 m."
+    },
+    "raw": "{\"text\":\"The Onyx 2 camera supports 4K video recording at 60 fps and is waterproof up to 10 m.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_04e6c8feab801c66016aa435314ad087d0bb7e5365b7eaaecb",
+    "usage": {
+      "inputTokens": 561,
+      "outputTokens": 39,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

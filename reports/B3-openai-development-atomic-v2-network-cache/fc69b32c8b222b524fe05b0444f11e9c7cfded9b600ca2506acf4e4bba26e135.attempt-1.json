@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1637.277040999994,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Onyx 2 speakers come as a pair."
+    },
+    "raw": "{\"text\":\"The Onyx 2 speakers come as a pair.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0167652302f65af6016aa4352ab48087d085852ba98ec5645b",
+    "usage": {
+      "inputTokens": 468,
+      "outputTokens": 25,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

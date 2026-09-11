@@ -1,0 +1,44 @@
+{
+  "elapsedMs": 4504.272958999994,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "848a347f68defa5100f4585a12209868070302871872c894ac5f5d2f1261e188",
+      "claims": [
+        {
+          "text": "Nimbus 2 provides 12 W of output power",
+          "start": 0,
+          "end": 38,
+          "verdict": "disputed",
+          "supportIds": [],
+          "decisionIds": [
+            "reconciled:power"
+          ],
+          "evidence": [
+            {
+              "rowId": "row_c2467f5304",
+              "field": "raw_specs",
+              "quote": "12 W"
+            },
+            {
+              "rowId": "row_f3873a8816",
+              "field": "raw_specs",
+              "quote": "12W output"
+            }
+          ],
+          "reason": "The supplied power reconciliation marks these observations incomparable: one specifies output power and the other leaves power purpose unspecified. The output-power claim therefore cannot be verified as reconciled support."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"848a347f68defa5100f4585a12209868070302871872c894ac5f5d2f1261e188\",\"claims\":[{\"text\":\"Nimbus 2 provides 12 W of output power\",\"start\":0,\"end\":38,\"verdict\":\"disputed\",\"supportIds\":[],\"decisionIds\":[\"reconciled:power\"],\"evidence\":[{\"rowId\":\"row_c2467f5304\",\"field\":\"raw_specs\",\"quote\":\"12 W\"},{\"rowId\":\"row_f3873a8816\",\"field\":\"raw_specs\",\"quote\":\"12W output\"}],\"reason\":\"The supplied power reconciliation marks these observations incomparable: one specifies output power and the other leaves power purpose unspecified. The output-power claim therefore cannot be verified as reconciled support.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_014c457fa77a0394016aa434cac9c887d08ca2b2da48a07d44",
+    "usage": {
+      "inputTokens": 2035,
+      "outputTokens": 179,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2032
+    }
+  }
+}

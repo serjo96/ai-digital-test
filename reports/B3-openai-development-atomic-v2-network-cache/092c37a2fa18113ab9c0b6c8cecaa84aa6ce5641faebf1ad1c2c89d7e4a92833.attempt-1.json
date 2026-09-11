@@ -1,0 +1,50 @@
+{
+  "elapsedMs": 6035.329083000004,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "dda81fb64c0d54944d1cae973ee2c2a05b88ab86ce6ab7835c98424cf35b85a8",
+      "claims": [
+        {
+          "text": "Onyx Lite supports transfer speeds up to 170 MB/s",
+          "start": 0,
+          "end": 49,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f",
+            "fact:fact_50b977b84a83af9044c8145e627257f85642bc23253c9c328ff8ef2bfce2a13d"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "256GB"
+            },
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_title",
+              "quote": "Onyx Lite microSD card 256GB"
+            },
+            {
+              "rowId": "row_4730fd8686",
+              "field": "raw_specs",
+              "quote": "up to 170MB/s"
+            }
+          ],
+          "reason": "The source identifies Onyx Lite and supplies a transfer speed of up to 170 MB/s. The claim preserves the upper-bound qualifier and does not specify a transfer direction."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"dda81fb64c0d54944d1cae973ee2c2a05b88ab86ce6ab7835c98424cf35b85a8\",\"claims\":[{\"text\":\"Onyx Lite supports transfer speeds up to 170 MB/s\",\"start\":0,\"end\":49,\"verdict\":\"supported\",\"supportIds\":[\"identity:ab432a4e81d7fb6f9f27de4254d88c59d401bfffdb5b2c1be338fd102032d87f\",\"fact:fact_50b977b84a83af9044c8145e627257f85642bc23253c9c328ff8ef2bfce2a13d\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"256GB\"},{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_title\",\"quote\":\"Onyx Lite microSD card 256GB\"},{\"rowId\":\"row_4730fd8686\",\"field\":\"raw_specs\",\"quote\":\"up to 170MB/s\"}],\"reason\":\"The source identifies Onyx Lite and supplies a transfer speed of up to 170 MB/s. The claim preserves the upper-bound qualifier and does not specify a transfer direction.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_015475b21d83a58d016aa434b4c36087d095272eec9ff98110",
+    "usage": {
+      "inputTokens": 1939,
+      "outputTokens": 293,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1936
+    }
+  }
+}

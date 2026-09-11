@@ -1,0 +1,40 @@
+{
+  "elapsedMs": 4703.613459000015,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "3dc8d43633c26b0f42355c38d99baed884e43eebd5e910db7df9516e34e155f5",
+      "claims": [
+        {
+          "text": "The Slate 11 is a tablet",
+          "start": 0,
+          "end": 24,
+          "verdict": "supported",
+          "supportIds": [
+            "identity:19d895f16c76069b127e3932a3e2c182a2484afa2f2e6fae16e775c7a14f695c",
+            "identity:b818e42a09f9c272f5c72f34b56077565119d6f22ee6967c97e3a42490546d58"
+          ],
+          "decisionIds": [],
+          "evidence": [
+            {
+              "rowId": "row_76b28cdc31",
+              "field": "raw_title",
+              "quote": "Slate 11 tablet"
+            }
+          ],
+          "reason": "The raw title directly identifies Slate 11 as a tablet; missing specifications do not undermine this identity claim."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"3dc8d43633c26b0f42355c38d99baed884e43eebd5e910db7df9516e34e155f5\",\"claims\":[{\"text\":\"The Slate 11 is a tablet\",\"start\":0,\"end\":24,\"verdict\":\"supported\",\"supportIds\":[\"identity:19d895f16c76069b127e3932a3e2c182a2484afa2f2e6fae16e775c7a14f695c\",\"identity:b818e42a09f9c272f5c72f34b56077565119d6f22ee6967c97e3a42490546d58\"],\"decisionIds\":[],\"evidence\":[{\"rowId\":\"row_76b28cdc31\",\"field\":\"raw_title\",\"quote\":\"Slate 11 tablet\"}],\"reason\":\"The raw title directly identifies Slate 11 as a tablet; missing specifications do not undermine this identity claim.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0c2f2851df53092e016aa435e2f28c87d0aea5684a6acb77bd",
+    "usage": {
+      "inputTokens": 1199,
+      "outputTokens": 225,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 1196
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2049.673582999967,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Cobalt Pro is a pair of passive speakers with 4-ohm impedance and 40 W of power for an unspecified purpose."
+    },
+    "raw": "{\"text\":\"The Cobalt Pro is a pair of passive speakers with 4-ohm impedance and 40 W of power for an unspecified purpose.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_06dc0e616e3e857d016aa4364a0a5887d0983c84b69ca003f7",
+    "usage": {
+      "inputTokens": 747,
+      "outputTokens": 41,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

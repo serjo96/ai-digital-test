@@ -1,0 +1,31 @@
+{
+  "elapsedMs": 3688.069583999997,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "textHash": "66d57343d13a778515a3f8ac681df7a636e06d9aabfcbd660c680a55f286bedd",
+      "claims": [
+        {
+          "text": "AeroBuds Pro includes silicone replacement ear tips",
+          "start": 0,
+          "end": 51,
+          "verdict": "unsupported",
+          "supportIds": [],
+          "decisionIds": [],
+          "evidence": [],
+          "reason": "Neither supplied raw row nor any allowed support states that replacement ear tips are included or that they are silicone."
+        }
+      ]
+    },
+    "raw": "{\"textHash\":\"66d57343d13a778515a3f8ac681df7a636e06d9aabfcbd660c680a55f286bedd\",\"claims\":[{\"text\":\"AeroBuds Pro includes silicone replacement ear tips\",\"start\":0,\"end\":51,\"verdict\":\"unsupported\",\"supportIds\":[],\"decisionIds\":[],\"evidence\":[],\"reason\":\"Neither supplied raw row nor any allowed support states that replacement ear tips are included or that they are silicone.\"}]}",
+    "model": "gpt-6-astra",
+    "requestId": "resp_0e29f39e25bbc98a016aa434bf4cec87d08163b707c945a4dc",
+    "usage": {
+      "inputTokens": 2807,
+      "outputTokens": 118,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 2804
+    }
+  }
+}

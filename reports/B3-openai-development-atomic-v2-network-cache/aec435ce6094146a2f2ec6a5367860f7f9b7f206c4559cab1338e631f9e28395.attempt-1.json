@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 2377.7567079999717,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Cobalt Pro is a 7-in-1 USB-C hub with 4K@30fps video output and 100 W power with PD passthrough."
+    },
+    "raw": "{\"text\":\"The Cobalt Pro is a 7-in-1 USB-C hub with 4K@30fps video output and 100 W power with PD passthrough.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_08a63fe85a5c117e016aa435c2918087d0a43e25209996ea27",
+    "usage": {
+      "inputTokens": 840,
+      "outputTokens": 48,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}

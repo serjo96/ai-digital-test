@@ -1,0 +1,19 @@
+{
+  "elapsedMs": 1630.4232920000213,
+  "error": null,
+  "response": {
+    "status": "completed",
+    "data": {
+      "text": "The Cobalt Pro is a camera with 4K@60fps video recording and waterproofing up to 10 m."
+    },
+    "raw": "{\"text\":\"The Cobalt Pro is a camera with 4K@60fps video recording and waterproofing up to 10 m.\"}",
+    "model": "gpt-5.6-sol",
+    "requestId": "resp_0364e76e33658c17016aa435a2032887d0a52011ab1e54f9e5",
+    "usage": {
+      "inputTokens": 562,
+      "outputTokens": 39,
+      "cachedInputTokens": 0,
+      "cacheWriteTokens": 0
+    }
+  }
+}
