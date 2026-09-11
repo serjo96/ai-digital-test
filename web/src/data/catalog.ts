@@ -39,7 +39,6 @@ export interface ClaimReviewData {
 
 export interface CatalogSnapshot {
   source: CatalogSource;
-  demoNotice?: string;
   provenance?: CatalogProvenance | null;
   products: CanonicalProduct[];
   offers: Offer[];

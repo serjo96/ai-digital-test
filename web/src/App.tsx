@@ -21,10 +21,10 @@ type LoadState =
 
 function AppHeader({
   subtitle,
-  demoNotice,
+  showDemoNotice = false,
 }: {
   subtitle?: string;
-  demoNotice?: boolean;
+  showDemoNotice?: boolean;
 }) {
   const { t } = useI18n();
   return (
@@ -36,7 +36,7 @@ function AppHeader({
         </div>
         <LanguageSwitcher />
       </div>
-      {demoNotice ? (
+      {showDemoNotice ? (
         <p className="demo-banner" role="note">{t('demo.notice')}</p>
       ) : null}
     </header>
@@ -123,7 +123,7 @@ export default function App() {
   if (catalog.products.length === 0) {
     return (
       <div className="app">
-        <AppHeader demoNotice={catalog.source === 'demo'} />
+        <AppHeader showDemoNotice={catalog.source === 'demo'} />
         <div className="shell">
           <p className="state" role="status">{t('app.emptyCatalog')}</p>
         </div>
@@ -147,7 +147,7 @@ export default function App() {
             ? t('header.subtitlePipeline')
             : t('header.subtitleDemo')
         }
-        demoNotice={catalog.source === 'demo'}
+        showDemoNotice={catalog.source === 'demo'}
       />
 
       <RunOverview catalog={catalog} />
