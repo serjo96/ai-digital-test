@@ -115,8 +115,8 @@ test('verdict helpers use plain language for review UI', () => {
 });
 
 test('evidenceFieldLabel maps source fields to plain language', () => {
-  assert.equal(evidenceFieldLabel('raw_title', en), 'Supplier title');
-  assert.equal(evidenceFieldLabel('raw_specs', en), 'Supplier specs');
+  assert.equal(evidenceFieldLabel('raw_title', en), 'Original supplier title');
+  assert.equal(evidenceFieldLabel('raw_specs', en), 'Original supplier specs');
   assert.equal(evidenceFieldLabel('custom_field', en), 'custom field');
 });
 

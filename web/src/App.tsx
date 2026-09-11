@@ -170,12 +170,7 @@ export default function App() {
         </nav>
       ) : null}
       {view === 'claims' && catalog.claimReview ? (
-        <>
-          <p className="review-task" role="note">
-            {t('reviewTask')}
-          </p>
-          <ClaimReview catalog={catalog} />
-        </>
+        <ClaimReview catalog={catalog} />
       ) : (
         <div className="layout">
           <aside className="sidebar">

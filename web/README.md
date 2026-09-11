@@ -26,7 +26,7 @@ npm run web:prepare -- --run-dir reports/local/my-ui-run
 
 To review the saved OpenAI development run, use the first command above. Open **Check listing text**. This is a supplier-text fidelity review, not external product research: the feed contains no authoritative manufacturer URL, and supplier titles/specs are unverified input statements.
 
-- **Generated listings** groups phrases by product and highlights their exact text ranges. For each phrase, compare **Generated wording** with **Supplier statement to compare**.
+- **Generated listings** starts with a three-step explanation of the task. Each decision card repeats the current item and places exactly two texts side by side: **Text written by system** and **Original text supplied for this item**. The saved automatic-verifier answer is collapsed below the human choices so it does not steer the independent review.
 - Human choices are phrased by the actual task: **Matches supplied data**, **Does not match supplied data**, or **Supplied sources conflict**. They do not assert that the supplier statement is true in the real world.
 - **Verifier test cases** (secondary) explains and renders the 12 prewritten QA examples. They test the saved verifier and are not additional products for the reviewer to label.
 - Human verdicts and rationales are saved in browser `localStorage`, keyed by `publicationHash`. **Download review** exports a provisional file until every statement has a rationale and a reviewer is set; only then is the export marked `human_verified` with a timestamp.

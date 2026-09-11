@@ -77,14 +77,8 @@ function EvidenceList({
   const hasTechnicalIds = claim.supportIds.length > 0 || claim.decisionIds.length > 0;
   return (
     <div className="claim-evidence">
-      <div className="ai-reason">
-        <h4>{t('claims.whyAi')}</h4>
-        <p>{claim.reason}</p>
-      </div>
       {claim.evidence.length ? (
         <div className="evidence-section">
-          <h4>{t('claims.supplierCompare')}</h4>
-          <p className="muted evidence-intro">{t('claims.evidenceIntro')}</p>
           {claim.evidence.map((evidence, index) => {
             const row = catalog.rows.find(item => item.source.row_id === evidence.rowId);
             return (
@@ -138,6 +132,24 @@ function EvidenceList({
         </details>
       ) : null}
     </div>
+  );
+}
+
+function AiExplanation({
+  claim,
+  messages,
+  t,
+}: {
+  claim: ReviewClaim;
+  messages: Messages;
+  t: (key: string) => string;
+}) {
+  return (
+    <details className="ai-explanation">
+      <summary>{t('claims.whyAiOptional')}</summary>
+      <p><strong>{aiVerdictPhrase(claim.verdict, messages)}</strong></p>
+      <p>{claim.reason}</p>
+    </details>
   );
 }
 
@@ -363,6 +375,18 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
 
       {mode === 'listings' ? (
         <>
+          <section className="review-onboarding" aria-labelledby="review-onboarding-title">
+            <div className="onboarding-copy">
+              <h2 id="review-onboarding-title">{t('claims.onboardingTitle')}</h2>
+              <p>{t('claims.onboardingBody')}</p>
+              <p className="muted">{t('claims.onboardingNoKnowledge')}</p>
+            </div>
+            <ol className="onboarding-steps">
+              <li><span>1</span><strong>{t('claims.onboardingStep1')}</strong></li>
+              <li><span>2</span><strong>{t('claims.onboardingStep2')}</strong></li>
+              <li><span>3</span><strong>{t('claims.onboardingStep3')}</strong></li>
+            </ol>
+          </section>
           <div className="review-layout">
             <aside className="review-sidebar">
               <h3 className="sidebar-heading">{t('claims.generatedListings')}</h3>
@@ -446,17 +470,6 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                     <span className="badge badge-ready">{t('claims.generatedBadge')}</span>
                   </header>
 
-                  <aside className="verification-scope" role="note">
-                    <div>
-                      <strong>{t('claims.scopeDecideTitle')}</strong>
-                      <p>{t('claims.scopeDecideBody')}</p>
-                    </div>
-                    <div>
-                      <strong>{t('claims.scopeTruthTitle')}</strong>
-                      <p>{t('claims.scopeTruthBody')}</p>
-                    </div>
-                  </aside>
-
                   <div className="reading-zone">
                     <div className="reading-zone-header">
                       <h3>{t('claims.generatedListingText')}</h3>
@@ -517,28 +530,49 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                             className="claim-card decision-panel selected"
                             id={`claim-decision-${activeClaim.id}`}
                           >
-                            <div className="claim-card-header">
-                              <div className="generated-phrase">
-                                <span className="comparison-label">
-                                  {t('claims.generatedWording')}
-                                </span>
-                                <strong>
-                                  <q>{activeClaim.text}</q>
-                                </strong>
-                              </div>
-                              <span className={`badge ${verdictClass(activeClaim.verdict)}`}>
-                                {aiVerdictPhrase(activeClaim.verdict, messages)}
+                            <div className="decision-context">
+                              <span className="comparison-label">{t('claims.currentItem')}</span>
+                              <strong>{productDisplayName(product, catalog.rows)}</strong>
+                              <span className="muted">
+                                {t('claims.phraseContext', {
+                                  current: activeIndex + 1,
+                                  total: claims.length,
+                                })}
                               </span>
                             </div>
-                            <EvidenceList
-                              claim={activeClaim}
-                              catalog={catalog}
-                              messages={messages}
-                              t={t}
-                            />
+                            <section className="text-comparison" aria-label={t('claims.comparisonAria')}>
+                              <div className="comparison-side generated-side">
+                                <div className="comparison-heading">
+                                  <span className="comparison-number">1</span>
+                                  <div>
+                                    <span className="comparison-label">{t('claims.systemText')}</span>
+                                    <p className="muted">{t('claims.systemTextHint')}</p>
+                                  </div>
+                                </div>
+                                <blockquote>{activeClaim.text}</blockquote>
+                              </div>
+                              <div className="comparison-arrow" aria-hidden="true">
+                                {t('claims.compareWith')}
+                              </div>
+                              <div className="comparison-side source-side">
+                                <div className="comparison-heading">
+                                  <span className="comparison-number">2</span>
+                                  <div>
+                                    <span className="comparison-label">{t('claims.originalText')}</span>
+                                    <p className="muted">{t('claims.originalTextHint')}</p>
+                                  </div>
+                                </div>
+                                <EvidenceList
+                                  claim={activeClaim}
+                                  catalog={catalog}
+                                  messages={messages}
+                                  t={t}
+                                />
+                              </div>
+                            </section>
                             <div className="human-decision">
                               <fieldset className="verdict-picker">
-                                <legend>{t('claims.matchQuestion')}</legend>
+                                <legend>{t('claims.simpleQuestion')}</legend>
                                 <p className="muted verdict-picker-hint">
                                   {t('claims.matchHint')}
                                 </p>
@@ -569,6 +603,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                                   ))}
                                 </div>
                               </fieldset>
+                              <AiExplanation claim={activeClaim} messages={messages} t={t} />
                               <label>
                                 {t('claims.whyEditable')}
                                 <textarea
@@ -734,6 +769,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                         messages={messages}
                         t={t}
                       />
+                      <AiExplanation claim={claim} messages={messages} t={t} />
                     </article>
                   ))}
                 </div>

@@ -460,15 +460,6 @@ summary { cursor: pointer; }
   color: var(--accent);
 }
 
-.review-task {
-  margin: 0 0 1rem;
-  padding: .7rem .9rem;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: color-mix(in srgb, var(--accent) 8%, var(--panel));
-  color: var(--ink);
-}
-
 .claim-review {
   display: grid;
   gap: 1rem;
@@ -588,6 +579,54 @@ summary { cursor: pointer; }
 .review-sidebar { display: grid; gap: .75rem; }
 .review-sidebar .product-list { max-height: 70vh; overflow-y: auto; }
 .review-detail { display: grid; gap: 1rem; }
+
+.review-onboarding {
+  display: grid;
+  grid-template-columns: minmax(260px, .9fr) minmax(420px, 1.4fr);
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent) 9%, var(--panel));
+}
+
+.onboarding-copy h2 { margin: 0 0 .35rem; font-size: 1.05rem; }
+.onboarding-copy p { margin: .2rem 0; line-height: 1.45; }
+
+.onboarding-steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .65rem;
+  margin: 0;
+  padding: 0;
+}
+
+.onboarding-steps li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .45rem;
+  align-items: center;
+  padding: .65rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel);
+  font-size: .86rem;
+  line-height: 1.3;
+}
+
+.onboarding-steps span,
+.comparison-number {
+  display: grid;
+  place-items: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 50%;
+  color: var(--panel);
+  background: var(--accent);
+  font-size: .78rem;
+  font-weight: 800;
+}
 
 .verification-scope {
   display: grid;
@@ -762,11 +801,6 @@ summary { cursor: pointer; }
   align-items: flex-start;
 }
 
-.generated-phrase {
-  display: grid;
-  gap: .25rem;
-}
-
 .comparison-label {
   color: var(--muted);
   font-size: .75rem;
@@ -774,6 +808,75 @@ summary { cursor: pointer; }
   letter-spacing: .04em;
   text-transform: uppercase;
 }
+
+.decision-context {
+  display: flex;
+  gap: .45rem .7rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+  padding-bottom: .7rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.text-comparison {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: .65rem;
+  align-items: stretch;
+  margin-top: .6rem;
+}
+
+.comparison-side {
+  min-width: 0;
+  padding: .8rem;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+}
+
+.generated-side { background: color-mix(in srgb, var(--accent) 8%, var(--panel)); }
+.source-side { background: var(--panel); }
+
+.comparison-heading {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: .55rem;
+  align-items: start;
+}
+
+.comparison-heading p { margin: .15rem 0 0; font-size: .82rem; }
+
+.comparison-side blockquote {
+  margin: .85rem 0 0;
+  padding: .8rem;
+  border-left: 3px solid var(--accent);
+  background: var(--bg);
+  font-size: 1.05rem;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.comparison-arrow {
+  align-self: center;
+  color: var(--muted);
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+}
+
+.source-side .claim-evidence { margin-top: .7rem; }
+.source-side .evidence-card { background: var(--bg); }
+
+.ai-explanation {
+  padding: .6rem .7rem;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  color: var(--muted);
+  font-size: .86rem;
+}
+
+.ai-explanation summary { cursor: pointer; color: var(--ink); }
+.ai-explanation p { margin: .5rem 0 0; }
 
 .claim-evidence { margin-top: .75rem; display: grid; gap: .65rem; }
 
@@ -924,8 +1027,12 @@ summary { cursor: pointer; }
 }
 
 @media (max-width: 800px) {
+  .review-onboarding { grid-template-columns: 1fr; }
+  .onboarding-steps { grid-template-columns: 1fr; }
   .review-layout { grid-template-columns: 1fr; }
   .review-sidebar .product-list { max-height: 15rem; }
   .verification-scope { grid-template-columns: 1fr; }
+  .text-comparison { grid-template-columns: 1fr; }
+  .comparison-arrow { writing-mode: horizontal-tb; text-align: center; }
   .verdict-options { grid-template-columns: 1fr; }
 }
