@@ -105,7 +105,15 @@ node dist/src/cli.js pipeline --baseline b3 --ai-mode live --ai-cache reports/my
 node dist/src/cli.js pipeline --baseline b3 --ai-mode replay --ai-cache reports/my-b3-cache --ai-config config/stage4.openai.json --ai-cohort development --claim-checks eval/stage4-claims.json --out reports --run-id my-b3-replay
 ```
 
-Каждый live run требует нового пустого cache directory; replay использует ровно его и не вызывает сеть. После live проверить `generated-review.json` по инструкции `eval/REVIEW.md`, заполнить rationale и human metadata. Full-input B3 требует явного `--stage4-gate` с успешно проверенным development report и обоими human-verified файлами; без этого CLI закрывается с ошибкой. Holdout и этап 5 этой командой не запускаются.
+Каждый live run требует нового пустого cache directory; replay использует ровно его и не вызывает сеть. Generated review использует контракт `stage4-generated-review-v2`: model verdict не является human verdict, каждый проверенный claim имеет явный `state=reviewed`, `humanVerdict` и rationale, а проблемы атомарности/текста отмечаются отдельно. Для текущего development-run сохранён файл `eval/generated-review-e478435a3d39.json` с 75 перенесёнными решениями и фиксированной выборкой из 20 карточек.
+
+Подготовить UI с этой разметкой можно без изменения исторического run:
+
+```sh
+npm run web:prepare -- --run-dir reports/B3-openai-development-live-v4 --generated-checks eval/generated-review-e478435a3d39.json
+```
+
+Full-input B3 требует явного `--stage4-gate` с успешно проверенным development report, human-verified controlled suite и завершённой выборкой generated review; factual errors и неразрешённые non-atomic issues закрывают gate. Holdout этой командой не запускается.
 
 Сохранённый development: [live](reports/B3-openai-development-live-v4/report.md), [replay](reports/B3-openai-development-replay-v4/report.md), [B1→B3](reports/comparisons/B1-v2-to-B3-openai-development-v4/comparison.md), [live→replay](reports/comparisons/B3-openai-development-live-to-replay-v4/comparison.md). Controlled gate: 4/4 unsupported, false block 0/7, disputed leakage 0/1, errors 0; 37/39 ready, 2 identity review. Эти значения provisional до человеческой проверки 158 generated claims.
 

@@ -5,23 +5,25 @@ import { productDisplayName, type CatalogSnapshot, type ReviewClaim } from '../d
 import {
   aiVerdictPhrase,
   controlledKindLabel,
-  defaultReviewRationale,
   evidenceFieldLabel,
   verdictExplanation,
   verdictLabel,
 } from '../data/labels.ts';
+import {
+  finalizeGeneratedReview,
+  generatedClaimKey,
+  generatedReviewProgress,
+  mergeGeneratedReview,
+} from '../data/generatedReview.ts';
 import { useI18n } from '../i18n/I18nProvider.tsx';
 import type { Messages } from '../i18n/messages.ts';
 
 type ReviewMode = 'listings' | 'fixtures';
-type Verdict = GeneratedReview['claims'][number]['expectedVerdict'];
+type Verdict = NonNullable<GeneratedReview['claims'][number]['humanVerdict']>;
 
 const VERDICTS: Verdict[] = ['supported', 'unsupported', 'disputed'];
 
 const reviewKey = (publicationHash: string) => `shelf-ready-review:${publicationHash}`;
-const claimKey = (item: GeneratedReview['claims'][number]) =>
-  `${item.productId}:${item.attempt}:${item.claimId}`;
-
 function verdictClass(verdict: string) {
   return verdict === 'supported'
     ? 'verdict-supported'
@@ -192,12 +194,9 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
     try {
       const saved = localStorage.getItem(reviewKey(data.generated.publicationHash));
       if (!saved) return;
-      const parsed = JSON.parse(saved) as { reviewer?: string; generated?: GeneratedReview };
-      if (
-        parsed.generated?.publicationHash === data.generated.publicationHash &&
-        parsed.generated.claims.length === data.generated.claims.length
-      ) {
-        setGenerated(parsed.generated);
+      const parsed = JSON.parse(saved) as { reviewer?: string; generated?: unknown };
+      if (parsed.generated) {
+        setGenerated(mergeGeneratedReview(data.generated, parsed.generated));
         setReviewer(parsed.reviewer ?? '');
       }
     } catch {
@@ -215,7 +214,8 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
     );
   }, [data.generated.publicationHash, generated, reviewer, reviewDraftHydrated]);
 
-  const reviews = new Map(generated.claims.map(item => [claimKey(item), item]));
+  const reviews = new Map(generated.claims.map(item => [generatedClaimKey(item), item]));
+  const requiredProducts = new Set(generated.sampleProductIds);
 
   const products = useMemo(() => {
     const listed = catalog.products.filter(product => {
@@ -229,7 +229,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
       const unfinished =
         attempt?.claims.some(
           claim =>
-            !reviews.get(`${product.id}:${attempt.attempt}:${claim.id}`)?.rationale.trim(),
+            reviews.get(`${product.id}:${attempt.attempt}:${claim.id}`)?.state !== 'reviewed',
         ) ?? false;
       if (hideFinished && !unfinished) return false;
       return true;
@@ -241,12 +241,17 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
       const attemptA = pubA.attempts.find(item => item.attempt === pubA.selectedAttempt)!;
       const attemptB = pubB.attempts.find(item => item.attempt === pubB.selectedAttempt)!;
       const doneA = attemptA.claims.every(claim =>
-        reviews.get(`${a.id}:${attemptA.attempt}:${claim.id}`)?.rationale.trim(),
+        reviews.get(`${a.id}:${attemptA.attempt}:${claim.id}`)?.state === 'reviewed',
       );
       const doneB = attemptB.claims.every(claim =>
-        reviews.get(`${b.id}:${attemptB.attempt}:${claim.id}`)?.rationale.trim(),
+        reviews.get(`${b.id}:${attemptB.attempt}:${claim.id}`)?.state === 'reviewed',
       );
-      if (doneA === doneB) return 0;
+      if (doneA === doneB) {
+        const requiredA = requiredProducts.has(a.id);
+        const requiredB = requiredProducts.has(b.id);
+        if (requiredA !== requiredB) return requiredA ? -1 : 1;
+        return 0;
+      }
       return doneA ? 1 : -1;
     });
   }, [catalog, generated, query, hideFinished]);
@@ -266,8 +271,10 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
   const claims = attempt?.claims ?? [];
   const activeClaim = claims.find(claim => claim.id === selectedClaim) ?? claims[0] ?? null;
   const activeIndex = activeClaim ? claims.findIndex(claim => claim.id === activeClaim.id) : -1;
-  const completed = generated.claims.filter(item => item.rationale.trim()).length;
-  const exportReady = completed === generated.claims.length && Boolean(reviewer.trim());
+  const progress = generatedReviewProgress(generated);
+  const exportReady = progress.requiredSampleProducts >= 20
+    && progress.completedSampleProducts === progress.requiredSampleProducts
+    && Boolean(reviewer.trim());
   const productRows = product
     ? catalog.rows.filter(row => product.rowIds.includes(row.source.row_id))
     : [];
@@ -282,40 +289,37 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
     }
   }
 
-  function updateClaim(id: string, change: Partial<{ expectedVerdict: Verdict; rationale: string }>) {
+  function updateClaim(id: string, change: Partial<{ humanVerdict: Verdict | null; rationale: string; state: 'pending' | 'reviewed'; issueTypes: GeneratedReview['claims'][number]['issueTypes'] }>) {
+    const key = product && attempt ? `${product.id}:${attempt.attempt}:${id}` : null;
     setGenerated(current => ({
       ...current,
       claims: current.claims.map(item =>
-        item.claimId === id ? { ...item, ...change } : item,
+        key && generatedClaimKey(item) === key ? { ...item, ...change } : item,
       ),
     }));
   }
 
-  /** Picking a verdict is the decision: write a default reason if empty so "checked" updates immediately. */
   function chooseVerdict(id: string, value: Verdict) {
-    setGenerated(current => ({
-      ...current,
-      claims: current.claims.map(item => {
-        if (item.claimId !== id) return item;
-        return {
-          ...item,
-          expectedVerdict: value,
-          rationale: item.rationale.trim()
-            ? item.rationale
-            : defaultReviewRationale(value, messages),
-        };
-      }),
-    }));
+    updateClaim(id, { humanVerdict: value, state: 'pending' });
+  }
+
+  function toggleIssue(id: string, issue: 'non_atomic_claim' | 'unclear_copy') {
+    const item = product && attempt ? reviews.get(`${product.id}:${attempt.attempt}:${id}`)! : null;
+    if (!item) return;
+    updateClaim(id, { issueTypes: item.issueTypes.includes(issue)
+      ? item.issueTypes.filter(value => value !== issue)
+      : [...item.issueTypes, issue], state: 'pending' });
+  }
+
+  function markReviewed(id: string) {
+    const item = product && attempt ? reviews.get(`${product.id}:${attempt.attempt}:${id}`)! : null;
+    if (!item) return;
+    if (!item.humanVerdict || !item.rationale.trim()) return;
+    updateClaim(id, { state: 'reviewed' });
   }
 
   function exportReview() {
-    const complete = exportReady;
-    const output: GeneratedReview = {
-      ...generated,
-      status: complete ? 'human_verified' : 'provisional',
-      reviewedBy: complete ? reviewer.trim() : null,
-      reviewedAt: complete ? new Date().toISOString() : null,
-    };
+    const output = finalizeGeneratedReview(generated, reviewer);
     const url = URL.createObjectURL(
       new Blob([`${JSON.stringify(output, null, 2)}\n`], { type: 'application/json' }),
     );
@@ -354,9 +358,11 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
           {mode === 'listings' ? (
             <div className="review-progress" role="status">
               {t('claims.progress', {
-                completed,
-                total: generated.claims.length,
+                completed: progress.checkedClaims,
+                total: progress.totalClaims,
               })}
+              {' · '}{t('claims.productProgress', { completed: progress.checkedProducts, total: progress.totalProducts })}
+              {' · '}{t('claims.sampleProgress', { completed: progress.completedSampleProducts, total: progress.requiredSampleProducts })}
             </div>
           ) : null}
         </div>
@@ -415,7 +421,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                   const done = selectedAttempt.claims.filter(claim =>
                     reviews
                       .get(`${item.id}:${selectedAttempt.attempt}:${claim.id}`)
-                      ?.rationale.trim(),
+                      ?.state === 'reviewed',
                   ).length;
                   const total = selectedAttempt.claims.length;
                   const finished = done === total;
@@ -442,6 +448,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                           <span className="muted">
                             {t('claims.checked', { done, total })}
                           </span>
+                          {requiredProducts.has(item.id) ? <span className="badge">{t('claims.sampleBadge')}</span> : null}
                         </span>
                       </button>
                     </li>
@@ -498,7 +505,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                       const human = reviews.get(
                         `${product.id}:${attempt.attempt}:${claim.id}`,
                       )!;
-                      const checked = Boolean(human.rationale.trim());
+                      const checked = human.state === 'reviewed';
                       return (
                         <button
                           type="button"
@@ -595,10 +602,9 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                                       type="button"
                                       role="radio"
                                       aria-checked={
-                                        human.expectedVerdict === value &&
-                                        Boolean(human.rationale.trim())
+                                        human.humanVerdict === value
                                       }
-                                      className={`verdict-option ${verdictClass(value)}${human.expectedVerdict === value && human.rationale.trim() ? ' selected' : ''}`}
+                                      className={`verdict-option ${verdictClass(value)}${human.humanVerdict === value ? ' selected' : ''}`}
                                       onClick={() => chooseVerdict(activeClaim.id, value)}
                                     >
                                       <span className="verdict-option-label">
@@ -619,11 +625,12 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                                   onChange={event =>
                                     updateClaim(activeClaim.id, {
                                       rationale: event.target.value,
+                                      state: 'pending',
                                     })
                                   }
                                   placeholder={t('claims.whyPlaceholder')}
                                 />
-                                {!human.rationale.trim() ? (
+                                {human.state !== 'reviewed' ? (
                                   <span className="field-hint muted">
                                     {t('claims.notChecked')}
                                   </span>
@@ -633,6 +640,26 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                                   </span>
                                 )}
                               </label>
+                              <fieldset className="issue-picker">
+                                <legend>{t('claims.issueLegend')}</legend>
+                                <p className="muted">{t('claims.issueHint')}</p>
+                                <label className="checkbox">
+                                  <input type="checkbox" checked={human.issueTypes.includes('non_atomic_claim')} onChange={() => toggleIssue(activeClaim.id, 'non_atomic_claim')} />
+                                  {t('claims.issueNonAtomic')}
+                                </label>
+                                <label className="checkbox">
+                                  <input type="checkbox" checked={human.issueTypes.includes('unclear_copy')} onChange={() => toggleIssue(activeClaim.id, 'unclear_copy')} />
+                                  {t('claims.issueCopy')}
+                                </label>
+                              </fieldset>
+                              <p className="muted">{t('claims.issueVerdictGuidance')}</p>
+                              <div className="review-state-actions">
+                                {human.state === 'reviewed' ? (
+                                  <button type="button" onClick={() => updateClaim(activeClaim.id, { state: 'pending' })}>{t('claims.returnPending')}</button>
+                                ) : (
+                                  <button type="button" disabled={!human.humanVerdict || !human.rationale.trim()} onClick={() => markReviewed(activeClaim.id)}>{t('claims.markReviewed')}</button>
+                                )}
+                              </div>
                               <div className="claim-stepper">
                                 <button
                                   type="button"
@@ -673,8 +700,8 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
             <h3>{t('claims.finish')}</h3>
             <p className="muted" role="status">
               {t('claims.progress', {
-                completed,
-                total: generated.claims.length,
+                completed: progress.checkedClaims,
+                total: progress.totalClaims,
               })}
               {exportReady ? t('claims.finishReady') : t('claims.finishProvisional')}
             </p>

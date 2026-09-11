@@ -23,7 +23,7 @@ import type { AiConfig } from './ai/config.js';
 import { aiBaseline, selectedTaskRows } from './ai/pipeline.js';
 import { evaluateSemantic, validateSemantic } from './semantic-quality.js';
 import { readStage4Config } from './publication-config.js';
-import { evaluateControlled, evaluateGenerated, generatedReviewTemplate, validateClaimSuite } from './publication-evaluation.js';
+import { evaluateControlled, evaluateGenerated, generatedReviewGatePassed, generatedReviewTemplate, validateClaimSuite } from './publication-evaluation.js';
 import { publicationPipeline } from './publication.js';
 
 export interface RunOptions { feed: string; taxonomy: string; labels: string; out: string; runId: string; baseline?: 'b0' | 'b1' | 'b2' | 'b3'; checks?: string;
@@ -111,7 +111,7 @@ export class PipelineService {
           || gate.hashes.feed !== hash(feedText) || gate.hashes.taxonomy !== hash(taxonomyText) || gate.hashes.labels !== hash(labelsText) || gate.hashes.claimChecks !== hash(claimText!)
           || JSON.stringify(gate.config.ai) !== JSON.stringify(ai) || gate.verifier?.controlled.status !== 'human_verified' || gate.verifier.controlled.unsupported.leaked > 0
           || gate.verifier.controlled.disputed.leaked > 0 || gate.verifier.controlled.supported.allowed === 0 || gate.verifier.generated.status !== 'human_verified'
-          || gate.verifier.generated.checkedPublishedClaims === 0 || gate.verifier.generated.publishedClaimErrors > 0) throw new Error('stage4 development gate is incomplete or failed');
+          || !generatedReviewGatePassed(gate.verifier.generated)) throw new Error('stage4 development gate is incomplete or failed');
       }
       let controlledClaims = new Map<string, VerifiedClaim[]>();
       const result = selected === 'b3'

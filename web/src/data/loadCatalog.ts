@@ -1,6 +1,6 @@
 import { isPublicationResult, type CanonicalProduct, type ProductResult, type ReviewItem } from '../../../src/domain.ts';
 import { parseCatalogPayload, type CatalogProvenance } from '../../../src/catalog-snapshot.ts';
-import { ClaimSuiteSchema, GeneratedReviewSchema } from '../../../src/publication-evaluation.ts';
+import { ClaimSuiteSchema, migrateGeneratedReview } from '../../../src/publication-evaluation.ts';
 import type { CatalogSnapshot, ClaimReviewData, ListingView, ReviewClaim } from './catalog.ts';
 
 function parseReviewResult(input: unknown): { textHash: string; claims: Omit<ReviewClaim, 'id'>[] } {
@@ -67,7 +67,7 @@ export async function loadCatalog(url = import.meta.env?.VITE_CATALOG_URL?.trim(
     let claimReview: ClaimReviewData | undefined;
     if (payload.review && typeof payload.review === 'object' && !Array.isArray(payload.review) && 'generated' in payload.review) {
       const review = payload.review as Record<string, unknown>;
-      const generated = GeneratedReviewSchema.parse(review.generated);
+      const generated = migrateGeneratedReview(review.generated);
       const controlled = Array.isArray(review.controlled) ? review.controlled.map(value => {
         if (!value || typeof value !== 'object') throw new Error('Invalid controlled review case');
         const entry = value as Record<string, unknown>;

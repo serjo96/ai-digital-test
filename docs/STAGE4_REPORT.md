@@ -1,18 +1,20 @@
 # Этап 4 — генерация, claims и B3
 
-Обновлено: 2026-09-11. Статус: контракт и development-прогон B3 реализованы; программный controlled gate пройден, live/replay совпадают. Результаты остаются **provisional**, пока человек не проверит controlled suite и 158 claims реально опубликованных development-текстов. Для этой проверки отдельным узким заданием добавлен UI; full-input B3 не запускался.
+Обновлено: 2026-09-11. Статус: контракт и development-прогон B3 реализованы; программный controlled gate пройден, live/replay совпадают. Пользователь подтвердил все 12 controlled cases, повторная проверка не нужна. Канонический suite и сохранённый report остаются **provisional** до их атомарного обновления при replay и завершения generated human gate; full-input B3 не запускался.
 
 ## Фактическая исходная точка
 
 - Product baseline остался B1-v2: 220/220 строк учтены, 156 товаров, 4 не-товара, TP/FP/FN 17/0/0.
 - `decisionsHash` до и после публикационного pipeline: `749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e`.
-- Node 24.14.1; проходят 63 backend- и 5 web-тестов, typecheck/build.
+- Node 24.14.1; после P0.1 проходят 66 backend- и 12 web-тестов, typecheck/build.
 - OpenAI подключён через Responses API и Structured Outputs. Генератор — `gpt-5.6-sol`, verifier — отдельный `gpt-6-astra`, reasoning `low`.
 - Секрет загружается из локального `.env` через `AppConfig`, в отчёты, cache keys и prompts не записывается.
 
 ## Реализованный контракт
 
 `--baseline b3` всегда строит каталог B1-v2 и затем запускает publication pipeline; результаты B2 не используются. Schema report v4 добавляет `listings`, отдельный `publicationHash`, controlled/generated claim evaluation и разрез AI-метрик по ролям.
+
+P0.1 добавил `stage4-generated-review-v2`. Каждый claim имеет явный `pending/reviewed`, отдельный nullable human verdict, rationale и независимые флаги `non_atomic_claim`/`unclear_copy`; сохранённый model verdict больше не является human decision. Generated gate требует полностью проверенную фиксированную выборку минимум из 20 опубликованных карточек, показывает точные claims/products/sample знаменатели и блокируется factual errors либо неразрешённым non-atomic issue. Все 158 claims остаются в файле для hash/key integrity, но проверять их все не требуется.
 
 Для генерации разрешены только identity без внутренних конфликтов и `agreed` product-scope facts с `acceptedFactId`, исходными evidence, единицами, scope и условиями. Offer condition/warranty, conflict/incomparable, unparsed text, неподтверждённая категория и дополнения B2 не передаются как разрешённые факты.
 
@@ -24,7 +26,7 @@ Verifier получает полный draft, raw rows, allowed supports, reconc
 
 ## Controlled suite и development run
 
-[stage4-claims.json](../eval/stage4-claims.json) содержит 12 development-примеров: 7 supported, 4 unsupported и 1 disputed. Включены identity, ANC, battery with case, mass, storage/speed с `up to`, изменённое число, чужой товар/аксессуар, снятый qualifier, offer condition и incomparable Nimbus power. Holdout отсутствует. Metadata намеренно provisional; инструкция человеку — [eval/REVIEW.md](../eval/REVIEW.md).
+[stage4-claims.json](../eval/stage4-claims.json) содержит 12 development-примеров: 7 supported, 4 unsupported и 1 disputed. Включены identity, ANC, battery with case, mass, storage/speed с `up to`, изменённое число, чужой товар/аксессуар, снятый qualifier, offer condition и incomparable Nimbus power. Holdout отсутствует. Пользователь проверил отдельную Controlled-вкладку и подтвердил suite без изменений 2026-09-11. Чтобы не нарушать hash/status-согласованность с замороженным B3-report и UI bundle, metadata будет повышена до `human_verified` атомарно при replay. Инструкция человеку — [eval/REVIEW.md](../eval/REVIEW.md).
 
 Авторитетный live artifact: [B3-openai-development-live-v4](../reports/B3-openai-development-live-v4/report.md). Перед ним сохранены диагностические partial runs: sandbox-network failure, а затем два fail-closed прогона, обнаружившие неточные offsets Astra. Валидатор не ослаблялся; verifier input получил явную индексную карту.
 
@@ -40,7 +42,10 @@ Verifier получает полный draft, raw rows, allowed supports, reconc
 | Строки, покрытые ready listings | 52 |
 | Repair attempted / succeeded | 0 / 0 |
 | Claims в generated human-review файле | 158 |
-| Human-reviewed published-claim errors | N/A: 0 проверено |
+| Human-reviewed generated claims | 75/158, provisional |
+| Fully reviewed published products | 18/37 |
+| Completed required sample | 18/20 |
+| Human factual verdicts не `supported` | 6, требуют решения пользователя |
 
 Live выполнил 86 API calls: 12 controlled verification, 37 generation, 37 verification; 0 errors, 0 retries. Входных/выходных токенов 123520/28098, всего 151618. Расчётная стоимость по сохранённым тарифам — $2.6475128. Median/p95: controlled Astra 6.245/7.387 s, Sol 1.937/2.954 s, publication Astra 9.014/17.801 s. Repair не вызывался, поэтому его latency/cost — N/A, а не измеренный ноль качества.
 
@@ -48,8 +53,8 @@ Live выполнил 86 API calls: 12 controlled verification, 37 generation, 3
 
 ## Открытый human gate и передача
 
-Файл [generated-review.json](../reports/B3-openai-development-live-v4/generated-review.json) привязан к `publicationHash` и содержит 158 фактически опубликованных claims. Человек должен проверить каждый claim по `result.json`, заполнить непустой `rationale`, затем выставить `status: human_verified`, `reviewedBy` и ISO `reviewedAt`. Те же поля должны быть честно заполнены в controlled suite. Pipeline валидирует metadata, hash binding и запрещает holdout в development suite.
+Исторический [generated-review.json](../reports/B3-openai-development-live-v4/generated-review.json) остаётся неизменённым run-шаблоном v1. Пользовательский экспорт сохранён как канонический [generated-review-e478435a3d39.json](../eval/generated-review-e478435a3d39.json) v2: 75/158 claims, 18/37 полностью проверенных карточек и 18/20 карточек фиксированной выборки. Controlled suite уже подтверждена человеком и повторной проверки не требует. Pipeline валидирует metadata, hash binding и запрещает holdout в development suite.
 
-До этого full-input B3 заблокирован. После человеческой проверки gate требует: ни одного пропущенного unsupported/disputed claim, хотя бы один допущенный supported claim, нулевые ошибки среди проверенных published claims и совпадение feed/taxonomy/labels/config/checks/publication hashes. Только отдельное последующее задание может выполнить full-input live и replay.
+Full-input B3 остаётся заблокирован. Нужно завершить Onyx Lite microSD и Quill 3 USB-C hub, затем человеку пересмотреть шесть сохранённых расхождений. Если проблема только в copy/атомарности, factual verdict не подменяется issue-флагом. Только отдельное последующее задание может повысить controlled metadata, выполнить development replay и затем full-input live/replay.
 
 После основного этапа 4 отдельным разрешённым заданием добавлен только human-review UI. `web:prepare` принимает сохранённый schema 4/B3, проверяет `decisionsHash`, `publicationHash`, generated review, controlled suite и сохранённые verifier records. Вкладки Generated/Controlled показывают точные ranges, verdict, причины и evidence; generated-разметка сохраняется локально и экспортируется без автоматической записи в репозиторий. Это не закрывает этап 5: holdout, full-input B3, финальная оценка, deployment, commit и push не выполнялись.

@@ -101,7 +101,14 @@ export interface PublicationSummary {
 export interface GeneratedClaimEvaluation {
   status: 'provisional' | 'human_verified' | 'not_evaluated';
   checkedPublishedClaims: number;
+  totalPublishedClaims: number;
+  fullyCheckedProducts: number;
+  totalPublishedProducts: number;
+  completedSampleProducts: number;
+  requiredSampleProducts: number;
   publishedClaimErrors: number;
+  nonAtomicIssueClaims: number;
+  unclearCopyIssueClaims: number;
 }
 export interface RunReport {
   schemaVersion: '1' | '2' | '3' | '4';

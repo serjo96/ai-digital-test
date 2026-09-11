@@ -182,17 +182,3 @@ export function evidenceFieldLabel(field: string, messages: Messages): string {
       return field.replaceAll('_', ' ');
   }
 }
-
-/** Default short rationale written when the reviewer picks a verdict button. */
-export function defaultReviewRationale(verdict: string, messages: Messages): string {
-  switch (verdict) {
-    case 'supported':
-      return t(messages, 'rationale.supported');
-    case 'unsupported':
-      return t(messages, 'rationale.unsupported');
-    case 'disputed':
-      return t(messages, 'rationale.disputed');
-    default:
-      return t(messages, 'rationale.default');
-  }
-}

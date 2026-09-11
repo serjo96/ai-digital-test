@@ -6,7 +6,6 @@ import { productStatus } from '../src/data/catalog.ts';
 import { demoCatalog } from '../src/data/fixtures.ts';
 import {
   aiVerdictPhrase,
-  defaultReviewRationale,
   evidenceFieldLabel,
   formatReason,
   primaryReviewReason,
@@ -14,6 +13,12 @@ import {
   verdictExplanation,
   verdictLabel,
 } from '../src/data/labels.ts';
+import {
+  finalizeGeneratedReview,
+  generatedReviewProgress,
+  mergeGeneratedReview,
+} from '../src/data/generatedReview.ts';
+import { migrateGeneratedReview } from '../../src/publication-evaluation.ts';
 import { messagesFor } from '../src/i18n/messages.ts';
 
 const en = messagesFor('en');
@@ -21,7 +26,9 @@ const ru = messagesFor('ru');
 
 const result = JSON.parse(readFileSync('reports/B1-stage3-control-v2/result.json', 'utf8'));
 const b3 = JSON.parse(readFileSync('reports/B3-openai-development-live-v4/result.json', 'utf8'));
-const generated = JSON.parse(readFileSync('reports/B3-openai-development-live-v4/generated-review.json', 'utf8'));
+const legacyGenerated = JSON.parse(readFileSync('reports/B3-openai-development-live-v4/generated-review.json', 'utf8'));
+const generated = migrateGeneratedReview(legacyGenerated);
+const canonicalGenerated = JSON.parse(readFileSync('eval/generated-review-e478435a3d39.json', 'utf8'));
 
 test('real projection preserves evidence and never presents B1 facts as verified listings', () => {
   const catalog = projectProductResult(result);
@@ -120,8 +127,39 @@ test('evidenceFieldLabel maps source fields to plain language', () => {
   assert.equal(evidenceFieldLabel('custom_field', en), 'custom field');
 });
 
-test('defaultReviewRationale fills a short reason when a verdict is chosen', () => {
-  assert.equal(defaultReviewRationale('supported', en), 'Matches the supplier evidence.');
-  assert.equal(defaultReviewRationale('unsupported', en), 'Does not match the supplier evidence.');
-  assert.equal(defaultReviewRationale('disputed', en), 'Supplier sources conflict on this point.');
+test('legacy local drafts merge by stable keys without overwriting canonical reviewed decisions', () => {
+  const bundle = migrateGeneratedReview(canonicalGenerated);
+  const legacy = structuredClone(legacyGenerated);
+  legacy.claims[75].rationale = 'A locally reviewed additional claim.';
+  legacy.claims[75].expectedVerdict = 'supported';
+  legacy.claims[0].rationale = 'Attempted stale overwrite.';
+  legacy.claims[0].expectedVerdict = 'supported';
+  const merged = mergeGeneratedReview(bundle, legacy);
+  assert.equal(merged.claims[0].rationale, bundle.claims[0].rationale);
+  assert.equal(merged.claims[75].state, 'reviewed');
+  assert.equal(merged.claims[75].rationale, 'A locally reviewed additional claim.');
+});
+
+test('review progress and export readiness use explicit claim state and the fixed product sample', () => {
+  const review = migrateGeneratedReview(canonicalGenerated);
+  assert.deepEqual(generatedReviewProgress(review), {
+    checkedClaims: 75, totalClaims: 158, checkedProducts: 18, totalProducts: 37,
+    completedSampleProducts: 18, requiredSampleProducts: 20,
+  });
+  assert.equal(finalizeGeneratedReview(review, 'Reviewer').status, 'provisional');
+  for (const claim of review.claims) if (review.sampleProductIds.includes(claim.productId)) {
+    claim.state = 'reviewed'; claim.humanVerdict ??= 'supported'; claim.rationale ||= 'Reviewed against supplied evidence.';
+  }
+  assert.equal(finalizeGeneratedReview(review, 'Reviewer', '2026-09-11T00:00:00.000Z').status, 'human_verified');
+});
+
+test('wording issue flags remain separate from reviewed state and factual verdict', () => {
+  const review = migrateGeneratedReview(canonicalGenerated);
+  const pending = review.claims.find(claim => claim.state === 'pending')!;
+  pending.humanVerdict = 'supported'; pending.rationale = 'Facts match, wording is awkward.'; pending.issueTypes = ['unclear_copy'];
+  assert.equal(generatedReviewProgress(review).checkedClaims, 75);
+  pending.state = 'reviewed';
+  assert.equal(generatedReviewProgress(review).checkedClaims, 76);
+  assert.equal(pending.humanVerdict, 'supported');
+  assert.deepEqual(pending.issueTypes, ['unclear_copy']);
 });

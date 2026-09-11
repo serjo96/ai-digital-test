@@ -11,7 +11,7 @@ import { publicationPipeline, publicationSupports, validateClaims } from '../src
 import { hash } from '../src/baseline.js';
 import type { Stage4Config } from '../src/publication-config.js';
 import type { SourceRow, Labels } from '../src/types.js';
-import { evaluateControlled, evaluateGenerated, generatedReviewTemplate, validateClaimSuite } from '../src/publication-evaluation.js';
+import { evaluateControlled, evaluateGenerated, generatedReviewGatePassed, generatedReviewTemplate, migrateGeneratedReview, validateClaimSuite } from '../src/publication-evaluation.js';
 import { PipelineService } from '../src/app.js';
 import { readRun } from '../src/benchmark.js';
 import { compareReports } from '../src/reports.js';
@@ -101,6 +101,54 @@ test('claim suites reject holdout and fake verification metadata, and generated 
   assert.throws(() => evaluateGenerated({ ...template, publicationHash: 'c'.repeat(64) }, publication, 'b'.repeat(64)), /hash/);
 });
 
+test('generated review v2 migrates legacy claims without treating model verdicts as human decisions', async () => {
+  const legacy = JSON.parse(await readFile('reports/B3-openai-development-live-v4/generated-review.json', 'utf8'));
+  const migrated = migrateGeneratedReview(legacy);
+  assert.equal(migrated.version, 'stage4-generated-review-v2');
+  assert.equal(migrated.claims.length, 158);
+  assert.ok(migrated.claims.every(claim => claim.state === 'pending' && claim.humanVerdict === null && claim.issueTypes.length === 0));
+});
+
+test('canonical generated review preserves 75 decisions and reports exact claim, product and sample denominators', async () => {
+  const publication = JSON.parse(await readFile('reports/B3-openai-development-live-v4/result.json', 'utf8'));
+  const report = JSON.parse(await readFile('reports/B3-openai-development-live-v4/report.json', 'utf8'));
+  const review = JSON.parse(await readFile('eval/generated-review-e478435a3d39.json', 'utf8'));
+  const evaluation = evaluateGenerated(review, publication, report.publicationHash);
+  assert.deepEqual({ checked: evaluation.checkedPublishedClaims, total: evaluation.totalPublishedClaims }, { checked: 75, total: 158 });
+  assert.deepEqual({ checked: evaluation.fullyCheckedProducts, total: evaluation.totalPublishedProducts }, { checked: 18, total: 37 });
+  assert.deepEqual({ completed: evaluation.completedSampleProducts, required: evaluation.requiredSampleProducts }, { completed: 18, required: 20 });
+  assert.equal(evaluation.publishedClaimErrors, 6);
+  assert.equal(evaluation.nonAtomicIssueClaims, 0);
+  assert.equal(evaluation.unclearCopyIssueClaims, 0);
+  assert.equal(new Set(review.claims.map((claim: { productId: string; attempt: number; claimId: string }) => `${claim.productId}:${claim.attempt}:${claim.claimId}`)).size, 158);
+});
+
+test('generated review v2 requires explicit valid reviewed claims and a complete 20-product human sample', async () => {
+  const publication = JSON.parse(await readFile('reports/B3-openai-development-live-v4/result.json', 'utf8'));
+  const report = JSON.parse(await readFile('reports/B3-openai-development-live-v4/report.json', 'utf8'));
+  const source = JSON.parse(await readFile('eval/generated-review-e478435a3d39.json', 'utf8'));
+  const invalidClaim = structuredClone(source);
+  invalidClaim.claims[0].humanVerdict = null;
+  assert.throws(() => evaluateGenerated(invalidClaim, publication, report.publicationHash), /human verdict and rationale/);
+  const incomplete = structuredClone(source);
+  incomplete.status = 'human_verified'; incomplete.reviewedBy = 'Reviewer'; incomplete.reviewedAt = '2026-09-11T00:00:00.000Z';
+  assert.throws(() => evaluateGenerated(incomplete, publication, report.publicationHash), /complete sample/);
+  const complete = structuredClone(incomplete);
+  for (const claim of complete.claims) if (complete.sampleProductIds.includes(claim.productId)) {
+    claim.state = 'reviewed'; claim.humanVerdict ??= 'supported'; claim.rationale ||= 'Reviewed against supplied evidence.';
+  }
+  const withErrors = evaluateGenerated(complete, publication, report.publicationHash);
+  assert.equal(withErrors.completedSampleProducts, 20);
+  assert.equal(generatedReviewGatePassed(withErrors), false);
+  for (const claim of complete.claims) if (claim.state === 'reviewed') claim.humanVerdict = 'supported';
+  complete.claims.find((claim: { state: string }) => claim.state === 'reviewed').issueTypes = ['unclear_copy'];
+  assert.equal(generatedReviewGatePassed(evaluateGenerated(complete, publication, report.publicationHash)), true);
+  complete.claims.find((claim: { state: string }) => claim.state === 'reviewed').issueTypes = ['non_atomic_claim'];
+  assert.equal(generatedReviewGatePassed(evaluateGenerated(complete, publication, report.publicationHash)), false);
+  const duplicate = structuredClone(source); duplicate.claims[1] = structuredClone(duplicate.claims[0]);
+  assert.throws(() => evaluateGenerated(duplicate, publication, report.publicationHash), /duplicate claim/);
+});
+
 test('B3 service writes schema-v4 artifacts, preserves B1 decisions and keeps test-origin out of review', async () => temporary(async dir => {
   const provider = new PublicationProvider();
   const localConfig = { ...config, generation: { ...config.generation, provider: 'fixture' }, verifier: { ...config.verifier, provider: 'fixture' } };
@@ -120,4 +168,9 @@ test('B3 service writes schema-v4 artifacts, preserves B1 decisions and keeps te
   assert.equal(payload.result.listings.length, 156);
   assert.equal(payload.review.generated.publicationHash, realReport.publicationHash);
   assert.equal(payload.review.controlled.length, 12);
+  const reviewedPrepared = await prepareWeb('reports/B3-openai-development-live-v4', join(dir, 'reviewed-web'), 'eval/stage4-claims.json', 'eval/generated-review-e478435a3d39.json');
+  const reviewedPayload = JSON.parse(await readFile(reviewedPrepared, 'utf8'));
+  assert.equal(reviewedPayload.review.generated.version, 'stage4-generated-review-v2');
+  assert.equal(reviewedPayload.review.generated.claims.filter((claim: { state: string }) => claim.state === 'reviewed').length, 75);
+  assert.equal(reviewedPayload.review.generated.sampleProductIds.length, 20);
 }));

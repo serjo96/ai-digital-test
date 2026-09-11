@@ -999,6 +999,25 @@ summary { cursor: pointer; }
   line-height: 1.35;
 }
 
+.issue-picker {
+  display: grid;
+  gap: .45rem;
+  margin: 0;
+  padding: .65rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+}
+
+.issue-picker legend { padding: 0 .25rem; font-weight: 650; }
+.issue-picker p { margin: 0; font-size: .85rem; }
+.issue-picker .checkbox { display: flex; grid-auto-flow: column; justify-content: start; align-items: center; }
+
+.review-state-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .verdict-options {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

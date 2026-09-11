@@ -3,6 +3,7 @@ import type { Labels, ControlledClaimEvaluation, GeneratedClaimEvaluation } from
 import type { PublicationResult, VerifiedClaim, ClaimVerdict, ProductResult } from './domain.js';
 
 const verdict = z.enum(['supported', 'disputed', 'unsupported']);
+const issueType = z.enum(['non_atomic_claim', 'unclear_copy']);
 export const ClaimSuiteSchema = z.strictObject({
   version: z.literal('stage4-claims-v1'),
   status: z.enum(['provisional', 'human_verified']),
@@ -18,7 +19,7 @@ export const ClaimSuiteSchema = z.strictObject({
 });
 export type ClaimSuite = z.infer<typeof ClaimSuiteSchema>;
 
-export const GeneratedReviewSchema = z.strictObject({
+export const LegacyGeneratedReviewSchema = z.strictObject({
   version: z.literal('stage4-generated-review-v1'),
   status: z.enum(['provisional', 'human_verified']),
   publicationHash: z.string().regex(/^[a-f0-9]{64}$/),
@@ -26,7 +27,61 @@ export const GeneratedReviewSchema = z.strictObject({
   reviewedAt: z.string().nullable(),
   claims: z.array(z.strictObject({ productId: z.string(), attempt: z.union([z.literal(1), z.literal(2)]), claimId: z.string(), expectedVerdict: verdict, rationale: z.string() })),
 });
+
+export const GeneratedReviewSchema = z.strictObject({
+  version: z.literal('stage4-generated-review-v2'),
+  status: z.enum(['provisional', 'human_verified']),
+  publicationHash: z.string().regex(/^[a-f0-9]{64}$/),
+  reviewedBy: z.string().nullable(),
+  reviewedAt: z.string().nullable(),
+  sampleProductIds: z.array(z.string().min(1)),
+  claims: z.array(z.strictObject({
+    productId: z.string().min(1),
+    attempt: z.union([z.literal(1), z.literal(2)]),
+    claimId: z.string().min(1),
+    state: z.enum(['pending', 'reviewed']),
+    humanVerdict: verdict.nullable(),
+    rationale: z.string(),
+    issueTypes: z.array(issueType),
+  })),
+}).superRefine((review, context) => {
+  if (new Set(review.sampleProductIds).size !== review.sampleProductIds.length) {
+    context.addIssue({ code: 'custom', path: ['sampleProductIds'], message: 'duplicate sample product' });
+  }
+  for (const [index, claim] of review.claims.entries()) {
+    if (new Set(claim.issueTypes).size !== claim.issueTypes.length) {
+      context.addIssue({ code: 'custom', path: ['claims', index, 'issueTypes'], message: 'duplicate issue type' });
+    }
+    if (claim.state === 'reviewed' && (!claim.humanVerdict || !claim.rationale.trim())) {
+      context.addIssue({ code: 'custom', path: ['claims', index], message: 'reviewed claim requires human verdict and rationale' });
+    }
+  }
+});
 export type GeneratedReview = z.infer<typeof GeneratedReviewSchema>;
+export type LegacyGeneratedReview = z.infer<typeof LegacyGeneratedReviewSchema>;
+
+export function migrateGeneratedReview(input: unknown, sampleProductIds: string[] = []): GeneratedReview {
+  const current = GeneratedReviewSchema.safeParse(input);
+  if (current.success) return current.data;
+  const legacy = LegacyGeneratedReviewSchema.parse(input);
+  return GeneratedReviewSchema.parse({
+    version: 'stage4-generated-review-v2',
+    status: 'provisional',
+    publicationHash: legacy.publicationHash,
+    reviewedBy: null,
+    reviewedAt: null,
+    sampleProductIds,
+    claims: legacy.claims.map(claim => ({
+      productId: claim.productId,
+      attempt: claim.attempt,
+      claimId: claim.claimId,
+      state: claim.rationale.trim() ? 'reviewed' : 'pending',
+      humanVerdict: claim.rationale.trim() ? claim.expectedVerdict : null,
+      rationale: claim.rationale,
+      issueTypes: [],
+    })),
+  });
+}
 
 function verificationMetadata(status: string, reviewedBy: string | null, reviewedAt: string | null): void {
   if (status === 'human_verified' && (!reviewedBy?.trim() || !reviewedAt || !Number.isFinite(Date.parse(reviewedAt)))) throw new Error('human verification metadata missing');
@@ -76,28 +131,60 @@ export function evaluateControlled(suite: ClaimSuite | null, actual: Map<string,
 }
 
 export function generatedReviewTemplate(result: PublicationResult, publicationHash: string): GeneratedReview {
-  return { version: 'stage4-generated-review-v1', status: 'provisional', publicationHash, reviewedBy: null, reviewedAt: null,
-    claims: result.listings.flatMap(listing => listing.attempts.filter(a => a.attempt === listing.selectedAttempt).flatMap(a => a.claims.map(claim => ({
-      productId: listing.productId, attempt: a.attempt, claimId: claim.id, expectedVerdict: claim.verdict === 'supported' ? 'supported' as const : claim.verdict === 'disputed' ? 'disputed' as const : 'unsupported' as const, rationale: '',
+  return { version: 'stage4-generated-review-v2', status: 'provisional', publicationHash, reviewedBy: null, reviewedAt: null, sampleProductIds: [],
+    claims: result.listings.filter(listing => listing.publishedText !== null).flatMap(listing => listing.attempts.filter(a => a.attempt === listing.selectedAttempt).flatMap(a => a.claims.map(claim => ({
+      productId: listing.productId, attempt: a.attempt, claimId: claim.id, state: 'pending' as const, humanVerdict: null, rationale: '', issueTypes: [],
     })))) };
 }
 
 export function evaluateGenerated(input: unknown | null, result: PublicationResult, publicationHash: string): GeneratedClaimEvaluation {
-  if (input === null) return { status: 'not_evaluated', checkedPublishedClaims: 0, publishedClaimErrors: 0 };
+  const publishedListings = result.listings.filter(l => l.publishedText !== null);
+  const totalPublishedClaims = publishedListings.reduce((count, listing) => count + listing.attempts.filter(a => a.attempt === listing.selectedAttempt).reduce((sum, attempt) => sum + attempt.claims.length, 0), 0);
+  const totalPublishedProducts = publishedListings.length;
+  if (input === null) return { status: 'not_evaluated', checkedPublishedClaims: 0, totalPublishedClaims, fullyCheckedProducts: 0, totalPublishedProducts, completedSampleProducts: 0, requiredSampleProducts: 0, publishedClaimErrors: 0, nonAtomicIssueClaims: 0, unclearCopyIssueClaims: 0 };
   const review = GeneratedReviewSchema.parse(input);
   verificationMetadata(review.status, review.reviewedBy, review.reviewedAt);
   if (review.publicationHash !== publicationHash) throw new Error('generated review publication hash mismatch');
   const published = new Map<string, VerifiedClaim>();
-  for (const listing of result.listings.filter(l => l.publishedText !== null)) for (const attempt of listing.attempts.filter(a => a.attempt === listing.selectedAttempt)) for (const claim of attempt.claims) published.set(`${listing.productId}:${attempt.attempt}:${claim.id}`, claim);
+  const productKeys = new Map<string, string[]>();
+  for (const listing of publishedListings) for (const attempt of listing.attempts.filter(a => a.attempt === listing.selectedAttempt)) for (const claim of attempt.claims) {
+    const key = `${listing.productId}:${attempt.attempt}:${claim.id}`;
+    published.set(key, claim);
+    productKeys.set(listing.productId, [...(productKeys.get(listing.productId) ?? []), key]);
+  }
   if (review.claims.length !== published.size) throw new Error('generated review must cover every published claim');
-  let errors = 0;
+  const seenKeys = new Set<string>();
+  const reviewedKeys = new Set<string>();
+  let errors = 0; let nonAtomicIssueClaims = 0; let unclearCopyIssueClaims = 0;
   for (const item of review.claims) {
     const key = `${item.productId}:${item.attempt}:${item.claimId}`;
+    if (seenKeys.has(key)) throw new Error('generated review contains a duplicate claim');
+    seenKeys.add(key);
     const claim = published.get(key);
     if (!claim) throw new Error('generated review references a non-published claim');
-    if (item.expectedVerdict !== 'supported') errors++;
+    if (item.state === 'reviewed') {
+      reviewedKeys.add(key);
+      if (item.humanVerdict !== 'supported') errors++;
+      if (item.issueTypes.includes('non_atomic_claim')) nonAtomicIssueClaims++;
+      if (item.issueTypes.includes('unclear_copy')) unclearCopyIssueClaims++;
+    }
     published.delete(key);
   }
   if (published.size) throw new Error('generated review is incomplete');
-  return { status: review.status, checkedPublishedClaims: review.claims.length, publishedClaimErrors: errors };
+  for (const productId of review.sampleProductIds) if (!productKeys.has(productId)) throw new Error('generated review sample references a non-published product');
+  const fullyChecked = new Set([...productKeys].filter(([, keys]) => keys.every(key => reviewedKeys.has(key))).map(([productId]) => productId));
+  const completedSampleProducts = review.sampleProductIds.filter(productId => fullyChecked.has(productId)).length;
+  if (review.status === 'human_verified' && (review.sampleProductIds.length < 20 || completedSampleProducts !== review.sampleProductIds.length)) {
+    throw new Error('human-verified generated review requires a complete sample of at least 20 products');
+  }
+  return { status: review.status, checkedPublishedClaims: reviewedKeys.size, totalPublishedClaims, fullyCheckedProducts: fullyChecked.size, totalPublishedProducts,
+    completedSampleProducts, requiredSampleProducts: review.sampleProductIds.length, publishedClaimErrors: errors, nonAtomicIssueClaims, unclearCopyIssueClaims };
+}
+
+export function generatedReviewGatePassed(evaluation: GeneratedClaimEvaluation): boolean {
+  return evaluation.status === 'human_verified'
+    && evaluation.requiredSampleProducts >= 20
+    && evaluation.completedSampleProducts === evaluation.requiredSampleProducts
+    && evaluation.publishedClaimErrors === 0
+    && evaluation.nonAtomicIssueClaims === 0;
 }

@@ -124,6 +124,13 @@ export function metricsFor(report: RunReport, result: BaselineResult, labels: La
     count('verifier.controlled.errors', v.errors.length, 'development', v.status);
     ratio('verifier.generated.published_claim_error_rate', generated.publishedClaimErrors, generated.checkedPublishedClaims, 'development', generated.status);
     count('verifier.generated.checked_published_claims', generated.checkedPublishedClaims, 'development', generated.status);
+    count('verifier.generated.total_published_claims', generated.totalPublishedClaims, 'development', generated.status);
+    count('verifier.generated.fully_checked_products', generated.fullyCheckedProducts, 'development', generated.status);
+    count('verifier.generated.total_published_products', generated.totalPublishedProducts, 'development', generated.status);
+    count('verifier.generated.completed_sample_products', generated.completedSampleProducts, 'development', generated.status);
+    count('verifier.generated.required_sample_products', generated.requiredSampleProducts, 'development', generated.status);
+    count('verifier.generated.non_atomic_issue_claims', generated.nonAtomicIssueClaims, 'development', generated.status);
+    count('verifier.generated.unclear_copy_issue_claims', generated.unclearCopyIssueClaims, 'development', generated.status);
     for (const [reason, value] of Object.entries(g.reasons).sort(([a], [b]) => a.localeCompare(b))) count(`publication.reason.${reason}`, value, publicationScope);
   } else {
     ratio('generation.quality', null, null); ratio('verifier.quality', null, null);

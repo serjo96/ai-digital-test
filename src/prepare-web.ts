@@ -6,10 +6,10 @@ import { createHash } from 'node:crypto';
 import { provenanceSchema, validateProductResult } from './catalog-snapshot.js';
 import { hash } from './baseline.js';
 import { isPublicationResult } from './domain.js';
-import { ClaimSuiteSchema, GeneratedReviewSchema } from './publication-evaluation.js';
+import { ClaimSuiteSchema, evaluateGenerated, migrateGeneratedReview } from './publication-evaluation.js';
 import { VerificationSchema } from './publication.js';
 
-export async function prepareWeb(runDir: string, output = 'web/public/data', claimChecks = 'eval/stage4-claims.json'): Promise<string> {
+export async function prepareWeb(runDir: string, output = 'web/public/data', claimChecks = 'eval/stage4-claims.json', generatedChecks?: string): Promise<string> {
   const result = validateProductResult(JSON.parse(await readFile(join(runDir, 'result.json'), 'utf8')));
   const report = JSON.parse(await readFile(join(runDir, 'report.json'), 'utf8'));
   const provenance = provenanceSchema.parse({ runId: report.runId, createdAt: report.createdAt, rulesVersion: report.rulesVersion, mode: report.mode, status: report.status, qualityStatus: report.evaluation?.status, split: report.evaluation?.split, decisionsHash: report.decisionsHash });
@@ -20,8 +20,9 @@ export async function prepareWeb(runDir: string, output = 'web/public/data', cla
     const { listings: _listings, ...base } = result;
     decisionInput = base;
     if (hash(JSON.stringify(result.listings)) !== report.publicationHash) throw new Error('B3 publication hash mismatch');
-    const generated = GeneratedReviewSchema.parse(JSON.parse(await readFile(join(runDir, 'generated-review.json'), 'utf8')));
+    const generated = migrateGeneratedReview(JSON.parse(await readFile(generatedChecks ?? join(runDir, 'generated-review.json'), 'utf8')));
     if (generated.publicationHash !== report.publicationHash) throw new Error('Generated review does not match B3 publication');
+    evaluateGenerated(generated, result, report.publicationHash);
     const claimText = await readFile(claimChecks, 'utf8');
     if (hash(claimText) !== report.hashes?.claimChecks) throw new Error('Controlled claim suite does not match B3 report');
     const suite = ClaimSuiteSchema.parse(JSON.parse(claimText));
@@ -45,9 +46,9 @@ export async function prepareWeb(runDir: string, output = 'web/public/data', cla
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   try {
-    const { values } = parseArgs({ options: { 'run-dir': { type: 'string' }, 'claim-checks': { type: 'string' } } });
+    const { values } = parseArgs({ options: { 'run-dir': { type: 'string' }, 'claim-checks': { type: 'string' }, 'generated-checks': { type: 'string' } } });
     if (!values['run-dir']) throw new Error('Usage: npm run web:prepare -- --run-dir <saved run directory>');
-    console.log(await prepareWeb(values['run-dir'], 'web/public/data', values['claim-checks']));
+    console.log(await prepareWeb(values['run-dir'], 'web/public/data', values['claim-checks'], values['generated-checks']));
   } catch (error) {
     console.error(error instanceof Error ? error.message : String(error));
     process.exitCode = 1;
