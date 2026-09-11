@@ -764,6 +764,7 @@ summary { cursor: pointer; }
   opacity: 1;
 }
 .claim-nav-item.checked { opacity: 1; }
+.progress-dot.attention { background: var(--warn); }
 
 .claim-nav-index {
   font-size: .75rem;
@@ -1016,6 +1017,14 @@ summary { cursor: pointer; }
 .review-state-actions {
   display: flex;
   justify-content: flex-end;
+}
+
+.review-attention {
+  margin: 0;
+  padding: .65rem .75rem;
+  border: 1px solid color-mix(in srgb, var(--warn) 55%, var(--border));
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--warn) 10%, var(--bg));
 }
 
 .verdict-options {

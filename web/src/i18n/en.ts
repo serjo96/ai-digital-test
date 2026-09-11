@@ -151,6 +151,7 @@ export const en = {
     generatedListings: 'Generated listings',
     searchProducts: 'Search products',
     hideFinished: 'Hide finished listings',
+    attentionOnly: 'Show disagreements or wording issues only',
     checked: '{done} of {total} checked',
     sampleBadge: 'required sample',
     builtFrom:
@@ -213,6 +214,7 @@ export const en = {
     issueNonAtomic: 'Claim is not atomic',
     issueCopy: 'Copy is unclear or awkward',
     issueVerdictGuidance: 'If the supplied facts match, keep the factual verdict “Matches supplied data” and record wording problems above.',
+    verdictDisagreement: 'Human verdict: {human}. Automatic verifier: {ai}. Review this difference; do not change it merely to pass the gate.',
     markReviewed: 'Mark reviewed',
     returnPending: 'Return to pending',
     previous: 'Previous statement',

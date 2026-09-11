@@ -151,6 +151,7 @@ export const ru = {
     generatedListings: 'Сгенерированные листинги',
     searchProducts: 'Поиск продуктов',
     hideFinished: 'Скрыть завершённые листинги',
+    attentionOnly: 'Только расхождения или проблемы формулировки',
     checked: '{done} из {total} проверено',
     sampleBadge: 'обязательная выборка',
     builtFrom:
@@ -213,6 +214,7 @@ export const ru = {
     issueNonAtomic: 'Claim неатомарный',
     issueCopy: 'Текст неясный или неудачный',
     issueVerdictGuidance: 'Если факты подтверждаются, оставьте фактический вердикт «Совпадает с поставленными данными», а проблему текста отметьте выше.',
+    verdictDisagreement: 'Вердикт человека: {human}. Автоматический verifier: {ai}. Проверьте расхождение; не меняйте решение только ради прохождения gate.',
     markReviewed: 'Подтвердить проверку',
     returnPending: 'Вернуть в pending',
     previous: 'Предыдущее утверждение',

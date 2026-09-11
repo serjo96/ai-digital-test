@@ -1,6 +1,6 @@
 # Shelf Ready — B1 product baseline и B3 publication development
 
-Локальный pipeline: JSON → валидация → предложения → явные факты и evidence → кандидаты и совместимые товары → категории, согласование и review → генерация → атомарные claims → независимая проверка → development eval и сохранённые метрики. Принятый product baseline — **B1-v2**; B3 publication реализован поверх него и не использует B2. Реальный OpenAI development B3 и offline replay успешны, но human gate ещё открыт, поэтому full-input B3 не запускался. Экран результатов поддерживает B1-каталог и отдельный режим человеческой проверки сохранённого development B3.
+Локальный pipeline: JSON → валидация → предложения → явные факты и evidence → кандидаты и совместимые товары → категории, согласование и review → генерация → атомарные claims → независимая проверка → development eval и сохранённые метрики. Принятый product baseline — **B1-v2**; B3 publication реализован поверх него и не использует B2. Реальный OpenAI development B3 и offline replay успешны; human review завершён, но четыре non-atomic claims ещё блокируют full-input gate. Full-input B3 не запускался. Экран результатов поддерживает B1-каталог и отдельный режим человеческой проверки сохранённого development B3.
 
 Стек: TypeScript 5.9, NestJS 12 standalone context, Node 24.14.1, npm; UI — Vite + React в `web/`. HTTP API, БД и deployment не нужны.
 
@@ -22,7 +22,7 @@ npm run eval
 
 ```sh
 npm --prefix web ci
-npm run web:prepare -- --run-dir reports/B3-openai-development-live-v4
+npm run web:prepare -- --run-dir reports/B3-openai-development-human-gate-v2 --generated-checks eval/generated-review-e478435a3d39.json
 npm run web
 ```
 
@@ -105,17 +105,17 @@ node dist/src/cli.js pipeline --baseline b3 --ai-mode live --ai-cache reports/my
 node dist/src/cli.js pipeline --baseline b3 --ai-mode replay --ai-cache reports/my-b3-cache --ai-config config/stage4.openai.json --ai-cohort development --claim-checks eval/stage4-claims.json --out reports --run-id my-b3-replay
 ```
 
-Каждый live run требует нового пустого cache directory; replay использует ровно его и не вызывает сеть. Generated review использует контракт `stage4-generated-review-v2`: model verdict не является human verdict, каждый проверенный claim имеет явный `state=reviewed`, `humanVerdict` и rationale, а проблемы атомарности/текста отмечаются отдельно. Для текущего development-run сохранён файл `eval/generated-review-e478435a3d39.json` с 75 перенесёнными решениями и фиксированной выборкой из 20 карточек.
+Каждый live run требует нового пустого cache directory; replay использует ровно его и не вызывает сеть. Generated review использует контракт `stage4-generated-review-v2`: model verdict не является human verdict, каждый проверенный claim имеет явный `state=reviewed`, `humanVerdict` и rationale, а проблемы атомарности/текста отмечаются отдельно. Для текущего development-run сохранён human-verified файл `eval/generated-review-e478435a3d39.json`: 120/158 claims, 28/37 карточек и полная фиксированная выборка 20/20.
 
 Подготовить UI с этой разметкой можно без изменения исторического run:
 
 ```sh
-npm run web:prepare -- --run-dir reports/B3-openai-development-live-v4 --generated-checks eval/generated-review-e478435a3d39.json
+npm run web:prepare -- --run-dir reports/B3-openai-development-human-gate-v2 --generated-checks eval/generated-review-e478435a3d39.json
 ```
 
-Full-input B3 требует явного `--stage4-gate` с успешно проверенным development report, human-verified controlled suite и завершённой выборкой generated review; factual errors и неразрешённые non-atomic issues закрывают gate. Holdout этой командой не запускается.
+Full-input B3 требует явного `--stage4-gate` с успешно проверенным development report, human-verified controlled suite и завершённой выборкой generated review. Factual errors и unresolved `non_atomic_claim` закрывают gate; `unclear_copy` измеряется и раскрывается отдельно. Holdout этой командой не запускается.
 
-Сохранённый development: [live](reports/B3-openai-development-live-v4/report.md), [replay](reports/B3-openai-development-replay-v4/report.md), [B1→B3](reports/comparisons/B1-v2-to-B3-openai-development-v4/comparison.md), [live→replay](reports/comparisons/B3-openai-development-live-to-replay-v4/comparison.md). Controlled gate: 4/4 unsupported, false block 0/7, disputed leakage 0/1, errors 0; 37/39 ready, 2 identity review. Эти значения provisional до человеческой проверки 158 generated claims.
+Сохранённый development: [live](reports/B3-openai-development-live-v4/report.md), [первичный replay](reports/B3-openai-development-replay-v4/report.md), [human-review replay](reports/B3-openai-development-human-gate-v2/report.md), [B1→B3](reports/comparisons/B1-v2-to-B3-openai-development-v4/comparison.md), [live→replay](reports/comparisons/B3-openai-development-live-to-replay-v4/comparison.md). Human-verified controlled gate: 4/4 unsupported, false block 0/7, disputed leakage 0/1, errors 0. Generated review: 120/158 claims, 28/37 products, sample 20/20, factual errors 0, non-atomic 4, unclear-copy 2. Четыре non-atomic issues должны быть исправлены до full-input. Результат: 37/39 ready, 2 identity review.
 
 
 ## B2: провайдеры и локальный эксперимент
@@ -173,7 +173,7 @@ npm run web:build
 npm run web
 ```
 
-Run ID должен быть новым: отчёты не перезаписываются. Для просмотра уже сохранённого результата достаточно B1-команды выше либо `npm run web:prepare -- --run-dir reports/B3-openai-development-live-v4` для claim review. Подготовку выполнить до сборки; после нового снимка обновить страницу, для production — пересобрать UI. [Настройки URL и preview](web/README.md).
+Run ID должен быть новым: отчёты не перезаписываются. Для просмотра уже сохранённого результата достаточно B1-команды выше либо `npm run web:prepare -- --run-dir reports/B3-openai-development-human-gate-v2 --generated-checks eval/generated-review-e478435a3d39.json` для claim review. Подготовку выполнить до сборки; после нового снимка обновить страницу, для production — пересобрать UI. [Настройки URL и preview](web/README.md).
 
 Просмотр JSON не является replay модели. B1 работает кодом без сети; B2 replay повторяет сохранённые реальные ответы через кэш без новых API-вызовов, B2 live выполняет новые запросы. Реальные локальные B2-кэши находятся в reports/stage3-ollama-v1 и stage3-ollama-v2; его результаты экспериментальные. UI не запускает эти процессы и только отображает сохранённые B3 verifier-решения; matching/verifier в браузере не реализованы. В B1 текст отсутствует с причиной `generation_not_run`, согласованный факт не означает проверенное утверждение.
 

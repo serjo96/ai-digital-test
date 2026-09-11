@@ -16,6 +16,7 @@ import {
 } from '../src/data/labels.ts';
 import {
   finalizeGeneratedReview,
+  generatedClaimNeedsAttention,
   generatedReviewProgress,
   mergeGeneratedReview,
 } from '../src/data/generatedReview.ts';
@@ -137,23 +138,24 @@ test('evidenceFieldLabel maps source fields to plain language', () => {
 test('legacy local drafts merge by stable keys without overwriting canonical reviewed decisions', () => {
   const bundle = migrateGeneratedReview(canonicalGenerated);
   const legacy = structuredClone(legacyGenerated);
-  legacy.claims[75].rationale = 'A locally reviewed additional claim.';
-  legacy.claims[75].expectedVerdict = 'supported';
+  const pendingIndex = bundle.claims.findIndex(claim => claim.state === 'pending');
+  legacy.claims[pendingIndex].rationale = 'A locally reviewed additional claim.';
+  legacy.claims[pendingIndex].expectedVerdict = 'supported';
   legacy.claims[0].rationale = 'Attempted stale overwrite.';
   legacy.claims[0].expectedVerdict = 'supported';
   const merged = mergeGeneratedReview(bundle, legacy);
   assert.equal(merged.claims[0].rationale, bundle.claims[0].rationale);
-  assert.equal(merged.claims[75].state, 'reviewed');
-  assert.equal(merged.claims[75].rationale, 'A locally reviewed additional claim.');
+  assert.equal(merged.claims[pendingIndex].state, 'reviewed');
+  assert.equal(merged.claims[pendingIndex].rationale, 'A locally reviewed additional claim.');
 });
 
 test('review progress and export readiness use explicit claim state and the fixed product sample', () => {
   const review = migrateGeneratedReview(canonicalGenerated);
   assert.deepEqual(generatedReviewProgress(review), {
-    checkedClaims: 75, totalClaims: 158, checkedProducts: 18, totalProducts: 37,
-    completedSampleProducts: 18, requiredSampleProducts: 20,
+    checkedClaims: 120, totalClaims: 158, checkedProducts: 28, totalProducts: 37,
+    completedSampleProducts: 20, requiredSampleProducts: 20,
   });
-  assert.equal(finalizeGeneratedReview(review, 'Reviewer').status, 'provisional');
+  assert.equal(finalizeGeneratedReview(review, 'Reviewer').status, 'human_verified');
   for (const claim of review.claims) if (review.sampleProductIds.includes(claim.productId)) {
     claim.state = 'reviewed'; claim.humanVerdict ??= 'supported'; claim.rationale ||= 'Reviewed against supplied evidence.';
   }
@@ -164,9 +166,13 @@ test('wording issue flags remain separate from reviewed state and factual verdic
   const review = migrateGeneratedReview(canonicalGenerated);
   const pending = review.claims.find(claim => claim.state === 'pending')!;
   pending.humanVerdict = 'supported'; pending.rationale = 'Facts match, wording is awkward.'; pending.issueTypes = ['unclear_copy'];
-  assert.equal(generatedReviewProgress(review).checkedClaims, 75);
+  assert.equal(generatedReviewProgress(review).checkedClaims, 120);
   pending.state = 'reviewed';
-  assert.equal(generatedReviewProgress(review).checkedClaims, 76);
+  assert.equal(generatedReviewProgress(review).checkedClaims, 121);
   assert.equal(pending.humanVerdict, 'supported');
   assert.deepEqual(pending.issueTypes, ['unclear_copy']);
+  assert.equal(generatedClaimNeedsAttention(pending, 'supported'), true);
+  pending.issueTypes = [];
+  assert.equal(generatedClaimNeedsAttention(pending, 'unsupported'), true);
+  assert.equal(generatedClaimNeedsAttention(pending, 'supported'), false);
 });

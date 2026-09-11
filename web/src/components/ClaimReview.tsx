@@ -12,6 +12,7 @@ import {
 } from '../data/labels.ts';
 import {
   finalizeGeneratedReview,
+  generatedClaimNeedsAttention,
   generatedClaimKey,
   generatedReviewProgress,
   mergeGeneratedReview,
@@ -181,6 +182,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
   const [mode, setMode] = useState<ReviewMode>('listings');
   const [query, setQuery] = useState('');
   const [hideFinished, setHideFinished] = useState(false);
+  const [attentionOnly, setAttentionOnly] = useState(false);
   const [reviewer, setReviewer] = useState('');
   const [generated, setGenerated] = useState<GeneratedReview>(data.generated);
   const [reviewDraftHydrated, setReviewDraftHydrated] = useState(false);
@@ -233,6 +235,11 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
             reviews.get(`${product.id}:${attempt.attempt}:${claim.id}`)?.state !== 'reviewed',
         ) ?? false;
       if (hideFinished && !unfinished) return false;
+      const needsAttention = attempt?.claims.some(claim => {
+        const human = reviews.get(`${product.id}:${attempt.attempt}:${claim.id}`);
+        return human ? generatedClaimNeedsAttention(human, claim.verdict) : false;
+      }) ?? false;
+      if (attentionOnly && !needsAttention) return false;
       return true;
     });
 
@@ -255,7 +262,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
       }
       return doneA ? 1 : -1;
     });
-  }, [catalog, generated, query, hideFinished]);
+  }, [catalog, generated, query, hideFinished, attentionOnly]);
 
   useEffect(() => {
     if (mode !== 'listings') return;
@@ -429,6 +436,14 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                 />
                 {t('claims.hideFinished')}
               </label>
+              <label className="checkbox">
+                <input
+                  type="checkbox"
+                  checked={attentionOnly}
+                  onChange={event => setAttentionOnly(event.target.checked)}
+                />
+                {t('claims.attentionOnly')}
+              </label>
               <ul className="product-list">
                 {products.map(item => {
                   const listing = catalog.listings[item.id]!.publication!;
@@ -523,6 +538,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                         `${product.id}:${attempt.attempt}:${claim.id}`,
                       )!;
                       const checked = human.state === 'reviewed';
+                      const attention = generatedClaimNeedsAttention(human, claim.verdict);
                       return (
                         <button
                           type="button"
@@ -535,7 +551,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                           </span>
                           <span className="claim-nav-excerpt">{claim.text}</span>
                           <span
-                            className={`progress-dot${checked ? ' done' : ''}`}
+                            className={`progress-dot${attention ? ' attention' : checked ? ' done' : ''}`}
                             aria-hidden="true"
                           />
                         </button>
@@ -638,6 +654,14 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                                 </div>
                               </fieldset>
                               <AiExplanation claim={activeClaim} messages={messages} t={t} />
+                              {human.state === 'reviewed' && human.humanVerdict !== activeClaim.verdict ? (
+                                <p className="review-attention" role="status">
+                                  {t('claims.verdictDisagreement', {
+                                    human: verdictLabel(human.humanVerdict ?? 'unknown', messages),
+                                    ai: verdictLabel(activeClaim.verdict, messages),
+                                  })}
+                                </p>
+                              ) : null}
                               <label>
                                 {t('claims.whyEditable')}
                                 <textarea

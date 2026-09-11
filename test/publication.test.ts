@@ -109,17 +109,17 @@ test('generated review v2 migrates legacy claims without treating model verdicts
   assert.ok(migrated.claims.every(claim => claim.state === 'pending' && claim.humanVerdict === null && claim.issueTypes.length === 0));
 });
 
-test('canonical generated review preserves 75 decisions and reports exact claim, product and sample denominators', async () => {
+test('canonical generated review preserves the completed sample and reports exact claim, product and issue denominators', async () => {
   const publication = JSON.parse(await readFile('reports/B3-openai-development-live-v4/result.json', 'utf8'));
   const report = JSON.parse(await readFile('reports/B3-openai-development-live-v4/report.json', 'utf8'));
   const review = JSON.parse(await readFile('eval/generated-review-e478435a3d39.json', 'utf8'));
   const evaluation = evaluateGenerated(review, publication, report.publicationHash);
-  assert.deepEqual({ checked: evaluation.checkedPublishedClaims, total: evaluation.totalPublishedClaims }, { checked: 75, total: 158 });
-  assert.deepEqual({ checked: evaluation.fullyCheckedProducts, total: evaluation.totalPublishedProducts }, { checked: 18, total: 37 });
-  assert.deepEqual({ completed: evaluation.completedSampleProducts, required: evaluation.requiredSampleProducts }, { completed: 18, required: 20 });
-  assert.equal(evaluation.publishedClaimErrors, 6);
-  assert.equal(evaluation.nonAtomicIssueClaims, 0);
-  assert.equal(evaluation.unclearCopyIssueClaims, 0);
+  assert.deepEqual({ checked: evaluation.checkedPublishedClaims, total: evaluation.totalPublishedClaims }, { checked: 120, total: 158 });
+  assert.deepEqual({ checked: evaluation.fullyCheckedProducts, total: evaluation.totalPublishedProducts }, { checked: 28, total: 37 });
+  assert.deepEqual({ completed: evaluation.completedSampleProducts, required: evaluation.requiredSampleProducts }, { completed: 20, required: 20 });
+  assert.equal(evaluation.publishedClaimErrors, 0);
+  assert.equal(evaluation.nonAtomicIssueClaims, 4);
+  assert.equal(evaluation.unclearCopyIssueClaims, 2);
   assert.equal(new Set(review.claims.map((claim: { productId: string; attempt: number; claimId: string }) => `${claim.productId}:${claim.attempt}:${claim.claimId}`)).size, 158);
 });
 
@@ -132,15 +132,19 @@ test('generated review v2 requires explicit valid reviewed claims and a complete
   assert.throws(() => evaluateGenerated(invalidClaim, publication, report.publicationHash), /human verdict and rationale/);
   const incomplete = structuredClone(source);
   incomplete.status = 'human_verified'; incomplete.reviewedBy = 'Reviewer'; incomplete.reviewedAt = '2026-09-11T00:00:00.000Z';
+  const sampledClaim = incomplete.claims.find((claim: { productId: string }) => incomplete.sampleProductIds.includes(claim.productId));
+  sampledClaim.state = 'pending'; sampledClaim.humanVerdict = null; sampledClaim.rationale = ''; sampledClaim.issueTypes = [];
   assert.throws(() => evaluateGenerated(incomplete, publication, report.publicationHash), /complete sample/);
   const complete = structuredClone(incomplete);
   for (const claim of complete.claims) if (complete.sampleProductIds.includes(claim.productId)) {
     claim.state = 'reviewed'; claim.humanVerdict ??= 'supported'; claim.rationale ||= 'Reviewed against supplied evidence.';
   }
+  const factualMismatch = complete.claims.find((claim: { state: string }) => claim.state === 'reviewed');
+  factualMismatch.humanVerdict = 'unsupported';
   const withErrors = evaluateGenerated(complete, publication, report.publicationHash);
   assert.equal(withErrors.completedSampleProducts, 20);
   assert.equal(generatedReviewGatePassed(withErrors), false);
-  for (const claim of complete.claims) if (claim.state === 'reviewed') claim.humanVerdict = 'supported';
+  for (const claim of complete.claims) if (claim.state === 'reviewed') { claim.humanVerdict = 'supported'; claim.issueTypes = []; }
   complete.claims.find((claim: { state: string }) => claim.state === 'reviewed').issueTypes = ['unclear_copy'];
   assert.equal(generatedReviewGatePassed(evaluateGenerated(complete, publication, report.publicationHash)), true);
   complete.claims.find((claim: { state: string }) => claim.state === 'reviewed').issueTypes = ['non_atomic_claim'];
@@ -153,8 +157,11 @@ test('B3 service writes schema-v4 artifacts, preserves B1 decisions and keeps te
   const provider = new PublicationProvider();
   const localConfig = { ...config, generation: { ...config.generation, provider: 'fixture' }, verifier: { ...config.verifier, provider: 'fixture' } };
   const configPath = join(dir, 'stage4.json'); await writeFile(configPath, JSON.stringify(localConfig));
+  const claimChecks = JSON.parse(await readFile('eval/stage4-claims.json', 'utf8'));
+  claimChecks.status = 'provisional'; claimChecks.reviewedBy = null; claimChecks.reviewedAt = null;
+  const claimChecksPath = join(dir, 'stage4-claims.json'); await writeFile(claimChecksPath, JSON.stringify(claimChecks));
   const service = new PipelineService(registry(provider));
-  const runDir = await service.run({ feed: 'supplier_feed.json', taxonomy: 'taxonomy.json', labels: 'eval/labels.json', out: dir, runId: 'b3-fixture', baseline: 'b3', aiMode: 'live', aiCache: join(dir, 'cache'), aiConfig: configPath, aiCohort: 'development', claimChecks: 'eval/stage4-claims.json' });
+  const runDir = await service.run({ feed: 'supplier_feed.json', taxonomy: 'taxonomy.json', labels: 'eval/labels.json', out: dir, runId: 'b3-fixture', baseline: 'b3', aiMode: 'live', aiCache: join(dir, 'cache'), aiConfig: configPath, aiCohort: 'development', claimChecks: claimChecksPath });
   const [report, result] = await readRun(runDir);
   assert.equal(report.schemaVersion, '4'); assert.equal(report.rulesVersion, 'B3-v1'); assert.ok(report.publicationHash); assert.ok(report.generation?.products);
   assert.equal(report.verifier?.controlled.status, 'provisional'); assert.equal(report.verifier?.generated.status, 'not_evaluated');
@@ -162,15 +169,17 @@ test('B3 service writes schema-v4 artifacts, preserves B1 decisions and keeps te
   assert.equal(comparison.comparable, false); // Test-origin B3 cannot be represented as real quality.
   assert.equal(comparison.decisionsEqual, true); assert.deepEqual(comparison.changedMatchingRowIds, []);
   await assert.rejects(prepareWeb(runDir, join(dir, 'fixture-web')));
-  const prepared = await prepareWeb('reports/B3-openai-development-live-v4', join(dir, 'web'));
-  const [realReport] = await readRun('reports/B3-openai-development-live-v4');
+  await assert.rejects(prepareWeb('reports/B3-openai-development-live-v4', join(dir, 'historical-web')), /claim suite does not match/);
+  const humanGateRun = 'reports/B3-openai-development-human-gate-v2';
+  const prepared = await prepareWeb(humanGateRun, join(dir, 'web'), 'eval/stage4-claims.json', 'eval/generated-review-e478435a3d39.json');
+  const [realReport] = await readRun(humanGateRun);
   const payload = JSON.parse(await readFile(prepared, 'utf8'));
   assert.equal(payload.result.listings.length, 156);
   assert.equal(payload.review.generated.publicationHash, realReport.publicationHash);
   assert.equal(payload.review.controlled.length, 12);
-  const reviewedPrepared = await prepareWeb('reports/B3-openai-development-live-v4', join(dir, 'reviewed-web'), 'eval/stage4-claims.json', 'eval/generated-review-e478435a3d39.json');
+  const reviewedPrepared = await prepareWeb(humanGateRun, join(dir, 'reviewed-web'), 'eval/stage4-claims.json', 'eval/generated-review-e478435a3d39.json');
   const reviewedPayload = JSON.parse(await readFile(reviewedPrepared, 'utf8'));
   assert.equal(reviewedPayload.review.generated.version, 'stage4-generated-review-v2');
-  assert.equal(reviewedPayload.review.generated.claims.filter((claim: { state: string }) => claim.state === 'reviewed').length, 75);
+  assert.equal(reviewedPayload.review.generated.claims.filter((claim: { state: string }) => claim.state === 'reviewed').length, 120);
   assert.equal(reviewedPayload.review.generated.sampleProductIds.length, 20);
 }));

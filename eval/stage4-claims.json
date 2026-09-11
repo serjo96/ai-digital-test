@@ -1,10 +1,10 @@
 {
   "version": "stage4-claims-v1",
-  "status": "provisional",
+  "status": "human_verified",
   "feedHash": "6b6ebc7a54ab90abae315abf5b145b22d9ef11d2c673f8feeeb245ee2808d6b6",
   "b1DecisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
-  "reviewedBy": null,
-  "reviewedAt": null,
+  "reviewedBy": "Sergei",
+  "reviewedAt": "2026-09-11T13:12:21.717Z",
   "cases": [
     { "id": "supported-sony-anc", "rowId": "row_1e60b0a9dc", "text": "Sony WH-880N supports active noise cancelling.", "expectedVerdict": "supported", "kind": "supported", "rationale": "ANC is an agreed product fact with source evidence." },
     { "id": "supported-sony-battery", "rowId": "row_1e60b0a9dc", "text": "Sony WH-880N offers 30 hours of battery life.", "expectedVerdict": "supported", "kind": "supported", "rationale": "The product has an agreed 30 h battery_runtime observation." },

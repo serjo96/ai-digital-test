@@ -7,6 +7,10 @@ import {
 export const generatedClaimKey = (item: Pick<GeneratedReview['claims'][number], 'productId' | 'attempt' | 'claimId'>) =>
   `${item.productId}:${item.attempt}:${item.claimId}`;
 
+export function generatedClaimNeedsAttention(claim: GeneratedReview['claims'][number], aiVerdict: string): boolean {
+  return claim.state === 'reviewed' && (claim.humanVerdict !== aiVerdict || claim.issueTypes.length > 0);
+}
+
 export function generatedReviewProgress(review: GeneratedReview) {
   const productClaims = new Map<string, GeneratedReview['claims']>();
   for (const claim of review.claims) productClaims.set(claim.productId, [...(productClaims.get(claim.productId) ?? []), claim]);
