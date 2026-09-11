@@ -202,7 +202,7 @@ export const en = {
     decisions: 'Decisions:',
     matchQuestion: 'Does the generated wording match the supplied data?',
     matchHint:
-      'Choose a factual verdict, write a reason, then explicitly mark the statement reviewed.',
+      'Choose a factual verdict. That counts the check; you can still edit the reason.',
     yourDecision: 'Your decision',
     whyEditable: 'Why? (editable)',
     whyPlaceholder: 'Explain why the generated phrase does or does not match the supplied text.',

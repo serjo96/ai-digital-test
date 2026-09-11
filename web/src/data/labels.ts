@@ -151,6 +151,20 @@ export function verdictExplanation(verdict: string, messages: Messages): string 
   }
 }
 
+/** Default short rationale written when the reviewer picks a verdict button. */
+export function defaultReviewRationale(verdict: string, messages: Messages): string {
+  switch (verdict) {
+    case 'supported':
+      return t(messages, 'rationale.supported');
+    case 'unsupported':
+      return t(messages, 'rationale.unsupported');
+    case 'disputed':
+      return t(messages, 'rationale.disputed');
+    default:
+      return t(messages, 'rationale.default');
+  }
+}
+
 /** Label used next to the saved AI verdict badge. */
 export function aiVerdictPhrase(verdict: string, messages: Messages): string {
   switch (verdict) {

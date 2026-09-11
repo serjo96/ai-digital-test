@@ -6,6 +6,7 @@ import { productStatus } from '../src/data/catalog.ts';
 import { demoCatalog } from '../src/data/fixtures.ts';
 import {
   aiVerdictPhrase,
+  defaultReviewRationale,
   evidenceFieldLabel,
   formatReason,
   primaryReviewReason,
@@ -119,6 +120,12 @@ test('verdict helpers use plain language for review UI', () => {
   assert.equal(aiVerdictPhrase('supported', en), 'AI: matches supplied data');
   assert.equal(aiVerdictPhrase('unsupported', en), 'AI: does not match supplied data');
   assert.equal(aiVerdictPhrase('disputed', en), 'AI: supplied sources conflict');
+});
+
+test('defaultReviewRationale fills a short reason for each human verdict', () => {
+  assert.equal(defaultReviewRationale('supported', en), 'Matches the supplier evidence.');
+  assert.equal(defaultReviewRationale('unsupported', ru), 'Не совпадает с доказательствами поставщика.');
+  assert.equal(defaultReviewRationale('disputed', en), 'Supplier sources conflict on this point.');
 });
 
 test('evidenceFieldLabel maps source fields to plain language', () => {

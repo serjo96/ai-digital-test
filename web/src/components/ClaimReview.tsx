@@ -5,6 +5,7 @@ import { productDisplayName, type CatalogSnapshot, type ReviewClaim } from '../d
 import {
   aiVerdictPhrase,
   controlledKindLabel,
+  defaultReviewRationale,
   evidenceFieldLabel,
   verdictExplanation,
   verdictLabel,
@@ -300,7 +301,17 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
   }
 
   function chooseVerdict(id: string, value: Verdict) {
-    updateClaim(id, { humanVerdict: value, state: 'pending' });
+    const key = product && attempt ? `${product.id}:${attempt.attempt}:${id}` : null;
+    setGenerated(current => ({
+      ...current,
+      claims: current.claims.map(item => {
+        if (!key || generatedClaimKey(item) !== key) return item;
+        const rationale = item.rationale.trim()
+          ? item.rationale
+          : defaultReviewRationale(value, messages);
+        return { ...item, humanVerdict: value, rationale, state: 'reviewed' as const };
+      }),
+    }));
   }
 
   function toggleIssue(id: string, issue: 'non_atomic_claim' | 'unclear_copy') {
@@ -331,7 +342,13 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
   }
 
   function goToAdjacentClaim(delta: number) {
-    if (!claims.length || activeIndex < 0) return;
+    if (!claims.length || activeIndex < 0 || !activeClaim) return;
+    const item = product && attempt
+      ? reviews.get(`${product.id}:${attempt.attempt}:${activeClaim.id}`)
+      : null;
+    if (item?.humanVerdict && item.rationale.trim() && item.state !== 'reviewed') {
+      updateClaim(activeClaim.id, { state: 'reviewed' });
+    }
     const next = claims[activeIndex + delta];
     if (next) selectClaim(next.id, true);
   }
@@ -533,6 +550,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                         )!;
                         return (
                           <article
+                            key={`${product.id}:${attempt.attempt}:${activeClaim.id}`}
                             ref={decisionRef}
                             className="claim-card decision-panel selected"
                             id={`claim-decision-${activeClaim.id}`}
@@ -596,25 +614,27 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                                   role="radiogroup"
                                   aria-label={t('claims.yourDecision')}
                                 >
-                                  {VERDICTS.map(value => (
-                                    <button
-                                      key={value}
-                                      type="button"
-                                      role="radio"
-                                      aria-checked={
-                                        human.humanVerdict === value
-                                      }
-                                      className={`verdict-option ${verdictClass(value)}${human.humanVerdict === value ? ' selected' : ''}`}
-                                      onClick={() => chooseVerdict(activeClaim.id, value)}
-                                    >
-                                      <span className="verdict-option-label">
-                                        {verdictLabel(value, messages)}
-                                      </span>
-                                      <span className="verdict-option-hint">
-                                        {verdictExplanation(value, messages)}
-                                      </span>
-                                    </button>
-                                  ))}
+                                  {VERDICTS.map(value => {
+                                    const selected =
+                                      human.humanVerdict === value && human.state === 'reviewed';
+                                    return (
+                                      <button
+                                        key={value}
+                                        type="button"
+                                        role="radio"
+                                        aria-checked={selected}
+                                        className={`verdict-option ${verdictClass(value)}${selected ? ' selected' : ''}`}
+                                        onClick={() => chooseVerdict(activeClaim.id, value)}
+                                      >
+                                        <span className="verdict-option-label">
+                                          {verdictLabel(value, messages)}
+                                        </span>
+                                        <span className="verdict-option-hint">
+                                          {verdictExplanation(value, messages)}
+                                        </span>
+                                      </button>
+                                    );
+                                  })}
                                 </div>
                               </fieldset>
                               <AiExplanation claim={activeClaim} messages={messages} t={t} />
