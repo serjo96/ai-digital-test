@@ -10,6 +10,8 @@ import { ProductDetail } from './components/ProductDetail.tsx';
 import { ProductList } from './components/ProductList.tsx';
 import { RunOverview } from './components/RunOverview.tsx';
 import { ClaimReview } from './components/ClaimReview.tsx';
+import { useI18n } from './i18n/I18nProvider.tsx';
+import { LanguageSwitcher } from './i18n/LanguageSwitcher.tsx';
 import './App.css';
 
 type LoadState =
@@ -17,7 +19,32 @@ type LoadState =
   | { status: 'error'; message: string }
   | { status: 'ready'; catalog: CatalogSnapshot };
 
+function AppHeader({
+  subtitle,
+  demoNotice,
+}: {
+  subtitle?: string;
+  demoNotice?: boolean;
+}) {
+  const { t } = useI18n();
+  return (
+    <header className="top">
+      <div className="top-bar">
+        <div>
+          <h1>{t('header.title')}</h1>
+          {subtitle ? <p className="subtitle">{subtitle}</p> : null}
+        </div>
+        <LanguageSwitcher />
+      </div>
+      {demoNotice ? (
+        <p className="demo-banner" role="note">{t('demo.notice')}</p>
+      ) : null}
+    </header>
+  );
+}
+
 export default function App() {
+  const { t, messages } = useI18n();
   const [load, setLoad] = useState<LoadState>({ status: 'loading' });
   const [query, setQuery] = useState('');
   const [needsReviewOnly, setNeedsReviewOnly] = useState(false);
@@ -70,18 +97,24 @@ export default function App() {
 
   if (load.status === 'loading') {
     return (
-      <div className="app shell">
-        <p className="state" role="status">Loading catalog…</p>
+      <div className="app">
+        <AppHeader />
+        <div className="shell">
+          <p className="state" role="status">{t('app.loading')}</p>
+        </div>
       </div>
     );
   }
 
   if (load.status === 'error') {
     return (
-      <div className="app shell">
-        <p className="state error" role="alert">
-          Failed to load catalog: {load.message}
-        </p>
+      <div className="app">
+        <AppHeader />
+        <div className="shell">
+          <p className="state error" role="alert">
+            {t('app.loadFailed', { message: load.message })}
+          </p>
+        </div>
       </div>
     );
   }
@@ -89,11 +122,11 @@ export default function App() {
   const { catalog } = load;
   if (catalog.products.length === 0) {
     return (
-      <div className="app shell">
-        {catalog.source === 'demo' && catalog.demoNotice ? (
-          <p className="demo-banner" role="note">{catalog.demoNotice}</p>
-        ) : null}
-        <p className="state" role="status">No products in this catalog.</p>
+      <div className="app">
+        <AppHeader demoNotice={catalog.source === 'demo'} />
+        <div className="shell">
+          <p className="state" role="status">{t('app.emptyCatalog')}</p>
+        </div>
       </div>
     );
   }
@@ -108,97 +141,120 @@ export default function App() {
 
   return (
     <div className="app">
-      <header className="top">
-        <div>
-          <h1>Shelf Ready — Results</h1>
-          <p className="subtitle">
-            Read-only view of canonical products
-            {catalog.source === 'pipeline' ? ' (pipeline snapshot)' : ' (demo fixtures)'}
-          </p>
-        </div>
-        {catalog.source === 'demo' && catalog.demoNotice ? (
-          <p className="demo-banner" role="note">{catalog.demoNotice}</p>
-        ) : null}
-      </header>
+      <AppHeader
+        subtitle={
+          catalog.source === 'pipeline'
+            ? t('header.subtitlePipeline')
+            : t('header.subtitleDemo')
+        }
+        demoNotice={catalog.source === 'demo'}
+      />
 
       <RunOverview catalog={catalog} />
-      {catalog.claimReview ? <nav className="view-tabs" aria-label="Result view">
-        <button type="button" className={view === 'catalog' ? 'active' : ''} onClick={() => setView('catalog')}>Catalog</button>
-        <button type="button" className={view === 'claims' ? 'active' : ''} onClick={() => setView('claims')}>Check listing text</button>
-      </nav> : null}
-      {view === 'claims' && catalog.claimReview ? <>
-        <p className="review-task" role="note">
-          Check whether each generated phrase accurately repeats the supplied feed. You are not confirming that the product specification is true in the real world.
-        </p>
-        <ClaimReview catalog={catalog} />
-      </> : <div className="layout">
-        <aside className="sidebar">
-          <div className="filters">
-            <label className="search">
-              <span>Search by name</span>
-              <input
-                type="search"
-                value={query}
-                onChange={event => setQuery(event.target.value)}
-                placeholder="e.g. aerobuds"
-              />
-            </label>
-            <label className="checkbox">
-              <input
-                type="checkbox"
-                checked={needsReviewOnly}
-                onChange={event => setNeedsReviewOnly(event.target.checked)}
-              />
-              Needs review
-            </label>
-            {filtersActive ? (
-              <button type="button" className="clear-filters" onClick={clearFilters}>
-                Clear filters
-              </button>
-            ) : null}
-          </div>
-          <ProductList
-            products={filtered}
-            rows={catalog.rows}
-            listings={catalog.listings}
-            selectedId={selectedId}
-            onSelect={setSelectedId}
-            emptyMessage={
-              filtersActive
-                ? 'No matching products.'
-                : 'No products in this catalog.'
-            }
-          />
-        </aside>
-
-        <main className="detail">
-          {selected ? (
-            <ProductDetail
-              key={selected.id}
-              product={selected}
-              listing={selectedListing}
-              offers={catalog.offers.filter(o => selected.offerIds.includes(o.id))}
-              facts={catalog.facts}
-              rows={catalog.rows.filter(r => selected.rowIds.includes(r.source.row_id) || selectedListing?.reviewFlags.some(flag => flag.rowIds.includes(r.source.row_id) || flag.evidence.some(e => e.rowId === r.source.row_id)))}
-              status={productStatus(selected, selectedListing)}
-              statusText={statusLabel(productStatus(selected, selectedListing))}
-            />
-          ) : (
-            <div className="state" role="status">
-              <p>
-                {filtered.length === 0 && filtersActive
-                  ? 'No matching products to display.'
-                  : 'Select a product to inspect.'}
-              </p>
-              {filtered.length === 0 && filtersActive ? (
+      {catalog.claimReview ? (
+        <nav className="view-tabs" aria-label={t('tabs.aria')}>
+          <button
+            type="button"
+            className={view === 'catalog' ? 'active' : ''}
+            onClick={() => setView('catalog')}
+          >
+            {t('tabs.catalog')}
+          </button>
+          <button
+            type="button"
+            className={view === 'claims' ? 'active' : ''}
+            onClick={() => setView('claims')}
+          >
+            {t('tabs.claims')}
+          </button>
+        </nav>
+      ) : null}
+      {view === 'claims' && catalog.claimReview ? (
+        <>
+          <p className="review-task" role="note">
+            {t('reviewTask')}
+          </p>
+          <ClaimReview catalog={catalog} />
+        </>
+      ) : (
+        <div className="layout">
+          <aside className="sidebar">
+            <div className="filters">
+              <label className="search">
+                <span>{t('filters.searchByName')}</span>
+                <input
+                  type="search"
+                  value={query}
+                  onChange={event => setQuery(event.target.value)}
+                  placeholder={t('filters.searchPlaceholder')}
+                />
+              </label>
+              <label className="checkbox">
+                <input
+                  type="checkbox"
+                  checked={needsReviewOnly}
+                  onChange={event => setNeedsReviewOnly(event.target.checked)}
+                />
+                {t('filters.needsReview')}
+              </label>
+              {filtersActive ? (
                 <button type="button" className="clear-filters" onClick={clearFilters}>
-                  Clear filters
+                  {t('filters.clear')}
                 </button>
               ) : null}
             </div>
-          )}
-        </main>
-      </div>}
+            <ProductList
+              products={filtered}
+              rows={catalog.rows}
+              listings={catalog.listings}
+              selectedId={selectedId}
+              onSelect={setSelectedId}
+              emptyMessage={
+                filtersActive ? t('app.noMatching') : t('app.emptyCatalog')
+              }
+            />
+          </aside>
+
+          <main className="detail">
+            {selected ? (
+              <ProductDetail
+                key={selected.id}
+                product={selected}
+                listing={selectedListing}
+                offers={catalog.offers.filter(o => selected.offerIds.includes(o.id))}
+                facts={catalog.facts}
+                rows={catalog.rows.filter(
+                  r =>
+                    selected.rowIds.includes(r.source.row_id) ||
+                    selectedListing?.reviewFlags.some(
+                      flag =>
+                        flag.rowIds.includes(r.source.row_id) ||
+                        flag.evidence.some(e => e.rowId === r.source.row_id),
+                    ),
+                )}
+                status={productStatus(selected, selectedListing)}
+                statusText={statusLabel(
+                  productStatus(selected, selectedListing),
+                  messages,
+                )}
+              />
+            ) : (
+              <div className="state" role="status">
+                <p>
+                  {filtered.length === 0 && filtersActive
+                    ? t('app.noMatchingDisplay')
+                    : t('app.selectProduct')}
+                </p>
+                {filtered.length === 0 && filtersActive ? (
+                  <button type="button" className="clear-filters" onClick={clearFilters}>
+                    {t('filters.clear')}
+                  </button>
+                ) : null}
+              </div>
+            )}
+          </main>
+        </div>
+      )}
     </div>
   );
 }

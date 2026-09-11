@@ -9,6 +9,7 @@ import type {
 import type { CatalogProvenance } from '../../../src/catalog-snapshot.ts';
 import type { ClaimSuite, GeneratedReview } from '../../../src/publication-evaluation.ts';
 import type { NormalizedRow } from '../../../src/types.ts';
+import type { Messages } from '../i18n/messages.ts';
 
 export type CatalogSource = 'demo' | 'pipeline';
 
@@ -65,13 +66,6 @@ export function productStatus(product: CanonicalProduct, listing: ListingView | 
   return 'ready';
 }
 
-export function statusLabel(status: ProductStatus): string {
-  switch (status) {
-    case 'ready':
-      return 'Ready';
-    case 'needs_review':
-      return 'Needs review';
-    case 'withheld':
-      return 'Withheld';
-  }
+export function statusLabel(status: ProductStatus, messages: Messages): string {
+  return messages.status[status];
 }

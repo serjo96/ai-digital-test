@@ -2,9 +2,6 @@ import type { CanonicalProduct, Fact, Offer, ReviewItem } from '../../../src/dom
 import type { NormalizedRow, PriceResult } from '../../../src/types.ts';
 import type { CatalogSnapshot, ListingView } from './catalog.ts';
 
-const DEMO_NOTICE =
-  'Demo data — not a pipeline or AI verification result. These three cards illustrate UI states only.';
-
 function price(raw: string, amount: string, currency: PriceResult['currency']): PriceResult {
   return {
     raw,
@@ -379,7 +376,6 @@ const listings: Record<string, ListingView> = {
 
 export const demoCatalog: CatalogSnapshot = {
   source: 'demo',
-  demoNotice: DEMO_NOTICE,
   products,
   offers,
   facts,

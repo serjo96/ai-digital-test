@@ -7,6 +7,7 @@ import {
   type ListingView,
 } from '../data/catalog.ts';
 import { hasUnresolvedFacts, primaryReviewReason } from '../data/labels.ts';
+import { useI18n } from '../i18n/I18nProvider.tsx';
 
 interface Props {
   products: CanonicalProduct[];
@@ -25,6 +26,8 @@ export function ProductList({
   onSelect,
   emptyMessage,
 }: Props) {
+  const { t, messages } = useI18n();
+
   if (products.length === 0) {
     return <p className="state muted">{emptyMessage}</p>;
   }
@@ -34,7 +37,7 @@ export function ProductList({
       {products.map(product => {
         const listing = listings[product.id];
         const status = productStatus(product, listing);
-        const primary = primaryReviewReason(product, listing);
+        const primary = primaryReviewReason(product, listing, messages);
         const unresolved = hasUnresolvedFacts(product);
         return (
           <li key={product.id}>
@@ -47,9 +50,13 @@ export function ProductList({
               <span className="product-name">{productDisplayName(product, rows)}</span>
               <span className="product-meta">
                 <span className="category">{product.category}</span>
-                <span className={`badge badge-${status}`}>{statusLabel(status)}</span>
-                {unresolved ? <span className="chip chip-conflict">conflict</span> : null}
-                <span className="chip">{product.offerIds.length} offers</span>
+                <span className={`badge badge-${status}`}>{statusLabel(status, messages)}</span>
+                {unresolved ? (
+                  <span className="chip chip-conflict">{t('productList.conflict')}</span>
+                ) : null}
+                <span className="chip">
+                  {t('productList.offers', { count: product.offerIds.length })}
+                </span>
               </span>
               {primary ? (
                 <span className="product-reason muted">{primary.label}</span>

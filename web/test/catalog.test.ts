@@ -14,6 +14,10 @@ import {
   verdictExplanation,
   verdictLabel,
 } from '../src/data/labels.ts';
+import { messagesFor } from '../src/i18n/messages.ts';
+
+const en = messagesFor('en');
+const ru = messagesFor('ru');
 
 const result = JSON.parse(readFileSync('reports/B1-stage3-control-v2/result.json', 'utf8'));
 const b3 = JSON.parse(readFileSync('reports/B3-openai-development-live-v4/result.json', 'utf8'));
@@ -63,21 +67,28 @@ test('empty saved result stays empty and synthetic conflict stays explicitly dem
   assert.equal(demoCatalog.source, 'demo');
   const conflict = demoCatalog.products.find(product => product.facts.some(fact => fact.status === 'conflict'))!;
   assert.equal(productStatus(conflict, demoCatalog.listings[conflict.id]), 'needs_review');
-  assert.ok(demoCatalog.demoNotice?.includes('not a pipeline'));
 });
 
 test('formatReason maps known codes and keeps unknown codes readable', () => {
-  assert.equal(formatReason('missing_specs').label, 'Empty supplier specs');
-  assert.equal(formatReason('missing_specs').known, true);
-  assert.equal(formatReason('fact_conflict:battery_runtime').label, 'Conflicting product attribute: battery_runtime');
-  assert.equal(formatReason('fact_incomparable:power').label, 'Incomparable product attribute: power');
-  assert.equal(formatReason('identity:incomplete_type_or_variant').label, 'Identity check needs review: incomplete type or variant');
-  assert.equal(formatReason('literal_type:headphones').label, 'Recognized type: headphones');
-  assert.equal(formatReason('generation_not_run').label, 'Generation and claim verification have not run');
-  const unknown = formatReason('brand_new_signal_xyz');
+  assert.equal(formatReason('missing_specs', en).label, 'Empty supplier specs');
+  assert.equal(formatReason('missing_specs', en).known, true);
+  assert.equal(formatReason('fact_conflict:battery_runtime', en).label, 'Conflicting product attribute: battery_runtime');
+  assert.equal(formatReason('fact_incomparable:power', en).label, 'Incomparable product attribute: power');
+  assert.equal(formatReason('identity:incomplete_type_or_variant', en).label, 'Identity check needs review: incomplete type or variant');
+  assert.equal(formatReason('literal_type:headphones', en).label, 'Recognized type: headphones');
+  assert.equal(formatReason('generation_not_run', en).label, 'Generation and claim verification have not run');
+  const unknown = formatReason('brand_new_signal_xyz', en);
   assert.equal(unknown.known, false);
   assert.equal(unknown.code, 'brand_new_signal_xyz');
   assert.match(unknown.label, /brand new signal xyz/);
+});
+
+test('formatReason uses Russian labels for known codes and prefixes', () => {
+  assert.equal(formatReason('missing_specs', ru).label, 'Пустые спецификации поставщика');
+  assert.equal(
+    formatReason('fact_conflict:battery_runtime', ru).label,
+    'Конфликт атрибута продукта: battery_runtime',
+  );
 });
 
 test('uniqueReasons and primaryReviewReason preserve first-seen order', () => {
@@ -86,31 +97,31 @@ test('uniqueReasons and primaryReviewReason preserve first-seen order', () => {
     'unparsed_specs',
   ]);
   const product = demoCatalog.products.find(p => p.id === 'demo_product_aerobuds')!;
-  const primary = primaryReviewReason(product, demoCatalog.listings[product.id]);
+  const primary = primaryReviewReason(product, demoCatalog.listings[product.id], en);
   assert.equal(primary?.code, 'fact_conflict:battery_runtime');
   assert.match(primary?.label ?? '', /Conflicting product attribute/);
 });
 
 test('verdict helpers use plain language for review UI', () => {
-  assert.equal(verdictLabel('supported'), 'Matches supplied data');
-  assert.equal(verdictLabel('unsupported'), 'Does not match supplied data');
-  assert.equal(verdictLabel('disputed'), 'Supplied sources conflict');
-  assert.equal(verdictExplanation('supported'), 'The wording fully preserves the supplied statement.');
-  assert.equal(verdictExplanation('unsupported'), 'The wording adds, changes, or omits something important.');
-  assert.equal(verdictExplanation('disputed'), 'Supplier records disagree, so neither version is safe.');
-  assert.equal(aiVerdictPhrase('supported'), 'AI: matches supplied data');
-  assert.equal(aiVerdictPhrase('unsupported'), 'AI: does not match supplied data');
-  assert.equal(aiVerdictPhrase('disputed'), 'AI: supplied sources conflict');
+  assert.equal(verdictLabel('supported', en), 'Matches supplied data');
+  assert.equal(verdictLabel('unsupported', en), 'Does not match supplied data');
+  assert.equal(verdictLabel('disputed', en), 'Supplied sources conflict');
+  assert.equal(verdictExplanation('supported', en), 'The wording fully preserves the supplied statement.');
+  assert.equal(verdictExplanation('unsupported', en), 'The wording adds, changes, or omits something important.');
+  assert.equal(verdictExplanation('disputed', en), 'Supplier records disagree, so neither version is safe.');
+  assert.equal(aiVerdictPhrase('supported', en), 'AI: matches supplied data');
+  assert.equal(aiVerdictPhrase('unsupported', en), 'AI: does not match supplied data');
+  assert.equal(aiVerdictPhrase('disputed', en), 'AI: supplied sources conflict');
 });
 
 test('evidenceFieldLabel maps source fields to plain language', () => {
-  assert.equal(evidenceFieldLabel('raw_title'), 'Supplier title');
-  assert.equal(evidenceFieldLabel('raw_specs'), 'Supplier specs');
-  assert.equal(evidenceFieldLabel('custom_field'), 'custom field');
+  assert.equal(evidenceFieldLabel('raw_title', en), 'Supplier title');
+  assert.equal(evidenceFieldLabel('raw_specs', en), 'Supplier specs');
+  assert.equal(evidenceFieldLabel('custom_field', en), 'custom field');
 });
 
 test('defaultReviewRationale fills a short reason when a verdict is chosen', () => {
-  assert.equal(defaultReviewRationale('supported'), 'Matches the supplier evidence.');
-  assert.equal(defaultReviewRationale('unsupported'), 'Does not match the supplier evidence.');
-  assert.equal(defaultReviewRationale('disputed'), 'Supplier sources conflict on this point.');
+  assert.equal(defaultReviewRationale('supported', en), 'Matches the supplier evidence.');
+  assert.equal(defaultReviewRationale('unsupported', en), 'Does not match the supplier evidence.');
+  assert.equal(defaultReviewRationale('disputed', en), 'Supplier sources conflict on this point.');
 });

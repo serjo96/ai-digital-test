@@ -9,6 +9,8 @@ import {
   statusExplanation,
   uniqueReasons,
 } from '../data/labels.ts';
+import { useI18n } from '../i18n/I18nProvider.tsx';
+import type { Messages } from '../i18n/messages.ts';
 
 interface Props {
   product: CanonicalProduct;
@@ -26,8 +28,8 @@ function formatValue(fact: Fact): string {
   return `${String(fact.value)}${unit}${conditions}`;
 }
 
-function ReasonText({ code }: { code: string }) {
-  const formatted = formatReason(code);
+function ReasonText({ code, messages }: { code: string; messages: Messages }) {
+  const formatted = formatReason(code, messages);
   return (
     <>
       {formatted.label}
@@ -40,10 +42,14 @@ function FactRow({
   reconciled,
   factsById,
   rowsById,
+  messages,
+  t,
 }: {
   reconciled: ReconciledFact;
   factsById: Map<string, Fact>;
   rowsById: Map<string, NormalizedRow>;
+  messages: Messages;
+  t: (key: string, vars?: Record<string, string | number>) => string;
 }) {
   const [open, setOpen] = useState(false);
   const detailId = useId();
@@ -56,22 +62,30 @@ function FactRow({
   const summary = accepted
     ? formatValue(accepted)
     : observations.map(formatValue).join(' · ') || '—';
-  const statusLabel = formatReason(reconciled.status).label;
+  const statusLabelText = formatReason(reconciled.status, messages).label;
 
   return (
     <div className={`fact-row status-${reconciled.status}`}>
-      <button type="button" className="fact-toggle" aria-expanded={open} aria-controls={detailId} onClick={() => setOpen(value => !value)}>
+      <button
+        type="button"
+        className="fact-toggle"
+        aria-expanded={open}
+        aria-controls={detailId}
+        onClick={() => setOpen(value => !value)}
+      >
         <span className="fact-attr">{reconciled.attribute}</span>
         <span className="fact-summary">{summary}</span>
-        <span className={`badge badge-fact-${reconciled.status}`}>{statusLabel}</span>
+        <span className={`badge badge-fact-${reconciled.status}`}>{statusLabelText}</span>
         <span className="chevron">{open ? '▾' : '▸'}</span>
       </button>
       {open ? (
         <div className="fact-details" id={detailId}>
           <p className="muted">
-            Confidence: {reconciled.confidence.level}
+            {t('detail.confidence')} {reconciled.confidence.level}
             {reconciled.confidence.reasons.length
-              ? ` — ${uniqueReasons(reconciled.confidence.reasons).map(code => formatReason(code).label).join('; ')}`
+              ? ` — ${uniqueReasons(reconciled.confidence.reasons)
+                  .map(code => formatReason(code, messages).label)
+                  .join('; ')}`
               : ''}
           </p>
           {observations.map(fact => {
@@ -79,26 +93,29 @@ function FactRow({
             return (
               <div key={fact.id} className="evidence-card">
                 <p>
-                  <strong>Observation:</strong> {formatValue(fact)} · scope: {fact.scope} · rule: {fact.rule}
+                  <strong>{t('detail.observation')}</strong> {formatValue(fact)} · scope:{' '}
+                  {fact.scope} · rule: {fact.rule}
                 </p>
                 <p>
-                  <strong>Source row:</strong>{' '}
-                  <a href={`#source-${fact.evidence.rowId}`}>{row
-                    ? `${row.source.supplier} / ${row.source.supplier_sku} (${row.source.row_id})`
-                    : fact.evidence.rowId}</a>
+                  <strong>{t('detail.sourceRow')}</strong>{' '}
+                  <a href={`#source-${fact.evidence.rowId}`}>
+                    {row
+                      ? `${row.source.supplier} / ${row.source.supplier_sku} (${row.source.row_id})`
+                      : fact.evidence.rowId}
+                  </a>
                 </p>
                 {row ? (
                   <>
                     <p>
-                      <strong>raw_title:</strong> {row.source.raw_title || '(empty)'}
+                      <strong>raw_title:</strong> {row.source.raw_title || t('detail.empty')}
                     </p>
                     <p>
-                      <strong>raw_specs:</strong> {row.source.raw_specs || '(empty)'}
+                      <strong>raw_specs:</strong> {row.source.raw_specs || t('detail.empty')}
                     </p>
                   </>
                 ) : null}
                 <p>
-                  <strong>Quote ({fact.evidence.field}):</strong>{' '}
+                  <strong>{t('detail.quote', { field: fact.evidence.field })}</strong>{' '}
                   <q>{fact.evidence.quote}</q>
                 </p>
               </div>
@@ -119,14 +136,17 @@ export function ProductDetail({
   status,
   statusText,
 }: Props) {
+  const { t, messages } = useI18n();
   const factsById = new Map(facts.map(f => [f.id, f]));
   const rowsById = new Map(rows.map(r => [r.source.row_id, r]));
   const confidence = product.categoryConfidence;
   const categoryReasons = uniqueReasons(confidence.reasons);
   const identityReasons = uniqueReasons(product.identityConfidence.reasons);
   const reviewCodes = reviewReasonCodes(product, listing).slice(0, 3);
-  const publication = publicationState(listing);
-  const conflictCount = product.facts.filter(f => f.status === 'conflict' || f.status === 'incomparable').length;
+  const publication = publicationState(listing, messages);
+  const conflictCount = product.facts.filter(
+    f => f.status === 'conflict' || f.status === 'incomparable',
+  ).length;
   const reviewFlagCount = listing?.reviewFlags.length ?? 0;
   const hasPublishable = Boolean(listing?.publishedText);
 
@@ -136,131 +156,150 @@ export function ProductDetail({
         <div>
           <h2>{product.identities[0]?.model || product.id}</h2>
           <details className="technical-id">
-            <summary>Technical id</summary>
+            <summary>{t('detail.technicalId')}</summary>
             <code>{product.id}</code>
           </details>
         </div>
         <span className={`badge badge-${status}`}>{statusText}</span>
       </header>
 
-      <section className="decision-summary" aria-label="Decision summary">
-        <h3>Decision summary</h3>
+      <section className="decision-summary" aria-label={t('detail.decisionAria')}>
+        <h3>{t('detail.decisionSummary')}</h3>
         <p>
-          <strong>{statusExplanation(status)}</strong>
+          <strong>{statusExplanation(status, messages)}</strong>
         </p>
         <p>
-          <strong>Publication:</strong>{' '}
-          {publication.available ? 'available' : 'blocked'} — {publication.summary}
+          <strong>{t('detail.publication')}:</strong>{' '}
+          {publication.available
+            ? t('publication.available')
+            : t('publication.blocked')}{' '}
+          — {publication.summary}
         </p>
         {reviewCodes.length ? (
           <ul className="reasons">
             {reviewCodes.map(code => (
-              <li key={code}><ReasonText code={code} /></li>
+              <li key={code}>
+                <ReasonText code={code} messages={messages} />
+              </li>
             ))}
           </ul>
         ) : (
-          <p className="muted">No review flags on this card.</p>
+          <p className="muted">{t('detail.noReviewFlags')}</p>
         )}
         <p className="muted counters">
-          {offers.length} offers · {product.facts.length} product facts · {conflictCount} conflicts/incomparable · {reviewFlagCount} review flags
+          {t('detail.counters', {
+            offers: offers.length,
+            facts: product.facts.length,
+            conflicts: conflictCount,
+            flags: reviewFlagCount,
+          })}
         </p>
-        <p className="muted">
-          Category/identity confidence describes classification and matching only — not publication readiness.
-        </p>
+        <p className="muted">{t('detail.confidenceNote')}</p>
       </section>
 
       <section>
-        <h3>Review flags</h3>
+        <h3>{t('detail.reviewFlags')}</h3>
         {listing?.reviewFlags.length ? (
           <ul className="review-flags">
             {listing.reviewFlags.map(flag => (
               <li key={flag.id}>
-                <strong><ReasonText code={flag.reason} /></strong>
+                <strong>
+                  <ReasonText code={flag.reason} messages={messages} />
+                </strong>
                 <span className="muted code-hint"> · {flag.reason}</span>
                 <span className="muted">
-                  {' '}· rows: {flag.rowIds.map(id => <a key={id} href={`#source-${id}`}>{id} </a>)}
+                  {' '}
+                  · {t('detail.rows')}:{' '}
+                  {flag.rowIds.map(id => (
+                    <a key={id} href={`#source-${id}`}>
+                      {id}{' '}
+                    </a>
+                  ))}
                 </span>
                 {flag.evidence.map((evidence, index) => (
                   <p key={index}>
-                    <a href={`#source-${evidence.rowId}`}>{evidence.field}</a>: <q>{evidence.quote}</q>
+                    <a href={`#source-${evidence.rowId}`}>{evidence.field}</a>:{' '}
+                    <q>{evidence.quote}</q>
                   </p>
                 ))}
               </li>
             ))}
           </ul>
         ) : (
-          <p className="muted">None.</p>
+          <p className="muted">{t('detail.none')}</p>
         )}
       </section>
 
       <section>
-        <h3>Withhold reasons</h3>
+        <h3>{t('detail.withholdReasons')}</h3>
         {listing?.withholdReasons.length ? (
           <ul className="reasons">
             {listing.withholdReasons.map(reason => (
-              <li key={reason}><ReasonText code={reason} /></li>
+              <li key={reason}>
+                <ReasonText code={reason} messages={messages} />
+              </li>
             ))}
           </ul>
         ) : (
-          <p className="muted">None.</p>
+          <p className="muted">{t('detail.none')}</p>
         )}
       </section>
 
       <section className="text-block">
-        <h3>Draft description</h3>
+        <h3>{t('detail.draftDescription')}</h3>
         {listing?.draftText ? (
           <p className="description">{listing.draftText}</p>
         ) : (
-          <p className="muted">Generation has not run. No draft text.</p>
+          <p className="muted">{t('detail.noDraft')}</p>
         )}
       </section>
 
       <section className={`text-block${hasPublishable ? ' publishable' : ' publishable-empty'}`}>
-        <h3>Publishable text</h3>
+        <h3>{t('detail.publishableText')}</h3>
         {!hasPublishable ? (
           <p className="publication-banner" role="status">
-            Publication blocked — {publication.summary}
+            {t('detail.publicationBlocked', { summary: publication.summary })}
           </p>
         ) : null}
         {listing?.publishedText ? (
           <p className="description">{listing.publishedText}</p>
         ) : (
-          <p className="muted withheld-note">Not released for publication.</p>
+          <p className="muted withheld-note">{t('detail.notReleased')}</p>
         )}
       </section>
 
       <section>
-        <h3>Category & confidence</h3>
+        <h3>{t('detail.categoryConfidence')}</h3>
         <p>
           <strong>{product.category}</strong>
         </p>
         <p>
-          Category confidence: <strong>{confidence.level}</strong>
+          {t('detail.categoryConfidenceLevel')} <strong>{confidence.level}</strong>
         </p>
         {categoryReasons.length ? (
           <ul className="reasons">
             {categoryReasons.map(reason => (
-              <li key={reason}><ReasonText code={reason} /></li>
+              <li key={reason}>
+                <ReasonText code={reason} messages={messages} />
+              </li>
             ))}
           </ul>
         ) : (
-          <p className="muted">No confidence reasons recorded.</p>
+          <p className="muted">{t('detail.noConfidenceReasons')}</p>
         )}
         <p className="muted">
-          Identity confidence: {product.identityConfidence.level}
+          {t('detail.identityConfidence')} {product.identityConfidence.level}
           {identityReasons.length
-            ? ` — ${identityReasons.map(code => formatReason(code).label).join('; ')}`
+            ? ` — ${identityReasons.map(code => formatReason(code, messages).label).join('; ')}`
             : ''}
         </p>
       </section>
 
       <section>
-        <h3>Normalized facts & conflicts</h3>
-        <p className="muted section-note">
-          Rule-based observations with source quotes — not claim verification.
-        </p>
+        <h3>{t('detail.normalizedFacts')}</h3>
+        <p className="muted section-note">{t('detail.factsNote')}</p>
         {product.facts.length === 0 ? (
-          <p className="muted">No normalized product facts.</p>
+          <p className="muted">{t('detail.noFacts')}</p>
         ) : (
           <div className="facts">
             {product.facts.map(fact => (
@@ -269,6 +308,8 @@ export function ProductDetail({
                 reconciled={fact}
                 factsById={factsById}
                 rowsById={rowsById}
+                messages={messages}
+                t={t}
               />
             ))}
           </div>
@@ -276,42 +317,46 @@ export function ProductDetail({
       </section>
 
       <section>
-        <h3>Supplier offers</h3>
-        <p className="muted section-note">
-          Offer-scoped commercial data. Condition belongs to the offer, not the canonical product model.
-        </p>
+        <h3>{t('detail.supplierOffers')}</h3>
+        <p className="muted section-note">{t('detail.offersNote')}</p>
         {offers.length === 0 ? (
-          <p className="muted">No offers attached.</p>
+          <p className="muted">{t('detail.noOffers')}</p>
         ) : (
-          <div className="table-scroll" role="region" aria-label="Supplier offers table" tabIndex={0}>
+          <div className="table-scroll" role="region" aria-label={t('detail.offersTableAria')} tabIndex={0}>
             <table className="offers">
               <thead>
                 <tr>
-                  <th>Supplier</th>
-                  <th>SKU</th>
-                  <th>Price</th>
-                  <th>Currency</th>
-                  <th>Stock</th>
-                  <th>Condition / offer facts</th>
+                  <th>{t('detail.thSupplier')}</th>
+                  <th>{t('detail.thSku')}</th>
+                  <th>{t('detail.thPrice')}</th>
+                  <th>{t('detail.thCurrency')}</th>
+                  <th>{t('detail.thStock')}</th>
+                  <th>{t('detail.thCondition')}</th>
                 </tr>
               </thead>
               <tbody>
                 {offers.map(offer => (
                   <tr key={offer.id}>
                     <td>{offer.supplier}</td>
-                    <td><a href={`#source-${offer.rowId}`}>{offer.sku}</a></td>
+                    <td>
+                      <a href={`#source-${offer.rowId}`}>{offer.sku}</a>
+                    </td>
                     <td>{(offer.price.amount ?? offer.price.raw) || '—'}</td>
                     <td>{offer.price.currency ?? '—'}</td>
                     <td>{offer.stock}</td>
                     <td>
-                      {offer.condition ?? 'unknown'}
-                      {offer.factIds.map(id => factsById.get(id)).filter((fact): fact is Fact => !!fact && fact.scope === 'offer').map(fact => (
-                        <p key={fact.id}>
-                          {fact.attribute}: {formatValue(fact)}
-                          <br />
-                          <a href={`#source-${fact.evidence.rowId}`}>{fact.evidence.rowId}</a>: <q>{fact.evidence.quote}</q> · {fact.rule}
-                        </p>
-                      ))}
+                      {offer.condition ?? t('detail.unknown')}
+                      {offer.factIds
+                        .map(id => factsById.get(id))
+                        .filter((fact): fact is Fact => !!fact && fact.scope === 'offer')
+                        .map(fact => (
+                          <p key={fact.id}>
+                            {fact.attribute}: {formatValue(fact)}
+                            <br />
+                            <a href={`#source-${fact.evidence.rowId}`}>{fact.evidence.rowId}</a>:{' '}
+                            <q>{fact.evidence.quote}</q> · {fact.rule}
+                          </p>
+                        ))}
                     </td>
                   </tr>
                 ))}
@@ -322,25 +367,32 @@ export function ProductDetail({
       </section>
 
       <section>
-        <h3>Source and review rows (unchanged)</h3>
+        <h3>{t('detail.sourceRows')}</h3>
         {rows.length === 0 ? (
-          <p className="muted">No source rows.</p>
+          <p className="muted">{t('detail.noSourceRows')}</p>
         ) : (
           <ul className="source-rows">
             {rows.map(row => (
-              <li key={row.source.row_id} id={`source-${row.source.row_id}`} tabIndex={-1} className="source-card">
+              <li
+                key={row.source.row_id}
+                id={`source-${row.source.row_id}`}
+                tabIndex={-1}
+                className="source-card"
+              >
                 <p>
                   <strong>{row.source.supplier}</strong> · {row.source.supplier_sku} ·{' '}
                   {row.source.row_id}
                 </p>
                 <p>
-                  <strong>Original price:</strong> {row.source.price || '(empty)'} · <strong>Stock:</strong> {row.source.stock}
+                  <strong>{t('detail.originalPrice')}</strong>{' '}
+                  {row.source.price || t('detail.empty')} · <strong>{t('detail.stock')}</strong>{' '}
+                  {row.source.stock}
                 </p>
                 <p>
-                  <strong>Title:</strong> {row.source.raw_title || '(empty)'}
+                  <strong>{t('detail.title')}</strong> {row.source.raw_title || t('detail.empty')}
                 </p>
                 <p>
-                  <strong>Specs:</strong> {row.source.raw_specs || '(empty)'}
+                  <strong>{t('detail.specs')}</strong> {row.source.raw_specs || t('detail.empty')}
                 </p>
               </li>
             ))}
