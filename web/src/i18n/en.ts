@@ -179,10 +179,12 @@ export const en = {
     comparisonAria: 'System text and original supplier text comparison',
     systemText: 'Text written by the system',
     systemTextHint: 'This is the phrase you are reviewing.',
-    compareWith: 'compare with',
+    compareWith: 'compare with supplier text',
     originalText: 'Original text supplied for this item',
     originalTextHint: 'Unverified input feed, not a manufacturer website.',
     simpleQuestion: 'Can the system phrase be written using only the original text above?',
+    decideStep: 'Your decision',
+    decideStepHint: 'Step 3 — choose whether the meaning matches.',
     supplierCompare: 'Supplier statement to compare',
     evidenceIntro:
       'This is unverified text received in the input feed — not a manufacturer specification sheet. Check only whether the generated wording preserves it accurately.',

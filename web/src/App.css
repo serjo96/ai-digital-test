@@ -820,8 +820,8 @@ summary { cursor: pointer; }
 
 .text-comparison {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  gap: .65rem;
+  grid-template-columns: 1fr;
+  gap: .75rem;
   align-items: stretch;
   margin-top: .6rem;
 }
@@ -856,12 +856,34 @@ summary { cursor: pointer; }
 }
 
 .comparison-arrow {
-  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  margin: 0;
+  padding: .35rem 0;
   color: var(--muted);
-  font-size: .72rem;
+  font-size: .8rem;
   font-weight: 700;
+  letter-spacing: .02em;
   text-transform: uppercase;
-  writing-mode: vertical-rl;
+}
+
+.comparison-arrow::before,
+.comparison-arrow::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.comparison-arrow-mark {
+  display: inline-block;
+  margin-right: .35rem;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--accent);
 }
 
 .source-side .claim-evidence { margin-top: .7rem; }
@@ -945,8 +967,14 @@ summary { cursor: pointer; }
   display: grid;
   gap: .7rem;
   margin-top: .9rem;
-  padding-top: .8rem;
-  border-top: 1px solid var(--border);
+  padding: .8rem;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--ok) 6%, var(--panel));
+}
+
+.decision-step .comparison-heading {
+  margin-bottom: .15rem;
 }
 
 .human-decision label { display: grid; gap: .35rem; font-weight: 600; }
@@ -1032,7 +1060,5 @@ summary { cursor: pointer; }
   .review-layout { grid-template-columns: 1fr; }
   .review-sidebar .product-list { max-height: 15rem; }
   .verification-scope { grid-template-columns: 1fr; }
-  .text-comparison { grid-template-columns: 1fr; }
-  .comparison-arrow { writing-mode: horizontal-tb; text-align: center; }
   .verdict-options { grid-template-columns: 1fr; }
 }

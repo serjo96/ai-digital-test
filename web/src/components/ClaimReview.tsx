@@ -552,6 +552,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                                 <blockquote>{activeClaim.text}</blockquote>
                               </div>
                               <div className="comparison-arrow" aria-hidden="true">
+                                <span className="comparison-arrow-mark">↓</span>
                                 {t('claims.compareWith')}
                               </div>
                               <div className="comparison-side source-side">
@@ -570,7 +571,14 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                                 />
                               </div>
                             </section>
-                            <div className="human-decision">
+                            <div className="human-decision decision-step">
+                              <div className="comparison-heading">
+                                <span className="comparison-number">3</span>
+                                <div>
+                                  <span className="comparison-label">{t('claims.decideStep')}</span>
+                                  <p className="muted">{t('claims.decideStepHint')}</p>
+                                </div>
+                              </div>
                               <fieldset className="verdict-picker">
                                 <legend>{t('claims.simpleQuestion')}</legend>
                                 <p className="muted verdict-picker-hint">
