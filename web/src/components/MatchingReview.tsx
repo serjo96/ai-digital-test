@@ -79,6 +79,17 @@ export function MatchingReview({ catalog }: { catalog: CatalogSnapshot }) {
 
   const selectedCase =
     visible.find(item => item.id === selectedCaseId) ?? visible[0] ?? null;
+  const selectedIndex = selectedCase
+    ? visible.findIndex(item => item.id === selectedCase.id)
+    : -1;
+
+  const selectMobileCase = (index: number) => {
+    const item = visible[index];
+    if (!item) return;
+    setSelectedCaseId(item.id);
+    setMobilePane('detail');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const chips: ContextChip[] = [];
   if (pendingOnly) {
@@ -95,17 +106,30 @@ export function MatchingReview({ catalog }: { catalog: CatalogSnapshot }) {
       <article className={`matching-case ${done ? 'reviewed' : ''}`} key={item.id}>
         <header>
           <div>
-            <p className="eyebrow">{item.split}</p>
+            <p className="eyebrow">{t(`matching.split.${item.split}`)}</p>
             <h3>{item.id}</h3>
           </div>
           <span className={`status ${done ? 'ready' : 'needs_review'}`}>
             {done ? t('matching.reviewed') : t('matching.pending')}
           </span>
         </header>
-        <p>{item.explanation}</p>
+        <section className="matching-case-task" aria-label={t('matching.caseTaskTitle')}>
+          <strong>{t('matching.caseTaskTitle')}</strong>
+          <ol>
+            <li>{t('matching.caseTaskSameGroup')}</li>
+            <li>{t('matching.caseTaskDifferentGroups')}</li>
+            <li>{t('matching.caseTaskDecision')}</li>
+          </ol>
+        </section>
+        <p>{t(`matching.explanations.${item.id}`)}</p>
         {item.expectedGroups.map((group, index) => (
           <section key={`${item.id}:group:${index}`}>
             <h4>{t('matching.group', { number: index + 1 })}</h4>
+            <p className="matching-group-hint">
+              {group.length === 1
+                ? t('matching.singleRowGroupHint')
+                : t('matching.multiRowGroupHint', { count: group.length })}
+            </p>
             {group.map(id => (
               <SourceRow key={id} id={id} row={rows.get(id)} />
             ))}
@@ -114,16 +138,18 @@ export function MatchingReview({ catalog }: { catalog: CatalogSnapshot }) {
         {item.nonProductRowIds.length ? (
           <section>
             <h4>{t('matching.nonProducts')}</h4>
+            <p className="matching-group-hint">{t('matching.nonProductsHint')}</p>
             {item.nonProductRowIds.map(id => (
               <SourceRow key={id} id={id} row={rows.get(id)} />
             ))}
           </section>
         ) : null}
         {item.unknownPairs.length ? (
-          <p>
-            <strong>{t('matching.unknownPairs')}</strong>{' '}
-            {item.unknownPairs.map(pair => pair.join(' ↔ ')).join('; ')}
-          </p>
+          <section className="matching-unknown">
+            <strong>{t('matching.unknownPairs')}</strong>
+            <p>{t('matching.unknownPairsHint')}</p>
+            <p>{item.unknownPairs.map(pair => pair.join(' ↔ ')).join('; ')}</p>
+          </section>
         ) : null}
         <p className="muted">{t('matching.confirmHint')}</p>
         <button
@@ -134,6 +160,27 @@ export function MatchingReview({ catalog }: { catalog: CatalogSnapshot }) {
         >
           {done ? t('matching.returnPending') : t('matching.confirm')}
         </button>
+        {isMobile ? (
+          <nav className="matching-stepper" aria-label={t('matching.navigationAria')}>
+            <button type="button" onClick={() => setMobilePane('list')}>
+              {t('mobile.backToList')}
+            </button>
+            <button
+              type="button"
+              disabled={selectedIndex <= 0}
+              onClick={() => selectMobileCase(selectedIndex - 1)}
+            >
+              {t('matching.previous')}
+            </button>
+            <button
+              type="button"
+              disabled={selectedIndex < 0 || selectedIndex >= visible.length - 1}
+              onClick={() => selectMobileCase(selectedIndex + 1)}
+            >
+              {t('matching.next')}
+            </button>
+          </nav>
+        ) : null}
       </article>
     );
   };
@@ -203,7 +250,7 @@ export function MatchingReview({ catalog }: { catalog: CatalogSnapshot }) {
         screen={t('tabs.matching')}
         item={
           selectedCase && mobilePane === 'detail'
-            ? `${selectedCase.id} · ${selectedCase.split}`
+            ? `${selectedCase.id} · ${t(`matching.split.${selectedCase.split}`)}`
             : null
         }
         progress={t('mobile.casesProgressShort', {
@@ -298,7 +345,7 @@ export function MatchingReview({ catalog }: { catalog: CatalogSnapshot }) {
                   >
                     <span className="product-name">{item.id}</span>
                     <span className="product-progress">
-                      <span className="badge">{item.split}</span>
+                      <span className="badge">{t(`matching.split.${item.split}`)}</span>
                       <span className={`status ${done ? 'ready' : 'needs_review'}`}>
                         {done ? t('matching.reviewed') : t('matching.pending')}
                       </span>

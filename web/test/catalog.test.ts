@@ -22,7 +22,7 @@ import {
   mergeGeneratedReview,
 } from '../src/data/generatedReview.ts';
 import { migrateGeneratedReview } from '../../src/publication-evaluation.ts';
-import { messagesFor } from '../src/i18n/messages.ts';
+import { messagesFor, t } from '../src/i18n/messages.ts';
 import { finalizeMatchingLabels, matchingReviewProgress, restoreMatchingDraft } from '../src/data/matchingReview.ts';
 
 const en = messagesFor('en');
@@ -202,4 +202,13 @@ test('matching review progress is explicit and export requires human case confir
   assert.equal(incomplete.cases.filter((item: { status: string }) => item.status === 'human_verified').length, 19);
   const complete = finalizeMatchingLabels(matchingLabels, ids, 'Reviewer', '2026-09-12T00:00:00.000Z');
   assert.ok(complete.cases.every((item: { status: string; reviewedBy: string | null; reviewedAt: string | null }) => item.status === 'human_verified' && item.reviewedBy === 'Reviewer' && item.reviewedAt === '2026-09-12T00:00:00.000Z'));
+});
+
+test('every matching case has a complete English explanation', () => {
+  for (const item of matchingLabels.cases) {
+    const key = `matching.explanations.${item.id}`;
+    const explanation = t(en, key);
+    assert.notEqual(explanation, key);
+    assert.doesNotMatch(explanation, /[А-Яа-яЁё]/);
+  }
 });
