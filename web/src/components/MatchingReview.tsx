@@ -115,6 +115,7 @@ export function MatchingReview({ catalog }: { catalog: CatalogSnapshot }) {
         </header>
         <section className="matching-case-task" aria-label={t('matching.caseTaskTitle')}>
           <strong>{t('matching.caseTaskTitle')}</strong>
+          <p>{t('matching.caseTaskWholePartition')}</p>
           <ol>
             <li>{t('matching.caseTaskSameGroup')}</li>
             <li>{t('matching.caseTaskDifferentGroups')}</li>
@@ -123,11 +124,18 @@ export function MatchingReview({ catalog }: { catalog: CatalogSnapshot }) {
         </section>
         <p>{t(`matching.explanations.${item.id}`)}</p>
         {item.expectedGroups.map((group, index) => (
-          <section key={`${item.id}:group:${index}`}>
+          <section className="matching-proposed-group" key={`${item.id}:group:${index}`}>
+            {index > 0 ? (
+              <div className="matching-separate-marker">
+                {t('matching.separateFromPrevious')}
+              </div>
+            ) : null}
             <h4>{t('matching.group', { number: index + 1 })}</h4>
             <p className="matching-group-hint">
               {group.length === 1
-                ? t('matching.singleRowGroupHint')
+                ? index === 0 && item.expectedGroups.length === 1
+                  ? t('matching.onlySingleRowGroupHint')
+                  : t('matching.singleRowGroupHint')
                 : t('matching.multiRowGroupHint', { count: group.length })}
             </p>
             {group.map(id => (
@@ -151,14 +159,14 @@ export function MatchingReview({ catalog }: { catalog: CatalogSnapshot }) {
             <p>{item.unknownPairs.map(pair => pair.join(' ↔ ')).join('; ')}</p>
           </section>
         ) : null}
-        <p className="muted">{t('matching.confirmHint')}</p>
+        <p className="matching-final-check">{t('matching.confirmHint')}</p>
         <button
           type="button"
           className="matching-confirm"
           onClick={() => setReviewed(item.id, !done)}
           disabled={item.status === 'human_verified'}
         >
-          {done ? t('matching.returnPending') : t('matching.confirm')}
+          {done ? t('matching.returnPending') : t('matching.confirmWholeCase')}
         </button>
         {isMobile ? (
           <nav className="matching-stepper" aria-label={t('matching.navigationAria')}>
