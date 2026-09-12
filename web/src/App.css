@@ -208,9 +208,8 @@
 .audit-source-card p { min-height: 2.5rem; }
 .audit-source-card small { color: var(--muted); }
 
-.audit-answer {
-  margin-top: .15rem;
-}
+.audit-controls { display: grid; gap: 1rem; }
+.audit-answer { margin-top: .15rem; }
 .audit-answer-label {
   margin: 0 0 .4rem;
   color: var(--muted);
@@ -253,7 +252,7 @@
   background: color-mix(in srgb, var(--ink) 8%, transparent);
   font-weight: 650;
 }
-.audit-stepper { display: flex; justify-content: space-between; gap: .75rem; margin-top: 1rem; }
+.audit-stepper { display: flex; justify-content: space-between; gap: .75rem; }
 .audit-stepper button { min-height: 40px; min-width: 7.5rem; }
 .audit-finish {
   display: flex;
@@ -1602,12 +1601,16 @@ summary { cursor: pointer; }
     margin: 0 0 1rem;
   }
 
-  .matching-audit { margin-bottom: 1rem; }
+  .matching-audit {
+    margin-bottom: 1rem;
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+  }
   .audit-intro { display: grid; }
   .audit-intro h2 { font-size: 1.25rem; }
   .audit-question { padding: .8rem; }
   .audit-sources { grid-template-columns: 1fr; }
   .audit-source-card p { min-height: 0; }
+  .audit-controls { margin-top: .75rem; gap: .75rem; }
   .audit-verdicts { display: flex; width: 100%; }
   .audit-verdicts button {
     min-height: 44px;
@@ -1615,16 +1618,6 @@ summary { cursor: pointer; }
     font-size: .78rem;
     white-space: normal;
     line-height: 1.2;
-  }
-  .audit-stepper {
-    position: sticky;
-    bottom: calc(4.25rem + env(safe-area-inset-bottom, 0px));
-    z-index: 15;
-    padding: .65rem;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    background: color-mix(in srgb, var(--panel) 94%, transparent);
-    backdrop-filter: blur(8px);
   }
   .audit-stepper button { flex: 1; min-width: 0; }
   .audit-finish {

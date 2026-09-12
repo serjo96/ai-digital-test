@@ -97,41 +97,43 @@ export function MatchingAudit({ catalog }: { catalog: CatalogSnapshot }) {
           ))}
         </div>
 
-        <div className="audit-answer">
-          <p className="audit-answer-label" id={`audit-answer-${item.id}`}>
-            {t('audit.answerAria')}
-          </p>
-          <div
-            className="audit-verdicts"
-            role="group"
-            aria-labelledby={`audit-answer-${item.id}`}
-          >
-            {verdicts.map(verdict => (
-              <button
-                key={verdict}
-                type="button"
-                className={draft.answers[item.id] === verdict ? 'selected' : ''}
-                aria-pressed={draft.answers[item.id] === verdict}
-                onClick={() => choose(verdict)}
-              >
-                {t(`audit.verdict.${verdict}`)}
-              </button>
-            ))}
+        <div className="audit-controls">
+          <div className="audit-answer">
+            <p className="audit-answer-label" id={`audit-answer-${item.id}`}>
+              {t('audit.answerAria')}
+            </p>
+            <div
+              className="audit-verdicts"
+              role="group"
+              aria-labelledby={`audit-answer-${item.id}`}
+            >
+              {verdicts.map(verdict => (
+                <button
+                  key={verdict}
+                  type="button"
+                  className={draft.answers[item.id] === verdict ? 'selected' : ''}
+                  aria-pressed={draft.answers[item.id] === verdict}
+                  onClick={() => choose(verdict)}
+                >
+                  {t(`audit.verdict.${verdict}`)}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <nav className="audit-stepper" aria-label={t('audit.navigationAria')}>
-          <button type="button" disabled={index === 0} onClick={() => setIndex(index - 1)}>
-            {t('audit.previous')}
-          </button>
-          <button
-            type="button"
-            disabled={index === audit.items.length - 1}
-            onClick={() => setIndex(index + 1)}
-          >
-            {t('audit.next')}
-          </button>
-        </nav>
+          <nav className="audit-stepper" aria-label={t('audit.navigationAria')}>
+            <button type="button" disabled={index === 0} onClick={() => setIndex(index - 1)}>
+              {t('audit.previous')}
+            </button>
+            <button
+              type="button"
+              disabled={index === audit.items.length - 1}
+              onClick={() => setIndex(index + 1)}
+            >
+              {t('audit.next')}
+            </button>
+          </nav>
+        </div>
       </article>
 
       <section className="audit-finish">
