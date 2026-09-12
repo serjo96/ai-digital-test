@@ -17,13 +17,17 @@ import {
   generatedReviewProgress,
   mergeGeneratedReview,
 } from '../data/generatedReview.ts';
+import { ReviewContextBar, type ContextChip } from './ReviewContextBar.tsx';
 import { useI18n } from '../i18n/I18nProvider.tsx';
 import type { Messages } from '../i18n/messages.ts';
+import { useIsMobile } from '../hooks/useIsMobile.ts';
 
 type ReviewMode = 'listings' | 'fixtures';
 type Verdict = NonNullable<GeneratedReview['claims'][number]['humanVerdict']>;
+type MobilePane = 'list' | 'detail';
 
 const VERDICTS: Verdict[] = ['supported', 'unsupported', 'disputed'];
+const ONBOARDING_KEY = 'shelf-ready-claim-onboarding-collapsed';
 
 const reviewKey = (publicationHash: string) => `shelf-ready-review:${publicationHash}`;
 function verdictClass(verdict: string) {
@@ -178,6 +182,7 @@ function ClaimLegend({ t }: { t: (key: string) => string }) {
 
 export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
   const { t, messages } = useI18n();
+  const isMobile = useIsMobile();
   const data = catalog.claimReview!;
   const [mode, setMode] = useState<ReviewMode>('listings');
   const [query, setQuery] = useState('');
@@ -191,6 +196,14 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
   const [selectedControlled, setSelectedControlled] = useState(
     data.controlled[0]?.item.id ?? null,
   );
+  const [mobilePane, setMobilePane] = useState<MobilePane>('list');
+  const [onboardingOpen, setOnboardingOpen] = useState(() => {
+    try {
+      return localStorage.getItem(ONBOARDING_KEY) !== '1';
+    } catch {
+      return true;
+    }
+  });
   const decisionRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
@@ -216,6 +229,14 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
       JSON.stringify({ reviewer, generated }),
     );
   }, [data.generated.publicationHash, generated, reviewer, reviewDraftHydrated]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(ONBOARDING_KEY, onboardingOpen ? '0' : '1');
+    } catch {
+      /* ignore */
+    }
+  }, [onboardingOpen]);
 
   const reviews = new Map(generated.claims.map(item => [generatedClaimKey(item), item]));
   const requiredProducts = new Set(generated.sampleProductIds);
@@ -287,6 +308,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
     ? catalog.rows.filter(row => product.rowIds.includes(row.source.row_id))
     : [];
   const supplierCount = new Set(productRows.map(row => row.source.supplier)).size;
+  const inSample = product ? requiredProducts.has(product.id) : false;
 
   function selectClaim(id: string, scroll = false) {
     setSelectedClaim(id);
@@ -363,53 +385,139 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
 
   const plural = (n: number) => (n === 1 ? t('claims.pluralEmpty') : t('claims.pluralS'));
 
+  const chips: ContextChip[] = [];
+  if (query.trim()) {
+    chips.push({
+      id: 'search',
+      label: t('mobile.searchChip', { query: query.trim() }),
+      onClear: () => setQuery(''),
+    });
+  }
+  if (hideFinished) {
+    chips.push({
+      id: 'hide-finished',
+      label: t('mobile.hideFinishedChip'),
+      onClear: () => setHideFinished(false),
+    });
+  }
+  if (attentionOnly) {
+    chips.push({
+      id: 'attention',
+      label: t('mobile.attentionChip'),
+      onClear: () => setAttentionOnly(false),
+    });
+  }
+  if (inSample && mobilePane === 'detail') {
+    chips.push({ id: 'sample', label: t('mobile.sampleChip') });
+  }
+
+  const itemLabel =
+    mode === 'listings' && product && mobilePane === 'detail'
+      ? [
+          productDisplayName(product, catalog.rows),
+          activeIndex >= 0
+            ? t('mobile.phraseOf', { current: activeIndex + 1, total: claims.length })
+            : null,
+        ]
+          .filter(Boolean)
+          .join(' · ')
+      : mode === 'fixtures' && controlled
+        ? controlledKindLabel(controlled.item.kind)
+        : null;
+
+  const onboardingBody = (
+    <>
+      <div className="onboarding-copy">
+        <h2 id="review-onboarding-title">{t('claims.onboardingTitle')}</h2>
+        <p>{t('claims.onboardingBody')}</p>
+        <p className="muted">{t('claims.onboardingNoKnowledge')}</p>
+      </div>
+      <ol className="onboarding-steps">
+        <li><span>1</span><strong>{t('claims.onboardingStep1')}</strong></li>
+        <li><span>2</span><strong>{t('claims.onboardingStep2')}</strong></li>
+        <li><span>3</span><strong>{t('claims.onboardingStep3')}</strong></li>
+      </ol>
+    </>
+  );
+
   return (
-    <section className="claim-review">
-      <div className="review-toolbar">
-        <div>
-          <p className="review-mode-label">
-            {mode === 'listings' ? t('claims.modeListings') : t('claims.modeFixtures')}
-          </p>
-          {mode === 'listings' ? (
-            <div className="review-progress" role="status">
-              {t('claims.progress', {
-                completed: progress.checkedClaims,
-                total: progress.totalClaims,
-              })}
-              {' · '}{t('claims.productProgress', { completed: progress.checkedProducts, total: progress.totalProducts })}
-              {' · '}{t('claims.sampleProgress', { completed: progress.completedSampleProducts, total: progress.requiredSampleProducts })}
-            </div>
+    <section className={`claim-review${isMobile ? ' claim-review-mobile' : ''}`}>
+      {isMobile && mode === 'listings' ? (
+        <ReviewContextBar
+          screen={t('tabs.claims')}
+          item={itemLabel}
+          progress={t('mobile.sampleProgressShort', {
+            completed: progress.completedSampleProducts,
+            total: progress.requiredSampleProducts,
+          })}
+          chips={chips}
+          emptyFilterLabel={t('mobile.allProducts')}
+          selectionLabel={t('mobile.selection')}
+          onBack={
+            mobilePane === 'detail' ? () => setMobilePane('list') : undefined
+          }
+          backLabel={t('mobile.backToList')}
+        />
+      ) : null}
+
+      {!(isMobile && mobilePane === 'detail') ? (
+        <div className="review-toolbar">
+          <div>
+            <p className="review-mode-label">
+              {mode === 'listings' ? t('claims.modeListings') : t('claims.modeFixtures')}
+            </p>
+            {mode === 'listings' ? (
+              <div className="review-progress" role="status">
+                {t('claims.progress', {
+                  completed: progress.checkedClaims,
+                  total: progress.totalClaims,
+                })}
+                {' · '}{t('claims.productProgress', { completed: progress.checkedProducts, total: progress.totalProducts })}
+                {' · '}{t('claims.sampleProgress', { completed: progress.completedSampleProducts, total: progress.requiredSampleProducts })}
+              </div>
+            ) : null}
+          </div>
+          {data.controlled.length ? (
+            <button
+              type="button"
+              className="secondary-link"
+              onClick={() => {
+                setMode(mode === 'listings' ? 'fixtures' : 'listings');
+                if (isMobile) setMobilePane('list');
+              }}
+            >
+              {mode === 'listings'
+                ? t('claims.switchToFixtures', { count: data.controlled.length })
+                : t('claims.backToListings')}
+            </button>
           ) : null}
         </div>
-        {data.controlled.length ? (
-          <button
-            type="button"
-            className="secondary-link"
-            onClick={() => setMode(mode === 'listings' ? 'fixtures' : 'listings')}
-          >
-            {mode === 'listings'
-              ? t('claims.switchToFixtures', { count: data.controlled.length })
-              : t('claims.backToListings')}
-          </button>
-        ) : null}
-      </div>
+      ) : null}
 
       {mode === 'listings' ? (
         <>
-          <section className="review-onboarding" aria-labelledby="review-onboarding-title">
-            <div className="onboarding-copy">
-              <h2 id="review-onboarding-title">{t('claims.onboardingTitle')}</h2>
-              <p>{t('claims.onboardingBody')}</p>
-              <p className="muted">{t('claims.onboardingNoKnowledge')}</p>
-            </div>
-            <ol className="onboarding-steps">
-              <li><span>1</span><strong>{t('claims.onboardingStep1')}</strong></li>
-              <li><span>2</span><strong>{t('claims.onboardingStep2')}</strong></li>
-              <li><span>3</span><strong>{t('claims.onboardingStep3')}</strong></li>
-            </ol>
-          </section>
-          <div className="review-layout">
-            <aside className="review-sidebar">
+          {!(isMobile && mobilePane === 'detail') ? (
+            isMobile ? (
+              <details
+                className="review-onboarding review-onboarding-collapsible"
+                open={onboardingOpen}
+                onToggle={event => setOnboardingOpen(event.currentTarget.open)}
+              >
+                <summary>{t('claims.onboardingSummary')}</summary>
+                {onboardingBody}
+              </details>
+            ) : (
+              <section className="review-onboarding" aria-labelledby="review-onboarding-title">
+                {onboardingBody}
+              </section>
+            )
+          ) : null}
+          <div
+            className={`review-layout${isMobile ? ` layout-mobile pane-${mobilePane}` : ''}`}
+          >
+            <aside
+              className={`review-sidebar${isMobile && mobilePane !== 'list' ? ' mobile-hidden' : ''}`}
+            >
               <h3 className="sidebar-heading">{t('claims.generatedListings')}</h3>
               <label className="search">
                 <span>{t('claims.searchProducts')}</span>
@@ -458,6 +566,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                         onClick={() => {
                           setSelectedProduct(item.id);
                           setSelectedClaim(null);
+                          if (isMobile) setMobilePane('detail');
                         }}
                       >
                         <span className="product-name">
@@ -480,10 +589,12 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
               </ul>
             </aside>
 
-            <main className="review-detail">
+            <main
+              className={`review-detail${isMobile && mobilePane !== 'detail' ? ' mobile-hidden' : ''}`}
+            >
               {product && publication?.publishedText && attempt ? (
                 <>
-                  <header className="detail-header">
+                  <header className="detail-header sticky-detail-header">
                     <div>
                       <h2>{productDisplayName(product, catalog.rows)}</h2>
                       <p className="muted">
@@ -497,7 +608,12 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                         })}
                       </p>
                     </div>
-                    <span className="badge badge-ready">{t('claims.generatedBadge')}</span>
+                    <div className="detail-header-badges">
+                      {inSample ? (
+                        <span className="badge">{t('claims.sampleBadge')}</span>
+                      ) : null}
+                      <span className="badge badge-ready">{t('claims.generatedBadge')}</span>
+                    </div>
                   </header>
 
                   <div className="reading-zone">
@@ -523,7 +639,10 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                     </details>
                   </div>
 
-                  <div className="claim-nav" aria-label={t('claims.statementsAria')}>
+                  <div
+                    className={`claim-nav${isMobile ? ' claim-nav-chips' : ''}`}
+                    aria-label={t('claims.statementsAria')}
+                  >
                     {claims.map((claim, index) => {
                       const human = reviews.get(
                         `${product.id}:${attempt.attempt}:${claim.id}`,
@@ -537,14 +656,26 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                           className={`claim-nav-item${activeClaim?.id === claim.id ? ' selected' : ''}${checked ? ' checked' : ''}`}
                           onClick={() => selectClaim(claim.id, true)}
                         >
-                          <span className="claim-nav-index">
-                            {index + 1}/{claims.length}
-                          </span>
-                          <span className="claim-nav-excerpt">{claim.text}</span>
-                          <span
-                            className={`progress-dot${attention ? ' attention' : checked ? ' done' : ''}`}
-                            aria-hidden="true"
-                          />
+                          {isMobile ? (
+                            <>
+                              <span className="claim-nav-index">{index + 1}</span>
+                              <span
+                                className={`progress-dot${attention ? ' attention' : checked ? ' done' : ''}`}
+                                aria-hidden="true"
+                              />
+                            </>
+                          ) : (
+                            <>
+                              <span className="claim-nav-index">
+                                {index + 1}/{claims.length}
+                              </span>
+                              <span className="claim-nav-excerpt">{claim.text}</span>
+                              <span
+                                className={`progress-dot${attention ? ' attention' : checked ? ' done' : ''}`}
+                                aria-hidden="true"
+                              />
+                            </>
+                          )}
                         </button>
                       );
                     })}
@@ -694,7 +825,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                                   <button type="button" disabled={!human.humanVerdict || !human.rationale.trim()} onClick={() => markReviewed(activeClaim.id)}>{t('claims.markReviewed')}</button>
                                 )}
                               </div>
-                              <div className="claim-stepper">
+                              <div className={`claim-stepper${isMobile ? ' claim-stepper-sticky' : ''}`}>
                                 <button
                                   type="button"
                                   disabled={activeIndex <= 0}
@@ -730,7 +861,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
             </main>
           </div>
 
-          <div className="review-finish">
+          <div className={`review-finish${isMobile && mobilePane === 'detail' ? ' mobile-hidden' : ''}`}>
             <h3>{t('claims.finish')}</h3>
             <p className="muted" role="status">
               {t('claims.progress', {
@@ -755,8 +886,12 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
           </div>
         </>
       ) : (
-        <div className="review-layout">
-          <aside className="review-sidebar">
+        <div
+          className={`review-layout${isMobile ? ` layout-mobile pane-${mobilePane}` : ''}`}
+        >
+          <aside
+            className={`review-sidebar${isMobile && mobilePane !== 'list' ? ' mobile-hidden' : ''}`}
+          >
             <h3 className="sidebar-heading">{t('claims.fixturesHeading')}</h3>
             <ul className="product-list">
               {data.controlled.map(entry => (
@@ -768,7 +903,10 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                         ? 'product-item selected'
                         : 'product-item'
                     }
-                    onClick={() => setSelectedControlled(entry.item.id)}
+                    onClick={() => {
+                      setSelectedControlled(entry.item.id);
+                      if (isMobile) setMobilePane('detail');
+                    }}
                   >
                     <span className="product-name">
                       {controlledKindLabel(entry.item.kind)}
@@ -786,7 +924,18 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
               ))}
             </ul>
           </aside>
-          <main className="review-detail">
+          <main
+            className={`review-detail${isMobile && mobilePane !== 'detail' ? ' mobile-hidden' : ''}`}
+          >
+            {isMobile && mobilePane === 'detail' ? (
+              <button
+                type="button"
+                className="back-to-list"
+                onClick={() => setMobilePane('list')}
+              >
+                {t('mobile.backToList')}
+              </button>
+            ) : null}
             {controlled ? (
               <>
                 <aside className="verification-scope fixture-scope" role="note">

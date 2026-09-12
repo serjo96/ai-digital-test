@@ -1,9 +1,11 @@
 import type { CatalogSnapshot } from '../data/catalog.ts';
 import { productStatus } from '../data/catalog.ts';
 import { useI18n } from '../i18n/I18nProvider.tsx';
+import { useIsMobile } from '../hooks/useIsMobile.ts';
 
 export function RunOverview({ catalog }: { catalog: CatalogSnapshot }) {
   const { t } = useI18n();
+  const isMobile = useIsMobile();
   const reviewProducts = catalog.products.filter(
     product => productStatus(product, catalog.listings[product.id]) === 'needs_review',
   ).length;
@@ -15,6 +17,10 @@ export function RunOverview({ catalog }: { catalog: CatalogSnapshot }) {
     rows: catalog.rows.length,
     rules,
   });
+  const summaryShort = t('runOverview.summaryShort', {
+    products: catalog.products.length,
+    review: reviewProducts,
+  });
   const claimPart = catalog.claimReview
     ? t('runOverview.claimReviewAvailable', {
         count: catalog.claimReview.generated.claims.length,
@@ -25,11 +31,8 @@ export function RunOverview({ catalog }: { catalog: CatalogSnapshot }) {
     .map(outcome => `${outcome}: ${catalog.rows.filter(row => row.outcome === outcome).length}`)
     .join(' · ');
 
-  return (
-    <section className="run-overview" aria-label={t('runOverview.aria')}>
-      <p className="run-summary">
-        <strong>{summary}</strong>
-      </p>
+  const details = (
+    <>
       <details>
         <summary>{t('runOverview.metadataSummary')}</summary>
         <p>
@@ -93,6 +96,32 @@ export function RunOverview({ catalog }: { catalog: CatalogSnapshot }) {
             </div>
           ))}
       </details>
+    </>
+  );
+
+  if (isMobile) {
+    return (
+      <section className="run-overview run-overview-compact" aria-label={t('runOverview.aria')}>
+        <details>
+          <summary>
+            <strong>{summaryShort}</strong>
+            <span className="muted run-overview-expand-hint">{t('runOverview.expandDetails')}</span>
+          </summary>
+          <p className="run-summary">
+            <strong>{summary}</strong>
+          </p>
+          {details}
+        </details>
+      </section>
+    );
+  }
+
+  return (
+    <section className="run-overview" aria-label={t('runOverview.aria')}>
+      <p className="run-summary">
+        <strong>{summary}</strong>
+      </p>
+      {details}
     </section>
   );
 }
