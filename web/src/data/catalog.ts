@@ -8,7 +8,7 @@ import type {
 } from '../../../src/domain.ts';
 import type { CatalogProvenance } from '../../../src/catalog-snapshot.ts';
 import type { ClaimSuite, GeneratedReview } from '../../../src/publication-evaluation.ts';
-import type { Labels, NormalizedRow } from '../../../src/types.ts';
+import type { Labels, MatchingAudit, NormalizedRow } from '../../../src/types.ts';
 import type { Messages } from '../i18n/messages.ts';
 
 export type CatalogSource = 'demo' | 'pipeline';
@@ -48,6 +48,7 @@ export interface CatalogSnapshot {
   listings: Record<string, ListingView>;
   claimReview?: ClaimReviewData;
   matchingReview?: Labels;
+  matchingAudit?: MatchingAudit;
 }
 
 export function productDisplayName(product: CanonicalProduct, rows: NormalizedRow[]): string {

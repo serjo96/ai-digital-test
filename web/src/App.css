@@ -154,6 +154,150 @@
 .matching-unknown { padding: .7rem; border: 1px solid var(--border); border-radius: 8px; }
 .matching-unknown p { margin: .35rem 0 0; }
 
+.matching-audit {
+  width: min(980px, 100%);
+  margin: 0 auto 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.audit-intro,
+.audit-question {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--panel);
+  padding: 1rem;
+}
+
+.audit-intro,
+.audit-question > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1rem;
+}
+
+.audit-intro h2,
+.audit-question h3 { margin: 0; }
+.audit-intro p:last-child { margin-bottom: 0; }
+.audit-question > h4 { font-size: 1.1rem; margin-bottom: .4rem; }
+.audit-rule { margin-top: 0; color: var(--muted); }
+
+.audit-sources {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .75rem;
+  margin: 1rem 0;
+}
+.audit-sources.single { grid-template-columns: 1fr; }
+.audit-source-card {
+  margin: 0;
+  padding: .9rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+}
+.audit-source-label {
+  display: inline-block;
+  color: var(--accent);
+  font-size: .8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.audit-source-card h5 { margin: .45rem 0; font-size: 1rem; }
+.audit-source-card p { min-height: 2.5rem; }
+.audit-source-card small { color: var(--muted); }
+
+.audit-answer {
+  margin-top: .15rem;
+}
+.audit-answer-label {
+  margin: 0 0 .4rem;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+.audit-verdicts {
+  display: flex;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg);
+}
+.audit-verdicts button {
+  flex: 1 1 0;
+  min-height: 40px;
+  min-width: 0;
+  border: 0;
+  border-radius: 0;
+  padding: .4rem .65rem;
+  background: transparent;
+  color: var(--muted);
+  font-size: .85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.audit-verdicts button + button {
+  border-left: 1px solid var(--border);
+}
+.audit-verdicts button:hover {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 5%, transparent);
+}
+.audit-verdicts button.selected {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 8%, transparent);
+  font-weight: 650;
+}
+.audit-stepper { display: flex; justify-content: space-between; gap: .75rem; margin-top: 1rem; }
+.audit-stepper button { min-height: 40px; min-width: 7.5rem; }
+.audit-finish {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: .65rem 1rem;
+  padding: .35rem .15rem 0;
+  border-top: 1px solid var(--border);
+}
+.audit-finish label {
+  display: grid;
+  gap: .2rem;
+  color: var(--muted);
+  font-size: .8rem;
+  font-weight: 500;
+}
+.audit-finish input {
+  min-width: min(16rem, 100%);
+  padding: .4rem .55rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: .9rem;
+}
+.audit-download {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: .85rem;
+  padding: .35rem 0;
+  cursor: pointer;
+  text-underline-offset: .18em;
+}
+.audit-download:enabled {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.audit-download:disabled {
+  cursor: not-allowed;
+  opacity: .55;
+}
+
 .sidebar,
 .detail {
   background: var(--panel);
@@ -516,7 +660,8 @@ summary { cursor: pointer; }
 .view-tabs button,
 .mode-tabs button,
 .review-finish button,
-.claim-stepper button {
+.claim-stepper button,
+.audit-stepper button {
   border: 1px solid var(--border);
   border-radius: 7px;
   padding: .5rem .8rem;
@@ -1456,6 +1601,38 @@ summary { cursor: pointer; }
     width: 100%;
     margin: 0 0 1rem;
   }
+
+  .matching-audit { margin-bottom: 1rem; }
+  .audit-intro { display: grid; }
+  .audit-intro h2 { font-size: 1.25rem; }
+  .audit-question { padding: .8rem; }
+  .audit-sources { grid-template-columns: 1fr; }
+  .audit-source-card p { min-height: 0; }
+  .audit-verdicts { display: flex; width: 100%; }
+  .audit-verdicts button {
+    min-height: 44px;
+    padding: .4rem .35rem;
+    font-size: .78rem;
+    white-space: normal;
+    line-height: 1.2;
+  }
+  .audit-stepper {
+    position: sticky;
+    bottom: calc(4.25rem + env(safe-area-inset-bottom, 0px));
+    z-index: 15;
+    padding: .65rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--panel) 94%, transparent);
+    backdrop-filter: blur(8px);
+  }
+  .audit-stepper button { flex: 1; min-width: 0; }
+  .audit-finish {
+    display: grid;
+    padding-top: .75rem;
+  }
+  .audit-finish input { min-width: 0; width: 100%; }
+  .audit-download { justify-self: start; }
 
   .matching-case-list {
     border: 1px solid var(--border);

@@ -24,6 +24,7 @@ import {
 import { migrateGeneratedReview } from '../../src/publication-evaluation.ts';
 import { messagesFor, t } from '../src/i18n/messages.ts';
 import { finalizeMatchingLabels, matchingReviewProgress, restoreMatchingDraft } from '../src/data/matchingReview.ts';
+import { finalizeMatchingAudit, restoreMatchingAuditDraft } from '../src/data/matchingAudit.ts';
 
 const en = messagesFor('en');
 const ru = messagesFor('ru');
@@ -34,6 +35,7 @@ const legacyGenerated = JSON.parse(readFileSync('reports/B3-openai-development-l
 const generated = migrateGeneratedReview(legacyGenerated);
 const canonicalGenerated = JSON.parse(readFileSync('eval/generated-review-e478435a3d39.json', 'utf8'));
 const matchingLabels = JSON.parse(readFileSync('eval/labels.json', 'utf8'));
+const matchingAudit = JSON.parse(readFileSync('eval/matching-audit.json', 'utf8'));
 
 test('real projection preserves evidence and never presents B1 facts as verified listings', () => {
   const catalog = projectProductResult(result);
@@ -70,6 +72,14 @@ test('loader defaults to prepared snapshot and fails visibly instead of substitu
   await assert.rejects(loadCatalog('/broken'), /Invalid catalog/);
   fetch.mock.mockImplementation(async () => new Response('not json'));
   await assert.rejects(loadCatalog('/invalid'), /Cannot load catalog/);
+});
+
+test('loader exposes the compact audit from the prepared holdout bundle', async context => {
+  const prepared = readFileSync('web/public/data/catalog.json', 'utf8');
+  context.mock.method(globalThis, 'fetch', async () => new Response(prepared));
+  const catalog = await loadCatalog('/prepared.json');
+  assert.equal(catalog.matchingAudit?.items.length, 20);
+  assert.equal(catalog.matchingAudit?.status, 'provisional');
 });
 
 test('empty saved result stays empty and synthetic conflict stays explicitly demo-only', () => {
@@ -211,4 +221,18 @@ test('every matching case has a complete English explanation', () => {
     assert.notEqual(explanation, key);
     assert.doesNotMatch(explanation, /[А-Яа-яЁё]/);
   }
+});
+
+test('compact matching audit keeps answers local and exports only a complete human review', () => {
+  const empty = restoreMatchingAuditDraft(null, matchingAudit, 'decisions');
+  assert.deepEqual(empty.answers, {});
+  const verdicts = Object.fromEntries(matchingAudit.items.map((item: { id: string; kind: string }) => [
+    item.id, item.kind === 'pair' ? 'same_product' : 'non_product',
+  ]));
+  const complete = { ...empty, reviewer: 'Reviewer', answers: verdicts };
+  const output = finalizeMatchingAudit(matchingAudit, complete, '2026-09-13T00:00:00.000Z');
+  assert.equal(output.status, 'human_verified');
+  assert.equal(output.items.filter((item: { state: string }) => item.state === 'reviewed').length, 20);
+  const stale = restoreMatchingAuditDraft({ ...complete, decisionsHash: 'old' }, matchingAudit, 'decisions');
+  assert.deepEqual(stale.answers, {});
 });

@@ -9,8 +9,7 @@ import { loadCatalog } from './data/loadCatalog.ts';
 import { ProductDetail } from './components/ProductDetail.tsx';
 import { ProductList } from './components/ProductList.tsx';
 import { RunOverview } from './components/RunOverview.tsx';
-import { ClaimReview } from './components/ClaimReview.tsx';
-import { MatchingReview } from './components/MatchingReview.tsx';
+import { MatchingAudit } from './components/MatchingAudit.tsx';
 import { ReviewContextBar, type ContextChip } from './components/ReviewContextBar.tsx';
 import { useI18n } from './i18n/I18nProvider.tsx';
 import { LanguageSwitcher } from './i18n/LanguageSwitcher.tsx';
@@ -22,7 +21,7 @@ type LoadState =
   | { status: 'error'; message: string }
   | { status: 'ready'; catalog: CatalogSnapshot };
 
-type AppView = 'catalog' | 'claims' | 'matching';
+type AppView = 'catalog' | 'review';
 type MobilePane = 'list' | 'detail';
 
 function AppHeader({
@@ -63,7 +62,7 @@ function ViewTabs({
   mobile: boolean;
 }) {
   const { t } = useI18n();
-  if (!catalog.claimReview && !catalog.matchingReview) return null;
+  if (!catalog.matchingAudit) return null;
 
   const tabs: { id: AppView; label: string; show: boolean }[] = [
     {
@@ -71,16 +70,7 @@ function ViewTabs({
       label: mobile ? t('tabs.shortCatalog') : t('tabs.catalog'),
       show: true,
     },
-    {
-      id: 'claims',
-      label: mobile ? t('tabs.shortClaims') : t('tabs.claims'),
-      show: Boolean(catalog.claimReview),
-    },
-    {
-      id: 'matching',
-      label: mobile ? t('tabs.shortMatching') : t('tabs.matching'),
-      show: Boolean(catalog.matchingReview),
-    },
+    { id: 'review', label: t('tabs.review'), show: true },
   ];
 
   return (
@@ -209,9 +199,7 @@ export default function App() {
   const screenLabel =
     view === 'catalog'
       ? t('tabs.catalog')
-      : view === 'claims'
-        ? t('tabs.claims')
-        : t('tabs.matching');
+      : t('tabs.review');
 
   const catalogChips: ContextChip[] = [];
   if (query.trim()) {
@@ -267,10 +255,8 @@ export default function App() {
         />
       ) : null}
 
-      {view === 'matching' && catalog.matchingReview ? (
-        <MatchingReview catalog={catalog} />
-      ) : view === 'claims' && catalog.claimReview ? (
-        <ClaimReview catalog={catalog} />
+      {view === 'review' && catalog.matchingAudit ? (
+        <MatchingAudit catalog={catalog} />
       ) : (
         <div
           className={`layout${isMobile ? ` layout-mobile pane-${mobilePane}` : ''}`}

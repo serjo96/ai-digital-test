@@ -2,6 +2,7 @@ import { isPublicationResult, type CanonicalProduct, type ProductResult, type Re
 import { parseCatalogPayload, type CatalogProvenance } from '../../../src/catalog-snapshot.ts';
 import { ClaimSuiteSchema, migrateGeneratedReview } from '../../../src/publication-evaluation.ts';
 import { validateLabels } from '../../../src/evaluation.ts';
+import { validateMatchingAudit } from '../../../src/matching-audit.ts';
 import type { CatalogSnapshot, ClaimReviewData, ListingView, ReviewClaim } from './catalog.ts';
 
 function parseReviewResult(input: unknown): { textHash: string; claims: Omit<ReviewClaim, 'id'>[] } {
@@ -66,6 +67,9 @@ export async function loadCatalog(url = import.meta.env?.VITE_CATALOG_URL?.trim(
     const payload = await response.json() as Record<string, unknown>;
     const { result, provenance } = parseCatalogPayload(payload);
     const matchingReview = payload.labels ? validateLabels(payload.labels, result.rows.map(row => row.source)) : undefined;
+    const matchingAudit = payload.matchingAudit && typeof payload.matchingLabelsHash === 'string'
+      ? validateMatchingAudit(payload.matchingAudit, result.rows.map(row => row.source), payload.matchingLabelsHash)
+      : undefined;
     let claimReview: ClaimReviewData | undefined;
     if (payload.review && typeof payload.review === 'object' && !Array.isArray(payload.review) && 'generated' in payload.review) {
       const review = payload.review as Record<string, unknown>;
@@ -80,7 +84,11 @@ export async function loadCatalog(url = import.meta.env?.VITE_CATALOG_URL?.trim(
       claimReview = { generated, controlled };
     }
     const catalog = projectProductResult(result, provenance, claimReview);
-    return { ...catalog, ...(matchingReview ? { matchingReview } : {}) };
+    return {
+      ...catalog,
+      ...(matchingReview ? { matchingReview } : {}),
+      ...(matchingAudit ? { matchingAudit } : {}),
+    };
   } catch (error) {
     throw new Error(`Cannot load catalog from ${url}: ${error instanceof Error ? error.message : String(error)}. Prepare a saved B1 or B3 run with npm run web:prepare -- --run-dir <run-directory>`);
   }

@@ -1,8 +1,8 @@
 # Разметка для человеческой проверки — этап 1
 
-Все 20 случаев — AI-assisted provisional, не hand-labelled ground truth. 14 development / 6 holdout. Группы — явные черновые решения после просмотра заголовков и specs; это не экспорт предсказаний pipeline.
+Все 20 семейных случаев ниже — AI-assisted provisional, не hand-labelled ground truth. Они охватывают 108 строк и 70 групп, поэтому больше не являются обязательным мобильным human gate. Группы сохранены как расширенный диагностический набор и исторический источник provisional matching-метрик.
 
-Предпочтительный порядок проверки: подготовить UI из актуального full-input/holdout replay (`npm run web:prepare -- --run-dir reports/B3-openai-full-input-atomic-v2-holdout-replay`), открыть вкладку **Check product matching**, сверить каждую строку и полноту семейства и подтвердить все 20 случаев. Экспорт станет доступен только после заполнения reviewer. Если решение неверно, не подтверждать его: записать case ID и исправить expectedGroups/nonProductRowIds/unknownPairs в новой версии labels. Разные группы и разные случаи означают известное различие, кроме явно указанных unknownPairs; при неизвестной связи не ставить отрицательную метку.
+Для финального требования PDF «hand-label about 20 items» используется отдельный [matching-audit.json](matching-audit.json): 20 атомарных вопросов (14 development / 6 holdout), на каждом экране только одна пара либо одна проверяемая строка и три ответа. Подготовить UI командой `npm run web:prepare -- --run-dir reports/B3-openai-full-input-atomic-v2-holdout-replay`, открыть **Review**, ответить 20/20, заполнить reviewer и экспортировать `matching-audit-human-verified.json`. Предварительный ответ пользователю не показывается. Этот экспорт подтверждает только 20 решений, а не все семейные labels.
 
 Первый holdout replay уже выполнен 2026-09-12 и тем самым раскрыт. Не использовать его для настройки правил или prompts; если человеческая проверка выявит ошибку в labels, исправление и повторный результат явно считать post-holdout development. После правки меток создать новую версию и новые отчёты; B0 не перезаписывать.
 

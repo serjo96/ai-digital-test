@@ -5,6 +5,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { validateProductResult, parseCatalogPayload } from '../src/catalog-snapshot.js';
 import { prepareWeb } from '../src/prepare-web.js';
+import { validateMatchingAudit } from '../src/matching-audit.js';
 
 const saved = JSON.parse(await readFile('reports/B1-stage3-control-v2/result.json', 'utf8'));
 
@@ -43,6 +44,8 @@ test('web preparation pairs report with exact decisions, omits private config, a
     assert.equal(parsed.provenance?.mode, 'code-only');
     assert.equal(parsed.provenance?.qualityStatus, 'provisional');
     assert.equal(payload.labels.cases.length, 20);
+    assert.equal(payload.matchingAudit.items.length, 20);
+    assert.equal(payload.matchingAudit.items.every((item: { state: string }) => item.state === 'pending'), true);
     assert.equal('config' in payload.provenance, false);
     await writeFile(join(directory, 'result.json'), JSON.stringify(saved));
     const report = JSON.parse(await readFile('reports/B1-stage3-control-v2/report.json', 'utf8'));
@@ -54,4 +57,14 @@ test('web preparation pairs report with exact decisions, omits private config, a
     await assert.rejects(prepareWeb(directory, output), /pre-generation/);
     assert.equal(await readFile(file, 'utf8'), text);
   } finally { await rm(directory, { recursive: true, force: true }); }
+});
+
+test('compact matching audit validates stable rows, verdict state, and labels hash', async () => {
+  const audit = JSON.parse(await readFile('eval/matching-audit.json', 'utf8'));
+  const source = saved.rows.map((row: any) => row.source);
+  assert.equal(validateMatchingAudit(audit, source, audit.labelsHash).items.length, 20);
+  assert.throws(() => validateMatchingAudit({ ...audit, labelsHash: 'wrong' }, source, audit.labelsHash), /envelope/);
+  const invalid = structuredClone(audit);
+  invalid.items[0].humanVerdict = 'same_product';
+  assert.throws(() => validateMatchingAudit(invalid, source, audit.labelsHash), /pending.*verdict/);
 });

@@ -57,6 +57,32 @@ export interface Labels {
   cases: EvalCase[];
 }
 
+export type MatchingAuditVerdict =
+  | 'same_product'
+  | 'different_product'
+  | 'product'
+  | 'non_product'
+  | 'unknown';
+
+export interface MatchingAuditItem {
+  id: string;
+  family: string;
+  split: 'development' | 'holdout';
+  kind: 'pair' | 'row';
+  rowIds: string[];
+  state: 'pending' | 'reviewed';
+  humanVerdict: MatchingAuditVerdict | null;
+}
+
+export interface MatchingAudit {
+  version: 'stage5-matching-audit-v1';
+  labelsHash: string;
+  status: 'provisional' | 'human_verified';
+  reviewedBy: string | null;
+  reviewedAt: string | null;
+  items: MatchingAuditItem[];
+}
+
 export interface Ratio {
   numerator: number;
   denominator: number;

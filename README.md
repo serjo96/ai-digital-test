@@ -26,7 +26,7 @@ npm run web:prepare -- --run-dir reports/B3-openai-full-input-atomic-v2-holdout-
 npm run web
 ```
 
-Сборка: `npm run web:build`. [Полная инструкция и URL override](web/README.md). В B3 вкладка **Check listing text** проверяет точность пересказа supplied feed. Вкладка **Check product matching** показывает все 20 matching cases, исходные строки, ожидаемые группы, non-products и unknown-пары; после личной проверки каждого случая и заполнения reviewer она экспортирует `labels-human-verified.json`. Черновик хранится в `localStorage` с привязкой к версии и `decisionsHash`; экран не вызывает модели и не меняет исходный run. Для B1 текст по-прежнему недоступен с причиной `generation_not_run`.
+Сборка: `npm run web:build`. [Полная инструкция и URL override](web/README.md). Финальный B3 UI оставляет две пользовательские вкладки: **Catalog** и **Review**. Review показывает 20 независимых matching-вопросов, по одному на экран, с ответами same product / different products / not enough information (для одиночной строки — product / non-product / unknown). После всех ответов и reviewer он экспортирует `matching-audit-human-verified.json`. Завершённая проверка listing text и controlled verifier остаётся в сохранённых артефактах и автоматических тестах, но не требует новой ручной вкладки. Черновик хранится в `localStorage` с привязкой к версии и `decisionsHash`; экран не вызывает модели и не меняет исходный run.
 
 `pipeline` и `eval` выполняют одинаковый полный pipeline с development-оценкой. По умолчанию выбран B1; каждый запуск создаёт новый каталог в игнорируемом `reports/local/`. Чтобы результаты оставались частью репозитория для будущих графиков, использовать `--out reports`:
 
@@ -169,7 +169,7 @@ OpenAI-профили `config/ai.json`, `config/ai.matching-sol.json`, `config/a
 
 ## Этап 5: локальный экран B1 и B3 claim review
 
-Техническая часть P0.3 выполнена: B1/B3 каталог, claim review, matching-review UI, full-input и первый provisional holdout replay сохранены. До полного закрытия MVP остаются human-verified matching labels и clean-clone финал. [Отчёт и соответствие PDF](docs/STAGE5_REPORT.md), [краткий WRITEUP](WRITEUP.md).
+Техническая часть P0.3 выполнена: B1/B3 каталог, завершённый claim review, компактный matching audit, full-input и первый provisional holdout replay сохранены. До полного закрытия MVP остаются 20 атомарных human matching-ответов и clean-clone финал. Расширенные labels на 108 строк остаются честно provisional. [Отчёт и соответствие PDF](docs/STAGE5_REPORT.md), [краткий WRITEUP](WRITEUP.md).
 
 Из чистого каталога, Node 24.14.1 (см. `.nvmrc`), без `.env` и ключа:
 
