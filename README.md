@@ -1,6 +1,6 @@
 # Shelf Ready — B1 product baseline и B3 publication development
 
-Локальный pipeline: JSON → валидация → предложения → явные факты и evidence → кандидаты и совместимые товары → категории, согласование и review → генерация → атомарные claims → независимая проверка → development eval и сохранённые метрики. Принятый product baseline — **B1-v2**; B3 publication реализован поверх него и не использует B2. Human-verified development gate P0.2 пройден и воспроизводится offline; full-input B3 выполнен и подготовлен для UI. Экран результатов поддерживает B1-каталог и отдельный режим проверки сохранённого B3.
+Локальный pipeline: JSON → валидация → предложения → явные факты и evidence → кандидаты и совместимые товары → категории, согласование и review → генерация → атомарные claims → независимая проверка → development/holdout eval и сохранённые метрики. Принятый product baseline — **B1-v2**; B3 publication реализован поверх него и не использует B2. Human-verified development gate P0.2 пройден и воспроизводится offline; full-input B3 и первый provisional holdout replay сохранены. Экран результатов поддерживает каталог, проверку B3-текста и отдельную human-проверку matching labels.
 
 Стек: TypeScript 5.9, NestJS 12 standalone context, Node 24.14.1, npm; UI — Vite + React в `web/`. HTTP API, БД и deployment не нужны.
 
@@ -22,11 +22,11 @@ npm run eval
 
 ```sh
 npm --prefix web ci
-npm run web:prepare -- --run-dir reports/B3-openai-development-verifier-only-v2-human-gate-replay --generated-checks eval/generated-review-fdca0138d88f.json
+npm run web:prepare -- --run-dir reports/B3-openai-full-input-atomic-v2-holdout-replay
 npm run web
 ```
 
-Сборка: `npm run web:build`. [Полная инструкция и URL override](web/README.md). В B3 вкладка **Check listing text** проверяет только точность пересказа supplied feed: рядом показаны generated wording и supplier statement, а отсутствие внешнего authoritative source отмечено явно. Отдельный экран verifier test cases объясняет 12 QA-примеров. Разметка хранится локально в браузере и экспортируется в JSON; экран не вызывает модели и не меняет исходный run. Для B1 текст по-прежнему недоступен с причиной `generation_not_run`.
+Сборка: `npm run web:build`. [Полная инструкция и URL override](web/README.md). В B3 вкладка **Check listing text** проверяет точность пересказа supplied feed. Вкладка **Check product matching** показывает все 20 matching cases, исходные строки, ожидаемые группы, non-products и unknown-пары; после личной проверки каждого случая и заполнения reviewer она экспортирует `labels-human-verified.json`. Черновик хранится в `localStorage` с привязкой к версии и `decisionsHash`; экран не вызывает модели и не меняет исходный run. Для B1 текст по-прежнему недоступен с причиной `generation_not_run`.
 
 `pipeline` и `eval` выполняют одинаковый полный pipeline с development-оценкой. По умолчанию выбран B1; каждый запуск создаёт новый каталог в игнорируемом `reports/local/`. Чтобы результаты оставались частью репозитория для будущих графиков, использовать `--out reports`:
 
@@ -42,7 +42,7 @@ npm run benchmark -- --runs reports/B0,reports/my-b1,reports/my-b1-repeat --out 
 
 Пути задаются `--feed`, `--taxonomy`, `--labels`, `--checks`, `--out`. CLI имеет приоритет над значениями из `.env` / `FEED_PATH`, `TAXONOMY_PATH`, `LABELS_PATH`, `REPORTS_DIR`, затем стандартными файлами. Для `--checks` переменной окружения нет; по умолчанию `eval/stage2-checks.json`. Пример переменных — `.env.example`; файлы `.env` и `.env.{NODE_ENV}` читаются при старте, секреты в Git не входят. Для B0/B1 API-ключ не нужен.
 
-Development-проверки привязаны к хэшу конкретного feed и строкам development labels. Для другого feed передавать соответствующие labels/checks, а не применять готовые метки к новым данным. B0 не использует stage2-checks. Holdout не оценивается; команды оценки holdout пока нет.
+Проверки привязаны к хэшу конкретного feed и строкам выбранного split. Для другого feed передавать соответствующие labels/checks, а не применять готовые метки к новым данным. B0 не использует stage2-checks. `--split development|holdout` задаёт evaluation split; holdout для B3 разрешён только в replay/full_input, поэтому эта команда не может случайно сделать live API-вызовы.
 
 
 ## Решения и контракты
@@ -81,7 +81,7 @@ ID строятся детерминированно; перестановка �
 
 Успешный запуск содержит `result.json`, `diagnostics.json`, `metrics.json`, `report.md`, `report.json`. Последний записывается как маркер успешного выполнения. Невалидный вход создаёт `failure.json`, возвращает exit code 1 и не создаёт успешного отчёта; при ошибке записи могут остаться частичные файлы. Успех выполнения не означает качество ground truth или готовность публикации.
 
-Matching labels: 20 provisional случаев, 14 development на 59 строках / 6 holdout на 49. Unknown-пары исключаются; присоединение неразмеченных строк отмечается unevaluated; межслучайные ложные объединения учитываются. `eval/stage2-checks.json` отдельно фиксирует 18 проверок категорий, 30 фактов/отсутствия фактов и 4 согласования. Это целевые проверки, не исчерпывающая оценка всех 545 фактов. Человеческая проверка обоих наборов открыта. Исходный `eval/REVIEW.md` сохранён как исторический пакет; поправка про schwarz описана в отчёте этапа 2.
+Matching labels: 20 provisional случаев, 14 development на 59 строках / 6 holdout на 49. Unknown-пары исключаются; присоединение неразмеченных строк отмечается unevaluated; межслучайные ложные объединения учитываются. `eval/stage2-checks.json` отдельно фиксирует 18 проверок категорий, 30 фактов/отсутствия фактов и 4 согласования. Это целевые проверки, не исчерпывающая оценка всех 545 фактов. Human-проверка matching labels остаётся открыта и выполняется во вкладке UI; исходный `eval/REVIEW.md` сохранён как текстовый пакет.
 
 `compare` читает schema 1–4, проверяет целостность решений и совпадение feed/taxonomy/labels/split. Для schema 4 отдельно сравнивается `publicationHash`; B1→B3 требует неизменных matching, offers, facts, review и row outcomes. Неизвестная схема отклоняется. Разные входы/метки → несопоставимость, дельты N/A и exit code 1. Рост известных FP, нарушение учёта или провал quality checks также дают ненулевой код; сравнение сохраняется. Для исторического B0 полноценный review — N/A, а не прежний ноль другого показателя.
 
@@ -120,6 +120,15 @@ P0.2 перевёл verifier на `publication_verification_v2`: prompt треб
 Актуальный development gate: [verifier-only live](reports/B3-openai-development-verifier-only-v2-live/report.md), [human-gate replay](reports/B3-openai-development-verifier-only-v2-human-gate-replay/report.md) и [сравнение](reports/comparisons/B3-openai-development-verifier-only-v2-live-to-human-gate-replay/comparison.md). Human-verified controlled gate: 4/4 unsupported, false block 0/7, disputed leakage 0/1, errors 0. Generated review: 76/99 claims, 28/37 products, sample 20/20, factual errors 0, non-atomic 0, unclear-copy 2. Результат: 37/39 ready, 2 identity review. Исторические v1 live/replay и review сохранены без перезаписи.
 
 Full-input выполнен после отдельного разрешения: [live](reports/B3-openai-full-input-atomic-v2-live/report.md) сделал 322 calls, 526449 tokens, $8.110955 и получил 154/156 ready, 2 identity review, 0 withheld. Один первый verifier response содержал повреждённый support ID; fail-closed validation его отклонила, а единственный разрешённый repair завершился успешно. Live-report исторически имеет `partial` из-за исправленного затем учёта восстановленных ошибок. [Offline replay](reports/B3-openai-full-input-atomic-v2-replay/report.md) имеет `success`, 0 calls и тот же `publicationHash`; [сравнение](reports/comparisons/B3-openai-full-input-atomic-v2-live-to-replay/comparison.md) не содержит изменений или нарушений. Среди 390 опубликованных claims запрещённых atomicity-паттернов нет.
+
+Первый holdout выполнен после отдельного разрешения строго offline из full-input cache:
+
+```sh
+npm run build
+node dist/src/cli.js pipeline --baseline b3 --split holdout --ai-mode replay --ai-cache reports/B3-openai-full-input-atomic-v2-cache --ai-config config/stage4.openai.json --ai-cohort full_input --claim-checks eval/stage4-claims.json --stage4-gate reports/B3-openai-development-verifier-only-v2-human-gate-replay --out reports --run-id B3-openai-full-input-atomic-v2-holdout-replay
+```
+
+[Holdout report](reports/B3-openai-full-input-atomic-v2-holdout-replay/report.md): 6 cases / 49 rows, TP/FP/FN 22/0/0, true negatives 1154/1154, hard negatives 256/256, non-products 49/49, 0 calls/tokens/cost, 321 successful cache hits. Quality остаётся `provisional`, пока 20 matching cases не подтверждены человеком. Holdout уже раскрыт: дальнейшая настройка правил или labels по нему должна называться post-holdout development, а не независимой оценкой. [Машиночитаемая сводка development + holdout](reports/benchmarks/stage5-b3-full-input-and-holdout-provisional/summary.json) хранит обе серии метрик.
 
 
 ## B2: провайдеры и локальный эксперимент
@@ -160,7 +169,7 @@ OpenAI-профили `config/ai.json`, `config/ai.matching-sol.json`, `config/a
 
 ## Этап 5: локальный экран B1 и B3 claim review
 
-Доступная часть этапа 5 выполнена: B1-каталог и узкий B3 claim-review UI доступны; полный MVP, human gate и финальная оценка остаются открыты. **Holdout не оценивался.** [Отчёт и соответствие PDF](docs/STAGE5_REPORT.md), [краткий WRITEUP](WRITEUP.md).
+Техническая часть P0.3 выполнена: B1/B3 каталог, claim review, matching-review UI, full-input и первый provisional holdout replay сохранены. До полного закрытия MVP остаются human-verified matching labels и clean-clone финал. [Отчёт и соответствие PDF](docs/STAGE5_REPORT.md), [краткий WRITEUP](WRITEUP.md).
 
 Из чистого каталога, Node 24.14.1 (см. `.nvmrc`), без `.env` и ключа:
 
@@ -179,6 +188,6 @@ npm run web
 
 Run ID должен быть новым: отчёты не перезаписываются. Для просмотра уже сохранённого результата достаточно B1-команды выше либо `npm run web:prepare -- --run-dir reports/B3-openai-development-human-gate-v2 --generated-checks eval/generated-review-e478435a3d39.json` для claim review. Подготовку выполнить до сборки; после нового снимка обновить страницу, для production — пересобрать UI. [Настройки URL и preview](web/README.md).
 
-Просмотр JSON не является replay модели. B1 работает кодом без сети; B2 replay повторяет сохранённые реальные ответы через кэш без новых API-вызовов, B2 live выполняет новые запросы. Реальные локальные B2-кэши находятся в reports/stage3-ollama-v1 и stage3-ollama-v2; его результаты экспериментальные. UI не запускает эти процессы и только отображает сохранённые B3 verifier-решения; matching/verifier в браузере не реализованы. В B1 текст отсутствует с причиной `generation_not_run`, согласованный факт не означает проверенное утверждение.
+Просмотр JSON не является replay модели. B1 работает кодом без сети; B2 replay повторяет сохранённые реальные ответы через кэш без новых API-вызовов, B2 live выполняет новые запросы. Реальные локальные B2-кэши находятся в reports/stage3-ollama-v1 и stage3-ollama-v2; его результаты экспериментальные. UI не запускает pipeline и не пересчитывает matching/verifier: он отображает сохранённые решения и собирает только явные human confirmations. В B1 текст отсутствует с причиной `generation_not_run`, согласованный факт не означает проверенное утверждение.
 
 Контроль и повтор: `reports/B1-stage5-control`, `reports/B1-stage5-repeat`; сравнения: `reports/comparisons/B1-v2-to-stage5`, `stage3-to-stage5`, `stage5-repeat`; история: `reports/benchmarks/stage5-offline`. Все quality-значения provisional.

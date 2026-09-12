@@ -5,13 +5,13 @@ import { productDisplayName, type CatalogSnapshot, type ReviewClaim } from '../d
 import {
   aiVerdictPhrase,
   controlledKindLabel,
-  defaultReviewRationale,
   evidenceFieldLabel,
   verdictExplanation,
   verdictLabel,
 } from '../data/labels.ts';
 import {
   finalizeGeneratedReview,
+  chooseGeneratedVerdict,
   generatedClaimNeedsAttention,
   generatedClaimKey,
   generatedReviewProgress,
@@ -313,10 +313,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
       ...current,
       claims: current.claims.map(item => {
         if (!key || generatedClaimKey(item) !== key) return item;
-        const rationale = item.rationale.trim()
-          ? item.rationale
-          : defaultReviewRationale(value, messages);
-        return { ...item, humanVerdict: value, rationale, state: 'reviewed' as const };
+        return chooseGeneratedVerdict(item, value, messages);
       }),
     }));
   }
@@ -350,12 +347,6 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
 
   function goToAdjacentClaim(delta: number) {
     if (!claims.length || activeIndex < 0 || !activeClaim) return;
-    const item = product && attempt
-      ? reviews.get(`${product.id}:${attempt.attempt}:${activeClaim.id}`)
-      : null;
-    if (item?.humanVerdict && item.rationale.trim() && item.state !== 'reviewed') {
-      updateClaim(activeClaim.id, { state: 'reviewed' });
-    }
     const next = claims[activeIndex + delta];
     if (next) selectClaim(next.id, true);
   }
@@ -631,8 +622,7 @@ export function ClaimReview({ catalog }: { catalog: CatalogSnapshot }) {
                                   aria-label={t('claims.yourDecision')}
                                 >
                                   {VERDICTS.map(value => {
-                                    const selected =
-                                      human.humanVerdict === value && human.state === 'reviewed';
+                                    const selected = human.humanVerdict === value;
                                     return (
                                       <button
                                         key={value}

@@ -37,11 +37,13 @@ test('web preparation pairs report with exact decisions, omits private config, a
     const output = join(directory, 'public');
     const file = await prepareWeb('reports/B1-stage3-control-v2', output);
     const text = await readFile(file, 'utf8');
+    const payload = JSON.parse(text);
     const parsed = parseCatalogPayload(JSON.parse(text));
     assert.deepEqual(parsed.result, saved);
     assert.equal(parsed.provenance?.mode, 'code-only');
     assert.equal(parsed.provenance?.qualityStatus, 'provisional');
-    assert.equal('config' in JSON.parse(text).provenance, false);
+    assert.equal(payload.labels.cases.length, 20);
+    assert.equal('config' in payload.provenance, false);
     await writeFile(join(directory, 'result.json'), JSON.stringify(saved));
     const report = JSON.parse(await readFile('reports/B1-stage3-control-v2/report.json', 'utf8'));
     await writeFile(join(directory, 'report.json'), JSON.stringify({ ...report, decisionsHash: 'wrong' }));

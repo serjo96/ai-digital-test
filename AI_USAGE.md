@@ -126,3 +126,11 @@ Offline replay выполнил 86 cache hits, 0 network calls, совпали d
 ## B3 human-review UI
 
 Отдельным последующим заданием сохранённый B3 подключён к существующему React UI: generated и controlled claims, точные text ranges, verdict/reason, supports и evidence. Human-разметка сохраняется в `localStorage` по `publicationHash` и экспортируется в JSON; UI не пишет в исходный run и не вызывает модели. Для этой задачи OpenAI API не вызывался, токены и стоимость — N/A. Full-input B3, holdout, финальная оценка, deployment, commit и push не выполнялись.
+
+## 2026-09-12 — P0.3 holdout и matching review
+
+Пользователь явно разрешил продолжить P0.3. Добавлен явный `development|holdout` split в evaluation/provenance/CLI и fail-closed запрет B3 holdout live: разрешён только replay полного входа. Первый holdout выполнен из уже сохранённого full-input cache; новых запросов к OpenAI или другим моделям не было. Результат сохранён в `reports/B3-openai-full-input-atomic-v2-holdout-replay`: 6 cases/49 rows, TP/FP/FN 22/0/0, true negatives 1154/1154, hard negatives 256/256, 321 cache hit, 0 calls/tokens/USD. Статус provisional, потому что matching labels ещё не подтверждены человеком.
+
+`web:prepare` теперь валидирует и включает matching labels. В UI добавлены 20 карточек human matching review, явные confirm/pending, progress development/holdout, reviewer и экспорт только после 20/20. Визуально проверены полный набор строк, `Cases 0/20`, разрез 0/14 + 0/6 и заблокированный экспорт. Агент не подтверждал разметку от имени пользователя. Holdout раскрыт; любые дальнейшие изменения правил/labels по его результату должны отмечаться как post-holdout development.
+
+Локальные проверки после ограниченного аудита: 72 backend-теста, 15 web-тестов, typecheck, production build и подготовка real holdout bundle. Исправлены три недочёта без модельных вызовов: выбор verdict больше не подтверждает generated claim автоматически; недоступная claim-review вкладка не показывается для B1-only bundle; human metadata требует настоящий ISO timestamp. Сводная машиночитаемая история сохранена в `reports/benchmarks/stage5-b3-full-input-and-holdout-provisional`. Commit, push и deployment не выполнялись.

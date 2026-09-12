@@ -85,6 +85,39 @@
   }
 }
 
+.matching-review {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto 3rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.matching-onboarding,
+.matching-toolbar,
+.matching-case {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  padding: 1rem;
+}
+
+.matching-progress,
+.matching-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem 1rem;
+  align-items: end;
+}
+
+.matching-progress { flex-direction: column; align-items: flex-start; }
+.matching-toolbar label:not(.checkbox) { display: grid; gap: .3rem; flex: 1 1 14rem; }
+.matching-toolbar input:not([type='checkbox']) { width: 100%; }
+.matching-cases { display: grid; gap: 1rem; }
+.matching-case > header { display: flex; justify-content: space-between; gap: 1rem; align-items: start; }
+.matching-case.reviewed { border-color: color-mix(in srgb, var(--ok) 55%, var(--border)); }
+.matching-case h3, .matching-case h4 { margin-top: 0; }
+.matching-case section { margin-top: 1rem; }
+
 .sidebar,
 .detail {
   background: var(--panel);

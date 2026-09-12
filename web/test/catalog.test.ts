@@ -16,12 +16,14 @@ import {
 } from '../src/data/labels.ts';
 import {
   finalizeGeneratedReview,
+  chooseGeneratedVerdict,
   generatedClaimNeedsAttention,
   generatedReviewProgress,
   mergeGeneratedReview,
 } from '../src/data/generatedReview.ts';
 import { migrateGeneratedReview } from '../../src/publication-evaluation.ts';
 import { messagesFor } from '../src/i18n/messages.ts';
+import { finalizeMatchingLabels, matchingReviewProgress, restoreMatchingDraft } from '../src/data/matchingReview.ts';
 
 const en = messagesFor('en');
 const ru = messagesFor('ru');
@@ -31,6 +33,7 @@ const b3 = JSON.parse(readFileSync('reports/B3-openai-development-live-v4/result
 const legacyGenerated = JSON.parse(readFileSync('reports/B3-openai-development-live-v4/generated-review.json', 'utf8'));
 const generated = migrateGeneratedReview(legacyGenerated);
 const canonicalGenerated = JSON.parse(readFileSync('eval/generated-review-e478435a3d39.json', 'utf8'));
+const matchingLabels = JSON.parse(readFileSync('eval/labels.json', 'utf8'));
 
 test('real projection preserves evidence and never presents B1 facts as verified listings', () => {
   const catalog = projectProductResult(result);
@@ -175,4 +178,28 @@ test('wording issue flags remain separate from reviewed state and factual verdic
   pending.issueTypes = [];
   assert.equal(generatedClaimNeedsAttention(pending, 'unsupported'), true);
   assert.equal(generatedClaimNeedsAttention(pending, 'supported'), false);
+});
+
+test('choosing a generated verdict remains pending until explicit review confirmation', () => {
+  const review = migrateGeneratedReview(canonicalGenerated);
+  const claim = review.claims.find(item => item.state === 'pending')!;
+  const chosen = chooseGeneratedVerdict(claim, 'supported', en);
+  assert.equal(chosen.state, 'pending');
+  assert.equal(chosen.humanVerdict, 'supported');
+  assert.ok(chosen.rationale.trim());
+  assert.equal(generatedReviewProgress({ ...review, claims: review.claims.map(item => item === claim ? chosen : item) }).checkedClaims, 120);
+});
+
+test('matching review progress is explicit and export requires human case confirmations', () => {
+  const empty = restoreMatchingDraft(null, matchingLabels, 'decisions');
+  assert.deepEqual(matchingReviewProgress(matchingLabels, empty.reviewedCaseIds), {
+    completed: 0, total: 20, development: 0, developmentTotal: 14, holdout: 0, holdoutTotal: 6,
+  });
+  const stale = restoreMatchingDraft({ ...empty, decisionsHash: 'old', reviewedCaseIds: matchingLabels.cases.map((item: { id: string }) => item.id) }, matchingLabels, 'decisions');
+  assert.equal(stale.reviewedCaseIds.length, 0);
+  const ids = matchingLabels.cases.map((item: { id: string }) => item.id);
+  const incomplete = finalizeMatchingLabels(matchingLabels, ids.slice(0, 19), 'Reviewer', '2026-09-12T00:00:00.000Z');
+  assert.equal(incomplete.cases.filter((item: { status: string }) => item.status === 'human_verified').length, 19);
+  const complete = finalizeMatchingLabels(matchingLabels, ids, 'Reviewer', '2026-09-12T00:00:00.000Z');
+  assert.ok(complete.cases.every((item: { status: string; reviewedBy: string | null; reviewedAt: string | null }) => item.status === 'human_verified' && item.reviewedBy === 'Reviewer' && item.reviewedAt === '2026-09-12T00:00:00.000Z'));
 });

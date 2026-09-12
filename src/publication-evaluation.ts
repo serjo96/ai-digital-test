@@ -2,6 +2,14 @@ import { z } from 'zod';
 import type { Labels, ControlledClaimEvaluation, GeneratedClaimEvaluation } from './types.js';
 import type { PublicationResult, VerifiedClaim, ClaimVerdict, ProductResult } from './domain.js';
 
+function isIsoTimestamp(value: string): boolean {
+  const match = value.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.\d{1,3})?(?:Z|[+-]\d{2}:\d{2})$/);
+  if (!match || !Number.isFinite(Date.parse(value))) return false;
+  const [, year, month, day, hour, minute, second] = match.map(Number);
+  if (month! < 1 || month! > 12 || hour! > 23 || minute! > 59 || second! > 59) return false;
+  return day! >= 1 && day! <= new Date(Date.UTC(year!, month!, 0)).getUTCDate();
+}
+
 const verdict = z.enum(['supported', 'disputed', 'unsupported']);
 const issueType = z.enum(['non_atomic_claim', 'unclear_copy']);
 export const ClaimSuiteSchema = z.strictObject({
@@ -45,6 +53,12 @@ export const GeneratedReviewSchema = z.strictObject({
     issueTypes: z.array(issueType),
   })),
 }).superRefine((review, context) => {
+  if (review.status === 'human_verified' && (!review.reviewedBy?.trim() || !review.reviewedAt || !isIsoTimestamp(review.reviewedAt))) {
+    context.addIssue({ code: 'custom', path: ['reviewedAt'], message: 'human verification requires reviewer and ISO timestamp' });
+  }
+  if (review.status === 'provisional' && (review.reviewedBy !== null || review.reviewedAt !== null)) {
+    context.addIssue({ code: 'custom', path: ['reviewedAt'], message: 'provisional review cannot claim a reviewer' });
+  }
   if (new Set(review.sampleProductIds).size !== review.sampleProductIds.length) {
     context.addIssue({ code: 'custom', path: ['sampleProductIds'], message: 'duplicate sample product' });
   }
@@ -84,7 +98,7 @@ export function migrateGeneratedReview(input: unknown, sampleProductIds: string[
 }
 
 function verificationMetadata(status: string, reviewedBy: string | null, reviewedAt: string | null): void {
-  if (status === 'human_verified' && (!reviewedBy?.trim() || !reviewedAt || !Number.isFinite(Date.parse(reviewedAt)))) throw new Error('human verification metadata missing');
+  if (status === 'human_verified' && (!reviewedBy?.trim() || !reviewedAt || !isIsoTimestamp(reviewedAt))) throw new Error('human verification metadata missing or invalid ISO timestamp');
   if (status === 'provisional' && (reviewedBy !== null || reviewedAt !== null)) throw new Error('provisional suite cannot claim a reviewer');
 }
 

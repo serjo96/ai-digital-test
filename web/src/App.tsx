@@ -10,6 +10,7 @@ import { ProductDetail } from './components/ProductDetail.tsx';
 import { ProductList } from './components/ProductList.tsx';
 import { RunOverview } from './components/RunOverview.tsx';
 import { ClaimReview } from './components/ClaimReview.tsx';
+import { MatchingReview } from './components/MatchingReview.tsx';
 import { useI18n } from './i18n/I18nProvider.tsx';
 import { LanguageSwitcher } from './i18n/LanguageSwitcher.tsx';
 import './App.css';
@@ -49,7 +50,7 @@ export default function App() {
   const [query, setQuery] = useState('');
   const [needsReviewOnly, setNeedsReviewOnly] = useState(false);
   const [selectedId, setSelectedId] = useState<string | null>(null);
-  const [view, setView] = useState<'catalog' | 'claims'>('catalog');
+  const [view, setView] = useState<'catalog' | 'claims' | 'matching'>('catalog');
 
   useEffect(() => {
     let cancelled = false;
@@ -151,7 +152,7 @@ export default function App() {
       />
 
       <RunOverview catalog={catalog} />
-      {catalog.claimReview ? (
+      {catalog.claimReview || catalog.matchingReview ? (
         <nav className="view-tabs" aria-label={t('tabs.aria')}>
           <button
             type="button"
@@ -160,16 +161,21 @@ export default function App() {
           >
             {t('tabs.catalog')}
           </button>
-          <button
-            type="button"
-            className={view === 'claims' ? 'active' : ''}
-            onClick={() => setView('claims')}
-          >
-            {t('tabs.claims')}
-          </button>
+          {catalog.claimReview ? (
+            <button
+              type="button"
+              className={view === 'claims' ? 'active' : ''}
+              onClick={() => setView('claims')}
+            >
+              {t('tabs.claims')}
+            </button>
+          ) : null}
+          {catalog.matchingReview ? <button type="button" className={view === 'matching' ? 'active' : ''} onClick={() => setView('matching')}>{t('tabs.matching')}</button> : null}
         </nav>
       ) : null}
-      {view === 'claims' && catalog.claimReview ? (
+      {view === 'matching' && catalog.matchingReview ? (
+        <MatchingReview catalog={catalog} />
+      ) : view === 'claims' && catalog.claimReview ? (
         <ClaimReview catalog={catalog} />
       ) : (
         <div className="layout">

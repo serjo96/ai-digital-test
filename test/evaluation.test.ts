@@ -45,6 +45,8 @@ test('holdout is excluded even when a holdout row attaches to development', () =
   const score = evaluate(baseline(rows), validateLabels(l, rows));
   assert.equal(score.caseCount, 1); assert.equal(score.tp, 0); assert.equal(score.fp, 0);
   assert.equal(score.unevaluatedPairs.length, 2);
+  const holdout = evaluate(baseline(rows), validateLabels(l, rows), 'holdout');
+  assert.equal(holdout.split, 'holdout'); assert.equal(holdout.caseCount, 1); assert.equal(holdout.tp, 1); assert.equal(holdout.fp, 0); assert.equal(holdout.unevaluatedPairs.length, 2);
   assert.equal(evaluate(baseline(rows), labels()).status, 'not_evaluated');
 });
 
@@ -55,6 +57,7 @@ test('labels reject leakage, duplicate/dangling rows, contradictory unknowns and
   assert.throws(() => validateLabels(labels(item('x', [['missing']])), rows), /unknown/);
   assert.throws(() => validateLabels(labels(item('x', [['a', 'b']], { unknownPairs: [['a', 'b']] })), rows), /contradicts/);
   assert.throws(() => validateLabels(labels(item('x', [['a']], { status: 'human_verified' })), rows), /metadata/);
+  assert.throws(() => validateLabels(labels(item('x', [['a']], { status: 'human_verified', reviewedBy: 'Reviewer', reviewedAt: 'September 12, 2026' })), rows), /metadata/);
   assert.throws(() => validateLabels(labels(item('x', [['a']], { rowIds: ['a', 'b'] })), rows), /partition/);
   assert.throws(() => validateLabels({ version: 'x', cases: [{ id: 'bad' }] }, rows), /schema/);
 });

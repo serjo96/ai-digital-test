@@ -64,7 +64,7 @@ export interface Ratio {
 }
 
 export interface Evaluation {
-  split: 'development';
+  split: 'development' | 'holdout';
   status: 'provisional' | 'human_verified' | 'not_evaluated';
   caseCount: number;
   evaluatedRows: number;
@@ -119,7 +119,7 @@ export interface RunReport {
   mode: 'code-only' | 'live' | 'replay' | 'test';
   code: { commit: string | null; dirty: boolean | null; implementationHash: string };
   hashes: { feed: string; taxonomy: string; labels: string; config: string; checks?: string; semanticChecks?: string; claimChecks?: string; generatedChecks?: string; stage4Gate?: string; publicationSource?: string };
-  config: { titleNormalization: string; dollarCurrency: string; split: 'development'; baseline?: 'b0' | 'b1' | 'b2' | 'b3'; ai?: import('./ai/config.js').AiConfig | import('./publication-config.js').Stage4Config; aiTask?: 'extraction' | 'matching'; aiCohort?: 'development' | 'full_input'; publicationSourceRunId?: string };
+  config: { titleNormalization: string; dollarCurrency: string; split: 'development' | 'holdout'; baseline?: 'b0' | 'b1' | 'b2' | 'b3'; ai?: import('./ai/config.js').AiConfig | import('./publication-config.js').Stage4Config; aiTask?: 'extraction' | 'matching'; aiCohort?: 'development' | 'full_input'; publicationSourceRunId?: string };
   audit: {
     inputRows: number;
     accountedRows: number;

@@ -9,13 +9,13 @@ Run from the repository root with Node 24.14.1:
 ```sh
 npm ci
 npm --prefix web ci
-npm run web:prepare -- --run-dir reports/B3-openai-development-live-v4
+npm run web:prepare -- --run-dir reports/B3-openai-full-input-atomic-v2-holdout-replay
 npm run web
 ```
 
 Open the URL printed by Vite (normally http://localhost:5173). For an explicit loopback address use `npm --prefix web run dev -- --host 127.0.0.1`.
 
-`web:prepare` validates `result.json` and `report.json`, checks the decisions hash and, for B3, the publication hash. A B3 review bundle also validates `generated-review.json`, the controlled suite and its saved verifier records before writing `web/public/data/catalog.json` atomically. Provider configuration and secrets are not copied. Test runs and mismatched artifacts are refused; the original run is never changed. Prepared data is ignored by Git and must be prepared again in each clean checkout.
+`web:prepare` validates `result.json` and `report.json`, checks the decisions hash and, for B3, the publication hash. A B3 review bundle also validates generated review, controlled verifier records and matching labels against the feed/report hash before writing `web/public/data/catalog.json` atomically. `--matching-labels PATH` can select another compatible labels file; the default is `eval/labels.json`. Provider configuration and secrets are not copied. Test runs and mismatched artifacts are refused; the original run is never changed. Prepared data is ignored by Git and must be prepared again in each clean checkout.
 
 To view a new code-only run:
 
@@ -31,7 +31,9 @@ To review the saved OpenAI development run, use the first command above. Open **
 - **Verifier test cases** (secondary) explains and renders the 12 prewritten QA examples. They test the saved verifier and are not additional products for the reviewer to label.
 - Human verdicts and rationales are saved in browser `localStorage`, keyed by `publicationHash`. **Download review** exports a provisional file until every statement has a rationale and a reviewer is set; only then is the export marked `human_verified` with a timestamp.
 
-The export is not written back into the repository automatically. Review it and deliberately replace the relevant review artifact before running any gate.
+Open **Check product matching** for the 20 matching cases. It shows the unchanged rows, expected groups, non-products, unknown pairs and an explanation. Confirm a case only after checking its complete partition; leave a wrong case pending and report its ID. The download is enabled only at 20/20 with a reviewer and exports `labels-human-verified.json`. The holdout cases are visibly marked; since the first holdout replay has already been run, changes based on them are post-holdout development.
+
+Exports are not written back into the repository automatically. Review them and deliberately replace the relevant canonical artifact before running a gate or final evaluation.
 
 Reload the page after preparing a different run. Rebuild before previewing a changed production snapshot:
 

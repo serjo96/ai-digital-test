@@ -4,7 +4,7 @@ import type { BaselineResult, Labels, Ratio, RunReport } from './types.js';
 
 export interface Metric {
   name: string; value: number | null; numerator: number | null; denominator: number | null;
-  unit: 'count' | 'ratio' | 'ms' | 'USD'; scope: 'development' | 'full_input' | 'run';
+  unit: 'count' | 'ratio' | 'ms' | 'USD'; scope: 'development' | 'holdout' | 'full_input' | 'run';
   qualityStatus: 'provisional' | 'human_verified' | 'not_evaluated' | 'not_applicable';
   availability: 'measured' | 'not_implemented' | 'no_denominator' | 'unavailable';
 }
@@ -13,17 +13,18 @@ export const countMetric = (name: string, value: number | null, scope: Metric['s
 });
 export function metricsFor(report: RunReport, result: BaselineResult, labels: Labels): Metric[] {
   const metrics: Metric[] = [];
+  const e = report.evaluation;
+  const qualityScope: Metric['scope'] = e.split;
   const quality = report.evaluation.status;
   const count = (name: string, value: number | null, scope: Metric['scope'] = 'full_input', status: Metric['qualityStatus'] = 'not_applicable') => metrics.push(countMetric(name, value, scope, status));
-  const ratio = (name: string, numerator: number | null, denominator: number | null, scope: Metric['scope'] = 'development', status: Metric['qualityStatus'] = quality) => metrics.push({
+  const ratio = (name: string, numerator: number | null, denominator: number | null, scope: Metric['scope'] = qualityScope, status: Metric['qualityStatus'] = quality) => metrics.push({
     name, numerator, denominator, value: numerator === null || !denominator ? null : numerator / denominator,
     unit: 'ratio', scope, qualityStatus: status,
     availability: numerator === null || denominator === null ? 'not_implemented' : denominator === 0 ? 'no_denominator' : 'measured',
   });
-  const e = report.evaluation;
-  for (const [name, value] of Object.entries({ true_positive: e.tp, false_merge: e.fp, missed_pair: e.fn, unknown_pairs: e.unknownPairs, unevaluated_attached_pairs: e.unevaluatedPairs.length })) count(`matching.${name}`, value, 'development', quality);
+  for (const [name, value] of Object.entries({ true_positive: e.tp, false_merge: e.fp, missed_pair: e.fn, unknown_pairs: e.unknownPairs, unevaluated_attached_pairs: e.unevaluatedPairs.length })) count(`matching.${name}`, value, qualityScope, quality);
   ratio('matching.precision', e.tp, e.tp + e.fp); ratio('matching.recall', e.tp, e.tp + e.fn);
-  const cases = labels.cases.filter(c => c.split === 'development');
+  const cases = labels.cases.filter(c => c.split === e.split);
   const expected = new Map<string, string>(); const family = new Map<string, string>(); const unknown = new Set<string>(); const nonProducts = new Set<string>();
   for (const c of cases) {
     c.expectedGroups.forEach((g, i) => g.forEach(id => expected.set(id, `${c.id}:${i}`)));
@@ -45,10 +46,10 @@ export function metricsFor(report: RunReport, result: BaselineResult, labels: La
       if (family.get(a) === family.get(b) && !nonProducts.has(a) && !nonProducts.has(b)) { hardNegatives++; if (!merged) hardNegativeCorrect++; }
     }
   }
-  count('matching.true_negative', negativeCorrect, 'development', quality);
+  count('matching.true_negative', negativeCorrect, qualityScope, quality);
   ratio('matching.negative_specificity', negativeCorrect, negatives);
   ratio('matching.hard_negative_specificity', hardNegativeCorrect, hardNegatives);
-  count('matching.hard_negative_false_merges', hardNegatives - hardNegativeCorrect, 'development', quality);
+  count('matching.hard_negative_false_merges', hardNegatives - hardNegativeCorrect, qualityScope, quality);
   ratio('matching.candidate_recall', candidatePairs ? candidateFound : null, candidatePairs ? positives : null);
   let tp = 0; let fp = 0; let fn = 0; let tn = 0;
   const outcomes = new Map(result.rows.map(r => [r.source.row_id, r.outcome]));
@@ -59,7 +60,7 @@ export function metricsFor(report: RunReport, result: BaselineResult, labels: La
     else if (expectedTrash) fn++;
     else tn++;
   }
-  for (const [name, value] of Object.entries({ true_positive: tp, false_rejection: fp, missed_trash: fn, true_negative: tn })) count(`non_product.${name}`, value, 'development', quality);
+  for (const [name, value] of Object.entries({ true_positive: tp, false_rejection: fp, missed_trash: fn, true_negative: tn })) count(`non_product.${name}`, value, qualityScope, quality);
   ratio('non_product.precision', tp, tp + fp); ratio('non_product.recall', tp, tp + fn);
   ratio('non_product.valid_product_retention', tn, tn + fp);
   ratio('non_product.accuracy', tp + tn, ids.length);
@@ -87,8 +88,8 @@ export function metricsFor(report: RunReport, result: BaselineResult, labels: La
     const score: Ratio | undefined = report.checks?.[key];
     ratio(`${key}.check_accuracy`, score?.numerator ?? null, score?.denominator ?? null, 'development', 'provisional');
   }
-  count('errors.matching', e.errors.length, 'development', quality);
-  count('errors.non_product', e.nonProducts.errors.length, 'development', quality);
+  count('errors.matching', e.errors.length, qualityScope, quality);
+  count('errors.non_product', e.nonProducts.errors.length, qualityScope, quality);
   count('errors.quality_checks', report.checks?.errors.length ?? null, 'development', 'provisional');
   count('errors.execution', report.status === 'partial' ? 1 : 0, 'run');
   count('api.calls', report.api.calls, 'run');

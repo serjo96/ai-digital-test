@@ -60,7 +60,7 @@
 | 2. Надёжные решения по товарам и фактам | Согласование, категории, evidence, review и улучшенный кодовый baseline | Этап 1 | Кодовая часть завершена; B1-v2, provisional eval |
 | 3. AI для выявленных семантических ошибок | Реальный структурированный extraction/matching и сравнение с baseline | Этап 2, API | Архитектура завершена; quality не подтверждено; B1-v2, см. STAGE3_REPORT |
 | 4. Генерация и проверка публикации | Полный pipeline с измеренным verifier и разрешённым текстом | Этап 3 | Завершён: development gate и full-input live/replay сохранены |
-| 5. Экран, итоговая оценка и передача | Проверяемый локальный MVP, финальный benchmark и документы | Этап 4 | B1-каталог и B3 review UI поддерживают явные decisions/issues; generated gate, holdout и финальный прогон открыты |
+| 5. Экран, итоговая оценка и передача | Проверяемый локальный MVP, финальный benchmark и документы | Этап 4 | UI, generated gate, full-input и provisional holdout готовы; human matching review и clean-clone финал открыты |
 | 6. Модульная архитектура и эффективность разработки | Явные границы модулей, тонкая оркестрация, независимые контракты артефактов и UI | Закрытые обязательные результаты этапов 4–5 | Запланирован; план реализации из Cursor нужно сверить с границами ниже |
 
 ### Этап 1. Кодовая основа и измеримый baseline
@@ -165,7 +165,7 @@
 
 ### Что известно сейчас
 
-220 строк; 5 поставщиков; 12 категорий; 23 пустых raw_specs; 4 явно проблемные строки; 169 заголовков после trim + casefold. Это статистика входа, не ground truth. B1-v2: 220/220, 156 товаров, TP/FP/FN 17/0/0, review 64 строки/51 товар; development matching labels остаются provisional. B2 quality gate не принят, поэтому B3 строится непосредственно поверх B1-v2. Актуальный OpenAI B3 development gate: controlled human-verified 12/12; generated review v2 human-verified 76/99 claims, 28/37 карточек, sample 20/20, factual/structural/copy issues 0/0/2. Full-input B3: 154/156 ready, 2 identity review, 0 withheld, 213 covered rows, 390 claims и 0 запрещённых atomicity-паттернов. Live выполнил 322 calls, 526449 tokens, $8.110955; offline replay дал те же decisions/publication hashes без сети. Holdout не запускался. Артефакты и ограничения: [STAGE4_REPORT.md](STAGE4_REPORT.md), [STAGE3_REPORT.md](STAGE3_REPORT.md), [протокол метрик](BENCHMARKS.md).
+220 строк; 5 поставщиков; 12 категорий; 23 пустых raw_specs; 4 явно проблемные строки; 169 заголовков после trim + casefold. Это статистика входа, не ground truth. B1-v2: 220/220, 156 товаров; development TP/FP/FN 17/0/0; review 64 строки/51 товар. B2 quality gate не принят, поэтому B3 строится непосредственно поверх B1-v2. Актуальный OpenAI B3 development gate: controlled human-verified 12/12; generated review v2 human-verified 76/99 claims, 28/37 карточек, sample 20/20, factual/structural/copy issues 0/0/2. Full-input B3: 154/156 ready, 2 identity review, 0 withheld, 213 covered rows, 390 claims и 0 запрещённых atomicity-паттернов. Live выполнил 322 calls, 526449 tokens, $8.110955; offline replay дал те же hashes без сети. Первый provisional holdout replay: 6 cases/49 rows, TP/FP/FN 22/0/0, true negatives 1154/1154, hard negatives 256/256, 0 API calls. Matching labels остаются provisional до подтверждения всех 20 cases; holdout уже раскрыт и не может использоваться для скрытой настройки. Артефакты: [STAGE5_REPORT.md](STAGE5_REPORT.md), [STAGE4_REPORT.md](STAGE4_REPORT.md), [BENCHMARKS.md](BENCHMARKS.md).
 
 ### Основные показатели
 
@@ -253,7 +253,7 @@ Typecheck, 45 backend-тестов и 3 web-теста, сборка и чист
 
 **Историческая передача этапа 5 (обновление этапа 3 — ниже):** OpenAI ожидает явного сообщения о ключе; этап 4 требует отдельного задания; вернуться к этапу 5 для отображения реальных claims/вердиктов/разрешённого текста и единственной финальной оценки holdout после фиксации правил. Текущий контракт снимка не заменяет будущий listing-контракт: web:prepare отклоняет результаты с generation/verifier. Человеческая проверка разметки открыта. Этапы 3–4, live API, финальный B3, отправка организаторам и deployment автоматически не запускались. Этап 5 целиком не закрыт.
 
-**Дополнение 2026-09-12:** B3 listing/claim view читает только проверенные сохранённые артефакты; human-разметка хранится локально и экспортируется. Историческое ограничение `web:prepare` выше больше не действует для валидного B3 review bundle. Пользователь подтвердил все 12 controlled cases и выборку generated review 20/20. P0.2 verifier-only human-gate replay принят; full-input B3, holdout, финальная оценка и deployment по-прежнему открыты.
+**Дополнение 2026-09-12:** B3 listing/claim view читает только проверенные сохранённые артефакты; human-разметка хранится локально и экспортируется. Пользователь подтвердил все 12 controlled cases и generated-review sample 20/20. P0.2 verifier-only human-gate replay принят; full-input B3 и первый offline holdout replay выполнены. P0.3 добавил явный split и human matching-review UI. Открыты подтверждение 20 matching cases, clean-clone финал и deployment; holdout уже раскрыт.
 
 ### Передача: этап 3 / Ollama — 2026-09-10
 

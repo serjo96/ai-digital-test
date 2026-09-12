@@ -12,7 +12,7 @@ async function main(): Promise<void> {
   const { positionals, values } = parseArgs({
     allowPositionals: true,
     options: {
-      baseline: { type: 'string' }, checks: { type: 'string' }, runs: { type: 'string' }, feed: { type: 'string' }, taxonomy: { type: 'string' }, labels: { type: 'string' },
+      baseline: { type: 'string' }, split: { type: 'string' }, checks: { type: 'string' }, runs: { type: 'string' }, feed: { type: 'string' }, taxonomy: { type: 'string' }, labels: { type: 'string' },
       out: { type: 'string' }, 'run-id': { type: 'string' }, before: { type: 'string' }, after: { type: 'string' },
       'ai-config': { type: 'string' }, 'ai-mode': { type: 'string' }, 'ai-cache': { type: 'string' }, 'semantic-checks': { type: 'string' },
       'ai-task': { type: 'string' }, 'ai-cohort': { type: 'string' },
@@ -22,8 +22,8 @@ async function main(): Promise<void> {
     },
   });
   const [command] = positionals;
-  if ((command === 'compare' || command === 'benchmark') && (values['ai-config'] || values['ai-mode'] || values['ai-cache'] || values['semantic-checks'] || values['ai-task'] || values['ai-cohort'] || values['claim-checks'] || values['generated-checks'] || values['stage4-gate'] || values['publication-source'])) throw new Error('AI and evaluation options require pipeline or eval');
-  if (positionals.length !== 1 || !['pipeline', 'eval', 'compare', 'benchmark'].includes(command ?? '')) throw new Error('Usage: benchmark --runs DIR,DIR [--out DIR --run-id ID] | pipeline|eval [--baseline b0|b1|b2|b3 --ai-mode live|replay --ai-cache DIR --ai-config PATH --semantic-checks PATH --claim-checks PATH --generated-checks PATH --publication-source RUN_DIR --checks PATH --feed PATH --taxonomy PATH --labels PATH --out DIR --run-id ID] | compare --before DIR|none --after DIR [--out DIR --run-id ID]');
+  if ((command === 'compare' || command === 'benchmark') && (values.split || values['ai-config'] || values['ai-mode'] || values['ai-cache'] || values['semantic-checks'] || values['ai-task'] || values['ai-cohort'] || values['claim-checks'] || values['generated-checks'] || values['stage4-gate'] || values['publication-source'])) throw new Error('AI and evaluation options require pipeline or eval');
+  if (positionals.length !== 1 || !['pipeline', 'eval', 'compare', 'benchmark'].includes(command ?? '')) throw new Error('Usage: benchmark --runs DIR,DIR [--out DIR --run-id ID] | pipeline|eval [--baseline b0|b1|b2|b3 --split development|holdout --ai-mode live|replay --ai-cache DIR --ai-config PATH --semantic-checks PATH --claim-checks PATH --generated-checks PATH --publication-source RUN_DIR --checks PATH --feed PATH --taxonomy PATH --labels PATH --out DIR --run-id ID] | compare --before DIR|none --after DIR [--out DIR --run-id ID]');
   const app = await NestFactory.createApplicationContext(AppModule, { logger: false });
   try {
     const service = app.get(PipelineService);
@@ -38,6 +38,7 @@ async function main(): Promise<void> {
       console.log(await service.compare(values.before === 'none' ? null : values.before, values.after, out, id));
     } else {
       if (values.baseline && !['b0', 'b1', 'b2', 'b3'].includes(values.baseline)) throw new Error('--baseline must be b0, b1, b2 or b3');
+      if (values.split && !['development', 'holdout'].includes(values.split)) throw new Error('--split must be development or holdout');
       if (values['ai-mode'] && !['live', 'replay'].includes(values['ai-mode'])) throw new Error('--ai-mode must be live or replay');
       if (values['ai-task'] && !['extraction', 'matching'].includes(values['ai-task'])) throw new Error('--ai-task must be extraction or matching');
       if (values['ai-cohort'] && !['development', 'full_input'].includes(values['ai-cohort'])) throw new Error('--ai-cohort must be development or full_input');
@@ -45,6 +46,7 @@ async function main(): Promise<void> {
       if (values.before || values.after) throw new Error('--before/--after are only valid for compare');
       console.log(await service.run({
         baseline: (values.baseline ?? 'b1') as 'b0' | 'b1' | 'b2' | 'b3', ...(values.checks ? { checks: values.checks } : {}),
+        ...(values.split ? { split: values.split as 'development' | 'holdout' } : {}),
         ...(values['ai-config'] ? { aiConfig: values['ai-config'] } : {}),
         ...(values['ai-mode'] ? { aiMode: values['ai-mode'] as 'live' | 'replay' } : {}),
         ...(values['ai-cache'] ? { aiCache: values['ai-cache'] } : {}),

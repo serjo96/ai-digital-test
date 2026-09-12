@@ -61,6 +61,15 @@ test('invalid JSON, schema and missing input persist failure diagnostics without
     assert.equal(cli('pipeline', '--feed', join(dir, 'absent.json'), '--out', dir, '--run-id', 'absent').status, 1);
     assert.deepEqual(await readdir(join(dir, 'absent')), ['failure.json']);
     assert.equal(cli('pipeline', '--out', dir, '--run-id', '../escape').status, 1);
-    assert.equal(cli('eval', '--split', 'holdout', '--out', dir).status, 1);
+    const holdout = cli('eval', '--split', 'holdout', '--out', dir, '--run-id', 'holdout');
+    assert.equal(holdout.status, 0, holdout.stderr);
+    const holdoutReport = JSON.parse(await readFile(join(dir, 'holdout/report.json'), 'utf8')) as RunReport;
+    assert.equal(holdoutReport.evaluation.split, 'holdout');
+    assert.equal(holdoutReport.evaluation.caseCount, 6);
+    assert.equal(holdoutReport.evaluation.evaluatedRows, 49);
+    assert.ok(holdoutReport.metrics?.filter(metric => metric.name.startsWith('matching.')).every(metric => metric.scope === 'holdout'));
+    assert.equal(cli('eval', '--split', 'other', '--out', dir).status, 1);
+    assert.equal(cli('eval', '--baseline', 'b3', '--split', 'holdout', '--ai-mode', 'live', '--out', dir, '--run-id', 'holdout-live').status, 1);
+    assert.equal(cli('eval', '--baseline', 'b3', '--split', 'holdout', '--ai-mode', 'replay', '--ai-cohort', 'development', '--out', dir, '--run-id', 'holdout-development').status, 1);
   } finally { await rm(dir, { recursive: true, force: true }); }
 });

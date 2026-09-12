@@ -1,0 +1,53 @@
+{
+  "rows": [
+    {
+      "rowId": "row_28c6da70ee",
+      "outcome": "non_product",
+      "reasons": [
+        "mixed_pallet"
+      ]
+    },
+    {
+      "rowId": "row_7f570b374f",
+      "outcome": "non_product",
+      "reasons": [
+        "test_record",
+        "price_unknown_currency"
+      ]
+    },
+    {
+      "rowId": "row_80738b0804",
+      "outcome": "non_product",
+      "reasons": [
+        "empty_product",
+        "price_missing"
+      ]
+    },
+    {
+      "rowId": "row_f4de4c72c5",
+      "outcome": "non_product",
+      "reasons": [
+        "price_notice",
+        "price_missing"
+      ]
+    }
+  ],
+  "publication": [
+    {
+      "productId": "product_153ba7a017bc0fa6729c96317531615dc929946fbd44000cd743dae69ed81e4c",
+      "status": "review",
+      "reasons": [
+        "identity:incomplete_type_or_variant",
+        "identity:incomplete_type_or_variant"
+      ]
+    },
+    {
+      "productId": "product_18e4a3e7b31deab51542d45213f694e0a3abadea1744412511c12e9bae0680db",
+      "status": "review",
+      "reasons": [
+        "identity:incomplete_type_or_variant",
+        "identity:incomplete_type_or_variant"
+      ]
+    }
+  ]
+}

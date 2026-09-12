@@ -4,6 +4,13 @@ const object = (x: unknown): x is Record<string, unknown> => typeof x === 'objec
 const strings = (x: unknown): x is string[] => Array.isArray(x) && x.every(v => typeof v === 'string' && v.length > 0);
 export const pairKey = (a: string, b: string): string => JSON.stringify([a, b].sort());
 export const ratio = (numerator: number, denominator: number): Ratio => ({ numerator, denominator, value: denominator ? numerator / denominator : null });
+export function isIsoTimestamp(value: string): boolean {
+  const match = value.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.\d{1,3})?(?:Z|[+-]\d{2}:\d{2})$/);
+  if (!match || !Number.isFinite(Date.parse(value))) return false;
+  const [, year, month, day, hour, minute, second] = match.map(Number);
+  if (month! < 1 || month! > 12 || hour! > 23 || minute! > 59 || second! > 59) return false;
+  return day! >= 1 && day! <= new Date(Date.UTC(year!, month!, 0)).getUTCDate();
+}
 
 export function validateLabels(value: unknown, source: SourceRow[]): Labels {
   if (!object(value) || typeof value.version !== 'string' || !value.version || !Array.isArray(value.cases)) throw new Error('invalid labels envelope');
@@ -25,7 +32,7 @@ export function validateLabels(value: unknown, source: SourceRow[]): Labels {
     caseIds.add(item.id);
     if (families.has(item.family) && families.get(item.family) !== item.split) throw new Error(`family split leakage: ${item.family}`);
     families.set(item.family, item.split);
-    if (item.status === 'human_verified' && (!item.reviewedBy?.trim() || !item.reviewedAt || !Number.isFinite(Date.parse(item.reviewedAt)))) {
+    if (item.status === 'human_verified' && (!item.reviewedBy?.trim() || !item.reviewedAt || !isIsoTimestamp(item.reviewedAt))) {
       throw new Error(`human verification metadata missing: ${item.id}`);
     }
     for (const id of item.rowIds) {
@@ -48,9 +55,8 @@ export function validateLabels(value: unknown, source: SourceRow[]): Labels {
   return value as unknown as Labels;
 }
 
-export function evaluate(result: BaselineResult, labels: Labels): Evaluation {
-  // Holdout labels are validated for integrity, never scored or used for tuning here.
-  const cases = labels.cases.filter(c => c.split === 'development');
+export function evaluate(result: BaselineResult, labels: Labels, split: Evaluation['split'] = 'development'): Evaluation {
+  const cases = labels.cases.filter(c => c.split === split);
   const expected = new Map<string, string>();
   const unknown = new Set<string>();
   const nonProducts = new Set<string>();
@@ -93,7 +99,7 @@ export function evaluate(result: BaselineResult, labels: Labels): Evaluation {
   const outcomes = new Map(result.rows.map(r => [r.source.row_id, r.outcome]));
   const nonProductErrors = ids.filter(id => !outcomes.has(id) || (outcomes.get(id) === 'non_product') !== nonProducts.has(id));
   return {
-    split: 'development', status: cases.length === 0 ? 'not_evaluated' : cases.every(c => c.status === 'human_verified') ? 'human_verified' : 'provisional',
+    split, status: cases.length === 0 ? 'not_evaluated' : cases.every(c => c.status === 'human_verified') ? 'human_verified' : 'provisional',
     caseCount: cases.length, evaluatedRows: ids.length, tp, fp, fn,
     precision: ratio(tp, tp + fp), recall: ratio(tp, tp + fn), unknownPairs: unknown.size,
     unevaluatedPairs: [...unevaluated.entries()].sort(([a], [b]) => a < b ? -1 : 1).map(([, p]) => p), errors,

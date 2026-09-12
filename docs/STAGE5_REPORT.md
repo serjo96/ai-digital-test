@@ -1,6 +1,6 @@
-# Этап 5 — доступная часть на B1 выполнена
+# Этап 5 — P0.3 технически выполнен, human matching review открыт
 
-Дата исходной реализации: 2026-09-10 (Asia/Bangkok); дополнено 2026-09-12. **Этап 5 целиком не завершён:** B1-каталог, B3 human-review UI и full-input artifact готовы; holdout, human-verified matching labels и финальная передача остаются открыты. Принятым product baseline остаётся B1-v2; holdout не оценивался.
+Дата исходной реализации: 2026-09-10 (Asia/Bangkok); дополнено 2026-09-12. **Этап 5 целиком не завершён:** B1/B3 UI, full-input и первый provisional holdout готовы; human-verified matching labels и финальная clean-clone передача остаются открыты. Принятым product baseline остаётся B1-v2.
 
 ## Фактическая основа и изменения
 
@@ -30,7 +30,7 @@ PDF не задаёт дизайн или колонки таблицы това
 | Факты, разногласия, evidence | Раскрытие наблюдений | Точные цитаты и переход к источнику, scope/условия/правило; реальных conflict в B1 нет, synthetic conflict проверен отдельно тестом |
 | Generated copy и verifier | Демонстрационные тексты | На реальных данных явно отсутствуют; этап 4 не выполнен |
 | Claim → источник и причина допуска | Claims отсутствуют | Заблокировано контрактом/реализацией этапа 4; fact evidence не выдаётся за claim verification |
-| Около 20 hand-labelled items | Provisional 14 development / 6 holdout | Человеческая проверка открыта; holdout не использован |
+| Около 20 hand-labelled items | Provisional 14 development / 6 holdout | UI готов; человеческая проверка открыта; holdout уже раскрыт offline |
 | Matching и verifier quality | Кодовые development-метрики | Сохранены сравнения B1; verifier, естественные ошибки текста, полезный выход B3 — N/A |
 | Таблица LLM_ROLES | Четыре колонки и подробности ниже | Шесть колонок PDF; реализованные, не запущенные и будущие роли различаются |
 | README, WRITEUP, AI_USAGE | README/AI_USAGE и роли; WRITEUP отсутствовал | Инструкции обновлены, одностраничная записка создана, реальные ошибки внесены в журнал |
@@ -136,4 +136,16 @@ Verifier prompt v2 и локальный fail-closed валидатор запр
 
 Новый канонический `eval/generated-review-fdca0138d88f.json` имеет статус `human_verified`: claims 76/99, products 28/37, sample 20/20, factual errors 0, non-atomic 0, unclear-copy 2. Оставшиеся 23 pending claims находятся вне обязательной выборки и gate не блокируют. Offline replay дал 49 cache hits, 0 calls и те же `decisionsHash`/`publicationHash`; development gate принят.
 
-После отдельного разрешения выполнен full-input B3: 154/156 ready, 2 identity review, 0 withheld, 213 покрытых строк и 390 atomic claims. Live сделал 322 calls, 526449 tokens, $8.110955; один невалидный verifier response был отклонён и восстановлен единственным repair. Offline replay без сети воспроизводит hashes и имеет `success`. Full-input replay подготовлен как текущий UI bundle. Holdout, deployment, commit и push не выполнялись.
+После отдельного разрешения выполнен full-input B3: 154/156 ready, 2 identity review, 0 withheld, 213 покрытых строк и 390 atomic claims. Live сделал 322 calls, 526449 tokens, $8.110955; один невалидный verifier response был отклонён и восстановлен единственным repair. Offline replay без сети воспроизводит hashes и имеет `success`.
+
+## P0.3: holdout и matching-review contract — 2026-09-12
+
+Evaluation и provenance теперь несут явный `split=development|holdout`. CLI принимает `--split`; B3 holdout fail-closed разрешён только с `--ai-mode replay --ai-cohort full_input`, поэтому случайный live/model вызов невозможен. Отчёты печатают выбранный split, а matching/non-product метрики получают правильный scope.
+
+Первый holdout выполнен из сохранённого full-input cache, без сети и новых model calls: [report](../reports/B3-openai-full-input-atomic-v2-holdout-replay/report.md). Результат: `success`; 6 cases / 49 rows; TP/FP/FN 22/0/0; precision/recall/candidate recall 22/22; true negatives 1154/1154; hard negatives 256/256; non-products 49/49; unknown/unevaluated pairs 0/0. Runtime: 0 calls, 0 tokens, $0, 321 успешный cache hit. Publication остаётся 154/156 ready, 2 identity review, 0 withheld, с теми же hashes. Quality честно остаётся `provisional`: `eval/labels.json` ещё не подтверждён человеком.
+
+`web:prepare` теперь валидирует matching labels против feed/report hash и включает их в browser bundle. Новый экран **Check product matching** показывает 20 случаев (14 development + 6 holdout), неизменённые supplier rows, ожидаемые группы, non-products, unknown-пары и объяснение. Случай можно явно подтвердить или вернуть в pending. Экспорт `labels-human-verified.json` включается только для 20/20 и непустого reviewer; дата записывается как ISO. Draft привязан к labels version + `decisionsHash`, поэтому устаревший localStorage не применяется к другому результату.
+
+Holdout теперь раскрыт. Нельзя менять matching rules/prompts или незаметно исправлять labels для улучшения этой оценки; любое такое изменение и повтор должны называться post-holdout development. Техническая часть P0.3 проверена визуально: экран показывает `Cases 0/20`, `development 0/14 · holdout 0/6`, все исходные данные и заблокированный экспорт. Никакие cases от имени пользователя не подтверждались.
+
+Для завершения этапа 5 пользователь должен проверить 20 cases в UI и передать экспорт. Затем канонический `eval/labels.json` валидируется, development/holdout повторяются offline, после чего выполняется clean-clone проверка и финальная передача. Deployment, commit и push не выполнялись.

@@ -27,7 +27,7 @@ import { evaluateControlled, evaluateGenerated, generatedReviewGatePassed, gener
 import { publicationPipeline } from './publication.js';
 
 export interface RunOptions { feed: string; taxonomy: string; labels: string; out: string; runId: string; baseline?: 'b0' | 'b1' | 'b2' | 'b3'; checks?: string;
-  aiRows?: string[]; aiPairs?: [string, string][]; aiConfig?: string; aiMode?: 'live' | 'replay'; aiCache?: string; semanticChecks?: string; aiTask?: 'extraction' | 'matching'; aiCohort?: 'development' | 'full_input'; claimChecks?: string; generatedChecks?: string; stage4Gate?: string; publicationSource?: string }
+  split?: 'development' | 'holdout'; aiRows?: string[]; aiPairs?: [string, string][]; aiConfig?: string; aiMode?: 'live' | 'replay'; aiCache?: string; semanticChecks?: string; aiTask?: 'extraction' | 'matching'; aiCohort?: 'development' | 'full_input'; claimChecks?: string; generatedChecks?: string; stage4Gate?: string; publicationSource?: string }
 const baseConfig = { titleNormalization: 'trim+collapse-whitespace+lowercase', dollarCurrency: 'USD', split: 'development' as const };
 export const saveJson = (path: string, value: unknown) => writeFile(path, JSON.stringify(value, null, 2) + '\n', { flag: 'wx' });
 
@@ -88,8 +88,10 @@ export class PipelineService {
       if (selected === 'b2' && (options.claimChecks || options.generatedChecks || options.stage4Gate || options.publicationSource)) throw new Error('publication checks require --baseline b3');
       if (selected === 'b3' && (options.aiTask || options.aiRows || options.aiPairs || options.semanticChecks)) throw new Error('stage3 AI options are not valid for B3');
       if (options.publicationSource && (selected !== 'b3' || (options.aiCohort ?? 'full_input') !== 'development')) throw new Error('--publication-source requires B3 development');
+      if (options.split === 'holdout' && options.aiMode === 'live') throw new Error('holdout evaluation must use code-only or replay; live model calls are not allowed');
+      if (selected === 'b3' && options.split === 'holdout' && (options.aiMode !== 'replay' || (options.aiCohort ?? 'full_input') !== 'full_input')) throw new Error('B3 holdout evaluation requires full-input replay');
       const ai = selected === 'b2' ? await readAiConfig(options.aiConfig ?? 'config/ai.json') : selected === 'b3' ? await readStage4Config(options.aiConfig ?? 'config/stage4.openai.json') : undefined;
-      const config: RunReport['config'] = { ...baseConfig, baseline: selected, ...(ai ? selected === 'b2'
+      const config: RunReport['config'] = { ...baseConfig, split: options.split ?? 'development', baseline: selected, ...(ai ? selected === 'b2'
         ? { ai, aiTask: options.aiTask ?? 'extraction', aiCohort: options.aiCohort ?? 'full_input', ...(options.aiRows ? { aiRows: options.aiRows } : {}), ...(options.aiPairs ? { aiPairs: options.aiPairs } : {}) }
         : { ai, aiCohort: options.aiCohort ?? 'full_input', ...(options.publicationSource ? { publicationSourceRunId: '' } : {}) } : {}) };
       let eligible = options.aiCohort === 'development' ? new Set(labels.cases.filter(c => c.split === 'development').flatMap(c => c.rowIds)) : undefined;
@@ -140,7 +142,7 @@ export class PipelineService {
         : runtime ? await aiBaseline(rows, runtime as AiRuntime<AiConfig>, options.aiTask ?? 'extraction', eligible, options.aiPairs) : selected === 'b1' ? b1 : baseline(rows);
       const pipelineMs = performance.now() - pipelineStart;
       assertAccounting(rows, result);
-      const evaluation = evaluate(result, labels);
+      const evaluation = evaluate(result, labels, options.split ?? 'development');
       const priceStatuses: Record<string, number> = {};
       for (const row of result.rows) priceStatuses[row.price.status] = (priceStatuses[row.price.status] ?? 0) + 1;
       const publicationHash = isPublicationResult(result) ? hash(JSON.stringify(result.listings)) : undefined;

@@ -22,7 +22,7 @@ export const provenanceSchema = z.object({
   runId: z.string(), createdAt: z.string(), rulesVersion: z.string(),
   mode: z.enum(['code-only', 'live', 'replay']), status: z.enum(['success', 'partial']),
   qualityStatus: z.enum(['provisional', 'human_verified', 'not_evaluated']),
-  split: z.literal('development'), decisionsHash: z.string(),
+  split: z.enum(['development', 'holdout']), decisionsHash: z.string(),
 });
 export type CatalogProvenance = z.infer<typeof provenanceSchema>;
 export interface SavedCatalog { result: ProductResult; provenance: CatalogProvenance | null }

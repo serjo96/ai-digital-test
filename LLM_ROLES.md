@@ -1,6 +1,6 @@
 # Роли моделей и кода — доступная часть этапа 5
 
-Обновлено: 2026-09-10. B1-v2 остаётся принятым product baseline. Ollama-эксперимент этапа 3 не прошёл B2 quality gate. Для этапа 4 выполнен реальный OpenAI development B3: `gpt-5.6-sol` генерирует, отдельный `gpt-6-astra` проверяет claims; результаты и точные счётчики — в [отчёте этапа 4](docs/STAGE4_REPORT.md). Controlled и generated human review пока provisional, full-input B3 не запускался.
+Обновлено: 2026-09-12. B1-v2 остаётся принятым product baseline; Ollama-эксперимент этапа 3 не прошёл B2 quality gate. OpenAI B3 выполнен на development и full input: `gpt-5.6-sol` генерирует, отдельный `gpt-6-astra` проверяет claims. Controlled и generated development gates human-verified; full-input replay и первый provisional holdout сохранены. Matching labels ждут human review 20/20.
 
 | Шаг | Что делает модель / код | Модель / уровень | Почему модель, а не код | Последствие ошибки / защита | Примерные стоимость и задержка |
 |---|---|---|---|---|---|
@@ -42,7 +42,7 @@ OllamaAdapter зарегистрирован в том же DI. Native /api/chat
 
 Пример только для масштаба: 1000 входных токенов без кэша и 500 выходных — $0.014 для Sol и $0.035 для Astra. Это арифметическая оценка, не измеренная стоимость запроса или всего feed. Перед live проверить актуальность тарифов; конфигурация фиксирует дату и источник. Cache-write учитывается отдельно. При отсутствующем usage, неизвестной цене, cache-write breakdown или превышении поддержанного контекста cost = N/A. Reasoning входит в output usage. Неудачная попытка без usage делает общий расход неизвестным, а не нулевым.
 
-Для авторитетного B3 development live измерены 86 calls, 123520 input и 28098 output tokens, стоимость $2.6475128, 0 errors/retries. Sol median/p95 1.937/2.954 s; Astra controlled 6.245/7.387 s, generated verification 9.014/17.801 s. Offline replay дал 86 cache hits, 0 calls и идентичный publication hash. Это одно последовательное наблюдение, не универсальный benchmark моделей. Controlled качество остаётся provisional, а human-reviewed published-claim error rate — N/A (0/158 проверено). Для Ollama неизвестные cache-счётчики и стоимость локального вычисления остаются N/A.
+Исторический development v1 live измерил 86 calls, 151618 tokens и $2.6475128. После P0.2 актуальный verifier-only development live по замороженным текстам сделал 49 calls, 125333 tokens и $2.390245; human-gate replay дал 49 cache hits и принял controlled 12/12 и generated sample 20/20. Full-input B3 live измерил 322 calls, 526449 tokens и $8.110955; offline replay воспроизвёл hashes с 0 calls. Holdout выполнен из того же cache: 321 успешный cache hit, 0 calls/tokens/cost. Это единичные последовательные наблюдения, не универсальный benchmark моделей. Для Ollama стоимость локального вычисления остаётся N/A.
 
 ## Измеренный локальный результат этапа 3
 

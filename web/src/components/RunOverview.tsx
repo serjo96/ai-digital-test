@@ -46,6 +46,7 @@ export function RunOverview({ catalog }: { catalog: CatalogSnapshot }) {
         <p className="muted">
           {t('runOverview.quality', {
             quality: catalog.provenance?.qualityStatus ?? t('runOverview.qualityNotSupplied'),
+            split: catalog.provenance?.split ?? t('runOverview.qualityNotSupplied'),
             claimPart,
           })}
         </p>

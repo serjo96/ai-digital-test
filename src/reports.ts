@@ -26,7 +26,7 @@ export function formatRatio(value: Ratio): string {
 export function reportMarkdown(report: RunReport): string {
   const e = report.evaluation; const a = report.audit;
   if (report.schemaVersion !== '1') return `# ${report.runId} — ${report.rulesVersion}\n\n` +
-    `Status: ${report.status}; mode: ${report.mode}; matching labels: **${e.status}**; development only. Holdout not evaluated.\n\n` +
+    `Status: ${report.status}; mode: ${report.mode}; matching labels: **${e.status}**; split: ${e.split}.\n\n` +
     metricTable(report.metrics ?? []) +
     `\nMatching errors: ${e.errors.length ? JSON.stringify(e.errors) : 'none'}.\n\n` +
     `Quality check errors: ${report.checks ? JSON.stringify(report.checks.errors) : 'N/A'}.\n\n` +
@@ -34,9 +34,9 @@ export function reportMarkdown(report: RunReport): string {
     (report.schemaVersion === '4' ? `Publication: ${JSON.stringify(report.generation)}.\n\nVerifier: ${JSON.stringify(report.verifier)}.\n\nAI: ${JSON.stringify(report.ai ?? null)}; usage: ${JSON.stringify(report.api)}. Controlled distortions and generated human review are reported separately.\n\n` : '') +
     `Sources/config: ${JSON.stringify(report.hashes)}\n\nCode: ${JSON.stringify(report.code)}\n\n` +
     `Timing: ${JSON.stringify(report.timing)}. Wall measurement ends after result/diagnostics, before metric/report serialization.\n\n` +
-    (report.schemaVersion === '4' ? `Publication text is released only after complete claim coverage and supported verdicts. Holdout remains unevaluated.\n` : `No generation, verifier, or publication readiness. Counts over all inputs are diagnostics; quality is measured only on the provisional development labels/checks. Unknown relations are excluded.\n`);
+    (report.schemaVersion === '4' ? `Publication text is released only after complete claim coverage and supported verdicts. Controlled/generated verifier metrics remain development-scoped; matching metrics use the declared split.\n` : `No generation, verifier, or publication readiness. Counts over all inputs are diagnostics; matching quality uses the declared split. Unknown relations are excluded.\n`);
   return `# ${report.runId} — B0\n\n` +
-    `Status: ${report.status}; mode: ${report.mode}; matching labels: **${e.status}**; split: development. Holdout not evaluated.\n\n` +
+    `Status: ${report.status}; mode: ${report.mode}; matching labels: **${e.status}**; split: ${e.split}.\n\n` +
     `| Metric | Value |\n|---|---|\n` +
     `| Accounted rows | ${a.accountedRows}/${a.inputRows} |\n| Lost / double assignments | ${a.lostRows} / ${a.duplicateAssignments} |\n` +
     `| Diagnostic groups / grouped rows | ${a.groups} / ${a.groupedRows} |\n| Repeated groups | ${a.repeatedGroups} |\n` +

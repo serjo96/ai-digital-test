@@ -1,0 +1,27 @@
+{
+  "schema": "metrics-v1",
+  "createdAt": "2026-09-11T19:48:36.022Z",
+  "runs": [
+    {
+      "runId": "B3-openai-full-input-atomic-v2-replay",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/B3-openai-full-input-atomic-v2-replay",
+      "status": "success",
+      "cohort": "9c8d5d6757b519e39f118375e5c86b21684d3b0043558d788ddd2ed29fbfcb6c",
+      "rules": "B3-v1",
+      "wallTimeMs": 367.793041,
+      "decisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+      "implementationHash": "5bbe1c11ded467f0afcb15f538365fea03f16e078c383bf07e319eef791d6563"
+    },
+    {
+      "runId": "B3-openai-full-input-atomic-v2-holdout-replay",
+      "directory": "/Users/serjo-pro/WebstormProjects/AI-Digital-Take-Home-Shelf-Ready/reports/B3-openai-full-input-atomic-v2-holdout-replay",
+      "status": "success",
+      "cohort": "a86e773459e0929c303f59bebeb96f0c9b85ed6aef73a24d4fd2b9625ed6961b",
+      "rules": "B3-v1",
+      "wallTimeMs": 372.229,
+      "decisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+      "implementationHash": "59dc253c9a9081a304be6dc5781d3acd1d2da83db94ecb2162adf1530f5b3f5b"
+    }
+  ],
+  "observations": 244
+}

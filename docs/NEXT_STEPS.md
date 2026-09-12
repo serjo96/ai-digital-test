@@ -1,6 +1,6 @@
 # Текущий статус и следующий рабочий блок
 
-Зафиксировано: 2026-09-12, ветка `multilang`, текущий commit `294341f`. P0.1, P0.2 и full-input B3 завершены; в рамках этого задания commit/push не выполнялись. Проходят 72 backend-теста, 13 web-тестов, typecheck и production build.
+Зафиксировано: 2026-09-12, ветка `multilang`. P0.1, P0.2, full-input B3 и техническая часть P0.3 завершены; commit/push не выполнялись. Первый holdout выполнен offline и сохранён, matching-review UI готов. Ограниченный аудит исправил явное подтверждение generated claims, условные UI-вкладки и строгую ISO-проверку review metadata. Финальное закрытие ждёт человеческого подтверждения 20 matching cases и clean-clone проверки. Проходят 72 backend-теста и 15 web-тестов; typecheck и production build проверены.
 
 Этот файл — короткая передача для следующего чата. Полный scope и критерии остаются в [ROADMAP.md](ROADMAP.md).
 
@@ -12,7 +12,7 @@
 | 2. Product baseline | Завершён | Принят B1-v2: 220/220 строк, 156 товаров, 4 не-товара; development TP/FP/FN 17/0/0 остаётся provisional до human labels. |
 | 3. AI extraction/matching | Завершён как эксперимент с отрицательным product-решением | Интеграция, live/replay и fail-closed проверки работают. B2 не принят по качеству; сохраняется B1-v2. Не продолжать подбор моделей без новой измеренной ошибки или отдельного требования. |
 | 4. Generation/verifier | Завершён | Development gate принят; full-input: 154/156 ready, 2 identity review, 0 withheld, 390 atomic claims. Offline replay воспроизводит hashes. |
-| 5. UI и финальная оценка | Частично завершён | B1-каталог и B3 review UI поддерживают full-input artifact, явные human decisions, issue-флаги и конечную 20-product выборку. Открыты holdout, matching labels и итоговая передача. |
+| 5. UI и финальная оценка | Почти завершён | B1/B3 UI, generated review, full-input и provisional holdout сохранены. Открыты human-verified matching labels и финальная clean-clone передача. |
 | 6. Модульная архитектура | Не начат | Начинать после короткого блока закрытия этапов 4–5, чтобы рефакторинг не менял baseline и evaluation одновременно. |
 
 Итого: этапы 1–4 закрыты. До архитектурного этапа 6 остаётся завершить финальную оценку и передачу этапа 5.
@@ -54,11 +54,11 @@ node dist/src/cli.js pipeline --baseline b3 --ai-mode live --ai-cache reports/B3
 
 Full-input B3 уже подготовлен: 154/156 ready, 2 identity review, 0 withheld, 213/220 строк покрыты ready listings; 4 non-product строки и 3 строки двух identity-review товаров объясняют остаток. 390 claims прошли structural validation, запрещённых atomicity-паттернов нет. Live сделал 322 calls и стоил $8.110955; offline replay воспроизводит решения и публикацию без сети.
 
-1. Проверить ключевые full-input карточки, claims/evidence/statuses в подготовленном UI.
-2. Добавить явный режим evaluation split=`holdout`: сейчас evaluator жёстко считает только development.
-3. Завершить независимую human-разметку 20 matching cases, не подгоняя решения под pipeline.
-4. После заморозки правил и prompts и отдельного разрешения один раз выполнить holdout evaluation.
-5. Обновить WRITEUP, LLM_ROLES, AI_USAGE и итоговые отчёты; повторить clean-clone/install/test/build/run проверку.
+Технически выполнено: full-input/holdout UI просмотрен; добавлен `split=holdout` с запретом B3 live; первый holdout replay сохранён без API-вызовов; добавлен matching-review экран и сводный benchmark.
+
+1. Человеку во вкладке **Check product matching** проверить и подтвердить 20/20 cases, заполнить reviewer и экспортировать `labels-human-verified.json`. Неверный случай не подтверждать, а вернуть case ID для исправления.
+2. После получения экспорта заменить канонический `eval/labels.json`, проверить hash/metadata и повторить development + holdout offline. Если labels исправлялись после просмотра holdout, результат назвать post-holdout development.
+3. Обновить WRITEUP, LLM_ROLES, AI_USAGE и выполнить clean-clone/install/test/build/replay/UI проверку.
 
 После этого MVP закрыт и можно начинать этап 6.
 
@@ -77,4 +77,4 @@ Full-input B3 уже подготовлен: 154/156 ready, 2 identity review, 0
 
 ## Стартовый запрос для нового чата
 
-> Прочитай `docs/NEXT_STEPS.md`. Этап 4 закрыт: development gate human-verified, full-input B3 сохранён и воспроизводится offline. Продолжи только P0.3: проверь full-input UI и подготовь код/разметку для финальной holdout-оценки. Перед любым holdout AI-вызовом получи отдельное явное разрешение. Архитектурный рефакторинг не запускать.
+> Прочитай `docs/NEXT_STEPS.md`. P0.3 технически готов: holdout replay сохранён, matching-review UI показывает 20 cases. Возьми экспорт `labels-human-verified.json`, не меняй подтверждённые решения без явной ошибки, провалидируй его и повтори development/holdout только offline. Затем выполни clean-clone проверку и закрой итоговую передачу. Новые model calls и архитектурный рефакторинг не запускать.

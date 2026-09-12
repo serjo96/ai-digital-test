@@ -116,6 +116,7 @@ test('claim suites reject holdout and fake verification metadata, and generated 
     cases: [{ id: 'one', rowId: 'r1', text: 'Demo wired earbuds', expectedVerdict: 'supported', kind: 'supported', rationale: 'fixture' }] };
   assert.equal(validateClaimSuite(suite, labels, result, 'a'.repeat(64), decisionsHash).cases.length, 1);
   assert.throws(() => validateClaimSuite({ ...suite, status: 'human_verified' }, labels, result, 'a'.repeat(64), decisionsHash), /metadata/);
+  assert.throws(() => validateClaimSuite({ ...suite, status: 'human_verified', reviewedBy: 'Reviewer', reviewedAt: 'September 12, 2026' }, labels, result, 'a'.repeat(64), decisionsHash), /ISO timestamp/);
   const holdout = structuredClone(labels); holdout.cases[0]!.split = 'holdout';
   assert.throws(() => validateClaimSuite(suite, holdout, result, 'a'.repeat(64), decisionsHash), /not development/);
   const actual = new Map([['one', [{ id: 'c', text: 'Demo', start: 0, end: 4, verdict: 'supported' as const, supportIds: [], decisionIds: [], evidence: [], reason: 'fixture' }]]]);
@@ -123,6 +124,7 @@ test('claim suites reject holdout and fake verification metadata, and generated 
   const publication = { ...result, listings: [] }; const template = generatedReviewTemplate(publication, 'b'.repeat(64));
   assert.equal(evaluateGenerated(template, publication, 'b'.repeat(64)).checkedPublishedClaims, 0);
   assert.throws(() => evaluateGenerated({ ...template, publicationHash: 'c'.repeat(64) }, publication, 'b'.repeat(64)), /hash/);
+  assert.throws(() => evaluateGenerated({ ...template, status: 'human_verified', reviewedBy: 'Reviewer', reviewedAt: 'September 12, 2026', sampleProductIds: Array.from({ length: 20 }, (_, index) => `p${index}`) }, publication, 'b'.repeat(64)), /ISO timestamp/);
 });
 
 test('generated review v2 migrates legacy claims without treating model verdicts as human decisions', async () => {

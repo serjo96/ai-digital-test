@@ -3,12 +3,28 @@ import {
   migrateGeneratedReview,
   type GeneratedReview,
 } from '../../../src/publication-evaluation.ts';
+import { defaultReviewRationale, type ClaimVerdictLabel } from './labels.ts';
+import type { Messages } from '../i18n/messages.ts';
 
 export const generatedClaimKey = (item: Pick<GeneratedReview['claims'][number], 'productId' | 'attempt' | 'claimId'>) =>
   `${item.productId}:${item.attempt}:${item.claimId}`;
 
 export function generatedClaimNeedsAttention(claim: GeneratedReview['claims'][number], aiVerdict: string): boolean {
   return claim.state === 'reviewed' && (claim.humanVerdict !== aiVerdict || claim.issueTypes.length > 0);
+}
+
+/** Selecting a verdict prepares a draft; only the explicit Mark reviewed action completes it. */
+export function chooseGeneratedVerdict(
+  claim: GeneratedReview['claims'][number],
+  verdict: Extract<ClaimVerdictLabel, 'supported' | 'unsupported' | 'disputed'>,
+  messages: Messages,
+): GeneratedReview['claims'][number] {
+  return {
+    ...claim,
+    humanVerdict: verdict,
+    rationale: claim.rationale.trim() ? claim.rationale : defaultReviewRationale(verdict, messages),
+    state: 'pending',
+  };
 }
 
 export function generatedReviewProgress(review: GeneratedReview) {
