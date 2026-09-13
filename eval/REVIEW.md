@@ -1,20 +1,20 @@
-# Разметка для человеческой проверки — этап 1
+# Human review labels — stage 1
 
-Все 20 семейных случаев ниже — AI-assisted provisional, не hand-labelled ground truth. Они охватывают 108 строк и 70 групп, поэтому больше не являются обязательным мобильным human gate. Группы сохранены как расширенный диагностический набор и исторический источник provisional matching-метрик.
+All 20 family cases below are AI-assisted provisional, not hand-labelled ground truth. They cover 108 rows and 70 groups, so they are no longer a mandatory mobile human gate. The groups are retained as an extended diagnostic set and a historical source of provisional matching metrics.
 
-Для финального требования PDF «hand-label about 20 items» используется отдельный [matching-audit.json](matching-audit.json): 20 атомарных вопросов (14 development / 6 holdout), на каждом экране только одна пара либо одна проверяемая строка и три ответа. Пользователь завершил экспорт 2026-09-13; он прошёл schema/hash/row-ID/metadata validation и дал 18/18 agreement при coverage 18/20, включая два `unknown`. Пока файл остаётся в Downloads и не скопирован в `eval/`, repo-backed статус audit остаётся открытым. Экспорт подтверждает только 20 решений, а не все семейные labels.
+The final PDF requirement to “hand-label about 20 items” uses a separate [matching-audit.json](matching-audit.json): 20 atomic questions (14 development / 6 holdout), with only one pair or one reviewable row and three answers on each screen. The user completed the export on 2026-09-13; it is saved as [matching-audit-human-verified.json](matching-audit-human-verified.json) with metrics in [matching-audit-metrics.json](matching-audit-metrics.json): 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements (post-holdout validation). The export confirms only these 20 decisions, not all family labels.
 
-Первый holdout replay уже выполнен 2026-09-12 и тем самым раскрыт. Не использовать его для настройки правил или prompts; если человеческая проверка выявит ошибку в labels, исправление и повторный результат явно считать post-holdout development. После правки меток создать новую версию и новые отчёты; B0 не перезаписывать.
+The first holdout replay was already run on 2026-09-12 and is therefore revealed. Do not use it to tune rules or prompts; if human review identifies an error in the labels, explicitly treat the correction and rerun result as post-holdout development. After correcting the labels, create a new version and new reports; do not overwrite B0.
 
 ## nimbus — development / provisional
 
-Nimbus 2 и Nimbus 2 Pro различны. Две строки базовой модели предварительно относятся к одному товару; 1.2kg/42oz не решаем на этапе 1.
+Nimbus 2 and Nimbus 2 Pro are distinct. The two base-model rows are provisionally treated as the same product; 1.2kg/42oz is not resolved at stage 1.
 
-Ожидаемые группы: [["row_c2467f5304", "row_f3873a8816"], ["row_cdf75e46ea"]]
+Expected groups: [["row_c2467f5304", "row_f3873a8816"], ["row_cdf75e46ea"]]
 
-Не-товары: []
+Non-products: []
 
-Неизвестные пары: []
+Unknown pairs: []
 
 ```json
 {
@@ -54,13 +54,13 @@ Nimbus 2 и Nimbus 2 Pro различны. Две строки базовой м
 
 ## aerobuds — development / provisional
 
-Два явно чёрных AeroBuds Pro предварительно совпадают; ear tips — самостоятельный аксессуар. У немецкой строки цвет отсутствует: отношения с обеими чёрными строками unknown. 18h и 20h with case требуют отдельного согласования позже.
+The two explicitly black AeroBuds Pro entries provisionally match; the ear tips are a separate accessory. The German row has no color: its relationship with both black rows is unknown. 18h and 20h with case require separate reconciliation later.
 
-Ожидаемые группы: [["row_11bb99b2fa", "row_bdbc045131"], ["row_e0afb74574"], ["row_fe3ff4b356"]]
+Expected groups: [["row_11bb99b2fa", "row_bdbc045131"], ["row_e0afb74574"], ["row_fe3ff4b356"]]
 
-Не-товары: []
+Non-products: []
 
-Неизвестные пары: [["row_11bb99b2fa", "row_e0afb74574"], ["row_bdbc045131", "row_e0afb74574"]]
+Unknown pairs: [["row_11bb99b2fa", "row_e0afb74574"], ["row_bdbc045131", "row_e0afb74574"]]
 
 ```json
 {
@@ -112,13 +112,13 @@ Nimbus 2 и Nimbus 2 Pro различны. Две строки базовой м
 
 ## sony — development / provisional
 
-WH-880N/WH880N предварительно одна модель, включая OPEN BOX. Состояние относится к предложению; рекламные превосходные степени не характеристики.
+WH-880N/WH880N is provisionally one model, including OPEN BOX. Condition belongs to the offer; promotional superlatives are not attributes.
 
-Ожидаемые группы: [["row_05e5d126cb", "row_1e60b0a9dc", "row_7f3f1b14c3"]]
+Expected groups: [["row_05e5d126cb", "row_1e60b0a9dc", "row_7f3f1b14c3"]]
 
-Не-товары: []
+Non-products: []
 
-Неизвестные пары: []
+Unknown pairs: []
 
 ```json
 {
@@ -158,13 +158,13 @@ WH-880N/WH880N предварительно одна модель, включа�
 
 ## slate — development / provisional
 
-Один товар с пустыми specs; неполнота не означает не-товар.
+One product with empty specs; incompleteness does not mean non-product.
 
-Ожидаемые группы: [["row_76b28cdc31"]]
+Expected groups: [["row_76b28cdc31"]]
 
-Не-товары: []
+Non-products: []
 
-Неизвестные пары: []
+Unknown pairs: []
 
 ```json
 {
@@ -180,13 +180,13 @@ WH-880N/WH880N предварительно одна модель, включа�
 
 ## volt — development / provisional
 
-65W, GaN и 3-port указаны в названии. New in box — состояние предложения, не техническая характеристика.
+65W, GaN, and 3-port are stated in the title. New in box is offer condition, not a technical attribute.
 
-Ожидаемые группы: [["row_1134eb89e7"]]
+Expected groups: [["row_1134eb89e7"]]
 
-Не-товары: []
+Non-products: []
 
-Неизвестные пары: []
+Unknown pairs: []
 
 ```json
 {
@@ -202,13 +202,13 @@ WH-880N/WH880N предварительно одна модель, включа�
 
 ## quill — development / provisional
 
-Включены все Quill: lamp и lamp 3 различны; lamp, hub, camera и case различны. Две Quill 3 desk lamp предварительно совпадают даже при пустых specs у обеих.
+All Quill entries are included: lamp and lamp 3 are distinct; lamp, hub, camera, and case are distinct. The two Quill 3 desk lamp entries provisionally match even though both have empty specs.
 
-Ожидаемые группы: [["row_06dc75e525", "row_3f77cefacd"], ["row_11462769c5"], ["row_4d609c9ff9", "row_6668f30f9e"], ["row_641c690d68", "row_73d3ec91bb"], ["row_a60219abb1", "row_bddc33a831"]]
+Expected groups: [["row_06dc75e525", "row_3f77cefacd"], ["row_11462769c5"], ["row_4d609c9ff9", "row_6668f30f9e"], ["row_641c690d68", "row_73d3ec91bb"], ["row_a60219abb1", "row_bddc33a831"]]
 
-Не-товары: []
+Non-products: []
 
-Неизвестные пары: []
+Unknown pairs: []
 
 ```json
 {
@@ -320,13 +320,13 @@ WH-880N/WH880N предварительно одна модель, включа�
 
 ## ledgerlite — development / provisional
 
-Book 14 Laptop/Notebook предварительно одна модель. 16GB/512GB совпадают; округление веса отложено этапу 2.
+Book 14 Laptop/Notebook is provisionally one model. 16GB/512GB match; weight rounding is deferred to stage 2.
 
-Ожидаемые группы: [["row_87ace126d4", "row_92da044aa3"]]
+Expected groups: [["row_87ace126d4", "row_92da044aa3"]]
 
-Не-товары: []
+Non-products: []
 
-Неизвестные пары: []
+Unknown pairs: []
 
 ```json
 {
@@ -354,13 +354,13 @@ Book 14 Laptop/Notebook предварительно одна модель. 16GB
 
 ## vault — development / provisional
 
-Две формулировки Vault 2TB portable SSD предварительно один товар; гарантия одного поставщика не переносится на все предложения.
+The two descriptions of the Vault 2TB portable SSD are provisionally one product; one supplier's warranty does not carry over to all offers.
 
-Ожидаемые группы: [["row_22e59912ad", "row_fbe753d7cc"]]
+Expected groups: [["row_22e59912ad", "row_fbe753d7cc"]]
 
-Не-товары: []
+Non-products: []
 
-Неизвестные пары: []
+Unknown pairs: []
 
 ```json
 {
@@ -388,13 +388,13 @@ Book 14 Laptop/Notebook предварительно одна модель. 16GB
 
 ## taskflow — development / provisional
 
-K2 brown TKL/mech и mechanical keyboard brown switch предварительно одна модель; brown не удаляется из идентичности.
+K2 brown TKL/mech and mechanical keyboard brown switch are provisionally one model; brown is not removed from the identity.
 
-Ожидаемые группы: [["row_64543589fc", "row_a386736693"]]
+Expected groups: [["row_64543589fc", "row_a386736693"]]
 
-Не-товары: []
+Non-products: []
 
-Неизвестные пары: []
+Unknown pairs: []
 
 ```json
 {
@@ -422,13 +422,13 @@ K2 brown TKL/mech и mechanical keyboard brown switch предварительн
 
 ## pulsefit — development / provisional
 
-Band 3 activity/fitness tracker предварительно одна модель. HR/SpO2 не дополняем внешними знаниями.
+Band 3 activity/fitness tracker is provisionally one model. HR/SpO2 is not supplemented with external knowledge.
 
-Ожидаемые группы: [["row_3e2dd6416e", "row_94d9860adf"]]
+Expected groups: [["row_3e2dd6416e", "row_94d9860adf"]]
 
-Не-товары: []
+Non-products: []
 
-Неизвестные пары: []
+Unknown pairs: []
 
 ```json
 {
@@ -456,13 +456,13 @@ Band 3 activity/fitness tracker предварительно одна модел
 
 ## lumen — development / provisional
 
-X20 Compact Digital Camera/Kompaktkamera предварительно одна модель: поддерживается моделью и совместимыми specs.
+X20 Compact Digital Camera/Kompaktkamera is provisionally one model: supported by the model name and compatible specs.
 
-Ожидаемые группы: [["row_1d1bdffe92", "row_83da10f114"]]
+Expected groups: [["row_1d1bdffe92", "row_83da10f114"]]
 
-Не-товары: []
+Non-products: []
 
-Неизвестные пары: []
+Unknown pairs: []
 
 ```json
 {
@@ -490,13 +490,13 @@ X20 Compact Digital Camera/Kompaktkamera предварительно одна �
 
 ## cobalt — development / provisional
 
-Все Cobalt включены вместе: Pro/X/Lite/2/3 и разные типы — разные товары даже при шаблонных specs. Два Pro USB-C hub предварительно совпадают; $23.99/$867.99 не исправляем.
+All Cobalt entries are included together: Pro/X/Lite/2/3 and different types are distinct products even with templated specs. The two Pro USB-C hub entries provisionally match; $23.99/$867.99 is not corrected.
 
-Ожидаемые группы: [["row_3fdcec64b2"], ["row_68d860d397", "row_78b4c42770"], ["row_6eddbd5517", "row_f0ad473862"], ["row_71847a9c05"], ["row_833c7feebb"], ["row_a8a875a60c"], ["row_b2475a3df6"], ["row_b40060c12f"], ["row_b82f7fcc2a"], ["row_bb41623d6c"], ["row_bb6d2613d4"], ["row_e67082ee31"]]
+Expected groups: [["row_3fdcec64b2"], ["row_68d860d397", "row_78b4c42770"], ["row_6eddbd5517", "row_f0ad473862"], ["row_71847a9c05"], ["row_833c7feebb"], ["row_a8a875a60c"], ["row_b2475a3df6"], ["row_b40060c12f"], ["row_b82f7fcc2a"], ["row_bb41623d6c"], ["row_bb6d2613d4"], ["row_e67082ee31"]]
 
-Не-товары: []
+Non-products: []
 
-Неизвестные пары: []
+Unknown pairs: []
 
 ```json
 {
@@ -668,13 +668,13 @@ X20 Compact Digital Camera/Kompaktkamera предварительно одна �
 
 ## onyx — development / provisional
 
-Все Onyx включены вместе. Lite и 2 action camera различны несмотря на одинаковые 4K60/10m; типы и варианты сохраняются.
+All Onyx entries are included together. Lite and 2 action camera are distinct despite identical 4K60/10m values; types and variants are preserved.
 
-Ожидаемые группы: [["row_17f5e3070f"], ["row_4730fd8686"], ["row_55a8c9b86d", "row_74b8f7797a"], ["row_56f937bd9e"], ["row_5824054a52"], ["row_654f1fb60f"], ["row_6f66c4cb9e"], ["row_a1bb1ad2e9"], ["row_e571323780"]]
+Expected groups: [["row_17f5e3070f"], ["row_4730fd8686"], ["row_55a8c9b86d", "row_74b8f7797a"], ["row_56f937bd9e"], ["row_5824054a52"], ["row_654f1fb60f"], ["row_6f66c4cb9e"], ["row_a1bb1ad2e9"], ["row_e571323780"]]
 
-Не-товары: []
+Non-products: []
 
-Неизвестные пары: []
+Unknown pairs: []
 
 ```json
 {
@@ -798,13 +798,13 @@ X20 Compact Digital Camera/Kompaktkamera предварительно одна �
 
 ## non-products — development / provisional
 
-Четыре не-товара определены по содержимому: уведомление, тест, пустая запись, смешанный паллет. Stock=0 не является критерием.
+Four non-products are identified by content: a notice, a test, an empty record, and a mixed pallet. Stock=0 is not a criterion.
 
-Ожидаемые группы: []
+Expected groups: []
 
-Не-товары: ["row_28c6da70ee", "row_7f570b374f", "row_80738b0804", "row_f4de4c72c5"]
+Non-products: ["row_28c6da70ee", "row_7f570b374f", "row_80738b0804", "row_f4de4c72c5"]
 
-Неизвестные пары: []
+Unknown pairs: []
 
 ```json
 {
@@ -856,13 +856,13 @@ X20 Compact Digital Camera/Kompaktkamera предварительно одна �
 
 ## freshcrate — holdout / provisional
 
-Отложенный случай: Blend One. Только наблюдаемые признаки, без внешних фактов.
+Deferred case: Blend One. Observable evidence only, without external facts.
 
-Ожидаемые группы: [["row_cfc9d66ae8"]]
+Expected groups: [["row_cfc9d66ae8"]]
 
-Не-товары: []
+Non-products: []
 
-Неизвестные пары: []
+Unknown pairs: []
 
 ```json
 {
@@ -878,13 +878,13 @@ X20 Compact Digital Camera/Kompaktkamera предварительно одна �
 
 ## orbit — holdout / provisional
 
-Отложенный случай: Orbit 7 128GB. Ёмкость сохраняется в идентичности.
+Deferred case: Orbit 7 128GB. Capacity is preserved in the identity.
 
-Ожидаемые группы: [["row_d8919b722b"]]
+Expected groups: [["row_d8919b722b"]]
 
-Не-товары: []
+Non-products: []
 
-Неизвестные пары: []
+Unknown pairs: []
 
 ```json
 {
@@ -900,13 +900,13 @@ X20 Compact Digital Camera/Kompaktkamera предварительно одна �
 
 ## harbor — holdout / provisional
 
-Отложенное семейство целиком: разные типы/Plus/X отделены; одинаковые smart scale предварительно совпадают, включая два SKU EuroStock.
+Entire family deferred: different types/Plus/X are separate; identical smart scale entries provisionally match, including two EuroStock SKUs.
 
-Ожидаемые группы: [["row_24e49bc1eb", "row_293cd70b33", "row_71fb9c3128"], ["row_4f178f2cd1", "row_fcc5f20edc"], ["row_52a24f8b1b"], ["row_8d784b2c07"]]
+Expected groups: [["row_24e49bc1eb", "row_293cd70b33", "row_71fb9c3128"], ["row_4f178f2cd1", "row_fcc5f20edc"], ["row_52a24f8b1b"], ["row_8d784b2c07"]]
 
-Не-товары: []
+Non-products: []
 
-Неизвестные пары: []
+Unknown pairs: []
 
 ```json
 {
@@ -994,13 +994,13 @@ X20 Compact Digital Camera/Kompaktkamera предварительно одна �
 
 ## kestrel — holdout / provisional
 
-Отложенное семейство целиком: типы и варианты раздельны; bookshelf speaker pair 2 включает разные SKU одного поставщика, даже при пустых specs.
+Entire family deferred: types and variants are separate; bookshelf speaker pair 2 includes different SKUs from one supplier, even with empty specs.
 
-Ожидаемые группы: [["row_1b08ede010", "row_f73f37291f"], ["row_4582fae21d", "row_d2fac2ddba"], ["row_5029b0e40e", "row_6f0c3aa377"], ["row_522195dac7"], ["row_60fe207b81"], ["row_648ed14543", "row_e0a6cb6b3f"], ["row_a8a0a10cf2"], ["row_bbaad66b9f"]]
+Expected groups: [["row_1b08ede010", "row_f73f37291f"], ["row_4582fae21d", "row_d2fac2ddba"], ["row_5029b0e40e", "row_6f0c3aa377"], ["row_522195dac7"], ["row_60fe207b81"], ["row_648ed14543", "row_e0a6cb6b3f"], ["row_a8a0a10cf2"], ["row_bbaad66b9f"]]
 
-Не-товары: []
+Non-products: []
 
-Неизвестные пары: []
+Unknown pairs: []
 
 ```json
 {
@@ -1148,13 +1148,13 @@ X20 Compact Digital Camera/Kompaktkamera предварительно одна �
 
 ## torrent — holdout / provisional
 
-Отложенное семейство целиком: типы/варианты раздельны; несколько X bookshelf speaker pair предварительно один товар; stock не суммировать.
+Entire family deferred: types/variants are separate; several X bookshelf speaker pair entries are provisionally one product; do not sum stock.
 
-Ожидаемые группы: [["row_3c159f1aea", "row_ca51ad691e", "row_decc7f2137", "row_f35a2ab58f"], ["row_4a8b5dc2b1", "row_a4c85dc257"], ["row_5609f5b65d"], ["row_8dfa59e7c2", "row_aef34b7f58"], ["row_aa3fa28de4"], ["row_fd1f97e32c"]]
+Expected groups: [["row_3c159f1aea", "row_ca51ad691e", "row_decc7f2137", "row_f35a2ab58f"], ["row_4a8b5dc2b1", "row_a4c85dc257"], ["row_5609f5b65d"], ["row_8dfa59e7c2", "row_aef34b7f58"], ["row_aa3fa28de4"], ["row_fd1f97e32c"]]
 
-Не-товары: []
+Non-products: []
 
-Неизвестные пары: []
+Unknown pairs: []
 
 ```json
 {
@@ -1290,13 +1290,13 @@ X20 Compact Digital Camera/Kompaktkamera предварительно одна �
 
 ## basalt — holdout / provisional
 
-Отложенное семейство целиком: типы, Lite/Pro/2 отделены даже при одинаковых шаблонных specs.
+Entire family deferred: types and Lite/Pro/2 are separate even with identical templated specs.
 
-Ожидаемые группы: [["row_07d0ec92f5", "row_48143816e9"], ["row_185aeac60e", "row_894eb0e4a9"], ["row_24f8ce8414"], ["row_35c28ff0d0", "row_ceb27e8382"], ["row_3a68411ed8"], ["row_5a0b7faba6", "row_6a281bc385"], ["row_6fff6aa632", "row_a453c69dab"], ["row_7b5442e7cc", "row_d01593ee00"], ["row_a661bdf24e"], ["row_d440c7c5af"], ["row_e1124c3b3f"]]
+Expected groups: [["row_07d0ec92f5", "row_48143816e9"], ["row_185aeac60e", "row_894eb0e4a9"], ["row_24f8ce8414"], ["row_35c28ff0d0", "row_ceb27e8382"], ["row_3a68411ed8"], ["row_5a0b7faba6", "row_6a281bc385"], ["row_6fff6aa632", "row_a453c69dab"], ["row_7b5442e7cc", "row_d01593ee00"], ["row_a661bdf24e"], ["row_d440c7c5af"], ["row_e1124c3b3f"]]
 
-Не-товары: []
+Non-products: []
 
-Неизвестные пары: []
+Unknown pairs: []
 
 ```json
 {
@@ -1503,18 +1503,18 @@ X20 Compact Digital Camera/Kompaktkamera предварительно одна �
 ```
 
 
-## Дополнение этапа 3 — не проверено человеком
+## Stage 3 enrichment — not human-verified
 
-`stage3-checks.json` фиксирует 12 development-строк и полный ожидаемый набор из 11 дополнений пяти поддержанных типов. Набор подготовлен AI до live-эксперимента и имеет статус provisional. Он отдельно от исходных matching labels и 52 проверок этапа 2. Тип/категория немецкого AeroBuds остаются unknown/other: название модели само по себе не является явным указанием типа; две unknown-связи matching не изменены. Набор не включает holdout.
+`stage3-checks.json` records 12 development rows and the complete expected set of 11 enrichments across five supported types. The set was prepared by AI before the live experiment and has provisional status. It is separate from the original matching labels and the 52 stage 2 checks. The type/category of the German AeroBuds remains unknown/other: the model name alone is not an explicit indication of type; the two unknown matching relationships are unchanged. The set does not include holdout.
 
-При человеческой проверке отдельно проверить предмет/ограничители, radio_link для 2.4GHz, число температур света, число размеров и полный target совместимости. Положительные ожидаемые дополнения и отрицательные/пустые результаты должны проверяться вместе. Результаты искусственного адаптера не являются hand-labeling или свидетельством качества модели.
+During human review, separately verify the subject/qualifiers, radio_link for 2.4GHz, the number of light temperatures, the number of sizes, and the full compatibility target. Positive expected enrichments and negative/empty results must be reviewed together. Results from the synthetic adapter are not hand-labeling or evidence of model quality.
 
-## Этап 4 — controlled claims, ожидает проверки
+## Stage 4 — controlled claims, awaiting review
 
-`stage4-claims.json` содержит 12 development-примеров: семь поддержанных claims, четыре неподтверждённых и один спорный/incomparable. Искусственные искажения проверяют другое число, чужой аксессуар, снятый `up to`, перенос OPEN BOX с предложения на товар и неподтверждённый смысл 12 W. Они не являются оценкой естественной частоты галлюцинаций.
+`stage4-claims.json` contains 12 development examples: seven supported claims, four unsupported claims, and one disputed/incomparable claim. Synthetic distortions test a different number, an accessory from another product, a removed `up to`, transfer of OPEN BOX from the offer to the product, and an unsupported interpretation of 12 W. They are not an estimate of the natural hallucination rate.
 
-Проверьте каждый `expectedVerdict` и rationale по указанной строке, всем строкам её B1-товара, accepted/reconciled facts и evidence. Не используйте внешний каталог. После проверки замените `status` на `human_verified`, заполните `reviewedBy` и ISO-дату `reviewedAt`; содержание случаев после этого считается замороженным. До этого verifier-метрики остаются provisional, а full B3 запрещён процессом этапа.
+Review each `expectedVerdict` and rationale against the specified row, all rows of its B1 product, accepted/reconciled facts, and evidence. Do not use an external catalog. After review, change `status` to `human_verified`, fill in `reviewedBy` and the ISO date in `reviewedAt`; the case contents are then considered frozen. Until then, verifier metrics remain provisional, and full B3 is prohibited by the stage process.
 
-Development B3 создаёт рядом с run шаблон `generated-review.json`. Актуальный контракт v2 хранит все опубликованные claims, но проверку считает только по явному `state`: для `reviewed` обязательны выбранный человеком `humanVerdict` и непустой rationale; model verdict из результата не предзаполняет человеческое решение. Неудобную формулировку отмечайте `unclear_copy`, неатомарную границу — `non_atomic_claim`; если сами факты совпадают с фидом, оставляйте factual verdict `supported`.
+Development B3 creates a `generated-review.json` template next to the run. The current v2 contract stores all published claims but counts review only by explicit `state`: for `reviewed`, a human-selected `humanVerdict` and a non-empty rationale are required; the model verdict from the result does not prefill the human decision. Mark awkward wording as `unclear_copy` and a non-atomic boundary as `non_atomic_claim`; if the facts themselves match the feed, leave the factual verdict as `supported`.
 
-Gate использует заранее зафиксированные `sampleProductIds`: нужно полностью проверить все claims как минимум 20 выбранных карточек, а не все 158 claims. Файл всё равно обязан точно покрывать опубликованные claims по `productId + attempt + claimId` и совпадать с `publicationHash`. Текущая каноническая разметка — `generated-review-e478435a3d39.json`: 120/158 claims, 28/37 карточек и 20/20 карточек обязательной выборки. Все factual verdict подтверждены по supplier feed; четыре неатомарных span и две неясные copy-формулировки сохранены как отдельные измеренные ограничения. Оставшиеся 38 pending claims размечать не требуется.
+The gate uses preselected `sampleProductIds`: all claims must be fully reviewed for at least 20 selected cards, not all 158 claims. The file must still exactly cover the published claims by `productId + attempt + claimId` and match the `publicationHash`. The current canonical labeling is `generated-review-e478435a3d39.json`: 120/158 claims, 28/37 cards, and 20/20 cards in the required sample. All factual verdicts are confirmed against the supplier feed; four non-atomic spans and two unclear copy formulations are retained as separately measured limitations. The remaining 38 pending claims do not need to be labeled.

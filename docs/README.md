@@ -1,17 +1,18 @@
-# Карта документации
+# Documentation Map
 
-## Актуальные документы
+## Current Documents
 
-- [NEXT_STEPS.md](NEXT_STEPS.md) — единственный источник текущего статуса и оставшихся действий.
-- [ROADMAP.md](ROADMAP.md) — принятый план, критерии этапов и накопительная запись решений.
-- [BENCHMARKS.md](BENCHMARKS.md) — определения метрик и накопительная история измерений.
-- [STAGE5_REPORT.md](STAGE5_REPORT.md) — текущая финальная передача MVP и соответствие исходному PDF.
+- [NEXT_STEPS.md](NEXT_STEPS.md) — current status: stages 1–5 complete; stage 6 optional.
+- [ROADMAP.md](ROADMAP.md) — the accepted plan, stage criteria, and cumulative decision record.
+- [BENCHMARKS.md](BENCHMARKS.md) — metric definitions and cumulative measurement history.
+- [STAGE5_REPORT.md](STAGE5_REPORT.md) — final MVP stage 5 handoff and alignment with the source PDF.
 - [Product processing flow](assets/product-flow.svg) — English SVG diagram of the accepted B1/B3 production runtime.
-- Корневые `README.md`, `LLM_ROLES.md`, `WRITEUP.md`, `AI_USAGE.md` — deliverables задания.
-- `eval/REVIEW.md` — инструкция и provenance human-review артефактов.
+- Root-level `README.md`, `LLM_ROLES.md`, `WRITEUP.md`, `AI_USAGE.md` — task deliverables.
+- `eval/REVIEW.md` — instructions and provenance for human-review artifacts.
+- `eval/matching-audit-human-verified.json` and `eval/matching-audit-metrics.json` — saved compact audit and final metric (20/20, 18/18, 18/20, 2 unknown, 0 disagreements).
 
-## Исторические снимки
+## Historical Snapshots
 
-`STAGE1_REPORT.md`, `STAGE2_REPORT.md`, `STAGE3_OFFLINE_REPORT.md`, `STAGE3_REPORT.md` и `STAGE4_REPORT.md` описывают состояние на момент завершения соответствующего этапа. Фразы вроде «этап 4 не начат» или «human review открыт» внутри них являются исторически верными и не должны использоваться как текущий статус. `TASK_ANALYSIS.md` — первоначальный анализ до выбора архитектуры.
+`STAGE1_REPORT.md`, `STAGE2_REPORT.md`, `STAGE3_OFFLINE_REPORT.md`, `STAGE3_REPORT.md`, and `STAGE4_REPORT.md` describe the state when each respective stage was completed. Statements such as “stage 4 has not started” or “human review is open” are historically accurate and must not be used as the current status. `TASK_ANALYSIS.md` is the initial analysis from before the architecture was selected.
 
-Эти файлы не следует переписывать под финальный результат или удалять перед сдачей: они объясняют эксперименты, отрицательное решение по B2 и происхождение ограничений. Если после сдачи понадобится компактная документация, исторические отчёты можно переместить в `docs/archive/` отдельным механическим изменением ссылок. Сейчас удаление или перемещение не требуется.
+These files should not be rewritten to reflect the final result or deleted before submission: they explain the experiments, the negative B2 decision, and the origin of the constraints. If more compact documentation is needed after submission, the historical reports can be moved to `docs/archive/` in a separate mechanical link-update change. No deletion or relocation is currently required.

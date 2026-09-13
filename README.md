@@ -1,8 +1,8 @@
-# Shelf Ready — B1 product baseline и B3 publication development
+# Shelf Ready — B1 product baseline and B3 publication development
 
-Локальный pipeline: JSON → валидация → предложения → явные факты и evidence → кандидаты и совместимые товары → категории, согласование и review → генерация → атомарные claims → независимая проверка → development/holdout eval и сохранённые метрики. Принятый product baseline — **B1-v2**; B3 publication реализован поверх него и не использует B2. Human-verified development gate P0.2 пройден и воспроизводится offline; full-input B3 и holdout replay сохранены. Финальный экран содержит Catalog и один компактный matching Review.
+Local pipeline: JSON → validation → offers → explicit facts and evidence → candidates and compatible products → categories, reconciliation and review → generation → atomic claims → independent verification → development/holdout eval and saved metrics. The accepted product baseline is **B1-v2**; B3 publication is built on top of it and does not use B2. The human-verified development gate P0.2 passed and reproduces offline; full-input B3 and holdout replay are saved. The final screen contains Catalog and one compact matching Review.
 
-Стек: TypeScript 5.9, NestJS 12 standalone context, Node 24.14.1, npm; UI — Vite + React в `web/`. HTTP API, БД и deployment не нужны.
+Stack: TypeScript 5.9, NestJS 12 standalone context, Node 24.14.1, npm; UI — Vite + React in `web/`. No HTTP API, database, or deployment required.
 
 ## Product flow
 
@@ -19,9 +19,9 @@ The diagram shows the accepted production runtime: deterministic B1 owns product
 
 Historical B2 model experiments are not part of this runtime. Their scope and results are preserved in the [stage 3 report](docs/STAGE3_REPORT.md).
 
-## Установка и запуск
+## Install and run
 
-С Node из `.nvmrc`:
+With Node from `.nvmrc`:
 
 ```sh
 npm ci
@@ -31,9 +31,9 @@ npm run pipeline
 npm run eval
 ```
 
-### Экран результатов
+### Results screen
 
-Отдельное Vite-приложение в [`web/`](web/) читает подготовленный результат pipeline и показывает источник запуска. Демоданные не подставляются. API-ключ не нужен.
+A separate Vite app in [`web/`](web/) reads a prepared pipeline result and shows the run provenance. Demo data is not substituted. No API key is required.
 
 ```sh
 npm --prefix web ci
@@ -41,9 +41,9 @@ npm run web:prepare -- --run-dir reports/B3-openai-full-input-atomic-v2-holdout-
 npm run web
 ```
 
-Сборка: `npm run web:build`. [Полная инструкция и URL override](web/README.md). Финальный B3 UI оставляет две пользовательские вкладки: **Catalog** и **Review**. Review показывает 20 независимых matching-вопросов, по одному на экран, с ответами same product / different products / not enough information (для одиночной строки — product / non-product / unknown). После всех ответов и reviewer он экспортирует `matching-audit-human-verified.json`. Завершённая проверка listing text и controlled verifier остаётся в сохранённых артефактах и автоматических тестах, но не требует новой ручной вкладки. Черновик хранится в `localStorage` с привязкой к версии и `decisionsHash`; экран не вызывает модели и не меняет исходный run.
+Build: `npm run web:build`. [Full instructions and URL override](web/README.md). The final B3 UI keeps two user tabs: **Catalog** and **Review**. Review shows 20 independent matching questions, one per screen, with answers same product / different products / not enough information (for a single row — product / non-product / unknown). After all answers and a reviewer name it exports `matching-audit-human-verified.json`. Completed listing-text and controlled-verifier review remains in saved artifacts and automated tests, but does not require a new manual tab. The draft is stored in `localStorage` bound to version and `decisionsHash`; the screen does not call models or change the original run.
 
-`pipeline` и `eval` выполняют одинаковый полный pipeline с development-оценкой. По умолчанию выбран B1; каждый запуск создаёт новый каталог в игнорируемом `reports/local/`. Чтобы результаты оставались частью репозитория для будущих графиков, использовать `--out reports`:
+`pipeline` and `eval` run the same full pipeline with development evaluation. B1 is the default; each run creates a new directory under ignored `reports/local/`. To keep results in the repository for future charts, use `--out reports`:
 
 ```sh
 npm run pipeline -- --baseline b1 --out reports --run-id my-b1
@@ -53,66 +53,66 @@ npm run compare -- --before reports/B0 --after reports/my-b1 --out reports/compa
 npm run benchmark -- --runs reports/B0,reports/my-b1,reports/my-b1-repeat --out reports/benchmarks --run-id my-history
 ```
 
-Существующие run ID и каталоги сравнения/экспорта не перезаписываются. Коммиты и push команды не выполняют.
+Existing run IDs and comparison/export directories are not overwritten. Commands do not commit or push.
 
-Пути задаются `--feed`, `--taxonomy`, `--labels`, `--checks`, `--out`. CLI имеет приоритет над значениями из `.env` / `FEED_PATH`, `TAXONOMY_PATH`, `LABELS_PATH`, `REPORTS_DIR`, затем стандартными файлами. Для `--checks` переменной окружения нет; по умолчанию `eval/stage2-checks.json`. Пример переменных — `.env.example`; файлы `.env` и `.env.{NODE_ENV}` читаются при старте, секреты в Git не входят. Для B0/B1 API-ключ не нужен.
+Paths are set with `--feed`, `--taxonomy`, `--labels`, `--checks`, `--out`. CLI overrides values from `.env` / `FEED_PATH`, `TAXONOMY_PATH`, `LABELS_PATH`, `REPORTS_DIR`, then the default files. There is no environment variable for `--checks`; the default is `eval/stage2-checks.json`. Example variables are in `.env.example`; `.env` and `.env.{NODE_ENV}` are read at startup, and secrets are not committed. B0/B1 do not need an API key.
 
-Проверки привязаны к хэшу конкретного feed и строкам выбранного split. Для другого feed передавать соответствующие labels/checks, а не применять готовые метки к новым данным. B0 не использует stage2-checks. `--split development|holdout` задаёт evaluation split; holdout для B3 разрешён только в replay/full_input, поэтому эта команда не может случайно сделать live API-вызовы.
+Checks are bound to a specific feed hash and the selected split rows. For a different feed, pass matching labels/checks; do not apply ready-made labels to new data. B0 does not use stage2-checks. `--split development|holdout` sets the evaluation split; holdout for B3 is allowed only in replay/full_input, so this command cannot accidentally make live API calls.
 
 
-## Решения и контракты
+## Decisions and contracts
 
-Входные исходники не изменяются. Валидация проверяет типы, уникальность row_id и supplier/SKU, stock и ровно 12 категорий. Не-товары определяются по содержимому, а не stock или row_id. Каждая строка имеет ровно один исход; оригиналы, включая дополнительные поля, сохраняются в `rows[].source`.
+Input sources are never modified. Validation checks types, unique row_id and supplier/SKU, stock, and exactly 12 categories. Non-products are determined by content, not stock or row_id. Each row has exactly one outcome; originals, including extra fields, are kept in `rows[].source`.
 
-B0 группирует по trim + whitespace + lowercase заголовка и воспроизводит прежний хэш решений. B1 выдаёт общую проекцию `rows/groups`, а также:
+B0 groups by trim + whitespace + lowercase title and reproduces the previous decisions hash. B1 emits a shared `rows/groups` projection plus:
 
-- `products`: состав, признаки идентичности, категория, отдельные confidence для идентичности и категории, согласованные атрибуты и ссылки на review.
-- `offers`: отдельное предложение для каждой строки, включая отвергнутые (`productId = null`); supplier/SKU, точная цена, stock, состояние и ссылки на факты предложения.
-- `facts`: атрибут, значение, единица, product/offer scope, условия, точная цитата с row_id/полем/смещениями, правило преобразования и интервал округления массы.
-- `candidates`: рассмотренные пары и merge/reject/review с причинами. Отсутствие пары означает, что поиск кандидатов её не предложил.
-- `unparsed`: непонятые или частично понятые фрагменты specs целиком. `review`: сообщения с row_ids/product_ids, причинами, evidence и fact_ids.
+- `products`: membership, identity features, category, separate identity and category confidence, reconciled attributes, and review links.
+- `offers`: one offer per row, including rejected ones (`productId = null`); supplier/SKU, exact price, stock, condition, and offer-fact links.
+- `facts`: attribute, value, unit, product/offer scope, conditions, exact quote with row_id/field/offsets, transform rule, and mass rounding interval.
+- `candidates`: considered pairs and merge/reject/review with reasons. A missing pair means candidate search never proposed it.
+- `unparsed`: fully or partially unparsed specs fragments kept whole. `review`: messages with row_ids/product_ids, reasons, evidence, and fact_ids.
 
-ID строятся детерминированно; перестановка строк не меняет результат. Review — дополнительная очередь: товарная строка может оставаться grouped и одновременно требовать review. `rows[].outcome = review` сохраняется для отдельного случая отсутствующего заголовка.
+IDs are built deterministically; row permutation does not change the result. Review is an extra queue: a product row can stay grouped and still need review. `rows[].outcome = review` is kept for the separate missing-title case.
 
-### Правила B1
+### B1 rules
 
-Ограниченный словарь узнаёт явные типы и формы development-данных: Laptop/Notebook, WH-880N/WH880N, TKL/tenkeyless, black/schwarz и т.д. Кандидат ищется по содержательному остатку модели без известных маркеров варианта либо точному заголовку. Объединение требует совпадения полной модели/типа и совместимых известных вариантов; сходство не даёт разрешение на merge. Проверяются все поперечные пары групп, поэтому неизвестный вариант не соединяет несовместимые концы A–B–C.
+A limited vocabulary recognizes explicit types and development-data forms: Laptop/Notebook, WH-880N/WH880N, TKL/tenkeyless, black/schwarz, and so on. Candidates are found by the meaningful model remainder without known variant markers, or by exact title. Merge requires matching full model/type and compatible known variants; similarity alone does not authorize merge. All cross-group pairs are checked, so an unknown variant does not connect incompatible A–B–C ends.
 
-Различия Pro/Lite/Plus/X, поколения, ёмкости/RAM, цвета, переключателей, комплектации и явно указанных в заголовке мощности/числа портов сохраняются. Пропуск различающего значения ведёт к review. Первое слово не считается брендом; явно поддержана форма Sony/Sony Corp., остальное остаётся неизвестным. OPEN BOX/new in box относятся к предложению.
+Pro/Lite/Plus/X differences, generations, capacity/RAM, colors, switches, kits, and power/port counts explicitly stated in the title are preserved. A missing distinguishing value leads to review. The first word is not treated as a brand; Sony/Sony Corp. is explicitly supported, everything else stays unknown. OPEN BOX/new in box belong to the offer.
 
-Поддержано ограниченное извлечение массы, длительности, экрана, памяти, мощности, скорости, интерфейсов, IP/ATM, характеристик камеры, клавиатуры и явных функций. Сохранены read/unspecified direction, up_to, with_case, charging_case, PD passthrough, compatible_device и maximum. Например, USB-C Ladecase относится к зарядному кейсу. Неподдержанные ограничители и указания совместимости не превращаются в безусловные факты. Это не универсальный многоязычный parser и не смысловой verifier.
+Limited extraction covers mass, duration, screen, memory, power, speed, interfaces, IP/ATM, camera traits, keyboards, and explicit features. Read/unspecified direction, up_to, with_case, charging_case, PD passthrough, compatible_device, and maximum are preserved. For example, USB-C Ladecase belongs to the charging case. Unsupported qualifiers and compatibility notes are not turned into unconditional facts. This is not a universal multilingual parser or a semantic verifier.
 
-Масса нормализуется в граммы: kg=1000g, oz=28.349523125g, lb=453.59237g. Допуск равен половине последнего десятичного разряда исходного числа после пересчёта. Согласование требует общего пересечения всех интервалов. Представителем служит наблюдение с самым широким интервалом, при равенстве — по row_id/ID факта; это правило выбора отображаемого значения, не приоритет поставщика. Nimbus 1.2kg/42oz и LedgerLite 1.3kg/2.9lbs согласуются. Время переводится в часы; GB/TB не конвертируются друг в друга без политики единиц. Для других полей универсального допуска нет.
+Mass normalizes to grams: kg=1000g, oz=28.349523125g, lb=453.59237g. Tolerance equals half the last decimal place of the source number after conversion. Reconciliation requires a common intersection of all intervals. The representative is the observation with the widest interval, then by row_id/fact ID on ties; that is a display-value selection rule, not supplier priority. Nimbus 1.2kg/42oz and LedgerLite 1.3kg/2.9lbs reconcile. Time converts to hours; GB/TB are not converted into each other without a unit policy. There is no universal tolerance for other fields.
 
-Факты группируются по атрибуту: одинаковые значения/условия согласуются; разные значения при одинаковых условиях удерживаются как conflict; разные единицы/условия — incomparable. Это консервативная политика: при нескольких контекстах удерживается весь атрибут. Пропуск значения не конфликт. Голосования, усреднения, внешних сведений и автоматического выбора поставщика нет.
+Facts group by attribute: same values/conditions reconcile; different values under the same conditions are held as conflict; different units/conditions are incomparable. This is a conservative policy: with multiple contexts the whole attribute is held. A missing value is not a conflict. There is no voting, averaging, external knowledge, or automatic supplier preference.
 
-Категории — закрытая taxonomy. Аксессуары распознаются раньше основных устройств; ear tips/cases/sleeves → other, обычная mouse → other, gaming mouse/keyboard → gaming_accessories, USB-C hub → chargers_cables. Неизвестный тип → other с review. Confidence high/medium/low — объяснимый сигнал решения, не вероятность.
+Categories come from a closed taxonomy. Accessories are recognized before primary devices; ear tips/cases/sleeves → other, ordinary mouse → other, gaming mouse/keyboard → gaming_accessories, USB-C hub → chargers_cables. Unknown type → other with review. Confidence high/medium/low is an explainable decision signal, not a probability.
 
-Суммы цен сохраняются десятичными строками с исходной валютой; `$` означает USD по явному допущению. FX, исправления подозрительных цен и суммирование stock отсутствуют. Ошибки цены у уже отвергнутых не-товаров остаются диагностикой и не создают ненужную ручную очередь.
+Price amounts stay decimal strings with the original currency; `$` means USD by an explicit assumption. There is no FX, suspicious-price correction, or stock summing. Price errors on already rejected non-products stay diagnostics and do not create an unnecessary manual queue.
 
-## Метрики и история
+## Metrics and history
 
-Подробные определения, знаменатели, формат JSONL и протокол скорости: [BENCHMARKS.md](docs/BENCHMARKS.md).
+Detailed definitions, denominators, JSONL format, and speed protocol: [BENCHMARKS.md](docs/BENCHMARKS.md).
 
-Успешный запуск содержит `result.json`, `diagnostics.json`, `metrics.json`, `report.md`, `report.json`. Последний записывается как маркер успешного выполнения. Невалидный вход создаёт `failure.json`, возвращает exit code 1 и не создаёт успешного отчёта; при ошибке записи могут остаться частичные файлы. Успех выполнения не означает качество ground truth или готовность публикации.
+A successful run contains `result.json`, `diagnostics.json`, `metrics.json`, `report.md`, `report.json`. The last file is written as the success marker. Invalid input creates `failure.json`, returns exit code 1, and does not create a success report; on write failure partial files may remain. Execution success does not mean ground-truth quality or publication readiness.
 
-Расширенные matching labels: 20 provisional family cases, 14 development на 59 строках / 6 holdout на 49. Они охватывают 108 строк и не повышаются автоматически. Отдельный `eval/matching-audit.json` фиксирует 20 атомарных human-вопросов. Полученный экспорт прошёл валидацию: 20/20 reviewed, 18 определённых ответов совпали с pipeline, два `unknown`; agreement 18/18, scored coverage 18/20. Экспорт пока находится вне репозитория, поэтому канонический audit/report ещё нужно сохранить. `eval/stage2-checks.json` отдельно содержит технические category/fact/reconciliation проверки.
+Extended matching labels: 20 provisional family cases, 14 development on 59 rows / 6 holdout on 49. They cover 108 rows and are not raised automatically. A separate `eval/matching-audit.json` records 20 atomic human questions. The saved human export and metrics are [matching-audit-human-verified.json](eval/matching-audit-human-verified.json) and [matching-audit-metrics.json](eval/matching-audit-metrics.json): 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements (post-holdout validation). `eval/stage2-checks.json` separately holds technical category/fact/reconciliation checks.
 
-`compare` читает schema 1–4, проверяет целостность решений и совпадение feed/taxonomy/labels/split. Для schema 4 отдельно сравнивается `publicationHash`; B1→B3 требует неизменных matching, offers, facts, review и row outcomes. Неизвестная схема отклоняется. Разные входы/метки → несопоставимость, дельты N/A и exit code 1. Рост известных FP, нарушение учёта или провал quality checks также дают ненулевой код; сравнение сохраняется. Для исторического B0 полноценный review — N/A, а не прежний ноль другого показателя.
+`compare` reads schema 1–4, checks decision integrity and matching feed/taxonomy/labels/split. For schema 4 it separately compares `publicationHash`; B1→B3 requires unchanged matching, offers, facts, review, and row outcomes. Unknown schema is rejected. Different inputs/labels → incomparable, deltas N/A, and exit code 1. Growth of known FP, accounting violations, or failed quality checks also give a non-zero code; the comparison is still saved. For historical B0, full review is N/A, not the former zero of a different metric.
 
-Текущие артефакты:
+Current artifacts:
 
-- [Принятый B1-v2](reports/B1-v2/report.md), [повтор](reports/B1-v2-repeat/report.md), [B0 → B1-v2](reports/comparisons/B0-to-B1-v2/comparison.md).
-- [Данные для графиков: 8 запусков](reports/benchmarks/stage2-v2/observations.jsonl), [перечень запусков](reports/benchmarks/stage2-v2/summary.json).
-- [Итог и передача этапа 2](docs/STAGE2_REPORT.md); [roadmap](docs/ROADMAP.md).
+- [Accepted B1-v2](reports/B1-v2/report.md), [repeat](reports/B1-v2-repeat/report.md), [B0 → B1-v2](reports/comparisons/B0-to-B1-v2/comparison.md).
+- [Chart data: 8 runs](reports/benchmarks/stage2-v2/observations.jsonl), [run list](reports/benchmarks/stage2-v2/summary.json).
+- [Stage 2 outcome and handoff](docs/STAGE2_REPORT.md); [roadmap](docs/ROADMAP.md).
 
-Сохранённые исторические прогоны не переписываются. Файлы результатов сохраняются локально и предназначены для Git; автоматической отправки куда-либо нет. Результаты OpenAI B3 описаны в [отчёте этапа 4](docs/STAGE4_REPORT.md), локальный Ollama-эксперимент — в [отчёте этапа 3](docs/STAGE3_REPORT.md), распределение ответственности — в [ролях моделей](LLM_ROLES.md).
+Saved historical runs are not rewritten. Result files are kept locally and intended for Git; there is no automatic upload anywhere. OpenAI B3 results are described in the [stage 4 report](docs/STAGE4_REPORT.md), the local Ollama experiment in the [stage 3 report](docs/STAGE3_REPORT.md), and responsibility split in [model roles](LLM_ROLES.md).
 
 ## B3: OpenAI publication generation and verifier
 
-Локальный `.env` должен содержать `OPENAI_API_KEY`; ключ загружается через `AppConfig`, имеет меньший приоритет, чем process env, и не сохраняется в артефактах. Конфигурация B3 — `config/stage4.openai.json`: `gpt-5.6-sol` генерирует 1–3 коротких нейтральных предложения, отдельный `gpt-6-astra` разбивает весь текст на claims и проверяет evidence. Оба используют reasoning `low`, Responses API и strict Structured Outputs.
+Local `.env` must contain `OPENAI_API_KEY`; the key is loaded through `AppConfig`, has lower priority than process env, and is not saved in artifacts. B3 config is `config/stage4.openai.json`: `gpt-5.6-sol` generates 1–3 short neutral sentences, a separate `gpt-6-astra` splits the whole text into claims and checks evidence. Both use reasoning `low`, Responses API, and strict Structured Outputs.
 
-Development live и replay:
+Development live and replay:
 
 ```sh
 npm run build
@@ -120,30 +120,30 @@ node dist/src/cli.js pipeline --baseline b3 --ai-mode live --ai-cache reports/my
 node dist/src/cli.js pipeline --baseline b3 --ai-mode replay --ai-cache reports/my-b3-cache --ai-config config/stage4.openai.json --ai-cohort development --claim-checks eval/stage4-claims.json --out reports --run-id my-b3-replay
 ```
 
-Каждый live run требует нового пустого cache directory; replay использует ровно его и не вызывает сеть. Generated review использует контракт `stage4-generated-review-v2`: model verdict не является human verdict, каждый проверенный claim имеет явный `state=reviewed`, `humanVerdict` и rationale, а проблемы атомарности/текста отмечаются отдельно. Актуальный human-verified файл — `eval/generated-review-fdca0138d88f.json`: 76/99 claims, 28/37 карточек и полная фиксированная выборка 20/20.
+Each live run needs a new empty cache directory; replay uses exactly that cache and does not call the network. Generated review uses contract `stage4-generated-review-v2`: a model verdict is not a human verdict, every checked claim has explicit `state=reviewed`, `humanVerdict`, and rationale, and atomicity/copy issues are marked separately. The current human-verified file is `eval/generated-review-fdca0138d88f.json`: 76/99 claims, 28/37 cards, and the full fixed sample 20/20.
 
-Подготовить UI с этой разметкой можно без изменения исторического run:
+You can prepare the UI with that labeling without changing the historical run:
 
 ```sh
 npm run web:prepare -- --run-dir reports/B3-openai-development-verifier-only-v2-human-gate-replay --generated-checks eval/generated-review-fdca0138d88f.json
 ```
 
-Full-input B3 требует явного `--stage4-gate` с успешно проверенным development report, human-verified controlled suite и завершённой выборкой generated review. Factual errors и unresolved `non_atomic_claim` закрывают gate; `unclear_copy` измеряется и раскрывается отдельно. Holdout этой командой не запускается.
+Full-input B3 requires an explicit `--stage4-gate` with a successfully checked development report, human-verified controlled suite, and completed generated-review sample. Factual errors and unresolved `non_atomic_claim` close the gate; `unclear_copy` is measured and disclosed separately. Holdout is not started by this command.
 
-P0.2 перевёл verifier на `publication_verification_v2`: prompt требует законченные смысловые claims, а локальный валидатор отклоняет оборванные `is a`/`has a` и голые измерения без атрибута. После диагностического full development live выполнен verifier-only run по замороженным текстам: 49 calls, $2.390245, controlled 12/12, 37/39 ready и 0 запрещённых spans. Human-gate replay дал 49 cache hits, generated 76/99, sample 20/20, factual/non-atomic errors 0/0 и идентичную публикацию. Development gate принят.
+P0.2 moved the verifier to `publication_verification_v2`: the prompt requires finished semantic claims, and the local validator rejects truncated `is a`/`has a` and bare measurements without an attribute. After a diagnostic full development live, a verifier-only run on frozen texts was executed: 49 calls, $2.390245, controlled 12/12, 37/39 ready, and 0 forbidden spans. Human-gate replay gave 49 cache hits, generated 76/99, sample 20/20, factual/non-atomic errors 0/0, and identical publication. The development gate is accepted.
 
-Актуальный development gate: [verifier-only live](reports/B3-openai-development-verifier-only-v2-live/report.md), [human-gate replay](reports/B3-openai-development-verifier-only-v2-human-gate-replay/report.md) и [сравнение](reports/comparisons/B3-openai-development-verifier-only-v2-live-to-human-gate-replay/comparison.md). Human-verified controlled gate: 4/4 unsupported, false block 0/7, disputed leakage 0/1, errors 0. Generated review: 76/99 claims, 28/37 products, sample 20/20, factual errors 0, non-atomic 0, unclear-copy 2. Результат: 37/39 ready, 2 identity review. Исторические v1 live/replay и review сохранены без перезаписи.
+Current development gate: [verifier-only live](reports/B3-openai-development-verifier-only-v2-live/report.md), [human-gate replay](reports/B3-openai-development-verifier-only-v2-human-gate-replay/report.md), and [comparison](reports/comparisons/B3-openai-development-verifier-only-v2-live-to-human-gate-replay/comparison.md). Human-verified controlled gate: 4/4 unsupported, false block 0/7, disputed leakage 0/1, errors 0. Generated review: 76/99 claims, 28/37 products, sample 20/20, factual errors 0, non-atomic 0, unclear-copy 2. Result: 37/39 ready, 2 identity review. Historical v1 live/replay and review are kept without overwrite.
 
-Full-input выполнен после отдельного разрешения: [live](reports/B3-openai-full-input-atomic-v2-live/report.md) сделал 322 calls, 526449 tokens, $8.110955 и получил 154/156 ready, 2 identity review, 0 withheld. Один первый verifier response содержал повреждённый support ID; fail-closed validation его отклонила, а единственный разрешённый repair завершился успешно. Live-report исторически имеет `partial` из-за исправленного затем учёта восстановленных ошибок. [Offline replay](reports/B3-openai-full-input-atomic-v2-replay/report.md) имеет `success`, 0 calls и тот же `publicationHash`; [сравнение](reports/comparisons/B3-openai-full-input-atomic-v2-live-to-replay/comparison.md) не содержит изменений или нарушений. Среди 390 опубликованных claims запрещённых atomicity-паттернов нет.
+Full-input ran after a separate go-ahead: [live](reports/B3-openai-full-input-atomic-v2-live/report.md) made 322 calls, 526449 tokens, $8.110955 and got 154/156 ready, 2 identity review, 0 withheld. One first verifier response contained a damaged support ID; fail-closed validation rejected it, and the single allowed repair succeeded. The live report historically has `partial` because of later-corrected accounting of recovered errors. [Offline replay](reports/B3-openai-full-input-atomic-v2-replay/report.md) has `success`, 0 calls, and the same `publicationHash`; [comparison](reports/comparisons/B3-openai-full-input-atomic-v2-live-to-replay/comparison.md) contains no changes or violations. Among 390 published claims there are no forbidden atomicity patterns.
 
-Первый holdout выполнен после отдельного разрешения строго offline из full-input cache:
+The first holdout ran after a separate go-ahead, strictly offline from the full-input cache:
 
 ```sh
 npm run build
 node dist/src/cli.js pipeline --baseline b3 --split holdout --ai-mode replay --ai-cache reports/B3-openai-full-input-atomic-v2-cache --ai-config config/stage4.openai.json --ai-cohort full_input --claim-checks eval/stage4-claims.json --stage4-gate reports/B3-openai-development-verifier-only-v2-human-gate-replay --out reports --run-id B3-openai-full-input-atomic-v2-holdout-replay
 ```
 
-[Holdout report](reports/B3-openai-full-input-atomic-v2-holdout-replay/report.md): 6 cases / 49 rows, TP/FP/FN 22/0/0, true negatives 1154/1154, hard negatives 256/256, non-products 49/49, 0 calls/tokens/cost, 321 successful cache hits. Эти family-label метрики остаются `provisional`. Компактный human audit завершён отдельно и должен называться post-holdout validation, поскольку был сформирован после раскрытия holdout. [Машиночитаемая provisional-сводка](reports/benchmarks/stage5-b3-full-input-and-holdout-provisional/summary.json) хранит прежние development/holdout серии.
+[Holdout report](reports/B3-openai-full-input-atomic-v2-holdout-replay/report.md): 6 cases / 49 rows, TP/FP/FN 22/0/0, true negatives 1154/1154, hard negatives 256/256, non-products 49/49, 0 calls/tokens/cost, 321 successful cache hits. These family-label metrics remain `provisional`. The compact human audit finished separately and must be called post-holdout validation because it was formed after holdout disclosure. The [machine-readable provisional summary](reports/benchmarks/stage5-b3-full-input-and-holdout-provisional/summary.json) stores the previous development/holdout series.
 
 
 <details>
@@ -151,47 +151,47 @@ node dist/src/cli.js pipeline --baseline b3 --split holdout --ai-mode replay --a
 
 ## B2: local-model extraction and matching experiment
 
-Принятый product baseline — **B1-v2**. Фактически измеренный B2 был development-экспериментом на локальных моделях Ollama; OpenAI-вызовов в B2 не было. OpenAI Sol/Astra используются только в B3 publication; B3 не повторяет extraction/matching, не меняет B1 matching/facts и не повышает B2 задним числом.
+The accepted product baseline is **B1-v2**. The actually measured B2 was a development experiment on local Ollama models; there were no OpenAI calls in B2. OpenAI Sol/Astra are used only in B3 publication; B3 does not repeat extraction/matching, does not change B1 matching/facts, and does not raise B2 after the fact.
 
-`AiProvider` и Nest DI объединяют `OpenAiAdapter` (Responses API) и `OllamaAdapter` (native `/api/chat`, встроенный fetch, `stream:false`, общий JSON Schema в `format`). Предметный pipeline не импортирует провайдеры. Extraction/evidence, retries, cache/replay и метрики общие. Matching schema v3 сохраняет decision, confidence high/medium/low, reason и evidence только в `ai.json`; рекомендации не изменяют deterministic decisions, группы или confidence товаров.
+`AiProvider` and Nest DI combine `OpenAiAdapter` (Responses API) and `OllamaAdapter` (native `/api/chat`, built-in fetch, `stream:false`, shared JSON Schema in `format`). The domain pipeline does not import providers. Extraction/evidence, retries, cache/replay, and metrics are shared. Matching schema v3 stores decision, confidence high/medium/low, reason, and evidence only in `ai.json`; recommendations do not change deterministic decisions, groups, or product confidence.
 
-Локальные профили: `config/ai.ollama-qwen3-4b.json` и `config/ai.ollama-gemma4-12b.json`. Имена моделей проверены через Ollama; вторая модель — **gemma4:12b**. Endpoint — `http://127.0.0.1:11434`. Параметры: temperature=0, seed=42, context=8192, maxOutputTokens=2048, topK=20, topP=0.9, repeatPenalty=1, keepAlive=5m; Qwen thinking=false. После обновления сервера до 0.34.0 технический повтор Gemma использует отдельно зафиксированный профиль `config/ai.ollama-gemma4-12b-v034-thinkoff.json` с `thinking:false`; это новый эксперимент, не переписывающий прежний. Один запрос одновременно; 120 секунд на попытку, максимум один транспортный retry. Ошибки JSON/schema/evidence не вызывают повторную генерацию.
+Local profiles: `config/ai.ollama-qwen3-4b.json` and `config/ai.ollama-gemma4-12b.json`. Model names were checked via Ollama; the second model is **gemma4:12b**. Endpoint — `http://127.0.0.1:11434`. Parameters: temperature=0, seed=42, context=8192, maxOutputTokens=2048, topK=20, topP=0.9, repeatPenalty=1, keepAlive=5m; Qwen thinking=false. After the server update to 0.34.0, the technical Gemma rerun uses a separately recorded profile `config/ai.ollama-gemma4-12b-v034-thinkoff.json` with `thinking:false`; that is a new experiment, not a rewrite of the previous one. One request at a time; 120 seconds per attempt, at most one transport retry. JSON/schema/evidence errors do not trigger regeneration.
 
-Для нового, **явно разрешённого** локального эксперимента:
+For a new, **explicitly authorized** local experiment:
 
 ```sh
 npm run build
 node dist/src/ollama-experiment.js reports/my-new-ollama-experiment
 ```
 
-Команда проверяет B1, сервер и digest, фиксирует manifest до inference, выполняет smoke Quill (1 запрос, без retries), затем 12 строк непосредственно из `eval/stage3-checks.json` на Qwen и, при технической стабильности, Gemma. Ошибка смысла при корректном транспорте/схеме измеряется как ошибка качества. Восемь фиксированных shadow-пар оцениваются отдельно. После каждой серии выполняется replay с запрещённым сетевым транспортом. Промпт, schema, выборка и параметры между моделями не меняются. Smoke исключён из development-качества.
+The command checks B1, the server, and digest, records the manifest before inference, runs Quill smoke (1 request, no retries), then 12 rows directly from `eval/stage3-checks.json` on Qwen and, if technically stable, Gemma. A meaning error with correct transport/schema is measured as a quality error. Eight fixed shadow pairs are scored separately. After each series, replay runs with network transport forbidden. Prompt, schema, sample, and parameters do not change between models. Smoke is excluded from development quality.
 
-Полный эксперимент автоматически допускается только при 12/12 валидных extraction-ответах, 11/11 ожидаемых дополнениях без лишних и ложных citations, 8/8 валидных matching-ответах без опасных merge, сохранённых B1-проверках и идентичном replay. При двух прошедших моделях выбирается меньшая median latency, затем p95, затем Qwen. Код обрабатывает 220 строк, AI — только 41 проблемную; holdout не оценивается. Если порог не пройден, полный прогон не выполняется.
+A full experiment is allowed automatically only with 12/12 valid extraction answers, 11/11 expected additions without extras or false citations, 8/8 valid matching answers without dangerous merges, preserved B1 checks, and identical replay. With two passing models, the smaller median latency is chosen, then p95, then Qwen. Code handles 220 rows; AI handles only 41 problem rows; holdout is not evaluated. If the threshold is not met, the full run is not executed.
 
-Сохранённый эксперимент: [отчёт этапа 3](docs/STAGE3_REPORT.md), каталоги `reports/stage3-ollama-v1` и `reports/stage3-ollama-v2`, [итоговое сравнение](reports/stage3-ollama-v2/comparison.md). Каталоги неизменяемы. В этом эксперименте сохранена отдельная запись продолжения после семантически неуспешного smoke; повторного smoke не было.
+Saved experiment: [stage 3 report](docs/STAGE3_REPORT.md), directories `reports/stage3-ollama-v1` and `reports/stage3-ollama-v2`, [final comparison](reports/stage3-ollama-v2/comparison.md). Directories are immutable. This experiment keeps a separate continuation record after a semantically unsuccessful smoke; there was no repeated smoke.
 
-Общий CLI по-прежнему поддерживает `--baseline b2 --ai-mode live|replay --ai-cache DIR --ai-config PATH --ai-task extraction|matching --ai-cohort development|full_input`. По умолчанию он выбирает B1. Точный smoke/набор из 12/набор из 8 пар задаёт экспериментальный runner через проверенные `aiRows`/`aiPairs` сервиса, не обрезая feed. Для отдельного **офлайн-replay без Ollama** команда восстанавливает параметры и явную выборку из сохранённого отчёта:
+The shared CLI still supports `--baseline b2 --ai-mode live|replay --ai-cache DIR --ai-config PATH --ai-task extraction|matching --ai-cohort development|full_input`. By default it selects B1. The exact smoke/set of 12/set of 8 pairs is set by the experimental runner through the service’s checked `aiRows`/`aiPairs`, without truncating the feed. For a separate **offline replay without Ollama**, the command restores parameters and the explicit sample from the saved report:
 
 ```sh
 npm run build
 node dist/src/replay-ollama-run.js reports/stage3-ollama-v1/ollama-qwen3-4b-development-live reports/stage3-ollama-v1/ollama-qwen3-4b-development-cache reports/my-replay ollama-qwen3-4b-development-replay
 ```
 
-Не использовать default full_input вместо зафиксированной development-выборки. Replay-команда проверяет исходные hashes, заново разбирает raw JSON и не делает discovery или generate. Невалидные ответы воспроизводятся как отказы; проверяется равенство outcomes/diagnostics/quality/decisions. Старая несовместимая matching schema-v2 сохранена как интеграционная неудача; актуальный matching-кэш и schema-v3 находятся в stage3-ollama-v2.
+Do not use default full_input instead of the fixed development sample. The replay command checks original hashes, re-parses raw JSON, and does not discover or generate. Invalid answers are reproduced as refusals; equality of outcomes/diagnostics/quality/decisions is checked. The old incompatible matching schema-v2 is kept as an integration failure; the current matching cache and schema-v3 are in stage3-ollama-v2.
 
-`ai-cache-v2` хранит исходный ответ до валидации, каждую попытку, ошибки, usage и временные показатели. Идентичность включает provider/endpoint, точную модель/digest/версию сервера, параметры, промпт, schema и вход. Старый ai-cache-v1 читается. Replay заново проверяет данные и воспроизводит отказы; отсутствующий кэш не заменяется live. `normalized.json` экспериментального прогона содержит только принятые данные и диагностику. Partial-run сохраняет все 220 строк, B1-факты и причины отказа; невалидный ответ не поступает в pipeline.
+`ai-cache-v2` stores the original response before validation, every attempt, errors, usage, and timing. Identity includes provider/endpoint, exact model/digest/server version, parameters, prompt, schema, and input. Old ai-cache-v1 is readable. Replay re-checks data and reproduces refusals; a missing cache is not replaced by live. The experiment run’s `normalized.json` contains only accepted data and diagnostics. A partial run keeps all 220 rows, B1 facts, and refusal reasons; an invalid answer does not enter the pipeline.
 
-Искусственные ответы тестов имеют origin=test и не допускаются в реальный benchmark. Непроверенные уровни validation остаются unchecked; N/A для неизвестных cache-показателей и стоимости локального вычисления не означает нулевую стоимость. Подробный протокол — [BENCHMARKS.md](docs/BENCHMARKS.md).
+Artificial test answers have origin=test and are not allowed into a real benchmark. Unchecked validation levels stay unchecked; N/A for unknown cache metrics and local compute cost does not mean zero cost. Detailed protocol — [BENCHMARKS.md](docs/BENCHMARKS.md).
 
-OpenAI-профили `config/ai.json`, `config/ai.matching-sol.json`, `config/ai.matching-astra.json` сохранены. Ключ читается из `.env` / `OPENAI_API_KEY`; не помещать его в JSON-config, CLI-аргументы или frontend. Доступ Sol/Astra и актуальность тарифов требуют проверки после получения ключа.
+OpenAI profiles `config/ai.json`, `config/ai.matching-sol.json`, `config/ai.matching-astra.json` are saved. The key is read from `.env` / `OPENAI_API_KEY`; do not put it in JSON config, CLI arguments, or the frontend. Sol/Astra access and current pricing need checking after the key is obtained.
 
 </details>
 
-## Этап 5: локальный экран B1 и B3 claim review
+## Stage 5: local B1 screen and B3 claim review
 
-Техническая часть P0.3 выполнена: B1/B3 каталог, завершённый claim review, компактный matching audit, full-input и holdout replay сохранены. Человеческие ответы 20/20 получены и валидны; до полного закрытия остаются сохранение экспорта/метрик, синхронизация финального комплекта и clean-clone финал. Расширенные labels на 108 строк остаются честно provisional. [Отчёт и соответствие PDF](docs/STAGE5_REPORT.md), [краткий WRITEUP](WRITEUP.md).
+Stage 5 is complete: B1/B3 catalog, completed claim review, compact matching audit with repo-backed metrics, full-input and holdout replay are saved. Final audit metric: 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements. Extended labels on 108 rows stay honestly provisional. Stage 6 modular refactoring is optional and not started. [Report and PDF alignment](docs/STAGE5_REPORT.md), [short WRITEUP](WRITEUP.md).
 
-Из чистого каталога, Node 24.14.1 (см. `.nvmrc`), без `.env` и ключа:
+From a clean checkout, Node 24.14.1 (see `.nvmrc`), without `.env` or a key:
 
 ```sh
 npm ci
@@ -206,8 +206,8 @@ npm run web:build
 npm run web
 ```
 
-Run ID должен быть новым: отчёты не перезаписываются. Для просмотра уже сохранённого результата достаточно B1-команды выше либо `npm run web:prepare -- --run-dir reports/B3-openai-development-human-gate-v2 --generated-checks eval/generated-review-e478435a3d39.json` для claim review. Подготовку выполнить до сборки; после нового снимка обновить страницу, для production — пересобрать UI. [Настройки URL и preview](web/README.md).
+The run ID must be new: reports are not overwritten. To view an already saved result, the B1 command above is enough, or `npm run web:prepare -- --run-dir reports/B3-openai-development-human-gate-v2 --generated-checks eval/generated-review-e478435a3d39.json` for claim review. Prepare before building; after a new snapshot refresh the page, and for production rebuild the UI. [URL and preview settings](web/README.md).
 
-Просмотр JSON не является replay модели. B1 работает кодом без сети; B3 replay использует сохранённые ответы без новых API-вызовов. UI не запускает pipeline и не пересчитывает matching/verifier: он отображает сохранённые решения и собирает только явные human confirmations. В B1 текст отсутствует с причиной `generation_not_run`, согласованный факт не означает проверенное утверждение.
+Viewing JSON is not model replay. B1 runs in code with no network; B3 replay uses saved answers without new API calls. The UI does not start the pipeline or recompute matching/verifier: it shows saved decisions and collects only explicit human confirmations. In B1 text is absent with reason `generation_not_run`; a reconciled fact is not a verified claim.
 
-Контроль и повтор: `reports/B1-stage5-control`, `reports/B1-stage5-repeat`; сравнения: `reports/comparisons/B1-v2-to-stage5`, `stage3-to-stage5`, `stage5-repeat`; история: `reports/benchmarks/stage5-offline`. Все quality-значения provisional.
+Control and repeat: `reports/B1-stage5-control`, `reports/B1-stage5-repeat`; comparisons: `reports/comparisons/B1-v2-to-stage5`, `stage3-to-stage5`, `stage5-repeat`; history: `reports/benchmarks/stage5-offline`. All quality values are provisional.

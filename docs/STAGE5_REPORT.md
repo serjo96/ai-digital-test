@@ -1,73 +1,73 @@
-# Этап 5 — human matching audit получен, финальная фиксация открыта
+# Stage 5 — complete: UI, holdout, and compact matching audit
 
-Дата исходной реализации: 2026-09-10 (Asia/Bangkok); обновлено 2026-09-13. B1/B3 UI, full-input и holdout готовы. Компактный human matching audit получен и провалидирован: 18/18 agreement при coverage 18/20. **Этап 5 целиком не закрыт**, пока экспорт/метрика не сохранены в репозитории и текущая версия не прошла финальный clean-clone. Принятым product baseline остаётся B1-v2.
+Original implementation date: 2026-09-10 (Asia/Bangkok); updated 2026-09-13. **Stage 5 is complete.** B1/B3 UI, full-input, holdout, and the compact human matching audit are saved. Final audit metric: 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements ([matching-audit-metrics.json](../eval/matching-audit-metrics.json)). B1-v2 remains the accepted product baseline. Stage 6 modular refactoring is optional and not started.
 
-## Фактическая основа и изменения
+## Actual basis and changes
 
-Прочитаны ROADMAP, TASK_ANALYSIS, отчёты этапов 1–3, BENCHMARKS и код; обе страницы исходного PDF просмотрены при планировании. В исходном UI по умолчанию были три явно помеченные demo-карточки, шесть колонок предложений, поиск/review, raw rows и раскрывающиеся факты. Сборка и 42 теста проходили. Артефактов B2/B3, descriptions/claims/verifier не было; контракт ListingView содержал только UI-заглушки. Незакоммиченные изменения этапа 3 использованы как исходное состояние; пользователь сохранил их в процессе работы, агент коммитов не делал.
+ROADMAP, TASK_ANALYSIS, stage 1–3 reports, BENCHMARKS, and the code were read; both pages of the source PDF were reviewed during planning. The original UI defaulted to three clearly labeled demo listings, six offer columns, search/review, raw rows, and expandable facts. The build and 42 tests passed. There were no B2/B3 artifacts, descriptions/claims/verifier; the ListingView contract contained only UI placeholders. Uncommitted stage 3 changes were used as the starting state; the user saved them during the work, and the agent made no commits.
 
-Добавлено:
+Added:
+    10|
+- `web:prepare -- --run-dir DIR`: validation of result structure and relationships, agreement with the report on decisionsHash and row count; an atomic snapshot with selected run metadata. Test-origin and results containing generation/verifier are rejected. Old reports are not changed.
+- Shared validation of nested fields, unique IDs, product/offer/review references, and exact citations with offsets. Integrity validation is not repeated matching or a semantic verifier.
+- A real snapshot by default; damaged/missing JSON produces a clear error with the preparation command. URL override also supports the old raw ProductResult, with explicit absence of metadata. Demo fixtures are imported only by tests.
+- Provenance, counters, all 220 row outcomes, and a separate section for the four non-products with originals/reasons. `review: 0` in row outcomes does not mean an empty review: 51 grouped products have review flags.
+- Source price and stock in raw rows; offer-scope facts in offers; links from SKU/evidence/review to the source row. Related review rows from another product are included so links remain functional. The UI shows extraction rules, scope, conditions, confidence, and reconciliation reasons.
+- A responsive table with local scrolling, nonbreaking numeric prices, wrapping of long IDs, a bounded product list, keyboard focus, and aria-expanded. The existing light/dark theme and two-column structure are preserved.
 
-- `web:prepare -- --run-dir DIR`: проверка структуры и связей result, совпадения с report по decisionsHash и числу строк; атомарный снимок с выбранными метаданными запуска. Тестовое происхождение и результаты с generation/verifier отклоняются. Старые отчёты не изменяются.
-- Общая валидация вложенных полей, уникальных IDs, ссылок товаров/предложений/review и точных цитат с offsets. Проверка целостности не является повторным matching или смысловым verifier.
-- Реальный снимок по умолчанию; повреждённый/отсутствующий JSON вызывает понятную ошибку с командой подготовки. URL override поддерживает и прежний raw ProductResult, с явным отсутствием метаданных. Демо-фикстуры импортируются только тестами.
-- Происхождение, счётчики, все 220 исходов строк и отдельный раздел четырёх не-товаров с оригиналами/причинами. `review: 0` в исходах строк не означает пустой review: 51 сгруппированный товар имеет review flags.
-- Исходная цена и stock в raw rows; offer-scope факты в предложениях; ссылки от SKU/evidence/review к исходной строке. Включены связанные review-строки другого товара, чтобы ссылки оставались рабочими. UI показывает правила извлечения, scope, условия, confidence и причины согласования.
-- Адаптивная таблица с локальной прокруткой, неразрывные числовые цены, перенос длинных IDs, ограниченный список товаров, фокус с клавиатуры и aria-expanded. Текущая светлая/тёмная тема и двухколоночная структура сохранены.
+Public backend APIs, pipeline rules, labels, and source JSON/PDF were unchanged. No presumed future claims contract was introduced: it must appear in stage 4.
 
-Публичные backend API, правила pipeline, labels и исходные JSON/PDF не изменены. Не введён предполагаемый контракт будущих claims: он должен появиться на этапе 4.
+    20|## Cross-check against the PDF and roadmap
 
-## Сверка с PDF и roadmap
+The PDF does not specify a design or product-table columns. The table on the second page is a sample for `LLM_ROLES.md`, while Show it requires one screen with the product, sources, text, and flags. Therefore, visual evaluation concerns readability and content completeness, not a pixel-perfect layout.
 
-PDF не задаёт дизайн или колонки таблицы товаров. Таблица на второй странице — образец `LLM_ROLES.md`, а пункт Show it требует один экран с товаром, исходниками, текстом и flags. Поэтому визуальная оценка относится к читаемости и полноте содержимого, а не к pixel-perfect макету.
+The following table records the state of the initial UI iteration on 2026-09-10. The later P0.1–P0.3 additions below are the current continuation and close the B3/human-review gaps noted here.
 
-Следующая таблица фиксирует состояние первоначальной UI-итерации 2026-09-10. Позднейшие дополнения P0.1–P0.3 ниже являются актуальным продолжением и закрывают отмеченные здесь пробелы B3/human review.
-
-| Требование | Было | Сейчас / остающийся пробел |
+| Requirement | Before | Now / remaining gap |
 |---|---|---|
-| Канонический товар и источники | 3 demo-карточки; ручной URL к B1 | По умолчанию подготовленный B1: 156 товаров и все 220 строк |
-| Таблица предложений | Supplier, SKU, price, currency, stock, condition | Сохранена, добавлены offer facts и ссылки; цены/валюты не объединяются |
-| Raw rows | Title/specs, supplier/SKU/ID | Также исходная цена/stock и связанные review-строки |
-| Категория, confidence, uncertainty | Уже показаны для demo/проекции | Реальные значения и причины B1; фильтр 51/156 товаров |
-| Факты, разногласия, evidence | Раскрытие наблюдений | Точные цитаты и переход к источнику, scope/условия/правило; реальных conflict в B1 нет, synthetic conflict проверен отдельно тестом |
-| Generated copy и verifier | Демонстрационные тексты | На реальных данных явно отсутствуют; этап 4 не выполнен |
-| Claim → источник и причина допуска | Claims отсутствуют | Заблокировано контрактом/реализацией этапа 4; fact evidence не выдаётся за claim verification |
-| Около 20 hand-labelled items | Provisional 14 development / 6 holdout | UI готов; человеческая проверка открыта; holdout уже раскрыт offline |
-| Matching и verifier quality | Кодовые development-метрики | Сохранены сравнения B1; verifier, естественные ошибки текста, полезный выход B3 — N/A |
-| Таблица LLM_ROLES | Четыре колонки и подробности ниже | Шесть колонок PDF; реализованные, не запущенные и будущие роли различаются |
-| README, WRITEUP, AI_USAGE | README/AI_USAGE и роли; WRITEUP отсутствовал | Инструкции обновлены, одностраничная записка создана, реальные ошибки внесены в журнал |
-| Clean checkout / локальная демонстрация | Финальная проверка отсутствовала | Чистая копия исходников, npm ci, pipeline/eval/build и browser preview проверены; это не git clone опубликованного финального commit |
+| Canonical product and sources | 3 demo listings; manual URL to B1 | Prepared B1 by default: 156 products and all 220 rows |
+| Offers table | Supplier, SKU, price, currency, stock, condition | Preserved, with offer facts and links added; prices/currencies are not merged |
+    30|| Raw rows | Title/specs, supplier/SKU/ID | Also source price/stock and related review rows |
+| Category, confidence, uncertainty | Already shown for demo/projection | Real B1 values and reasons; filter for 51/156 products |
+| Facts, discrepancies, evidence | Expandable observations | Exact citations and source navigation, scope/conditions/rule; B1 has no real conflict, synthetic conflict tested separately |
+| Generated copy and verifier | Demonstration text | Explicitly absent on real data; stage 4 not completed |
+| Claim → source and admission reason | Claims absent | Blocked by stage 4 contract/implementation; fact evidence is not presented as claim verification |
+| About 20 hand-labelled items | Provisional 14 development / 6 holdout | UI ready; human review open; holdout already revealed offline |
+| Matching and verifier quality | Code-based development metrics | Stored B1 comparisons; verifier, natural text errors, useful B3 output: N/A |
+| LLM_ROLES table | Four columns with details below | Six PDF columns; implemented, unrun, and future roles distinguished |
+| README, WRITEUP, AI_USAGE | README/AI_USAGE and roles; WRITEUP absent | Instructions updated, one-page writeup created, real errors entered in the log |
+| Clean checkout / local demonstration | Final check absent | Clean copy of sources, npm ci, pipeline/eval/build, and browser preview checked; this is not a git clone of the published final commit |
+    40|
+## Metrics before and after
 
-## Метрики до и после
+All quality estimates are provisional development. The full input is used for accounting but is not claimed to be labeled ground truth.
 
-Все quality-оценки provisional development. Полный вход используется для учёта, но не объявляется размеченным эталоном.
-
-| Показатель | B1-v2 | Этап 3 control-v2 | Этап 5 control | Этап 5 repeat |
+| Metric | B1-v2 | Stage 3 control-v2 | Stage 5 control | Stage 5 repeat |
 |---|---|---|---|---|
-| Учёт строк | 220/220 | 220/220 | 220/220 | 220/220 |
-| Потери / двойные назначения | 0/0 | 0/0 | 0/0 | 0/0 |
-| Товары / не-товары | 156/4 | 156/4 | 156/4 | 156/4 |
-| TP / FP / FN | 17/0/0 | 17/0/0 | 17/0/0 | 17/0/0 |
+| Row accounting | 220/220 | 220/220 | 220/220 | 220/220 |
+| Losses / duplicate assignments | 0/0 | 0/0 | 0/0 | 0/0 |
+| Products / non-products | 156/4 | 156/4 | 156/4 | 156/4 |
+    50|| TP / FP / FN | 17/0/0 | 17/0/0 | 17/0/0 | 17/0/0 |
 | Precision / recall | 17/17 / 17/17 | 17/17 / 17/17 | 17/17 / 17/17 | 17/17 / 17/17 |
 | Candidate recall | 17/17 | 17/17 | 17/17 | 17/17 |
-| Review: сообщения / строки / товары | 64/64/51 | 64/64/51 | 64/64/51 | 64/64/51 |
-| Категории / факты / согласование | 18/18; 30/30; 4/4 | 18/18; 30/30; 4/4 | 18/18; 30/30; 4/4 | 18/18; 30/30; 4/4 |
+| Review: messages / rows / products | 64/64/51 | 64/64/51 | 64/64/51 | 64/64/51 |
+| Categories / facts / reconciliation | 18/18; 30/30; 4/4 | 18/18; 30/30; 4/4 | 18/18; 30/30; 4/4 | 18/18; 30/30; 4/4 |
 | Semantic recall | N/A | 0/11 | 0/11 | 0/11 |
 | Wall, ms | 72.445 | 71.505 | 81.957 | 80.121 |
 | Pipeline, ms | 36.770 | 36.999 | 37.224 | 38.409 |
 | API calls / tokens / USD | 0/0/0 | 0/0/0 | 0/0/0 | 0/0/0 |
-| Генерация / verifier | N/A | N/A | N/A | N/A |
+| Generation / verifier | N/A | N/A | N/A | N/A |
+    60|
+All three comparisons are comparable, decisionsEqual=true, changedRowIds is empty, and there are no mandatory violations. Comparable non-timing values are unchanged. Times are separate observations on Node 24.14.1, darwin arm64, with no claim of acceleration; UI build/browser loading is excluded from pipeline timing. Semantic precision is N/A (0/0); zero useful B3 output was not measured because there was no generation.
 
-Все три сравнения comparable, decisionsEqual=true, changedRowIds пустой, обязательных нарушений нет. Сравнимые нетайминговые значения неизменны. Время — отдельные наблюдения на Node 24.14.1, darwin arm64, без заявления об ускорении; UI build/загрузка браузера не входят в pipeline timing. Semantic precision N/A (0/0); нулевой useful output B3 не измерялся, поскольку генерации не было.
+Artifacts:
 
-Артефакты:
+- [Control](../reports/B1-stage5-control/report.md) and [repeat](../reports/B1-stage5-repeat/report.md), with result/report/metrics/diagnostics JSON alongside.
+- [B1-v2 → stage 5](../reports/comparisons/B1-v2-to-stage5/comparison.md), [stage 3 → stage 5](../reports/comparisons/stage3-to-stage5/comparison.md), [repeat](../reports/comparisons/stage5-repeat/comparison.md), with comparison.json alongside.
+- [History](../reports/benchmarks/stage5-offline/summary.json): 14 runs, 963 observations; [JSONL](../reports/benchmarks/stage5-offline/observations.jsonl). Previous runs were exported from the stage3-offline list and preserved without overwriting.
 
-- [Контроль](../reports/B1-stage5-control/report.md) и [повтор](../reports/B1-stage5-repeat/report.md), рядом result/report/metrics/diagnostics JSON.
-- [B1-v2 → этап 5](../reports/comparisons/B1-v2-to-stage5/comparison.md), [этап 3 → этап 5](../reports/comparisons/stage3-to-stage5/comparison.md), [повтор](../reports/comparisons/stage5-repeat/comparison.md), рядом comparison.json.
-- [История](../reports/benchmarks/stage5-offline/summary.json): 14 запусков, 963 наблюдения; [JSONL](../reports/benchmarks/stage5-offline/observations.jsonl). Предыдущие запуски экспортированы из списка stage3-offline и сохранены без перезаписи.
-
-Команды сохранённых прогонов (ID уже заняты, для воспроизведения выбирать новые):
-
+Commands for stored runs (IDs are already taken; select new ones for reproduction):
+    70|
 ```sh
 npm run typecheck
 npm test
@@ -77,77 +77,77 @@ node dist/src/cli.js pipeline --baseline b1 --semantic-checks eval/stage3-checks
 node dist/src/cli.js eval --baseline b1 --semantic-checks eval/stage3-checks.json --out reports --run-id B1-stage5-repeat
 node dist/src/cli.js compare --before reports/B1-v2 --after reports/B1-stage5-control --out reports/comparisons --run-id B1-v2-to-stage5
 node dist/src/cli.js compare --before reports/B1-stage3-control-v2 --after reports/B1-stage5-control --out reports/comparisons --run-id stage3-to-stage5
-node dist/src/cli.js compare --before reports/B1-stage5-control --after reports/B1-stage5-repeat --out reports/comparisons --run-id stage5-repeat
+    80|node dist/src/cli.js compare --before reports/B1-stage5-control --after reports/B1-stage5-repeat --out reports/comparisons --run-id stage5-repeat
 npm run web:prepare -- --run-dir reports/B1-stage5-control
 ```
 
-## Проверки и воспроизводимость
+## Checks and reproducibility
 
-**45 backend-тестов и 3 web-теста прошли.** Новые проверки: сохранённый B1 проходит без изменения объектов; вложенные дефекты, дубли, повреждённые цитаты/ссылки отклоняются; несовпадение report и result не заменяет предыдущий снимок; test/B3 не выдаётся за поддержанный запуск; real projection не разрешает публикацию; HTTP/JSON/schema ошибки не заменяются demo; пустой результат и synthetic conflict остаются корректно помеченными. 42 прежних теста сохранены.
+**45 backend tests and 3 web tests passed.** New checks: stored B1 passes without object changes; nested defects, duplicates, corrupted citations/references are rejected; disagreement between report and result does not replace the previous snapshot; test/B3 is not presented as a supported run; real projection does not permit publication; HTTP/JSON/schema errors are not replaced with demo; an empty result and synthetic conflict remain correctly marked. The 42 previous tests are preserved.
 
-Браузером проверены: поиск Sony, OPEN BOX одного предложения, USD/EUR без FX; две цитаты battery_runtime и ссылка на PacRim raw row; фильтр 51 карточки review; пустая выдача; Slate с пустыми specs; четыре не-товара с причинами. Отдельная production-сборка из чистого каталога показала 156/51/220, поиск Nimbus сохранил Nimbus 2 и Pro раздельно; ошибок консоли не обнаружено.
+Browser checks covered: Sony search, OPEN BOX on one offer, USD/EUR without FX; two battery_runtime citations and a link to the PacRim raw row; the filter showing 51 review listings; empty results; Slate with empty specs; and four non-products with reasons. A separate production build from a clean directory showed 156/51/220; a Nimbus search kept Nimbus 2 and Pro separate; no console errors were found.
 
-[Журнал браузерной проверки](../reports/ui/stage5/browser-checks.json); [хэши UI-исходников](../reports/ui/stage5/source-hashes.json). Раскрытие факта клавишей Enter и aria-expanded проверены.
+    90|[Browser-check log](../reports/ui/stage5/browser-checks.json); [UI source hashes](../reports/ui/stage5/source-hashes.json). Expanding a fact with Enter and aria-expanded were checked.
 
-Viewport 1440, 768, 375: scrollWidth совпадает с шириной страницы. На мобильном таблица шириной 620 px прокручивается внутри своего блока. Первое исправление не ограничило min-width секций grid — это обнаружено и исправлено браузерной проверкой; также исправлен перенос decimal price. PNG обычных viewport сохранены, потому что fullPage-снимок IAB дал артефакты склейки:
+Viewport 1440, 768, 375: scrollWidth matches page width. On mobile, the 620 px-wide table scrolls within its own block. The first fix did not constrain the min-width of grid sections—browser verification found and fixed this; decimal price wrapping was also fixed. PNGs of regular viewports were preserved because the IAB fullPage screenshot produced stitching artifacts:
 
 - [Desktop 1440](../reports/ui/stage5/desktop-1440.png)
 - [Tablet 768](../reports/ui/stage5/tablet-768.png)
 - [Mobile 375](../reports/ui/stage5/mobile-375.png)
-- [Мобильная таблица](../reports/ui/stage5/mobile-offers-375.png)
+- [Mobile table](../reports/ui/stage5/mobile-offers-375.png)
 
-Временный чистый каталог создан из текущих tracked/non-ignored исходников, без `.git`, `.env`, node_modules и build. Root и web установлены через `npm ci`; offline-попытка обнаружила отсутствие Vite в кэше, обычная установка с registry завершилась. Из-за выбора Node 23 оболочкой в новом каталоге установка и все проверки повторены с явным PATH на Node 24.14.1. Выполнены команды README: typecheck, test, web:test, pipeline/eval с новыми my-stage5 ID, web:prepare, web:build. Production UI запущен через `npm --prefix web run preview -- --host 127.0.0.1 --port 4173`; основной dev UI — через `npm --prefix web run dev -- --host 127.0.0.1`. DecisionsHash обоих clean-прогонов совпадает с сохранённым контролем. [Машинный результат](../reports/ui/stage5/clean-environment.json).
+A temporary clean directory was created from the current tracked/non-ignored sources, without `.git`, `.env`, node_modules, or build. Root and web were installed with `npm ci`; an offline attempt detected that Vite was absent from the cache, and normal installation from the registry completed. Because the shell selected Node 23 in the new directory, installation and all checks were repeated with an explicit PATH to Node 24.14.1. README commands were run: typecheck, test, web:test, pipeline/eval with new my-stage5 IDs, web:prepare, web:build. The production UI was started with `npm --prefix web run preview -- --host 127.0.0.1 --port 4173`; the main development UI with `npm --prefix web run dev -- --host 127.0.0.1`. The decisionsHash values from both clean runs match the stored control. [Machine-readable result](../reports/ui/stage5/clean-environment.json).
+   100|
+The build passes with two Rollup warnings about comment annotations in the installed Zod; no runtime errors were found. The JS bundle grew from about 204 to 297 kB (gzip ~90 kB) because of shared validation. This is a deliberate local-MVP tradeoff; no new dependencies were added. The clean copy confirms installation of the current sources; a final git clone after all new files are saved remains a user submission procedure.
 
-Build проходит с двумя предупреждениями Rollup об аннотациях комментариев в установленном Zod; runtime-ошибок не выявлено. JS bundle вырос с примерно 204 до 297 kB (gzip ~90 kB) из-за общей валидации. Это сознательный компромисс локального MVP, новые зависимости не добавлены. Чистая копия подтверждает установку текущих исходников; финальный git clone после сохранения всех новых файлов остаётся процедурой сдачи пользователя.
+## Historical handoff from the initial UI iteration — 2026-09-10
 
-## Историческая передача первоначальной UI-итерации — 2026-09-10
+The independent part of stage 5 was accepted. The full MVP criterion was not met: there was no live AI/B2, generation/verification of real text, human-verified labels, or final holdout. README, LLM_ROLES, WRITEUP, and AI_USAGE reflect exactly this state; missing metrics are not presented as zero quality.
 
-Независимая часть этапа 5 принята. Полный критерий MVP не выполнен: нет live AI/B2, генерации/проверки настоящего текста, human-verified labels и финального holdout. README, LLM_ROLES, WRITEUP и AI_USAGE отражают именно это состояние; отсутствующие метрики не представлены нулями качества.
+The continuation was to complete stage 3 after the user's message about the key, then implement and measure stage 4. After an accepted B3, integrate stored claims/verdicts/permitted text, fix rules/prompts, and evaluate holdout once; then update the final deliverable set. The projection deliberately creates null draft/published at present: do not connect B3 without changing this contract. Viewing a snapshot is not AI replay; real replay requires a live cache that does not yet exist.
 
-Продолжение — завершить этап 3 после сообщения пользователя о ключе, затем реализовать и измерить этап 4. После принятого B3 интегрировать сохранённые claims/вердикты/разрешённый текст, зафиксировать правила/промпты и один раз оценить holdout; затем обновить итоговый комплект. Проекция сейчас сознательно создаёт null draft/published: не подключать B3 без изменения этого контракта. Просмотр снимка не равен replay AI; для реального replay нужен ещё не созданный live-кэш.
+Rules/prompts were not tuned on holdout. Stages 3–4 were not run automatically, the API was not called, and there was no publication/deployment/submission or agent commit/push. Exact focused time was not recorded; the work crossed a user pause, so elapsed time cannot be presented as focused implementation time.
+   110|
+## Handoff from stage 4 — 2026-09-10
 
-Правила/промпты не настраивались по holdout. Этапы 3–4 автоматически не выполнялись, API не вызывался, публикации/деплоя/отправки и agent commits/push не было. Точный focused time не фиксировался; работа пересекала паузу пользователя, elapsed нельзя выдавать за время сосредоточенной реализации.
+This entry supplements the historical status above; the stage 5 UI was not changed as part of stage 4. The B3-v1 contract and development artifacts are ready: [live](../reports/B3-openai-development-live-v4/report.md), [offline replay](../reports/B3-openai-development-replay-v4/report.md), [B1→B3](../reports/comparisons/B1-v2-to-B3-openai-development-v4/comparison.md), [live→replay](../reports/comparisons/B3-openai-development-live-to-replay-v4/comparison.md), and the complete [stage 4 report](STAGE4_REPORT.md).
 
-## Передача из этапа 4 — 2026-09-10
+Development: 37/39 ready, 2 identity review, 0 withheld; controlled verifier human-verified—unsupported 4/4, false block 0/7, disputed leakage 0/1, errors 0. B1 `decisionsHash` is unchanged; replay has the same `publicationHash`. OpenAI live: 86 calls, 151618 tokens, $2.6475128, 0 errors/retries; replay: 86 cache hits, 0 calls.
 
-Эта запись дополняет исторический статус выше; UI этапа 5 в рамках этапа 4 не изменялся. B3-v1 contract и development artifacts готовы: [live](../reports/B3-openai-development-live-v4/report.md), [offline replay](../reports/B3-openai-development-replay-v4/report.md), [B1→B3](../reports/comparisons/B1-v2-to-B3-openai-development-v4/comparison.md), [live→replay](../reports/comparisons/B3-openai-development-live-to-replay-v4/comparison.md), полный [отчёт этапа 4](STAGE4_REPORT.md).
+The historical blocker at the time of this handoff was generated human review; the user confirmed the controlled suite of 12 cases on 2026-09-11. The review sample was later accepted in P0.1, and P0.2 eliminated four non-atomic spans and fixed a new [human-gate replay](../reports/B3-openai-development-verifier-only-v2-human-gate-replay/report.md). The development safety gate was accepted; full-input B3, holdout, and final evaluation remain separate steps. Historically, `web:prepare` rejected schema 4/B3; this limitation was removed in a separate stage 5 assignment.
 
-Development: 37/39 ready, 2 identity review, 0 withheld; controlled verifier human-verified — unsupported 4/4, false block 0/7, disputed leakage 0/1, errors 0. B1 `decisionsHash` неизменен, replay имеет тот же `publicationHash`. OpenAI live: 86 calls, 151618 tokens, $2.6475128, 0 errors/retries; replay: 86 cache hits, 0 calls.
+## Narrow addition: B3 claim review — 2026-09-11
+   120|
+In a separate assignment, only display and human labeling of stored B3 were integrated. `web:prepare` now builds a validated B3 review bundle; the existing screen received a Catalog / Claim review switch. Generated view groups 158 claims by 37 published products, highlights exact ranges, and shows verifier reason, supports, and source evidence. Controlled view shows 12 fixed cases, expected verdict, and actual atomic claims.
 
-Исторический блокер на момент этой передачи был generated human review; controlled suite из 12 случаев пользователь подтвердил 2026-09-11. Позднее выборка review принята в P0.1, а P0.2 устранил четыре non-atomic spans и зафиксировал новый [human-gate replay](../reports/B3-openai-development-verifier-only-v2-human-gate-replay/report.md). Development safety gate принят; full-input B3, holdout и финальная оценка остаются отдельными шагами. Исторически `web:prepare` отклонял schema 4/B3; это ограничение снято отдельным заданием этапа 5.
+The generated verdict/rationale draft is stored only in `localStorage`, bound to `publicationHash`; the source run is not modified, and the UI does not call models or network. The real development bundle, both tabs, and draft restoration after reload were checked. The user confirmed all 12 controlled cases; the generated human gate was later completed in P0.1. At the time of this historical addition, full-input B3, holdout, final evaluation, and deployment had not yet been performed.
 
-## Узкое дополнение: B3 claim review — 2026-09-11
+After user review, terminology was clarified: the screen is called **Check listing text** and explicitly limits the task to fidelity review. Generated wording is shown beside the supplier statement; supplier specs are labeled as an unverified input feed, while external truth is unavailable without an authoritative manufacturer URL. Verdict buttons describe agreement with supplied data, and the 12 QA fixtures were moved to an explained **Verifier test cases** screen and do not require human labeling.
 
-По отдельному заданию подключено только отображение и человеческая разметка сохранённого B3. `web:prepare` теперь собирает проверенный B3 review bundle; существующий экран получил переключатель Catalog / Claim review. Generated view группирует 158 claims по 37 опубликованным товарам, подсвечивает точные диапазоны и показывает verifier reason, supports и исходные evidence. Controlled view показывает 12 фиксированных случаев, expected verdict и фактические атомарные claims.
+The next narrow UX revision removed the need to keep the screen structure in memory: a three-step onboarding guide was added at the top, and each card repeats the current product and sentence number. The system sentence and source supplier text now form one numbered pair, immediately followed by the decision question. The automatic verifier response is hidden in an optional expandable section until needed as an explanation; pipeline, claims, and stored verdicts were unchanged.
 
-Черновик generated verdict/rationale хранится только в `localStorage` с привязкой к `publicationHash`; исходный run не изменяется, модели и сеть из UI не вызываются. Проверены реальный development bundle, обе вкладки и восстановление черновика после reload. Все 12 controlled cases пользователь подтвердил; generated human gate позднее завершён в P0.1. На момент этого исторического дополнения full-input B3, holdout, финальная оценка и deployment ещё не выполнялись.
+## P0.1: final generated-review workflow — 2026-09-11
+   130|
+The review UI moved to `stage4-generated-review-v2`: the automatic verdict no longer looks human-selected, and a claim becomes `reviewed` only after separate confirmation with both a human verdict and rationale. Atomicity and copy-quality problems are flagged independently of the factual verdict. Progress shows exact claims/products/sample denominators; export receives `human_verified` after completion of the fixed sample of 20 listings and entry of a reviewer, rather than after all 158 claims.
 
-После пользовательской проверки терминология уточнена: экран называется **Check listing text** и явно ограничивает задачу fidelity-review. Generated wording показывается рядом с supplier statement; supplier specs обозначены как непроверенный input feed, а external truth — как недоступный без authoritative manufacturer URL. Verdict-кнопки описывают совпадение с supplied data, а 12 QA fixtures вынесены в пояснённый экран **Verifier test cases** и не требуют человеческой разметки.
-
-Следующая узкая UX-правка убрала необходимость держать структуру экрана в памяти: сверху добавлен онбординг из трёх шагов, а в каждой карточке повторяются текущий товар и номер фразы. Системная фраза и исходный текст поставщика теперь образуют одну пронумерованную пару, сразу после которой задан вопрос для решения. Ответ автоматического verifier скрыт в необязательном раскрывающемся блоке до тех пор, пока он не понадобится как пояснение; pipeline, claims и сохранённые вердикты не изменялись.
-
-## P0.1: конечный generated-review workflow — 2026-09-11
-
-Review UI переведён на `stage4-generated-review-v2`: автоматический verdict больше не выглядит выбранным человеком, claim становится `reviewed` только после отдельного подтверждения при наличии human verdict и rationale. Проблемы атомарности и качества текста отмечаются независимо от factual verdict. Прогресс показывает точные claims/products/sample знаменатели; экспорт получает `human_verified` после завершения фиксированной выборки из 20 карточек и заполнения reviewer, а не после всех 158 claims.
-
-Исторический канонический файл `eval/generated-review-e478435a3d39.json` содержит 120/158 claims, 28/37 карточек, sample 20/20 и статус `human_verified`; он сохранён без перезаписи. Старый localStorage переносится по `productId + attempt + claimId`, но не может затереть repository-backed reviewed decisions. В UI добавлены фильтр расхождений/issues и явное сравнение human/AI verdict. `web:prepare --generated-checks` подключает файл без изменения сохранённого run.
+The historical canonical file `eval/generated-review-e478435a3d39.json` contains 120/158 claims, 28/37 listings, sample 20/20, and status `human_verified`; it is preserved without overwriting. Old localStorage is migrated by `productId + attempt + claimId`, but cannot overwrite repository-backed reviewed decisions. A discrepancy/issues filter and explicit human/AI verdict comparison were added to the UI. `web:prepare --generated-checks` attaches the file without changing the stored run.
 
 ## P0.2: development safety gate — 2026-09-12
 
-Verifier prompt v2 и локальный fail-closed валидатор запрещают оборванные `is a`/`has a` и значения без измеряемого атрибута. После диагностического full development live выполнен verifier-only run по замороженным human-reviewed текстам: generator не вызывался, 49 verifier calls, 125333 tokens, $2.390245, controlled 12/12, 37/39 ready и 0 запрещённых spans. Все 37 опубликованных текстов побитово совпадают с исходным human-reviewed artifact.
+Verifier prompt v2 and the local fail-closed validator prohibit truncated `is a`/`has a` and values without the attribute being measured. After a diagnostic full development live run, a verifier-only run was performed over frozen human-reviewed texts: the generator was not called, 49 verifier calls, 125333 tokens, $2.390245, controlled 12/12, 37/39 ready, and 0 prohibited spans. All 37 published texts are byte-for-byte identical to the original human-reviewed artifact.
 
-Новый канонический `eval/generated-review-fdca0138d88f.json` имеет статус `human_verified`: claims 76/99, products 28/37, sample 20/20, factual errors 0, non-atomic 0, unclear-copy 2. Оставшиеся 23 pending claims находятся вне обязательной выборки и gate не блокируют. Offline replay дал 49 cache hits, 0 calls и те же `decisionsHash`/`publicationHash`; development gate принят.
+The new canonical `eval/generated-review-fdca0138d88f.json` has status `human_verified`: claims 76/99, products 28/37, sample 20/20, factual errors 0, non-atomic 0, unclear-copy 2. The remaining 23 pending claims are outside the required sample and do not block the gate. Offline replay produced 49 cache hits, 0 calls, and the same `decisionsHash`/`publicationHash`; the development gate was accepted.
+   140|
+After separate authorization, full-input B3 was run: 154/156 ready, 2 identity review, 0 withheld, 213 covered rows, and 390 atomic claims. Live made 322 calls, 526449 tokens, $8.110955; one invalid verifier response was rejected and recovered by the single repair. Offline replay without network reproduces the hashes and has `success`.
 
-После отдельного разрешения выполнен full-input B3: 154/156 ready, 2 identity review, 0 withheld, 213 покрытых строк и 390 atomic claims. Live сделал 322 calls, 526449 tokens, $8.110955; один невалидный verifier response был отклонён и восстановлен единственным repair. Offline replay без сети воспроизводит hashes и имеет `success`.
+## P0.3: holdout and matching-review contract — 2026-09-12
 
-## P0.3: holdout и matching-review contract — 2026-09-12
+Evaluation and provenance now carry explicit `split=development|holdout`. CLI accepts `--split`; B3 holdout fail-closed is allowed only with `--ai-mode replay --ai-cohort full_input`, making an accidental live/model call impossible. Reports print the selected split, and matching/non-product metrics receive the correct scope.
 
-Evaluation и provenance теперь несут явный `split=development|holdout`. CLI принимает `--split`; B3 holdout fail-closed разрешён только с `--ai-mode replay --ai-cohort full_input`, поэтому случайный live/model вызов невозможен. Отчёты печатают выбранный split, а matching/non-product метрики получают правильный scope.
+The first holdout was run from the stored full-input cache without network or new model calls: [report](../reports/B3-openai-full-input-atomic-v2-holdout-replay/report.md). Result: `success`; 6 cases / 49 rows; TP/FP/FN 22/0/0; precision/recall/candidate recall 22/22; true negatives 1154/1154; hard negatives 256/256; non-products 49/49; unknown/unevaluated pairs 0/0. Runtime: 0 calls, 0 tokens, $0, 321 successful cache hits. Publication remains 154/156 ready, 2 identity review, 0 withheld, with the same hashes. Quality honestly remains `provisional`: `eval/labels.json` has not yet been human-confirmed.
 
-Первый holdout выполнен из сохранённого full-input cache, без сети и новых model calls: [report](../reports/B3-openai-full-input-atomic-v2-holdout-replay/report.md). Результат: `success`; 6 cases / 49 rows; TP/FP/FN 22/0/0; precision/recall/candidate recall 22/22; true negatives 1154/1154; hard negatives 256/256; non-products 49/49; unknown/unevaluated pairs 0/0. Runtime: 0 calls, 0 tokens, $0, 321 успешный cache hit. Publication остаётся 154/156 ready, 2 identity review, 0 withheld, с теми же hashes. Quality честно остаётся `provisional`: `eval/labels.json` ещё не подтверждён человеком.
+`web:prepare` validates extended matching labels against the report hash, as well as a separate `stage5-matching-audit-v1` against the labels hash and stable row IDs. After mobile testing, the final UX screen was reduced to two tabs: Catalog + Review. Review displays 20 independent questions (14 development / 6 holdout), one pair or row per screen, with three explicit answers. The provisional answer is not shown. Export of `matching-audit-human-verified.json` is enabled only at 20/20 with a nonempty reviewer; the draft is bound to the version and `decisionsHash`.
+   150|
+Holdout has been revealed. Matching rules/prompts must not be changed, and labels must not be silently corrected to improve the evaluation; any such change and rerun must be called post-holdout development. The final UX replaced heavy family partitions with 20 atomic questions and two tabs, Catalog + Review. The user independently completed every question; the `matching-audit-human-verified.json` export has reviewer `Serjo`, a valid ISO date, a matching labels hash, and 20 stable items.
 
-`web:prepare` валидирует расширенные matching labels против report hash, а также отдельный `stage5-matching-audit-v1` против hash labels и stable row IDs. После мобильной проверки UX финальный экран сокращён до двух вкладок: Catalog + Review. Review показывает 20 независимых вопросов (14 development / 6 holdout), по одной паре или строке на экран, с тремя явными ответами. Provisional ответ не показывается. Экспорт `matching-audit-human-verified.json` включается только для 20/20 и непустого reviewer; draft привязан к версии и `decisionsHash`.
-
-Holdout раскрыт. Нельзя менять matching rules/prompts или незаметно исправлять labels для улучшения оценки; любое такое изменение и повтор должны называться post-holdout development. Финальный UX заменил тяжёлые family partitions на 20 атомарных вопросов и две вкладки Catalog + Review. Пользователь самостоятельно завершил все вопросы; экспорт `matching-audit-human-verified.json` имеет reviewer `Serjo`, корректную ISO-дату, совпадающий labels hash и 20 стабильных items.
-
-Проверка дала 13 `same_product`, 4 `different_product`, 1 `non_product` и 2 `unknown`. Все 18 определённых решений совпали с pipeline; unknown не засчитывались как успехи: agreement 18/18, coverage 18/20. Для завершения этапа 5 нужно сохранить экспорт и метрику, синхронизировать итоговые deliverables и выполнить clean-clone. Расширенные 20 family cases (108 строк / 70 групп) остаются provisional. Компактная выборка обозначается post-holdout validation. Deployment и отправка не выполнялись.
+Validation produced 13 `same_product`, 4 `different_product`, 1 `non_product`, and 2 `unknown`. All 18 defined decisions agree with the pipeline; unknown was not counted as success: agreement 18/18, coverage 18/20, disagreements 0. The export and metric are saved as [matching-audit-human-verified.json](../eval/matching-audit-human-verified.json) and [matching-audit-metrics.json](../eval/matching-audit-metrics.json) (`human_verified`, post-holdout validation). The extended 20 family cases (108 rows / 70 groups) remain provisional. Deployment and submission to organizers were not performed by the agent. Stage 5 is closed; stage 6 is optional.

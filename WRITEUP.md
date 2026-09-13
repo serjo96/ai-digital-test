@@ -1,6 +1,6 @@
 # Shelf Ready — implementation note
 
-**Status.** The local MVP is technically complete through P0.3. Accepted B1-v2 accounts for all 220 rows as 156 canonical products over 216 product rows plus four non-products. B3 generation and independent claim verification ran on the full input and reproduce offline. The reviewer completed the compact 20-item matching audit: 18 determinate answers agree with the pipeline and two are `unknown` (100% agreement at 90% scored coverage). The export is validated but still needs to be copied into the repository and included in the final report.
+**Status.** Stages 1–5 are complete; stage 6 modular refactoring is optional and not started. Accepted B1-v2 accounts for all 220 rows as 156 canonical products over 216 product rows plus four non-products. B3 generation and independent claim verification ran on the full input and reproduce offline. The reviewer completed the compact 20-item matching audit: 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements. The export and metrics are saved in `eval/matching-audit-human-verified.json` and `eval/matching-audit-metrics.json` as post-holdout validation.
 
 **Architecture.** A Node 24 / TypeScript Nest standalone CLI reads the original feed and closed taxonomy, keeps offers separate from canonical products, preserves exact source evidence, and stores immutable run reports and metrics. B3 generates only from allowed supports and fail-closed verifies complete atomic claims. React reads a validated snapshot and does not call models or recompute decisions. The final UI exposes Catalog plus one compact Review flow; completed listing/controlled review remains in versioned artifacts and automated gates.
 
@@ -8,6 +8,6 @@
 
 **Evidence and failures.** Full-input B3 produced 154/156 ready products, two identity-review products, no withheld products, and 390 structurally valid atomic claims. Its live run used 322 calls, 526449 tokens and $8.110955; one malformed verifier support ID was rejected and recovered by the single allowed repair. Offline replay reproduced both hashes with zero calls. The earlier family-level holdout metrics remain provisional; the compact human audit was selected after holdout disclosure and is therefore post-holdout validation, not a fresh independent holdout. Two human `unknown` answers are excluded rather than counted as successes.
 
-**To finish.** Save the validated `matching-audit-human-verified.json`, persist its exact 18/18 and 18/20 metrics, synchronize the final reports, and run the current clean-clone install/test/build/offline-replay/UI check. No additional model run or review of all 108 provisional family-label rows is required.
+**Optional next.** Stage 6 may extract browser-safe artifact contracts and split pipeline use cases without changing domain rules, prompts, or evaluation labels. No additional model run or review of all 108 provisional family-label rows is required.
 
 Details: [stage 5 report](docs/STAGE5_REPORT.md), [benchmarks](docs/BENCHMARKS.md), [AI usage](AI_USAGE.md).

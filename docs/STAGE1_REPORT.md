@@ -1,58 +1,58 @@
-# Этап 1 — кодовая часть завершена
+# Stage 1 — Code Work Complete
 
-> Исторический снимок этапа 1. Текущий статус находится в [NEXT_STEPS.md](NEXT_STEPS.md); позднейшие human review, B3 и holdout намеренно не переписаны задним числом.
+> Historical snapshot of stage 1. The current status is in [NEXT_STEPS.md](NEXT_STEPS.md); later human review, B3, and holdout results have intentionally not been rewritten retroactively.
 
-Дата: 2026-09-08. Разметка **provisional**, человеком не проверена. Этап 2 не начат.
+Date: 2026-09-08. Labels are **provisional** and have not been human-verified. Stage 2 has not started.
 
-## Проверенное исходное состояние
+## Verified Initial State
 
-В начале реализации Git был чистым, HEAD `939f7fa`; имелись PDF, два JSON и документы ROADMAP/TASK_ANALYSIS. Приложения, package/lockfile, разметки и отчётов запусков не было. Исходные зависимости этапа доступны: 220 уникальных row_id, 220 уникальных supplier/SKU, 5 поставщиков, 12 категорий. Повторный аудит подтвердил 23 пустых specs, 1 пустой заголовок, 2 пустые цены и 169 заголовков после нормализации. Последнее число не является числом реальных товаров.
+At the start of implementation, Git was clean at HEAD `939f7fa`; the repository contained the PDF, two JSON files, and the ROADMAP/TASK_ANALYSIS documents. There was no application, package/lockfile, labeling, or run reports. The source dependencies for the stage were available: 220 unique row_id values, 220 unique supplier/SKU pairs, 5 suppliers, and 12 categories. A repeated audit confirmed 23 empty specs, 1 empty title, 2 empty prices, and 169 titles after normalization. The last number is not the number of real products.
 
-Выбран знакомый пользователю TypeScript с NestJS standalone context. Для файлового pipeline на 220 строк не выявлено существенного преимущества, оправдывающего переход к другому стеку. React согласован для этапа 5. Внешний каталог, HTTP, БД и модельные API не подключались.
+TypeScript with a NestJS standalone context, familiar to the user, was selected. No material advantage was found that would justify switching to another stack for a file-based pipeline over 220 rows. React was agreed for stage 5. No external catalog, HTTP service, database, or model API was connected.
 
-## Что реализовано
+## What Was Implemented
 
-Загрузка и строгая проверка схемы/идентификаторов; сохранение исходных строк; консервативная нормализация заголовков; точные десятичные цены с валютой и диагностикой; четыре вида не-товаров по содержимому; группировка B0 со стабильными ID; проверка единственного исхода каждой строки.
+Loading and strict schema/identifier validation; preservation of source rows; conservative title normalization; exact decimal prices with currency and diagnostics; four content-based non-product types; B0 grouping with stable IDs; and validation that every row has exactly one outcome.
 
-Добавлен development eval с TP/FP/FN, precision/recall, ошибками между случаями, unknown/unevaluated и проверкой решений по не-товарам. Подготовлены 20 provisional случаев на 108 строках: 14 development на 59 строках, 6 holdout на 49. Все строки выбранных семейств включены; семейства не пересекают splits. Holdout не оценивался. Две связи AeroBuds с отсутствующим цветом оставлены unknown.
+A development eval was added with TP/FP/FN, precision/recall, cross-case errors, unknown/unevaluated relationships, and validation of non-product decisions. 20 provisional cases covering 108 rows were prepared: 14 development cases over 59 rows and 6 holdout cases over 49. All rows from the selected families are included; families do not cross splits. The holdout was not evaluated. Two AeroBuds relationships with missing color were left unknown.
 
-Отчёты фиксируют источники, конфигурацию, версии, решения, метрики, время и отсутствие модельных вызовов. Сохранённый запуск нельзя перезаписать командой CLI. Ошибка входа сохраняет failure.json и возвращает ненулевой код без успешного отчёта. Созданы README, AI_USAGE и пакет для человеческой проверки разметки.
+Reports record sources, configuration, versions, decisions, metrics, timing, and the absence of model calls. A saved run cannot be overwritten by a CLI command. An input error saves failure.json and returns a nonzero exit code without producing a successful report. README, AI_USAGE, and a human-review package for the labels were created.
 
-## Сравнение метрик
+## Metric Comparison
 
-Все оценки matching и не-товаров ниже provisional. До реализации существовал только аудит входа; прежних метрик pipeline нет.
+All matching and non-product evaluations below are provisional. Before implementation, only an input audit existed; there were no prior pipeline metrics.
 
-| Показатель | До реализации | B0 | Повтор B0 |
+| Metric | Before implementation | B0 | B0 repeat |
 |---|---|---|---|
-| Строк во входе | 220 | 220 | 220 |
-| Учтено pipeline | N/A | 220/220 | 220/220 |
-| Потеряно / двойных назначений | N/A | 0 / 0 | 0 / 0 |
-| Строк в группах / не-товаров | N/A | 216 / 4 | 216 / 4 |
-| Диагностических групп | N/A | 165 | 165 |
-| Повторяющихся групп | N/A | 48 | 48 |
-| Разобранных цен | N/A | 217/220 | 217/220 |
-| Пустые цены / неизвестная валюта | N/A | 2 / 1 | 2 / 1 |
+| Input rows | 220 | 220 | 220 |
+| Accounted for by pipeline | N/A | 220/220 | 220/220 |
+| Lost / multiply assigned | N/A | 0 / 0 | 0 / 0 |
+| Rows in groups / non-products | N/A | 216 / 4 | 216 / 4 |
+| Diagnostic groups | N/A | 165 | 165 |
+| Repeated groups | N/A | 48 | 48 |
+| Parsed prices | N/A | 217/220 | 217/220 |
+| Empty prices / unknown currency | N/A | 2 / 1 | 2 / 1 |
 | Matching TP / FP / FN | N/A | 7 / 0 / 10 | 7 / 0 / 10 |
 | Matching precision | N/A | 100% (7/7) | 100% (7/7) |
 | Matching recall | N/A | 41,18% (7/17) | 41,18% (7/17) |
-| Верные решения товар/не-товар на development | N/A | 59/59 | 59/59 |
+| Correct product/non-product decisions on development | N/A | 59/59 | 59/59 |
 | Unknown / unevaluated attached pairs | N/A | 2 / 0 | 2 / 0 |
 | Wall time | N/A | 43,058 ms | 40,680 ms |
-| Генерация / verifier / категории | N/A | N/A | N/A |
+| Generation / verifier / categories | N/A | N/A | N/A |
 
-Все сравнимые дельты B0 → B0-repeat равны нулю, изменённых строк нет. Хэш решений и хэш реализации обоих запусков совпадают. Время отличается ожидаемо; границы замера приведены в README. 100% precision на семи provisional положительных предсказаниях не доказывает качество на всём feed.
+All comparable B0 → B0-repeat deltas are zero, with no changed rows. The decision hash and implementation hash match across both runs. Timing differs as expected; measurement boundaries are documented in README. 100% precision over seven provisional positive predictions does not demonstrate quality across the entire feed.
 
-Артефакты:
+Artifacts:
 
-- [B0: читаемый отчёт](../reports/B0/report.md), [JSON](../reports/B0/report.json), [исходы и группы](../reports/B0/result.json).
-- [Повтор B0](../reports/B0-repeat/report.md).
-- [До реализации → B0](../reports/comparisons/before-to-B0/comparison.md), рядом comparison.json.
-- [B0 → повтор](../reports/comparisons/B0-repeat/comparison.md), рядом comparison.json.
-- [Разметка](../eval/labels.json), [пакет человеческой проверки](../eval/REVIEW.md).
+- [B0: readable report](../reports/B0/report.md), [JSON](../reports/B0/report.json), [outcomes and groups](../reports/B0/result.json).
+- [B0 repeat](../reports/B0-repeat/report.md).
+- [Before implementation → B0](../reports/comparisons/before-to-B0/comparison.md), with comparison.json alongside.
+- [B0 → repeat](../reports/comparisons/B0-repeat/comparison.md), with comparison.json alongside.
+- [Labels](../eval/labels.json), [human-review package](../eval/REVIEW.md).
 
-## Проверки и время
+## Verification and Timing
 
-Успешно выполнены:
+Successfully run:
 
 ```sh
 npm ci --no-audit --no-fund
@@ -65,14 +65,14 @@ npm run compare -- --before reports/B0 --after reports/B0-repeat --out reports/c
 git diff --exit-code -- supplier_feed.json taxonomy.json AI-Digital-Take-Home-Shelf-Ready.pdf docs/TASK_ANALYSIS.md
 ```
 
-16 тестов прошли: цены, некорректные входы/дубликаты, опасные различия заголовков, не-товары при ненулевом stock и товары при нулевом, пустые specs, исходные предложения, учёт всех строк, неизменность решений при перестановке входа, контрольные FP/FN, межслучайные ошибки, unknown/unevaluated, отсутствие оценки holdout, целостность разметки, CLI, отказ от перезаписи, несопоставимые отчёты и failure-диагностика. Установка npm ci пересоздала node_modules из lockfile; отдельный чистый Git-клон не создавался, так как изменения ещё не закоммичены. Финальная проверка из чистого клона остаётся этапу 5.
+16 tests passed, covering prices, invalid inputs/duplicates, dangerous title differences, non-products with nonzero stock and products with zero stock, empty specs, source offers, accounting for all rows, decision invariance under input reordering, controlled FP/FN, cross-case errors, unknown/unevaluated relationships, exclusion of holdout evaluation, label integrity, CLI behavior, overwrite refusal, incomparable reports, and failure diagnostics. The npm ci installation recreated node_modules from the lockfile; a separate clean Git clone was not created because the changes had not yet been committed. Final verification from a clean clone remains part of stage 5.
 
-Реализация и проверка заняли около 17 минут elapsed wall time этой сессии, включая подготовку разметки, документацию и npm. Предшествующее планирование сюда не включено. Отдельный точный счётчик focused time не вёлся. Ожидание модельного API и ответов пользователя при реализации — 0; сетевые операции npm включены в elapsed time. Человеческая разметка не выполнялась и не учитывалась как завершённая работа.
+Implementation and verification took about 17 minutes of elapsed wall time in this session, including label preparation, documentation, and npm. Prior planning is not included. No separate exact focused-time counter was maintained. Time waiting for model APIs and user responses during implementation was 0; npm network operations are included in elapsed time. Human labeling was not performed and was not counted as completed work.
 
-## Передача этапу 2
+## Handoff to Stage 2
 
-Известны 10 пропущенных пар: Sony (3), AeroBuds (1), Lumen (1), Vault (1), PulseFit (1), TaskFlow (1), LedgerLite (1), Nimbus (1). Причина — точное сравнение заголовков без перевода, сопоставления модели и отделения состояния предложения. Они сохранены в отчёте; в B0 не исправлялись. Совпадения названий ещё не проходят предметную проверку конфликтов; готовности к публикации нет.
+There are 10 known missed pairs: Sony (3), AeroBuds (1), Lumen (1), Vault (1), PulseFit (1), TaskFlow (1), LedgerLite (1), Nimbus (1). The cause is exact title comparison without translation, model matching, or separation of offer condition. They are preserved in the report and were not fixed in B0. Matching names do not yet undergo domain conflict validation; the data is not ready for publication.
 
-Следующему этапу передаются неизменяемый B0, provisional development labels и тестовый eval. По roadmap этап 2 должен добавить товар/предложение/факты, кандидатов и проверки несовместимости групп, поддержанные единицы и округление, категории, согласование и review, затем сохранить B1 и сравнение с B0. Не подстраивать правила по holdout; пересмотр labels означает новый хэш и явное изменение протокола сравнения.
+The next stage receives an immutable B0, provisional development labels, and the eval harness. According to the roadmap, stage 2 should add product/offer/fact entities, candidates and group incompatibility checks, supported units and rounding, categories, reconciliation, and review, then save B1 and a comparison with B0. Do not tune rules on the holdout; revising labels means a new hash and an explicit comparison-protocol change.
 
-Открыто: человеческая проверка меток; неопределённый цвет AeroBuds; все предметные и семантические задачи этапа 2. Это не блокирует независимую кодовую работу этапа 2. Ключ понадобится этапу 3; получение не подтверждено. Статус «кодовая часть завершена» не означает завершения hand-labeling или AI-части задания. Коммиты и push не выполнялись.
+Open items: human verification of labels; uncertain AeroBuds color; and all domain and semantic tasks for stage 2. This does not block independent stage 2 code work. A key will be needed for stage 3; receipt has not been confirmed. The status “code work complete” does not mean hand-labeling or the AI portion of the task is complete. No commits or pushes were performed.

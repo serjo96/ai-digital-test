@@ -1,70 +1,70 @@
-# Этап 3 — кодовая интеграция готова, live-прогон отложен
+# Stage 3 — Code Integration Ready, Live Run Deferred
 
-> Исторический промежуточный снимок до live-экспериментов. Его сохраняют для audit trail; актуальный итог этапа 3 — [STAGE3_REPORT.md](STAGE3_REPORT.md), текущий статус проекта — [NEXT_STEPS.md](NEXT_STEPS.md).
+> Historical intermediate snapshot from before the live experiments. It is preserved for the audit trail; the current stage 3 outcome is in [STAGE3_REPORT.md](STAGE3_REPORT.md), and the current project status is in [NEXT_STEPS.md](NEXT_STEPS.md).
 
-Дата: 2026-09-09. Принятый baseline остаётся **B1-v2**. Реальных запросов к моделям приложения **0**. Пользователь выбрал OpenAI GPT-5.6 Sol как основную модель, GPT-6 Astra как кандидата для сложных пар и будущего verifier; до явного сообщения о добавлении ключа любые AI-запросы запрещены. Модельный доступ не проверялся. Этап 3 целиком **не завершён**: live B2, сравнение моделей и B1→B2 ожидают продолжения. Этап 4 не реализовывался.
+Date: 2026-09-09. The accepted baseline remains **B1-v2**. Actual application model requests: **0**. The user selected OpenAI GPT-5.6 Sol as the primary model and GPT-6 Astra as a candidate for difficult pairs and the future verifier; all AI requests are prohibited until the user explicitly confirms that the key has been added. Model access was not tested. Stage 3 as a whole is **not complete**: live B2, model comparison, and B1→B2 await continuation. Stage 4 was not implemented.
 
-## Фактическая основа
+## Factual Basis
 
-Прочитаны ROADMAP, TASK_ANALYSIS, отчёты этапов 1–2, benchmark-протокол и код. При планировании typecheck и 30 исходных тестов прошли; B0 и B1-v2 пересчитаны в памяти и совпали с сохранёнными хэшами решений/входов. При начале реализации появились незакоммиченные изменения другого задания: `web/`, `.gitignore`, README, AI_USAGE и web-скрипты package.json. Они сохранены; UI не изменялся в этой работе.
+ROADMAP, TASK_ANALYSIS, the stage 1–2 reports, the benchmark protocol, and the code were reviewed. During planning, typecheck and the 30 existing tests passed; B0 and B1-v2 were recomputed in memory and matched the saved decision/input hashes. When implementation began, uncommitted changes from another task appeared in `web/`, `.gitignore`, README, AI_USAGE, and the package.json web scripts. They were preserved; the UI was not changed in this work.
 
-Node v24.14.1, Nest standalone и TypeScript сохранены. Добавлены фиксированные зависимости openai 7.12.1 и zod 4.5.4 с lockfile. Новая установка пакетов не запускала модельные API. Исходные supplier_feed/taxonomy/PDF, TASK_ANALYSIS, matching labels, stage2-checks и исторические отчёты не менялись. Человеческая проверка разметки всё ещё открыта; holdout не оценивался.
+Node v24.14.1, Nest standalone, and TypeScript were retained. Exact dependencies openai 7.12.1 and zod 4.5.4 were added with the lockfile. Installing the new packages did not call any model APIs. The source supplier_feed/taxonomy/PDF, TASK_ANALYSIS, matching labels, stage2-checks, and historical reports were unchanged. Human verification of the labels remained open; the holdout was not evaluated.
 
-## Реализовано
+## Implemented
 
-- Общий `AiProvider`, фабрики/реестр с Nest DI, OpenAiAdapter и тестовый провайдер. SDK-типы/ошибки ограничены адаптером; Ollama пока не реализована по выбранной границе.
-- Явный B2 с live/replay, конфигурацией роли, кэшем и ограничением запросов development/full_input. По умолчанию CLI продолжает B1. Нет автообнаружения ключа с последующим запуском, health-check или фоновых API-вызовов.
-- Строгий структурированный extraction: дополнительные факты, тип/категория, exact evidence, unknown. Пять поддержанных дополнений, локальная проверка чисел, предмета, условий и полной совместимой модели. B1-факты не перезаписываются; несовместимости и непонятые формы сохраняются.
-- Отдельный выключенный по умолчанию matching-эксперимент Sol/Astra на review-парах B1 с одинаковыми входами. Модельный merge не разрешает неизвестную/запрещённую кодом совместимость. Verifier и генерация не реализованы.
-- Общие timeout (60 секунд), до двух retries transient-ошибок, обработка refusal/incomplete/invalid, прекращение запросов при auth-ошибке. Невалидные данные не принимаются; partial сохраняет все строки, B1-наблюдения, review, отчёт и failure-диагностику, exit code 1.
-- Кэш с хэшами провайдера/endpoint, модели, входа, параметров, промпта и схемы; записи неизменяемы. Replay не использует сеть, не заменяется live и повторно проверяет ответ. Тестовое происхождение не допускается в реальную benchmark-историю.
-- Schema 3, ai.json, API usage/стоимость с cache read/write, роли/режимы в JSONL, отдельная provisional semantic-выборка. Schema 1/2 продолжают читаться; отсутствующие измерения не превращаются в нули.
+- A shared `AiProvider`, factories/registry using Nest DI, OpenAiAdapter, and a test provider. SDK types/errors are confined to the adapter; Ollama was not yet implemented within the selected boundary.
+- Explicit B2 with live/replay, role configuration, caching, and development/full_input request limits. The CLI continues to run B1 by default. There is no automatic key discovery followed by execution, health check, or background API calls.
+- Strict structured extraction: additional facts, type/category, exact evidence, and unknown. Five supported additions, with local validation of numbers, subject, conditions, and the full compatible model. B1 facts are not overwritten; incompatibilities and unparsed forms are preserved.
+- A separate Sol/Astra matching experiment, disabled by default, over the same B1 review-pair inputs. A model merge cannot authorize compatibility that is unknown or prohibited by code. The verifier and generation were not implemented.
+- Shared timeout (60 seconds), up to two retries for transient errors, refusal/incomplete/invalid handling, and request termination on an auth error. Invalid data is not accepted; a partial run preserves all rows, B1 observations, review, report, and failure diagnostics, with exit code 1.
+- A cache keyed by hashes of provider/endpoint, model, input, parameters, prompt, and schema; entries are immutable. Replay does not use the network, is not substituted for live, and revalidates the response. Test-origin data is excluded from real benchmark history.
+- Schema 3, ai.json, API usage/cost with cache read/write, roles/modes in JSONL, and a separate provisional semantic sample. Schema 1/2 remain readable; unavailable measurements are not converted to zeros.
 
-Архитектура, пределы и тарифы: [LLM_ROLES.md](../LLM_ROLES.md). Точные команды и параметры: [README](../README.md#b2-провайдеры-и-отложенный-реальный-запуск).
+Architecture, limits, and pricing: [LLM_ROLES.md](../LLM_ROLES.md). Exact commands and parameters: [README](../README.md#b2-local-model-extraction-and-matching-experiment).
 
-## Сравнение метрик
+## Metric Comparison
 
-Ниже **кодовые** прогоны. Все quality-оценки provisional; значения B2 не подменены искусственными ответами.
+The runs below are **code-only**. All quality evaluations are provisional; B2 values have not been replaced with synthetic responses.
 
-| Показатель | Принятый B1-v2 | B1-stage3-control-v2 | Повтор | Реальный B2 |
+| Metric | Accepted B1-v2 | B1-stage3-control-v2 | Repeat | Actual B2 |
 |---|---|---|---|---|
-| Учёт строк | 220/220 | 220/220 | 220/220 | N/A |
-| Потери / двойные назначения | 0 / 0 | 0 / 0 | 0 / 0 | N/A |
-| Товары / не-товары | 156 / 4 | 156 / 4 | 156 / 4 | N/A |
+| Row accounting | 220/220 | 220/220 | 220/220 | N/A |
+| Lost / multiply assigned | 0 / 0 | 0 / 0 | 0 / 0 | N/A |
+| Products / non-products | 156 / 4 | 156 / 4 | 156 / 4 | N/A |
 | TP / FP / FN | 17 / 0 / 0 | 17 / 0 / 0 | 17 / 0 / 0 | N/A |
 | Matching precision / recall | 17/17 / 17/17 | 17/17 / 17/17 | 17/17 / 17/17 | N/A |
 | Candidate recall | 17/17 | 17/17 | 17/17 | N/A |
 | Hard-negative specificity | 170/170 | 170/170 | 170/170 | N/A |
-| Ошибочные отказы товаров / пропущенный мусор | 0 / 0 | 0 / 0 | 0 / 0 | N/A |
-| Review: сообщения / строки / товары | 64 / 64 / 51 | 64 / 64 / 51 | 64 / 64 / 51 | N/A |
-| Stage2: категории / факты / согласование | 18/18 / 30/30 / 4/4 | 18/18 / 30/30 / 4/4 | 18/18 / 30/30 / 4/4 | N/A |
-| Факты / непонятые фрагменты | 545 / 43 | 545 / 43 | 545 / 43 | N/A |
-| Semantic: правильные / лишние / пропущенные дополнения | N/A | 0 / 0 / 11 | 0 / 0 / 11 | N/A |
+| False product rejections / missed trash | 0 / 0 | 0 / 0 | 0 / 0 | N/A |
+| Review: messages / rows / products | 64 / 64 / 51 | 64 / 64 / 51 | 64 / 64 / 51 | N/A |
+| Stage2: categories / facts / reconciliation | 18/18 / 30/30 / 4/4 | 18/18 / 30/30 / 4/4 | 18/18 / 30/30 / 4/4 | N/A |
+| Facts / unparsed fragments | 545 / 43 | 545 / 43 | 545 / 43 | N/A |
+| Semantic: correct / extra / missing additions | N/A | 0 / 0 / 11 | 0 / 0 / 11 | N/A |
 | Semantic precision / recall | N/A | N/A (0/0) / 0/11 | N/A (0/0) / 0/11 | N/A |
-| Semantic: типы / категории | N/A | 12/12 / 12/12 | 12/12 / 12/12 | N/A |
+| Semantic: types / categories | N/A | 12/12 / 12/12 | 12/12 / 12/12 | N/A |
 | Wall time, ms | 72.445 | 71.505 | 89.960 | N/A |
 | Pipeline time, ms | 36.770 | 36.999 | 37.558 | N/A |
 | API calls / tokens / USD | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | N/A |
-| Генерация / verifier | N/A | N/A | N/A | N/A |
+| Generation / verifier | N/A | N/A | N/A | N/A |
 
-Сравнения подтверждают одинаковый decisionsHash, 0 изменённых строк и групп и отсутствие обязательных нарушений. Все сравнимые нетайминговые метрики равны. Тайминги — одиночные наблюдения, не доказательство ускорения. Новый замер semantic-checks оценивает заранее заданные 11 дополнений на 12 development-строках, а не ухудшение прежней оценки фактов. Два unknown matching-отношения AeroBuds не изменены.
+The comparisons confirm identical decisionsHash values, 0 changed rows or groups, and no mandatory violations. All comparable non-timing metrics are equal. Timings are single observations, not evidence of acceleration. The new semantic-checks measurement evaluates 11 predefined additions over 12 development rows; it does not represent a regression in the previous fact evaluation. The two unknown AeroBuds matching relationships are unchanged.
 
-Первые контроль/повтор (`B1-stage3-control`, `B1-stage3-repeat`) также сохранены. После них уточнён счётчик api.errors: локальные auth/config и промахи replay-кэша не являются ошибками реального запроса. Итоговые v2-контроли сняты на окончательном коде; все четыре запуска имеют одинаковые решения. Прежние артефакты не перезаписывались. Отдельные codeHash различают итерации.
+The initial control/repeat runs (`B1-stage3-control`, `B1-stage3-repeat`) are also preserved. After them, the api.errors counter was clarified: local auth/config errors and replay-cache misses are not errors from an actual request. The final v2 controls were captured from the final code; all four runs have identical decisions. Previous artifacts were not overwritten. Distinct codeHash values identify the iterations.
 
-Артефакты:
+Artifacts:
 
-- [Контроль](../reports/B1-stage3-control-v2/report.md), [повтор](../reports/B1-stage3-repeat-v2/report.md), рядом result.json/report.json/metrics.json.
-- [B1-v2 → код этапа 3](../reports/comparisons/B1-v2-to-stage3-offline/comparison.md), [повтор](../reports/comparisons/stage3-offline-repeat/comparison.md), рядом полные comparison.json.
-- [История JSONL](../reports/benchmarks/stage3-offline/observations.jsonl): **12 запусков, 803 наблюдения**; [индекс](../reports/benchmarks/stage3-offline/summary.json).
-- [Новые provisional-проверки](../eval/stage3-checks.json), [пакет human review](../eval/REVIEW.md).
+- [Control](../reports/B1-stage3-control-v2/report.md), [repeat](../reports/B1-stage3-repeat-v2/report.md), with result.json/report.json/metrics.json alongside.
+- [B1-v2 → stage 3 code](../reports/comparisons/B1-v2-to-stage3-offline/comparison.md), [repeat](../reports/comparisons/stage3-offline-repeat/comparison.md), with complete comparison.json files alongside.
+- [JSONL history](../reports/benchmarks/stage3-offline/observations.jsonl): **12 runs, 803 observations**; [index](../reports/benchmarks/stage3-offline/summary.json).
+- [New provisional checks](../eval/stage3-checks.json), [human-review package](../eval/REVIEW.md).
 
-## Проверки
+## Verification
 
-Typecheck и **42 теста** прошли. 30 прежних тестов сохраняют B0/B1, matching, цены, scope, округление, eval и историю. 12 новых проверяют адаптер через подменённый HTTP-транспорт, strict JSON, отказ/обрыв/невалидный ответ, безопасные ошибки, ограниченные retries/timeout, кэш и его инвалидацию/повреждение, evidence/условия/предмет, полные варианты совместимости, независимый matching-профиль, DI, partial CLI, сохранение всех строк и изоляцию тестовых результатов от benchmark.
+Typecheck and **42 tests** passed. The 30 existing tests preserve B0/B1, matching, prices, scope, rounding, eval, and history. The 12 new tests cover the adapter through a stubbed HTTP transport, strict JSON, refusal/truncation/invalid responses, safe errors, limited retries/timeout, cache invalidation/corruption, evidence/conditions/subject, full variant compatibility, an independent matching profile, DI, partial CLI behavior, preservation of all rows, and isolation of test results from benchmarks.
 
-Тестовые fixture-ответы дают ровно 11 ожидаемых дополнений и проверяют, что eval замечает лишнее/пропущенное. Это **не** точность Sol/Astra и **не** реальный B2. Все такие результаты создавались во временных каталогах и удалялись тестами. Проверки OpenAiAdapter используют подменённый fetch с фиктивным ключом; ни OpenAI, ни Ollama не вызывались. Проверки биллинга используют только данные в памяти.
+Test fixture responses provide exactly 11 expected additions and verify that eval detects extra/missing ones. This is **not** Sol/Astra accuracy and **not** actual B2. All such results were created in temporary directories and deleted by the tests. OpenAiAdapter tests use a stubbed fetch with a dummy key; neither OpenAI nor Ollama was called. Billing tests use only in-memory data.
 
-Выполнено:
+Executed:
 
 ```sh
 npm install --save-exact openai zod --ignore-scripts --no-audit --no-fund
@@ -76,14 +76,14 @@ node dist/src/cli.js compare --before reports/B1-v2 --after reports/B1-stage3-co
 node dist/src/cli.js compare --before reports/B1-stage3-control-v2 --after reports/B1-stage3-repeat-v2 --out reports/comparisons --run-id stage3-offline-repeat
 ```
 
-Benchmark экспортирован с восемью историческими и четырьмя новыми кодовыми запусками; полный список сохранён в summary.json. ID выше заняты: для воспроизведения выбирать новые. Чистый клон и финальная UI-проверка остаются этапу 5; существующий demo-UI другого задания не означает готовности полного MVP.
+The benchmark was exported with eight historical and four new code-only runs; the full list is saved in summary.json. The IDs above are already used: choose new ones for reproduction. A clean clone and final UI verification remain part of stage 5; the existing demo UI from another task does not mean the full MVP is ready.
 
-## Передача и открытые пункты
+## Handoff and Open Items
 
-**Ближайшее продолжение — завершение этапа 3 после сообщения пользователя о ключе.** Сначала Sol extraction на 12 development-строках, затем анализ реальных ошибок и полный прогон по 220 строкам с 41 выбранной строкой запросов. После этого replay, B1→B2 и решение о принятии. Отдельный matching-эксперимент Sol/Astra использует одинаковые две review-пары B1; поскольку метки unknown, рекомендации требуют человеческой оценки и не увеличивают matching TP автоматически.
+**The next continuation is to complete stage 3 after the user confirms the key.** First run Sol extraction on 12 development rows, then analyze actual errors and run the full 220-row pipeline with 41 selected request rows. After that, perform replay, B1→B2 comparison, and the acceptance decision. The separate Sol/Astra matching experiment uses the same two B1 review pairs; because their labels are unknown, recommendations require human evaluation and do not automatically increase matching TP.
 
-Не расширять словарь и не менять правила по holdout. Не принимать ухудшение защиты ради полноты. Если узкие кодовые проверки удерживают большую часть предложений Sol, измерить это и записать ограничение; не выдавать проход JSON Schema за доказательство смысловой поддержки. Тарифы перед live перепроверить, доступ моделей не подтверждён. Человеческая проверка всех labels/semantic-checks остаётся открытой.
+Do not expand the dictionary or change rules based on the holdout. Do not accept weaker safeguards for completeness. If narrow code checks withhold most Sol proposals, measure this and document the limitation; do not present passing JSON Schema as evidence of semantic support. Recheck pricing before live; model access is unconfirmed. Human verification of all labels/semantic-checks remains open.
 
-Будущему этапу 4 передаются неизменяемые raw rows, offers, facts/evidence/conditions, reconciled facts, review и контракт AiProvider. После принятого B2 генератор должен работать только с допустимыми фактами, verifier — проверять весь текст и исходники отдельным шагом. Astra здесь лишь кандидат. Сейчас descriptions/claims/разрешённый текст и verifier отсутствуют; их реализация автоматически не начиналась.
+The future stage 4 receives immutable raw rows, offers, facts/evidence/conditions, reconciled facts, review, and the AiProvider contract. After B2 is accepted, the generator must use only allowed facts, and the verifier must check the entire text and source rows in a separate step. Astra is only a candidate here. Descriptions/claims/approved text and the verifier are currently absent; their implementation was not started automatically.
 
-Работа над кодом началась примерно в 11:40 UTC; около 25 минут elapsed на реализацию, проверки, артефакты и документацию, без предшествующего планирования. Точный focused-time счётчик не вёлся. Ожидания модельного API и пользователя в ходе реализации — 0. Стоимость сессии Codex отдельно не измерялась. Коммиты, push и отправка организаторам не выполнялись.
+Code work began at approximately 11:40 UTC; about 25 minutes elapsed on implementation, verification, artifacts, and documentation, excluding prior planning. No exact focused-time counter was maintained. Time waiting for the model API and user during implementation was 0. The Codex session cost was not measured separately. No commits, pushes, or submissions to the organizers were performed.

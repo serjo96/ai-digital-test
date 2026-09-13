@@ -1,80 +1,68 @@
-# Текущий статус и следующий рабочий блок
+# Current Status and Next Work Block
 
-Зафиксировано: 2026-09-13, ветка `review-section`. P0.1, P0.2, full-input B3 и P0.3 завершены по коду. Финальный UI сокращён до Catalog + Review. Пользователь завершил экспорт 20 атомарных matching-вопросов; строгая проверка дала 20/20 reviewed, agreement 18/18 при scored coverage 18/20 и два `unknown`. Экспорт ещё находится в Downloads и не сохранён как канонический repo-артефакт. Финальное закрытие ждёт сохранения экспорта/метрик, синхронизации deliverables и clean-clone проверки. Проходят 73 backend-теста и 18 web-тестов; typecheck и production build проверены.
+Recorded: 2026-09-13, branch `review-section`. Stages 1–5 are complete. The final UI is Catalog + Review. The compact matching audit is saved in the repository as [matching-audit-human-verified.json](../eval/matching-audit-human-verified.json) with metrics in [matching-audit-metrics.json](../eval/matching-audit-metrics.json): 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements (post-holdout validation). Extended family labels on 108 rows remain provisional. Stage 6 modular refactoring is not started and is optional. 73 backend tests and 18 web tests pass; typecheck and the production build have been verified.
 
-Этот файл — короткая передача для следующего чата. Полный scope и критерии остаются в [ROADMAP.md](ROADMAP.md).
+This file is a concise handoff for the next chat. The full scope and criteria remain in [ROADMAP.md](ROADMAP.md).
 
-## Однозначный статус этапов
+## Unambiguous Stage Status
 
-| Этап | Статус | Решение |
+| Stage | Status | Decision |
 |---|---|---|
-| 1. Кодовая основа | Завершён | Финальный компактный matching audit получен; его ещё нужно сохранить в репозитории. |
-| 2. Product baseline | Завершён | Принят B1-v2: 220/220 строк, 156 товаров, 4 не-товара; расширенные family-метрики остаются provisional, отдельный human audit дал 18/18 при coverage 18/20. |
-| 3. AI extraction/matching | Завершён как эксперимент с отрицательным product-решением | Интеграция, live/replay и fail-closed проверки работают. B2 не принят по качеству; сохраняется B1-v2. Не продолжать подбор моделей без новой измеренной ошибки или отдельного требования. |
-| 4. Generation/verifier | Завершён | Development gate принят; full-input: 154/156 ready, 2 identity review, 0 withheld, 390 atomic claims. Offline replay воспроизводит hashes. |
-| 5. UI и финальная оценка | Почти завершён | B1/B3 UI, generated review, full-input и holdout сохранены; 20 ответов получены. Открыты repo-backed audit/metrics, документы и clean-clone передача. |
-| 6. Модульная архитектура | Не начат | Начинать после короткого блока закрытия этапов 4–5, чтобы рефакторинг не менял baseline и evaluation одновременно. |
+| 1. Code foundation | Completed | Runnable Nest/TypeScript CLI, B0 baseline, eval path, and saved reports. |
+| 2. Product baseline | Completed | B1-v2 accepted: 220/220 rows, 156 products, 4 non-products; extended family metrics remain provisional. |
+| 3. AI extraction/matching | Completed experiment with a negative B2 decision | Integration, live/replay, and fail-closed checks work. B2 was not accepted on quality; B1-v2 is retained. Do not continue model selection without a newly measured error or a separate requirement. |
+| 4. Generation/verifier | Completed | Development gate accepted; full-input: 154/156 ready, 2 identity review, 0 withheld, 390 atomic claims. Offline replay reproduces the hashes. |
+| 5. UI and final evaluation | Completed | B1/B3 UI, generated review, full-input, holdout, and the repo-backed compact matching audit/metrics are saved. |
+| 6. Modular architecture | Not started / optional refactoring | May begin after stages 1–5; do not change baseline rules or evaluation while refactoring. |
 
-Итого: этапы 1–4 закрыты. До архитектурного этапа 6 остаётся завершить финальную оценку и передачу этапа 5.
+In summary: stages 1–5 are closed. Stage 6 is optional architectural work, not required to close the MVP.
 
-## Состояние human review
+## Human Review Status
 
-Исходная человеческая проверка охватила 120/158 claims, 28/37 карточек и выборку 20/20. Verifier-only P0.2 сохранил старые тексты, пересегментировал их в 99 атомарных claims и безопасно перенёс решения по полному покрытию прежними reviewed spans. Новый канонический review: 76/99 claims, 28/37 карточек, sample 20/20, factual errors 0, non-atomic 0, unclear-copy 2. Controlled cases подтверждены 12/12.
+The original human review covered 120/158 claims, 28/37 cards, and a sample of 20/20. Verifier-only P0.2 preserved the old texts, resegmented them into 99 atomic claims, and safely migrated decisions where the new spans were fully covered by previously reviewed spans. The new canonical review: 76/99 claims, 28/37 cards, sample 20/20, factual errors 0, non-atomic 0, unclear-copy 2. Controlled cases were confirmed 12/12.
 
-Актуальный файл — [generated-review-fdca0138d88f.json](../eval/generated-review-fdca0138d88f.json), `human_verified`, 76 reviewed и 23 pending вне обязательной выборки. Исторический [generated-review-e478435a3d39.json](../eval/generated-review-e478435a3d39.json) сохранён без переписывания.
+The current file is [generated-review-fdca0138d88f.json](../eval/generated-review-fdca0138d88f.json), `human_verified`, with 76 reviewed and 23 pending outside the required sample. The historical [generated-review-e478435a3d39.json](../eval/generated-review-e478435a3d39.json) is preserved without being rewritten.
 
-Девять обнаруженных расхождений разобраны по supplier feed. Все соответствующие факты поддержаны входными данными; четыре проблемы относятся к неатомарным span, две — к неясному copy. Они сохранены отдельными issue-флагами и rationale, а не как ложные factual errors. Интерфейс получил фильтр расхождений/issues и явное сравнение human/AI verdict.
+The nine identified discrepancies were investigated against the supplier feed. All corresponding facts are supported by the input data; four issues concern non-atomic spans and two concern unclear copy. They are preserved as separate issue flags and rationale, not as false factual errors. The interface gained a discrepancy/issues filter and an explicit human/AI verdict comparison.
 
-## Следующий критический блок — до архитектурного рефакторинга
+## Compact matching audit — saved
 
-### P0.1. Human-review contract — выполнено по коду
+Canonical artifacts:
 
-Контракт `stage4-generated-review-v2` использует `pending/reviewed`, nullable `humanVerdict`, обязательный rationale и отдельные `non_atomic_claim`/`unclear_copy`. Model verdict не считается человеческим. Gate принимает полностью проверенную фиксированную выборку минимум из 20 карточек; актуальный verifier-only artifact сообщает claims 76/99, products 28/37, sample 20/20. `web:prepare --generated-checks` подключает каноническую разметку, не изменяя исторический run; legacy localStorage мигрируется по стабильным ключам и не затирает сохранённые reviewed-решения.
+- [matching-audit.json](../eval/matching-audit.json) — 20 atomic questions (`stage5-matching-audit-v1`)
+- [matching-audit-human-verified.json](../eval/matching-audit-human-verified.json) — human answers, reviewer `Serjo`, status `human_verified`
+- [matching-audit-metrics.json](../eval/matching-audit-metrics.json) — post-holdout validation metrics
 
-P0.1 завершён, дополнительная ручная разметка не нужна. Factual error и unresolved `non_atomic_claim` блокируют full-input gate; `unclear_copy` измеряется и раскрывается отдельно.
+Final metric: 20/20 reviewed; 18 scored; 18 agreements; 0 disagreements; 2 unknown; agreement 18/18 = 1.0; scored coverage 18/20 = 0.9. Development split: 12/12 scored agreements and 2 unknown. Holdout split: 6/6 scored agreements. Do not promote all of `eval/labels.json`: its 108 rows / 70 groups remain provisional.
 
-### P0.2. Development gate — завершён
+## Closed P0 blocks (stages 4–5)
 
-Human-review часть закрыта: replay получил `human_verified` для controlled и generated review. Verifier prompt v2 требует законченные смысловые spans, а локальный fail-closed валидатор отклоняет оборванные `is a`/`has a` и голые измерения. Помимо четырёх human-flagged claims аудит нашёл тот же паттерн в двух pending published claims и двух controlled spans; человеческие флаги задним числом не добавлялись. При новом publication hash миграция сначала переносит точные стабильные ключи, а при неизменном опубликованном тексте — только reviewed `supported`-решения, полностью покрывающие новый атомарный span. Остальные claims остаются pending.
+### P0.1. Human-review contract — complete
 
-Development live разрешён и выполнен 2026-09-12: [B3-openai-development-atomic-v2-live-network](../reports/B3-openai-development-atomic-v2-live-network/report.md). Получено 88 calls, 158417 tokens, $2.619013, 0 errors/retries; один repair исправил лишний qualifier Nimbus. Controlled suite прошла 12/12, результат сохранил B1 `decisionsHash`, дал 37/39 ready и 0 запрещённых atomicity-паттернов среди 102 опубликованных claims. [Offline replay](../reports/B3-openai-development-atomic-v2-replay/report.md) дал 88 cache hits, 0 calls и тот же `publicationHash`; [сравнение](../reports/comparisons/B3-openai-development-atomic-v2-live-to-replay/comparison.md) подтверждает `decisionsEqual=true`, `publicationEqual=true` и отсутствие нарушений.
+The `stage4-generated-review-v2` contract uses `pending/reviewed`, nullable `humanVerdict`, required rationale, and separate `non_atomic_claim`/`unclear_copy` flags. A model verdict is not treated as a human verdict. The gate accepts a fully reviewed fixed sample of at least 20 cards; the current verifier-only artifact reports claims 76/99, products 28/37, sample 20/20. `web:prepare --generated-checks` attaches the canonical labels without changing the historical run.
 
-Чтобы не требовать повторной проверки 55 claims после нового generation, добавлен `--publication-source`: режим разрешён только для B3 development, проверяет совместимость source report и не вызывает generator. [Verifier-only live](../reports/B3-openai-development-verifier-only-v2-live/report.md) выполнил 49 verifier calls, 125333 tokens, $2.390245, 0 errors/retries; все 37 published texts побитово совпадают с замороженным источником, запрещённых spans 0. Безопасная migration переносит только supported decisions, полностью покрывающие новый span; исправленные non-atomic flags снимаются только на span, прошедшем atomic-v2 validator.
+### P0.2. Development gate — complete
 
-[Human-gate replay](../reports/B3-openai-development-verifier-only-v2-human-gate-replay/report.md) дал 49 cache hits и 0 calls. Он зафиксировал controlled human-verified 12/12 и generated human-verified 76/99, products 28/37, sample 20/20, factual errors 0, non-atomic 0, unclear-copy 2. Live/replay имеют одинаковые `decisionsHash` и `publicationHash`; [сравнение](../reports/comparisons/B3-openai-development-verifier-only-v2-live-to-human-gate-replay/comparison.md) не содержит нарушений. Дополнительная ручная generated-разметка не нужна.
+Human-verified controlled 12/12 and generated sample 20/20. Verifier-only live and human-gate replay are saved with identical `decisionsHash` / `publicationHash`. Development gate accepted.
 
-Выполненная development live-команда:
+### P0.3. Stage 5 closure — complete
 
-```sh
-npm run build
-node dist/src/cli.js pipeline --baseline b3 --ai-mode live --ai-cache reports/B3-openai-development-atomic-v2-network-cache --ai-config config/stage4.openai.json --ai-cohort development --claim-checks eval/stage4-claims.json --out reports --run-id B3-openai-development-atomic-v2-live-network
-```
+Full-input B3: 154/156 ready, 2 identity review, 0 withheld, 390 claims. Holdout replay saved without API calls. Compact matching audit and metrics are repository-backed. Extended family labels remain provisional; the compact sample is post-holdout validation.
 
-### P0.3. Закрыть этап 5
+## What Not to Do Now
 
-Full-input B3 уже подготовлен: 154/156 ready, 2 identity review, 0 withheld, 213/220 строк покрыты ready listings; 4 non-product строки и 3 строки двух identity-review товаров объясняют остаток. 390 claims прошли structural validation, запрещённых atomicity-паттернов нет. Live сделал 322 calls и стоил $8.110955; offline replay воспроизводит решения и публикацию без сети.
+- Do not improve B2 extraction/matching or try new AI models without an error identified by human review. The negative stage 3 experiment is already an acceptable result; B1 is safer and remains accepted.
+- Do not run a second full-input live: the first is saved and reproducible offline.
+- Do not begin moving modules en masse while changing domain rules, prompts, or evaluation labels.
+- Do not ask the user to label the remaining 38 claims or all 108 family-label rows: the 20/20 compact sample is complete.
+- Do not silently retune rules against the revealed holdout; any such change must be called post-holdout development.
 
-Технически выполнено: full-input/holdout UI просмотрен; добавлен `split=holdout` с запретом B3 live; первый holdout replay сохранён без API-вызовов; расширенные 20 family cases сохранены provisional. Финальный UI содержит только Catalog и Review. Новый `stage5-matching-audit-v1` фиксирует 20 независимых вопросов, привязан к hash исходных labels и не показывает пользователю provisional ответ.
+## When to Move to Architecture (optional Stage 6)
 
-1. Скопировать уже валидированный `matching-audit-human-verified.json` в `eval/` без переинтерпретации ответов и сохранить hash.
-2. Сохранить отдельную audit-метрику: 20 reviewed, 18 scored, 18 agreements, 0 disagreements, 2 unknown; overall 18/18 и coverage 18/20. Не повышать весь `eval/labels.json`: его 108 строк остаются provisional. Результат назвать post-holdout validation.
-3. Завершить синхронизацию WRITEUP, LLM_ROLES, AI_USAGE, BENCHMARKS и итогового отчёта; затем выполнить clean-clone/install/test/build/offline-replay/UI проверку.
+Stage 6 can be planned now. The B1 `decisionsHash`, B3 `publicationHash`, human-verified development results, holdout replay, and saved matching-audit metrics form the characterization baseline for safe refactoring.
 
-После этого MVP закрыт и можно начинать этап 6.
+The first architectural step is to extract browser-safe artifact contracts and run storage, then split `PipelineService` into B0/B1/B2/B3 use cases. Do not change domain rules or prompts during the migration.
 
-## Что сейчас не нужно делать
+## Starter Prompt for a New Chat
 
-- Не улучшать B2 extraction/matching и не перебирать новые AI-модели без ошибки, обнаруженной human review или holdout. Отрицательный эксперимент этапа 3 уже является допустимым результатом; B1 безопаснее и остаётся принятым.
-- Не запускать второй full-input live: первый сохранён и воспроизводится offline.
-- Не начинать массовое перемещение модулей одновременно с изменением review schema, holdout и финальных метрик.
-- Не требовать от пользователя разметки оставшихся 38 claims: выборка 20/20 уже завершена.
-
-## Когда переходить к архитектуре
-
-Планировать структуру этапа 6 можно уже сейчас, но менять модули следует после P0.1–P0.3. Тогда B1 `decisionsHash`, B3 `publicationHash`, human-verified development и первый holdout станут characterization baseline для безопасного рефакторинга.
-
-Первый архитектурный шаг после этого — выделить browser-safe artifact contracts и run storage, затем разделить `PipelineService` на B0/B1/B2/B3 use cases. Доменные правила и prompts во время переноса не менять.
-
-## Стартовый запрос для нового чата
-
-> Прочитай `docs/NEXT_STEPS.md`. Экспорт `/Users/serjo-pro/Downloads/matching-audit-human-verified.json` уже провалидирован: 20/20 reviewed, 18/18 agreement, coverage 18/20, два unknown. Сохрани его и отдельную post-holdout audit-метрику в репозитории, не повышая расширенные provisional labels. Затем выполни clean-clone проверку и закрой передачу. Новые model calls и архитектурный рефакторинг не запускать.
+> Read `docs/NEXT_STEPS.md`. Stages 1–5 are complete. The compact matching audit is saved at `eval/matching-audit-human-verified.json` with metrics in `eval/matching-audit-metrics.json` (20/20 reviewed, 18/18 agreement, 18/20 coverage, 2 unknown, 0 disagreements). Extended family labels remain provisional. Stage 6 modular refactoring is optional and not started. Do not run new model calls or change product rules unless a new measured error requires it.
