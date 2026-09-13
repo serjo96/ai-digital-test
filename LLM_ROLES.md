@@ -1,12 +1,22 @@
 # Роли моделей и кода — финальный MVP
 
-Обновлено: 2026-09-13. B1-v2 остаётся принятым product baseline; Ollama-эксперимент этапа 3 не прошёл B2 quality gate. OpenAI B3 выполнен на development и full input: `gpt-5.6-sol` генерирует, отдельный `gpt-6-astra` проверяет claims. Controlled и generated development gates human-verified; full-input replay сохранён. Компактный matching audit завершён человеком: 18/18 определённых ответов совпали, coverage 18/20; два ответа `unknown`. Расширенные family labels остаются provisional.
+Обновлено: 2026-09-13. B1-v2 остаётся принятым product baseline. **Измеренный B2 был экспериментом только на локальных Ollama-моделях** и не прошёл quality gate; подготовленные OpenAI-профили B2 не запускались, поэтому OpenAI B2 quality не измерено. **B3 — отдельный OpenAI publication-этап**, а не продолжение B2: `gpt-5.6-sol` формулирует текст из уже принятых B1 supports, отдельный `gpt-6-astra` проверяет claims. Controlled и generated development gates human-verified; full-input replay сохранён. Компактный matching audit завершён человеком: 18/18 определённых ответов совпали, coverage 18/20; два ответа `unknown`. Расширенные family labels остаются provisional.
+
+## Граница B1 / B2 / B3
+
+| Контур | Что решает | Модельный runtime | Влияет на итоговый каталог |
+|---|---|---|---|
+| B1 | Identity, matching, facts, conflicts, categories | Нет, детерминированный код | Да, это принятый baseline |
+| B2 | Экспериментальные extraction и shadow matching | Локальные Ollama `qwen3:4b` / `gemma4:12b`; OpenAI live calls = 0 | Нет, quality gate не принят |
+| B3 | Listing wording и независимая claim verification поверх B1 supports | OpenAI `gpt-5.6-sol` / `gpt-6-astra` | Да, только после fail-closed кодового gate |
+
+B2 пытался дополнить данные о товаре до публикации. B3 не извлекает заново product truth и не решает, одинаковы ли товары: он получает результат B1, пишет безопасное описание и проверяет его по тем же сохранённым источникам.
 
 | Шаг | Что делает модель / код | Модель / уровень | Почему модель, а не код | Последствие ошибки / защита | Примерные стоимость и задержка |
 |---|---|---|---|---|---|
-| Семантическое извлечение (локальный development) | Пять дополнительных атрибутов с точными цитатами | Ollama qwen3:4b / gemma4:12b; будущий OpenAI Sol low | Выбор смысла и предмета в непонятых фрагментах | Чужой предмет, число или scope; схема, локальные проверки и review | 12 development-строк на модель; live latency в отчёте этапа 3; локальная стоимость N/A |
+| Семантическое извлечение (B2, локальный development) | Пять дополнительных атрибутов с точными цитатами | Ollama qwen3:4b / gemma4:12b; OpenAI live не запускался | Выбор смысла и предмета в непонятых фрагментах | Чужой предмет, число или scope; схема, локальные проверки и review | 12 development-строк на модель; live latency в отчёте этапа 3; локальная стоимость N/A |
 | Тип / категория (в extraction) | Предложить тип и одну из 12 категорий по evidence | Та же локальная модель, тот же extraction-запрос | Семантические формулировки, которые пропускают правила | Аксессуар принят за устройство; уверенное кодовое решение не перезаписывается | Дополнительных вызовов нет; usage/latency в ai.json |
-| Сопоставление (строго shadow) | Сохранить merge/reject/unknown, confidence, reason, evidence для 8 одинаковых пар | Ollama qwen3:4b / gemma4:12b | Сравнение смысла названий и условий | Ложное объединение; рекомендация вообще не меняет решения, группы и product confidence | 2 positive, 4 negative, 2 unknown; результаты и latency в отчёте этапа 3 |
+| Сопоставление (B2, строго shadow) | Сохранить merge/reject/unknown, confidence, reason, evidence для 8 одинаковых пар | Локальные Ollama qwen3:4b / gemma4:12b; OpenAI live не запускался | Сравнение смысла названий и условий | Ложное объединение; рекомендация вообще не меняет решения, группы и product confidence | 2 positive, 4 negative, 2 unknown; результаты и latency в отчёте этапа 3 |
 | Генерация описаний (B3 development) | Короткий нейтральный текст только по conflict-free identity и agreed product facts | OpenAI `gpt-5.6-sol`, low | Формулирование связного текста | Выдуманное утверждение; текст не публикуется без отдельной полной проверки | 37 calls; 28582 tokens; $0.1119028; median/p95 1.937/2.954 s |
 | Проверка claims (B3 development) | Проверить весь текст по raw rows, supports, decisions и review; вернуть точные spans/citations | OpenAI `gpt-6-astra`, low | Цитата сама по себе не доказывает entailment | Любой unknown/error/неполное покрытие блокирует; одна repair, затем удержание | Актуальный verifier-only live: 49 calls, 125333 tokens, $2.390245; controlled 12/12 и generated sample 20/20 human-verified |
 | Загрузка, деньги, исходы строк | Код валидирует схему, хранит точные суммы и оригиналы | Код, без LLM | Однозначная арифметика и инварианты не требуют модели | Потери, неверная цена; проверки учёта и парсинга | API $0; wall полного B1 этапа 5: 81.957 / 80.121 ms, не замер отдельного шага |

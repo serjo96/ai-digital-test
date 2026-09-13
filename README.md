@@ -4,6 +4,21 @@
 
 Стек: TypeScript 5.9, NestJS 12 standalone context, Node 24.14.1, npm; UI — Vite + React в `web/`. HTTP API, БД и deployment не нужны.
 
+## Product flow
+
+[![Shelf Ready product processing flow](docs/assets/product-flow.svg)](docs/assets/product-flow.svg)
+
+The diagram shows the accepted production runtime: deterministic B1 owns product identity, matching and facts; OpenAI B3 writes and verifies publication text behind a fail-closed code gate. [Open the SVG directly](docs/assets/product-flow.svg).
+
+### Production stages
+
+| Stage | Runtime used | Responsibility | Current status |
+|---|---|---|---|
+| **B1** | Deterministic TypeScript code | Product identity, matching, offers, facts, conflicts and categories | Accepted product baseline |
+| **B3** | **OpenAI** (`gpt-5.6-sol`, `gpt-6-astra`) plus a deterministic gate | Generate listing text from B1 supports and independently verify every claim | Accepted publication pipeline |
+
+Historical B2 model experiments are not part of this runtime. Their scope and results are preserved in the [stage 3 report](docs/STAGE3_REPORT.md).
+
 ## Установка и запуск
 
 С Node из `.nvmrc`:
@@ -93,7 +108,7 @@ ID строятся детерминированно; перестановка �
 
 Сохранённые исторические прогоны не переписываются. Файлы результатов сохраняются локально и предназначены для Git; автоматической отправки куда-либо нет. Результаты OpenAI B3 описаны в [отчёте этапа 4](docs/STAGE4_REPORT.md), локальный Ollama-эксперимент — в [отчёте этапа 3](docs/STAGE3_REPORT.md), распределение ответственности — в [ролях моделей](LLM_ROLES.md).
 
-## B3: OpenAI generation и verifier
+## B3: OpenAI publication generation and verifier
 
 Локальный `.env` должен содержать `OPENAI_API_KEY`; ключ загружается через `AppConfig`, имеет меньший приоритет, чем process env, и не сохраняется в артефактах. Конфигурация B3 — `config/stage4.openai.json`: `gpt-5.6-sol` генерирует 1–3 коротких нейтральных предложения, отдельный `gpt-6-astra` разбивает весь текст на claims и проверяет evidence. Оба используют reasoning `low`, Responses API и strict Structured Outputs.
 
@@ -131,9 +146,12 @@ node dist/src/cli.js pipeline --baseline b3 --split holdout --ai-mode replay --a
 [Holdout report](reports/B3-openai-full-input-atomic-v2-holdout-replay/report.md): 6 cases / 49 rows, TP/FP/FN 22/0/0, true negatives 1154/1154, hard negatives 256/256, non-products 49/49, 0 calls/tokens/cost, 321 successful cache hits. Эти family-label метрики остаются `provisional`. Компактный human audit завершён отдельно и должен называться post-holdout validation, поскольку был сформирован после раскрытия holdout. [Машиночитаемая provisional-сводка](reports/benchmarks/stage5-b3-full-input-and-holdout-provisional/summary.json) хранит прежние development/holdout серии.
 
 
-## B2: провайдеры и локальный эксперимент
+<details>
+<summary><strong>Historical B2 local-model experiment — not part of production</strong></summary>
 
-Принятый product baseline — **B1-v2**. Ollama остаётся экспериментальным development baseline этапа 3. OpenAI Sol/Astra используются только B3 publication; их результат не меняет B1 matching/facts и не повышает B2.
+## B2: local-model extraction and matching experiment
+
+Принятый product baseline — **B1-v2**. Фактически измеренный B2 был development-экспериментом на локальных моделях Ollama; OpenAI-вызовов в B2 не было. OpenAI Sol/Astra используются только в B3 publication; B3 не повторяет extraction/matching, не меняет B1 matching/facts и не повышает B2 задним числом.
 
 `AiProvider` и Nest DI объединяют `OpenAiAdapter` (Responses API) и `OllamaAdapter` (native `/api/chat`, встроенный fetch, `stream:false`, общий JSON Schema в `format`). Предметный pipeline не импортирует провайдеры. Extraction/evidence, retries, cache/replay и метрики общие. Matching schema v3 сохраняет decision, confidence high/medium/low, reason и evidence только в `ai.json`; рекомендации не изменяют deterministic decisions, группы или confidence товаров.
 
@@ -167,6 +185,8 @@ node dist/src/replay-ollama-run.js reports/stage3-ollama-v1/ollama-qwen3-4b-deve
 
 OpenAI-профили `config/ai.json`, `config/ai.matching-sol.json`, `config/ai.matching-astra.json` сохранены. Ключ читается из `.env` / `OPENAI_API_KEY`; не помещать его в JSON-config, CLI-аргументы или frontend. Доступ Sol/Astra и актуальность тарифов требуют проверки после получения ключа.
 
+</details>
+
 ## Этап 5: локальный экран B1 и B3 claim review
 
 Техническая часть P0.3 выполнена: B1/B3 каталог, завершённый claim review, компактный matching audit, full-input и holdout replay сохранены. Человеческие ответы 20/20 получены и валидны; до полного закрытия остаются сохранение экспорта/метрик, синхронизация финального комплекта и clean-clone финал. Расширенные labels на 108 строк остаются честно provisional. [Отчёт и соответствие PDF](docs/STAGE5_REPORT.md), [краткий WRITEUP](WRITEUP.md).
@@ -188,6 +208,6 @@ npm run web
 
 Run ID должен быть новым: отчёты не перезаписываются. Для просмотра уже сохранённого результата достаточно B1-команды выше либо `npm run web:prepare -- --run-dir reports/B3-openai-development-human-gate-v2 --generated-checks eval/generated-review-e478435a3d39.json` для claim review. Подготовку выполнить до сборки; после нового снимка обновить страницу, для production — пересобрать UI. [Настройки URL и preview](web/README.md).
 
-Просмотр JSON не является replay модели. B1 работает кодом без сети; B2 replay повторяет сохранённые реальные ответы через кэш без новых API-вызовов, B2 live выполняет новые запросы. Реальные локальные B2-кэши находятся в reports/stage3-ollama-v1 и stage3-ollama-v2; его результаты экспериментальные. UI не запускает pipeline и не пересчитывает matching/verifier: он отображает сохранённые решения и собирает только явные human confirmations. В B1 текст отсутствует с причиной `generation_not_run`, согласованный факт не означает проверенное утверждение.
+Просмотр JSON не является replay модели. B1 работает кодом без сети; B3 replay использует сохранённые ответы без новых API-вызовов. UI не запускает pipeline и не пересчитывает matching/verifier: он отображает сохранённые решения и собирает только явные human confirmations. В B1 текст отсутствует с причиной `generation_not_run`, согласованный факт не означает проверенное утверждение.
 
 Контроль и повтор: `reports/B1-stage5-control`, `reports/B1-stage5-repeat`; сравнения: `reports/comparisons/B1-v2-to-stage5`, `stage3-to-stage5`, `stage5-repeat`; история: `reports/benchmarks/stage5-offline`. Все quality-значения provisional.
