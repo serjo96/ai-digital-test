@@ -8,6 +8,7 @@ import { ProviderRegistry } from '../src/ai/contracts.js';
 import { AiMatchingRunService } from '../src/pipeline/ai-matching-run.service.js';
 import { CatalogRunService } from '../src/pipeline/catalog-run.service.js';
 import { PublicationRunService } from '../src/pipeline/publication-run.service.js';
+import { assertExplicitAiRows } from '../src/pipeline/run-common.js';
 import { RunStoreService } from '../src/storage/run-store.service.js';
 import { createPipelineService } from '../src/app.js';
 
@@ -56,6 +57,10 @@ describe('architecture boundaries', () => {
     await assert.rejects(new CatalogRunService(store).run({ ...options, baseline: 'b2' }), /only supports B0 and B1/);
     await assert.rejects(new AiMatchingRunService(providers, store).run({ ...options, baseline: 'b1' }), /only supports B2/);
     await assert.rejects(new PublicationRunService(providers, store).run({ ...options, baseline: 'b1' }), /only supports B3/);
+  });
+
+  test('explicit AI rows reject a missing semantic suite instead of reading cases', () => {
+    assert.throws(() => assertExplicitAiRows(['row-1'], null), /frozen semantic cohort/);
   });
 
   test('scenario-specific option guards fail before any AI runtime can start', async () => {

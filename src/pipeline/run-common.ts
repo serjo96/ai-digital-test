@@ -3,6 +3,7 @@ import { performance } from 'node:perf_hooks';
 import { assertAccounting, hash, titleKey, validateInputs } from '../baseline.js';
 import { validateLabels } from '../evaluation.js';
 import { isProductResult, isPublicationResult, type PublicationResult } from '../domain.js';
+import type { SemanticSuite } from '../semantic-quality.js';
 import { generatedReviewTemplate } from '../publication-evaluation.js';
 import { metricsFor } from '../metrics.js';
 import { codeVersion, reportMarkdown } from '../reports.js';
@@ -105,6 +106,13 @@ export function roleSummaries(runtime: AiRuntime): NonNullable<NonNullable<RunRe
 /** B3 may safely recover an invalid first verification through its single bounded repair. */
 export function hasUnrecoveredAiErrors(baseline: RunOptions['baseline'], records: Pick<AiCallRecord, 'status'>[], controlledErrors: number, publicationWithheld: number): boolean {
   return records.some(record => record.status === 'error') && (baseline !== 'b3' || controlledErrors > 0 || publicationWithheld > 0);
+}
+
+export function assertExplicitAiRows(rows: string[] | undefined, suite: SemanticSuite | null): void {
+  if (!rows) return;
+  if (!suite || new Set(rows).size !== rows.length || rows.some(id => !suite.cases.some(testCase => testCase.rowId === id))) {
+    throw new Error('explicit AI rows must belong to the frozen semantic cohort');
+  }
 }
 
 export async function persistRun(

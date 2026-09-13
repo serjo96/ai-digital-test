@@ -8,7 +8,7 @@ import { evaluateSemantic, validateSemantic } from '../semantic-quality.js';
 import type { RunReport } from '../types.js';
 import { RunStoreService } from '../storage/run-store.service.js';
 import type { RunOptions } from './run-options.js';
-import { auditFor, baseConfig, inputHashes, loadRunInput, persistFailure, persistRun } from './run-common.js';
+import { assertExplicitAiRows, auditFor, baseConfig, inputHashes, loadRunInput, persistFailure, persistRun } from './run-common.js';
 
 export class CatalogRunService {
   constructor(private readonly store: RunStoreService) {}
@@ -27,11 +27,7 @@ export class CatalogRunService {
       const suite = checksText ? validateQuality(JSON.parse(checksText), input.labels, hash(input.feedText)) : null;
       const semanticText = options.semanticChecks ? await this.store.readText(options.semanticChecks) : null;
       const semanticSuite = semanticText ? validateSemantic(JSON.parse(semanticText), input.labels, hash(input.feedText)) : null;
-      if (options.aiRows) {
-        if (!semanticSuite || new Set(options.aiRows).size !== options.aiRows.length || options.aiRows.some(id => !semanticSuite.cases.some(testCase => testCase.rowId === id))) {
-          throw new Error('explicit AI rows must belong to the frozen semantic cohort');
-        }
-      }
+      assertExplicitAiRows(options.aiRows, semanticSuite);
       if (options.aiPairs?.length) throw new Error('matching pairs must belong to explicit cohort');
 
       const pipelineStart = performance.now();

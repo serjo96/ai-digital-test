@@ -11,7 +11,7 @@ import { AiRuntime } from '../ai/runtime.js';
 import type { RunReport } from '../types.js';
 import { RunStoreService } from '../storage/run-store.service.js';
 import type { RunOptions } from './run-options.js';
-import { auditFor, baseConfig, inputHashes, loadRunInput, persistFailure, persistRun, roleSummaries } from './run-common.js';
+import { assertExplicitAiRows, auditFor, baseConfig, inputHashes, loadRunInput, persistFailure, persistRun, roleSummaries } from './run-common.js';
 
 export class AiMatchingRunService {
   constructor(
@@ -47,12 +47,8 @@ export class AiMatchingRunService {
       const suite = validateQuality(JSON.parse(checksText), input.labels, hash(input.feedText));
       const semanticText = await this.store.readText(options.semanticChecks ?? 'eval/stage3-checks.json');
       const semanticSuite = validateSemantic(JSON.parse(semanticText), input.labels, hash(input.feedText));
-      if (options.aiRows) {
-        if (new Set(options.aiRows).size !== options.aiRows.length || options.aiRows.some(id => !semanticSuite.cases.some(testCase => testCase.rowId === id))) {
-          throw new Error('explicit AI rows must belong to the frozen semantic cohort');
-        }
-        eligible = new Set(options.aiRows);
-      }
+      assertExplicitAiRows(options.aiRows, semanticSuite);
+      if (options.aiRows) eligible = new Set(options.aiRows);
       if (options.aiPairs && options.aiPairs.some(pair => pair.length !== 2 || pair.some(id => !eligible?.has(id)))) {
         throw new Error('matching pairs must belong to explicit cohort');
       }
