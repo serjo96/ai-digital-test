@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1040" viewBox="0 0 1440 1040" role="img" aria-labelledby="title description">
+  <title id="title">Shelf Ready product processing flow</title>
+  <desc id="description">A supplier feed is processed by the deterministic B1 product pipeline. Products with uncertain identity go to human review. Safe products are described by an OpenAI generator, independently checked by an OpenAI verifier, and accepted only by a fail-closed code gate.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#52606d"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/>
+    </marker>
+    <style>
+      text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #172033; }
+      .title { font-size: 31px; font-weight: 700; }
+      .subtitle { font-size: 16px; fill: #52606d; }
+      .label { font-size: 13px; font-weight: 700; letter-spacing: 1.4px; }
+      .node-title { font-size: 18px; font-weight: 700; }
+      .node-copy { font-size: 14px; fill: #3e4c59; }
+      .edge-label { font-size: 13px; font-weight: 700; }
+      .code { fill: #eef4ff; stroke: #2563eb; }
+      .ai { fill: #f5efff; stroke: #7c3aed; }
+      .human { fill: #fff6dd; stroke: #c47b00; }
+      .output { fill: #eaf8ef; stroke: #1f8a4c; }
+      .blocked { fill: #fff0f0; stroke: #c53b3b; }
+      .neutral { fill: #f7f9fb; stroke: #7b8794; }
+      .node { stroke-width: 2; rx: 14; }
+      .flow { fill: none; stroke: #52606d; stroke-width: 2.4; marker-end: url(#arrow); }
+      .flow-ai { fill: none; stroke: #2563eb; stroke-width: 2.4; marker-end: url(#arrow-blue); }
+      .legend { font-size: 13px; fill: #52606d; }
+    </style>
+  </defs>
+
+  <rect width="1440" height="1040" fill="#ffffff"/>
+  <text class="title" x="70" y="60">Shelf Ready — Product Processing Flow</text>
+  <text class="subtitle" x="70" y="91">The product baseline is deterministic. AI is used only for publication text and independent claim verification.</text>
+
+  <g transform="translate(70 118)">
+    <rect class="node code" width="18" height="18" rx="4"/><text class="legend" x="27" y="14">Deterministic code</text>
+    <rect class="node ai" x="190" width="18" height="18" rx="4"/><text class="legend" x="217" y="14">OpenAI model</text>
+    <rect class="node human" x="355" width="18" height="18" rx="4"/><text class="legend" x="382" y="14">Human decision</text>
+    <rect class="node output" x="510" width="18" height="18" rx="4"/><text class="legend" x="537" y="14">Accepted output</text>
+  </g>
+
+  <text class="label" x="70" y="190">INPUT AND PRODUCT BASELINE</text>
+
+  <rect class="node neutral" x="70" y="215" width="270" height="92"/>
+  <text class="node-title" x="205" y="248" text-anchor="middle">Supplier feed JSON</text>
+  <text class="node-copy" x="205" y="275" text-anchor="middle">Batch CLI input</text>
+  <text class="node-copy" x="205" y="296" text-anchor="middle">No automatic message consumer</text>
+
+  <path class="flow" d="M340 261 H395"/>
+
+  <rect class="node code" x="395" y="215" width="280" height="92"/>
+  <text class="node-title" x="535" y="246" text-anchor="middle">Validate and preserve</text>
+  <text class="node-copy" x="535" y="273" text-anchor="middle">Schema, row IDs, price and stock</text>
+  <text class="node-copy" x="535" y="294" text-anchor="middle">Raw supplier evidence remains intact</text>
+
+  <path class="flow" d="M675 261 H730"/>
+
+  <rect class="node code" x="730" y="195" width="420" height="132"/>
+  <text class="node-title" x="940" y="230" text-anchor="middle">B1 deterministic product pipeline</text>
+  <text class="node-copy" x="940" y="258" text-anchor="middle">Normalize → classify → find candidates → match</text>
+  <text class="node-copy" x="940" y="280" text-anchor="middle">Build products and offers → extract facts</text>
+  <text class="node-copy" x="940" y="302" text-anchor="middle">Reconcile conflicts → assign category and review reasons</text>
+
+  <path class="flow" d="M1150 261 H1200"/>
+
+  <polygon class="code" points="1300,193 1390,261 1300,329 1210,261" stroke-width="2"/>
+  <text class="node-title" x="1300" y="255" text-anchor="middle">Identity safe?</text>
+  <text class="node-copy" x="1300" y="278" text-anchor="middle">Code decision</text>
+
+  <path class="flow" d="M1300 329 V390 H1190"/>
+  <text class="edge-label" x="1313" y="367">NO</text>
+  <rect class="node human" x="930" y="365" width="260" height="92"/>
+  <text class="node-title" x="1060" y="399" text-anchor="middle">Identity review</text>
+  <text class="node-copy" x="1060" y="426" text-anchor="middle">No generated listing</text>
+  <text class="node-copy" x="1060" y="447" text-anchor="middle">AI is not called for this product</text>
+
+  <path class="flow-ai" d="M1300 193 V166 H700 V477 H675"/>
+  <text class="edge-label" x="1313" y="185" fill="#2563eb">YES</text>
+
+  <text class="label" x="70" y="400">B3 — OPENAI PUBLICATION PIPELINE</text>
+
+  <rect class="node code" x="395" y="425" width="280" height="104"/>
+  <text class="node-title" x="535" y="459" text-anchor="middle">Build allowed supports</text>
+  <text class="node-copy" x="535" y="486" text-anchor="middle">Only conflict-free identity and</text>
+  <text class="node-copy" x="535" y="507" text-anchor="middle">agreed product facts with evidence</text>
+
+  <path class="flow" d="M395 477 H340"/>
+
+  <rect class="node ai" x="70" y="425" width="270" height="104"/>
+  <text class="node-title" x="205" y="459" text-anchor="middle">GPT-5.6 Sol</text>
+  <text class="node-copy" x="205" y="486" text-anchor="middle">Generate a neutral 1–3 sentence</text>
+  <text class="node-copy" x="205" y="507" text-anchor="middle">description from allowed supports</text>
+
+  <path class="flow" d="M205 529 V585"/>
+
+  <rect class="node ai" x="70" y="585" width="270" height="118"/>
+  <text class="node-title" x="205" y="619" text-anchor="middle">GPT-6 Astra</text>
+  <text class="node-copy" x="205" y="646" text-anchor="middle">Split the whole draft into claims</text>
+  <text class="node-copy" x="205" y="667" text-anchor="middle">Return verdicts, support IDs,</text>
+  <text class="node-copy" x="205" y="688" text-anchor="middle">exact spans and source citations</text>
+
+  <path class="flow" d="M340 644 H430"/>
+
+  <polygon class="code" points="565,565 700,644 565,723 430,644" stroke-width="2"/>
+  <text class="node-title" x="565" y="623" text-anchor="middle">Fail-closed code gate</text>
+  <text class="node-copy" x="565" y="648" text-anchor="middle">Schema, coverage, spans,</text>
+  <text class="node-copy" x="565" y="669" text-anchor="middle">citations and every verdict</text>
+
+  <path class="flow" d="M700 644 H775"/>
+  <text class="edge-label" x="719" y="631">PASS</text>
+
+  <rect class="node output" x="775" y="591" width="250" height="106"/>
+  <text class="node-title" x="900" y="627" text-anchor="middle">Ready listing</text>
+  <text class="node-copy" x="900" y="654" text-anchor="middle">Safe text may be published</text>
+  <text class="node-copy" x="900" y="675" text-anchor="middle">with its evidence trail</text>
+
+  <path class="flow" d="M565 723 V780 H395"/>
+  <text class="edge-label" x="579" y="753">FIRST FAIL — ONE REPAIR</text>
+
+  <rect class="node ai" x="120" y="755" width="275" height="92"/>
+  <text class="node-title" x="257" y="789" text-anchor="middle">GPT-5.6 Sol repair</text>
+  <text class="node-copy" x="257" y="816" text-anchor="middle">Rewrite the blocked description</text>
+  <text class="node-copy" x="257" y="837" text-anchor="middle">without unsupported claims</text>
+
+  <path class="flow" d="M120 801 H48 V644 H70"/>
+  <text class="node-copy" x="56" y="739" transform="rotate(-90 56 739)" text-anchor="middle">Full re-verification</text>
+
+  <path class="flow" d="M565 723 V801 H775"/>
+  <rect class="node blocked" x="775" y="755" width="250" height="92"/>
+  <text class="node-title" x="900" y="789" text-anchor="middle">Withheld</text>
+  <text class="node-copy" x="900" y="816" text-anchor="middle">If the repaired text fails again</text>
+  <text class="node-copy" x="900" y="837" text-anchor="middle">nothing unsafe is published</text>
+  <text class="edge-label" x="665" y="788">FAIL AFTER REPAIR</text>
+
+  <path class="flow" d="M900 697 V900 H690"/>
+  <path class="flow" d="M1060 457 V900 H750"/>
+
+  <rect class="node neutral" x="520" y="875" width="330" height="104"/>
+  <text class="node-title" x="685" y="909" text-anchor="middle">Immutable run artifacts</text>
+  <text class="node-copy" x="685" y="936" text-anchor="middle">Result, diagnostics, metrics, AI trace,</text>
+  <text class="node-copy" x="685" y="957" text-anchor="middle">decision hash and publication hash</text>
+
+  <path class="flow" d="M520 927 H450"/>
+
+  <rect class="node neutral" x="120" y="875" width="330" height="104"/>
+  <text class="node-title" x="285" y="909" text-anchor="middle">React review UI</text>
+  <text class="node-copy" x="285" y="936" text-anchor="middle">Reads a validated saved snapshot</text>
+  <text class="node-copy" x="285" y="957" text-anchor="middle">No model calls and no recomputation</text>
+
+  <text class="subtitle" x="70" y="1018">Default B1 runs and offline replay make zero network model calls. Live OpenAI calls occur only when B3 live mode is explicitly selected.</text>
+</svg>

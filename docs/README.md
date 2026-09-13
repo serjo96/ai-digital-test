@@ -6,6 +6,7 @@
 - [ROADMAP.md](ROADMAP.md) — принятый план, критерии этапов и накопительная запись решений.
 - [BENCHMARKS.md](BENCHMARKS.md) — определения метрик и накопительная история измерений.
 - [STAGE5_REPORT.md](STAGE5_REPORT.md) — текущая финальная передача MVP и соответствие исходному PDF.
+- [Product processing flow](assets/product-flow.svg) — English SVG diagram of the accepted B1/B3 production runtime.
 - Корневые `README.md`, `LLM_ROLES.md`, `WRITEUP.md`, `AI_USAGE.md` — deliverables задания.
 - `eval/REVIEW.md` — инструкция и provenance human-review артефактов.
 
