@@ -1,5 +1,7 @@
 # Этап 4 — генерация, claims и B3
 
+> Исторический отчёт границ этапа 4. Фраза «holdout не запускался» относится к моменту закрытия этого этапа; последующий holdout и matching audit описаны в [STAGE5_REPORT.md](STAGE5_REPORT.md) и [NEXT_STEPS.md](NEXT_STEPS.md).
+
 Обновлено: 2026-09-12. Статус: этап 4 завершён. Human review и P0.2 development safety gate приняты; full-input B3 выполнен после отдельного разрешения и воспроизводится offline. Holdout не запускался.
 
 ## Фактическая исходная точка

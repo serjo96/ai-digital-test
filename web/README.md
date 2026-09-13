@@ -1,6 +1,6 @@
 # Shelf Ready web UI
 
-React/Vite viewer of saved pipeline results. It supports the existing B1 catalog and a B3 human-review workspace; it never substitutes demonstration listings or calls an AI provider.
+React/Vite viewer of saved pipeline results. The final user navigation contains Catalog and one compact Review flow; it never substitutes demonstration listings or calls an AI provider.
 
 ## From a clean checkout
 
@@ -24,7 +24,7 @@ npm run pipeline -- --baseline b1 --semantic-checks eval/stage3-checks.json --ou
 npm run web:prepare -- --run-dir reports/local/my-ui-run
 ```
 
-To review the saved OpenAI development run, use the first command above. Open **Check listing text**. This is a supplier-text fidelity review, not external product research: the feed contains no authoritative manufacturer URL, and supplier titles/specs are unverified input statements.
+The earlier B3 listing-text and controlled-verifier reviews are complete and remain in validated run artifacts. They are intentionally absent from the final user navigation, so the reviewer is not asked to repeat technical QA. If those historical screens are restored for diagnostics, their contract remains supplier-text fidelity rather than external product research:
 
 - **Generated listings** starts with a three-step explanation of the task. Each decision card repeats the current item and places exactly two texts side by side: **Text written by system** and **Original text supplied for this item**. The saved automatic-verifier answer is collapsed below the human choices so it does not steer the independent review.
 - Human choices are phrased by the actual task: **Matches supplied data**, **Does not match supplied data**, or **Supplied sources conflict**. They do not assert that the supplier statement is true in the real world.

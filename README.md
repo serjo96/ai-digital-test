@@ -1,6 +1,6 @@
 # Shelf Ready — B1 product baseline и B3 publication development
 
-Локальный pipeline: JSON → валидация → предложения → явные факты и evidence → кандидаты и совместимые товары → категории, согласование и review → генерация → атомарные claims → независимая проверка → development/holdout eval и сохранённые метрики. Принятый product baseline — **B1-v2**; B3 publication реализован поверх него и не использует B2. Human-verified development gate P0.2 пройден и воспроизводится offline; full-input B3 и первый provisional holdout replay сохранены. Экран результатов поддерживает каталог, проверку B3-текста и отдельную human-проверку matching labels.
+Локальный pipeline: JSON → валидация → предложения → явные факты и evidence → кандидаты и совместимые товары → категории, согласование и review → генерация → атомарные claims → независимая проверка → development/holdout eval и сохранённые метрики. Принятый product baseline — **B1-v2**; B3 publication реализован поверх него и не использует B2. Human-verified development gate P0.2 пройден и воспроизводится offline; full-input B3 и holdout replay сохранены. Финальный экран содержит Catalog и один компактный matching Review.
 
 Стек: TypeScript 5.9, NestJS 12 standalone context, Node 24.14.1, npm; UI — Vite + React в `web/`. HTTP API, БД и deployment не нужны.
 
@@ -81,7 +81,7 @@ ID строятся детерминированно; перестановка �
 
 Успешный запуск содержит `result.json`, `diagnostics.json`, `metrics.json`, `report.md`, `report.json`. Последний записывается как маркер успешного выполнения. Невалидный вход создаёт `failure.json`, возвращает exit code 1 и не создаёт успешного отчёта; при ошибке записи могут остаться частичные файлы. Успех выполнения не означает качество ground truth или готовность публикации.
 
-Matching labels: 20 provisional случаев, 14 development на 59 строках / 6 holdout на 49. Unknown-пары исключаются; присоединение неразмеченных строк отмечается unevaluated; межслучайные ложные объединения учитываются. `eval/stage2-checks.json` отдельно фиксирует 18 проверок категорий, 30 фактов/отсутствия фактов и 4 согласования. Это целевые проверки, не исчерпывающая оценка всех 545 фактов. Human-проверка matching labels остаётся открыта и выполняется во вкладке UI; исходный `eval/REVIEW.md` сохранён как текстовый пакет.
+Расширенные matching labels: 20 provisional family cases, 14 development на 59 строках / 6 holdout на 49. Они охватывают 108 строк и не повышаются автоматически. Отдельный `eval/matching-audit.json` фиксирует 20 атомарных human-вопросов. Полученный экспорт прошёл валидацию: 20/20 reviewed, 18 определённых ответов совпали с pipeline, два `unknown`; agreement 18/18, scored coverage 18/20. Экспорт пока находится вне репозитория, поэтому канонический audit/report ещё нужно сохранить. `eval/stage2-checks.json` отдельно содержит технические category/fact/reconciliation проверки.
 
 `compare` читает schema 1–4, проверяет целостность решений и совпадение feed/taxonomy/labels/split. Для schema 4 отдельно сравнивается `publicationHash`; B1→B3 требует неизменных matching, offers, facts, review и row outcomes. Неизвестная схема отклоняется. Разные входы/метки → несопоставимость, дельты N/A и exit code 1. Рост известных FP, нарушение учёта или провал quality checks также дают ненулевой код; сравнение сохраняется. Для исторического B0 полноценный review — N/A, а не прежний ноль другого показателя.
 
@@ -128,7 +128,7 @@ npm run build
 node dist/src/cli.js pipeline --baseline b3 --split holdout --ai-mode replay --ai-cache reports/B3-openai-full-input-atomic-v2-cache --ai-config config/stage4.openai.json --ai-cohort full_input --claim-checks eval/stage4-claims.json --stage4-gate reports/B3-openai-development-verifier-only-v2-human-gate-replay --out reports --run-id B3-openai-full-input-atomic-v2-holdout-replay
 ```
 
-[Holdout report](reports/B3-openai-full-input-atomic-v2-holdout-replay/report.md): 6 cases / 49 rows, TP/FP/FN 22/0/0, true negatives 1154/1154, hard negatives 256/256, non-products 49/49, 0 calls/tokens/cost, 321 successful cache hits. Quality остаётся `provisional`, пока 20 matching cases не подтверждены человеком. Holdout уже раскрыт: дальнейшая настройка правил или labels по нему должна называться post-holdout development, а не независимой оценкой. [Машиночитаемая сводка development + holdout](reports/benchmarks/stage5-b3-full-input-and-holdout-provisional/summary.json) хранит обе серии метрик.
+[Holdout report](reports/B3-openai-full-input-atomic-v2-holdout-replay/report.md): 6 cases / 49 rows, TP/FP/FN 22/0/0, true negatives 1154/1154, hard negatives 256/256, non-products 49/49, 0 calls/tokens/cost, 321 successful cache hits. Эти family-label метрики остаются `provisional`. Компактный human audit завершён отдельно и должен называться post-holdout validation, поскольку был сформирован после раскрытия holdout. [Машиночитаемая provisional-сводка](reports/benchmarks/stage5-b3-full-input-and-holdout-provisional/summary.json) хранит прежние development/holdout серии.
 
 
 ## B2: провайдеры и локальный эксперимент
@@ -169,7 +169,7 @@ OpenAI-профили `config/ai.json`, `config/ai.matching-sol.json`, `config/a
 
 ## Этап 5: локальный экран B1 и B3 claim review
 
-Техническая часть P0.3 выполнена: B1/B3 каталог, завершённый claim review, компактный matching audit, full-input и первый provisional holdout replay сохранены. До полного закрытия MVP остаются 20 атомарных human matching-ответов и clean-clone финал. Расширенные labels на 108 строк остаются честно provisional. [Отчёт и соответствие PDF](docs/STAGE5_REPORT.md), [краткий WRITEUP](WRITEUP.md).
+Техническая часть P0.3 выполнена: B1/B3 каталог, завершённый claim review, компактный matching audit, full-input и holdout replay сохранены. Человеческие ответы 20/20 получены и валидны; до полного закрытия остаются сохранение экспорта/метрик, синхронизация финального комплекта и clean-clone финал. Расширенные labels на 108 строк остаются честно provisional. [Отчёт и соответствие PDF](docs/STAGE5_REPORT.md), [краткий WRITEUP](WRITEUP.md).
 
 Из чистого каталога, Node 24.14.1 (см. `.nvmrc`), без `.env` и ключа:
 
