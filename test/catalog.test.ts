@@ -3,9 +3,10 @@ import assert from 'node:assert/strict';
 import { readFile, writeFile, mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { createHash } from 'node:crypto';
 import { validateProductResult, parseCatalogPayload } from '../src/catalog-snapshot.js';
 import { prepareWeb } from '../src/prepare-web.js';
-import { validateMatchingAudit } from '../src/matching-audit.js';
+import { evaluateMatchingAudit, validateMatchingAudit } from '../src/matching-audit.js';
 
 const saved = JSON.parse(await readFile('reports/B1-stage3-control-v2/result.json', 'utf8'));
 
@@ -67,4 +68,27 @@ test('compact matching audit validates stable rows, verdict state, and labels ha
   const invalid = structuredClone(audit);
   invalid.items[0].humanVerdict = 'same_product';
   assert.throws(() => validateMatchingAudit(invalid, source, audit.labelsHash), /pending.*verdict/);
+});
+
+test('human matching audit records exact post-holdout agreement and coverage denominators', async () => {
+  const auditText = await readFile('eval/matching-audit-human-verified.json', 'utf8');
+  const auditInput = JSON.parse(auditText);
+  const metrics = JSON.parse(await readFile('eval/matching-audit-metrics.json', 'utf8'));
+  const baselineReport = JSON.parse(await readFile('reports/B1-v2/report.json', 'utf8'));
+  const source = saved.rows.map((row: any) => row.source);
+  const audit = validateMatchingAudit(auditInput, source, auditInput.labelsHash);
+  const evaluated = evaluateMatchingAudit(audit, saved);
+  assert.equal(createHash('sha256').update(auditText).digest('hex'), metrics.auditFileSha256);
+  assert.equal(createHash('sha256').update(JSON.stringify(auditInput)).digest('hex'), metrics.auditCanonicalSha256);
+  assert.equal(metrics.labelsHash, baselineReport.hashes.labels);
+  assert.equal(metrics.decisionsHash, baselineReport.decisionsHash);
+  assert.equal(metrics.rulesVersion, baselineReport.rulesVersion);
+  assert.deepEqual(evaluated, metrics.evaluation);
+  assert.deepEqual(evaluated.agreement, { numerator: 18, denominator: 18, value: 1 });
+  assert.deepEqual(evaluated.scoredCoverage, { numerator: 18, denominator: 20, value: 0.9 });
+  assert.deepEqual(evaluated.splits, {
+    development: { reviewed: 14, scored: 12, agreements: 12, disagreements: 0, unknown: 2 },
+    holdout: { reviewed: 6, scored: 6, agreements: 6, disagreements: 0, unknown: 0 },
+  });
+  assert.throws(() => evaluateMatchingAudit({ ...audit, status: 'provisional' }, saved), /human verification/);
 });

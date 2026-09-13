@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "matching-audit-metrics-v1",
+  "evaluationType": "post_holdout_validation",
+  "auditFile": "eval/matching-audit-human-verified.json",
+  "auditFileSha256": "77455ce44b5a36c5ccda93eb6ec17991d245d36e07435e7ffae0a32ac6e2d0c6",
+  "auditCanonicalSha256": "4f24f92a1c687fbe25c8fd17716ec5e483a8327ec39d74573767cb59b5db2e16",
+  "auditVersion": "stage5-matching-audit-v1",
+  "labelsHash": "74a194210658f908dcee23f4d000d27b345f242bba9c583e808a1383b9665989",
+  "baselineRun": "reports/B1-v2",
+  "rulesVersion": "B1-v2",
+  "decisionsHash": "749beaa9a87ba02530fd3db35841780cf6f2816f28d6764906b2f7652d6e461e",
+  "status": "human_verified",
+  "reviewedBy": "Serjo",
+  "reviewedAt": "2026-09-13T08:15:46.111Z",
+  "createdAt": "2026-09-13T10:42:45Z",
+  "evaluation": {
+    "reviewed": 20,
+    "total": 20,
+    "scored": 18,
+    "agreements": 18,
+    "disagreements": 0,
+    "unknown": 2,
+    "agreement": {
+      "numerator": 18,
+      "denominator": 18,
+      "value": 1
+    },
+    "scoredCoverage": {
+      "numerator": 18,
+      "denominator": 20,
+      "value": 0.9
+    },
+    "splits": {
+      "development": {
+        "reviewed": 14,
+        "scored": 12,
+        "agreements": 12,
+        "disagreements": 0,
+        "unknown": 2
+      },
+      "holdout": {
+        "reviewed": 6,
+        "scored": 6,
+        "agreements": 6,
+        "disagreements": 0,
+        "unknown": 0
+      }
+    }
+  }
+}

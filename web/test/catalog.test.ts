@@ -74,8 +74,8 @@ test('loader defaults to prepared snapshot and fails visibly instead of substitu
   await assert.rejects(loadCatalog('/invalid'), /Cannot load catalog/);
 });
 
-test('loader exposes the compact audit from the prepared holdout bundle', async context => {
-  const prepared = readFileSync('web/public/data/catalog.json', 'utf8');
+test('loader exposes the compact audit from a prepared payload without generated local files', async context => {
+  const prepared = JSON.stringify({ ...result, matchingAudit, matchingLabelsHash: matchingAudit.labelsHash });
   context.mock.method(globalThis, 'fetch', async () => new Response(prepared));
   const catalog = await loadCatalog('/prepared.json');
   assert.equal(catalog.matchingAudit?.items.length, 20);

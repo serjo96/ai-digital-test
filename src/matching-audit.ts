@@ -1,4 +1,5 @@
 import type { MatchingAudit, MatchingAuditVerdict, SourceRow } from './types.js';
+import type { ProductResult } from './domain.js';
 
 const object = (value: unknown): value is Record<string, unknown> =>
   typeof value === 'object' && value !== null && !Array.isArray(value);
@@ -66,4 +67,72 @@ export function validateMatchingAudit(
     throw new Error('provisional matching audit must not have review metadata');
   }
   return input as unknown as MatchingAudit;
+}
+
+export interface MatchingAuditEvaluation {
+  reviewed: number;
+  total: number;
+  scored: number;
+  agreements: number;
+  disagreements: number;
+  unknown: number;
+  agreement: { numerator: number; denominator: number; value: number | null };
+  scoredCoverage: { numerator: number; denominator: number; value: number | null };
+  splits: Record<'development' | 'holdout', {
+    reviewed: number;
+    scored: number;
+    agreements: number;
+    disagreements: number;
+    unknown: number;
+  }>;
+}
+
+/** Human `unknown` answers are reported as coverage gaps, never as agreements. */
+export function evaluateMatchingAudit(audit: MatchingAudit, result: ProductResult): MatchingAuditEvaluation {
+  if (audit.status !== 'human_verified') throw new Error('matching audit evaluation requires human verification');
+  const productByRow = new Map(result.products.flatMap(product => product.rowIds.map(rowId => [rowId, product.id] as const)));
+  const outcomeByRow = new Map(result.rows.map(row => [row.source.row_id, row.outcome] as const));
+  const splits: MatchingAuditEvaluation['splits'] = {
+    development: { reviewed: 0, scored: 0, agreements: 0, disagreements: 0, unknown: 0 },
+    holdout: { reviewed: 0, scored: 0, agreements: 0, disagreements: 0, unknown: 0 },
+  };
+
+  for (const item of audit.items) {
+    if (item.state !== 'reviewed' || item.humanVerdict === null) throw new Error(`matching audit item is not reviewed: ${item.id}`);
+    const split = splits[item.split];
+    split.reviewed++;
+    let pipelineVerdict: MatchingAuditVerdict;
+    if (item.kind === 'pair') {
+      const first = productByRow.get(item.rowIds[0]!);
+      const second = productByRow.get(item.rowIds[1]!);
+      pipelineVerdict = first && second ? (first === second ? 'same_product' : 'different_product') : 'unknown';
+    } else {
+      const rowId = item.rowIds[0]!;
+      pipelineVerdict = productByRow.has(rowId) ? 'product' : outcomeByRow.get(rowId) === 'non_product' ? 'non_product' : 'unknown';
+    }
+    if (item.humanVerdict === 'unknown') {
+      split.unknown++;
+      continue;
+    }
+    split.scored++;
+    if (item.humanVerdict === pipelineVerdict) split.agreements++;
+    else split.disagreements++;
+  }
+
+  const reviewed = splits.development.reviewed + splits.holdout.reviewed;
+  const scored = splits.development.scored + splits.holdout.scored;
+  const agreements = splits.development.agreements + splits.holdout.agreements;
+  const disagreements = splits.development.disagreements + splits.holdout.disagreements;
+  const unknown = splits.development.unknown + splits.holdout.unknown;
+  return {
+    reviewed,
+    total: audit.items.length,
+    scored,
+    agreements,
+    disagreements,
+    unknown,
+    agreement: { numerator: agreements, denominator: scored, value: scored ? agreements / scored : null },
+    scoredCoverage: { numerator: scored, denominator: audit.items.length, value: audit.items.length ? scored / audit.items.length : null },
+    splits,
+  };
 }
