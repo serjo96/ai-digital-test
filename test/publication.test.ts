@@ -12,7 +12,7 @@ import { hash } from '../src/baseline.js';
 import type { Stage4Config } from '../src/publication-config.js';
 import type { SourceRow, Labels } from '../src/types.js';
 import { evaluateControlled, evaluateGenerated, generatedReviewGatePassed, generatedReviewTemplate, migrateGeneratedReview, rebaseGeneratedReview, validateClaimSuite } from '../src/publication-evaluation.js';
-import { hasUnrecoveredAiErrors, PipelineService } from '../src/app.js';
+import { createPipelineService, hasUnrecoveredAiErrors } from '../src/app.js';
 import { readRun } from '../src/benchmark.js';
 import { compareReports } from '../src/reports.js';
 import { prepareWeb } from '../src/prepare-web.js';
@@ -267,7 +267,7 @@ test('B3 service writes schema-v4 artifacts, preserves B1 decisions and keeps te
   const claimChecks = JSON.parse(await readFile('eval/stage4-claims.json', 'utf8'));
   claimChecks.status = 'provisional'; claimChecks.reviewedBy = null; claimChecks.reviewedAt = null;
   const claimChecksPath = join(dir, 'stage4-claims.json'); await writeFile(claimChecksPath, JSON.stringify(claimChecks));
-  const service = new PipelineService(registry(provider));
+  const service = createPipelineService(registry(provider));
   const runDir = await service.run({ feed: 'supplier_feed.json', taxonomy: 'taxonomy.json', labels: 'eval/labels.json', out: dir, runId: 'b3-fixture', baseline: 'b3', aiMode: 'live', aiCache: join(dir, 'cache'), aiConfig: configPath, aiCohort: 'development', claimChecks: claimChecksPath });
   const [report, result] = await readRun(runDir);
   assert.equal(report.schemaVersion, '4'); assert.equal(report.rulesVersion, 'B3-v1'); assert.ok(report.publicationHash); assert.ok(report.generation?.products);

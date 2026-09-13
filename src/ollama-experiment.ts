@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { PipelineService, saveJson } from './app.js';
+import { createPipelineService, saveJson } from './app.js';
 import { hash, validateInputs } from './baseline.js';
 import { validateLabels, evaluate } from './evaluation.js';
 import { productBaseline, assertProductIntegrity } from './products.js';
@@ -59,8 +59,8 @@ export async function runExperiment(root: string, resumeSmoke = false): Promise<
   }
   checkDiscovery(discovered);
   const base = { feed: 'supplier_feed.json', taxonomy: 'taxonomy.json', labels: 'eval/labels.json', out: root, semanticChecks: 'eval/stage3-checks.json' };
-  const live = new PipelineService(new ProviderRegistry(new Map([['ollama', () => new OllamaAdapter()]])));
-  const offline = new PipelineService(new ProviderRegistry(new Map([['ollama', () => new OllamaAdapter(async () => { throw new Error('network forbidden in replay'); })]])));
+  const live = createPipelineService(new ProviderRegistry(new Map([['ollama', () => new OllamaAdapter()]])));
+  const offline = createPipelineService(new ProviderRegistry(new Map([['ollama', () => new OllamaAdapter(async () => { throw new Error('network forbidden in replay'); })]])));
   const manifest = { version: 'stage3-ollama-experiment-v1', createdAt: new Date().toISOString(), endpoint, discovered,
     code: await codeVersion(), annotationStatus: 'provisional', extractionRows: ids, smokeRow: 'row_11462769c5', matchingPairs: shadowPairs,
     hashes: Object.fromEntries(await Promise.all(['supplier_feed.json', 'taxonomy.json', 'eval/labels.json', 'eval/stage2-checks.json', 'eval/stage3-checks.json'].map(async path => [path, hash(await readFile(path, 'utf8'))]))),

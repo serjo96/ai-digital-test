@@ -16,7 +16,7 @@ import { hash } from '../src/baseline.js';
 import { productBaseline, assertProductIntegrity } from '../src/products.js';
 import { evaluate } from '../src/evaluation.js';
 import { validateSemantic, evaluateSemantic } from '../src/semantic-quality.js';
-import { PipelineService } from '../src/app.js';
+import { createPipelineService } from '../src/app.js';
 import { exportBenchmark, readRun } from '../src/benchmark.js';
 import { compareReports } from '../src/reports.js';
 import type { SourceRow, Labels, RunReport } from '../src/types.js';
@@ -193,7 +193,7 @@ test('B2 CLI requires explicit mode/cache, default code never calls API even wit
 }));
 
 test('DI fixture run is labeled test and cannot enter real benchmark history; legacy reports remain readable', async () => temporary(async dir => {
-  const service = new PipelineService(registry(new FixtureProvider('openai', 'fixture://di', suiteReply)));
+  const service = createPipelineService(registry(new FixtureProvider('openai', 'fixture://di', suiteReply)));
   await service.run({ feed: 'supplier_feed.json', taxonomy: 'taxonomy.json', labels: 'eval/labels.json', out: dir, runId: 'fixture', baseline: 'b2', aiMode: 'live', aiCache: join(dir, 'cache') });
   const [report, result] = await readRun(join(dir, 'fixture')); assert.equal(report.mode, 'test'); assert.equal(report.api.calls, 0);
   await assert.rejects(exportBenchmark([join(dir, 'fixture')], 'eval/labels.json', dir, 'rejected'), /test fixtures/);

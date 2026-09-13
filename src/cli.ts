@@ -3,7 +3,8 @@ import { NestFactory } from '@nestjs/core';
 import { parseArgs } from 'node:util';
 import { performance } from 'node:perf_hooks';
 import { exportBenchmark } from './benchmark.js';
-import { AppModule, PipelineService } from './app.js';
+import { AppModule } from './app.module.js';
+import { PipelineService } from './pipeline/pipeline.service.js';
 import { APP_CONFIG } from './config/main.config.js';
 import type { AppConfig } from './config/types.js';
 

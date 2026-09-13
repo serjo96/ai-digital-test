@@ -4,6 +4,16 @@ Local pipeline: JSON → validation → offers → explicit facts and evidence �
 
 Stack: TypeScript 5.9, NestJS 12 standalone context, Node 24.14.1, npm; UI — Vite + React in `web/`. No HTTP API, database, or deployment required.
 
+## Code architecture
+
+The CLI calls a thin `PipelineService`, which dispatches to separate B0/B1, B2, B3, and comparison services. Pure matching, fact, reconciliation, publication, and evaluation functions remain independent of Nest. `RunStoreService` owns immutable filesystem artifacts, while `AiModule` owns provider registration. See [Architecture](docs/ARCHITECTURE.md).
+
+Run the complete local verification gate with:
+
+```sh
+npm run verify
+```
+
 ## Product flow
 
 [![Shelf Ready product processing flow](docs/assets/product-flow.svg)](docs/assets/product-flow.svg)
@@ -189,7 +199,7 @@ OpenAI profiles `config/ai.json`, `config/ai.matching-sol.json`, `config/ai.matc
 
 ## Stage 5: local B1 screen and B3 claim review
 
-Stage 5 is complete: B1/B3 catalog, completed claim review, compact matching audit with repo-backed metrics, full-input and holdout replay are saved. Final audit metric: 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements. Extended labels on 108 rows stay honestly provisional. Stage 6 modular refactoring is optional and not started. [Report and PDF alignment](docs/STAGE5_REPORT.md), [short WRITEUP](WRITEUP.md).
+Stages 5 and the minimal stage 6 stabilization are complete: the saved B1/B3 behavior is unchanged, orchestration is split by use case, and architecture/characterization tests protect the boundaries and frozen hashes. Final audit metric: 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements. Extended labels on 108 rows stay honestly provisional. [Report and PDF alignment](docs/STAGE5_REPORT.md), [architecture](docs/ARCHITECTURE.md), [short WRITEUP](WRITEUP.md).
 
 From a clean checkout, Node 24.14.1 (see `.nvmrc`), without `.env` or a key:
 

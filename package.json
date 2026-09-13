@@ -17,7 +17,8 @@
     "web": "npm --prefix web run dev",
     "web:build": "npm --prefix web run build",
     "web:prepare": "npm run build && node dist/src/prepare-web.js",
-    "web:test": "node --experimental-strip-types --test web/test/*.test.ts"
+    "web:test": "node --experimental-strip-types --test web/test/*.test.ts",
+    "verify": "npm run typecheck && npm test && npm run web:test && npm run web:build"
   },
   "dependencies": {
     "@nestjs/common": "12.0.1",

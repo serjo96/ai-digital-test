@@ -1,6 +1,6 @@
 # Current Status and Next Work Block
 
-Recorded: 2026-09-13, branch `review-section`. Stages 1–5 are complete. The final UI is Catalog + Review. The compact matching audit is saved in the repository as [matching-audit-human-verified.json](../eval/matching-audit-human-verified.json) with metrics in [matching-audit-metrics.json](../eval/matching-audit-metrics.json): 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements (post-holdout validation). Extended family labels on 108 rows remain provisional. Stage 6 modular refactoring is not started and is optional. 73 backend tests and 18 web tests pass; typecheck and the production build have been verified.
+Recorded: 2026-09-14, branch `codex/architecture-refactor-v2`. Stages 1–5 and the minimal stage 6 stabilization are complete. The final UI is Catalog + Review. The compact matching audit is saved in the repository as [matching-audit-human-verified.json](../eval/matching-audit-human-verified.json) with metrics in [matching-audit-metrics.json](../eval/matching-audit-metrics.json): 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements (post-holdout validation). Extended family labels on 108 rows remain provisional. 86 backend tests and 18 web tests pass; typecheck and the production build have been verified.
 
 This file is a concise handoff for the next chat. The full scope and criteria remain in [ROADMAP.md](ROADMAP.md).
 
@@ -13,9 +13,9 @@ This file is a concise handoff for the next chat. The full scope and criteria re
 | 3. AI extraction/matching | Completed experiment with a negative B2 decision | Integration, live/replay, and fail-closed checks work. B2 was not accepted on quality; B1-v2 is retained. Do not continue model selection without a newly measured error or a separate requirement. |
 | 4. Generation/verifier | Completed | Development gate accepted; full-input: 154/156 ready, 2 identity review, 0 withheld, 390 atomic claims. Offline replay reproduces the hashes. |
 | 5. UI and final evaluation | Completed | B1/B3 UI, generated review, full-input, holdout, and the repo-backed compact matching audit/metrics are saved. |
-| 6. Modular architecture | Not started / optional refactoring | May begin after stages 1–5; do not change baseline rules or evaluation while refactoring. |
+| 6. Minimal architecture stabilization | Completed | Thin dispatcher, separate B0/B1, B2, B3 and compare services, run storage, AI module, and boundary/characterization tests. Domain rules and artifacts are unchanged. |
 
-In summary: stages 1–5 are closed. Stage 6 is optional architectural work, not required to close the MVP.
+In summary: stages 1–5 are closed and the agreed minimal stage 6 refactor is complete. Larger clean-architecture or contracts migrations remain deliberately out of scope.
 
 ## Human Review Status
 
@@ -57,12 +57,12 @@ Full-input B3: 154/156 ready, 2 identity review, 0 withheld, 390 claims. Holdout
 - Do not ask the user to label the remaining 38 claims or all 108 family-label rows: the 20/20 compact sample is complete.
 - Do not silently retune rules against the revealed holdout; any such change must be called post-holdout development.
 
-## When to Move to Architecture (optional Stage 6)
+## Architecture stabilization — complete
 
-Stage 6 can be planned now. The B1 `decisionsHash`, B3 `publicationHash`, human-verified development results, holdout replay, and saved matching-audit metrics form the characterization baseline for safe refactoring.
+`PipelineService` now dispatches to separate catalog, AI matching, publication, and comparison services. `RunStoreService` owns immutable run I/O, `AiModule` owns provider registration, and root domain functions remain framework-independent. Characterization tests freeze the accepted B0/B1/B3 hashes; the authoritative full-input B3 replay still makes zero network calls and reproduces `publicationHash=7de47155…aac6`.
 
-The first architectural step is to extract browser-safe artifact contracts and run storage, then split `PipelineService` into B0/B1/B2/B3 use cases. Do not change domain rules or prompts during the migration.
+Deliberately deferred: browser-safe contract extraction, storage ports, HTTP, database/queue, cleanup of historical reports, and runtime scaling without volume requirements. See [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## Starter Prompt for a New Chat
 
-> Read `docs/NEXT_STEPS.md`. Stages 1–5 are complete. The compact matching audit is saved at `eval/matching-audit-human-verified.json` with metrics in `eval/matching-audit-metrics.json` (20/20 reviewed, 18/18 agreement, 18/20 coverage, 2 unknown, 0 disagreements). Extended family labels remain provisional. Stage 6 modular refactoring is optional and not started. Do not run new model calls or change product rules unless a new measured error requires it.
+> Read `docs/NEXT_STEPS.md` and `docs/ARCHITECTURE.md`. Stages 1–5 and the minimal architecture stabilization are complete. The compact matching audit is saved at `eval/matching-audit-human-verified.json` with metrics in `eval/matching-audit-metrics.json` (20/20 reviewed, 18/18 agreement, 18/20 coverage, 2 unknown, 0 disagreements). Extended family labels remain provisional. Do not run new model calls or change product rules unless a new measured error requires it.

@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import { readFile, mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { PipelineService, saveJson } from './app.js';
+import { createPipelineService, saveJson } from './app.js';
 import { OllamaAdapter } from './ai/ollama.js';
 import { ProviderRegistry, type AiCallRecord } from './ai/contracts.js';
 import { canonicalJson } from './ai/runtime.js';
@@ -22,7 +22,7 @@ export async function replayOllamaRun(original: string, cache: string, output: s
   }
   await mkdir(output, { recursive: true });
   const config = join(output, `${runId}-config.json`); await saveJson(config, trace.config);
-  const service = new PipelineService(new ProviderRegistry(new Map([['ollama', () => new OllamaAdapter(async () => { throw new Error('network forbidden during replay'); })]])));
+  const service = createPipelineService(new ProviderRegistry(new Map([['ollama', () => new OllamaAdapter(async () => { throw new Error('network forbidden during replay'); })]])));
   try { await service.run({ feed: 'supplier_feed.json', taxonomy: 'taxonomy.json', labels: 'eval/labels.json', out: output, runId,
     baseline: 'b2', aiMode: 'replay', aiCache: cache, aiConfig: config,
     aiTask: report.config.aiTask, aiCohort: report.config.aiCohort,
