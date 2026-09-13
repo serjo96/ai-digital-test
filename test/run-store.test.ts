@@ -4,6 +4,9 @@ import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { RunStoreService } from '../src/storage/run-store.service.js';
+import { baseline } from '../src/baseline.js';
+import { persistRun } from '../src/pipeline/run-common.js';
+import type { Labels, RunReport, SourceRow } from '../src/types.js';
 
 const temporary = async (fn: (directory: string) => Promise<void>) => {
   const directory = await mkdtemp(join(tmpdir(), 'shelf-store-'));
@@ -29,4 +32,16 @@ describe('RunStoreService', () => {
     await assert.rejects(store.saveJson(path, { first: false }), /EEXIST/);
     assert.equal(await readFile(path, 'utf8'), '{\n  "first": true\n}\n');
   }));
+
+  test('persistence rejects a result that lost an original input row', async () => {
+    const rows: SourceRow[] = [
+      { row_id: 'a', supplier: 'supplier', supplier_sku: 'a', raw_title: 'A', raw_specs: '', price: '$1', stock: 1 },
+      { row_id: 'b', supplier: 'supplier', supplier_sku: 'b', raw_title: 'B', raw_specs: '', price: '$1', stock: 1 },
+    ];
+    const dropped = baseline(rows.slice(0, 1));
+    await assert.rejects(
+      persistRun(new RunStoreService(), '', dropped, {} as RunReport, {} as Labels, rows, 0),
+      /lost source rows/,
+    );
+  });
 });

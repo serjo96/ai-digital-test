@@ -62,7 +62,7 @@ export class CatalogRunService {
         wallTimeMs: performance.now() - start,
         decisionsHash: hash(JSON.stringify(result)),
       };
-      await persistRun(this.store, directory, result, report, input.labels, start);
+      await persistRun(this.store, directory, result, report, input.labels, input.rows, start);
       return directory;
     } catch (error) {
       await persistFailure(this.store, directory, options, start, error);

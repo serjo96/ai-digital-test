@@ -1,6 +1,6 @@
 # Current Status and Next Work Block
 
-Recorded: 2026-09-14, branch `codex/architecture-refactor-v2`. Stages 1–5 and the minimal stage 6 stabilization are complete. The final UI is Catalog + Review. The compact matching audit is saved in the repository as [matching-audit-human-verified.json](../eval/matching-audit-human-verified.json) with metrics in [matching-audit-metrics.json](../eval/matching-audit-metrics.json): 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements (post-holdout validation). Extended family labels on 108 rows remain provisional. 86 backend tests and 18 web tests pass; typecheck and the production build have been verified.
+Recorded: 2026-09-14, branch `codex/architecture-refactor-v2`. Stages 1–5 and the minimal stage 6 stabilization are complete. The final UI is Catalog + Review. The compact matching audit is saved in the repository as [matching-audit-human-verified.json](../eval/matching-audit-human-verified.json) with metrics in [matching-audit-metrics.json](../eval/matching-audit-metrics.json): 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements (post-holdout validation). Extended family labels on 108 rows remain provisional. 87 backend tests and 18 web tests pass; typecheck and the production build have been verified.
 
 This file is a concise handoff for the next chat. The full scope and criteria remain in [ROADMAP.md](ROADMAP.md).
 

@@ -92,7 +92,7 @@ export class AiMatchingRunService {
         wallTimeMs: performance.now() - start,
         decisionsHash: hash(JSON.stringify(result)),
       };
-      await persistRun(this.store, directory, result, report, input.labels, start, runtime, ai);
+      await persistRun(this.store, directory, result, report, input.labels, input.rows, start, runtime, ai);
       if (report.status !== 'success') throw new Error('Incomplete AI run; inspect report.json and ai.json');
       return directory;
     } catch (error) {

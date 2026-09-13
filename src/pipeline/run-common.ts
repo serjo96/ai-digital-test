@@ -113,11 +113,12 @@ export async function persistRun(
   result: BaselineResult,
   report: RunReport,
   labels: Labels,
+  sourceRows: SourceRow[],
   start: number,
   runtime?: AiRuntime<RuntimeConfig>,
   aiConfig?: RuntimeConfig,
 ): Promise<void> {
-  assertAccounting(result.rows.map(row => row.source), result);
+  assertAccounting(sourceRows, result);
   await store.saveJson(join(directory, 'result.json'), result);
   const rowDiagnostics = result.rows.filter(row => row.reasons.length).map(row => ({ rowId: row.source.row_id, outcome: row.outcome, reasons: row.reasons }));
   await store.saveJson(join(directory, 'diagnostics.json'), isPublicationResult(result) ? {

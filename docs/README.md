@@ -2,7 +2,7 @@
 
 ## Current Documents
 
-- [NEXT_STEPS.md](NEXT_STEPS.md) — current status: stages 1–5 complete; stage 6 optional.
+- [NEXT_STEPS.md](NEXT_STEPS.md) — current status: stages 1–5 and the minimal stage 6 stabilization complete.
 - [ROADMAP.md](ROADMAP.md) — the accepted plan, stage criteria, and cumulative decision record.
 - [BENCHMARKS.md](BENCHMARKS.md) — metric definitions and cumulative measurement history.
 - [STAGE5_REPORT.md](STAGE5_REPORT.md) — final MVP stage 5 handoff and alignment with the source PDF.
