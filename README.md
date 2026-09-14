@@ -1,6 +1,6 @@
 # Shelf Ready — B1 product baseline and B3 publication development
 
-Local pipeline: JSON → validation → offers → explicit facts and evidence → candidates and compatible products → categories, reconciliation and review → generation → atomic claims → independent verification → development/holdout eval and saved metrics. The accepted product baseline is **B1-v2**; B3 publication is built on top of it and does not use B2. The human-verified development gate P0.2 passed and reproduces offline; full-input B3 and holdout replay are saved. The final screen contains Catalog and one compact matching Review.
+Local pipeline: JSON → validation → offers → explicit facts and evidence → candidates and compatible products → categories, reconciliation and review → generation → atomic claims → independent verification → development/holdout eval and saved metrics. The accepted product baseline is **B1-v2**; B3 publication is built on top of it and does not use B2. The human-verified development gate P0.2 passed and reproduces offline; full-input B3 and holdout replay are saved. All canonical products have a description draft in the current runtime/UI: the two identity-review drafts are source-grounded previews and remain unpublished. The final screen contains Catalog and one compact matching Review.
 
 Stack: TypeScript 5.9, NestJS 12 standalone context, Node 24.14.1, npm; UI — Vite + React in `web/`. No HTTP API, database, or deployment required.
 
@@ -152,7 +152,7 @@ P0.2 moved the verifier to `publication_verification_v2`: the prompt requires fi
 
 Current development gate: [verifier-only live](reports/B3-openai-development-verifier-only-v2-live/report.md), [human-gate replay](reports/B3-openai-development-verifier-only-v2-human-gate-replay/report.md), and [comparison](reports/comparisons/B3-openai-development-verifier-only-v2-live-to-human-gate-replay/comparison.md). Human-verified controlled gate: 4/4 unsupported, false block 0/7, disputed leakage 0/1, errors 0. Generated review: 76/99 claims, 28/37 products, sample 20/20, factual errors 0, non-atomic 0, unclear-copy 2. Result: 37/39 ready, 2 identity review. Historical v1 live/replay and review are kept without overwrite.
 
-Full-input ran after a separate go-ahead: [live](reports/B3-openai-full-input-atomic-v2-live/report.md) made 322 calls, 526449 tokens, $8.110955 and got 154/156 ready, 2 identity review, 0 withheld. Those immutable historical artifacts used one repair after a verifier response with a damaged support ID. The current runtime no longer rewrites after a technically invalid verifier result: the affected listing is withheld in a new partial run and can be selectively retried. The stored [offline replay](reports/B3-openai-full-input-atomic-v2-replay/report.md) and its comparison remain historical records and are not rewritten.
+Full-input ran after a separate go-ahead: [live](reports/B3-openai-full-input-atomic-v2-live/report.md) made 322 calls, 526449 tokens, $8.110955 and got 154/156 ready, 2 identity review, 0 withheld. Those immutable historical artifacts used one repair after a verifier response with a damaged support ID. Current runs create a deterministic, source-grounded preview for each identity-review product, but keep `publishedText = null`, make no model call for that preview, and preserve the review status. The UI applies the same rule when reading the older immutable artifacts. The current runtime no longer rewrites after a technically invalid verifier result: the affected listing is withheld in a new partial run and can be selectively retried. The stored [offline replay](reports/B3-openai-full-input-atomic-v2-replay/report.md) and its comparison remain historical records and are not rewritten.
 
 The first holdout ran after a separate go-ahead, strictly offline from the full-input cache:
 
@@ -207,7 +207,7 @@ OpenAI profiles `config/ai.json`, `config/ai.matching-sol.json`, `config/ai.matc
 
 ## Stage 5: local B1 screen and B3 claim review
 
-Stages 5 and the minimal stage 6 stabilization are complete: the saved B1/B3 behavior is unchanged, orchestration is split by use case, and architecture/characterization tests protect the boundaries and frozen hashes. Final audit metric: 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements. Extended labels on 108 rows stay honestly provisional. [Report and PDF alignment](docs/STAGE5_REPORT.md), [architecture](docs/ARCHITECTURE.md), [short WRITEUP](WRITEUP.md).
+Stages 5 and the minimal stage 6 stabilization are complete: the saved B1 decisions and ready publication text are unchanged, orchestration is split by use case, and architecture/characterization tests protect the boundaries and frozen hashes. Identity-review products now receive a safe description preview without becoming publishable. Final audit metric: 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements. Extended labels on 108 rows stay honestly provisional. [Report and PDF alignment](docs/STAGE5_REPORT.md), [architecture](docs/ARCHITECTURE.md), [short WRITEUP](WRITEUP.md).
 
 From a clean checkout, Node 24.14.1 (see `.nvmrc`), without `.env` or a key:
 

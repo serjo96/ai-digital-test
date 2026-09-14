@@ -154,3 +154,11 @@ Live validation used only the development cohort. OpenAI B2 extraction made 12 s
 OpenAI B3 development live made 86 successful calls with 0 errors/retries, used 153207 tokens, and cost $2.506746. It produced 39 products: 37 ready, 2 review, 0 withheld; the controlled verifier allowed 7/7 supported cases and blocked 4/4 unsupported plus 1/1 disputed cases. Replay used 86 cache hits and 0 calls and reproduced both decisions and publication hashes. Across the two successful live validations: 98 calls, 0 errors/retries, $2.612193. Outputs and caches were kept in `/tmp` as integration evidence rather than committed as authoritative benchmark artifacts.
 
 An initial sandboxed B2 attempt could not reach the network and ended fail-closed after 12 jobs / 36 transport attempts; it made no successful external request and produced failure artifacts as designed. The network-enabled run followed explicit approval. Full-input live was not repeated. The authoritative full-input B3 characterization replay continued to use 321 cache hits, 0 model calls, and the fixed publication hash.
+
+## 2026-09-14 — final submission cleanup
+
+Tool: Codex desktop, local TypeScript/Markdown and shell/npm/node:test. No subagents or runtime model calls were used. The user requested a bounded final cleanup: synchronize the stale stage 5 status, close the formal description gap for two identity-review products, remove only obvious unused report artifacts, and rerun verification.
+
+The runtime now builds a minimal draft from allowed model/type/color identity supports for identity-blocked listings. These drafts make no model call, contain no reconciled facts, keep `status=review`, `publishedText=null`, `selectedAttempt=null`, and no verification attempt. The web projection applies the same rule to the older immutable B3 artifacts. Duplicate identity reasons are collapsed. Tests cover the no-call/fail-closed contract and both historical review listings.
+
+Eleven unreferenced diagnostic/cache directories were removed after checking that no README, document, source file, or test referred to them. Required full-input replay/cache, development gate, human-review, benchmark, comparison, and UI evidence remain. This reduces the checked-out `reports/` tree without rewriting Git history or restructuring the reporting system.

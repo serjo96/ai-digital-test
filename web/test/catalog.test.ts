@@ -61,6 +61,10 @@ test('B3 projection exposes publication listings and claim review without changi
 test('publication and product-review axes remain independent for full B3', () => {
   const catalog = projectProductResult(fullB3);
   assert.equal(catalog.products.filter(product => productNeedsReview(product, catalog.listings[product.id]) && productStatus(product, catalog.listings[product.id]) === 'ready').length, 49);
+  const identityReview = Object.values(catalog.listings).filter(listing => listing.publication?.status === 'review');
+  assert.equal(identityReview.length, 2);
+  assert.ok(identityReview.every(listing => listing.draftText && listing.publishedText === null));
+  assert.ok(identityReview.every(listing => listing.withholdReasons.length === 1));
 });
 
 test('loader defaults to prepared snapshot and fails visibly instead of substituting demos', async context => {

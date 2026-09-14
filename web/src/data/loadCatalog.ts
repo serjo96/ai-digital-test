@@ -3,6 +3,7 @@ import { parseCatalogPayload, type CatalogProvenance } from '../../../src/catalo
 import { ClaimSuiteSchema, migrateGeneratedReview } from '../../../src/publication-evaluation.ts';
 import { validateLabels } from '../../../src/evaluation.ts';
 import { validateMatchingAudit } from '../../../src/matching-audit.ts';
+import { identityReviewDraft } from '../../../src/review-draft.ts';
 import type { CatalogSnapshot, ClaimReviewData, ListingView, ReviewClaim } from './catalog.ts';
 
 function parseReviewResult(input: unknown): { textHash: string; claims: Omit<ReviewClaim, 'id'>[] } {
@@ -40,9 +41,9 @@ export function projectProductResult(result: ProductResult, provenance: CatalogP
     const fallback = listingFromReview(product, result.review);
     const publication = publications?.get(product.id) ?? null;
     listings[product.id] = publication ? {
-      draftText: publication.draftText,
+      draftText: publication.draftText ?? (publication.status === 'review' ? identityReviewDraft(publication.supports) : null),
       publishedText: publication.publishedText,
-      withholdReasons: publication.withholdReasons,
+      withholdReasons: [...new Set(publication.withholdReasons)],
       reviewFlags: fallback.reviewFlags,
       publication,
     } : fallback;
