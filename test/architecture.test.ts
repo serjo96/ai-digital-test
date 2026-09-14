@@ -90,7 +90,7 @@ describe('architecture boundaries', () => {
     const loaded = await Promise.all(webImports);
     const backendTargets = loaded.flatMap(({ text }) => [...text.matchAll(/from ['"]\.\.\/\.\.\/\.\.\/src\/([^'"]+)/g)].map(match => match[1]!));
     assert.deepEqual([...new Set(backendTargets)].sort(), [
-      'catalog-snapshot.ts', 'domain.ts', 'evaluation.ts', 'matching-audit.ts', 'publication-evaluation.ts', 'types.ts',
+      'catalog-snapshot.ts', 'domain.ts', 'evaluation.ts', 'matching-audit.ts', 'publication-evaluation.ts', 'review-draft.ts', 'types.ts',
     ]);
   });
 

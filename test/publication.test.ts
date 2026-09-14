@@ -17,6 +17,7 @@ import { PartialRunError } from '../src/pipeline/run-common.js';
 import { readRun } from '../src/benchmark.js';
 import { compareReports } from '../src/reports.js';
 import { prepareWeb } from '../src/prepare-web.js';
+import { identityReviewDraft } from '../src/review-draft.js';
 
 const row: SourceRow = { row_id: 'r1', supplier: 'Supplier', supplier_sku: 'S-1', raw_title: 'Demo wired earbuds', raw_specs: '3.5mm; in-line mic', price: '$10', stock: 2 };
 const b1 = () => productBaseline([row]);
@@ -54,6 +55,24 @@ test('publication supports contain only conflict-free identity and agreed produc
   product.facts[0]!.status = 'incomparable'; product.facts[0]!.acceptedFactId = null;
   assert.ok(!publicationSupports(result, product).some(s => s.label === product.facts[0]!.attribute && s.kind === 'fact'));
 });
+
+test('identity review keeps a source-grounded draft but never publishes it or calls a model', async () => temporary(async dir => {
+  const input = b1();
+  const product = input.products[0]!;
+  const reviewId = 'review_identity_fixture';
+  product.reviewIds.push(reviewId);
+  input.review.push({ id: reviewId, rowIds: [...product.rowIds], productIds: [product.id], reason: 'identity:incomplete_type_or_variant', evidence: [], factIds: [] });
+  const provider = new PublicationProvider();
+  const run = await publicationPipeline(input, new AiRuntime(registry(provider), config, 'live', dir), config);
+  const listing = run.result.listings[0]!;
+  assert.equal(listing.status, 'review');
+  assert.equal(listing.draftText, identityReviewDraft(listing.supports));
+  assert.ok(listing.draftText?.length);
+  assert.equal(listing.publishedText, null);
+  assert.equal(listing.selectedAttempt, null);
+  assert.deepEqual(listing.attempts, []);
+  assert.equal(provider.calls, 0);
+}));
 
 test('claim validation enforces exact spans, complete coverage, allowed evidence and fail-closed dispute links', () => {
   const result = b1(); const product = result.products[0]!; const supports = publicationSupports(result, product); const support = supports[0]!; const text = 'Demo wired earbuds';
