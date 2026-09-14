@@ -34,6 +34,7 @@ CLI
 - B0/B1 are code-only. B2/B3 require an explicit live/replay mode and cache.
 - Holdout B3 forbids live calls and requires full-input replay.
 - Publication never changes the B1 catalog decision hash.
+- Identity uncertainty cannot publish text: code may build a minimal draft from allowed identity supports, but the listing remains in review with `publishedText = null` and no selected attempt.
 - A run writes `report.json` last; validation and execution failures write `failure.json`.
 - Domain code has no Nest dependency, and the dispatcher has no filesystem, AI-runtime, evaluation, or publication-policy logic.
 

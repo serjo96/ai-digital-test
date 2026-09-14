@@ -1,6 +1,6 @@
 # Current Status and Next Work Block
 
-Recorded: 2026-09-14, branch `codex/architecture-refactor-v2`. Stages 1–5 and the minimal stage 6 stabilization are complete. The final UI is Catalog + Review. The compact matching audit is saved in the repository as [matching-audit-human-verified.json](../eval/matching-audit-human-verified.json) with metrics in [matching-audit-metrics.json](../eval/matching-audit-metrics.json): 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements (post-holdout validation). Extended family labels on 108 rows remain provisional. 87 backend tests and 18 web tests pass; typecheck and the production build have been verified.
+Recorded: 2026-09-14, branch `codex/architecture-refactor-v2`. Stages 1–5 and the minimal stage 6 stabilization are complete. The final UI is Catalog + Review. The compact matching audit is saved in the repository as [matching-audit-human-verified.json](../eval/matching-audit-human-verified.json) with metrics in [matching-audit-metrics.json](../eval/matching-audit-metrics.json): 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements (post-holdout validation). Extended family labels on 108 rows remain provisional. Current runs and the backward-compatible UI give both identity-review products a source-grounded draft while preserving `publishedText = null`. 93 backend tests and 19 web tests pass; typecheck and the production build have been verified.
 
 This file is a concise handoff for the next chat. The full scope and criteria remain in [ROADMAP.md](ROADMAP.md).
 
@@ -11,7 +11,7 @@ This file is a concise handoff for the next chat. The full scope and criteria re
 | 1. Code foundation | Completed | Runnable Nest/TypeScript CLI, B0 baseline, eval path, and saved reports. |
 | 2. Product baseline | Completed | B1-v2 accepted: 220/220 rows, 156 products, 4 non-products; extended family metrics remain provisional. |
 | 3. AI extraction/matching | Completed experiment with a negative B2 decision | Integration, live/replay, and fail-closed checks work. B2 was not accepted on quality; B1-v2 is retained. Do not continue model selection without a newly measured error or a separate requirement. |
-| 4. Generation/verifier | Completed | Development gate accepted; full-input: 154/156 ready, 2 identity review, 0 withheld, 390 atomic claims. Offline replay reproduces the hashes. |
+| 4. Generation/verifier | Completed | Development gate accepted; full-input: 154/156 ready, 2 identity review with unpublished drafts, 0 technically withheld, 390 published atomic claims. Offline replay reproduces the historical hashes. |
 | 5. UI and final evaluation | Completed | B1/B3 UI, generated review, full-input, holdout, and the repo-backed compact matching audit/metrics are saved. |
 | 6. Minimal architecture stabilization | Completed | Thin dispatcher, separate B0/B1, B2, B3 and compare services, run storage, AI module, and boundary/characterization tests. Domain rules and artifacts are unchanged. |
 
@@ -47,7 +47,7 @@ Human-verified controlled 12/12 and generated sample 20/20. Verifier-only live a
 
 ### P0.3. Stage 5 closure — complete
 
-Full-input B3: 154/156 ready, 2 identity review, 0 withheld, 390 claims. Holdout replay saved without API calls. Compact matching audit and metrics are repository-backed. Extended family labels remain provisional; the compact sample is post-holdout validation.
+Full-input B3: 154/156 ready, 2 identity review with source-grounded unpublished drafts, 0 technically withheld, 390 published claims. Holdout replay saved without API calls. Compact matching audit and metrics are repository-backed. Extended family labels remain provisional; the compact sample is post-holdout validation.
 
 ## What Not to Do Now
 
