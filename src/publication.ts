@@ -8,6 +8,7 @@ import type { Stage4Config } from './publication-config.js';
 import type { ClaimSuite } from './publication-evaluation.js';
 import type { Evidence, Listing, ListingAttempt, ListingFailure, PublicationResult, PublicationSupport, ProductResult, VerifiedClaim, CanonicalProduct } from './domain.js';
 import type { SourceRow } from './types.js';
+import { identityReviewDraft } from './review-draft.js';
 
 export const GenerationSchema = z.strictObject({ text: z.string().trim().min(1).max(800) });
 export const VerificationSchema = z.strictObject({
@@ -169,7 +170,9 @@ function listingAttempt(attempt: 1 | 2, role: 'generation' | 'repair', text: str
 }
 
 function identityBlock(result: ProductResult, product: CanonicalProduct): string[] {
-  return result.review.filter(r => r.productIds.includes(product.id) && (r.reason.startsWith('identity:') || r.reason === 'internal_identity_conflict')).map(r => r.reason);
+  return [...new Set(result.review
+    .filter(r => r.productIds.includes(product.id) && (r.reason.startsWith('identity:') || r.reason === 'internal_identity_conflict'))
+    .map(r => r.reason))];
 }
 
 export interface PublicationRun { result: PublicationResult; controlledClaims: Map<string, VerifiedClaim[]> }
@@ -233,7 +236,7 @@ export async function publicationPipeline(result: ProductResult, runtime: AiRunt
     }
     const identityReasons = identityBlock(result, product);
     if (identityReasons.length) {
-      listings.push({ productId: product.id, status: 'review', supports, attempts: [], draftText: null, publishedText: null, selectedAttempt: null, withholdReasons: identityReasons, failure: null });
+      listings.push({ productId: product.id, status: 'review', supports, attempts: [], draftText: identityReviewDraft(supports), publishedText: null, selectedAttempt: null, withholdReasons: identityReasons, failure: null });
       continue;
     }
     const verifierCircuit = circuit.failure(config.verifier, 'verification');
