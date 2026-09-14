@@ -12,6 +12,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "npm run build && node --test dist/test/*.test.js",
     "pipeline": "npm run build && node dist/src/cli.js pipeline",
+    "retry": "npm run build && node dist/src/cli.js retry",
     "eval": "npm run build && node dist/src/cli.js eval",
     "benchmark": "npm run build && node dist/src/cli.js benchmark",
     "compare": "npm run build && node dist/src/cli.js compare",

@@ -60,9 +60,10 @@ export function projectProductResult(result: ProductResult, provenance: CatalogP
   };
 }
 
-export async function loadCatalog(url = import.meta.env?.VITE_CATALOG_URL?.trim() || '/data/catalog.json'): Promise<CatalogSnapshot> {
+export async function loadCatalog(url = import.meta.env?.VITE_CATALOG_URL?.trim() || '/data/catalog.json', cacheBust = false): Promise<CatalogSnapshot> {
   try {
-    const response = await fetch(url);
+    const requestUrl = cacheBust ? `${url}${url.includes('?') ? '&' : '?'}_=${Date.now()}` : url;
+    const response = await fetch(requestUrl, { cache: cacheBust ? 'no-store' : 'default' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const payload = await response.json() as Record<string, unknown>;
     const { result, provenance } = parseCatalogPayload(payload);
@@ -86,6 +87,8 @@ export async function loadCatalog(url = import.meta.env?.VITE_CATALOG_URL?.trim(
     const catalog = projectProductResult(result, provenance, claimReview);
     return {
       ...catalog,
+      degradation: payload.degradation && typeof payload.degradation === 'object' ? payload.degradation as NonNullable<CatalogSnapshot['degradation']> : null,
+      retryCommand: typeof payload.retryCommand === 'string' ? payload.retryCommand : null,
       ...(matchingReview ? { matchingReview } : {}),
       ...(matchingAudit ? { matchingAudit } : {}),
     };

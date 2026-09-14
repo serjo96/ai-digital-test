@@ -8,6 +8,7 @@ import { generatedReviewTemplate } from '../publication-evaluation.js';
 import { metricsFor } from '../metrics.js';
 import { codeVersion, reportMarkdown } from '../reports.js';
 import type { AiCallRecord } from '../ai/contracts.js';
+import type { ErrorKind } from '../ai/contracts.js';
 import type { AiRuntime } from '../ai/runtime.js';
 import type { RuntimeConfig } from '../ai/config.js';
 import type { BaselineResult, Labels, RunReport, SourceRow } from '../types.js';
@@ -19,6 +20,13 @@ export const baseConfig = {
   dollarCurrency: 'USD',
   split: 'development' as const,
 };
+
+export class PartialRunError extends Error {
+  constructor(readonly directory: string) {
+    super(`Degraded AI run completed safely: ${directory}`);
+    this.name = 'PartialRunError';
+  }
+}
 
 export interface RunInput {
   feedText: string;
@@ -92,6 +100,27 @@ export function publicationSummary(result: PublicationResult): NonNullable<RunRe
   };
 }
 
+export function degradationFor(result: PublicationResult, records: AiCallRecord[], retryOfRunId: string | null): NonNullable<RunReport['degradation']> {
+  const affected = result.listings.filter(listing => listing.status === 'withheld' && !listing.withholdReasons.includes('not_in_cohort'));
+  const counts = new Map<string, { stage: NonNullable<typeof affected[number]['failure']>['stage']; kind: NonNullable<typeof affected[number]['failure']>['kind']; count: number }>();
+  const knownKinds = new Set<ErrorKind>(['auth', 'rate_limit', 'server', 'network', 'timeout', 'invalid_response', 'configuration', 'cache']);
+  for (const record of records.filter(record => record.status === 'error')) {
+    const stage = record.role === 'generation' ? 'generation' : record.role === 'repair' ? 'repair' : 'verification';
+    const kind = knownKinds.has(record.error as ErrorKind) ? record.error as ErrorKind : 'invalid_response';
+    const key = `${stage}:${kind}`;
+    const current = counts.get(key);
+    counts.set(key, current ? { ...current, count: current.count + 1 } : { stage, kind, count: 1 });
+  }
+  return {
+    failedAiJobs: records.filter(record => record.status === 'error').length,
+    retryableWithheldProducts: affected.filter(listing => listing.failure?.retryable).length,
+    nonRetryableWithheldProducts: affected.filter(listing => !listing.failure?.retryable).length,
+    failures: [...counts.values()].sort((a, b) => `${a.stage}:${a.kind}`.localeCompare(`${b.stage}:${b.kind}`)),
+    circuitOpened: affected.some(listing => listing.withholdReasons.includes('skipped_after_circuit_open')),
+    retryOfRunId,
+  };
+}
+
 export function roleSummaries(runtime: AiRuntime): NonNullable<NonNullable<RunReport['ai']>['roles']> {
   const result: NonNullable<NonNullable<RunReport['ai']>['roles']> = {};
   for (const role of [...new Set(runtime.records.map(record => record.role))].sort()) {
@@ -131,7 +160,7 @@ export async function persistRun(
   const rowDiagnostics = result.rows.filter(row => row.reasons.length).map(row => ({ rowId: row.source.row_id, outcome: row.outcome, reasons: row.reasons }));
   await store.saveJson(join(directory, 'diagnostics.json'), isPublicationResult(result) ? {
     rows: rowDiagnostics,
-    publication: result.listings.filter(listing => listing.status !== 'ready').map(listing => ({ productId: listing.productId, status: listing.status, reasons: listing.withholdReasons })),
+    publication: result.listings.filter(listing => listing.status !== 'ready').map(listing => ({ productId: listing.productId, status: listing.status, reasons: listing.withholdReasons, failure: listing.failure ?? null })),
   } : rowDiagnostics);
   if (runtime) await store.saveJson(join(directory, 'ai.json'), { version: 'ai-trace-v1', config: aiConfig, records: runtime.records });
   if (isPublicationResult(result)) await store.saveJson(join(directory, 'generated-review.json'), generatedReviewTemplate(result, report.publicationHash!));

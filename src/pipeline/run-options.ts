@@ -19,4 +19,6 @@ export interface RunOptions {
   generatedChecks?: string;
   stage4Gate?: string;
   publicationSource?: string;
+  retryFrom?: string;
+  prepareWeb?: boolean;
 }

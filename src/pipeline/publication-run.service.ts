@@ -13,7 +13,7 @@ import { AiRuntime } from '../ai/runtime.js';
 import type { RunReport } from '../types.js';
 import { RunStoreService } from '../storage/run-store.service.js';
 import type { RunOptions } from './run-options.js';
-import { auditFor, baseConfig, hasUnrecoveredAiErrors, inputHashes, loadRunInput, persistFailure, persistRun, publicationSummary, roleSummaries } from './run-common.js';
+import { auditFor, baseConfig, degradationFor, hasUnrecoveredAiErrors, inputHashes, loadRunInput, PartialRunError, persistFailure, persistRun, publicationSummary, roleSummaries } from './run-common.js';
 
 export class PublicationRunService {
   constructor(
@@ -28,6 +28,7 @@ export class PublicationRunService {
     try {
       const input = await loadRunInput(this.store, options);
       if (!options.aiMode || !options.aiCache) throw new Error('B3 requires explicit --ai-mode live|replay and --ai-cache DIR');
+      if (options.retryFrom && options.aiMode !== 'live') throw new Error('B3 retry requires live AI mode');
       if (options.aiTask || options.aiRows || options.aiPairs || options.semanticChecks) throw new Error('stage3 AI options are not valid for B3');
       if (options.publicationSource && (options.aiCohort ?? 'full_input') !== 'development') throw new Error('--publication-source requires B3 development');
       if (options.split === 'holdout' && options.aiMode === 'live') throw new Error('holdout evaluation must use code-only or replay; live model calls are not allowed');
@@ -36,20 +37,48 @@ export class PublicationRunService {
       }
 
       const ai = await readStage4Config(options.aiConfig ?? 'config/stage4.openai.json');
+      let retryReport: RunReport | undefined;
+      let resumeRecords = new Map<string, import('../ai/contracts.js').AiCallRecord>();
+      if (options.retryFrom) {
+        const retryDirectory = await this.store.resolveRunDirectory(options.out, options.retryFrom);
+        const [candidateReport, candidateResult] = await this.store.readRun(retryDirectory);
+        await Promise.all(['diagnostics.json', 'metrics.json', 'generated-review.json'].map(name => this.store.readText(join(retryDirectory, name))));
+        const trace = JSON.parse(await this.store.readText(join(retryDirectory, 'ai.json'))) as { version?: unknown; records?: unknown };
+        if (!isPublicationResult(candidateResult) || candidateReport.schemaVersion !== '4' || candidateReport.rulesVersion !== 'B3-v1'
+          || candidateReport.status !== 'partial' || candidateReport.mode === 'test' || candidateReport.ai?.origin !== 'real'
+          || candidateReport.publicationHash !== hash(JSON.stringify(candidateResult.listings))
+          || trace.version !== 'ai-trace-v1' || !Array.isArray(trace.records)) throw new Error('retry source must be a complete real-origin B3 partial run');
+        const traceRecords = trace.records as import('../ai/contracts.js').AiCallRecord[];
+        if (!candidateReport.ai || candidateReport.ai.jobs !== traceRecords.length || candidateReport.ai.failedJobs !== traceRecords.filter(item => item?.status === 'error').length
+          || JSON.stringify(candidateReport.ai.requestHashes) !== JSON.stringify(traceRecords.map(item => item?.key))) throw new Error('retry source AI trace does not match its report');
+        for (const item of traceRecords) {
+          if (!item || typeof item.key !== 'string' || !item.key || item.origin !== 'real' || (item.status !== 'success' && item.status !== 'error') || resumeRecords.has(item.key)) throw new Error('retry source AI trace is invalid');
+          resumeRecords.set(item.key, item);
+        }
+        retryReport = candidateReport;
+      }
+      const effectiveCohort = options.aiCohort ?? retryReport?.config.aiCohort ?? 'full_input';
+      const effectiveSplit = options.split ?? retryReport?.config.split ?? 'development';
       const config: RunReport['config'] = {
         ...baseConfig,
-        split: options.split ?? 'development',
+        split: effectiveSplit,
         baseline: 'b3',
         ai,
-        aiCohort: options.aiCohort ?? 'full_input',
+        aiCohort: effectiveCohort,
         ...(options.publicationSource ? { publicationSourceRunId: '' } : {}),
       };
       const checksText = await this.store.readText(options.checks ?? 'eval/stage2-checks.json');
       const suite = validateQuality(JSON.parse(checksText), input.labels, hash(input.feedText));
-      runtime = new AiRuntime(this.providers, ai, options.aiMode, options.aiCache);
       const pipelineStart = performance.now();
       const b1 = productBaseline(input.rows);
       const baseDecisionsHash = hash(JSON.stringify(b1));
+
+      if (retryReport && (retryReport.hashes.feed !== hash(input.feedText) || retryReport.hashes.taxonomy !== hash(input.taxonomyText)
+        || retryReport.hashes.labels !== hash(input.labelsText) || JSON.stringify(retryReport.config.ai) !== JSON.stringify(ai)
+        || retryReport.config.aiCohort !== effectiveCohort || retryReport.config.split !== effectiveSplit || retryReport.decisionsHash !== baseDecisionsHash)) {
+        throw new Error('retry source inputs, AI configuration, development gate or B1 decisions do not match');
+      }
+      runtime = new AiRuntime(this.providers, ai, options.aiMode, options.aiCache, undefined, resumeRecords);
 
       let publicationSource: PublicationResult | undefined;
       let publicationSourceHash: string | undefined;
@@ -69,9 +98,12 @@ export class PublicationRunService {
 
       const claimText = await this.store.readText(options.claimChecks ?? 'eval/stage4-claims.json');
       const claimSuite = validateClaimSuite(JSON.parse(claimText), input.labels, b1, hash(input.feedText), baseDecisionsHash);
+      if (retryReport && retryReport.hashes.claimChecks !== hash(claimText)) throw new Error('retry source controlled claim suite does not match');
       let gateText: string | null = null;
-      if ((options.aiCohort ?? 'full_input') === 'full_input') {
-        if (!options.stage4Gate) throw new Error('full-input B3 requires --stage4-gate with a human-verified development run');
+      let gateHash: string | undefined;
+      if (effectiveCohort === 'full_input') {
+        if (!options.stage4Gate && !retryReport?.hashes.stage4Gate) throw new Error('full-input B3 requires --stage4-gate with a human-verified development run');
+        if (options.stage4Gate) {
         gateText = await this.store.readText(join(options.stage4Gate, 'report.json'));
         const [gate] = await this.store.readRun(options.stage4Gate);
         if (gate.schemaVersion !== '4' || gate.rulesVersion !== 'B3-v1' || gate.status !== 'success' || gate.mode === 'test' || gate.ai?.origin === 'test' || gate.config.aiCohort !== 'development'
@@ -79,6 +111,8 @@ export class PublicationRunService {
           || JSON.stringify(gate.config.ai) !== JSON.stringify(ai) || gate.verifier?.controlled.status !== 'human_verified' || gate.verifier.controlled.unsupported.leaked > 0
           || gate.verifier.controlled.disputed.leaked > 0 || gate.verifier.controlled.supported.allowed === 0 || gate.verifier.generated.status !== 'human_verified'
           || !generatedReviewGatePassed(gate.verifier.generated)) throw new Error('stage4 development gate is incomplete or failed');
+          gateHash = hash(gateText);
+        } else gateHash = retryReport!.hashes.stage4Gate;
       }
 
       let controlledClaims = new Map<string, VerifiedClaim[]>();
@@ -86,7 +120,7 @@ export class PublicationRunService {
         b1,
         runtime,
         ai,
-        options.aiCohort === 'development' ? new Set(input.labels.cases.filter(testCase => testCase.split === 'development').flatMap(testCase => testCase.rowIds)) : undefined,
+        effectiveCohort === 'development' ? new Set(input.labels.cases.filter(testCase => testCase.split === 'development').flatMap(testCase => testCase.rowIds)) : undefined,
         claimSuite,
         publicationSource,
       );
@@ -114,7 +148,7 @@ export class PublicationRunService {
           checks: hash(checksText),
           claimChecks: hash(claimText),
           ...(generatedText ? { generatedChecks: hash(generatedText) } : {}),
-          ...(gateText ? { stage4Gate: hash(gateText) } : {}),
+          ...(gateHash ? { stage4Gate: gateHash } : {}),
           ...(publicationSourceHash ? { publicationSource: publicationSourceHash } : {}),
         },
         audit: auditFor(input, result),
@@ -128,18 +162,20 @@ export class PublicationRunService {
           roles: roleSummaries(runtime),
         },
         timing: { protocol: 'cli-through-result-v1', node: process.version, platform: process.platform, arch: process.arch, pipelineMs },
-        evaluation: evaluate(result, input.labels, options.split ?? 'development'),
+        evaluation: evaluate(result, input.labels, effectiveSplit),
         generation: publication,
         verifier: { controlled, generated },
         api: runtime.summary(),
         wallTimeMs: performance.now() - start,
         decisionsHash: baseDecisionsHash,
         publicationHash,
+        degradation: degradationFor(result, runtime.records, retryReport?.runId ?? null),
       };
       await persistRun(this.store, directory, result, report, input.labels, input.rows, start, runtime, ai);
-      if (report.status !== 'success') throw new Error('Incomplete AI run; inspect report.json and ai.json');
+      if (report.status !== 'success') throw new PartialRunError(directory);
       return directory;
     } catch (error) {
+      if (error instanceof PartialRunError) throw error;
       await persistFailure(this.store, directory, options, start, error, runtime);
       throw error;
     }

@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { ProductResult } from './domain.js';
+import type { ProductResult, PublicationResult } from './domain.js';
 
 const strings = z.array(z.string());
 const confidence = z.object({ level: z.enum(['high', 'medium', 'low']), reasons: strings });
@@ -17,6 +17,11 @@ const resultSchema = z.object({
   candidates: z.array(z.object({ rowIds: z.tuple([z.string(), z.string()]), status: z.enum(['merge', 'reject', 'review']), reasons: strings })),
   review: z.array(z.object({ id: z.string(), rowIds: strings, productIds: strings, reason: z.string(), evidence: z.array(evidence), factIds: strings })),
 });
+const listingFailure = z.object({ stage: z.enum(['generation', 'verification', 'repair']), kind: z.enum(['auth', 'rate_limit', 'server', 'network', 'timeout', 'invalid_response', 'configuration', 'cache']), retryable: z.boolean(), recordKeys: strings });
+const support = z.object({ id: z.string(), kind: z.enum(['identity', 'fact']), label: z.string(), value: z.union([z.string(), z.number(), z.boolean()]), unit: z.string().nullable(), conditions: strings, evidence: z.array(evidence) });
+const claim = z.object({ id: z.string(), text: z.string(), start: z.number().int().nonnegative(), end: z.number().int().positive(), verdict: z.enum(['supported', 'disputed', 'unsupported', 'unknown', 'error']), supportIds: strings, decisionIds: strings, evidence: z.array(evidence), reason: z.string() });
+const attempt = z.object({ attempt: z.union([z.literal(1), z.literal(2)]), role: z.enum(['generation', 'repair']), text: z.string(), generationRecordKey: z.string(), verifierRecordKey: z.string().nullable(), claims: z.array(claim), verificationStatus: z.enum(['supported', 'blocked', 'error']), reasons: strings });
+const publicationResultSchema = resultSchema.extend({ listings: z.array(z.object({ productId: z.string(), status: z.enum(['ready', 'withheld', 'review']), supports: z.array(support), attempts: z.array(attempt), draftText: z.string().nullable(), publishedText: z.string().nullable(), selectedAttempt: z.union([z.literal(1), z.literal(2)]).nullable(), withholdReasons: strings, failure: listingFailure.nullable().optional() })) });
 
 export const provenanceSchema = z.object({
   runId: z.string(), createdAt: z.string(), rulesVersion: z.string(),
@@ -29,7 +34,8 @@ export interface SavedCatalog { result: ProductResult; provenance: CatalogProven
 
 /** Validate shape and source links, never recompute product or publication decisions. */
 export function validateProductResult(input: unknown): ProductResult {
-  const parsed = resultSchema.safeParse(input);
+  const publicationInput = Boolean(input && typeof input === 'object' && 'listings' in input);
+  const parsed = (publicationInput ? publicationResultSchema : resultSchema).safeParse(input);
   if (!parsed.success) throw new Error(`Invalid catalog: ${parsed.error.issues[0]?.path.join('.')} ${parsed.error.issues[0]?.message}`);
   const result = input as ProductResult;
   function index<T>(items: T[], key: (item: T) => string): Map<string, T> {
@@ -80,6 +86,36 @@ export function validateProductResult(input: unknown): ProductResult {
     item.evidence.forEach(checkEvidence);
   }
   result.candidates.forEach(item => item.rowIds.forEach(id => requireLink(rows.has(id))));
+  if (publicationInput) {
+    const publication = result as PublicationResult;
+    const listings = index(publication.listings, listing => listing.productId);
+    requireLink(listings.size === products.size && result.products.every(product => listings.has(product.id)));
+    for (const listing of publication.listings) {
+      requireLink(products.has(listing.productId));
+      const supports = index(listing.supports, item => item.id);
+      for (const item of listing.supports) item.evidence.forEach(checkEvidence);
+      requireLink(new Set(listing.attempts.map(item => item.attempt)).size === listing.attempts.length);
+      if (listing.failure) requireLink(listing.status !== 'ready' && new Set(listing.failure.recordKeys).size === listing.failure.recordKeys.length);
+      const selected = listing.attempts.find(item => item.attempt === listing.selectedAttempt);
+      requireLink(listing.status === 'ready'
+        ? Boolean(listing.publishedText && selected?.verificationStatus === 'supported' && selected.text === listing.publishedText)
+        : listing.publishedText === null && listing.selectedAttempt === null);
+      for (const item of listing.attempts) {
+        requireLink(Boolean(item.generationRecordKey) && (item.verifierRecordKey !== '' || item.verifierRecordKey === null));
+        requireLink(new Set(item.claims.map(itemClaim => itemClaim.id)).size === item.claims.length);
+        requireLink(item.verificationStatus === 'supported' ? item.claims.length > 0 && item.claims.every(itemClaim => itemClaim.verdict === 'supported') : true);
+        for (const itemClaim of item.claims) {
+          requireLink(itemClaim.end <= item.text.length && itemClaim.end > itemClaim.start && item.text.slice(itemClaim.start, itemClaim.end) === itemClaim.text);
+          itemClaim.supportIds.forEach(id => requireLink(supports.has(id)));
+          itemClaim.evidence.forEach(checkEvidence);
+          if (itemClaim.verdict === 'supported') {
+            const allowed = new Set(itemClaim.supportIds.flatMap(id => supports.get(id)!.evidence).map(itemEvidence => JSON.stringify(itemEvidence)));
+            requireLink(itemClaim.supportIds.length > 0 && itemClaim.evidence.length > 0 && itemClaim.evidence.every(itemEvidence => allowed.has(JSON.stringify(itemEvidence))));
+          }
+        }
+      }
+    }
+  }
   return result;
 }
 

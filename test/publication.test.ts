@@ -4,7 +4,7 @@ import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import type { AiProvider, AiRequest, AiResponse } from '../src/ai/contracts.js';
-import { ProviderRegistry } from '../src/ai/contracts.js';
+import { AiError, ProviderRegistry } from '../src/ai/contracts.js';
 import { AiRuntime } from '../src/ai/runtime.js';
 import { productBaseline } from '../src/products.js';
 import { publicationPipeline, publicationSupports, validateClaims } from '../src/publication.js';
@@ -13,6 +13,7 @@ import type { Stage4Config } from '../src/publication-config.js';
 import type { SourceRow, Labels } from '../src/types.js';
 import { evaluateControlled, evaluateGenerated, generatedReviewGatePassed, generatedReviewTemplate, migrateGeneratedReview, rebaseGeneratedReview, validateClaimSuite } from '../src/publication-evaluation.js';
 import { createPipelineService, hasUnrecoveredAiErrors } from '../src/app.js';
+import { PartialRunError } from '../src/pipeline/run-common.js';
 import { readRun } from '../src/benchmark.js';
 import { compareReports } from '../src/reports.js';
 import { prepareWeb } from '../src/prepare-web.js';
@@ -99,6 +100,33 @@ test('one blocked verification gets one repair, and a second block withholds wit
   const blocked = await publicationPipeline(b1(), new AiRuntime(registry(blockedProvider), config, 'live', join(dir, 'blocked')), config);
   assert.equal(blocked.result.listings[0]!.status, 'withheld'); assert.equal(blocked.result.listings[0]!.publishedText, null); assert.equal(blocked.result.listings[0]!.attempts.length, 2);
   assert.equal(blockedProvider.calls, 4);
+}));
+
+test('technical verifier failure withholds without invoking repair', async () => temporary(async dir => {
+  class InvalidVerifier extends PublicationProvider {
+    override async generate(request: AiRequest): Promise<AiResponse> {
+      if (!request.schemaName.startsWith('publication_verification')) return super.generate(request);
+      this.calls++; this.verificationCalls++;
+      const input = request.input as { text: string; textHash: string };
+      return response({ textHash: input.textHash, claims: [{ text: input.text, start: 0, end: input.text.length, verdict: 'supported', supportIds: ['missing'], decisionIds: [], evidence: [], reason: 'invalid fixture' }] });
+    }
+  }
+  const provider = new InvalidVerifier();
+  const run = await publicationPipeline(b1(), new AiRuntime(registry(provider), config, 'live', dir), config);
+  assert.equal(provider.calls, 2);
+  assert.equal(run.result.listings[0]!.status, 'withheld');
+  assert.equal(run.result.listings[0]!.failure?.stage, 'verification');
+  assert.equal(run.result.listings[0]!.publishedText, null);
+}));
+
+test('two exhausted retryable jobs open the run circuit and skip remaining products', async () => temporary(async dir => {
+  const rows = [0, 1, 2].map(index => ({ ...row, row_id: `r${index}`, supplier_sku: `S-${index}`, raw_title: `Demo wired earbuds ${index}` }));
+  const provider: AiProvider & { calls: number } = { id: 'fixture', endpoint: 'fixture://circuit', kind: 'test', calls: 0,
+    async generate() { this.calls++; throw new AiError('network', true); } };
+  const run = await publicationPipeline(productBaseline(rows), new AiRuntime(registry(provider), config, 'live', dir, async () => {}), config);
+  assert.equal(provider.calls, 2);
+  assert.equal(run.result.listings.at(-1)?.withholdReasons[0], 'skipped_after_circuit_open');
+  assert.equal(run.result.listings.at(-1)?.failure?.kind, 'network');
 }));
 
 test('B3 treats a failed first verification as recovered only after a safe terminal repair', () => {
@@ -289,4 +317,39 @@ test('B3 service writes schema-v4 artifacts, preserves B1 decisions and keeps te
   assert.equal(reviewedPayload.review.generated.version, 'stage4-generated-review-v2');
   assert.equal(reviewedPayload.review.generated.claims.filter((claim: { state: string }) => claim.state === 'reviewed').length, 120);
   assert.equal(reviewedPayload.review.generated.sampleProductIds.length, 20);
+}));
+
+test('B3 retry reuses locally valid successes and calls the provider only for failed records', async () => temporary(async dir => {
+  class RealPublicationProvider implements AiProvider {
+    readonly id = 'openai'; readonly endpoint = 'fixture://real-publication'; readonly kind = 'real' as const; calls = 0;
+    constructor(private failures: number) {}
+    async generate(request: AiRequest): Promise<AiResponse> {
+      this.calls++;
+      if (this.failures-- > 0) throw new AiError('network', true);
+      if (request.schemaName.startsWith('publication_generation') || request.schemaName.startsWith('publication_repair')) {
+        const input = request.input as { allowedSupports: { value: string | number | boolean }[] };
+        return response({ text: String(input.allowedSupports[0]!.value) });
+      }
+      const input = request.input as { text: string; textHash: string; allowedSupports: { id: string; evidence: { rowId: string; field: string; quote: string }[] }[] };
+      const support = input.allowedSupports[0]!;
+      return response({ textHash: input.textHash, claims: [{ text: input.text, start: 0, end: input.text.length, verdict: 'supported', supportIds: [support.id], decisionIds: [], evidence: [citation(support.evidence[0]!)], reason: 'fixture support' }] });
+    }
+  }
+  const localConfig = { ...config, generation: { ...config.generation, provider: 'openai' }, verifier: { ...config.verifier, provider: 'openai' } };
+  const configPath = join(dir, 'retry-stage4.json'); await writeFile(configPath, JSON.stringify(localConfig));
+  const claimChecks = JSON.parse(await readFile('eval/stage4-claims.json', 'utf8'));
+  claimChecks.status = 'provisional'; claimChecks.reviewedBy = null; claimChecks.reviewedAt = null;
+  const claimChecksPath = join(dir, 'retry-claims.json'); await writeFile(claimChecksPath, JSON.stringify(claimChecks));
+  const sourceProvider = new RealPublicationProvider(1);
+  let sourceDirectory = '';
+  await assert.rejects(createPipelineService(registry(sourceProvider)).run({ feed: 'supplier_feed.json', taxonomy: 'taxonomy.json', labels: 'eval/labels.json', out: dir, runId: 'partial-source', baseline: 'b3', aiMode: 'live', aiCache: join(dir, 'source-cache'), aiConfig: configPath, aiCohort: 'development', claimChecks: claimChecksPath }),
+    (error: unknown) => { assert.ok(error instanceof PartialRunError); sourceDirectory = error.directory; return true; });
+  const recoveredProvider = new RealPublicationProvider(0);
+  const retryDirectory = await createPipelineService(registry(recoveredProvider)).run({ feed: 'supplier_feed.json', taxonomy: 'taxonomy.json', labels: 'eval/labels.json', out: dir, runId: 'retry-result', baseline: 'b3', aiMode: 'live', aiCache: join(dir, 'retry-cache'), aiConfig: configPath, claimChecks: claimChecksPath, retryFrom: sourceDirectory });
+  const [sourceReport] = await readRun(sourceDirectory); const [retryReport] = await readRun(retryDirectory);
+  assert.equal(sourceReport.status, 'partial'); assert.equal(retryReport.status, 'success');
+  assert.equal(recoveredProvider.calls, 1); assert.ok((retryReport.api.cacheHits ?? 0) > 0);
+  assert.equal(retryReport.decisionsHash, sourceReport.decisionsHash);
+  assert.equal(retryReport.degradation?.retryOfRunId, sourceReport.runId);
+  await assert.rejects(readFile(join(sourceDirectory, 'failure.json'), 'utf8'), /ENOENT/);
 }));

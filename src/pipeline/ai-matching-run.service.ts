@@ -11,7 +11,7 @@ import { AiRuntime } from '../ai/runtime.js';
 import type { RunReport } from '../types.js';
 import { RunStoreService } from '../storage/run-store.service.js';
 import type { RunOptions } from './run-options.js';
-import { assertExplicitAiRows, auditFor, baseConfig, inputHashes, loadRunInput, persistFailure, persistRun, roleSummaries } from './run-common.js';
+import { assertExplicitAiRows, auditFor, baseConfig, inputHashes, loadRunInput, PartialRunError, persistFailure, persistRun, roleSummaries } from './run-common.js';
 
 export class AiMatchingRunService {
   constructor(
@@ -89,9 +89,10 @@ export class AiMatchingRunService {
         decisionsHash: hash(JSON.stringify(result)),
       };
       await persistRun(this.store, directory, result, report, input.labels, input.rows, start, runtime, ai);
-      if (report.status !== 'success') throw new Error('Incomplete AI run; inspect report.json and ai.json');
+      if (report.status !== 'success') throw new PartialRunError(directory);
       return directory;
     } catch (error) {
+      if (error instanceof PartialRunError) throw error;
       await persistFailure(this.store, directory, options, start, error, runtime);
       throw error;
     }

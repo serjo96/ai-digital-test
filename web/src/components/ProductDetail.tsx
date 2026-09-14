@@ -2,6 +2,7 @@ import { useId, useState } from 'react';
 import type { CanonicalProduct, Fact, Offer, ReconciledFact } from '../../../src/domain.ts';
 import type { NormalizedRow } from '../../../src/types.ts';
 import type { ListingView, ProductStatus } from '../data/catalog.ts';
+import { productNeedsReview } from '../data/catalog.ts';
 import {
   formatReason,
   publicationState,
@@ -175,6 +176,7 @@ export function ProductDetail({
             : t('publication.blocked')}{' '}
           — {publication.summary}
         </p>
+        <p><strong>{t('detail.productReview')}:</strong> {productNeedsReview(product, listing) ? t('status.needs_review') : t('detail.reviewClear')}</p>
         {reviewCodes.length ? (
           <ul className="reasons">
             {reviewCodes.map(code => (
@@ -232,6 +234,13 @@ export function ProductDetail({
 
       <section>
         <h3>{t('detail.withholdReasons')}</h3>
+        {listing?.publication?.failure ? (
+          <p className="publication-banner" role="status">
+            {t('detail.technicalFailure', { stage: listing.publication.failure.stage, kind: listing.publication.failure.kind })}
+          </p>
+        ) : listing?.publication?.status === 'withheld' ? (
+          <p className="publication-banner" role="status">{t('detail.needsHumanReview')}</p>
+        ) : null}
         {listing?.withholdReasons.length ? (
           <ul className="reasons">
             {listing.withholdReasons.map(reason => (

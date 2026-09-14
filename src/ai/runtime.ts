@@ -26,6 +26,7 @@ export class AiRuntime<TConfig extends RuntimeConfig = RuntimeConfig> {
   constructor(private readonly registry: ProviderRegistry, readonly config: TConfig,
     readonly mode: 'live' | 'replay', private readonly cache: string,
     private readonly pause: (ms: number) => Promise<void> = ms => new Promise(resolve => setTimeout(resolve, ms)),
+    private readonly resumeRecords: ReadonlyMap<string, AiCallRecord> = new Map(),
   ) {}
 
   async execute<T>(providerId: string, role: AiCallRecord['role'], rowIds: string[], request: AiRequest,
@@ -36,6 +37,14 @@ export class AiRuntime<TConfig extends RuntimeConfig = RuntimeConfig> {
       mode: this.mode, origin: 'real', attempts: 0, errors: 0, elapsedMs: 0, status: 'error', error: null, response: null, attemptUsage: [], attemptsLog: [], diagnostics };
     this.records.push(record);
     const check = (stage: string, passed: boolean, reason: string | null = null) => { diagnostics[stage] = { checked: true, passed, reason }; };
+    const validateResponse = (responseInput: unknown): T => {
+      check('transport', true);
+      const response = responseSchema.parse(responseInput);
+      check('completion', response.status === 'completed', response.status === 'completed' ? null : response.status);
+      if (response.jsonParsed !== undefined || response.status === 'completed' || response.status === 'invalid') check('json', response.jsonParsed ?? response.status === 'completed', response.jsonParsed === false || response.status === 'invalid' ? 'invalid_json' : null);
+      if (response.status !== 'completed') throw new AiError('invalid_response');
+      return validate(response.data);
+    };
     try {
       const provider = this.registry.get(providerId);
       record.endpoint = provider.endpoint; record.origin = provider.kind;
@@ -43,6 +52,24 @@ export class AiRuntime<TConfig extends RuntimeConfig = RuntimeConfig> {
       const key = hash(canonicalJson({ version: 'ai-cache-v2', ...identity }));
       record.key = key;
       const path = join(this.cache, `${key}.json`);
+      const resumed = this.mode === 'live' ? this.resumeRecords.get(key) : undefined;
+      if (resumed?.status === 'success' && resumed.response && resumed.origin === provider.kind) {
+        try {
+          record.mode = 'replay';
+          record.response = provider.replayResponse ? provider.replayResponse(resumed.response) : resumed.response;
+          record.attemptsLog = resumed.attemptsLog ?? [];
+          const parsed = validateResponse(record.response);
+          record.status = 'success';
+          await mkdir(this.cache, { recursive: true });
+          await writeFile(path, JSON.stringify({ version: 'ai-cache-v2', key, origin: provider.kind, request,
+            responseHash: hash(canonicalJson(resumed.response)), response: resumed.response,
+            attempts: record.attemptsLog, attemptsHash: hash(canonicalJson(record.attemptsLog)) }, null, 2) + '\n', { flag: 'wx' });
+          return parsed;
+        } catch {
+          for (const stage of Object.keys(diagnostics)) diagnostics[stage] = { checked: false, passed: false, reason: null };
+          record.mode = 'live'; record.response = null; record.status = 'error'; record.error = null; record.attemptsLog = []; record.attemptUsage = [];
+        }
+      }
       if (this.mode === 'replay') {
         let cached;
         try {
@@ -98,12 +125,7 @@ export class AiRuntime<TConfig extends RuntimeConfig = RuntimeConfig> {
         if (!record.response) { check('transport', false, terminal?.kind ?? 'invalid_response'); throw terminal ?? new AiError('invalid_response'); }
       }
       if (this.mode === 'replay' && record.response && provider.replayResponse) record.response = provider.replayResponse(record.response);
-      check('transport', true);
-      const response = responseSchema.parse(record.response);
-      check('completion', response.status === 'completed', response.status === 'completed' ? null : response.status);
-      if (response.jsonParsed !== undefined || response.status === 'completed' || response.status === 'invalid') check('json', response.jsonParsed ?? response.status === 'completed', response.jsonParsed === false || response.status === 'invalid' ? 'invalid_json' : null);
-      if (response.status !== 'completed') throw new AiError('invalid_response');
-      const parsed = validate(response.data);
+      const parsed = validateResponse(record.response);
       record.status = 'success';
       return parsed;
     } catch (error) {

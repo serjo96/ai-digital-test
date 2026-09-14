@@ -104,7 +104,15 @@ Price amounts stay decimal strings with the original currency; `$` means USD by 
 
 Detailed definitions, denominators, JSONL format, and speed protocol: [BENCHMARKS.md](docs/BENCHMARKS.md).
 
-A successful run contains `result.json`, `diagnostics.json`, `metrics.json`, `report.md`, `report.json`. The last file is written as the success marker. Invalid input creates `failure.json`, returns exit code 1, and does not create a success report; on write failure partial files may remain. Execution success does not mean ground-truth quality or publication readiness.
+A completed `success` or safe degraded `partial` run contains `result.json`, `diagnostics.json`, `ai.json` when applicable, `metrics.json`, `report.md`, and `report.json`. Every final artifact is published atomically and `report.json` is written last. `success` returns exit code 0; `partial` keeps unsafe listings withheld and returns exit code 2 without a contradictory `failure.json`. Invalid input, corrupt state, or storage failure creates `failure.json` and returns exit code 1. Execution success does not mean ground-truth quality or publication readiness.
+
+Retry only the failed/missing AI jobs of a complete real-origin B3 partial run; successful stored answers are revalidated locally and copied into a new immutable cache:
+
+```sh
+npm run retry -- --from-run <run-id-or-directory> [--prepare-web]
+```
+
+The retry verifies the input/configuration/B1 provenance, creates a new run with `retryOfRunId`, and never changes the source run. `--prepare-web` updates the web snapshot only after the new run has completed safely.
 
 Extended matching labels: 20 provisional family cases, 14 development on 59 rows / 6 holdout on 49. They cover 108 rows and are not raised automatically. A separate `eval/matching-audit.json` records 20 atomic human questions. The saved human export and metrics are [matching-audit-human-verified.json](eval/matching-audit-human-verified.json) and [matching-audit-metrics.json](eval/matching-audit-metrics.json): 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements (post-holdout validation). `eval/stage2-checks.json` separately holds technical category/fact/reconciliation checks.
 
@@ -144,7 +152,7 @@ P0.2 moved the verifier to `publication_verification_v2`: the prompt requires fi
 
 Current development gate: [verifier-only live](reports/B3-openai-development-verifier-only-v2-live/report.md), [human-gate replay](reports/B3-openai-development-verifier-only-v2-human-gate-replay/report.md), and [comparison](reports/comparisons/B3-openai-development-verifier-only-v2-live-to-human-gate-replay/comparison.md). Human-verified controlled gate: 4/4 unsupported, false block 0/7, disputed leakage 0/1, errors 0. Generated review: 76/99 claims, 28/37 products, sample 20/20, factual errors 0, non-atomic 0, unclear-copy 2. Result: 37/39 ready, 2 identity review. Historical v1 live/replay and review are kept without overwrite.
 
-Full-input ran after a separate go-ahead: [live](reports/B3-openai-full-input-atomic-v2-live/report.md) made 322 calls, 526449 tokens, $8.110955 and got 154/156 ready, 2 identity review, 0 withheld. One first verifier response contained a damaged support ID; fail-closed validation rejected it, and the single allowed repair succeeded. The live report historically has `partial` because of later-corrected accounting of recovered errors. [Offline replay](reports/B3-openai-full-input-atomic-v2-replay/report.md) has `success`, 0 calls, and the same `publicationHash`; [comparison](reports/comparisons/B3-openai-full-input-atomic-v2-live-to-replay/comparison.md) contains no changes or violations. Among 390 published claims there are no forbidden atomicity patterns.
+Full-input ran after a separate go-ahead: [live](reports/B3-openai-full-input-atomic-v2-live/report.md) made 322 calls, 526449 tokens, $8.110955 and got 154/156 ready, 2 identity review, 0 withheld. Those immutable historical artifacts used one repair after a verifier response with a damaged support ID. The current runtime no longer rewrites after a technically invalid verifier result: the affected listing is withheld in a new partial run and can be selectively retried. The stored [offline replay](reports/B3-openai-full-input-atomic-v2-replay/report.md) and its comparison remain historical records and are not rewritten.
 
 The first holdout ran after a separate go-ahead, strictly offline from the full-input cache:
 
