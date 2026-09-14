@@ -27,7 +27,7 @@ The diagram shows the accepted production runtime: deterministic B1 owns product
 | **B1** | Deterministic TypeScript code | Product identity, matching, offers, facts, conflicts and categories | Accepted product baseline |
 | **B3** | **OpenAI** (`gpt-5.6-sol`, `gpt-6-astra`) plus a deterministic gate | Generate listing text from B1 supports and independently verify every claim | Accepted publication pipeline |
 
-Historical B2 model experiments are not part of this runtime. Their scope and results are preserved in the [stage 3 report](docs/STAGE3_REPORT.md).
+Historical B2 model experiments are not part of this runtime. Their scope, safeguards, and measured outcome are summarized in [LLM_ROLES.md](LLM_ROLES.md); the underlying runs remain in `reports/`.
 
 ## Install and run
 
@@ -122,9 +122,9 @@ Current artifacts:
 
 - [Accepted B1-v2](reports/B1-v2/report.md), [repeat](reports/B1-v2-repeat/report.md), [B0 → B1-v2](reports/comparisons/B0-to-B1-v2/comparison.md).
 - [Chart data: 8 runs](reports/benchmarks/stage2-v2/observations.jsonl), [run list](reports/benchmarks/stage2-v2/summary.json).
-- [Stage 2 outcome and handoff](docs/STAGE2_REPORT.md); [roadmap](docs/ROADMAP.md).
+- [Architecture](docs/ARCHITECTURE.md), [metric definitions and history](docs/BENCHMARKS.md).
 
-Saved historical runs are not rewritten. Result files are kept locally and intended for Git; there is no automatic upload anywhere. OpenAI B3 results are described in the [stage 4 report](docs/STAGE4_REPORT.md), the local Ollama experiment in the [stage 3 report](docs/STAGE3_REPORT.md), and responsibility split in [model roles](LLM_ROLES.md).
+Saved historical runs are not rewritten. Result files are kept locally and intended for Git; there is no automatic upload anywhere. Current model responsibilities, experiment outcomes, and failure handling are summarized in [model roles](LLM_ROLES.md); detailed measurements remain in the saved run artifacts and [benchmark history](docs/BENCHMARKS.md).
 
 ## B3: OpenAI publication generation and verifier
 
@@ -186,7 +186,7 @@ The command checks B1, the server, and digest, records the manifest before infer
 
 A full experiment is allowed automatically only with 12/12 valid extraction answers, 11/11 expected additions without extras or false citations, 8/8 valid matching answers without dangerous merges, preserved B1 checks, and identical replay. With two passing models, the smaller median latency is chosen, then p95, then Qwen. Code handles 220 rows; AI handles only 41 problem rows; holdout is not evaluated. If the threshold is not met, the full run is not executed.
 
-Saved experiment: [stage 3 report](docs/STAGE3_REPORT.md), directories `reports/stage3-ollama-v1` and `reports/stage3-ollama-v2`, [final comparison](reports/stage3-ollama-v2/comparison.md). Directories are immutable. This experiment keeps a separate continuation record after a semantically unsuccessful smoke; there was no repeated smoke.
+Saved experiment: directories `reports/stage3-ollama-v1` and `reports/stage3-ollama-v2`, with the [final comparison](reports/stage3-ollama-v2/comparison.md). Directories are immutable. This experiment keeps a separate continuation record after a semantically unsuccessful smoke; there was no repeated smoke.
 
 The shared CLI still supports `--baseline b2 --ai-mode live|replay --ai-cache DIR --ai-config PATH --ai-task extraction|matching --ai-cohort development|full_input`. By default it selects B1. The exact smoke/set of 12/set of 8 pairs is set by the experimental runner through the service’s checked `aiRows`/`aiPairs`, without truncating the feed. For a separate **offline replay without Ollama**, the command restores parameters and the explicit sample from the saved report:
 
@@ -207,7 +207,7 @@ OpenAI profiles `config/ai.json`, `config/ai.matching-sol.json`, `config/ai.matc
 
 ## Stage 5: local B1 screen and B3 claim review
 
-Stages 5 and the minimal stage 6 stabilization are complete: the saved B1 decisions and ready publication text are unchanged, orchestration is split by use case, and architecture/characterization tests protect the boundaries and frozen hashes. Identity-review products now receive a safe description preview without becoming publishable. Final audit metric: 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements. Extended labels on 108 rows stay honestly provisional. [Report and PDF alignment](docs/STAGE5_REPORT.md), [architecture](docs/ARCHITECTURE.md), [short WRITEUP](WRITEUP.md).
+The final UI and minimal architecture stabilization are complete: the saved B1 decisions and ready publication text are unchanged, orchestration is split by use case, and architecture/characterization tests protect the boundaries and frozen hashes. Identity-review products receive a safe description preview without becoming publishable. Final audit metric: 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements. Extended labels on 108 rows stay honestly provisional. See [architecture](docs/ARCHITECTURE.md), [benchmarks](docs/BENCHMARKS.md), and the [short WRITEUP](WRITEUP.md).
 
 From a clean checkout, Node 24.14.1 (see `.nvmrc`), without `.env` or a key:
 

@@ -6,9 +6,9 @@ Tool: Codex in the desktop application; repository reading, shell/Node/Python, f
 
 Delegation: no subagents were used. No commits, push, or submission to the organizers were performed. Source data was not sent to model providers by the application; the agent read it in this session for implementation and draft labeling.
 
-Actual user prompts/clarifications:
+Prompt summaries and clarifications:
 
-1. “Read docs/ROADMAP.md, docs/TASK_ANALYSIS.md, and the current reports. Implement stage 1 planning within its boundaries. First verify the actual project state and stage dependencies. Preserve the metric comparison, update the status and the handoff note for the next stage. Do not implement the next stage automatically.”
+1. Read the then-current planning documents and reports; implement stage 1 within its boundaries, verify the actual project state and dependencies, and preserve the metric comparison without automatically proceeding to the next stage.
 2. User preference: if TypeScript is suitable, use NestJS and React; later confirmed as “React in stage 5.”
 3. “PLEASE IMPLEMENT THIS PLAN: # Stage 1 — TypeScript/NestJS and measurable baseline B0” with the complete agreed plan: CLI, B0, provisional 14/6, eval, reports, and handoff without proceeding to stage 2.
 
@@ -18,15 +18,15 @@ A specific AI shortcoming found: the first implementation of `wallTimeMs` ended 
 
 Labeling uncertainty was explicitly preserved: the German AeroBuds row does not specify a color; pairs with black variants were labeled unknown rather than automatically declared positive or negative. Sony OPEN BOX marketing claims are not used as facts. Semantic reconciliation of characteristics was not added in stage 1.
 
-Checks and actual stage results are recorded in `docs/STAGE1_REPORT.md`; run reports include code and input versions. This log does not claim that the task's AI stages or hand-labeling were completed.
+Saved run reports include code and input versions. This entry does not claim that the task's later AI stages or hand-labeling were completed at that point.
 
 ## 2026-09-09 — stage 2 planning and implementation
 
 Tool: Codex desktop; reading local TypeScript/JSON/Markdown, shell/Node/Python for editing and preparing provisional checks, npm/TypeScript/node:test. No subagents, third-party applications, or web search were used. Runtime model API calls, tokens, and pipeline cost were 0; the cost of the Codex session was not measured separately.
 
-Actual user instructions:
+Prompt summaries and user choices:
 
-1. “Read docs/ROADMAP.md, docs/TASK_ANALYSIS.md, and the current reports. Implement the creation of the stage 2 plan within its boundaries… Do not implement the next stage automatically.”
+1. Read the then-current plan and reports, then implement stage 2 within its agreed boundaries without automatically proceeding to the next stage.
 2. “Extended code-based parsing” was selected with permission to exceed the time guideline. For the discovered schwarz issue, “Keep the labels” was selected.
 3. “Start implementation, but do not forget about the numbers… preserve these results somewhere so we can build a chart later… selection quality, poor-sample quality, junk decisions, number of uncertain messages for review, errors… speed.”
 
@@ -38,7 +38,7 @@ Specific AI errors found:
 - In the intermediate B1, the USB-C fact from USB-C Ladecase did not preserve that the connector applied to the case. This was found while reviewing the remaining fragments; B1-v2 preserves the full citation and charging_case. A check was added. The earlier run was not rewritten: changes and metrics were preserved separately.
 - The first review included price_notice and price messages for confidently rejected rows. They were removed from the manual queue but preserved in outcomes/diagnostics. The counter change was explained rather than presented as a measured improvement in matching quality.
 
-Result: typecheck and 30 tests pass, and the accepted B1-v2 and its rerun have identical decisions. History includes eight successful runs and 483 numeric observations, including intermediate variants. Generation/verifier metrics remain N/A. Stage 3, human review, API integration, commits/push, and submission to the organizers were not performed. Commands, timing, and limitations are in docs/STAGE2_REPORT.md.
+Result: typecheck and 30 tests pass, and the accepted B1-v2 and its rerun have identical decisions. History includes eight successful runs and 483 numeric observations, including intermediate variants. Generation/verifier metrics remain N/A. Stage 3, human review, API integration, commits/push, and submission to the organizers were not performed at that point. Commands, timing, and limitations remain in the saved run artifacts and benchmark history.
 
 ## 2026-09-09 — minimal results screen
 
@@ -56,9 +56,9 @@ Checks: `npm run typecheck`, `npm test` (30), and `npm run web:build` passed. St
 
 Tool: Codex desktop; local TypeScript/JSON/Markdown, shell/npm/node:test, and official OpenAI documentation through OpenAI Docs (official web search was also used during planning). No subagents were used. Actual model requests by the application: **0**; OpenAI/Ollama, model-list/health-check, and trial calls were not performed. The SDK was tested through a substituted HTTP transport with a dummy key. Codex cost was not measured separately.
 
-Actual user instructions:
+Prompt summaries and user choices:
 
-1. “Read docs/ROADMAP.md, docs/TASK_ANALYSIS.md, and the current reports. Implement the plan for stage 3 within its boundaries… Do not implement the next stage automatically.”
+1. Read the then-current plan and reports, then implement stage 3 within its agreed boundaries without automatically proceeding to the next stage.
 2. Selected OpenAI and problematic rows; then specified GPT-5.6 Sol as the primary model, GPT-6 Astra as the candidate, and the adapter pattern. When asked to clarify providers, selected “Only OpenAI for now.”
 3. “I will add the key later, so after implementation do not run anything with AI until I tell you that the key has been added,” followed by “Implement the plan.”
 
@@ -73,14 +73,14 @@ Specific errors/shortcomings corrected during the AI work:
 - Initial cost arithmetic did not account for separate cache-write tokens for the new models. Official pricing and SDK usage were checked; the calculation was corrected and tested with synthetic data. An unknown breakdown yields N/A.
 - The API errors counter initially included cache/config errors without API requests. It was separated from ai.failed_jobs; the first code controls were preserved, and the final v2 controls were captured separately.
 
-Result: typecheck and 42 tests pass; B1-v2 and the final control have identical decisions, and all comparable non-timing metrics are equal. History: 12 runs and 803 observations. User changes to web/.gitignore/package.json/README/AI_USAGE were preserved, and the frontend was not modified. Stage 3 status: code prepared, live awaits the user's message that the key has been added; stage 4 was not performed. Details, limitations, and timing are in docs/STAGE3_REPORT.md. No commits/push/submission were performed.
+Result: typecheck and 42 tests pass; B1-v2 and the final control have identical decisions, and all comparable non-timing metrics are equal. History: 12 runs and 803 observations. User changes to web/.gitignore/package.json/README/AI_USAGE were preserved, and the frontend was not modified. Stage 3 status at that point: code prepared, live awaited the user's message that the key had been added; stage 4 was not performed. Details, limitations, and timing remain in the saved run artifacts and benchmark history. No commits/push/submission were performed.
 
 
 ## 2026-09-09–10 — available part of stage 5
 
 Tool: Codex, local TypeScript/React/Markdown, shell/npm/node:test, CUA browser. The PDF skill was used during planning: both pages were rendered and reviewed. No subagents were used. The application made no model calls; keys were not read or checked. The cost of the Codex session was not measured.
 
-Actual instructions: “Read docs/ROADMAP.md, docs/TASK_ANALYSIS.md, and the current reports…”; the user selected “Available part of stage 5” and “Requirements cross-check,” then “Proceed with this plan.” Code, checks, metrics, and documentation were prepared by AI; the user defined the boundaries and retention of the current style. This did not perform human verification of labels.
+Actual instructions: review the current planning documents and reports; the user selected “Available part of stage 5” and “Requirements cross-check,” then “Proceed with this plan.” Code, checks, metrics, and documentation were prepared by AI; the user defined the boundaries and retention of the current style. This did not perform human verification of labels.
 
 Added preparation of a preserved snapshot with report/decisionsHash validation, shared structural and source-links validation, real data by default, overview/non-products, source links, responsiveness, and documentation. Agreed facts are not described as having passed the verifier; without generation, texts remain empty. Stages 3–4, holdout, editor/approve, and deployment were not developed.
 
@@ -88,7 +88,7 @@ Shortcomings found: the original loader validation checked only arrays and misse
 
 Technical verification failures: the old IAB tab failed to connect, while a fresh tab opened the running server. Offline npm ci did not find Vite in the cache; regular npm ci with registry access succeeded. In a clean directory, the shell initially selected Node 23, so installation and all checks were repeated with explicitly selected Node 24.14.1. The full-page IAB screenshot contained stitching artifacts; regular viewport screenshots were preserved. These failures are unrelated to runtime AI quality.
 
-Result: 45 backend + 3 web tests, typecheck, build, B1 control/rerun, and the clean environment were verified. DecisionsHash did not change, and history contains 14 runs / 963 observations. The UI was checked at 1440, 768, and 375 px. Results and handoff are in docs/STAGE5_REPORT.md. The agent did not perform commits/push/submission. Time was not tracked with a reliable focused-time counter; the work crossed a user pause, so elapsed time is not presented as focused time.
+Result: 45 backend + 3 web tests, typecheck, build, B1 control/rerun, and the clean environment were verified. DecisionsHash did not change, and history contains 14 runs / 963 observations. The UI was checked at 1440, 768, and 375 px. The agent did not perform commits/push/submission. Time was not tracked with a reliable focused-time counter; the work crossed a user pause, so elapsed time is not presented as focused time.
 
 ## 2026-09-10 — stage 3: Ollama and limited real experiment
 
@@ -111,7 +111,7 @@ Specific AI/integration errors found:
 
 Actual attempts: Qwen smoke 1; Qwen development 12; Gemma development 24 (12 retries); incompatible Qwen shadow schema 16 (8 retries); corrected Qwen shadow schema 8. **Total: 61 HTTP inference attempts, 20 retries, 41 jobs.** This was not full extraction over 41 problematic rows. Metadata requests are separate; all replays used 0 new inference. Pipeline-validation success: Qwen development 2/12, accepted correct/extra/missing 3/0/8; Qwen shadow 1/8, dangerous merge 4, unconfirmed 2. Local compute cost and unknown cache tokens N/A. Codex session cost and focused time were not measured; user pauses are not presented as working time.
 
-Result: architecture completed; the product threshold was not met; the full run was not performed, and B1-v2 remained the accepted baseline. Typecheck, 54 backend tests, and 5 web tests passed; final replay from raw with network transport prohibited matched diagnostics, quality, and decisions. Human review of the provisional labeling remains open, and holdout was not evaluated. Stage 4/descriptions/final verifier, commits/push/submission/deployment were not performed. Artifacts, comparisons, and handoff: docs/STAGE3_REPORT.md; reports/stage3-ollama-v1, stage3-ollama-v2, stage3-ollama-final-verification.
+Result: architecture completed; the product threshold was not met; the full run was not performed, and B1-v2 remained the accepted baseline. Typecheck, 54 backend tests, and 5 web tests passed; final replay from raw with network transport prohibited matched diagnostics, quality, and decisions. Human review of the provisional labeling remained open, and holdout was not evaluated at that point. Stage 4/descriptions/final verifier, commits/push/submission/deployment were not performed. Artifacts and comparisons remain under `reports/stage3-ollama-v1`, `reports/stage3-ollama-v2`, and `reports/stage3-ollama-final-verification`.
 
 ## Stage 4: OpenAI generation and claim verifier
 
@@ -121,7 +121,7 @@ B3-v1 was implemented over unchanged B1-v2. `gpt-5.6-sol` low generates only fro
 
 Controlled set: 12 development cases, no holdout, metadata provisional. Authoritative live `B3-openai-development-live-v4`: 86 calls, 0 errors/retries; 123520 input + 28098 output = 151618 tokens; $2.6475128 under prices recorded on 2026-09-10. Roles: controlled verification 12 calls/$0.5021725; generation 37/$0.1119028; generated verification 37/$2.0334375; repair 0 calls. Controlled: unsupported recall 4/4, false-block 0/7, disputed leakage 0/1, structural errors 0. Development listings: 37 drafts/ready, 0 withheld, 2 identity review, 52 covered rows. These metrics are provisional.
 
-Offline replay produced 86 cache hits, 0 network calls, matching decisions/publication hashes, and all non-timing metrics. A human-review file was generated for 158 actually published claims; `reviewedBy/reviewedAt` were not filled by the agent. Therefore, human-reviewed published-claim errors remain N/A, and full-input B3 was not run. B1→B3 and live→replay comparisons and benchmark history were preserved. Stage 5, UI, holdout, deployment, commit, and push were not performed. Full report: `docs/STAGE4_REPORT.md`.
+Offline replay produced 86 cache hits, 0 network calls, matching decisions/publication hashes, and all non-timing metrics. A human-review file was generated for 158 actually published claims; `reviewedBy/reviewedAt` were not filled by the agent. Therefore, human-reviewed published-claim errors remained N/A, and full-input B3 was not run at that point. B1→B3 and live→replay comparisons and benchmark history were preserved. Stage 5, UI, holdout, deployment, commit, and push were not performed in that task.
 
 ## B3 human-review UI
 

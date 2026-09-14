@@ -1,6 +1,6 @@
 # Quality and performance history
 
-This document contains a cumulative history: early sections describe the state of their respective stage and do not replace the current status. The current handoff is in [NEXT_STEPS.md](NEXT_STEPS.md). The primary metrics for each run are saved in its `report.json`/`metrics.json`; exported JSONL series are intended for comparisons and charts.
+This document defines the metrics and preserves cumulative measurement history. Stage-specific status statements below describe the corresponding recorded checkpoint and do not override the final status in the root [README](../README.md). Primary metrics for each run are saved in its `report.json`/`metrics.json`; exported JSONL series are intended for comparisons and charts.
 
 Every new successful `pipeline`/`eval` automatically saves `metrics.json` and the same values in `report.json`, together with decisions. These are the primary results; exporting history is not required to preserve them. Run and export directories cannot be overwritten: a new run ID is required. `reports/local/` is ignored by Git; specify `--out reports` for a benchmark that should be preserved.
 
@@ -19,7 +19,7 @@ Every new successful `pipeline`/`eval` automatically saves `metrics.json` and th
 | Errors | `errors.matching`, `errors.non_product`, `errors.quality_checks`, `errors.execution`; losses and duplicate assignments in `accounting.*` | Errors from different tasks are counted separately: they cannot be summed into an “error percentage” with one shared denominator |
 | Performance | `timing.wall`, `timing.pipeline` | Milliseconds, each run as a separate observation; boundaries below |
 
-“Trash decisions” are operationalized here as false merges, false product rejections, and missed non-products. Generated claim/verifier quality is currently N/A: generation does not exist. A large number of correct negative pairs does not replace matching precision/recall.
+“Trash decisions” are operationalized here as false merges, false product rejections, and missed non-products. In the early B0/B1 observations, generated claim/verifier quality is N/A because generation did not yet exist. A large number of correct negative pairs does not replace matching precision/recall.
 
 ## Format and comparability
 
@@ -66,13 +66,13 @@ New reports record Node/platform/arch; historical B0 lacks these fields. Repeats
 
 ## Stage 3 extension: offline integration
 
-B1-v2 remains the accepted baseline. The [stage3-offline](../reports/benchmarks/stage3-offline/summary.json) history adds **code-only** control runs; B2-live is still absent per the user’s instruction. Do not interpret the word stage3 or schema 3 as evidence of a model call.
+B1-v2 remains the accepted baseline. The [stage3-offline](../reports/benchmarks/stage3-offline/summary.json) history adds **code-only** control runs; B2-live was absent from that checkpoint per the user’s instruction. Do not interpret the word stage3 or schema 3 as evidence of a model call.
 
 Schema 3 preserves metrics without recalculation, like schema 2, and adds `mode` (code-only/live/replay/test), partial status, role/provider configuration, API usage, and `semanticChecks`. Mode and configuration are copied into every JSONL observation. `test` runs are not admitted into real history. A partial run saves results and diagnostic/evaluation metrics with explicit status=partial and `errors.execution=1`; it cannot be accepted as successful. A complete failure without a result continues to contain only available diagnostics.
 
 The new `eval/stage3-checks.json` sample contains 12 provisional development rows, 11 expected semantic additions, and type and category checks. The original matching labels and stage2-checks do not change. `semantic.precision` = correct accepted additions / all accepted additions on these rows; `semantic.recall` = correct / 11 expected additions. Repeated instances of one value are collapsed by attribute/value/unit/scope/conditions. This is a narrow evaluation of five allowed attributes, not precision over all product information. Invalid-response errors are additionally visible in ai.failed_jobs/ai.json; a discarded response does not become a correct extraction.
 
-`semantic.types` and `semantic.categories` check the expected type, including null, and allowed category. B1-control: precision N/A (0/0), recall 0/11, types/categories 12/12. This is a pre-measured gap in code extraction; real B2 has not yet been evaluated. A synthetic test fixture implementing the expected 11 additions verifies eval and pipeline wiring, not Sol quality.
+`semantic.types` and `semantic.categories` check the expected type, including null, and allowed category. B1-control: precision N/A (0/0), recall 0/11, types/categories 12/12. This pre-measured a gap in code extraction before real B2 evaluation. A synthetic test fixture implementing the expected 11 additions verifies eval and pipeline wiring, not Sol quality.
 
 Semantic series have a `metricCohort` that additionally includes the semanticChecks hash. New values without a previous measurement have delta=null. Existing metrics and metrics-v1 definitions were not renamed; USD was added as a unit for new monetary metrics, with availability=unavailable when usage/rate is missing. Do not connect incomparable series or turn unknown cost into 0.
 
@@ -110,7 +110,7 @@ Cache-v2 stores response and raw before validation, full request, origin, respon
 
 Strict admission to full: 12/12 responses pass schema/evidence, 11/11 additions with no extras or false citations, 8/8 shadow pass validation, dangerous merges 0, B1/accounting/group checks preserved, replay identical. If both pass, choose the lower extraction median, then p95, then Qwen. Otherwise full is not run. Full processes 220 rows in code and 41 problematic rows with AI; matching remains shadow. The product baseline is not promoted automatically. Generation, final verifier, and holdout evaluation are outside this protocol.
 
-Artifacts and results: [stage 3 report](STAGE3_REPORT.md), `reports/stage3-ollama-v1`. Live/replay/smoke/development/shadow directories are separate; JSON/Markdown comparison and two types of benchmark JSONL preserve specific provenance.
+Artifacts and results: `reports/stage3-ollama-v1`, with the outcome summarized in [LLM_ROLES.md](../LLM_ROLES.md). Live/replay/smoke/development/shadow directories are separate; JSON/Markdown comparison and two types of benchmark JSONL preserve specific provenance.
 
 Final result: [stage3-ollama-v2/comparison.md](../reports/stage3-ollama-v2/comparison.md). The shared JSONL of source metrics is benchmark/observations.jsonl; availability and additional counts for wrong scope/conditions/unit/value type/wrong pair IDs are in [stage3-ollama-final-verification/observations.jsonl](../reports/stage3-ollama-final-verification/observations.jsonl). The latest summary is a read-only analysis of the same raw responses, not a new live run or acceptance change. It reports modelQualityAvailable=false and proposedQuality=null when no model response exists; missing Gemma generations are not presented as “0 quality errors.” Historical comparison v1 remains as an intermediate integration result; v2 and the final raw-replay verification define the current architecture status.
 
@@ -122,7 +122,7 @@ After the local server was updated to 0.34.0, Gemma passed a separate technical 
 
 Live: 39 development products, 37 drafts/ready, 0 withheld, 2 identity review, ready rate 37/39, covering 52 rows. Controlled provisional: unsupported detection 4/4, false block 0/7, disputed leakage 0/1, structural errors 0. API: 86 calls, 0 errors/retries, 151618 tokens, $2.6475128. Breakdown: controlled Astra 12 calls, Sol generation 37, Astra publication verification 37. Wall 519931.2525 ms—one sequential measurement, not a claim about general performance.
 
-[B1-v2→B3](../reports/comparisons/B1-v2-to-B3-openai-development-v4/comparison.md) is comparable, `decisionsEqual=true`, changed row/matching IDs are empty, and TP/FP/FN and all B1 outcomes/facts/offers/review are unchanged. [Live→replay](../reports/comparisons/B3-openai-development-live-to-replay-v4/comparison.md) additionally has `publicationEqual=true`; replay performed 86 cache hits, 0 calls, wall 199.929042 ms. The controlled suite and 158 generated claims are not yet human-verified, so these results do not permit full-input B3 or holdout.
+[B1-v2→B3](../reports/comparisons/B1-v2-to-B3-openai-development-v4/comparison.md) is comparable, `decisionsEqual=true`, changed row/matching IDs are empty, and TP/FP/FN and all B1 outcomes/facts/offers/review are unchanged. [Live→replay](../reports/comparisons/B3-openai-development-live-to-replay-v4/comparison.md) additionally has `publicationEqual=true`; replay performed 86 cache hits, 0 calls, wall 199.929042 ms. At this development-v1 checkpoint, the controlled suite and 158 generated claims were not yet human-verified, so those results alone did not permit full-input B3 or holdout.
 
 The historical limitation above was removed by P0.1/P0.2: the development gate is human-verified and reproducible. Full-input B3 was completed on 2026-09-12: 154/156 ready, 2 identity review, 0 withheld, 213 covered rows, 390 claims without prohibited atomicity patterns. Live: 322 calls, 526449 tokens, $8.110955; one invalid initial verifier response was rejected fail-closed and successfully recovered by the single repair. [Offline replay](../reports/B3-openai-full-input-atomic-v2-replay/report.md) has the same `decisionsHash`/`publicationHash`, and the [comparison](../reports/comparisons/B3-openai-full-input-atomic-v2-live-to-replay/comparison.md) contains no changes or violations.
 
