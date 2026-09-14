@@ -13,7 +13,6 @@ import { RunOverview } from './components/RunOverview.tsx';
 import { MatchingAudit } from './components/MatchingAudit.tsx';
 import { ReviewContextBar, type ContextChip } from './components/ReviewContextBar.tsx';
 import { useI18n } from './i18n/I18nProvider.tsx';
-import { LanguageSwitcher } from './i18n/LanguageSwitcher.tsx';
 import { useIsMobile } from './hooks/useIsMobile.ts';
 import './App.css';
 
@@ -42,7 +41,7 @@ function AppHeader({
           <h1>{t('header.title')}</h1>
           {subtitle && !compact ? <p className="subtitle">{subtitle}</p> : null}
         </div>
-        <LanguageSwitcher />
+        {/* Localization remains available internally, but the submission UI is English-only. */}
       </div>
       {showDemoNotice ? (
         <p className="demo-banner" role="note">{t('demo.notice')}</p>
