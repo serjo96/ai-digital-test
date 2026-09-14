@@ -3,6 +3,7 @@ import { parseCatalogPayload, type CatalogProvenance } from '../../../src/catalo
 import { ClaimSuiteSchema, migrateGeneratedReview } from '../../../src/publication-evaluation.ts';
 import { validateLabels } from '../../../src/evaluation.ts';
 import { validateMatchingAudit } from '../../../src/matching-audit.ts';
+import { identityReviewDraft } from '../../../src/review-draft.ts';
 import type { CatalogSnapshot, ClaimReviewData, ListingView, ReviewClaim } from './catalog.ts';
 
 function parseReviewResult(input: unknown): { textHash: string; claims: Omit<ReviewClaim, 'id'>[] } {
@@ -40,9 +41,9 @@ export function projectProductResult(result: ProductResult, provenance: CatalogP
     const fallback = listingFromReview(product, result.review);
     const publication = publications?.get(product.id) ?? null;
     listings[product.id] = publication ? {
-      draftText: publication.draftText,
+      draftText: publication.draftText ?? (publication.status === 'review' ? identityReviewDraft(publication.supports) : null),
       publishedText: publication.publishedText,
-      withholdReasons: publication.withholdReasons,
+      withholdReasons: [...new Set(publication.withholdReasons)],
       reviewFlags: fallback.reviewFlags,
       publication,
     } : fallback;
@@ -60,9 +61,10 @@ export function projectProductResult(result: ProductResult, provenance: CatalogP
   };
 }
 
-export async function loadCatalog(url = import.meta.env?.VITE_CATALOG_URL?.trim() || '/data/catalog.json'): Promise<CatalogSnapshot> {
+export async function loadCatalog(url = import.meta.env?.VITE_CATALOG_URL?.trim() || '/data/catalog.json', cacheBust = false): Promise<CatalogSnapshot> {
   try {
-    const response = await fetch(url);
+    const requestUrl = cacheBust ? `${url}${url.includes('?') ? '&' : '?'}_=${Date.now()}` : url;
+    const response = await fetch(requestUrl, { cache: cacheBust ? 'no-store' : 'default' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const payload = await response.json() as Record<string, unknown>;
     const { result, provenance } = parseCatalogPayload(payload);
@@ -86,6 +88,8 @@ export async function loadCatalog(url = import.meta.env?.VITE_CATALOG_URL?.trim(
     const catalog = projectProductResult(result, provenance, claimReview);
     return {
       ...catalog,
+      degradation: payload.degradation && typeof payload.degradation === 'object' ? payload.degradation as NonNullable<CatalogSnapshot['degradation']> : null,
+      retryCommand: typeof payload.retryCommand === 'string' ? payload.retryCommand : null,
       ...(matchingReview ? { matchingReview } : {}),
       ...(matchingAudit ? { matchingAudit } : {}),
     };

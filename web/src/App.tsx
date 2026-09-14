@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import {
   productDisplayName,
+  productNeedsReview,
   productStatus,
   statusLabel,
   type CatalogSnapshot,
@@ -12,7 +13,6 @@ import { RunOverview } from './components/RunOverview.tsx';
 import { MatchingAudit } from './components/MatchingAudit.tsx';
 import { ReviewContextBar, type ContextChip } from './components/ReviewContextBar.tsx';
 import { useI18n } from './i18n/I18nProvider.tsx';
-import { LanguageSwitcher } from './i18n/LanguageSwitcher.tsx';
 import { useIsMobile } from './hooks/useIsMobile.ts';
 import './App.css';
 
@@ -41,7 +41,7 @@ function AppHeader({
           <h1>{t('header.title')}</h1>
           {subtitle && !compact ? <p className="subtitle">{subtitle}</p> : null}
         </div>
-        <LanguageSwitcher />
+        {/* Localization remains available internally, but the submission UI is English-only. */}
       </div>
       {showDemoNotice ? (
         <p className="demo-banner" role="note">{t('demo.notice')}</p>
@@ -100,6 +100,9 @@ export default function App() {
   const [load, setLoad] = useState<LoadState>({ status: 'loading' });
   const [query, setQuery] = useState('');
   const [needsReviewOnly, setNeedsReviewOnly] = useState(false);
+  const [withheldOnly, setWithheldOnly] = useState(false);
+  const [refreshStatus, setRefreshStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [loadAttempt, setLoadAttempt] = useState(0);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [view, setView] = useState<AppView>('catalog');
   const [mobilePane, setMobilePane] = useState<MobilePane>('list');
@@ -107,7 +110,7 @@ export default function App() {
   useEffect(() => {
     let cancelled = false;
     setLoad({ status: 'loading' });
-    loadCatalog()
+    loadCatalog(undefined, loadAttempt > 0)
       .then(catalog => {
         if (cancelled) return;
         setLoad({ status: 'ready', catalog });
@@ -123,7 +126,7 @@ export default function App() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [loadAttempt]);
 
   useEffect(() => {
     setMobilePane('list');
@@ -136,7 +139,8 @@ export default function App() {
     return catalog.products.filter(product => {
       const listing = catalog.listings[product.id];
       const status = productStatus(product, listing);
-      if (needsReviewOnly && status !== 'needs_review') return false;
+      if (needsReviewOnly && !productNeedsReview(product, listing)) return false;
+      if (withheldOnly && status !== 'withheld') return false;
       if (!needle) return true;
       const name = productDisplayName(product, catalog.rows).toLowerCase();
       const titles = catalog.rows
@@ -144,7 +148,7 @@ export default function App() {
         .map(r => r.source.raw_title.toLowerCase());
       return name.includes(needle) || titles.some(t => t.includes(needle));
     });
-  }, [load, query, needsReviewOnly]);
+  }, [load, query, needsReviewOnly, withheldOnly]);
 
   useEffect(() => {
     if (load.status !== 'ready') return;
@@ -171,6 +175,7 @@ export default function App() {
           <p className="state error" role="alert">
             {t('app.loadFailed', { message: load.message })}
           </p>
+          <button type="button" onClick={() => setLoadAttempt(value => value + 1)}>{t('app.tryAgain')}</button>
         </div>
       </div>
     );
@@ -190,10 +195,11 @@ export default function App() {
 
   const selected = filtered.find(p => p.id === selectedId) ?? null;
   const selectedListing = selected ? catalog.listings[selected.id] : undefined;
-  const filtersActive = needsReviewOnly || Boolean(query.trim());
+  const filtersActive = needsReviewOnly || withheldOnly || Boolean(query.trim());
   const clearFilters = () => {
     setQuery('');
     setNeedsReviewOnly(false);
+    setWithheldOnly(false);
   };
 
   const screenLabel =
@@ -216,6 +222,18 @@ export default function App() {
       onClear: () => setNeedsReviewOnly(false),
     });
   }
+  if (withheldOnly) {
+    catalogChips.push({ id: 'withheld', label: t('filters.withheld'), onClear: () => setWithheldOnly(false) });
+  }
+
+  const checkUpdatedResult = async () => {
+    setRefreshStatus('loading');
+    try {
+      const updated = await loadCatalog(undefined, true);
+      setLoad({ status: 'ready', catalog: updated });
+      setRefreshStatus('success');
+    } catch { setRefreshStatus('error'); }
+  };
 
   const showCatalogContext = isMobile && view === 'catalog';
 
@@ -231,7 +249,7 @@ export default function App() {
         showDemoNotice={catalog.source === 'demo'}
       />
 
-      <RunOverview catalog={catalog} />
+      <RunOverview catalog={catalog} onRefresh={checkUpdatedResult} refreshStatus={refreshStatus} />
 
       {!isMobile ? (
         <ViewTabs view={view} setView={setView} catalog={catalog} mobile={false} />
@@ -281,6 +299,10 @@ export default function App() {
                     onChange={event => setNeedsReviewOnly(event.target.checked)}
                   />
                   {t('filters.needsReview')}
+                </label>
+                <label className="checkbox">
+                  <input type="checkbox" checked={withheldOnly} onChange={event => setWithheldOnly(event.target.checked)} />
+                  {t('filters.withheld')}
                 </label>
                 {filtersActive ? (
                   <button type="button" className="clear-filters" onClick={clearFilters}>

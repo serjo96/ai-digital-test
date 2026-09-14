@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { readFile, mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { PipelineService, saveJson } from './app.js';
+import { createPipelineService, saveJson } from './app.js';
 import { OllamaAdapter } from './ai/ollama.js';
 import { ProviderRegistry, type AiCallRecord } from './ai/contracts.js';
 import { canonicalJson } from './ai/runtime.js';
@@ -45,7 +45,7 @@ for (const mode of ['live', 'replay'] as const) {
   const runId = `ollama-qwen3-4b-shadow-${mode}`;
   console.log(`${runId}: starting`);
   const adapter = mode === 'live' ? new OllamaAdapter() : new OllamaAdapter(async () => { throw new Error('network forbidden'); });
-  const service = new PipelineService(new ProviderRegistry(new Map([['ollama', () => adapter]])));
+  const service = createPipelineService(new ProviderRegistry(new Map([['ollama', () => adapter]])));
   try { await service.run({ feed: 'supplier_feed.json', taxonomy: 'taxonomy.json', labels: 'eval/labels.json', out: root, runId,
     baseline: 'b2', aiTask: 'matching', aiCohort: 'development', aiRows: suite.cases.map(c => c.rowId), aiPairs: shadowPairs,
     aiMode: mode, aiCache: join(root, 'ollama-qwen3-4b-shadow-cache'), aiConfig: join(root, 'config-qwen3-4b.json') }); }

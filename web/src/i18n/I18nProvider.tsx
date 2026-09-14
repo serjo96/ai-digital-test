@@ -4,13 +4,10 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useState,
   type ReactNode,
 } from 'react';
 import {
   DEFAULT_LOCALE,
-  readStoredLocale,
-  writeStoredLocale,
   type Locale,
 } from './locales.ts';
 import { messagesFor, t as translate, type Messages } from './messages.ts';
@@ -25,14 +22,10 @@ interface I18nContextValue {
 const I18nContext = createContext<I18nContextValue | null>(null);
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(() =>
-    typeof window === 'undefined' ? DEFAULT_LOCALE : readStoredLocale(),
-  );
+  const locale = DEFAULT_LOCALE;
 
-  const setLocale = useCallback((next: Locale) => {
-    setLocaleState(next);
-    writeStoredLocale(next);
-  }, []);
+  // Keep the context contract stable for internal tooling while production stays English-only.
+  const setLocale = useCallback((_next: Locale) => {}, []);
 
   const messages = useMemo(() => messagesFor(locale), [locale]);
 

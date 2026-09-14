@@ -1,4 +1,5 @@
 import type { BaselineResult, PriceResult, SourceRow } from './types.js';
+import type { ErrorKind } from './ai/contracts.js';
 import type { TAXONOMY } from './baseline.js';
 
 export type Category = typeof TAXONOMY[number];
@@ -92,6 +93,12 @@ export interface ListingAttempt {
   verificationStatus: 'supported' | 'blocked' | 'error';
   reasons: string[];
 }
+export interface ListingFailure {
+  stage: 'generation' | 'verification' | 'repair';
+  kind: ErrorKind;
+  retryable: boolean;
+  recordKeys: string[];
+}
 export interface Listing {
   productId: string;
   status: 'ready' | 'withheld' | 'review';
@@ -101,6 +108,8 @@ export interface Listing {
   publishedText: string | null;
   selectedAttempt: 1 | 2 | null;
   withholdReasons: string[];
+  /** Optional only for backwards-compatible reads; new B3 runs always write null or a value. */
+  failure?: ListingFailure | null;
 }
 export interface PublicationResult extends ProductResult { listings: Listing[] }
 export const isPublicationResult = (result: BaselineResult): result is PublicationResult => isProductResult(result) && 'listings' in result;

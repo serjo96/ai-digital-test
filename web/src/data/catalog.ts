@@ -9,6 +9,7 @@ import type {
 import type { CatalogProvenance } from '../../../src/catalog-snapshot.ts';
 import type { ClaimSuite, GeneratedReview } from '../../../src/publication-evaluation.ts';
 import type { Labels, MatchingAudit, NormalizedRow } from '../../../src/types.ts';
+import type { RunDegradation } from '../../../src/types.ts';
 import type { Messages } from '../i18n/messages.ts';
 
 export type CatalogSource = 'demo' | 'pipeline';
@@ -49,6 +50,8 @@ export interface CatalogSnapshot {
   claimReview?: ClaimReviewData;
   matchingReview?: Labels;
   matchingAudit?: MatchingAudit;
+  degradation?: RunDegradation | null;
+  retryCommand?: string | null;
 }
 
 export function productDisplayName(product: CanonicalProduct, rows: NormalizedRow[]): string {
@@ -59,12 +62,16 @@ export function productDisplayName(product: CanonicalProduct, rows: NormalizedRo
 }
 
 export function productStatus(product: CanonicalProduct, listing: ListingView | undefined): ProductStatus {
-  if (listing?.publication) return listing.publication.status === 'review' ? 'needs_review' : listing.publication.status;
+  if (listing?.publication) return listing.publication.status === 'ready' ? 'ready' : 'withheld';
   const hasReview = product.reviewIds.length > 0 || (listing?.reviewFlags.length ?? 0) > 0;
   if (hasReview) return 'needs_review';
   const withhold = listing?.withholdReasons.length ?? 0;
   if (withhold > 0 || !listing?.publishedText) return 'withheld';
   return 'ready';
+}
+
+export function productNeedsReview(product: CanonicalProduct, listing: ListingView | undefined): boolean {
+  return product.reviewIds.length > 0 || (listing?.reviewFlags.length ?? 0) > 0 || listing?.publication?.status === 'review';
 }
 
 export function statusLabel(status: ProductStatus, messages: Messages): string {

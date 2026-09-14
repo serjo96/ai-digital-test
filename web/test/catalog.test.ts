@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { loadCatalog, projectProductResult } from '../src/data/loadCatalog.ts';
-import { productStatus } from '../src/data/catalog.ts';
+import { productNeedsReview, productStatus } from '../src/data/catalog.ts';
 import { demoCatalog } from '../src/data/fixtures.ts';
 import {
   aiVerdictPhrase,
@@ -31,6 +31,7 @@ const ru = messagesFor('ru');
 
 const result = JSON.parse(readFileSync('reports/B1-stage3-control-v2/result.json', 'utf8'));
 const b3 = JSON.parse(readFileSync('reports/B3-openai-development-live-v4/result.json', 'utf8'));
+const fullB3 = JSON.parse(readFileSync('reports/B3-openai-full-input-atomic-v2-replay/result.json', 'utf8'));
 const legacyGenerated = JSON.parse(readFileSync('reports/B3-openai-development-live-v4/generated-review.json', 'utf8'));
 const generated = migrateGeneratedReview(legacyGenerated);
 const canonicalGenerated = JSON.parse(readFileSync('eval/generated-review-e478435a3d39.json', 'utf8'));
@@ -52,8 +53,18 @@ test('B3 projection exposes publication listings and claim review without changi
   assert.equal(catalog.products.length, 156);
   assert.equal(catalog.claimReview?.generated.claims.length, 158);
   assert.equal(catalog.products.filter(product => productStatus(product, catalog.listings[product.id]) === 'ready').length, 37);
-  assert.equal(catalog.products.filter(product => productStatus(product, catalog.listings[product.id]) === 'needs_review').length, 2);
+  assert.equal(catalog.products.filter(product => productNeedsReview(product, catalog.listings[product.id])).length, 51);
+  assert.equal(catalog.products.filter(product => productStatus(product, catalog.listings[product.id]) === 'withheld').length, 119);
   assert.equal(catalog.listings[catalog.claimReview!.generated.claims[0].productId]?.publication?.attempts.length, 1);
+});
+
+test('publication and product-review axes remain independent for full B3', () => {
+  const catalog = projectProductResult(fullB3);
+  assert.equal(catalog.products.filter(product => productNeedsReview(product, catalog.listings[product.id]) && productStatus(product, catalog.listings[product.id]) === 'ready').length, 49);
+  const identityReview = Object.values(catalog.listings).filter(listing => listing.publication?.status === 'review');
+  assert.equal(identityReview.length, 2);
+  assert.ok(identityReview.every(listing => listing.draftText && listing.publishedText === null));
+  assert.ok(identityReview.every(listing => listing.withholdReasons.length === 1));
 });
 
 test('loader defaults to prepared snapshot and fails visibly instead of substituting demos', async context => {

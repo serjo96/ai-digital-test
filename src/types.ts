@@ -136,6 +136,14 @@ export interface GeneratedClaimEvaluation {
   nonAtomicIssueClaims: number;
   unclearCopyIssueClaims: number;
 }
+export interface RunDegradation {
+  failedAiJobs: number;
+  retryableWithheldProducts: number;
+  nonRetryableWithheldProducts: number;
+  failures: { stage: import('./domain.js').ListingFailure['stage']; kind: import('./ai/contracts.js').ErrorKind; count: number }[];
+  circuitOpened: boolean;
+  retryOfRunId: string | null;
+}
 export interface RunReport {
   schemaVersion: '1' | '2' | '3' | '4';
   rulesVersion: 'B0-v1' | 'B1-v1' | 'B1-v2' | 'B2-v1' | 'B3-v1';
@@ -174,6 +182,7 @@ export interface RunReport {
   wallTimeMs: number;
   decisionsHash: string;
   publicationHash?: string;
+  degradation?: RunDegradation | null;
   metrics?: import('./metrics.js').Metric[];
   checks?: import('./quality.js').QualityEvaluation;
   timing?: { protocol: 'cli-through-result-v1'; node: string; platform: string; arch: string; pipelineMs: number };

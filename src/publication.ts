@@ -1,13 +1,14 @@
 import { z } from 'zod';
 import { hash } from './baseline.js';
-import type { AiRequest, AiCallRecord } from './ai/contracts.js';
+import type { AiRequest, AiCallRecord, ErrorKind } from './ai/contracts.js';
 import type { RoleConfig } from './ai/config.js';
 import { AiRuntime } from './ai/runtime.js';
 import { CitationSchema, evidenceFor, jsonSchema } from './ai/schemas.js';
 import type { Stage4Config } from './publication-config.js';
 import type { ClaimSuite } from './publication-evaluation.js';
-import type { Evidence, Listing, ListingAttempt, PublicationResult, PublicationSupport, ProductResult, VerifiedClaim, CanonicalProduct } from './domain.js';
+import type { Evidence, Listing, ListingAttempt, ListingFailure, PublicationResult, PublicationSupport, ProductResult, VerifiedClaim, CanonicalProduct } from './domain.js';
 import type { SourceRow } from './types.js';
+import { identityReviewDraft } from './review-draft.js';
 
 export const GenerationSchema = z.strictObject({ text: z.string().trim().min(1).max(800) });
 export const VerificationSchema = z.strictObject({
@@ -169,77 +170,137 @@ function listingAttempt(attempt: 1 | 2, role: 'generation' | 'repair', text: str
 }
 
 function identityBlock(result: ProductResult, product: CanonicalProduct): string[] {
-  return result.review.filter(r => r.productIds.includes(product.id) && (r.reason.startsWith('identity:') || r.reason === 'internal_identity_conflict')).map(r => r.reason);
+  return [...new Set(result.review
+    .filter(r => r.productIds.includes(product.id) && (r.reason.startsWith('identity:') || r.reason === 'internal_identity_conflict'))
+    .map(r => r.reason))];
 }
 
 export interface PublicationRun { result: PublicationResult; controlledClaims: Map<string, VerifiedClaim[]> }
+
+const errorKinds = new Set<ErrorKind>(['auth', 'rate_limit', 'server', 'network', 'timeout', 'invalid_response', 'configuration', 'cache']);
+const circuitRetryableKinds = new Set<ErrorKind>(['rate_limit', 'server', 'network', 'timeout']);
+const operatorRetryableKinds = new Set<ErrorKind>(['auth', 'rate_limit', 'server', 'network', 'timeout', 'invalid_response', 'cache']);
+const normalizedKind = (value: string | null | undefined): ErrorKind => errorKinds.has(value as ErrorKind) ? value as ErrorKind : 'invalid_response';
+const listingFailure = (stage: ListingFailure['stage'], record: AiCallRecord): ListingFailure => ({
+  stage, kind: normalizedKind(record.error), retryable: operatorRetryableKinds.has(normalizedKind(record.error)), recordKeys: record.key ? [record.key] : [],
+});
+
+class RunCircuitBreaker {
+  private readonly providerOpen = new Map<string, ErrorKind>();
+  private readonly pairs = new Map<string, { consecutive: number; open: ErrorKind | null }>();
+  constructor(private readonly maxRetries: number) {}
+  private key(role: RoleConfig) { return `${role.provider}:${role.model}`; }
+  observe(role: RoleConfig, record: AiCallRecord): void {
+    const pair = this.pairs.get(this.key(role)) ?? { consecutive: 0, open: null };
+    if (record.status === 'success') pair.consecutive = 0;
+    else {
+      const kind = normalizedKind(record.error);
+      if (kind === 'auth' || kind === 'configuration') this.providerOpen.set(role.provider, kind);
+      if (circuitRetryableKinds.has(kind) && record.attempts >= this.maxRetries + 1) {
+        pair.consecutive++;
+        if (pair.consecutive >= 2) pair.open = kind;
+      } else if (!circuitRetryableKinds.has(kind)) pair.consecutive = 0;
+    }
+    this.pairs.set(this.key(role), pair);
+  }
+  failure(role: RoleConfig, stage: ListingFailure['stage']): ListingFailure | null {
+    const kind = this.providerOpen.get(role.provider) ?? this.pairs.get(this.key(role))?.open;
+    return kind ? { stage, kind, retryable: operatorRetryableKinds.has(kind), recordKeys: [] } : null;
+  }
+}
+
+const skippedListing = (productId: string, supports: PublicationSupport[], failure: ListingFailure): Listing => ({
+  productId, status: 'withheld', supports, attempts: [], draftText: null, publishedText: null, selectedAttempt: null,
+  withholdReasons: ['skipped_after_circuit_open'], failure,
+});
 
 export async function publicationPipeline(result: ProductResult, runtime: AiRuntime<Stage4Config>, config: Stage4Config, eligibleRows?: Set<string>, suite?: ClaimSuite | null, frozenPublication?: PublicationResult): Promise<PublicationRun> {
   const productByRow = new Map(result.products.flatMap(p => p.rowIds.map(id => [id, p] as const)));
   const frozenListings = new Map(frozenPublication?.listings.map(listing => [listing.productId, listing]) ?? []);
   const controlledClaims = new Map<string, VerifiedClaim[]>();
+  const circuit = new RunCircuitBreaker(config.maxRetries);
   if (suite) for (const item of suite.cases) {
+    if (circuit.failure(config.verifier, 'verification')) break;
     const product = productByRow.get(item.rowId)!;
     const supports = publicationSupports(result, product);
     const checked = await verify(runtime, config.verifier, result, product, supports, item.text, 'controlled_verification');
     controlledClaims.set(item.id, checked?.claims ?? []);
-    if (runtime.records.at(-1)?.error === 'auth') break;
+    circuit.observe(config.verifier, runtime.records.at(-1)!);
   }
-  let authFailed = runtime.records.at(-1)?.error === 'auth';
   const listings: Listing[] = [];
   for (const product of result.products) {
     const supports = publicationSupports(result, product);
     if (eligibleRows && !product.rowIds.some(id => eligibleRows.has(id))) {
-      listings.push({ productId: product.id, status: 'withheld', supports, attempts: [], draftText: null, publishedText: null, selectedAttempt: null, withholdReasons: ['not_in_cohort'] });
+      listings.push({ productId: product.id, status: 'withheld', supports, attempts: [], draftText: null, publishedText: null, selectedAttempt: null, withholdReasons: ['not_in_cohort'], failure: null });
       continue;
     }
     const identityReasons = identityBlock(result, product);
     if (identityReasons.length) {
-      listings.push({ productId: product.id, status: 'review', supports, attempts: [], draftText: null, publishedText: null, selectedAttempt: null, withholdReasons: identityReasons });
+      listings.push({ productId: product.id, status: 'review', supports, attempts: [], draftText: identityReviewDraft(supports), publishedText: null, selectedAttempt: null, withholdReasons: identityReasons, failure: null });
       continue;
     }
-    if (authFailed) {
-      listings.push({ productId: product.id, status: 'withheld', supports, attempts: [], draftText: null, publishedText: null, selectedAttempt: null, withholdReasons: ['generation_error:skipped_after_auth'] });
-      continue;
-    }
+    const verifierCircuit = circuit.failure(config.verifier, 'verification');
+    if (verifierCircuit) { listings.push(skippedListing(product.id, supports, verifierCircuit)); continue; }
+    const generationCircuit = circuit.failure(config.generation, 'generation');
+    if (generationCircuit) { listings.push(skippedListing(product.id, supports, generationCircuit)); continue; }
     if (frozenPublication) {
       const frozen = frozenListings.get(product.id);
       const frozenAttempt = frozen?.attempts.find(attempt => attempt.attempt === frozen.selectedAttempt);
       if (!frozen?.publishedText || !frozenAttempt) {
-        listings.push({ productId: product.id, status: 'withheld', supports, attempts: [], draftText: null, publishedText: null, selectedAttempt: null, withholdReasons: ['frozen_publication_missing'] });
+        listings.push({ productId: product.id, status: 'withheld', supports, attempts: [], draftText: null, publishedText: null, selectedAttempt: null, withholdReasons: ['frozen_publication_missing'], failure: null });
         continue;
       }
       const checked = await verify(runtime, config.verifier, result, product, supports, frozen.publishedText);
+      const verifierRecord = runtime.records.at(-1)!;
+      circuit.observe(config.verifier, verifierRecord);
       const attempt = listingAttempt(frozenAttempt.attempt, frozenAttempt.role, frozen.publishedText, frozenAttempt.generationRecordKey, checked);
       if (attempt.verificationStatus === 'supported') {
-        listings.push({ productId: product.id, status: 'ready', supports, attempts: [attempt], draftText: frozen.publishedText, publishedText: frozen.publishedText, selectedAttempt: attempt.attempt, withholdReasons: [] });
+        listings.push({ productId: product.id, status: 'ready', supports, attempts: [attempt], draftText: frozen.publishedText, publishedText: frozen.publishedText, selectedAttempt: attempt.attempt, withholdReasons: [], failure: null });
       } else {
-        listings.push({ productId: product.id, status: 'withheld', supports, attempts: [attempt], draftText: frozen.publishedText, publishedText: null, selectedAttempt: null, withholdReasons: ['frozen_verification_failed', ...attempt.reasons] });
+        listings.push({ productId: product.id, status: 'withheld', supports, attempts: [attempt], draftText: frozen.publishedText, publishedText: null, selectedAttempt: null, withholdReasons: ['frozen_verification_failed', ...attempt.reasons], failure: checked ? null : listingFailure('verification', verifierRecord) });
       }
-      authFailed = runtime.records.at(-1)?.error === 'auth';
       continue;
     }
     const initial = await generate(runtime, config.generation, product, supports);
+    const generationRecord = runtime.records.at(-1)!;
+    circuit.observe(config.generation, generationRecord);
     if (!initial) {
-      authFailed = runtime.records.at(-1)?.error === 'auth';
-      listings.push({ productId: product.id, status: 'withheld', supports, attempts: [], draftText: null, publishedText: null, selectedAttempt: null, withholdReasons: [`generation_error:${runtime.records.at(-1)?.error ?? 'invalid_response'}`] });
+      const failure = listingFailure('generation', generationRecord);
+      listings.push({ productId: product.id, status: 'withheld', supports, attempts: [], draftText: null, publishedText: null, selectedAttempt: null, withholdReasons: [`generation_error:${failure.kind}`], failure });
       continue;
     }
     const firstChecked = await verify(runtime, config.verifier, result, product, supports, initial.text);
+    const firstVerifierRecord = runtime.records.at(-1)!;
+    circuit.observe(config.verifier, firstVerifierRecord);
     const first = listingAttempt(1, 'generation', initial.text, initial.record.key, firstChecked);
     if (first.verificationStatus === 'supported') {
-      listings.push({ productId: product.id, status: 'ready', supports, attempts: [first], draftText: initial.text, publishedText: initial.text, selectedAttempt: 1, withholdReasons: [] });
+      listings.push({ productId: product.id, status: 'ready', supports, attempts: [first], draftText: initial.text, publishedText: initial.text, selectedAttempt: 1, withholdReasons: [], failure: null });
+      continue;
+    }
+    if (!firstChecked) {
+      const failure = listingFailure('verification', firstVerifierRecord);
+      listings.push({ productId: product.id, status: 'withheld', supports, attempts: [first], draftText: initial.text, publishedText: null, selectedAttempt: null, withholdReasons: [`verification_error:${failure.kind}`], failure });
+      continue;
+    }
+    const repairCircuit = circuit.failure(config.generation, 'repair');
+    if (repairCircuit) {
+      listings.push({ productId: product.id, status: 'withheld', supports, attempts: [first], draftText: initial.text, publishedText: null, selectedAttempt: null, withholdReasons: ['skipped_after_circuit_open'], failure: repairCircuit });
       continue;
     }
     const revised = await generate(runtime, config.generation, product, supports, { text: initial.text, claims: first.claims });
+    const repairRecord = runtime.records.at(-1)!;
+    circuit.observe(config.generation, repairRecord);
     if (!revised) {
-      listings.push({ productId: product.id, status: 'withheld', supports, attempts: [first], draftText: initial.text, publishedText: null, selectedAttempt: null, withholdReasons: ['repair_error'] });
+      const failure = listingFailure('repair', repairRecord);
+      listings.push({ productId: product.id, status: 'withheld', supports, attempts: [first], draftText: initial.text, publishedText: null, selectedAttempt: null, withholdReasons: [`repair_error:${failure.kind}`], failure });
       continue;
     }
     const secondChecked = await verify(runtime, config.verifier, result, product, supports, revised.text);
+    const secondVerifierRecord = runtime.records.at(-1)!;
+    circuit.observe(config.verifier, secondVerifierRecord);
     const second = listingAttempt(2, 'repair', revised.text, revised.record.key, secondChecked);
-    if (second.verificationStatus === 'supported') listings.push({ productId: product.id, status: 'ready', supports, attempts: [first, second], draftText: initial.text, publishedText: revised.text, selectedAttempt: 2, withholdReasons: [] });
-    else listings.push({ productId: product.id, status: 'withheld', supports, attempts: [first, second], draftText: initial.text, publishedText: null, selectedAttempt: null, withholdReasons: ['verification_failed_after_repair', ...second.reasons] });
+    if (second.verificationStatus === 'supported') listings.push({ productId: product.id, status: 'ready', supports, attempts: [first, second], draftText: initial.text, publishedText: revised.text, selectedAttempt: 2, withholdReasons: [], failure: null });
+    else listings.push({ productId: product.id, status: 'withheld', supports, attempts: [first, second], draftText: initial.text, publishedText: null, selectedAttempt: null, withholdReasons: ['verification_failed_after_repair', ...second.reasons], failure: secondChecked ? null : listingFailure('verification', secondVerifierRecord) });
   }
   return { result: { ...result, listings }, controlledClaims };
 }

@@ -142,3 +142,23 @@ Following feedback about the effort required for 20 family partitions, AI helped
 The user independently completed the review and provided the `matching-audit-human-verified.json` export. AI checked schema, labels hash, stable row IDs, reviewer, and ISO metadata, and compared the answers with preserved B3/B1 matching without model requests. Result: 20/20 reviewed, with 18 scored agreements, 0 disagreements, and 2 unknown; agreement 18/18, scored coverage 18/20. The export and metric were later saved in the repository as `eval/matching-audit-human-verified.json` and `eval/matching-audit-metrics.json` (post-holdout validation, status `human_verified`).
 
 AI then analyzed the canonical documentation and separated current documents from historical stage reports. Documentation statuses were synchronized to mark stages 1–5 complete and stage 6 optional/not started, and to remove outdated claims that the audit remained outside the repository. Actual checks on the current branch: 73 backend tests, 18 web tests, typecheck, and production build pass. No OpenAI/Ollama calls, full-input live/replay, or product-rule changes were performed. The agent did not perform commit/push/deployment/submission to the organizers.
+
+## 2026-09-14 — minimal architecture stabilization and live integration validation
+
+Tool: Codex desktop, local TypeScript/Markdown, shell/npm/node:test, and the existing OpenAI integration. No subagents were used. The user requested the bounded architecture refactor and later explicitly authorized real AI calls to validate the result. Prompts, thresholds, product rules, labels, persisted contracts, and historical reports were not changed.
+
+The refactor split orchestration into catalog, AI-matching, publication, and comparison services; centralized immutable run I/O; separated AI provider registration; and left `PipelineService` as a dispatcher. Characterization and architecture tests protect B0/B1/B3 hashes, offline replay, CLI compatibility, framework-free domain code, and fail-closed behavior.
+
+Live validation used only the development cohort. OpenAI B2 extraction made 12 successful calls with 0 errors/retries, used 14033 input and 1864 output tokens, and cost $0.105447 under the recorded pricing. It produced 11 correct, 3 unexpected, and 0 missing semantic additions, so the existing quality gate still rejected B2; matching was disabled and B1 decisions were unchanged. Replay used 12 cache hits and 0 calls and reproduced the same decisions hash.
+
+OpenAI B3 development live made 86 successful calls with 0 errors/retries, used 153207 tokens, and cost $2.506746. It produced 39 products: 37 ready, 2 review, 0 withheld; the controlled verifier allowed 7/7 supported cases and blocked 4/4 unsupported plus 1/1 disputed cases. Replay used 86 cache hits and 0 calls and reproduced both decisions and publication hashes. Across the two successful live validations: 98 calls, 0 errors/retries, $2.612193. Outputs and caches were kept in `/tmp` as integration evidence rather than committed as authoritative benchmark artifacts.
+
+An initial sandboxed B2 attempt could not reach the network and ended fail-closed after 12 jobs / 36 transport attempts; it made no successful external request and produced failure artifacts as designed. The network-enabled run followed explicit approval. Full-input live was not repeated. The authoritative full-input B3 characterization replay continued to use 321 cache hits, 0 model calls, and the fixed publication hash.
+
+## 2026-09-14 — final submission cleanup
+
+Tool: Codex desktop, local TypeScript/Markdown and shell/npm/node:test. No subagents or runtime model calls were used. The user requested a bounded final cleanup: synchronize the stale stage 5 status, close the formal description gap for two identity-review products, remove only obvious unused report artifacts, and rerun verification.
+
+The runtime now builds a minimal draft from allowed model/type/color identity supports for identity-blocked listings. These drafts make no model call, contain no reconciled facts, keep `status=review`, `publishedText=null`, `selectedAttempt=null`, and no verification attempt. The web projection applies the same rule to the older immutable B3 artifacts. Duplicate identity reasons are collapsed. Tests cover the no-call/fail-closed contract and both historical review listings.
+
+Eleven unreferenced diagnostic/cache directories were removed after checking that no README, document, source file, or test referred to them. Required full-input replay/cache, development gate, human-review, benchmark, comparison, and UI evidence remain. This reduces the checked-out `reports/` tree without rewriting Git history or restructuring the reporting system.

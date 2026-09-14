@@ -7,17 +7,20 @@
     "node": ">=24.14.1 <25"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
+    "build": "npm run clean && tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "npm run build && node --test dist/test/*.test.js",
     "pipeline": "npm run build && node dist/src/cli.js pipeline",
+    "retry": "npm run build && node dist/src/cli.js retry",
     "eval": "npm run build && node dist/src/cli.js eval",
     "benchmark": "npm run build && node dist/src/cli.js benchmark",
     "compare": "npm run build && node dist/src/cli.js compare",
     "web": "npm --prefix web run dev",
     "web:build": "npm --prefix web run build",
     "web:prepare": "npm run build && node dist/src/prepare-web.js",
-    "web:test": "node --experimental-strip-types --test web/test/*.test.ts"
+    "web:test": "node --experimental-strip-types --test web/test/*.test.ts",
+    "verify": "npm run typecheck && npm test && npm run web:test && npm run web:build"
   },
   "dependencies": {
     "@nestjs/common": "12.0.1",

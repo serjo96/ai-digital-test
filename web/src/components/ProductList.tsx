@@ -2,6 +2,7 @@ import type { CanonicalProduct } from '../../../src/domain.ts';
 import type { NormalizedRow } from '../../../src/types.ts';
 import {
   productDisplayName,
+  productNeedsReview,
   productStatus,
   statusLabel,
   type ListingView,
@@ -39,6 +40,7 @@ export function ProductList({
         const status = productStatus(product, listing);
         const primary = primaryReviewReason(product, listing, messages);
         const unresolved = hasUnresolvedFacts(product);
+        const needsReview = productNeedsReview(product, listing);
         return (
           <li key={product.id}>
             <button
@@ -51,6 +53,7 @@ export function ProductList({
               <span className="product-meta">
                 <span className="category">{product.category}</span>
                 <span className={`badge badge-${status}`}>{statusLabel(status, messages)}</span>
+                {needsReview ? <span className="badge badge-needs_review">{t('status.needs_review')}</span> : null}
                 {unresolved ? (
                   <span className="chip chip-conflict">{t('productList.conflict')}</span>
                 ) : null}

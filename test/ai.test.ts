@@ -16,7 +16,7 @@ import { hash } from '../src/baseline.js';
 import { productBaseline, assertProductIntegrity } from '../src/products.js';
 import { evaluate } from '../src/evaluation.js';
 import { validateSemantic, evaluateSemantic } from '../src/semantic-quality.js';
-import { PipelineService } from '../src/app.js';
+import { createPipelineService } from '../src/app.js';
 import { exportBenchmark, readRun } from '../src/benchmark.js';
 import { compareReports } from '../src/reports.js';
 import type { SourceRow, Labels, RunReport } from '../src/types.js';
@@ -98,6 +98,20 @@ test('shared runtime replays exact validated fixtures offline and invalidates in
   const file = join(dir, (await readdir(dir)).find(f => !f.includes('.attempt-'))!); const cache = JSON.parse(await readFile(file, 'utf8')); cache.response.data = { changed: true };
   await writeFile(file, JSON.stringify(cache));
   assert.equal(await replay.execute('openai', 'extraction', ['r'], request(), x => x), null); assert.equal(p.calls, 1);
+}));
+
+test('resume revalidates successful records and calls the provider only when a saved response is no longer valid', async () => temporary(async dir => {
+  const provider = new FixtureProvider(); const conf = await config();
+  const source = new AiRuntime(registry(provider), conf, 'live', join(dir, 'source'));
+  assert.ok(await source.execute('openai', 'extraction', ['r'], request(), value => ExtractionSchema.parse(value)));
+  const saved = structuredClone(source.records[0]!);
+  const resumed = new AiRuntime(registry(provider), conf, 'live', join(dir, 'resumed'), undefined, new Map([[saved.key, saved]]));
+  assert.ok(await resumed.execute('openai', 'extraction', ['r'], request(), value => ExtractionSchema.parse(value)));
+  assert.equal(provider.calls, 1); assert.equal(resumed.summary().cacheHits, 0); assert.equal(resumed.records[0]!.mode, 'replay');
+  saved.response!.data = { broken: true };
+  const retried = new AiRuntime(registry(provider), conf, 'live', join(dir, 'retried'), undefined, new Map([[saved.key, saved]]));
+  assert.ok(await retried.execute('openai', 'extraction', ['r'], request(), value => ExtractionSchema.parse(value)));
+  assert.equal(provider.calls, 2); assert.equal(retried.records[0]!.mode, 'live');
 }));
 
 test('timeout and retry budgets are enforced independently of adapter and auth stops immediately', async () => temporary(async dir => {
@@ -187,13 +201,14 @@ test('B2 CLI requires explicit mode/cache, default code never calls API even wit
   const saved = JSON.parse(await readFile(join(dir, 'code/report.json'), 'utf8')); assert.equal(saved.mode, 'code-only'); assert.equal(saved.api.calls, 0);
   assert.equal(run('pipeline', '--baseline', 'b1', '--ai-mode', 'live', '--out', dir, '--run-id', 'wrong-options').status, 1);
   const missing = run('pipeline', '--baseline', 'b2', '--ai-mode', 'replay', '--ai-cache', join(dir, 'empty-cache'), '--out', dir, '--run-id', 'replay-missing');
-  assert.equal(missing.status, 1); const [partial] = await readRun(join(dir, 'replay-missing')); assert.equal(partial.status, 'partial'); assert.equal(partial.api.calls, 0); assert.equal(partial.audit.accountedRows, 220);
+  assert.equal(missing.status, 2); const [partial] = await readRun(join(dir, 'replay-missing')); assert.equal(partial.status, 'partial'); assert.equal(partial.api.calls, 0); assert.equal(partial.audit.accountedRows, 220);
+  await assert.rejects(readFile(join(dir, 'replay-missing/failure.json'), 'utf8'), /ENOENT/);
   await exportBenchmark([join(dir, 'replay-missing')], 'eval/labels.json', dir, 'partial-history');
   const history = await readFile(join(dir, 'partial-history/observations.jsonl'), 'utf8'); assert.match(history, /"status":"partial"/); assert.match(history, /"mode":"replay"/);
 }));
 
 test('DI fixture run is labeled test and cannot enter real benchmark history; legacy reports remain readable', async () => temporary(async dir => {
-  const service = new PipelineService(registry(new FixtureProvider('openai', 'fixture://di', suiteReply)));
+  const service = createPipelineService(registry(new FixtureProvider('openai', 'fixture://di', suiteReply)));
   await service.run({ feed: 'supplier_feed.json', taxonomy: 'taxonomy.json', labels: 'eval/labels.json', out: dir, runId: 'fixture', baseline: 'b2', aiMode: 'live', aiCache: join(dir, 'cache') });
   const [report, result] = await readRun(join(dir, 'fixture')); assert.equal(report.mode, 'test'); assert.equal(report.api.calls, 0);
   await assert.rejects(exportBenchmark([join(dir, 'fixture')], 'eval/labels.json', dir, 'rejected'), /test fixtures/);

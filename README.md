@@ -1,8 +1,18 @@
 # Shelf Ready — B1 product baseline and B3 publication development
 
-Local pipeline: JSON → validation → offers → explicit facts and evidence → candidates and compatible products → categories, reconciliation and review → generation → atomic claims → independent verification → development/holdout eval and saved metrics. The accepted product baseline is **B1-v2**; B3 publication is built on top of it and does not use B2. The human-verified development gate P0.2 passed and reproduces offline; full-input B3 and holdout replay are saved. The final screen contains Catalog and one compact matching Review.
+Local pipeline: JSON → validation → offers → explicit facts and evidence → candidates and compatible products → categories, reconciliation and review → generation → atomic claims → independent verification → development/holdout eval and saved metrics. The accepted product baseline is **B1-v2**; B3 publication is built on top of it and does not use B2. The human-verified development gate P0.2 passed and reproduces offline; full-input B3 and holdout replay are saved. All canonical products have a description draft in the current runtime/UI: the two identity-review drafts are source-grounded previews and remain unpublished. The final screen contains Catalog and one compact matching Review.
 
 Stack: TypeScript 5.9, NestJS 12 standalone context, Node 24.14.1, npm; UI — Vite + React in `web/`. No HTTP API, database, or deployment required.
+
+## Code architecture
+
+The CLI calls a thin `PipelineService`, which dispatches to separate B0/B1, B2, B3, and comparison services. Pure matching, fact, reconciliation, publication, and evaluation functions remain independent of Nest. `RunStoreService` owns immutable filesystem artifacts, while `AiModule` owns provider registration. See [Architecture](docs/ARCHITECTURE.md).
+
+Run the complete local verification gate with:
+
+```sh
+npm run verify
+```
 
 ## Product flow
 
@@ -94,7 +104,15 @@ Price amounts stay decimal strings with the original currency; `$` means USD by 
 
 Detailed definitions, denominators, JSONL format, and speed protocol: [BENCHMARKS.md](docs/BENCHMARKS.md).
 
-A successful run contains `result.json`, `diagnostics.json`, `metrics.json`, `report.md`, `report.json`. The last file is written as the success marker. Invalid input creates `failure.json`, returns exit code 1, and does not create a success report; on write failure partial files may remain. Execution success does not mean ground-truth quality or publication readiness.
+A completed `success` or safe degraded `partial` run contains `result.json`, `diagnostics.json`, `ai.json` when applicable, `metrics.json`, `report.md`, and `report.json`. Every final artifact is published atomically and `report.json` is written last. `success` returns exit code 0; `partial` keeps unsafe listings withheld and returns exit code 2 without a contradictory `failure.json`. Invalid input, corrupt state, or storage failure creates `failure.json` and returns exit code 1. Execution success does not mean ground-truth quality or publication readiness.
+
+Retry only the failed/missing AI jobs of a complete real-origin B3 partial run; successful stored answers are revalidated locally and copied into a new immutable cache:
+
+```sh
+npm run retry -- --from-run <run-id-or-directory> [--prepare-web]
+```
+
+The retry verifies the input/configuration/B1 provenance, creates a new run with `retryOfRunId`, and never changes the source run. `--prepare-web` updates the web snapshot only after the new run has completed safely.
 
 Extended matching labels: 20 provisional family cases, 14 development on 59 rows / 6 holdout on 49. They cover 108 rows and are not raised automatically. A separate `eval/matching-audit.json` records 20 atomic human questions. The saved human export and metrics are [matching-audit-human-verified.json](eval/matching-audit-human-verified.json) and [matching-audit-metrics.json](eval/matching-audit-metrics.json): 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements (post-holdout validation). `eval/stage2-checks.json` separately holds technical category/fact/reconciliation checks.
 
@@ -134,7 +152,7 @@ P0.2 moved the verifier to `publication_verification_v2`: the prompt requires fi
 
 Current development gate: [verifier-only live](reports/B3-openai-development-verifier-only-v2-live/report.md), [human-gate replay](reports/B3-openai-development-verifier-only-v2-human-gate-replay/report.md), and [comparison](reports/comparisons/B3-openai-development-verifier-only-v2-live-to-human-gate-replay/comparison.md). Human-verified controlled gate: 4/4 unsupported, false block 0/7, disputed leakage 0/1, errors 0. Generated review: 76/99 claims, 28/37 products, sample 20/20, factual errors 0, non-atomic 0, unclear-copy 2. Result: 37/39 ready, 2 identity review. Historical v1 live/replay and review are kept without overwrite.
 
-Full-input ran after a separate go-ahead: [live](reports/B3-openai-full-input-atomic-v2-live/report.md) made 322 calls, 526449 tokens, $8.110955 and got 154/156 ready, 2 identity review, 0 withheld. One first verifier response contained a damaged support ID; fail-closed validation rejected it, and the single allowed repair succeeded. The live report historically has `partial` because of later-corrected accounting of recovered errors. [Offline replay](reports/B3-openai-full-input-atomic-v2-replay/report.md) has `success`, 0 calls, and the same `publicationHash`; [comparison](reports/comparisons/B3-openai-full-input-atomic-v2-live-to-replay/comparison.md) contains no changes or violations. Among 390 published claims there are no forbidden atomicity patterns.
+Full-input ran after a separate go-ahead: [live](reports/B3-openai-full-input-atomic-v2-live/report.md) made 322 calls, 526449 tokens, $8.110955 and got 154/156 ready, 2 identity review, 0 withheld. Those immutable historical artifacts used one repair after a verifier response with a damaged support ID. Current runs create a deterministic, source-grounded preview for each identity-review product, but keep `publishedText = null`, make no model call for that preview, and preserve the review status. The UI applies the same rule when reading the older immutable artifacts. The current runtime no longer rewrites after a technically invalid verifier result: the affected listing is withheld in a new partial run and can be selectively retried. The stored [offline replay](reports/B3-openai-full-input-atomic-v2-replay/report.md) and its comparison remain historical records and are not rewritten.
 
 The first holdout ran after a separate go-ahead, strictly offline from the full-input cache:
 
@@ -189,7 +207,7 @@ OpenAI profiles `config/ai.json`, `config/ai.matching-sol.json`, `config/ai.matc
 
 ## Stage 5: local B1 screen and B3 claim review
 
-Stage 5 is complete: B1/B3 catalog, completed claim review, compact matching audit with repo-backed metrics, full-input and holdout replay are saved. Final audit metric: 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements. Extended labels on 108 rows stay honestly provisional. Stage 6 modular refactoring is optional and not started. [Report and PDF alignment](docs/STAGE5_REPORT.md), [short WRITEUP](WRITEUP.md).
+Stages 5 and the minimal stage 6 stabilization are complete: the saved B1 decisions and ready publication text are unchanged, orchestration is split by use case, and architecture/characterization tests protect the boundaries and frozen hashes. Identity-review products now receive a safe description preview without becoming publishable. Final audit metric: 20/20 reviewed, 18/18 agreement, 18/20 scored coverage, 2 `unknown`, 0 disagreements. Extended labels on 108 rows stay honestly provisional. [Report and PDF alignment](docs/STAGE5_REPORT.md), [architecture](docs/ARCHITECTURE.md), [short WRITEUP](WRITEUP.md).
 
 From a clean checkout, Node 24.14.1 (see `.nvmrc`), without `.env` or a key:
 
